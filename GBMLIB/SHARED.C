@@ -3,9 +3,41 @@
 #include <string.h>
 #include <stddef.h>
 #include "SHARED.H"
-#include "MIDI.H"
+#include "AJG.H"
+#include "AUDIOART.H"
+#include "BEAM.H"
+#include "CAPCOM.H"
+#include "CLIMAX.H"
+#include "DAVDSHEA.H"
+#include "DW.H"
+#include "GAMEFRK.H"
+#include "GHX.H"
+#include "HAL.H"
+#include "HUDSON.H"
+#include "IMAGNRNG.H"
+#include "JEROTEL.H"
+#include "KONAMI.H"
 #include "MCOOKSEY.H"
+#include "MEGAMAN1.H"
+#include "MEGAMAN2.H"
+#include "MEGAMAN3.H"
+#include "METROID2.H"
+#include "MIDI.H"
+#include "MUSYX.H"
+#include "MWALKER.H"
+#include "NATSUME.H"
+#include "NINTENDO.H"
+#include "OCEAN.H"
+#include "PARAGON5.H"
+#include "PROBE.H"
+#include "RARE.H"
+#include "REALTIME.H"
+#include "ROLAN.H"
+#include "SUNSOFT.H"
+#include "TECHNOS.H"
 #include "TIERTEX.H"
+#include "TOSE.H"
+#include "WARIOL2.H"
 #define bankSize 16384
 
 int foundTable = 0;
@@ -119,7 +151,55 @@ unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned in
 
 	Write8B(&buffer[pos], note);
 	pos++;
-	Write8B(&buffer[pos], 100);
+	Write8B(&buffer[pos], curVol);
+	pos++;
+
+	deltaValue = WriteDeltaTime(buffer, pos, length);
+	pos += deltaValue;
+
+	Write8B(&buffer[pos], note);
+	pos++;
+	Write8B(&buffer[pos], 0);
+	pos++;
+
+	return pos;
+
+}
+
+unsigned int WriteNoteEventGen(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst)
+{
+	int deltaValue;
+	deltaValue = WriteDeltaTime(buffer, pos, delay);
+	pos += deltaValue;
+
+	if (firstNote == 1)
+	{
+		Write8B(&buffer[pos], 0xC0 | curChan);
+
+		Write8B(&buffer[pos + 1], inst);
+		Write8B(&buffer[pos + 2], 0);
+
+		if (curChan == 10)
+		{
+			Write8B(&buffer[pos + 3], 0x90 | 16);
+		}
+		else if (curChan == 16)
+		{
+			Write8B(&buffer[pos + 3], 0x90 | 10);
+		}
+		else
+		{
+			Write8B(&buffer[pos + 3], 0x90 | curChan);
+		}
+
+
+
+		pos += 4;
+	}
+
+	Write8B(&buffer[pos], note);
+	pos++;
+	Write8B(&buffer[pos], curVol);
 	pos++;
 
 	deltaValue = WriteDeltaTime(buffer, pos, length);
@@ -219,22 +299,123 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 	{
 		multiBanks = 1;
 	}
-	for (curBank == 0; curBank < numBanks; curBank++)
+	for (curBank = 0; curBank < numBanks; curBank++)
 	{
 		switch (format)
 		{
-		case MIDI:
-			MIDProc();
+		case AJ_Gonzalez:
+			AJGProc(banks[curBank], parameters);
+			break;
+		case AudioArts:
+			AAProc(banks[curBank]);
+			break;
+		case Beam_Software:
+			BeamProc(banks[curBank]);
+			break;
+		case Capcom:
+			CapProc(banks[curBank]);
+			break;
+		case Climax:
+			IMEDProc(parameters);
+			break;
+		case David_Shea:
+			DShProc(banks[curBank]);
+			break;
+		case David_Warhol:
+			RTAProc(banks[curBank]);
+			break;
+		case David_Whittaker:
+			DWProc(banks[curBank]);
+			break;
+		case Game_Freak:
+			GFProc(banks[curBank]);
+			break;
+		case GHX:
+			GHXProc(banks[curBank]);
+			break;
+		case HAL_Laboratory:
+			HALProc(banks[curBank]);
+			break;
+		case Hirokazu_Tanaka:
+			NintProc(banks[curBank], parameters);
+			break;
+		case Hiroshi_Wada:
+			MM1Proc(banks[curBank]);
+			break;
+		case Hirotomo_Nakamura:
+			MM2Proc(banks[curBank]);
+			break;
+		case Hudson_Soft:
+			HSProc(banks[curBank]);
+			break;
+		case Imagineering:
+			ImgnProc(banks[curBank]);
+			break;
+		case Jeroen_Tel:
+			JTProc(parameters);
+			break;
+		case Konami:
+			KonProc(banks[curBank], parameters);
+			break;
+		case Kouji_Murata:
+			MM3Proc(banks[curBank], parameters);
+			break;
+		case Kozue_Ishikawa:
+			WL2Proc(banks[curBank]);
 			break;
 		case Mark_Cooksey:
 			MCProc(banks[curBank]);
 			break;
+		case Martin_Walker:
+			MWProc(banks[curBank]);
+			break;
+		case MIDI:
+			MIDProc();
+			break;
+		case MusyX:
+			MXProc(banks[curBank], parameters);
+			break;
+		case Natsume:
+			NatProc(banks[curBank], parameters);
+			break;
+		case NMK:
+			RCProc(banks[curBank]);
+			break;
+		case Ocean:
+			OcnProc(banks[curBank]);
+			break;
+		case Paragon_5:
+			P5Proc(banks[curBank]);
+			break;
+		case Probe_Software:
+			ProbProc(banks[curBank]);
+			break;
+		case RARE:
+			RAREProc(parameters);
+			break;
+		case Ryohji_Yoshitomi:
+			M2Proc(banks[curBank]);
+			break;
+		case Sunsoft:
+			SSProc(banks[curBank]);
+			break;
+		case Technos_Japan:
+			TJProc(banks[curBank]);
+			break;
 		case Tiertex:
 			TTProc(banks[curBank], parameters);
+			break;
+		case TOSE:
+			TOSEProc(parameters);
 			break;
 		default:
 			MIDProc();
 			break;
 		}
+	}
+
+	if (rom != NULL)
+	{
+		fclose(rom);
 	}
 }

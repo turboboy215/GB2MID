@@ -71,6 +71,7 @@ extern void WriteLE16(unsigned char* buffer, unsigned int value);
 extern void WriteLE24(unsigned char* buffer, unsigned long value);
 extern void WriteLE32(unsigned char* buffer, unsigned long value);
 extern unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
+extern unsigned int WriteNoteEventGen(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 extern unsigned int WriteNoteEventOn(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 extern unsigned int WriteNoteEventOff(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 extern int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
