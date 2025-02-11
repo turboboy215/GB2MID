@@ -36,6 +36,7 @@
 #include "SUNSOFT.H"
 #include "TECHNOS.H"
 #include "TIERTEX.H"
+#include "TITUS1.H"
 #include "TOSE.H"
 #include "WARIOL2.H"
 #define bankSize 16384
@@ -404,6 +405,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Tiertex:
 			TTProc(banks[curBank], parameters);
+			break;
+		case Titus_1:
+			Tit1Proc(banks[curBank]);
 			break;
 		case TOSE:
 			TOSEProc(parameters);
