@@ -136,6 +136,7 @@ Blaster Master - Enemy Below (U) [C][!]
 Blaster Master Boy (U)
 Blaster Master Jr. (E)
 Blodia (J)
+Blues Brothers, The (U) [!]
 Blue's Clues - Blue's Alphabet Book (U) [C][!]
 Blue's Clues - Blue's Alphabet Book (U) (V1.1) (Unreleased) [C][!]
 Bob et Bobette - Les Dompteurs du Temps (F) (M2) [C][!]
@@ -207,9 +208,9 @@ Casper (U) (V1.1) (Unreleased) [C][!]
 Castelian (E) [!]
 Castelian (J) (Unreleased) [!]
 Castelian (U) [!]
+Castlevania - Legends (UE) [S][!]
 Castlevania Adventure, The (E) [!]
 Castlevania Adventure, The (U) [!]
-Castlevania - Legends (UE) [S][!]
 Castlevania EMO Demo (Unl) [C]
 Castlevania II - Belmont's Revenge (U) [!]
 Caterpillar Construction Zone (U) [C][!]
@@ -893,6 +894,7 @@ NHL Blades of Steel (U) [C][!]
 NHL Blades of Steel 2000 (U) [C][!]
 NHL Hockey '95 (U) [S][!]
 NHL Hockey '96 (U) [S][!]
+Nick Faldo Golf (U) (Unreleased) [!]
 Ninja Gaiden Shadow (U)
 Ninja Ryuukenden (J)
 Ninja Taro (Beta)
@@ -1376,6 +1378,9 @@ Tiny Toon Adventures 2 - Montana's Movie Madness (U) [!]
 Tiny Toon Adventures 2 (J)
 Tiny Toon Adventures 3 (J)
 Tip Off (UE) [!]
+Titus the Fox (E) [C][!]
+Titus the Fox (U) [C][!]
+Titus the Fox (UE) [M][!]
 TNN Outdoors Fishing Champ (U) [C][!]
 Tokio Senki (J)
 Tokoro San no Setagaya Country Club (J) [C][!]
