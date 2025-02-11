@@ -1595,6 +1595,17 @@
 		<parameters>CFG/Blodia (J).cfg</parameters>
 	</rom>
 	<rom>
+		<name>Blues Brothers, The (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0C73</checksum>
+        <crc32>adb66eff</crc32>
+        <format>Titus_1</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Blue's Clues - Blue's Alphabet Book (U) [C][!]</name>
 		<gamecode>BALE</gamecode>
 		<rev>0</rev>
@@ -10901,6 +10912,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Nick Faldo Golf (U) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3420</checksum>
+        <crc32>4c3ca465</crc32>
+        <format>Titus_1</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Ninja Gaiden Shadow (U)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -16566,6 +16588,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Titus the Fox (E) [C][!]</name>
+		<gamecode>BFXP</gamecode>
+		<rev>0</rev>
+		<checksum>DC0B</checksum>
+        <crc32>2f9f19de</crc32>
+        <format>Titus_1</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Titus the Fox (U) [C][!]</name>
+		<gamecode>BFXE</gamecode>
+		<rev>0</rev>
+		<checksum>5CE7</checksum>
+        <crc32>ba70d28f</crc32>
+        <format>Titus_1</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Titus the Fox (UE) [M][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7A1F</checksum>
+        <crc32>814fa146</crc32>
+        <format>Titus_1</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>TNN Outdoors Fishing Champ (U) [C][!]</name>
 		<gamecode>AFCE</gamecode>
 		<rev>0</rev>
@@ -18260,6 +18315,50 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Xin Feng Shen Bang (Unl) [C][f2]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6782</checksum>
+        <crc32>8c66647d</crc32>
+        <format>Kouji_Murata</format>
+		<part></part>
+		<banks>3,4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Xin Guangming Yu Hei'an 2 - Zhushen De Yichan (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CC1D</checksum>
+        <crc32>3e6213a0</crc32>
+        <format>Natsume</format>
+		<part></part>
+		<banks>25,26,27</banks>
+		<parameters>5FE2\3</parameters>
+	</rom>
+	<rom>
+		<name>Xin Shediao Yingxiong Chuan (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>88AB</checksum>
+        <crc32>c8cbb920</crc32>
+        <format>Natsume</format>
+		<part></part>
+		<banks>25,26,27</banks>
+		<parameters>5FE2\3</parameters>
+	</rom>
+	<rom>
+		<name>Xing Qiu Da Zhan II - Ke Long Ren Zhan Yi (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0BD4</checksum>
+        <crc32>e8fd000f</crc32>
+        <format>Game_Freak</format>
+		<part></part>
+		<banks>F5,F6,FA,FD,FE</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>X-Men - Mutant Academy (J) [C][!]</name>
 		<gamecode>BXAJ</gamecode>
 		<rev>0</rev>
@@ -18301,17 +18400,6 @@
         <format>Technos_Japan</format>
 		<part></part>
 		<banks>A</banks>
-		<parameters></parameters>
-	</rom>
-	<rom>
-		<name>Xing Qiu Da Zhan II - Ke Long Ren Zhan Yi (Unl) [C][f1]</name>
-		<gamecode></gamecode>
-		<rev>0</rev>
-		<checksum>0BD4</checksum>
-        <crc32>e8fd000f</crc32>
-        <format>Game_Freak</format>
-		<part></part>
-		<banks>F5,F6,FA,FD,FE</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
