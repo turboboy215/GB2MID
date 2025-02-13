@@ -561,6 +561,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Animastar GB (J) [C][!]</name>
+		<gamecode>BNMJ</gamecode>
+		<rev>0</rev>
+		<checksum>B469</checksum>
+        <crc32>b14920f0</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
 		<name>Armada - FX Racers (U) [C][!]</name>
 		<gamecode>BARE</gamecode>
 		<rev>0</rev>
@@ -2330,6 +2341,28 @@
 		<part></part>
 		<banks>10</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Cardcaptor Sakura - Tomoe Shougakkou Daiundoukai (J) [C][!]</name>
+		<gamecode>BS7J</gamecode>
+		<rev>0</rev>
+		<checksum>26C9</checksum>
+        <crc32>f78f7998</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>69</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
+		<name>Cardcaptor Sakura - Tomoe Shougakkou Daiundoukai (J) (V1.1) (Unreleased) [C][!]</name>
+		<gamecode>BS7J</gamecode>
+		<rev>1</rev>
+		<checksum>7190</checksum>
+        <crc32>d2cc40c2</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>69</banks>
+		<parameters>3</parameters>
 	</rom>
 	<rom>
 		<name>Carl Lewis Athletics 2000 (E) (Beta) (M6) [C][!]</name>
@@ -5797,6 +5830,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Gran Duel - Shinki Dungeon no Hihou (J) [C][!]</name>
+		<gamecode>ADVJ</gamecode>
+		<rev>0</rev>
+		<checksum>1BA2</checksum>
+        <crc32>d589c501</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Gran Duel - Shinki Dungeon no Hihou Trial Version (J) [C][!]</name>
+		<gamecode>A7PJ</gamecode>
+		<rev>0</rev>
+		<checksum>E504</checksum>
+        <crc32>7122136d</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>4</parameters>
+	</rom>
+	<rom>
 		<name>Gremlins 2 - The New Batch (W) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -6798,6 +6853,17 @@
 		<parameters>CFG/J.Cup Soccer (J).cfg</parameters>
 	</rom>
 	<rom>
+		<name>J.League Excite Stage GB (J) [C][!]</name>
+		<gamecode>AESJ</gamecode>
+		<rev>0</rev>
+		<checksum>80FD</checksum>
+        <crc32>b3f38f16</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Janosch - Das grosse Panama-Spiel (G) [C][!]</name>
 		<gamecode>AJOD</gamecode>
 		<rev>0</rev>
@@ -7060,7 +7126,18 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters></parameters>
-	</rom>	
+	</rom>
+	<rom>
+		<name>K1025 2-in-1 Zelda Ages+Seasons [C][p1][b1]]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A664</checksum>
+        <crc32>b8679484</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>3A</banks>
+		<parameters>1</parameters>
+	</rom>
 	<rom>
 		<name>Kaept'n Blaubaer - Die verrueckte Schatzsuche (G) [C][!]</name>
 		<gamecode>BVRD</gamecode>
@@ -7082,6 +7159,17 @@
 		<part></part>
 		<banks>2</banks>
 		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Kanji Boy 3 (J) [C][!]</name>
+		<gamecode>BK3J</gamecode>
+		<rev>0</rev>
+		<checksum>8C7E</checksum>
+        <crc32>2d4d8597</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>F5</banks>
+		<parameters>3</parameters>
 	</rom>
 	<rom>
 		<name>Kanji de Puzzle (J) [C][!]</name>
@@ -8247,6 +8335,50 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>1C,1F</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Legend of Zelda, The - Oracle of Ages (E) (M5) [C][!]</name>
+		<gamecode>AZ8P</gamecode>
+		<rev>0</rev>
+		<checksum>A664</checksum>
+        <crc32>5933e3fa</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>3A</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Legend of Zelda, The - Oracle of Ages (U) [C][!]</name>
+		<gamecode>AZ8E</gamecode>
+		<rev>0</rev>
+		<checksum>A132</checksum>
+        <crc32>3800a387</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>3A</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Legend of Zelda, The - Oracle of Seasons (E) (M5) [C][!]</name>
+		<gamecode>AZ7P</gamecode>
+		<rev>0</rev>
+		<checksum>E099</checksum>
+        <crc32>dbac1357</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>3A</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Legend of Zelda, The - Oracle of Seasons (U) [C][!]</name>
+		<gamecode>AZ7P</gamecode>
+		<rev>0</rev>
+		<checksum>FE8F</checksum>
+        <crc32>d7e9f5d7</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>3A</banks>
 		<parameters>1</parameters>
 	</rom>
 	<rom>
@@ -11330,6 +11462,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Palamedes (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2FE2</checksum>
+        <crc32>4b993d0d</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Palamedes (U) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3ECF</checksum>
+        <crc32>58176694</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Palamedes (UE) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>11E1</checksum>
+        <crc32>526942e1</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Pang (U)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -11671,6 +11836,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Pocket Color Billiard (J) [C][!]</name>
+		<gamecode>A3AJ</gamecode>
+		<rev>0</rev>
+		<checksum>4E90</checksum>
+        <crc32>911007e1</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>E</banks>
+		<parameters>5</parameters>
+	</rom>
+	<rom>
 		<name>Pocket Color Block (J) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -11680,6 +11856,17 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters>4B8F\3</parameters>
+	</rom>
+	<rom>
+		<name>Pocket Cooking (J) [C][!]</name>
+		<gamecode>APJJ</gamecode>
+		<rev>0</rev>
+		<checksum>650F</checksum>
+        <crc32>f5ab554d</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>F5</banks>
+		<parameters>3</parameters>
 	</rom>
 	<rom>
 		<name>Pocket Family GB2 (J) [C][!]</name>
@@ -11702,6 +11889,17 @@
 		<part></part>
 		<banks>1E</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pocket Hanafuda (J) [C][!]</name>
+		<gamecode>A6PJ</gamecode>
+		<rev>0</rev>
+		<checksum>EE76</checksum>
+        <crc32>af0c51b8</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>6</parameters>
 	</rom>
 	<rom>
 		<name>Pocket King (J) [C][!]</name>
@@ -14311,6 +14509,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Shin Megami Tensei Trading Card - Card Summoner (J) [C][!]</name>
+		<gamecode>BT8J</gamecode>
+		<rev>0</rev>
+		<checksum>1B7F</checksum>
+        <crc32>85264877</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>F</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
 		<name>Shinri Game 2, The - Daihan Hen (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -15862,6 +16071,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Sweet Ange (J) [C][!]</name>
+		<gamecode>AUBJ</gamecode>
+		<rev>0</rev>
+		<checksum>2C22</checksum>
+        <crc32>4be9b159</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>SWIV (E) (M5) [C][!]</name>
 		<gamecode>BSVP</gamecode>
 		<rev>0</rev>
@@ -15871,6 +16091,17 @@
 		<part></part>
 		<banks>25</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Sylvanian Families 3 - Hoshi Furu Yoru no Sunadokei (J) [C]</name>
+		<gamecode>BL3J</gamecode>
+		<rev>0</rev>
+		<checksum>FEA3</checksum>
+        <crc32>abf32b8b</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>7B</banks>
+		<parameters>3</parameters>
 	</rom>
 	<rom>
 		<name>Sylvanian Melody - Mori to Nakama to Odori Mashi! (J) [C][!]</name>
@@ -18458,6 +18689,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Yakouchuu (J) [C][!]</name>
+		<gamecode>AYTJ</gamecode>
+		<rev>0</rev>
+		<checksum>5B2D</checksum>
+        <crc32>aa05daf1</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>B</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Yakyuuman (J) (V1.0) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -18675,6 +18917,28 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>1C,1F</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Zelda no Densetsu - Fushigi no Kimoni - Daichi no Shou (J) [C][!]</name>
+		<gamecode>AZ7J</gamecode>
+		<rev>0</rev>
+		<checksum>19A9</checksum>
+        <crc32>e42538f0</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>3A</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Zelda no Densetsu - Fushigi no Kimoni - Jikuu no Shou (J) [C][!]</name>
+		<gamecode>AZ8J</gamecode>
+		<rev>0</rev>
+		<checksum>9525</checksum>
+        <crc32>3272e6f9</crc32>
+        <format>Kyouhei_Sada</format>
+		<part></part>
+		<banks>3A</banks>
 		<parameters>1</parameters>
 	</rom>
 	<rom>

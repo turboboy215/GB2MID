@@ -34,3 +34,5 @@
 #define Hudson_Soft			0x21
 #define MusyX				0x22
 #define Sunsoft				0x23
+#define Titus_1				0x24
+#define Kyouhei_Sada		0x25

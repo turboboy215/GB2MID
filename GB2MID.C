@@ -1,277 +1,828 @@
+/*GB/GBC to MIDI universal converter shell*/
+/*By Will Trowbridge*/
+/*Portions based on code by ValleyBell*/
+/*Uses ZLIB code by ?*/
+/*Uses XML-C code by OOXI*/
+#include <zlib.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <string.h>
 #include <stddef.h>
-#include "SHARED.H"
-#include "AUDIOART.H"
-#include "CLIMAX.H"
-#include "DW.H"
-#include "GHX.H"
-#include "MCOOKSEY.H"
-#include "MEGAMAN1.H"
-#include "MIDI.H"
-#include "MWALKER.H"
-#include "NINTENDO.H"
-#include "PARAGON5.H"
-#include "TIERTEX.H"
+#include "GB2MID.H"
+#include "XML.C"
+#include "XML.H"
+#include "GBMLIB/SHARED.H"
+
 #define bankSize 16384
+FILE* rom, * mid, * xm, * mod, * txt, * raw, * wav, * cfg, *xml;
+int masterBank;
+int bank;
+int banks[50];
+char outfile[1000000];
+int songPtr;
+int songPtrs[4];
+char gameCode[5];
+char parameters[4][50];
+unsigned long crc;
+unsigned long hash;
+unsigned long tempCrc;
+int driver = 0;
+int romSize = 0;
+unsigned char checksum[2];
+int checksumVar;
+unsigned int tempCS;
+long romTitle;
+int gameVer = 0;
+int tempSize = 0;
+int romMatch = 0;
+int i, j, z;
+int tempVer = 0;
+int part = 0;
+int numParts = 0;
+long numROMs = 0;
+long itemNo;
+int charGet = 0;
+int numBanks = 0;
+int curPartNum = 0;
+uint8_t* foundROM;
+uint8_t* curPart;
+uint8_t* curTempPart;
+uint8_t* tempPart;
+uint8_t* bankString;
+uint8_t* paramString;
+uint8_t* formatString;
 
-int foundTable = 0;
-int curInst = 0;
-int curVol = 100;
-int curBank = 0;
-int multiBanks = 0;
+unsigned static char* romData;
+unsigned static char* fullRomData;
+unsigned static char* exRomData;
+unsigned static char* midData;
+unsigned static char* ctrlMidData;
+unsigned static char* xmData;
+unsigned static char* modData;
+unsigned static char* headerBank;
 
-/*Convert little-endian pointer to big-endian*/
-unsigned short ReadLE16(unsigned char* Data)
+long midLength;
+long xmLength;
+
+int main(int args, char* argv[])
 {
-	return (Data[0] << 0) | (Data[1] << 8);
-}
 
-/*Store big-endian pointer*/
-unsigned short ReadBE16(unsigned char* Data)
-{
-	return (Data[0] << 8) | (Data[1] << 0);
-}
+    crc = crc32(0L, Z_NULL, 0);
+    printf("GB2MID: GB/GBC to MIDI/tracker/sample converter\n");
+    if (args != 2)
+    {
+        printf("Usage: GB2MID <rom>\n");
+        return -1;
+    }
+    else
+    {
+        if ((rom = fopen(argv[1], "rb")) == NULL)
+        {
+            printf("ERROR: Unable to open file %s!\n", argv[1]);
+            exit(1);
+        }
+        else
+        {
+            if ((xml = fopen("GAMELIST.XML", "r")) == NULL)
+            {
+                printf("ERROR: Unable to open game list XML file!\n");
+                exit(1);
+            }
 
-void Write8B(unsigned char* buffer, unsigned int value)
-{
-	buffer[0x00] = value;
-}
+            /*Get size of ROM file*/
+            fseek(rom, 0, SEEK_END);
+            romSize = ftell(rom);
+            fseek(rom, 0, SEEK_SET);
 
-void WriteBE32(unsigned char* buffer, unsigned long value)
-{
-	buffer[0x00] = (value & 0xFF000000) >> 24;
-	buffer[0x01] = (value & 0x00FF0000) >> 16;
-	buffer[0x02] = (value & 0x0000FF00) >> 8;
-	buffer[0x03] = (value & 0x000000FF) >> 0;
+            fullRomData = (unsigned char*)malloc(romSize);
+            fread(fullRomData, 1, romSize, rom);
 
-	return;
-}
+            /*Get hash of the ROM*/
+            crc = crc32(hash, fullRomData, romSize);
 
-void WriteBE24(unsigned char* buffer, unsigned long value)
-{
-	buffer[0x00] = (value & 0xFF0000) >> 16;
-	buffer[0x01] = (value & 0x00FF00) >> 8;
-	buffer[0x02] = (value & 0x0000FF) >> 0;
+            /*Now get some information from the ROM header*/
+            
+            /*Get game code (if present)*/
+            for (i = 0; i < 4; i++)
+            {
+                gameCode[i] = fullRomData[i + 0x013F];
+            }
+            gameCode[4] = 0;
 
-	return;
-}
+            /*Get global checksum*/
+            for (i = 0; i < 2; i++)
+            {
+                checksum[i] = fullRomData[i + 0x014E];
+            }
 
-void WriteBE16(unsigned char* buffer, unsigned int value)
-{
-	buffer[0x00] = (value & 0xFF00) >> 8;
-	buffer[0x01] = (value & 0x00FF) >> 0;
+            checksumVar = checksum[1] + (checksum[0] * 0x100);
 
-	return;
-}
+            /*Get revision/version*/
+            gameVer = fullRomData[0x014C];
 
-void WriteLE16(unsigned char* buffer, unsigned int value)
-{
-	buffer[0x00] = (value & 0x00FF) >> 0;
-	buffer[0x01] = (value & 0xFF00) >> 8;
+            /*Get XML data*/
+            struct xml_document* gameList = xml_open_document(xml);
+            struct xml_node* root = xml_document_root(gameList);
 
-	return;
-}
+            /*Get the number of ROMs in the game list*/
+            numROMs = (unsigned long)xml_node_children(root);
 
-void WriteLE24(unsigned char* buffer, unsigned long value)
-{
-	buffer[0x00] = (value & 0x0000FF) >> 0;
-	buffer[0x01] = (value & 0x00FF00) >> 8;
-	buffer[0x02] = (value & 0xFF0000) >> 16;
+            for (i = 0; i < numROMs; i++)
+            {
+                struct xml_node* rootRom = xml_node_child(root, i);
+                struct xml_string* rom = xml_node_name(rootRom);
 
-	return;
-}
+                /*Get XML ROM name*/
+                struct xml_node* gameName = xml_node_child(rootRom, 0);
+                struct xml_string* gameNameText = xml_node_content(gameName);
+                uint8_t* xmlName = calloc(xml_string_length(gameNameText) + 1, sizeof(uint8_t));
+                xml_string_copy(gameNameText, xmlName, xml_string_length(gameNameText));
+                tempSize = strlen(xmlName);
+                xmlName[tempSize] = 0;
 
-void WriteLE32(unsigned char* buffer, unsigned long value)
-{
-	buffer[0x00] = (value & 0x000000FF) >> 0;
-	buffer[0x01] = (value & 0x0000FF00) >> 8;
-	buffer[0x02] = (value & 0x00FF0000) >> 16;
-	buffer[0x03] = (value & 0xFF000000) >> 24;
+                /*Get XML ROM game code*/
+                struct xml_node* gameCodeVar = xml_node_child(rootRom, 1);
+                struct xml_string* gameCodeText = xml_node_content(gameCodeVar);
+                uint8_t* xmlGameCode = calloc(xml_string_length(gameCodeText) + 1, sizeof(uint8_t));
+                xml_string_copy(gameCodeText, xmlGameCode, xml_string_length(gameCodeText));
+                tempSize = strlen(xmlGameCode);
+                xmlGameCode[tempSize] = 0;
 
-	return;
-}
+                /*Get XML ROM version/revision*/
+                struct xml_node* gameRev = xml_node_child(rootRom, 2);
+                struct xml_string* gameRevText = xml_node_content(gameRev);
+                uint8_t* xmlRev = calloc(xml_string_length(gameRevText) + 1, sizeof(uint8_t));
+                xml_string_copy(gameRevText, xmlRev, xml_string_length(gameRevText));
+                tempSize = strlen(xmlRev);
+                xmlRev[tempSize] = 0;
 
-unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst)
-{
-	int deltaValue;
-	deltaValue = WriteDeltaTime(buffer, pos, delay);
-	pos += deltaValue;
+                /*Get XML ROM checksum (global)*/
+                struct xml_node* gameChecksum = xml_node_child(rootRom, 3);
+                struct xml_string* gameCSText = xml_node_content(gameChecksum);
+                uint8_t* xmlChecksum = calloc(xml_string_length(gameCSText) + 1, sizeof(uint8_t));
+                xml_string_copy(gameCSText, xmlChecksum, xml_string_length(gameCSText));
+                tempSize = strlen(xmlChecksum);
+                xmlChecksum[tempSize] = 0;
 
-	if (firstNote == 1)
-	{
-		if (curChan != 3)
-		{
-			Write8B(&buffer[pos], 0xC0 | curChan);
-		}
-		else
-		{
-			Write8B(&buffer[pos], 0xC9);
-		}
+                /*Get XML ROM hash (CRC32)*/
+                struct xml_node* gameCrc = xml_node_child(rootRom, 4);
+                struct xml_string* gameCrcText = xml_node_content(gameCrc);
+                uint8_t* xmlCrc = calloc(xml_string_length(gameCrcText) + 1, sizeof(uint8_t));
+                xml_string_copy(gameCrcText, xmlCrc, xml_string_length(gameCrcText));
+                tempSize = strlen(xmlCrc);
+                xmlCrc[tempSize] = 0;
 
-		Write8B(&buffer[pos + 1], inst);
-		Write8B(&buffer[pos + 2], 0);
+                /*Get XML ROM sound engine/format*/
+                struct xml_node* gameFormat = xml_node_child(rootRom, 5);
+                struct xml_string* gameFormatText = xml_node_content(gameFormat);
+                uint8_t* xmlFormat = calloc(xml_string_length(gameFormatText) + 1, sizeof(uint8_t));
+                xml_string_copy(gameFormatText, xmlFormat, xml_string_length(gameFormatText));
+                tempSize = strlen(xmlFormat);
+                xmlFormat[tempSize] = 0;
 
-		if (curChan != 3)
-		{
-			Write8B(&buffer[pos + 3], 0x90 | curChan);
-		}
-		else
-		{
-			Write8B(&buffer[pos + 3], 0x99);
-		}
+                /*Get XML ROM part*/
+                struct xml_node* gamePart = xml_node_child(rootRom, 6);
+                struct xml_string* gamePartText = xml_node_content(gamePart);
+                uint8_t* xmlPart = calloc(xml_string_length(gamePartText) + 1, sizeof(uint8_t));
+                xml_string_copy(gamePartText, xmlPart, xml_string_length(gamePartText));
+                tempSize = strlen(xmlPart);
+                xmlPart[tempSize] = 0;
 
-		pos += 4;
-	}
+                /*Get XML ROM banks*/
+                struct xml_node* gameBanks = xml_node_child(rootRom, 7);
+                struct xml_string* gameBanksText = xml_node_content(gameBanks);
+                uint8_t* xmlBanks = calloc(xml_string_length(gameBanksText) + 1, sizeof(uint8_t));
+                xml_string_copy(gameBanksText, xmlBanks, xml_string_length(gameBanksText));
+                tempSize = strlen(xmlBanks);
+                xmlBanks[tempSize] = 0;
 
-	Write8B(&buffer[pos], note);
-	pos++;
-	Write8B(&buffer[pos], 100);
-	pos++;
+                /*Get XML ROM parameters*/
+                struct xml_node* gameParameters = xml_node_child(rootRom, 8);
+                struct xml_string* gameParamText = xml_node_content(gameParameters);
+                uint8_t* xmlParameters = calloc(xml_string_length(gameParamText) + 1, sizeof(uint8_t));
+                xml_string_copy(gameParamText, xmlParameters, xml_string_length(gameParamText));
+                tempSize = strlen(xmlParameters);
+                xmlParameters[tempSize] = 0;
 
-	deltaValue = WriteDeltaTime(buffer, pos, length);
-	pos += deltaValue;
+                /*Check values*/
+                tempCrc = strtoul(xmlCrc, NULL, 16);
+                tempCS = strtoul(xmlChecksum, NULL, 16);
+                tempVer = strtoul(xmlRev, NULL, 16);
 
-	Write8B(&buffer[pos], note);
-	pos++;
-	Write8B(&buffer[pos], 0);
-	pos++;
+                /*Check if the ROM matches the current XML entry*/
 
-	return pos;
+                /*First, check the CRC32 hash*/
+                if (crc == tempCrc)
+                {
+                    romMatch = 1;
+                    foundROM = xmlName;
+                    itemNo = i;
+                    curPart = xmlPart;
+                    bankString = xmlBanks;
+                    paramString = xmlParameters;
+                    formatString = xmlFormat;
+                    break;
+                }
+            }
 
-}
+            /*If no match, then check the checksum*/
+            if (romMatch < 1)
+            {
+                for (i = 0; i < numROMs; i++)
+                {
+                    struct xml_node* rootRom = xml_node_child(root, i);
+                    struct xml_string* rom = xml_node_name(rootRom);
 
-int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value)
-{
-	unsigned char valSize;
-	unsigned char* valData;
-	unsigned int tempLen;
-	unsigned int curPos;
+                    /*Get XML ROM name*/
+                    struct xml_node* gameName = xml_node_child(rootRom, 0);
+                    struct xml_string* gameNameText = xml_node_content(gameName);
+                    uint8_t* xmlName = calloc(xml_string_length(gameNameText) + 1, sizeof(uint8_t));
+                    xml_string_copy(gameNameText, xmlName, xml_string_length(gameNameText));
+                    tempSize = strlen(xmlName);
+                    xmlName[tempSize] = 0;
 
-	valSize = 0;
-	tempLen = value;
+                    /*Get XML ROM game code*/
+                    struct xml_node* gameCodeVar = xml_node_child(rootRom, 1);
+                    struct xml_string* gameCodeText = xml_node_content(gameCodeVar);
+                    uint8_t* xmlGameCode = calloc(xml_string_length(gameCodeText) + 1, sizeof(uint8_t));
+                    xml_string_copy(gameCodeText, xmlGameCode, xml_string_length(gameCodeText));
+                    tempSize = strlen(xmlGameCode);
+                    xmlGameCode[tempSize] = 0;
 
-	while (tempLen != 0)
-	{
-		tempLen >>= 7;
-		valSize++;
-	}
+                    /*Get XML ROM version/revision*/
+                    struct xml_node* gameRev = xml_node_child(rootRom, 2);
+                    struct xml_string* gameRevText = xml_node_content(gameRev);
+                    uint8_t* xmlRev = calloc(xml_string_length(gameRevText) + 1, sizeof(uint8_t));
+                    xml_string_copy(gameRevText, xmlRev, xml_string_length(gameRevText));
+                    tempSize = strlen(xmlRev);
+                    xmlRev[tempSize] = 0;
 
-	valData = &buffer[pos];
-	curPos = valSize;
-	tempLen = value;
+                    /*Get XML ROM checksum (global)*/
+                    struct xml_node* gameChecksum = xml_node_child(rootRom, 3);
+                    struct xml_string* gameCSText = xml_node_content(gameChecksum);
+                    uint8_t* xmlChecksum = calloc(xml_string_length(gameCSText) + 1, sizeof(uint8_t));
+                    xml_string_copy(gameCSText, xmlChecksum, xml_string_length(gameCSText));
+                    tempSize = strlen(xmlChecksum);
+                    xmlChecksum[tempSize] = 0;
 
-	while (tempLen != 0)
-	{
-		curPos--;
-		valData[curPos] = 128 | (tempLen & 127);
-		tempLen >>= 7;
-	}
+                    /*Get XML ROM hash (CRC32)*/
+                    struct xml_node* gameCrc = xml_node_child(rootRom, 4);
+                    struct xml_string* gameCrcText = xml_node_content(gameCrc);
+                    uint8_t* xmlCrc = calloc(xml_string_length(gameCrcText) + 1, sizeof(uint8_t));
+                    xml_string_copy(gameCrcText, xmlCrc, xml_string_length(gameCrcText));
+                    tempSize = strlen(xmlCrc);
+                    xmlCrc[tempSize] = 0;
 
-	valData[valSize - 1] &= 127;
+                    /*Get XML ROM sound engine/format*/
+                    struct xml_node* gameFormat = xml_node_child(rootRom, 5);
+                    struct xml_string* gameFormatText = xml_node_content(gameFormat);
+                    uint8_t* xmlFormat = calloc(xml_string_length(gameFormatText) + 1, sizeof(uint8_t));
+                    xml_string_copy(gameFormatText, xmlFormat, xml_string_length(gameFormatText));
+                    tempSize = strlen(xmlFormat);
+                    xmlFormat[tempSize] = 0;
 
-	pos += valSize;
+                    /*Get XML ROM part*/
+                    struct xml_node* gamePart = xml_node_child(rootRom, 6);
+                    struct xml_string* gamePartText = xml_node_content(gamePart);
+                    uint8_t* xmlPart = calloc(xml_string_length(gamePartText) + 1, sizeof(uint8_t));
+                    xml_string_copy(gamePartText, xmlPart, xml_string_length(gamePartText));
+                    tempSize = strlen(xmlPart);
+                    xmlPart[tempSize] = 0;
 
-	if (value == 0)
-	{
-		valSize = 1;
-	}
-	return valSize;
-}
+                    /*Get XML ROM banks*/
+                    struct xml_node* gameBanks = xml_node_child(rootRom, 7);
+                    struct xml_string* gameBanksText = xml_node_content(gameBanks);
+                    uint8_t* xmlBanks = calloc(xml_string_length(gameBanksText) + 1, sizeof(uint8_t));
+                    xml_string_copy(gameBanksText, xmlBanks, xml_string_length(gameBanksText));
+                    tempSize = strlen(xmlBanks);
+                    xmlBanks[tempSize] = 0;
 
-unsigned int WriteNoteEventOn(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst)
-{
-	int deltaValue;
-	deltaValue = WriteDeltaTime(buffer, pos, delay);
-	pos += deltaValue;
+                    /*Get XML ROM parameters*/
+                    struct xml_node* gameParameters = xml_node_child(rootRom, 8);
+                    struct xml_string* gameParamText = xml_node_content(gameParameters);
+                    uint8_t* xmlParameters = calloc(xml_string_length(gameParamText) + 1, sizeof(uint8_t));
+                    xml_string_copy(gameParamText, xmlParameters, xml_string_length(gameParamText));
+                    tempSize = strlen(xmlParameters);
+                    xmlParameters[tempSize] = 0;
 
-	if (firstNote == 1)
-	{
-		Write8B(&buffer[pos], 0xC0 | curChan);
+                    /*Check values*/
+                    tempCrc = strtoul(xmlCrc, NULL, 16);
+                    tempCS = strtoul(xmlChecksum, NULL, 16);
+                    tempVer = strtoul(xmlRev, NULL, 16);
 
-		Write8B(&buffer[pos + 1], inst);
-		Write8B(&buffer[pos + 2], 0);
+                    /*Check if the ROM matches the current XML entry*/
+                    if (checksumVar == tempCS)
+                    {
+                        romMatch = 2;
+                        foundROM = xmlName;
+                        itemNo = i;
+                        curPart = xmlPart;
+                        bankString = xmlBanks;
+                        paramString = xmlParameters;
+                        formatString = xmlFormat;
+                        break;
+                    }
+                }
+            }
 
-		Write8B(&buffer[pos + 3], 0x90 | curChan);
+            /*If again no match, then check the game code*/
+            if (romMatch < 1)
+            {
+                for (i = 0; i < numROMs; i++)
+                {
+                    struct xml_node* rootRom = xml_node_child(root, i);
+                    struct xml_string* rom = xml_node_name(rootRom);
 
-		pos += 4;
-	}
+                    /*Get XML ROM name*/
+                    struct xml_node* gameName = xml_node_child(rootRom, 0);
+                    struct xml_string* gameNameText = xml_node_content(gameName);
+                    uint8_t* xmlName = calloc(xml_string_length(gameNameText) + 1, sizeof(uint8_t));
+                    xml_string_copy(gameNameText, xmlName, xml_string_length(gameNameText));
+                    tempSize = strlen(xmlName);
+                    xmlName[tempSize] = 0;
 
-	Write8B(&buffer[pos], note);
-	pos++;
-	Write8B(&buffer[pos], curVol);
-	pos++;
+                    /*Get XML ROM game code*/
+                    struct xml_node* gameCodeVar = xml_node_child(rootRom, 1);
+                    struct xml_string* gameCodeText = xml_node_content(gameCodeVar);
+                    uint8_t* xmlGameCode = calloc(xml_string_length(gameCodeText) + 1, sizeof(uint8_t));
+                    xml_string_copy(gameCodeText, xmlGameCode, xml_string_length(gameCodeText));
+                    tempSize = strlen(xmlGameCode);
+                    xmlGameCode[tempSize] = 0;
 
-	return pos;
+                    /*Get XML ROM version/revision*/
+                    struct xml_node* gameRev = xml_node_child(rootRom, 2);
+                    struct xml_string* gameRevText = xml_node_content(gameRev);
+                    uint8_t* xmlRev = calloc(xml_string_length(gameRevText) + 1, sizeof(uint8_t));
+                    xml_string_copy(gameRevText, xmlRev, xml_string_length(gameRevText));
+                    tempSize = strlen(xmlRev);
+                    xmlRev[tempSize] = 0;
 
-}
+                    /*Get XML ROM checksum (global)*/
+                    struct xml_node* gameChecksum = xml_node_child(rootRom, 3);
+                    struct xml_string* gameCSText = xml_node_content(gameChecksum);
+                    uint8_t* xmlChecksum = calloc(xml_string_length(gameCSText) + 1, sizeof(uint8_t));
+                    xml_string_copy(gameCSText, xmlChecksum, xml_string_length(gameCSText));
+                    tempSize = strlen(xmlChecksum);
+                    xmlChecksum[tempSize] = 0;
 
-unsigned int WriteNoteEventOff(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst)
-{
-	int deltaValue;
+                    /*Get XML ROM hash (CRC32)*/
+                    struct xml_node* gameCrc = xml_node_child(rootRom, 4);
+                    struct xml_string* gameCrcText = xml_node_content(gameCrc);
+                    uint8_t* xmlCrc = calloc(xml_string_length(gameCrcText) + 1, sizeof(uint8_t));
+                    xml_string_copy(gameCrcText, xmlCrc, xml_string_length(gameCrcText));
+                    tempSize = strlen(xmlCrc);
+                    xmlCrc[tempSize] = 0;
 
-	deltaValue = WriteDeltaTime(buffer, pos, delay);
-	pos += deltaValue;
+                    /*Get XML ROM sound engine/format*/
+                    struct xml_node* gameFormat = xml_node_child(rootRom, 5);
+                    struct xml_string* gameFormatText = xml_node_content(gameFormat);
+                    uint8_t* xmlFormat = calloc(xml_string_length(gameFormatText) + 1, sizeof(uint8_t));
+                    xml_string_copy(gameFormatText, xmlFormat, xml_string_length(gameFormatText));
+                    tempSize = strlen(xmlFormat);
+                    xmlFormat[tempSize] = 0;
 
-	Write8B(&buffer[pos], note);
-	pos++;
-	Write8B(&buffer[pos], 0);
-	pos++;
-	return pos;
-}
+                    /*Get XML ROM part*/
+                    struct xml_node* gamePart = xml_node_child(rootRom, 6);
+                    struct xml_string* gamePartText = xml_node_content(gamePart);
+                    uint8_t* xmlPart = calloc(xml_string_length(gamePartText) + 1, sizeof(uint8_t));
+                    xml_string_copy(gamePartText, xmlPart, xml_string_length(gamePartText));
+                    tempSize = strlen(xmlPart);
+                    xmlPart[tempSize] = 0;
 
-void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameters[4][50])
-{
-	if (numBanks > 1)
-	{
-		multiBanks = 1;
-	}
-	for (curBank = 0; curBank < numBanks; curBank++)
-	{
-		switch (format)
-		{
-		case AudioArts:
-			AAProc(banks[curBank]);
-			break;
-		case Climax:
-			IMEDProc(parameters);
-			break;
-		case David_Whittaker:
-			DWProc(banks[curBank]);
-			break;
-		case GHX:
-			GHXProc(banks[curBank]);
-			break;
-		case Hirokazu_Tanaka:
-			NintProc(banks[curBank], parameters);
-			break;
-		case Hiroshi_Wada:
-			MM1Proc(banks[curBank]);
-			break;
-		case Mark_Cooksey:
-			MCProc(banks[curBank]);
-			break;
-		case Martin_Walker:
-			MWProc(banks[curBank]);
-			break;
-		case MIDI:
-			MIDProc();
-			break;
-		case Paragon_5:
-			P5Proc(banks[curBank]);
-			break;
-		case Tiertex:
-			TTProc(banks[curBank], parameters);
-			break;
-		default:
-			MIDProc();
-			break;
-		}
-	}
+                    /*Get XML ROM banks*/
+                    struct xml_node* gameBanks = xml_node_child(rootRom, 7);
+                    struct xml_string* gameBanksText = xml_node_content(gameBanks);
+                    uint8_t* xmlBanks = calloc(xml_string_length(gameBanksText) + 1, sizeof(uint8_t));
+                    xml_string_copy(gameBanksText, xmlBanks, xml_string_length(gameBanksText));
+                    tempSize = strlen(xmlBanks);
+                    xmlBanks[tempSize] = 0;
 
-	if (rom != NULL)
-	{
-		fclose(rom);
-	}
+                    /*Get XML ROM parameters*/
+                    struct xml_node* gameParameters = xml_node_child(rootRom, 8);
+                    struct xml_string* gameParamText = xml_node_content(gameParameters);
+                    uint8_t* xmlParameters = calloc(xml_string_length(gameParamText) + 1, sizeof(uint8_t));
+                    xml_string_copy(gameParamText, xmlParameters, xml_string_length(gameParamText));
+                    tempSize = strlen(xmlParameters);
+                    xmlParameters[tempSize] = 0;
+
+                    /*Check values*/
+                    tempCrc = strtoul(xmlCrc, NULL, 16);
+                    tempCS = strtoul(xmlChecksum, NULL, 16);
+                    tempVer = strtoul(xmlRev, NULL, 16);
+
+                    /*Check if the ROM matches the current XML entry*/
+                    if (!strcmp(xmlGameCode, gameCode) && gameCode[0] != 0)
+                    {
+                        romMatch = 2;
+                        foundROM = xmlName;
+                        itemNo = i;
+                        curPart = xmlPart;
+                        bankString = xmlBanks;
+                        paramString = xmlParameters;
+                        formatString = xmlFormat;
+                        break;
+                    }
+                }
+            }
+
+
+            
+            if (romMatch == 1)
+            {
+                printf("Identified ROM: \"%s\"\n", foundROM);
+            }
+
+            else if (romMatch == 2)
+            {
+                printf("Exact match not found. Using close match: \"%s\"\n", foundROM);
+            }
+
+            else
+            {
+                printf("ERROR: Unknown or unsupported ROM!\n");
+                exit(-1);
+            }
+
+            /*Get the bank information*/
+            i = 0;
+            j = 0;
+            z = 0;
+
+            curTempPart = malloc(sizeof(unsigned int));
+            while (bankString[i] != 0)
+            {
+                if (bankString[i] != ',')
+                {
+                    curTempPart[j] = bankString[i];
+                    j++;
+                    i++;
+                }
+                else if (bankString[i] == ',')
+                {
+                    curTempPart[j] = 0;
+                    banks[z] = strtoul(curTempPart, NULL, 16);
+                    numBanks++;
+                    j = 0;
+                    z++;
+                    i++;
+                }
+            }
+            curTempPart[j] = 0;
+            banks[z] = strtoul(curTempPart, NULL, 16);
+            numBanks++;
+
+            /*If there are multiple "part" options available...*/
+            /*First, get the total number of options*/
+            if (curPart[0] != 0)
+            {
+                i = 0;
+                curTempPart = malloc(sizeof(unsigned int));
+                while (curPart[i + 2] != '=')
+                {
+                    curTempPart[i] = curPart[i + 2];
+                    i++;
+                }
+                curTempPart[i] = 0;
+                numParts = strtoul(curTempPart, NULL, 16);
+
+                /*Prompt the user to select an option*/
+                printf("%i part options are available. Please select one of the following choices:\n", numParts);
+
+                curTempPart = malloc(sizeof(unsigned int));
+                /*Now extract the information*/
+                for (i = 0; i < numParts; i++)
+                {
+                    struct xml_node* rootRom = xml_node_child(root, itemNo + i);
+                    struct xml_string* rom = xml_node_name(rootRom);
+
+                    /*Get XML ROM part*/
+                    struct xml_node* gamePart = xml_node_child(rootRom, 6);
+                    struct xml_string* gamePartText = xml_node_content(gamePart);
+                    uint8_t* xmlPart = calloc(xml_string_length(gamePartText) + 1, sizeof(uint8_t));
+                    xml_string_copy(gamePartText, xmlPart, xml_string_length(gamePartText));
+                    tempSize = strlen(xmlPart);
+                    xmlPart[tempSize] = 0;
+
+                    j = 0;
+                    while (xmlPart[j] != '=')
+                    {
+                        j++;
+                    }
+
+                    z = 0;
+                    curTempPart = xmlPart + j + 1;
+                    printf("%i: %s\n", (i + 1), curTempPart);
+                }
+
+                scanf("%d", &charGet);
+
+                if (charGet > numParts || charGet < 1)
+                {
+                    printf("ERROR: Invalid argument!\n");
+                    exit(1);
+                }
+
+                /*Get the current part's XML data*/
+                struct xml_node* rootRom = xml_node_child(root, itemNo + (charGet - 1));
+                struct xml_string* rom = xml_node_name(rootRom);
+
+                /*Get XML ROM name*/
+                struct xml_node* gameName = xml_node_child(rootRom, 0);
+                struct xml_string* gameNameText = xml_node_content(gameName);
+                uint8_t* xmlName = calloc(xml_string_length(gameNameText) + 1, sizeof(uint8_t));
+                xml_string_copy(gameNameText, xmlName, xml_string_length(gameNameText));
+                tempSize = strlen(xmlName);
+                xmlName[tempSize] = 0;
+
+                /*Get XML ROM game code*/
+                struct xml_node* gameCodeVar = xml_node_child(rootRom, 1);
+                struct xml_string* gameCodeText = xml_node_content(gameCodeVar);
+                uint8_t* xmlGameCode = calloc(xml_string_length(gameCodeText) + 1, sizeof(uint8_t));
+                xml_string_copy(gameCodeText, xmlGameCode, xml_string_length(gameCodeText));
+                tempSize = strlen(xmlGameCode);
+                xmlGameCode[tempSize] = 0;
+
+                /*Get XML ROM version/revision*/
+                struct xml_node* gameRev = xml_node_child(rootRom, 2);
+                struct xml_string* gameRevText = xml_node_content(gameRev);
+                uint8_t* xmlRev = calloc(xml_string_length(gameRevText) + 1, sizeof(uint8_t));
+                xml_string_copy(gameRevText, xmlRev, xml_string_length(gameRevText));
+                tempSize = strlen(xmlRev);
+                xmlRev[tempSize] = 0;
+
+                /*Get XML ROM checksum (global)*/
+                struct xml_node* gameChecksum = xml_node_child(rootRom, 3);
+                struct xml_string* gameCSText = xml_node_content(gameChecksum);
+                uint8_t* xmlChecksum = calloc(xml_string_length(gameCSText) + 1, sizeof(uint8_t));
+                xml_string_copy(gameCSText, xmlChecksum, xml_string_length(gameCSText));
+                tempSize = strlen(xmlChecksum);
+                xmlChecksum[tempSize] = 0;
+
+                /*Get XML ROM hash (CRC32)*/
+                struct xml_node* gameCrc = xml_node_child(rootRom, 4);
+                struct xml_string* gameCrcText = xml_node_content(gameCrc);
+                uint8_t* xmlCrc = calloc(xml_string_length(gameCrcText) + 1, sizeof(uint8_t));
+                xml_string_copy(gameCrcText, xmlCrc, xml_string_length(gameCrcText));
+                tempSize = strlen(xmlCrc);
+                xmlCrc[tempSize] = 0;
+
+                /*Get XML ROM sound engine/format*/
+                struct xml_node* gameFormat = xml_node_child(rootRom, 5);
+                struct xml_string* gameFormatText = xml_node_content(gameFormat);
+                uint8_t* xmlFormat = calloc(xml_string_length(gameFormatText) + 1, sizeof(uint8_t));
+                xml_string_copy(gameFormatText, xmlFormat, xml_string_length(gameFormatText));
+                tempSize = strlen(xmlFormat);
+                xmlFormat[tempSize] = 0;
+
+                /*Get XML ROM part*/
+                struct xml_node* gamePart = xml_node_child(rootRom, 6);
+                struct xml_string* gamePartText = xml_node_content(gamePart);
+                uint8_t* xmlPart = calloc(xml_string_length(gamePartText) + 1, sizeof(uint8_t));
+                xml_string_copy(gamePartText, xmlPart, xml_string_length(gamePartText));
+                tempSize = strlen(xmlPart);
+                xmlPart[tempSize] = 0;
+
+                /*Get XML ROM banks*/
+                struct xml_node* gameBanks = xml_node_child(rootRom, 7);
+                struct xml_string* gameBanksText = xml_node_content(gameBanks);
+                uint8_t* xmlBanks = calloc(xml_string_length(gameBanksText) + 1, sizeof(uint8_t));
+                xml_string_copy(gameBanksText, xmlBanks, xml_string_length(gameBanksText));
+                tempSize = strlen(xmlBanks);
+                xmlBanks[tempSize] = 0;
+
+                /*Get XML ROM parameters*/
+                struct xml_node* gameParameters = xml_node_child(rootRom, 8);
+                struct xml_string* gameParamText = xml_node_content(gameParameters);
+                uint8_t* xmlParameters = calloc(xml_string_length(gameParamText) + 1, sizeof(uint8_t));
+                xml_string_copy(gameParamText, xmlParameters, xml_string_length(gameParamText));
+                tempSize = strlen(xmlParameters);
+                xmlParameters[tempSize] = 0;
+
+                bankString = xmlBanks;
+                paramString = xmlParameters;
+                formatString = xmlFormat;
+
+                /*Get the bank information*/
+                numBanks = 0;
+                i = 0;
+                j = 0;
+                z = 0;
+
+                curTempPart = malloc(sizeof(unsigned int));
+                while (bankString[i] != 0)
+                {
+                    if (bankString[i] != ',')
+                    {
+                        curTempPart[j] = bankString[i];
+                        j++;
+                        i++;
+                    }
+                    else if (bankString[i] == ',')
+                    {
+                        curTempPart[j] = 0;
+                        banks[z] = strtoul(curTempPart, NULL, 16);
+                        numBanks++;
+                        j = 0;
+                        z++;
+                        i++;
+                    }
+                }
+                curTempPart[j] = 0;
+                banks[z] = strtoul(curTempPart, NULL, 16);
+                numBanks++;
+
+            }
+
+            /*Now parse the sound engine/format*/
+            if (!strcmp(formatString, "AJ_Gonzalez"))
+            {
+                driver = AJ_Gonzalez;
+            }
+            else if (!strcmp(formatString, "AudioArts"))
+            {
+                driver = AudioArts;
+            }
+            else if (!strcmp(formatString, "Beam_Software"))
+            {
+                driver = Beam_Software;
+            }
+            else if (!strcmp(formatString, "Capcom"))
+            {
+                driver = Capcom;
+            }
+            else if (!strcmp(formatString, "Climax"))
+            {
+                driver = Climax;
+            }
+            else if (!strcmp(formatString, "David_Shea"))
+            {
+                driver = David_Shea;
+            }
+            else if (!strcmp(formatString, "David_Warhol"))
+            {
+                driver = David_Warhol;
+            }
+            else if (!strcmp(formatString, "David_Whittaker"))
+            {
+                driver = David_Whittaker;
+            }
+            else if (!strcmp(formatString, "Game_Freak"))
+            {
+                driver = Game_Freak;
+            }
+            else if (!strcmp(formatString, "GHX"))
+            {
+                driver = GHX;
+            }
+            else if (!strcmp(formatString, "HAL_Laboratory"))
+            {
+                driver = HAL_Laboratory;
+            }
+            else if (!strcmp(formatString, "Hirokazu_Tanaka"))
+            {
+                driver = Hirokazu_Tanaka;
+            }
+            else if (!strcmp(formatString, "Hiroshi_Wada"))
+            {
+                driver = Hiroshi_Wada;
+            }
+            else if (!strcmp(formatString, "Hirotomo_Nakamura"))
+            {
+                driver = Hirotomo_Nakamura;
+            }
+            else if (!strcmp(formatString, "Hudson_Soft"))
+            {
+                driver = Hudson_Soft;
+            }
+            else if (!strcmp(formatString, "Imagineering"))
+            {
+                driver = Imagineering;
+            }
+            else if (!strcmp(formatString, "Jeroen_Tel"))
+            {
+                driver = Jeroen_Tel;
+            }
+            else if (!strcmp(formatString, "Konami"))
+            {
+                driver = Konami;
+            }
+            else if (!strcmp(formatString, "Kouji_Murata"))
+            {
+                driver = Kouji_Murata;
+            }
+            else if (!strcmp(formatString, "Kozue_Ishikawa"))
+            {
+                driver = Kozue_Ishikawa;
+            }
+            else if (!strcmp(formatString, "Kyouhei_Sada"))
+            {
+                driver = Kyouhei_Sada;
+            }
+            else if (!strcmp(formatString, "Mark_Cooksey"))
+            {
+                driver = Mark_Cooksey;
+            }
+            else if (!strcmp(formatString, "Martin_Walker"))
+            {
+                driver = Martin_Walker;
+            }
+            else if (!strcmp(formatString, "MIDI"))
+            {
+                driver = MIDI;
+            }
+            else if (!strcmp(formatString, "MusyX"))
+            {
+                driver = MusyX;
+            }
+            else if (!strcmp(formatString, "Natsume"))
+            {
+                driver = Natsume;
+            }
+            else if (!strcmp(formatString, "NMK"))
+            {
+                driver = NMK;
+            }
+            else if (!strcmp(formatString, "Ocean"))
+            {
+                driver = Ocean;
+            }
+            else if (!strcmp(formatString, "Paragon_5"))
+            {
+                driver = Paragon_5;
+            }
+            else if (!strcmp(formatString, "Probe_Software"))
+            {
+                driver = Probe_Software;
+            }
+            else if (!strcmp(formatString, "RARE"))
+            {
+                driver = RARE;
+            }
+            else if (!strcmp(formatString, "Ryohji_Yoshitomi"))
+            {
+                driver = Ryohji_Yoshitomi;
+            }
+            else if (!strcmp(formatString, "Sunsoft"))
+            {
+                driver = Sunsoft;
+            }
+            else if (!strcmp(formatString, "Technos_Japan"))
+            {
+                driver = Technos_Japan;
+            }
+            else if (!strcmp(formatString, "Tiertex"))
+            {
+                driver = Tiertex;
+            }
+            else if (!strcmp(formatString, "Titus_1"))
+            {
+                driver = Titus_1;
+            }
+            else if (!strcmp(formatString, "TOSE"))
+            {
+                driver = TOSE;
+            }
+            else
+            {
+                printf("ERROR: Invalid sound engine name!\n");
+                exit(1);
+            }
+
+            /*Parse the parameters*/
+            for (i = 0; i < 4; i++)
+            {
+                for (j = 0; j < 50; j++)
+                {
+                    parameters[i][j] = 0;
+                }
+            }
+
+            i = 0;
+            j = 0;
+            z = 0;
+
+            while (paramString[i] != 0)
+            {
+                if (paramString[i] != '\\')
+                {
+                    parameters[z][j] = paramString[i];
+                    i++;
+                    j++;
+                }
+                else if (paramString[i] == '\\')
+                {
+                    parameters[z][j] = 0;
+                    i++;
+                    j = 0;
+                    z++;
+                }
+            }
+
+
+            gb2MID(rom, banks, numBanks, driver, parameters);
+            printf("The operation was successfully completed!\n");
+            return 0;
+        }
+    }
 }
