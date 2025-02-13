@@ -17,6 +17,7 @@
 #include "IMAGNRNG.H"
 #include "JEROTEL.H"
 #include "KONAMI.H"
+#include "KSADA.H"
 #include "MCOOKSEY.H"
 #include "MEGAMAN1.H"
 #include "MEGAMAN2.H"
@@ -363,6 +364,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Kozue_Ishikawa:
 			WL2Proc(banks[curBank]);
+			break;
+		case Kyouhei_Sada:
+			SadaProc(banks[curBank], parameters);
 			break;
 		case Mark_Cooksey:
 			MCProc(banks[curBank]);
