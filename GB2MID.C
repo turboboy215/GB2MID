@@ -779,6 +779,10 @@ int main(int args, char* argv[])
             {
                 driver = Titus_1;
             }
+            else if (!strcmp(formatString, "Titus_2"))
+            {
+                driver = Titus_2;
+            }
             else if (!strcmp(formatString, "TOSE"))
             {
                 driver = TOSE;

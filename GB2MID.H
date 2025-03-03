@@ -36,3 +36,4 @@
 #define Sunsoft				0x23
 #define Titus_1				0x24
 #define Kyouhei_Sada		0x25
+#define Titus_2				0x26
