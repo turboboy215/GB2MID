@@ -38,6 +38,7 @@
 #include "TECHNOS.H"
 #include "TIERTEX.H"
 #include "TITUS1.H"
+#include "TITUS2.H"
 #include "TOSE.H"
 #include "WARIOL2.H"
 #define bankSize 16384
@@ -412,6 +413,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Titus_1:
 			Tit1Proc(banks[curBank]);
+			break;
+		case Titus_2:
+			Tit2Proc(banks[curBank], parameters);
 			break;
 		case TOSE:
 			TOSEProc(parameters);
