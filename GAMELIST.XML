@@ -1606,6 +1606,17 @@
 		<parameters>CFG/Blodia (J).cfg</parameters>
 	</rom>
 	<rom>
+		<name>Blues Brothers, The - Jukebox Adventure (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C801</checksum>
+        <crc32>f1c0fb1d</crc32>
+        <format>Titus_2</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>1\CFG/Blues Brothers, The - Jukebox Adventure (U).cfg</parameters>
+	</rom>
+	<rom>
 		<name>Blues Brothers, The (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -8052,6 +8063,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Lamborghini American Challenge (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E63E</checksum>
+        <crc32>675e1309</crc32>
+        <format>Titus_2</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>1\CFG/Lamborghini American Challenge (U) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Las Vegas Cool Hand (U) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -8600,6 +8622,17 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Little Indian in Big City (U) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9FA7</checksum>
+        <crc32>e37e1832</crc32>
+        <format>Titus_2</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>1\CFG/Little Indian in Big City (U) [S].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Little Mermaid II, The - Pinball Frenzy (E) (M5) [C][!]</name>
@@ -12837,6 +12870,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Prehistorik Man (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9B0A</checksum>
+        <crc32>727d5509</crc32>
+        <format>Titus_2</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>1\CFG/Prehistorik Man (J).cfg</parameters>
+	</rom>
+	<rom>
+		<name>Prehistorik Man (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B26A</checksum>
+        <crc32>c5204156</crc32>
+        <format>Titus_2</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>1\CFG/Prehistorik Man (U).cfg</parameters>
+	</rom>
+	<rom>
 		<name>Primal Rage (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -13099,6 +13154,28 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Quest for Camelot (E) (M6) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>17A7</checksum>
+        <crc32>ce55a4de</crc32>
+        <format>Titus_2</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Quest for Camelot (U) (M3) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7ADE</checksum>
+        <crc32>d903db7d</crc32>
+        <format>Titus_2</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Race Drivin' (U) [!]</name>
@@ -13396,6 +13473,28 @@
 		<part></part>
 		<banks>7</banks>
 		<parameters>CFG/Roadster (J).cfg</parameters>
+	</rom>
+	<rom>
+		<name>Roadsters Trophy (E) (M6) [C][!]</name>
+		<gamecode>ARRP</gamecode>
+		<rev>0</rev>
+		<checksum>CFCD</checksum>
+        <crc32>717b3525</crc32>
+        <format>Titus_2</format>
+		<part></part>
+		<banks>3E</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Roadsters Trophy (U) (M6) [C][!]</name>
+		<gamecode>ARRE</gamecode>
+		<rev>0</rev>
+		<checksum>CFCD</checksum>
+        <crc32>38b022be</crc32>
+        <format>Titus_2</format>
+		<part></part>
+		<banks>3E</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Robin Hood - Prince of Thieves (E)</name>
@@ -16047,6 +16146,17 @@
 		<part></part>
 		<banks>23</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Superman (U) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>28E9</checksum>
+        <crc32>358e0091</crc32>
+        <format>Titus_2</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>2\CFG/Superman (U) [S][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Survival Kids - Kotou no Boukensha (J) [C][!]</name>
