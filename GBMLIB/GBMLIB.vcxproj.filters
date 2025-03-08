@@ -135,6 +135,24 @@
     <ClInclude Include="SUNSOFT.H">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TITUS1.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KSADA.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SQZDEC.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TITUSDEC.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TITUS2.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SQUARE.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SHARED.C">
@@ -156,9 +174,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AUDIOART.C">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="RNC.C">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CLIMAX.C">
@@ -249,6 +264,27 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SUNSOFT.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TITUS1.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KSADA.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RNC.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SQZDEC.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TITUSDEC.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TITUS2.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SQUARE.C">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

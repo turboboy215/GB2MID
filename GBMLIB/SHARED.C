@@ -34,6 +34,7 @@
 #include "RARE.H"
 #include "REALTIME.H"
 #include "ROLAN.H"
+#include "SQUARE.H"
 #include "SUNSOFT.H"
 #include "TECHNOS.H"
 #include "TIERTEX.H"
@@ -401,6 +402,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Ryohji_Yoshitomi:
 			M2Proc(banks[curBank]);
+			break;
+		case Square:
+			SqrProc(banks[curBank]);
 			break;
 		case Sunsoft:
 			SSProc(banks[curBank]);

@@ -39,6 +39,7 @@
 #define Titus_1				0x24
 #define Kyouhei_Sada		0x25
 #define Titus_2				0x26
+#define Square				0x27
 
 extern FILE * rom, * mid;
 extern long masterBank;
