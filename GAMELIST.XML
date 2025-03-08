@@ -4818,6 +4818,72 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Final Fantasy 4 (Unl)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B5AF</checksum>
+        <crc32>a6b6e233</crc32>
+        <format>Square</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Final Fantasy 4 (Unl) [a1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B5AF</checksum>
+        <crc32>9b22a577</crc32>
+        <format>Square</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Final Fantasy Adventure (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D9F2</checksum>
+        <crc32>18c78b3a</crc32>
+        <format>Square</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Final Fantasy Legend II (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D970</checksum>
+        <crc32>58314182</crc32>
+        <format>Square</format>
+		<part></part>
+		<banks>F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Final Fantasy Legend III (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E1A6</checksum>
+        <crc32>3e454710</crc32>
+        <format>Square</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Final Fantasy Legend, The (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>BE66</checksum>
+        <crc32>8046148f</crc32>
+        <format>Square</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Fire Fighter (U)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -9119,6 +9185,28 @@
 		<parameters>CFG/Majokko Mari-chan no Kisekae Monogatari (J) (V1.1) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Makai Toushi SaGa (J) (V1.0)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1CD0</checksum>
+        <crc32>131b09f2</crc32>
+        <format>Square</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Makai Toushi SaGa (J) (V1.1) [!]</name>
+		<gamecode></gamecode>
+		<rev>1</rev>
+		<checksum>23D4</checksum>
+        <crc32>1953820f</crc32>
+        <format>Square</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Malibu Beach Volleyball (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -10480,6 +10568,39 @@
         <format>David_Warhol</format>
 		<part></part>
 		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mystic Quest (E) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>FE26</checksum>
+        <crc32>57d95c92</crc32>
+        <format>Square</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mystic Quest (F)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D9F2</checksum>
+        <crc32>b6e134af</crc32>
+        <format>Square</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mystic Quest (G) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2386</checksum>
+        <crc32>0351b9a6</crc32>
+        <format>Square</format>
+		<part></part>
+		<banks>10</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -14157,6 +14278,39 @@
 		<parameters>S</parameters>
 	</rom>
 	<rom>
+		<name>SaGa 2 - Hihou Densetsu (J) (V1.0)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3D47</checksum>
+        <crc32>18055bb9</crc32>
+        <format>Square</format>
+		<part></part>
+		<banks>F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>SaGa 2 - Hihou Densetsu (J) (V1.1)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>414E</checksum>
+        <crc32>f6cfcfb1</crc32>
+        <format>Square</format>
+		<part></part>
+		<banks>F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>SaGa 3 - Jikuu no Hasha (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5CBE</checksum>
+        <crc32>575d6d9d</crc32>
+        <format>Square</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Sakura Taisen GB - Geki Hana Kumi Nyuutai! (J) [C][!]</name>
 		<gamecode>BRJJ</gamecode>
 		<rev>0</rev>
@@ -14287,6 +14441,17 @@
 		<part></part>
 		<banks>1</banks>
 		<parameters>CFG/Seaside Volley (J).cfg</parameters>
+	</rom>
+	<rom>
+		<name>Seiken Densetsu (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D2BA</checksum>
+        <crc32>d771c1b6</crc32>
+        <format>Square</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Sengoku Ninja-kun - Ninja Taro (J)</name>
