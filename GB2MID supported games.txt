@@ -137,6 +137,7 @@ Blaster Master - Enemy Below (U) [C][!]
 Blaster Master Boy (U)
 Blaster Master Jr. (E)
 Blodia (J)
+Blues Brothers, The - Jukebox Adventure (U)
 Blues Brothers, The (U) [!]
 Blue's Clues - Blue's Alphabet Book (U) [C][!]
 Blue's Clues - Blue's Alphabet Book (U) (V1.1) (Unreleased) [C][!]
@@ -407,6 +408,12 @@ FIFA Soccer '96 (UE) (M4) [S][!]
 FIFA Soccer '97 (UE) [S][!]
 FIFA Soccer '98 - Road to the World Cup (U) (V1.0) [S]
 FIFA Soccer '98 - Road to the World Cup (U) (V1.1) [S][!]
+Final Fantasy 4 (Unl)
+Final Fantasy 4 (Unl) [a1]
+Final Fantasy Adventure (U) [!]
+Final Fantasy Legend II (U) [!]
+Final Fantasy Legend III (U) [!]
+Final Fantasy Legend, The (U) [!]
 Fire Fighter (U)
 Fix & Foxi - Episode 1 Lupo (E) (M3) [C][!]
 Flintstones, The - Burgertime in Bedrock (E) (M5) [C][!]
@@ -659,6 +666,7 @@ Koro Koro Kirby (J) [C][!]
 Kung-Fu Master (U)
 Kyorochan Land (J)
 Kyoudai Jingi (J)
+Lamborghini American Challenge (U) [!]
 Las Vegas Cool Hand (U) [C][!]
 Laura (E) (M8) [C][!]
 Laura (E) (M8) (V1.1) (Unreleased) [C][!]
@@ -709,6 +717,7 @@ Les Razmoket - 100% Angelica (F) [C][!]
 Les Visiteurs (F) [C][!]
 Lion King, The (E)
 Lion King, The (U) [!]
+Little Indian in Big City (U) [S]
 Little Mermaid II, The - Pinball Frenzy (E) (M5) [C][!]
 Little Mermaid II, The - Pinball Frenzy (J) (Unreleased) [C][!]
 Little Mermaid II, The - Pinball Frenzy (U) (M5) [C][!]
@@ -751,6 +760,8 @@ Magical Tetris Challenge (U) [C][!]
 Magnetic Soccer (U)
 Majokko Mari-chan no Kisekae Monogatari (J) (V1.0) [C][!]
 Majokko Mari-chan no Kisekae Monogatari (J) (V1.1) [C][!]
+Makai Toushi SaGa (J) (V1.0)
+Makai Toushi SaGa (J) (V1.1) [!]
 Malibu Beach Volleyball (U) [!]
 Marie no Atelier GB (J) [C][!]
 Mario & Yoshi (E) [!]
@@ -860,6 +871,9 @@ Mummy, The (U) [C][!]
 Musashi Road (J)
 Mysterium (J)
 Mysterium (U)
+Mystic Quest (E) [!]
+Mystic Quest (F)
+Mystic Quest (G) [!]
 Mystical Ninja (E) [S][!]
 Mystical Ninja (U) [S][!]
 Nakayoshi Cooking Series 1 - Oishii Cake Okusan (J) [C][!]
@@ -1066,6 +1080,8 @@ Power Rangers - Time Force (U) [C][!]
 Power Spike - Pro Beach Volleyball (U) [C][!]
 Poyon no Dungeon Room (J) [C][!]
 Poyon no Dungeon Room 2 (J) [C][!]
+Prehistorik Man (J)
+Prehistorik Man (U)
 Primal Rage (U) [!]
 Prince Naseem Boxing (E) (M3) [C][!]
 Pro Darts (U) [C][!]
@@ -1087,6 +1103,8 @@ Q-bert II (UE) [!]
 Qix (JU) [!]
 Quarth (J)
 Quarth (U) [!]
+Quest for Camelot (E) (M6) [C][!]
+Quest for Camelot (U) (M3) [C][!]
 Race Drivin' (U) [!]
 Radar Mission (J)
 Radar Mission (UE) [!]
@@ -1113,6 +1131,8 @@ Rhino Rumble (U) [C][!]
 Rip-Tide Racer (E) (M5) [C][!]
 Road Rash (U) [C][!]
 Roadster (J)
+Roadsters Trophy (E) (M6) [C][!]
+Roadsters Trophy (U) (M6) [C][!]
 Robin Hood - Prince of Thieves (E)
 Robin Hood - Prince of Thieves (F)
 Robin Hood - Prince of Thieves (G) [!]
@@ -1164,6 +1184,9 @@ Rugrats - Typisch Angelica (G) [C][!]
 Sabrina - The Animated Series - Spooked! (U) [C][!]
 Sabrina - The Animated Series - Zapped! (E) (M3) [C][!]
 Sabrina - The Animated Series - Zapped! (U) [C][!]
+SaGa 2 - Hihou Densetsu (J) (V1.0)
+SaGa 2 - Hihou Densetsu (J) (V1.1)
+SaGa 3 - Jikuu no Hasha (J)
 Sakura Taisen GB - Geki Hana Kumi Nyuutai! (J) [C][!]
 Sakura Tasien GB2 - Thunder Volt Sakusen (J) [C][!]
 Same Game (J) [S]
@@ -1175,6 +1198,7 @@ Schiffe Versenken (G) (M4)
 Sea Battle (E) (M4)
 Sea-Doo Hydrocross (U) (Unreleased) [C][!]
 Seaside Volley (J)
+Seiken Densetsu (J) [!]
 Sengoku Ninja-kun - Ninja Taro (J)
 Sensible Soccer - European Champions (E) [!]
 Sesame Street Sports (E) [C][!]
@@ -1335,6 +1359,7 @@ Super Scrabble (U) [!]
 Super Snakey (J) [S]
 Supercross Freestyle (E) (M5) [C][!]
 Superman - Battle for Metropolis (Prototype - Jan 12, 2001) [C]
+Superman (U) [S][!]
 Survival Kids - Kotou no Boukensha (J) [C][!]
 Survival Kids (U) [C][!]
 Sweet Ange (J) [C][!]
@@ -1579,6 +1604,7 @@ Yuu Yuu Hakusho - Ankoku Bujutsu Kai (J)
 Yuu Yuu Hakusho - Makai no Tobira (J)
 Yuu Yuu Hakusho - Makai Touitsu (J) [S]
 Yuu Yuu Hakusho (J)
+Z - The Miracle of the Zone (J) [S]
 Zelda no Densetsu - Fushigi no Kinomi - Daichi no Shou (J) [C][!]
 Zelda no Densetsu - Fushigi no Kinomi - Jikuu no Shou (J) [C][!]
 Zelda no Densetsu - Yume o Miru Shima (J) (V1.0)
