@@ -763,6 +763,10 @@ int main(int args, char* argv[])
             {
                 driver = Ryohji_Yoshitomi;
             }
+            else if (!strcmp(formatString, "Square"))
+            {
+                driver = Square;
+            }
             else if (!strcmp(formatString, "Sunsoft"))
             {
                 driver = Sunsoft;
