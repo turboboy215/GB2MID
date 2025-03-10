@@ -55,6 +55,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>007 - The World is Not Enough (U) [C][!]</name>
+		<gamecode>BO7E</gamecode>
+		<rev>0</rev>
+		<checksum>1B49</checksum>
+        <crc32>e038e666</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>70</banks>
+		<parameters>CFG/007 - The World is Not Enough (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>10-Pin Bowling (U) (Unreleased) [M][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -108,6 +119,17 @@
 		<part></part>
 		<banks>3F</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>1942 (U) [C][!]</name>
+		<gamecode>AQ4E</gamecode>
+		<rev>0</rev>
+		<checksum>E1A5</checksum>
+        <crc32>87431672</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>CFG/1942 (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Ace Striker (J)</name>
@@ -396,6 +418,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Alice in Wonderland (E) (M4) [C][!]</name>
+		<gamecode>AIWP</gamecode>
+		<rev>0</rev>
+		<checksum>BCBC</checksum>
+        <crc32>85545d81</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>78</banks>
+		<parameters>CFG/Alice in Wonderland (E) (M4) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Alice in Wonderland (U) [C][!]</name>
+		<gamecode>AIWE</gamecode>
+		<rev>0</rev>
+		<checksum>597C</checksum>
+        <crc32>3199f65f</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>78</banks>
+		<parameters>CFG/Alice in Wonderland (E) (M4) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Alien 3 (J) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -647,6 +691,28 @@
 		<part>2/2=Samples</part>
 		<banks>2</banks>
 		<parameters>S</parameters>
+	</rom>
+	<rom>
+		<name>Army Men (U) (M3) [C][!]</name>
+		<gamecode>AVCE</gamecode>
+		<rev>0</rev>
+		<checksum>E422</checksum>
+        <crc32>34411753</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>1C</banks>
+		<parameters>CFG/Army Men (U) (M3) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Army Men 2 (U) (M3) [C][!]</name>
+		<gamecode>BA2E</gamecode>
+		<rev>0</rev>
+		<checksum>C2F5</checksum>
+        <crc32>2272baca</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>2E</banks>
+		<parameters>CFG/Army Men 2 (U) (M3) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Asterix - Search for Dogmatix (E) (M6) [C][!]</name>
@@ -3509,6 +3575,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Dinosaur (E) (M5) [C][!]</name>
+		<gamecode>BDNP</gamecode>
+		<rev>0</rev>
+		<checksum>BB20</checksum>
+        <crc32>0aa8d0cc</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>7D</banks>
+		<parameters>CFG/Dinosaur (E) (M5) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Dinosaur (U) [C][!]</name>
+		<gamecode>BDNE</gamecode>
+		<rev>0</rev>
+		<checksum>475F</checksum>
+        <crc32>276ecaae</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>7D</banks>
+		<parameters>CFG/Dinosaur (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Dinosaur (U) [C][a1][!]</name>
+		<gamecode>BDNE</gamecode>
+		<rev>0</rev>
+		<checksum>B375</checksum>
+        <crc32>0b087fe7</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>7D</banks>
+		<parameters>CFG/Dinosaur (U) [C][a1][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Disney's Mulan (U) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -3771,6 +3870,50 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Doug - Le Grande Aventure (F) [C][!]</name>
+		<gamecode>BDUF</gamecode>
+		<rev>0</rev>
+		<checksum>7504</checksum>
+        <crc32>a9e62f1a</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>CFG/Doug - Le Grande Aventure (F) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Doug's Big Game (E) [C][!]</name>
+		<gamecode>BDUP</gamecode>
+		<rev>0</rev>
+		<checksum>F4FC</checksum>
+        <crc32>b6ffbcca</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>CFG/Doug's Big Game (E) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Doug's Big Game (G) [C][!]</name>
+		<gamecode>BDUD</gamecode>
+		<rev>0</rev>
+		<checksum>7E9B</checksum>
+        <crc32>5dc254d1</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>CFG/Doug's Big Game (G) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Doug's Big Game (U) [C][!]</name>
+		<gamecode>BDUE</gamecode>
+		<rev>0</rev>
+		<checksum>9E46</checksum>
+        <crc32>08e3d065</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>CFG/Doug's Big Game (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Dr. Franken (E) (M7)</name>
@@ -5390,6 +5533,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Games Frenzy (E) (M3) [C][!]</name>
+		<gamecode>BFGP</gamecode>
+		<rev>0</rev>
+		<checksum>88BE</checksum>
+        <crc32>308a4ccb</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>25</banks>
+		<parameters>CFG/Games Frenzy (E) (M3) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Ganbare! Nippon Olympic 2000 (J) [C]</name>
 		<gamecode>B3HJ</gamecode>
 		<rev>0</rev>
@@ -5784,6 +5938,17 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters>CFG/Goal! (U) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Gobs of Games (U) (M3) [C][!]</name>
+		<gamecode>BFGE</gamecode>
+		<rev>0</rev>
+		<checksum>1A21</checksum>
+        <crc32>2e61c391</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>25</banks>
+		<parameters>CFG/Gobs of Games (U) (M3) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>God Medicine (J)</name>
@@ -8140,6 +8305,39 @@
 		<parameters>1\CFG/Lamborghini American Challenge (U) [!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Las Super Nenas - El Malvado Mojo Jojo (S) [C][!]</name>
+		<gamecode>BJJS</gamecode>
+		<rev>0</rev>
+		<checksum>B812</checksum>
+        <crc32>efe652bf</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>5D</banks>
+		<parameters>CFG/Las Super Nenas - El Malvado Mojo Jojo (S) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Las Super Nenas - Lucha Con Ese (S) [C][!]</name>
+		<gamecode>BBHS</gamecode>
+		<rev>0</rev>
+		<checksum>34FB</checksum>
+        <crc32>7ba87c11</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>75</banks>
+		<parameters>CFG/Las Super Nenas - Lucha Con Ese (S) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Las Super Nenas - Panico en Townsville (S) [C][!]</name>
+		<gamecode>BPTS</gamecode>
+		<rev>0</rev>
+		<checksum>AEBA</checksum>
+        <crc32>03edb574</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>52</banks>
+		<parameters>CFG/Las Super Nenas - Panico en Townsville (S) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Las Vegas Cool Hand (U) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -8732,6 +8930,17 @@
 		<part></part>
 		<banks>2,3</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Little Nicky (U) [C][!]</name>
+		<gamecode>BLNE</gamecode>
+		<rev>0</rev>
+		<checksum>CE76</checksum>
+        <crc32>27310900</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>44</banks>
+		<parameters>CFG/Little Nicky (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Lodoss Tou Senki - Eiyuu Kishiden GB (J) [C][!]</name>
@@ -10208,6 +10417,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Moon Patrol & Spy Hunter (U) [C][!]</name>
+		<gamecode>ADUE</gamecode>
+		<rev>0</rev>
+		<checksum>5E9C</checksum>
+        <crc32>f40199c9</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part>1/1=Spy Hunter</part>
+		<banks>11</banks>
+		<parameters>CFG/Moon Patrol & Spy Hunter (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Mortal Kombat (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -10250,6 +10470,28 @@
 		<part></part>
 		<banks>9</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mortal Kombat 4 (E) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>06C8</checksum>
+        <crc32>87588725</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>9</banks>
+		<parameters>CFG/Mortal Kombat 4 (E) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Mortal Kombat 4 (U) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0632</checksum>
+        <crc32>4eb71448</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>9</banks>
+		<parameters>CFG/Mortal Kombat 4 (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Mortal Kombat I & II (J)</name>
@@ -11064,6 +11306,28 @@
 		<part></part>
 		<banks>F,10</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>New Batman Adventures, The - Chaos in Gotham (E) (M6) [C][!]</name>
+		<gamecode>BBBP</gamecode>
+		<rev>0</rev>
+		<checksum>343D</checksum>
+        <crc32>e025067b</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>CFG/New Batman Adventures, The - Chaos in Gotham (E) (M6) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>New Batman Adventures, The - Chaos in Gotham (U) [C][!]</name>
+		<gamecode>BBBE</gamecode>
+		<rev>0</rev>
+		<checksum>3368</checksum>
+        <crc32>b241a4f3</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>CFG/New Batman Adventures, The - Chaos in Gotham (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>New SD Gundam (J) [S]</name>
@@ -12848,6 +13112,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Pooh and Tigger's Hunny Safari (E) (M6) [C]</name>
+		<gamecode>BP8P</gamecode>
+		<rev>0</rev>
+		<checksum>6A99</checksum>
+        <crc32>8505d139</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>43</banks>
+		<parameters>CFG/Pooh and Tigger's Hunny Safari (E) (M6) [C].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Pooh and Tigger's Hunny Safari (U) [C][!]</name>
+		<gamecode>BP8E</gamecode>
+		<rev>0</rev>
+		<checksum>526A</checksum>
+        <crc32>622690da</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>43</banks>
+		<parameters>CFG/Pooh and Tigger's Hunny Safari (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Pop 'N TwinBee (E) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -12967,6 +13253,193 @@
 		<part></part>
 		<banks>2</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Powerpuff Girls, The - Bad Mojo Jojo (E) [C][!]</name>
+		<gamecode>BJJP</gamecode>
+		<rev>0</rev>
+		<checksum>ED6B</checksum>
+        <crc32>75d1063a</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>5D</banks>
+		<parameters>CFG/Powerpuff Girls, The - Bad Mojo Jojo (E) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Powerpuff Girls, The - Bad Mojo Jojo (E) (Unreleased) [C][!]</name>
+		<gamecode>BJJX</gamecode>
+		<rev>0</rev>
+		<checksum>C962</checksum>
+        <crc32>24b23af1</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>5E</banks>
+		<parameters>CFG/Powerpuff Girls, The - Bad Mojo Jojo (E) (Unreleased) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Powerpuff Girls, The - Bad Mojo Jojo (U) (V1.0) [C][!]</name>
+		<gamecode>BJJE</gamecode>
+		<rev>0</rev>
+		<checksum>F13C</checksum>
+        <crc32>834caf7a</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>5E</banks>
+		<parameters>CFG/Powerpuff Girls, The - Bad Mojo Jojo (U) (V1.0) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Powerpuff Girls, The - Bad Mojo Jojo (U) (V1.1) [C][!]</name>
+		<gamecode>BJJE</gamecode>
+		<rev>1</rev>
+		<checksum>13A0</checksum>
+        <crc32>548a287a</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>5F</banks>
+		<parameters>CFG/Powerpuff Girls, The - Bad Mojo Jojo (U) (V1.1) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Powerpuff Girls, The - Bad Mojo Jojo (U) (V1.2) [C][!]</name>
+		<gamecode>BJJE</gamecode>
+		<rev>2</rev>
+		<checksum>B60A</checksum>
+        <crc32>a111704f</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>5C</banks>
+		<parameters>CFG/Powerpuff Girls, The - Bad Mojo Jojo (U) (V1.2) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Powerpuff Girls, The - Battle Him (E) [C][!]</name>
+		<gamecode>BBHP</gamecode>
+		<rev>0</rev>
+		<checksum>6510</checksum>
+        <crc32>788859ae</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>75</banks>
+		<parameters>CFG/Powerpuff Girls, The - Battle Him (E) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Powerpuff Girls, The - Battle Him (U) (V1.0) [C][!]</name>
+		<gamecode>BBHE</gamecode>
+		<rev>0</rev>
+		<checksum>4707</checksum>
+        <crc32>d8455984</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>78</banks>
+		<parameters>CFG/Powerpuff Girls, The - Battle Him (U) (V1.0) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Powerpuff Girls, The - Battle Him (U) (V1.1) [C][!]</name>
+		<gamecode>BBHE</gamecode>
+		<rev>1</rev>
+		<checksum>26DA</checksum>
+        <crc32>e3d6964c</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>75</banks>
+		<parameters>CFG/Powerpuff Girls, The - Battle Him (U) (V1.1) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Powerpuff Girls, The - Bulle Contre Lui (F) [C][!]</name>
+		<gamecode>BBHF</gamecode>
+		<rev>0</rev>
+		<checksum>3021</checksum>
+        <crc32>7085270c</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>76</banks>
+		<parameters>CFG/Powerpuff Girls, The - Bulle Contre Lui (F) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Powerpuff Girls, The - Il Terible Mojo Jojo (I) (Unreleased) [C][!]</name>
+		<gamecode>BJJI</gamecode>
+		<rev>0</rev>
+		<checksum>A3FC</checksum>
+        <crc32>5c265103</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>5D</banks>
+		<parameters>CFG/Powerpuff Girls, The - Il Terible Mojo Jojo (I) (Unreleased) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Powerpuff Girls, The - L'Affreux Mojo Mojo (F) [C][!]</name>
+		<gamecode>BJJF</gamecode>
+		<rev>0</rev>
+		<checksum>876D</checksum>
+        <crc32>256d166f</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>5C</banks>
+		<parameters>CFG/Powerpuff Girls, The - L'Affreux Mojo Mojo (F) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Powerpuff Girls, The - Paint the Townsville Green (E) [C][!]</name>
+		<gamecode>BPTP</gamecode>
+		<rev>0</rev>
+		<checksum>9A6D</checksum>
+        <crc32>98e4b0c4</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>52</banks>
+		<parameters>CFG/Powerpuff Girls, The - Paint the Townsville Green (E) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Powerpuff Girls, The - Paint the Townsville Green (E) (Unreleased) [C][!]</name>
+		<gamecode>BPTX</gamecode>
+		<rev>0</rev>
+		<checksum>AF1E</checksum>
+        <crc32>310b52f7</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>53</banks>
+		<parameters>CFG/Powerpuff Girls, The - Paint the Townsville Green (E) (Unreleased) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Powerpuff Girls, The - Paint the Townsville Green (U) (V1.0) [C][!]</name>
+		<gamecode>BPTE</gamecode>
+		<rev>0</rev>
+		<checksum>7961</checksum>
+        <crc32>9d47261a</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>54</banks>
+		<parameters>CFG/Powerpuff Girls, The - Paint the Townsville Green (U) (V1.0) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Powerpuff Girls, The - Paint the Townsville Green (U) (V1.1) [C][!]</name>
+		<gamecode>BPTE</gamecode>
+		<rev>1</rev>
+		<checksum>6821</checksum>
+        <crc32>295b3646</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>54</banks>
+		<parameters>CFG/Powerpuff Girls, The - Paint the Townsville Green (U) (V1.1) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Powerpuff Girls, The - Paint the Townsville Green (U) (V1.2) [C][!]</name>
+		<gamecode>BPTE</gamecode>
+		<rev>2</rev>
+		<checksum>6402</checksum>
+        <crc32>443367ae</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>52</banks>
+		<parameters>CFG/Powerpuff Girls, The - Paint the Townsville Green (U) (V1.2) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Powerpuff Girls, The - Panique A Townsville (F) [C][!]</name>
+		<gamecode>BPTF</gamecode>
+		<rev>0</rev>
+		<checksum>7F26</checksum>
+        <crc32>79a417db</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>52</banks>
+		<parameters>CFG/Powerpuff Girls, The - Panique A Townsville (F) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Poyon no Dungeon Room (J) [C][!]</name>
@@ -13398,6 +13871,17 @@
 		<parameters>4CF5\2</parameters>
 	</rom>
 	<rom>
+		<name>Rampage 2 - Universal Tour (U) [C][!]</name>
+		<gamecode>AUTE</gamecode>
+		<rev>0</rev>
+		<checksum>4381</checksum>
+        <crc32>20b86f1e</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>19</banks>
+		<parameters>CFG/Rampage 2 - Universal Tour (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Razor Freestyle Scooter (U) [C][!]</name>
 		<gamecode>BRZE</gamecode>
 		<rev>0</rev>
@@ -13594,6 +14078,17 @@
 		<part></part>
 		<banks>7</banks>
 		<parameters>CFG/Roadster (J).cfg</parameters>
+	</rom>
+	<rom>
+		<name>Roadsters '98 (U) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F809</checksum>
+        <crc32>fe2995a1</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters>CFG/Roadsters '98 (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Roadsters Trophy (E) (M6) [C][!]</name>
@@ -14408,6 +14903,17 @@
 		<part></part>
 		<banks>5</banks>
 		<parameters>4062</parameters>
+	</rom>
+	<rom>
+		<name>Scooby-Doo! - Classic Creep Capers (U) [C][!]</name>
+		<gamecode>BCCE</gamecode>
+		<rev>0</rev>
+		<checksum>F7CA</checksum>
+        <crc32>e3704755</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>1B</banks>
+		<parameters>CFG/Scooby-Doo! - Classic Creep Capers (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Sea Battle (E) (M4)</name>
@@ -17897,6 +18403,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Vegas Games (E) (M3) [C][!]</name>
+		<gamecode>AVFP</gamecode>
+		<rev>0</rev>
+		<checksum>F262</checksum>
+        <crc32>81b2bb8d</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>1A</banks>
+		<parameters>CFG/Vegas Games (E) (M3) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Vegas Games (U) [C][!]</name>
+		<gamecode>AVFE</gamecode>
+		<rev>0</rev>
+		<checksum>7A90</checksum>
+        <crc32>40b5ea96</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>1A</banks>
+		<parameters>CFG/Vegas Games (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Vegas Games (U) (V1.1) (Unreleased) [C][!]</name>
+		<gamecode>AVFE</gamecode>
+		<rev>1</rev>
+		<checksum>F262</checksum>
+        <crc32>4167cf29</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>1A</banks>
+		<parameters>CFG/Vegas Games (U) (V1.1) (Unreleased) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Vegas Stakes (U) [S][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -18225,6 +18764,17 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>WCW Mayhem (U) [C][!]</name>
+		<gamecode>AYHE</gamecode>
+		<rev>0</rev>
+		<checksum>2C29</checksum>
+        <crc32>9f8620d1</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>3E</banks>
+		<parameters>CFG/WCW Mayhem (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>We're Back! - A Dinosaur's Story (U) [!]</name>
@@ -18907,6 +19457,28 @@
 		<part></part>
 		<banks>A</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>X-Men - Wolverine's Rage (E) [C][!]</name>
+		<gamecode>BWOP</gamecode>
+		<rev>0</rev>
+		<checksum>648C</checksum>
+        <crc32>83ad5b99</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>28</banks>
+		<parameters>CFG/X-Men - Wolverine's Rage (E) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>X-Men - Wolverine's Rage (U) [C][!]</name>
+		<gamecode>BWOE</gamecode>
+		<rev>0</rev>
+		<checksum>27FA</checksum>
+        <crc32>12fc1a6e</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>28</banks>
+		<parameters>CFG/X-Men - Wolverine's Rage (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Xtreme Sports (U) [C][!]</name>
