@@ -130,7 +130,6 @@ void M2Proc(int bank)
 		exit(-1);
 	}
 	free(romData);
-	return 0;
 }
 
 /*Convert the song data to MIDI*/

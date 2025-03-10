@@ -40,6 +40,7 @@
 #define Kyouhei_Sada		0x25
 #define Titus_2				0x26
 #define Square				0x27
+#define Digital_Eclipse_1	0x28
 
 extern FILE * rom, * mid;
 extern long masterBank;

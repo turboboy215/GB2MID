@@ -9,6 +9,7 @@
 #include "CAPCOM.H"
 #include "CLIMAX.H"
 #include "DAVDSHEA.H"
+#include "DE1.H"
 #include "DW.H"
 #include "GAMEFRK.H"
 #include "GHX.H"
@@ -330,6 +331,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case David_Whittaker:
 			DWProc(banks[curBank]);
+			break;
+		case Digital_Eclipse_1:
+			DE1Proc(banks[curBank], parameters);
 			break;
 		case Game_Freak:
 			GFProc(banks[curBank]);

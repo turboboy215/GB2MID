@@ -145,6 +145,7 @@
     <ClInclude Include="CAPCOM.H" />
     <ClInclude Include="CLIMAX.H" />
     <ClInclude Include="DAVDSHEA.H" />
+    <ClInclude Include="DE1.H" />
     <ClInclude Include="DW.H" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="GAMEFRK.H" />
@@ -193,6 +194,7 @@
     <ClCompile Include="CAPCOM.C" />
     <ClCompile Include="CLIMAX.C" />
     <ClCompile Include="DAVDSHEA.C" />
+    <ClCompile Include="DE1.C" />
     <ClCompile Include="DW.C" />
     <ClCompile Include="GAMEFRK.C" />
     <ClCompile Include="GHX.C" />

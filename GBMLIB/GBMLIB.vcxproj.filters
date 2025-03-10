@@ -153,6 +153,9 @@
     <ClInclude Include="SQUARE.H">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DE1.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SHARED.C">
@@ -285,6 +288,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SQUARE.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DE1.C">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
