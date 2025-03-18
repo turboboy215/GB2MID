@@ -41,6 +41,7 @@
 #define Titus_2				0x26
 #define Square				0x27
 #define Digital_Eclipse_1	0x28
+#define Lufia				0x29
 
 extern FILE * rom, * mid;
 extern long masterBank;

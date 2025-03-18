@@ -374,6 +374,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case Kyouhei_Sada:
 			SadaProc(banks[curBank], parameters);
 			break;
+		case Lufia:
+			LufiaProc(banks[curBank], parameters);
+			break;
 		case Mark_Cooksey:
 			MCProc(banks[curBank]);
 			break;
