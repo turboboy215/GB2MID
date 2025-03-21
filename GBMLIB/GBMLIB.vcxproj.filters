@@ -33,6 +33,138 @@
     <ClInclude Include="TIERTEX.H">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GHX.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AUDIOART.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RNC.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLIMAX.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MWALKER.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MEGAMAN1.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DW.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NINTENDO.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PARAGON5.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OCEAN.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MEGAMAN2.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MEGAMAN3.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IMAGNRNG.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPCOM.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KONAMI.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AJG.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HAL.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="REALTIME.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="METROID2.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RARE.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GAMEFRK.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="JEROTEL.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WARIOL2.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PROBE.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ROLAN.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TECHNOS.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TOSE.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DAVDSHEA.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NATSUME.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BEAM.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HUDSON.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MUSYX.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WAV.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SUNSOFT.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TITUS1.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KSADA.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SQZDEC.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TITUSDEC.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TITUS2.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SQUARE.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DE1.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LUFIA.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BGDEC.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CUBE.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SHARED.C">
@@ -48,6 +180,135 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TIERTEX.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GHX.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AUDIOART.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLIMAX.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MWALKER.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MEGAMAN1.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DW.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NINTENDO.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PARAGON5.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OCEAN.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MEGAMAN2.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MEGAMAN3.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IMAGNRNG.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CAPCOM.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KONAMI.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AJG.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HAL.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="REALTIME.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="METROID2.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RARE.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GAMEFRK.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JEROTEL.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WARIOL2.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PROBE.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ROLAN.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TECHNOS.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TOSE.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DAVDSHEA.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NATSUME.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BEAM.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HUDSON.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MUSYX.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SUNSOFT.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TITUS1.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KSADA.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RNC.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SQZDEC.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TITUSDEC.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TITUS2.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SQUARE.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DE1.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LUFIA.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CUBE.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BGDEC.C">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

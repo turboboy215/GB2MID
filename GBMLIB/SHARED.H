@@ -42,6 +42,7 @@
 #define Square				0x27
 #define Digital_Eclipse_1	0x28
 #define Lufia				0x29
+#define Cube				0x2A
 
 extern FILE * rom, * mid;
 extern long masterBank;

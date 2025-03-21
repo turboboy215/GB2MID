@@ -8,6 +8,7 @@
 #include "BEAM.H"
 #include "CAPCOM.H"
 #include "CLIMAX.H"
+#include "CUBE.H"
 #include "DAVDSHEA.H"
 #include "DE1.H"
 #include "DW.H"
@@ -322,6 +323,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Climax:
 			IMEDProc(parameters);
+			break;
+		case Cube:
+			CubeProc(banks[curBank], parameters);
 			break;
 		case David_Shea:
 			DShProc(banks[curBank]);

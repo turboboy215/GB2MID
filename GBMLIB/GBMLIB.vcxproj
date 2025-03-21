@@ -139,15 +139,93 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AJG.H" />
+    <ClInclude Include="AUDIOART.H" />
+    <ClInclude Include="BEAM.H" />
+    <ClInclude Include="BGDEC.H" />
+    <ClInclude Include="CAPCOM.H" />
+    <ClInclude Include="CLIMAX.H" />
+    <ClInclude Include="CUBE.H" />
+    <ClInclude Include="DAVDSHEA.H" />
+    <ClInclude Include="DE1.H" />
+    <ClInclude Include="DW.H" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="GAMEFRK.H" />
+    <ClInclude Include="GHX.H" />
+    <ClInclude Include="HAL.H" />
+    <ClInclude Include="HUDSON.H" />
+    <ClInclude Include="IMAGNRNG.H" />
+    <ClInclude Include="JEROTEL.H" />
+    <ClInclude Include="KONAMI.H" />
+    <ClInclude Include="KSADA.H" />
+    <ClInclude Include="LUFIA.H" />
     <ClInclude Include="MCOOKSEY.H" />
+    <ClInclude Include="MEGAMAN2.H" />
+    <ClInclude Include="MEGAMAN1.H" />
+    <ClInclude Include="MEGAMAN3.H" />
+    <ClInclude Include="METROID2.H" />
     <ClInclude Include="MIDI.H" />
+    <ClInclude Include="MUSYX.H" />
+    <ClInclude Include="MWALKER.H" />
+    <ClInclude Include="NATSUME.H" />
+    <ClInclude Include="NINTENDO.H" />
+    <ClInclude Include="OCEAN.H" />
+    <ClInclude Include="PARAGON5.H" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="PROBE.H" />
+    <ClInclude Include="RARE.H" />
+    <ClInclude Include="REALTIME.H" />
+    <ClInclude Include="RNC.H" />
+    <ClInclude Include="ROLAN.H" />
     <ClInclude Include="SHARED.H" />
+    <ClInclude Include="SQUARE.H" />
+    <ClInclude Include="SQZDEC.H" />
+    <ClInclude Include="SUNSOFT.H" />
+    <ClInclude Include="TECHNOS.H" />
     <ClInclude Include="TIERTEX.H" />
+    <ClInclude Include="TITUS1.H" />
+    <ClInclude Include="TITUS2.H" />
+    <ClInclude Include="TITUSDEC.H" />
+    <ClInclude Include="TOSE.H" />
+    <ClInclude Include="WARIOL2.H" />
+    <ClInclude Include="WAV.H" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AJG.C" />
+    <ClCompile Include="AUDIOART.C" />
+    <ClCompile Include="BEAM.C" />
+    <ClCompile Include="BGDEC.C" />
+    <ClCompile Include="CAPCOM.C" />
+    <ClCompile Include="CLIMAX.C" />
+    <ClCompile Include="CUBE.C" />
+    <ClCompile Include="DAVDSHEA.C" />
+    <ClCompile Include="DE1.C" />
+    <ClCompile Include="DW.C" />
+    <ClCompile Include="GAMEFRK.C" />
+    <ClCompile Include="GHX.C" />
+    <ClCompile Include="HAL.C" />
+    <ClCompile Include="HUDSON.C" />
+    <ClCompile Include="IMAGNRNG.C" />
+    <ClCompile Include="JEROTEL.C" />
+    <ClCompile Include="KONAMI.C" />
+    <ClCompile Include="KSADA.C" />
+    <ClCompile Include="LUFIA.C" />
     <ClCompile Include="MCOOKSEY.C" />
+    <ClCompile Include="MEGAMAN1.C" />
+    <ClCompile Include="MEGAMAN2.C" />
+    <ClCompile Include="MEGAMAN3.C" />
+    <ClCompile Include="METROID2.C" />
+    <ClCompile Include="MUSYX.C" />
+    <ClCompile Include="MWALKER.C" />
+    <ClCompile Include="NATSUME.C" />
+    <ClCompile Include="NINTENDO.C" />
+    <ClCompile Include="OCEAN.C" />
+    <ClCompile Include="PARAGON5.C" />
+    <ClCompile Include="PROBE.C" />
+    <ClCompile Include="RARE.C" />
+    <ClCompile Include="REALTIME.C" />
+    <ClCompile Include="RNC.C" />
+    <ClCompile Include="ROLAN.C" />
     <ClCompile Include="SHARED.C" />
     <ClCompile Include="MIDI.C" />
     <ClCompile Include="pch.c">
@@ -156,7 +234,16 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="SQUARE.C" />
+    <ClCompile Include="SQZDEC.C" />
+    <ClCompile Include="SUNSOFT.C" />
+    <ClCompile Include="TECHNOS.C" />
     <ClCompile Include="TIERTEX.C" />
+    <ClCompile Include="TITUS1.C" />
+    <ClCompile Include="TITUS2.C" />
+    <ClCompile Include="TITUSDEC.C" />
+    <ClCompile Include="TOSE.C" />
+    <ClCompile Include="WARIOL2.C" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
