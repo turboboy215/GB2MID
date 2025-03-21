@@ -286,6 +286,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Aguri Suzuki F-1 Super Driving (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B2B9</checksum>
+        <crc32>e82692d9</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Aguri Suzuki F-1 Super Driving (J) [a1] (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>37B7</checksum>
+        <crc32>7fe42a7f</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>AirForce Delta (J) [C][!]</name>
 		<gamecode>BDLJ</gamecode>
 		<rev>0</rev>
@@ -306,6 +328,17 @@
 		<part></part>
 		<banks>C</banks>
 		<parameters>CFG/AirForce Delta (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Akazukin Cha Cha (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9422</checksum>
+        <crc32>898609b4</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Akumajou Dracula - Shikkokutaru Zensoukyoku (J) [S][!]</name>
@@ -437,7 +470,7 @@
         <format>Digital_Eclipse_1</format>
 		<part></part>
 		<banks>78</banks>
-		<parameters>CFG/Alice in Wonderland (E) (M4) [C][!].cfg</parameters>
+		<parameters>CFG/Alice in Wonderland (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Alien 3 (J) [!]</name>
@@ -482,6 +515,28 @@
 		<part></part>
 		<banks>2</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Alien vs Predator - The Last of His Clan (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CA9A</checksum>
+        <crc32>e884682b</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Alien vs Predator - The Last of His Clan (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>97D3</checksum>
+        <crc32>4bbcf652</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>All-Star Baseball '99 (U) [!]</name>
@@ -2200,6 +2255,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Bubble Ghost (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6E61</checksum>
+        <crc32>874d0d6f</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>0</parameters>
+	</rom>
+	<rom>
+		<name>Bubble Ghost (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>77BD</checksum>
+        <crc32>843068fd</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>0</parameters>
+	</rom>
+	<rom>
 		<name>Bubsy 2 (E)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -2286,6 +2363,17 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters>4062</parameters>
+	</rom>
+	<rom>
+		<name>Burning Paper (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D3CD</checksum>
+        <crc32>88f8c991</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Bust-A-Move 2 - Arcade Edition (U)</name>
@@ -4639,6 +4727,17 @@
         <format>Paragon_5</format>
 		<part></part>
 		<banks>60,61,62,63,64</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Estpolis Denki - Yomigaeru Densetsu (J) [C][!]</name>
+		<gamecode>BFLJ</gamecode>
+		<rev>0</rev>
+		<checksum>B584</checksum>
+        <crc32>54617416</crc32>
+        <format>Lufia</format>
+		<part></part>
+		<banks>21</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -7106,6 +7205,17 @@
 		<parameters>2</parameters>
 	</rom>
 	<rom>
+		<name>Jankyuusei - Cosplay Paradise (J) [C][!]</name>
+		<gamecode>BHGJ</gamecode>
+		<rev>0</rev>
+		<checksum>6C80</checksum>
+        <crc32>d60e1c0a</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>7D,7E</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Janosch - Das grosse Panama-Spiel (G) [C][!]</name>
 		<gamecode>AJOD</gamecode>
 		<rev>0</rev>
@@ -7830,6 +7940,17 @@
 		<part></part>
 		<banks>2</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Koguru Guruguru - Guruguru to Nakayoshi (J) [C]</name>
+		<gamecode>BKGJ</gamecode>
+		<rev>0</rev>
+		<checksum>E7F6</checksum>
+        <crc32>d6050f64</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>14</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Konami Basketball (J)</name>
@@ -8932,6 +9053,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Little Mermaid, The (E) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6C42</checksum>
+        <crc32>00def37a</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Little Mermaid, The (S) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E28F</checksum>
+        <crc32>d19cf413</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Little Mermaid, The (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>BF2D</checksum>
+        <crc32>d7c517e5</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Little Nicky (U) [C][!]</name>
 		<gamecode>BLNE</gamecode>
 		<rev>0</rev>
@@ -9163,6 +9317,28 @@
 		<parameters>4A5B\1</parameters>
 	</rom>
 	<rom>
+		<name>Lufia - The Legend Returns (E) (M2) [C][!]</name>
+		<gamecode>BFLP</gamecode>
+		<rev>0</rev>
+		<checksum>550A</checksum>
+        <crc32>470dcb1d</crc32>
+        <format>Lufia</format>
+		<part></part>
+		<banks>21</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Lufia - The Legend Returns (U) [C][!]</name>
+		<gamecode>BFLE</gamecode>
+		<rev>0</rev>
+		<checksum>41D2</checksum>
+        <crc32>5bae3c04</crc32>
+        <format>Lufia</format>
+		<part></part>
+		<banks>21</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Lunar Chase (U) (Unreleased) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -9293,6 +9469,17 @@
 		<part>2/2=Samples</part>
 		<banks>31</banks>
 		<parameters>S</parameters>
+	</rom>
+	<rom>
+		<name>Magical Chase GB (J) [C][!]</name>
+		<gamecode>AIFJ</gamecode>
+		<rev>0</rev>
+		<checksum>25D9</checksum>
+        <crc32>15e5d499</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>3C,3D,3E,3F</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Magical Drop (E) (M3) [C][!]</name>
@@ -10021,6 +10208,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Meitantei Conan 2 (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0A10</checksum>
+        <crc32>1dc5c31a</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Men In Black - The Series (U) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -10208,6 +10406,17 @@
 		<parameters>CFG/Midori no Makibaoo (J) [S].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Mighty Morphin Power Rangers - The Movie (U) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B1E3</checksum>
+        <crc32>86a1c549</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Mighty Morphin Power Rangers (U) [S][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -10340,6 +10549,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Momoirozousan (J) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>617E</checksum>
+        <crc32>312c48a5</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Momotarou Collection (J) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -10415,6 +10635,28 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Moomin no Daibouken (J) [C][!]</name>
+		<gamecode>A36J</gamecode>
+		<rev>0</rev>
+		<checksum>6550</checksum>
+        <crc32>bd29ee6f</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>7D,7E</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Moomin's Tale (U) (M3) [C][!]</name>
+		<gamecode>AM9E</gamecode>
+		<rev>0</rev>
+		<checksum>153D</checksum>
+        <crc32>45543ba2</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>F,10</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Moon Patrol & Spy Hunter (U) [C][!]</name>
@@ -11924,6 +12166,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Papuwakunn (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>AE03</checksum>
+        <crc32>798f324a</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Papyrus (E) (M6) [C][!]</name>
 		<gamecode>AY9P</gamecode>
 		<rev>0</rev>
@@ -12087,6 +12340,17 @@
 		<part></part>
 		<banks>8,A</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pingu - Sekai de 1ban Genki na Penguin (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>43CD</checksum>
+        <crc32>a8dd80c6</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Pinocchio (U) (1995)</name>
@@ -12307,6 +12571,39 @@
 		<part></part>
 		<banks>1E</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pocket GT (J) [C][!]</name>
+		<gamecode>A7GJ</gamecode>
+		<rev>0</rev>
+		<checksum>2FE3</checksum>
+        <crc32>2ac77c5a</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>3D</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Pocket GT 2005 (Unl)</name>
+		<gamecode>A7GJ</gamecode>
+		<rev>0</rev>
+		<checksum>2FE3</checksum>
+        <crc32>69bc5006</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>3D</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Pocket GT (U) (Unreleased) [C][!]</name>
+		<gamecode>A7GE</gamecode>
+		<rev>0</rev>
+		<checksum>50D0</checksum>
+        <crc32>9e120d94</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>3D</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Pocket Hanafuda (J) [C][!]</name>
@@ -12571,6 +12868,28 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pocket Pro Yakyuu (J) [C][!]</name>
+		<gamecode>BPPJ</gamecode>
+		<rev>0</rev>
+		<checksum>5D32</checksum>
+        <crc32>2a6ef6a8</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>11,12,40</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Pocket Racing (E) [C][!]</name>
+		<gamecode>BPKP</gamecode>
+		<rev>0</rev>
+		<checksum>6361</checksum>
+        <crc32>fbf97372</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>3D</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Pocket Shougi (J) [S]</name>
@@ -15367,6 +15686,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Shutokou Racing, The (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>62E4</checksum>
+        <crc32>36e781cd</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Simpsons, The - Bart vs the Juggernauts (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -16797,6 +17127,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Super Street Basketball 2 (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F6AE</checksum>
+        <crc32>8090c9cc</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Supercross Freestyle (E) (M5) [C][!]</name>
 		<gamecode>BSXP</gamecode>
 		<rev>0</rev>
@@ -16993,6 +17334,39 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tale Spin (E)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CB6A</checksum>
+        <crc32>d29ddc91</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Tale Spin (S) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C597</checksum>
+        <crc32>50930d9c</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Tale Spin (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C597</checksum>
+        <crc32>de383e73</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Tales of Phantasia - Narikiri Dungeon (J) [C][!]</name>
@@ -18106,6 +18480,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Tsume Shougi - Mondai Teikyou Shougi Sekai (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1616</checksum>
+        <crc32>6403af06</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Tsuriiko!! (J) [C][!]</name>
 		<gamecode>BAFJ</gamecode>
 		<rev>0</rev>
@@ -18885,6 +19270,28 @@
 		<part></part>
 		<banks>3A</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Wily & Light no Rockboard - That's Paradise (J) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DF69</checksum>
+        <crc32>af84dc97</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Winner's Horse (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>242B</checksum>
+        <crc32>14e91757</crc32>
+        <format>Cube</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Winnie the Pooh - Adventures in the 100 Acre Wood (E) (M7) [C][!]</name>
