@@ -24,8 +24,11 @@ Adventures of Rocky and Bullwinkle, The (Beta1)
 Adventures of Rocky and Bullwinkle, The (Beta2)
 Adventures of Rocky and Bullwinkle, The (U)
 Agro Soar (A) [!]
+Aguri Suzuki F-1 Super Driving (J)
+Aguri Suzuki F-1 Super Driving (J) [a1] (Unreleased) [!]
 AirForce Delta (J) [C][!]
 AirForce Delta (U) [C][!]
+Akazukin Cha Cha (J) [S]
 Akumajou Dracula - Shikkokutaru Zensoukyoku (J) [S][!]
 Akumajou Special - Boku Dracula-kun (J) [!]
 Aladdin (E) (M6) [C][!]
@@ -42,6 +45,8 @@ Alien 3 (J) [!]
 Alien 3 (UE) [!]
 Alien Games 2044 AD (U) (Unreleased) [!]
 Alien Olympics 2044 AD (U) [!]
+Alien vs Predator - The Last of His Clan (J)
+Alien vs Predator - The Last of His Clan (U) [!]
 All-Star Baseball '99 (U) [!]
 All-Star Baseball 2000 (U) [C][!]
 All-Star Baseball 2001 (U) [C][!]
@@ -182,6 +187,8 @@ Boy and His Blob, A - The Rescue of Princess Blobette (E) [!]
 Boy and His Blob, A - The Rescue of Princess Blobette (U) [!]
 Bram Stoker's Dracula (UE) [!]
 BreakThru! (U) [!]
+Bubble Ghost (J)
+Bubble Ghost (U) [!]
 Bubsy 2 (E)
 Bubsy 2 (U) [!]
 Buffy the Vampire Slayer (U) [C][!]
@@ -189,6 +196,7 @@ Bugs Bunny & Lola Bunny - Carrot Crazy (U) (M3) [C][!]
 Bugs Bunny & Lola Bunny - Operation Carrots (E) (M6) [C][!]
 Bug's Life, A (E) [C][!]
 Bug's Life, A (U) [C][!]
+Burning Paper (J)
 Bust-A-Move 2 - Arcade Edition (U)
 Bust-A-Move 3 DX (U)
 Bust-A-Move 4 (UE) [C][!]
@@ -602,6 +610,7 @@ It's a World Rally (J) [C][!]
 Itsudemo Nyanto Wonderful (J) [S][!]
 J.Cup Soccer (J)
 J.League Excite Stage GB (J) [C][!]
+Jankyuusei - Cosplay Paradise (J) [C][!]
 Janosch - Das grosse Panama-Spiel (G) [C][!]
 Jelly Boy (U)
 Jet Pack (Beta)
@@ -665,6 +674,7 @@ Kirikou (E) (M6) [C][!]
 Kisekae Series 2 - Oshare Nikki (J) (V1.0) [C][!]
 Kisekae Series 2 - Oshare Nikki (J) (V1.1) [C][!]
 Klax (J) [M]
+Koguru Guruguru - Guruguru to Nakayoshi (J) [C]
 Konami Basketball (J)
 Konami Collection 1 (J) [S]
 Konami Collection 2 (J) [S]
@@ -740,6 +750,9 @@ Little Indian in Big City (U) [S]
 Little Mermaid II, The - Pinball Frenzy (E) (M5) [C][!]
 Little Mermaid II, The - Pinball Frenzy (J) (Unreleased) [C][!]
 Little Mermaid II, The - Pinball Frenzy (U) (M5) [C][!]
+Little Mermaid, The (E) [!]
+Little Mermaid, The (S) (Unreleased) [!]
+Little Mermaid, The (U) [!]
 Little Nicky (U) [C][!]
 Lodoss Tou Senki - Eiyuu Kishiden GB (J) [C][!]
 Lolo no Daibouken (J)
@@ -773,6 +786,7 @@ Madden '97 (U) [S][!]
 Madden NFL 2000 (U) [C][!]
 Magi Nation - Keeper's Quest (U) (Unreleased) [C][!]
 Magi Nation (U) [C][!]
+Magical Chase GB (J) [C][!]
 Magical Drop (E) (M3) [C][!]
 Magical Drop (U) [C][!]
 Magical Talulutokun - Raiba Zone Panic (J)
@@ -834,6 +848,7 @@ Megaman V (E) [S]
 Megaman V (U) [S][!]
 Megaman Xtreme (U) [C][!]
 Megaman Xtreme 2 (U) [C][!]
+Meitantei Conan 2 (J) [S]
 Men In Black - The Series (U) [C][!]
 Men In Black 2 - The Series (E) (M3) [C][!]
 Men In Black 2 - The Series (U) (M3) [C][!]
@@ -851,6 +866,7 @@ Mickey's Dangerous Chase (U) [!]
 Mickey's Racing Adventure (U) (M5) [C][!]
 Mickey's Speedway USA (U) (M4) [C][!]
 Midori no Makibaoo (J) [S]
+Mighty Morphin Power Rangers - The Movie (U) [S]
 Mighty Morphin Power Rangers (U) [S][!]
 Mini 4 Boy (J) [S][!]
 Mini 4 Boy II - Final Evolution (J) [S]
@@ -862,6 +878,7 @@ Mobile Golf (J) [C][!]
 Mobile Trainer (J) [C][!]
 Mogu Mogu Gombo (J) [S]
 Mogu Mogu Q (J) [S][!]
+Momoirozousan (J) (Unreleased) [!]
 Momotarou Densetsu 1-2 (J) [C][!]
 Momotarou Densetsu Gaiden (J) [!]
 Monster Max (U) (M6)
@@ -877,6 +894,8 @@ Mortal Kombat II (U) [!]
 Mortal Kombat I & II (J)
 Mortal Kombat I & II (UE) [!]
 Mortal Kombat I & II (UE) [a1][!]
+Moomin no Daibouken (J) [C][!]
+Moomin's Tale (U) (M3) [C][!]
 Motocross Maniacs (E) [!]
 Motocross Maniacs (J)
 Motocross Maniacs (U) (V1.0) [!]
@@ -988,6 +1007,7 @@ Palamedes (J)
 Palamedes (UE) [!]
 Palamedes (U) (Unreleased) [!]
 Pang (U)
+Papuwakunn (J)
 Papyrus (E) (M6) [C][!]
 Parasol Stars (UE) [!]
 Parodius (UE) [!]
@@ -1003,6 +1023,7 @@ Pinball Deluxe (U)
 Pinball Dreams (UE) [!]
 Pinball Fantasies (U)
 Pinball Mania (U)
+Pingu - Sekai de 1ban Genki na Penguin (J)
 Pinocchio (U) (1995)
 Pinocchio (U) (1996) [!]
 Pipe Dream (J)
@@ -1023,6 +1044,9 @@ Pocket Color Billiard (J) [C][!]
 Pocket Cooking (J) [C][!]
 Pocket Family GB2 (J) [C][!]
 Pocket GI Stable (J) [C][!]
+Pocket GT (J) [C][!]
+Pocket GT (U) (Unreleased) [C][!]
+Pocket GT 2005 (Unl)
 Pocket Hanafuda (J) [C][!]
 Pocket King (J) [C][!]
 Pocket Monsters - Blue Version (J) [S]
@@ -1047,6 +1071,8 @@ Pocket Monsters Yellow (J) (V1.2) [S]
 Pocket Monsters Yellow (J) (V1.4) [S][!]
 Pocket no Naka no Oukoku (Beta) [C][!]
 Pocket Pro Wrestling - Perfect Wrestler (J) [C][!]
+Pocket Pro Yakyuu (J) [C][!]
+Pocket Racing (E) [C][!]
 Pocket Shougi (J) [S]
 Pocket Sonar (J)
 Pokemon - Blaue Edition (G) [S][!]
@@ -1282,6 +1308,7 @@ Shippo de Bun! (J) [!]
 Shou Hyper Fish (J) [S]
 Shrek - Fairy Tale Freakdown (U) (M6) [C][!]
 Shuma Baolong - Shuijing Ban (Unl) [C][f1]
+Shutokou Racing, The (J) [C][!]
 Simpsons, The - Bart vs the Juggernauts (U) [!]
 Simpsons, The - Escape from Camp Deadly (J) [!]
 Simpsons, The - Escape from Camp Deadly (U) [!]
@@ -1405,6 +1432,7 @@ Super R.C. Pro-Am (UE) [!]
 Super Robot Taisen - Link Battler (J) [C][!]
 Super Scrabble (U) [!]
 Super Snakey (J) [S]
+Super Street Basketball 2 (J) [S]
 Supercross Freestyle (E) (M5) [C][!]
 Superman - Battle for Metropolis (Prototype - Jan 12, 2001) [C]
 Superman (U) [S][!]
@@ -1422,6 +1450,9 @@ Tail Gator (U) [!]
 Taiyou no Yuusha - Firebird GB (J)
 Taiyou no Yuusha - Firebird GB (J) [a1]
 Takahashi Meijin no Bouken Shima III (J)
+Tale Spin (E)
+Tale Spin (S) (Unreleased) [!]
+Tale Spin (U)
 Tales of Phantasia - Narikiri Dungeon (J) [C][!]
 Tamagotchi (F) [S]
 Tamagotchi (J) [S]
@@ -1518,6 +1549,7 @@ Trouballs (U) [C][!]
 True Lies (U) [!]
 Trump Boy (J) [!]
 Trump Boy II (J)
+Tsume Shougi - Mondai Teikyou Shougi Sekai (J)
 Tsuriiko!! (J) [C][!]
 Turn and Burn (U) [!]
 Turok - Battle of the Bionosaurs (J)
@@ -1581,6 +1613,8 @@ Who Framed Roger Rabbit (U) [!]
 Who Wants to Be a Millionaire - 2nd Edition (U) [C][!]
 Wild Snake (U) [S]
 Wild Thornberrys, The - Rambler (U) [C][!]
+Wily & Light no Rockboard - That's Paradise (J) (Unreleased) [!]
+Winner's Horse (J) [!]
 Winnie the Pooh - Adventures in the 100 Acre Wood (E) (M7) [C][!]
 Winnie the Pooh - Adventures in the 100 Acre Wood (U) [C][!]
 Wizardry Empire (J) (V1.0) [C][!]
