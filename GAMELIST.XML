@@ -671,6 +671,17 @@
 		<parameters>3</parameters>
 	</rom>
 	<rom>
+		<name>Anpfiff - Der RTL Fussball-Manager (G) [C]</name>
+		<gamecode>BFBD</gamecode>
+		<rev>0</rev>
+		<checksum>04F1</checksum>
+        <crc32>b54d264a</crc32>
+        <format>MPlay</format>
+		<part></part>
+		<banks>1E</banks>
+		<parameters>CFG/Anpfiff - Der RTL Fussball-Manager (G) [C].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Armada - FX Racers (U) [C][!]</name>
 		<gamecode>BARE</gamecode>
 		<rev>0</rev>
@@ -790,6 +801,17 @@
 		<part></part>
 		<banks>3E</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Asterix (U) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A101</checksum>
+        <crc32>a4cc3c3a</crc32>
+        <format>AJ_Gonzalez</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>4000</parameters>
 	</rom>
 	<rom>
 		<name>Asterix (UE) (M5) [!]</name>
@@ -1428,6 +1450,28 @@
 		<part></part>
 		<banks>2</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Bear in the Big Blue House (E) (M7) [C][!]</name>
+		<gamecode>BBNP</gamecode>
+		<rev>0</rev>
+		<checksum>186B</checksum>
+        <crc32>48c99939</crc32>
+        <format>MPlay</format>
+		<part></part>
+		<banks>1F</banks>
+		<parameters>CFG/Bear in the Big Blue House (E) (M7) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Bear in the Big Blue House (U) (M7) [C][!]</name>
+		<gamecode>BB7E</gamecode>
+		<rev>0</rev>
+		<checksum>1B7D</checksum>
+        <crc32>851c8710</crc32>
+        <format>MPlay</format>
+		<part></part>
+		<banks>1F</banks>
+		<parameters>CFG/Bear in the Big Blue House (U) (M7) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Beauty and the Beast - A Board Game Adventure (E) (M5) [C][!]</name>
@@ -2363,6 +2407,17 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters>4062</parameters>
+	</rom>
+	<rom>
+		<name>Bundesliga Stars 2001 (G) [C][!]</name>
+		<gamecode>BSJD</gamecode>
+		<rev>0</rev>
+		<checksum>7803</checksum>
+        <crc32>5622b551</crc32>
+        <format>MPlay</format>
+		<part></part>
+		<banks>0E</banks>
+		<parameters>CFG/Bundesliga Stars 2001 (G) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Burning Paper (J)</name>
@@ -4895,6 +4950,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>F.A. Premier League Stars 2001, The (U) [C][!]</name>
+		<gamecode>BSJP</gamecode>
+		<rev>0</rev>
+		<checksum>D804</checksum>
+        <crc32>5e3844fb</crc32>
+        <format>MPlay</format>
+		<part></part>
+		<banks>0E</banks>
+		<parameters>CFG/F.A. Premier League Stars 2001, The (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Faceball 2000 (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -7161,6 +7227,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Itchy & Scratchy - Miniature Golf Madness (J) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>586B</checksum>
+        <crc32>948f64fe</crc32>
+        <format>Beam_Software</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Itchy & Scratchy - Miniature Golf Madness (U)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -7236,6 +7313,17 @@
 		<part>2/2=Samples</part>
 		<banks>3B</banks>
 		<parameters>S</parameters>
+	</rom>
+	<rom>
+		<name>Jay und Die Spielzeugdiebe (G) [C][!]</name>
+		<gamecode>BJYD</gamecode>
+		<rev>0</rev>
+		<checksum>1A98</checksum>
+        <crc32>73f4f6da</crc32>
+        <format>MPlay</format>
+		<part></part>
+		<banks>0B</banks>
+		<parameters>CFG/Jay und Die Spielzeugdiebe (G) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Jelly Boy (U)</name>
@@ -8426,6 +8514,28 @@
 		<parameters>1\CFG/Lamborghini American Challenge (U) [!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Land Before Time, The (E) (M5) [C][!]</name>
+		<gamecode>BLBP</gamecode>
+		<rev>0</rev>
+		<checksum>0C06</checksum>
+        <crc32>f253e082</crc32>
+        <format>MPlay</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Land Before Time, The (E) (M5) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Land Before Time, The (U) [C][!]</name>
+		<gamecode>BLBE</gamecode>
+		<rev>0</rev>
+		<checksum>B5AC</checksum>
+        <crc32>bce9cb16</crc32>
+        <format>MPlay</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Land Before Time, The (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Las Super Nenas - El Malvado Mojo Jojo (S) [C][!]</name>
 		<gamecode>BJJS</gamecode>
 		<rev>0</rev>
@@ -9097,6 +9207,17 @@
 		<parameters>CFG/Little Nicky (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>LNF Stars 2001 (F) [C][!]</name>
+		<gamecode>BSJF</gamecode>
+		<rev>0</rev>
+		<checksum>54D5</checksum>
+        <crc32>f8bf3ee7</crc32>
+        <format>MPlay</format>
+		<part></part>
+		<banks>0E</banks>
+		<parameters>CFG/LNF Stars 2001 (F) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Lodoss Tou Senki - Eiyuu Kishiden GB (J) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -9106,6 +9227,28 @@
 		<part></part>
 		<banks>18</banks>
 		<parameters>CFG/Lodoss Tou Senki - Eiyuu Kishiden GB (J) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Logical (U) (Sunsoft) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2A5C</checksum>
+        <crc32>d67275f7</crc32>
+        <format>MPlay</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Logical (U) (Sunsoft) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Logical (U) (THQ) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D097</checksum>
+        <crc32>5eee76c4</crc32>
+        <format>MPlay</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Logical (U) (THQ) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Lolo no Daibouken (J)</name>
@@ -10393,6 +10536,61 @@
 		<part></part>
 		<banks>1C</banks>
 		<parameters>CFG/Mickey's Speedway USA (U) (M4) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Micro Machines 1 and 2 - Twin Turbo (U) [C][!]</name>
+		<gamecode>AT8E</gamecode>
+		<rev>0</rev>
+		<checksum>6199</checksum>
+        <crc32>5dd337eb</crc32>
+        <format>MPlay</format>
+		<part></part>
+		<banks>46</banks>
+		<parameters>CFG/Micro Machines 1 and 2 - Twin Turbo (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Micro Machines V3 (U) [C][!]</name>
+		<gamecode>BM3E</gamecode>
+		<rev>0</rev>
+		<checksum>1D0D</checksum>
+        <crc32>b8064453</crc32>
+        <format>MPlay</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Micro Machines V3 (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Micro Maniacs (E) [C][!]</name>
+		<gamecode>B3NP</gamecode>
+		<rev>0</rev>
+		<checksum>D201</checksum>
+        <crc32>e66e093b</crc32>
+        <format>MPlay</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Micro Maniacs (E) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Microsoft Puzzle Collection (E) (M5) [C][!]</name>
+		<gamecode>BMEP</gamecode>
+		<rev>0</rev>
+		<checksum>D005</checksum>
+        <crc32>ee4cba24</crc32>
+        <format>MPlay</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Microsoft Puzzle Collection (E) (M5) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Microsoft Puzzle Collection (U) [C]</name>
+		<gamecode>AZWE</gamecode>
+		<rev>0</rev>
+		<checksum>5FD9</checksum>
+        <crc32>0777b8d7</crc32>
+        <format>MPlay</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Microsoft Puzzle Collection (U) [C].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Midori no Makibaoo (J) [S]</name>
@@ -12452,6 +12650,17 @@
 		<parameters>CFG/Play Action Football (U) [!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Player Manager 2001 (E) (M2) [C][!]</name>
+		<gamecode>BFBP</gamecode>
+		<rev>0</rev>
+		<checksum>EB02</checksum>
+        <crc32>375c35e0</crc32>
+        <format>MPlay</format>
+		<part></part>
+		<banks>1E</banks>
+		<parameters>CFG/Player Manager 2001 (E) (M2) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Pocahontas (U) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -13816,6 +14025,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Primera Division Stars 2001 (S) (Unreleased) [C][!]</name>
+		<gamecode>BSJS</gamecode>
+		<rev>0</rev>
+		<checksum>CBAE</checksum>
+        <crc32>ce3a1022</crc32>
+        <format>MPlay</format>
+		<part></part>
+		<banks>0E</banks>
+		<parameters>CFG/Primera Division Stars 2001 (S) (Unreleased) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Prince Naseem Boxing (E) (M3) [C][!]</name>
 		<gamecode>BNCP</gamecode>
 		<rev>0</rev>
@@ -14001,6 +14221,28 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Puzzled (E) (M3) [C][!]</name>
+		<gamecode>AZWP</gamecode>
+		<rev>0</rev>
+		<checksum>5286</checksum>
+        <crc32>15b44d68</crc32>
+        <format>MPlay</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Puzzled (E) (M3) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Puzzled (U) [C][!]</name>
+		<gamecode>BP3E</gamecode>
+		<rev>0</rev>
+		<checksum>364A</checksum>
+        <crc32>f03ffdaf</crc32>
+        <format>MPlay</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Puzzled (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Q-bert (U) [C][!]</name>
@@ -18016,6 +18258,17 @@
 		<part></part>
 		<banks>20</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>TOCA Touring Car Championship (U) [C][!]</name>
+		<gamecode>BTCE</gamecode>
+		<rev>0</rev>
+		<checksum>D8F0</checksum>
+        <crc32>b509892b</crc32>
+        <format>MPlay</format>
+		<part></part>
+		<banks>3D</banks>
+		<parameters>CFG/TOCA Touring Car Championship (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Tokio Senki (J)</name>

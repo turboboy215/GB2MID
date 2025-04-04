@@ -41,3 +41,4 @@
 #define Digital_Eclipse_1	0x28
 #define Lufia				0x29
 #define Cube				0x2A
+#define MPlay				0x2B

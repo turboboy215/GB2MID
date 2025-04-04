@@ -743,6 +743,10 @@ int main(int args, char* argv[])
             {
                 driver = MIDI;
             }
+            else if (!strcmp(formatString, "MPlay"))
+            {
+                driver = MPlay;
+            }
             else if (!strcmp(formatString, "MusyX"))
             {
                 driver = MusyX;
