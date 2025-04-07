@@ -42,3 +42,4 @@
 #define Lufia				0x29
 #define Cube				0x2A
 #define MPlay				0x2B
+#define Junichi_Saito		0x2C

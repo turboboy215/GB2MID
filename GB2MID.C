@@ -711,6 +711,10 @@ int main(int args, char* argv[])
             {
                 driver = Jeroen_Tel;
             }
+            else if (!strcmp(formatString, "Junichi_Saito"))
+            {
+                driver = Junichi_Saito;
+            }
             else if (!strcmp(formatString, "Konami"))
             {
                 driver = Konami;
