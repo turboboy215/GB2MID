@@ -1,0 +1,329 @@
+The Frequency Table
+=======================================
+The frequency table is the standard format used in many drivers. It can be found with the following commands:
+
+		ADD	A,A			;Use the note number to index
+		ADD	A,LOW(TblMzFrq)	;into a table of frequency
+		LD	L,A			;values.
+		LD	A,HIGH(TblMzFrq)
+		ADC	0
+		LD	H,A
+
+Which equals the following in hex:
+87 C6 ?? 6F 3E ?? CE 00 67
+
+Drum Table Values
+=======================================
+Imediately following is a table of drum values. It can be found with the following commands:
+		LD	A,[DE]			;Get drum number.
+		INC	DE			;
+
+		ADD	A,A			;Use it as an index into the drum
+		ADD	A,LOW(TblMzDrum)	;table.
+		LD	L,A			;
+		LD	A,0			;
+		ADC	A,HIGH(TblMzDrum);
+		LD	H,A			;
+
+		PUSH	DE
+
+		LD	A,[HLI]			;Get the address of the drum.
+		LD	D,[HL]			;
+		LD	E,A			;
+
+Song Pattern Table
+=======================================
+The song pattern table is comprised of series of four 16-bit values specifying is found with the following commands:
+		LD	L,A			;Multiply by 8 to get offset.
+		LD	H,0			;
+		ADD	HL,HL			;
+		ADD	HL,HL			;
+		ADD	HL,HL			;
+
+		LD	A,L			;Use as index into MZ_TUNE_TABLE.
+		ADD	A,LOW(TblMzTune)	;
+		LD	E,A			;
+		LD	A,H			;
+		ADC	A,HIGH(TblMzTune)	;
+		LD	D,A			;
+
+Which equals the following in hex:
+26 00 29 29 29 7D C6 ?? 5F 7C CE ?? 57
+
+Sequence Table
+=======================================
+The method to get the sequence table varies per game. Here are several methods:
+
+Method 1: RoboCop
+
+dec hl
+ld (hl), d
+dec hl
+ld (hl), e
+add a
+add a, low(seqTable)
+ld l, a
+ld a, high(seqTable)
+adc a, 0
+ld h, a
+
+Which equals the following in hex:
+2B 72 2B 73 87 C6 ?? 6F 3E ?? CE 00 67
+
+Method 2: RoboCop 2
+
+dec hl
+ld (hl), d
+dec hl
+ld (hl), e
+ld d, 0
+ld hl, seqTable
+add hl, de
+add hl, de
+
+Which equals the following in hex:
+2B 72 2B 73 5F 16 00 21 ?? ?? 19 19
+
+Method 3: Super James Pond
+
+dec hl
+ld (hl), d
+dec hl
+ld (hl), e
+add a
+ld e, a
+ld a, (????)
+add a
+add a, low(seqTable)
+ld l, a
+ld a, high(seqTable)
+
+Which equals the following in hex:
+2B 72 2B 73 87 5F FA xx xx 87 C6 ?? 6F 3E ??
+2B 72 2B 73 87 5F FA 99 C5 87 C6 2B 6F 3E 4B
+
+29 29 29 19 7D C6 ?? 5F 7C CE ?? 57 21 4B DE CD 88 40 21 83 DE CD 88 40 21 BB
+
+Method 4: Beauty and the Beast
+
+		DEC	HL			;Save position in MZ_LST_CURR.
+		LD	[HL],D			;
+		DEC	HL			;
+		LD	[HL],E			;
+
+		LD	DE,TblMzSeq		;Use the sequence number to
+		LD	L,A			;index into the table of
+		LD	H,0			;sequence addresses.
+		ADD	HL,HL			;
+		ADD	HL,DE			;
+
+		LD	A,[HLI]			;Get the sequence's address.
+		LD	D,[HL]			;
+		LD	E,A			;
+
+		JP	MzReadSeq		;Read next command.
+
+Which equals the following in hex:
+2B 72 2B 73 11 ?? ?? 6F
+
+Method 5: Parasol Stars
+
+dec hl
+ld (hl), d
+dec hl
+ld (hl), e
+ld h, 0
+ld l, a
+add hl, hl
+ld de, seqTable
+ldi a, (hl)
+ldi d, (hl)
+
+Which equals the following in hex:
+2B 72 2B 73 26 00 6F 29 11 ?? ?? 19 2A 56
+
+Song Patterns and Sequence Format (v1)
+=======================================
+00-56? (xx) = Play note, length (if not automatically set)
+80 xx = Loop number of times
+82 xx (signed) = Transpose next sequence
+84 xxxx = Jump to address
+86 = End song
+88 = Exit
+
+8A xx = Set "automatic" note length until "manual" switch
+8C = Set "manual" note length
+8E = "Hold" note by 256 length
+90 = Rest
+Cx, Dx = Set note length
+D2 xx yy = Turn on portamento
+D4 = Turn off portamento
+D6 xx yy = Turn on "sweep" effect
+D8 = Turn off "sweep" effect
+DA xx yy zz = Turn on vibrato
+DC = Turn off vibrato
+DE xx = Turn on arpeggio
+E0 = Turn off arpeggio
+E2 xx = Set envelope
+E4 xx = Play "drum"
+E6 xx yy = "Poke" location in sound hardware registers
+E8 (waveform) = Switch waveform
+EA = Set up waveform RAM
+EC = Set up waveform RAM from stored address
+EE xx = Set duty
+F0 xx yy zz = Set sweep
+F2 xx yy zz = Set registers directly
+
+
+Song Patterns and Sequence Format (v2)
+=======================================
+xx (Song patterns) = Play sequence
+00-5F (xx) = Play note, length (if not automatically set)
+C0 xx = Loop number of times
+C2 xx (signed) = Transpose next sequence
+C4 xxxx = Jump to address
+C6 = End song
+C8 = Exit
+CA xx = Set "automatic" note length until "manual" switch
+CC = Set "manual" note length
+CE = "Hold" note by 256 length
+D0 = Rest
+D2 xx yy = Turn on portamento
+D4 = Turn off portamento
+D6 xx yy = Turn on "sweep" effect
+D8 = Turn off "sweep" effect
+DA xx yy zz = Turn on vibrato
+DC = Turn off vibrato
+DE xx = Turn on arpeggio
+E0 = Turn off arpeggio
+E2 xx = Set envelope
+E4 xx = Play "drum"
+E6 xx yy = "Poke" location in sound hardware registers
+E8 (waveform) = Switch waveform
+EA = Set up waveform RAM
+EC = Set up waveform RAM from stored address
+EE xx = Set duty
+F0 xx yy zz = Set sweep
+F2 xx yy zz = Set registers directly
+
+Sequence v1
+=======================================
+80 xx = Loop number of times
+82 xx (signed) = Transpose next sequence
+84 xxxx = Jump to address
+86 = End song
+9C xx = Turn on arpeggio
+9E = Turn off arpeggio
+AC xx = Set duty
+
+Sequence v2
+=======================================
+C6 = End sequence
+C8 xx = Set "automatic" note length until "manual" switch
+CA = Set "manual" note length
+CC = "Hold" note by 256 length
+CE = Rest
+D0 xx yy = Turn on portamento
+D2 = Turn off portamento
+D4 xx yy = Turn on "sweep" effect
+D6 = Turn off "sweep" effect
+D8 xx yy zz = Turn on vibrato
+DA = Turn off vibrato
+DC xx = Turn on arpeggio
+DE = Turn off arpeggio
+E0 xx = Set envelope
+E2 xx = Play "drum"
+E4 xx yy = "Poke" location in sound hardware registers
+E6 (waveform) = Switch waveform
+E8 = Set up waveform RAM
+EA = Set up waveform RAM from stored address
+EC xx = Set duty
+EE xx yy zz = Set sweep
+F0 xx yy zz = Set registers directly
+
+
+Song Patterns and Sequence Format (v3)
+=======================================
+xx (Song patterns) = Play sequence
+00-5F (xx) = Play note, length (if not automatically set)
+E8 xx = Loop number of times
+E9 xx (signed) = Transpose next sequence
+EA xx xx = Jump to address
+EB = End song
+EC xx = Set "automatic" note length until "manual" switch
+ED = Set "manual" note length
+EE = "Hold" note by 256 length
+EF = Rest
+F0 xx yy = Turn on portamento
+F1 = Turn off portamento
+F2 xx yy = Turn on "sweep" effect
+F3 = Turn off "sweep" effect
+F4 xx yy zz = Turn on vibrato
+F5 = Turn off vibrato
+F6 xx = Turn on arpeggio
+F7 = Turn off arpeggio
+F8 xx = Set envelope
+F9 xx = Play "drum"
+FA xx yy = "Poke" location in sound hardware registers
+FB (waveform) = Switch waveform
+FC = Set up waveform RAM
+FD = Set up waveform RAM from stored address
+FE xx = Set duty
+FF xx yy zz = Set sweep
+
+Song Patterns and Sequence Format (v4): Mr. Nutz
+=======================================
+The game Mr. Nutz uses a heavily modified version of the format with a completely different pattern format.
+To find the song list command:
+
+add hl, hl
+add hl, de
+ld a, l
+add a, high(SongList)
+ld e, a
+ld a, h
+adc a, low(SongList)
+
+Which equals the following in hex:
+29 19 7D C6 ?? 5F 7C CE ?? 57
+
+Song List:
+1: Tempo
+2-3: Pointer to song pattern
+
+Song Pattern (1):
+(16-bit values) pointing to each 16-byte pattern, ending with FFFF xxxx (loop point)
+
+Song Pattern (2):
+11 22 33 44 (16-bit values representing the sequence pointers played in each pattern)
+
+80 xx = Loop number of times
+81 xx (signed) = Transpose next sequence
+82 = End song
+83 xx = Set "automatic" note length until "manual" switch
+84 = Set "manual" note length
+85 = "Hold" note by 256 length
+86 = Rest
+87 xx yy = Turn on portamento
+88 = Turn off portamento 
+89 xx yy = Turn on "sweep" effect
+8A xx = Turn off "sweep" effect
+8B xx yy zz = Turn on vibrato
+8C = Turn off vibrato
+8D = Turn on arpeggio
+8E = Turn off arpeggio
+8F xx = Set envelope
+90 xx = Play "drum"
+91 xx = "Poke" location in sound hardware registers
+92 (waveform) = Switch waveform
+93 = Setup waveform RAM
+94 = Set up waveform RAM from stored address
+95 xx = Set duty
+96 xx yy zz = Set sweep
+97 (signed) xx = Transpose all channels
+98 xx = Set envelope
+99 xx = Set volume effect?
+9A-9D xx yy zz = Set duty?
+9E = ?
+9F xx = Change tempo
+Cx = Change note length

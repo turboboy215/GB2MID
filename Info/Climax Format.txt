@@ -1,0 +1,137 @@
+Unlike most sound engines, the music data is not necessarily integrated in one or more sound banks rather, each song is stored in a proprietary MOD-like format with the header "IMEDGBoy". Versions of the format also exist for other systems including SNES, MegaDrive, and Game Gear. Some games, including Warriors of Might and Magic, store all or almost all of the "modules" compressed with ProPack/RNC.
+
+Here is the official documentation of the header from leaked source code:
+----------------------------------------------------------
+	Gameboy module format :-
+
+	Offs	Size
+
+	0	8 bytes		"IMEDGBoy"
+	8	Word		Pattern list offset
+	10	Word		Pattern dir offset
+	12	Word		Patch data for channels 1&2
+	14	Word		Patch data for channel 3
+	16	Word		Waveform table
+	18	Word		Patch data for channel 4
+
+----------------------------------------------------------
+
+Pattern List Offset
+=======================================
+The pattern list is an array showing the order of the patterns as they will be played in order, with a value of 00 representing the first pattern, 01 representing the second, etc. A value of FF is used to represent the end of the pattern, followed by the total number of unique patterns and then 00. For example:
+
+00 01 02 03 FF 04 00
+
+Pattern Directory
+=======================================
+This is a series of 16-bit pointer values (little-endian) determining the location of each pattern listed, relative to the start of the pattern directory. For example, the bytes 00 0A mean that the first pattern is located 10 (0A) bytes following the start of the pattern directory.
+
+Pattern Data
+=======================================
+At the start of each row of a module pattern is a 16-bit binary "mask" that specifies which channels will be used on the row and if effects are being used or not. This means that unlike a ProTracker module, the number of bytes used for each row varies, with unused parts not taking up bytes. The mask is as follows:
+
+aabbccdd eeffgghh
+
+A = Channel 1 note
+B = Channel 1 effect
+C = Channel 2 note
+D = Channel 2 effect
+E = Channel 3 note
+F = Channel 3 effect
+G = Channel 4 note
+H = Channel 4 effect
+
+For example, a row with a mask value of CFCF (11001111 11001111) means that all four channels are used, with only channels 2 and 4 being used for effects.
+
+Each note and effect is a 16-bit value (2 bytes).
+For notes, byte 1 represents the frequency while byte 2 represents the instrument. For effects, byte 1 represents the effect while byte 2 represents the amount of the effect.
+
+Effect values are based on those of ProTracker modules, and map as follows:
+
+0 = Arpeggio
+1 = Portamento up
+2 = Portamento down
+3 = Portamento to
+4 = Vibrato
+A = Volume slide
+C = Set volume
+D = Break pattern
+F = Set speed (ticks)
+
+Instruments (channel 1 & 2)
+=======================================
+From the source code:
+
+----------------------------------------------------------
+
+	Channel 1&2 patches :-  (channel 2 doesn't support sweep!)
+
+	Offs	Size
+
+	0	Byte		Bits 4-6 : Sweep time
+				Bit 3    : Sweep +/-
+				Bit 0-2  : Number of sweep shift
+
+	1	Byte		Bits 6-7 : Waveform duty
+				Bits 0-5 : Sound length
+
+	2	Byte		Bits 4-7 : Envelope initial value
+				Bit 3	 : 0=Attenuate/1=Amplify
+				Bits 0-2 : Speed (0=None)
+
+	3	Byte		Stereo placement :
+				   Bit 4 : Left
+				   Bit 0 : Right
+
+	Size=4
+
+----------------------------------------------------------
+
+Instruments (channel 3 and 4)
+=======================================
+From the source code:
+
+----------------------------------------------------------
+
+	Channel 3 patches :-
+
+	Offs	Size
+
+	0	Byte		Sound length (0-255?)
+	1	Byte		Bits 5-6 : Output level
+	2	Byte		Waveform number
+	4	Byte		Stereo placement
+
+	Size=4
+
+
+
+	Noise channel patches :-
+
+	Offs	Size
+
+	0	Byte		Sound length
+	1	Byte		Bits 4-7 : Envelope initial value
+				Bit 3	 : 0=Attenuate/1=Amplify
+				Bits 0-2 : Speed (0=None)
+
+	Size=2
+
+----------------------------------------------------------
+
+
+Game Gear/Master System format
+=======================================
+The Game Gear/Master System format, found in The Smurfs Travel the World and Chicago Syndicate, is almost the same as the Game Boy (Color) format, but has some differences. For one, the header starts with the identifier "IMEDGear", and the header is smaller.
+
+----------------------------------------------------------
+	Game Gear module format :-
+
+	Offs	Size
+
+	0	8 bytes		"IMEDGear"
+	8	Word		Pattern list offset
+	10	Word		Pattern dir offset
+	12	Word		Patch data
+	14	Word		Number of instruments?
+----------------------------------------------------------

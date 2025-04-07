@@ -1,0 +1,78 @@
+Song Pointer List
+=======================================
+The song pointer list consists of a series of four pointers belonging to each channel. This pointer table can be found with the following instructions:
+
+xor a
+ld b, a
+ld d, a
+ld e, a
+ld hl, SongList
+add hl, bc
+ld de, ????
+ld c, 08 - skip amount?
+ldi a, [hl]
+ld [de], a
+
+Which equals the following in hex:
+AF 47 57 5F 21 ?? ?? 09 11 xx xx 0E 08 2A 12
+
+Later variant (Star Trek):
+AF 57 5F 21 ?? ?? 09 11 xx xx 0E 08 2A 12
+
+Note that 8 should be added to the pointer, as seen in the code.
+
+Song Pattern Pointer List
+=======================================
+These consist of (at least?) one pointer to a channel pattern and then a loop/end command as seen below.
+
+Song Patterns
+=======================================
+These consists of pointers to each sequence ending with a loop/end command as seen below.
+
+Loop commands:
+
+00FF = Song does not loop
+0000 = Normal loop mode
+0001 = Loop V1
+0002 = Loop V2
+0003 = Loop V3
+0100 = Other Loop
+00 = End
+
+Sequences
+=======================================
+These consist of the following commands:
+
+00 = End of sequence
+FF xx yy = Change instrument, then special effect
+xx yy zz = Play note (Length, note number, note size)
+
+Special effects:
+
+01 = Duty sweep special effect
+80 = Tie bit (added to pitch)
+40 = Sustain bit (added to pitch)
+
+
+Song Tempo List
+=======================================
+This list consists of 8-bit (1 byte) values specifying the tempo for each song. Note that 1 should be added to the pointer.
+
+ld c, a
+ld hl, TempoList
+add hl, bc
+ld a, (hl)
+ld [????], a
+ld a, 02
+ld [????], a
+ret
+call ????
+
+
+Which equals the following in hex:
+22 22 22 77 EA 3B D1 3E FF EA 41 D1 EA 3E D1 FA 01 D1 4F 21 ?? ?? 09 7E EA 3D D1 FA 44 D1 CB 7F C8 E6 
+22 22 22 77 EA D3 DE 3E FF EA D9 DE EA D6 DE FA 9C DE 4F 21 36 68 09 7E EA D5 DE 3E 02 EA 9A DE C9 CD
+
+Notes
+=======================================
+The note values range from 00 which is A-0 to 3E which is B-6. Value 3F is used for a rest.

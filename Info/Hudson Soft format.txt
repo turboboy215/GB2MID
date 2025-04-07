@@ -1,0 +1,72 @@
+Song pointer table
+===================
+The song pointer table is comprised of 16-bit (2-byte) pointers to each song. This table only stores music rather than sound effects. The table can be found using the following code:
+	add a
+	ld c, a
+	ld b, $0
+	ld hl, SongHeaderPointers1
+	add hl, bc
+	ld e, [hl]
+	inc hl
+	ld h, [hl]
+	ld l, e
+	ld e, [hl]
+	inc hl
+	ld b, h
+	ld c, l
+	rr e
+Which equals the following in hex:
+87 4F 06 00 21 ?? ?? 09 5E 23 66 6B 5E 23 44 4D CB 1B
+
+Song headers
+===================
+Headers for each song are structured as follows:
+1. Channel mask (0000 abcd) - only the lower 4 bits are used?
+    d = Channel 1
+    c = Channel 2
+    b = Channel 3
+    a = Channel 4
+2-3. Channel pointer (Repeat for every channel)
+
+Commands
+===================
+Song channel patterns are structured using the following commands:
+xy (00-CF) = Play note, length (0 = Rest)
+D0 xx = Set channel speed
+Dx (X = 1-6) = Set octave
+D7 = Increase octave
+D8 = Decrease octave
+D9 = Toggle note "tie" mode on/off
+DA xx = ?
+DB = ?
+DC xy = Set stereo panning (X = L, Y = R, 0 = false, 1 = true)
+DD = Song loop point
+DE = Go to loop point
+DF xx = Repeat the following section X times
+E0 = End of repeated section
+E1 xx = ?
+E2 xxxx = Go to macro
+E3 = Return from macro
+E4 xx = Set frequency
+E5 xx = Set duty
+E6 xy = Set volume envelope
+E7 xx = Set waveform
+E8 xx = Set note cut-off
+E9 xx = Set echo effect
+EA xx = Set vibrato type
+EB xx = Set vibrato delay
+EC xx = Set pitch offset
+ED xx = Adjust pitch offset
+EE = ?
+F0 xx = Preset
+F1 xx = ?
+F2 = ?
+F3 = ?
+F4 = ?
+F5-F9 = Unused?
+FA = ?
+FB = ?
+FC = ?
+FD = ?
+FE = ?
+FF = End of channel

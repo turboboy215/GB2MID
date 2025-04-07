@@ -1,0 +1,42 @@
+The music format seems to be derived from Hirokazu Tanaka's format, although there are some differences.
+
+Music Pointer Table
+=======================================
+The music pointer table is comprised of 16-bit pointers to each song. Immediately following it is flags specifying the panning for each song. The pointer table is located at $5F30 in Metroid 2, and $5CA6 in Wario Land.
+
+Song Headers
+=======================================
+Each song has a header which is specified as follows:
+1 byte = Song transpose
+2 bytes = Pointer to speed/tempo table
+2 bytes = Pointer to channel 1
+2 bytes = Pointer to channel 2
+2 bytes = Pointer to channel 3
+2 bytes = Pointer to channel 4
+
+Channel Headers
+=======================================
+Each channel of a song has the following values for a header:
+2 bytes (repeat): Pointers to sequences
+4 bytes: 00F0 and then pointer to loop in pattern: Go to loop
+2 bytes: 0000: End of song without loop
+
+Sequence Commands
+=======================================
+The commands of each sequence in a song are structured as follows:
+00 = End of sequence
+01 = Rest
+03 = Echo (v1)
+05 = Echo (v2)
+xx (00-9F, except 01/03/05?) = Play note
+Ax = Change note length
+F1 xx yy zz (CH1/2) = Set channel parameters (X = descending envelope, Y = ascending sweep, Z = length duty)
+F1 xxxx yy zz (CH3) = Set channel parameters (X = Wave pointer, Y = ?, Z = ?)
+F2 xxxx = Change song speed table
+F3 xx = Transpose (global?)
+F4 xx = Repeat section # of times
+F5 = End of repeat
+
+Note Length Tables
+=======================================
+These tables specify the length of each note relative to the Ax commands. In Metroid 2, these are 12 bytes long, but in Wario Land, these are 16 bytes long.

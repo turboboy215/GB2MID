@@ -1,0 +1,175 @@
+Song pointer table
+=======================================
+One method, as seen in Kirby games, to access the song's pointer table is with the following commands:
+
+ld hl, [SongTable]
+add hl, de
+add hl, de
+ldi a, [hl]
+
+The song pointer table is comprised of 16-bit pointers to each song as well as sound effects. Later games like Kirby's Dream Land 2 store their song pointers at the very start of the bank (address $4000).
+
+Song headers
+=======================================
+The header for each song is structured as follows:
+
+1 byte = How many channels are active in a song/sound effect
+Then repeat for each available channel:
+2 bytes (for each active channel) = 16-bit pointer to start of sequence
+1 byte = Binary mask representing channel number
+	00 = Channel 1
+	04 = Channel 2
+	10 = Channel 3
+	0C = Channel 4
+
+For Ghostbusters II and Trax, which use a different version of the driver, the header for each song is instead as follows:
+
+1 byte = Binary mask representing channel number
+	00 = Channel 1 (music)
+	01 = Channel 2 (music)
+        02 = Channel 3 (music)
+        03 = Channel 4 (music)
+        04 = Channel 1 (sound effects)
+        05 = Channel 2 (sound effects)
+        06 = Channel 3 (sound effects)
+        07 = Channel 4 (sound effects)
+2 bytes (for each active channel) = 16-bit pointer to start of sequence
+(Repeat until the following byte:)
+FF = End of channel header
+	
+
+Sequence format
+=======================================
+Sequences are comprised of the following commands:
+xy = Play note/length
+xx xx (Cx/Dx) = Play note with custom length
+Dx xx = Rest
+E1 xx = ?
+E2 xx yy = ?
+E3 xx = Frequency change                                      
+F0 xx = Set note volume?
+F1 xx = Set "echo" effect?
+F2 xx = Channel note table
+F3 xx = Hold note by amount
+F4 xx = Set note size
+F5 xx = Set frequency?
+F6 xx = Set instrument?
+F7 xx = ?
+F8 xx xx = Go to loop point
+F9 = ?
+FA xx xx = Play macro at position
+FB = Return from macro
+FC xx = Repeat section # of times (2 layers of repeats can be done at once)
+FD = End of repeat
+FE xx = Set channel volume?
+FF = End song without loop
+
+Ghostbusters II and Trax use different commands:
+xy = Play note (00-7F?)
+7C = Rest
+8x-Dx = Change note length (Uses only one big note table as opposed to multiple switched 6-byte ones)
+E1 xx = ?
+E2 xx yy = ?
+E3 xx = Frequency change?                                  
+F0 xx = Set note size
+F1 xx = Set duty
+F2 xx = Set channel volume
+F4 xx = Repeat section # of times
+F5 = End of repeat
+F6 xx xx = Play macro at position
+F7 = Return from macro
+F8 xx = Pitch slide
+F9 = ?
+FB xx xx = Go to loop point
+FF = End song without loop
+
+Note commands
+=======================================
+00 = Base note - Length 1
+01-0F = Higher note - Length 1
+10 = Rest - Length 1
+11-1F = Lower note - Length 1
+
+20 = Base note - Length 2
+21-2F = Higher note - Length 2
+30 = Rest - Length 2
+31-3F = Lower note - Length 2
+
+40 = Base note - Length 3
+41-4F = Higher note - Length 3
+50 = Rest - Length 3
+51-5F = Lower note - Length 3
+
+60 = Base note - Length 4
+61-6F = Higher note - Length 4
+70 = Rest - Length 4
+71-7F = Lower note - Length 4
+
+80 = Base note - Length 5
+81-8F = Higher note - Length 5
+90 = Rest - Length 5
+91-9F = Lower note - Length 5
+
+A0 = Base note - Length 6
+A1-AF = Higher note - Length 6
+B0 = Rest - Length 6
+B1-BF = Lower note - Length 6
+
+C0 xx = Base note - Custom length
+C1-CF xx - Higher note - Custom length
+D0 xx = Rest - Custom length
+D1-DF xx - Lower note - Custom length
+
+Frequency values:
+00 = A
+01 = A#
+02 = B
+03 = C
+04 = C#
+05 = D
+06 = D#
+07 = E
+08 = F
+09 = F#
+0A = G
+0B = G#
+0C = A
+0D = A#
+0E = B
+0F = C-0
+10 = C#-0
+11 = D-0
+12 = D#-0
+13 = E-0
+14 = F-0
+15 = F#-0
+16 = G-0
+17 = G#-0
+18 = A-0
+19 = A#-0
+1A = B-0
+1B = C-1
+1C = C#-1
+1D = D-1
+1E = D#-1
+1F = E-1
+20 = F-1
+21 = F#-1
+22 = G-1
+23 = G#-1
+24 = A-1
+25 = A#-1
+26 = B-1
+27 = C-2
+28 = C#-2
+29 = D-2
+2A = D#-2
+2B = E-2
+2C = F-2
+2D = F#-2
+2E = G-2
+2F = G#-2
+30 = A-2
+31 = A#-2
+32 = B-2
+33 = C-3

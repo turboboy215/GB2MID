@@ -1,0 +1,80 @@
+Song Table
+=======================================
+This pointer table can be found with the following instructions:
+
+ld d, a
+ld hl, [SongTable]
+call ????
+ld a, h
+ld h, l
+ld l, a
+or h
+ret z
+
+Which equals the following in hex:
+21 ?? ?? CD xx xx 7C 65 6F B4 C8
+
+Song header
+=======================================
+A header for a song is stored as follows:
+
+1. 1 byte flag (always 0 for music, otherwise is a sound effect)
+2-3. Channel 1 pointer
+4-5. Channel 2 pointer
+6-7. Channel 3 pointer
+8-9. Channel 4 pointer
+
+Note that values in the song data are stored as BIG ENDIAN!
+
+Commands
+=======================================
+Capcom's Game Boy sequence format is very close to the company's later NES sequence format (from 1990 onwards). Each channel's sequence is comprised of the following commands:
+
+00 = Triplet = Connect notes to make triplets (Reduce next three notes' size to 2/3 of original)
+01 = Connect = Connect note length of one or more notes (Use before first and last note)
+02 xx = Dotted note = The next note becomes 1 1/2 of its original length
+03 = Higher octave
+04 xy = Set channel flags:
+	MSB
+	bit0: Connect mode flag 2. Becomes copy of bit1 when a new note has been initialized.
+	bit1: Connect mode flag 1. Bit gets toggled on/off with Command 01. Cmd 04 always clears this 	bit, unless it's used to set it.
+	bit2: Triplet mode flag. Bit gets toggled on/off with Command 00. Cmd 04 always clears this 	bit, unless it's used to set it.
+	bit3: Dotted Note flag. Command 02 sets this bit. (Logic OR). It's cleared after the next note if set.
+	bit4: Octave jump flag. Bit gets toggled on/off with command 03. Cmd 04 always clears this bit, unless it's used to set it.
+	bit5-7: Octave set with Command 09. (Because it does an OR operation with the Flags memory byte, Cmd 09 can also be used to force any other of these bits on!)
+	LSB
+05 xx xx = Set tempo/speed
+06 xx = Set note size
+07 xx = Set volume (00-0F)
+08 xx = Set vibrato
+09 xx = Set octave transpose (0A same as 00?)
+0A xx = Transpose sequence (all channels) (Default: 00 - 01 to 7F)
+0B xx = Transpose sequence (current channel) (Default: 00 - 01 to 7F)
+0C xx = Set tuning
+0D xx = Pitch slide effect
+0E xx yy yy = Repeat # of times, address
+0F xx yy yy = Repeat # of times, address
+10 xx yy yy = Repeat # of times, address
+11 xx yy yy = Repeat # of times, address
+12 xx yy yy = Break to address (with flag X) - Flags are same as command 4
+13 xx yy yy = Break to address (with flag X) - Flags are same as command 4
+14 xx yy yy = Break to address (with flag X) - Flags are same as command 4
+15 xx yy yy = Break to address (with flag X) - Flags are same as command 4
+16 xx yy yy = Go to loop point
+17 = End of channel track
+18 xx = Set duty
+19 = Set envelope?
+20 = Rest (64th note)
+21-3F = Play note (64th note)
+40 = Rest (32th note)
+41-5F = Play note (32th note)
+60 = Rest (16th note)
+61-7F = Play note (16th note)
+80 = Rest (8th note)
+81-9F = Play note (8th note)
+A0 = Rest (quarter note)
+A1-BF = Play note (quarter note)
+C0 = Rest (half note)
+C1-DF = Play note (half note)
+E0 = Rest (whole note)
+E1-FF = Play note (whole note)

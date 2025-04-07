@@ -1,0 +1,109 @@
+There are two versions of the driver: the earlier "common" version which is used in the majority of games, and a later version with major differences. It is likely that music in the earlier version was written in MML, and music in the later version was converted from MIDI. The later version also makes use of bankswitching. The earlier version closely resembles the NES and Master System versions of the driver, whereas the later version closely resembles the GBA version.
+
+Earlier/common version
+============================================================================
+
+Song pointer table
+===================
+The song pointer table is structured with 16-bit pointers to each song. Unfortunately, there doesn't appear to be a consistent method to look for the pointer to the table.
+
+Channel headers
+===================
+The "header" for each song is structured as follows, with a 2-byte "mask" and pointers to each channel's sequence:
+1 = Channel mask?
+2 = ?
+3-4 (x4) = Pointer to each channel
+
+Sequence commands
+===================
+Each song channel's sequences are comprised of the following commands:
+xy (00-BF?) = Play note, length
+Cx = Rest, length
+ 0 = 25
+ 1 = 50
+ 2 = 75
+ 3 = 100
+ 4 = 125
+ 5 = 150
+ 6 = 175
+ 7 = 200
+ 8 = 225
+ 9 = 250
+ A = 275
+ B = 300
+ C = 325
+ D = 350
+ E = 375
+ F = 400
+D0-D7 = Set octave (Higher value = lower octave, 5-7 = too low)
+D8-DF = Set octave + transpose + 1 (Higher value = lower octave, D-F = too low)
+E0-E5 xx = Noise effects?
+E6-E8 (xx) = Set volume = also uses an additional byte in later games
+E9 xx = Set up waveform
+EA xx = Set echo
+EB xx = Set envelope sweep
+EC = Turn off "glide"
+ED-EF = Set volume
+F0 xx = Repeat the following notes X times (v1)
+F1 = End of repeated pattern with F0 command
+F2 xx xx = Go to loop point
+F3 xx = Repeat the following notes X times (v2)
+F4 = End of repeated pattern with F3 command
+F5 xx xx = Go to macro
+F6 = Return from macro
+F7 xx = Sweep up
+F8 xx = Sweep down
+F9 xx yy = Set attack rate values?
+FA xy = Set duty/envelope
+FB xx yy zz aa = Set envelope parameters
+FC = Turn on "glide" - notes are continuously played as if held down
+FD xx = Set channel speed (more = slower)
+FE xx = Set noise effect?
+FF = End channel track
+
+Later version
+============================================================================
+
+Song pointer table
+===================
+Same as the earlier version.
+
+Channel headers
+===================
+The "header" for each song is structured as follows, with a 2-byte "mask" and pointers to each channel's sequence:
+1 = Channel mask
+2 = Priority?
+3 = Bank
+4-5 (x?) = Pointer to each channel
+
+Sequence commands
+===================
+Each song channel's sequences are comprised of the following commands:
+xx yy (X = 00-7F) = Play note, length
+80 xx = Rest, length
+xx yy (X = 81-CF) = Play note, length (duplicate of 00-7F?)
+D0-DF = Set volume/attack rate
+E0 xx = Set envelope size?
+E1 xx = Stereo flag 1?
+E2 xx = Stereo flag 2?
+E3 xx = Set waveform
+E4-E7 = Set duty
+E8 xx = Transpose channel (signed)
+E9 xx = Set echo
+EA-EF = Set volume?
+F0 xx = Repeat the following notes X times (v1)
+F1 = End of repeated pattern with F0 command
+F2 xx = Repeat the following notes X times (v2)
+F3 = End of repeated pattern with F2 command
+F4 xx xx = Go to loop point
+F5 xx xx = Go to macro
+F6 = Return from macro
+F7 xx = Set sweep?
+F8 xx = Set tuning
+F9 xx yy = Set attack rate values?
+FA xx = Set envelope?
+FB xx yy zz aa = Set envelope parameters
+FC = Turn on "glide" - notes are continuously played as if held down
+FD = Turn off "glide"
+FE xx = Set noise effect?
+FF = End channel track

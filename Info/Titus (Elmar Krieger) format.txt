@@ -1,0 +1,71 @@
+This driver is entirely different than the older Titus driver used in only 3 games. The driver was largely altered in 1997.
+
+Older format:
+=============================================================
+The older version of the driver seems to be tracker-based. In The Blues Brothers: Jukebox Adventure and Little Indian (Un Indien dans Ville), the address of each "song" is loaded manually via an address divisible by 0x100 in one bank. However, Lamborghini: American Challenge stores each song's data compressed in ROM using a format known as "SQZ" (the name comes from extensions of earlier Titus PC games using the same compression) which is decompressed to and loaded from RAM address $CD00. Prehistorik Man stores most of its music uncompressed, except for two songs which are compressed in ROM using a custom LZSS-like algorithm and decompressed to and loaded from RAM address $C000. These two compressed songs can be found at bank 8 at address $5900 and bank 4 at address $6D02. Both of the compression methods are also used in other Titus games.
+
+Some information about the song's patterns can be found at address $78 relative to the start of the song:
+1. Number of patterns
+2. Song loop position
+3. Speed (in ticks)
+4. Pattern size (in rows)
+
+The order of the pattern itself is found at address $30.
+The pointers to the pattern data for each channel starts at address $100. These are split as follows:
+1-2. Channel 1 pattern data
+3-4. Channel 2 pattern data
+5-6. Channel 3 pattern data
+(Repeat for the number of patterns)
+Similar to Martin Walker, this version of the driver only has three tracks, despite using all 4 of the Game Boy's channels.
+
+Pattern data
+=======================================
+Commands for the patterns for each sequence are as follows:
+
+xx (yz) (aa)
+
+If X is less than 7F, then X = Note:
+   Y = Instrument
+   Z = Mask = if 0, then skip A; otherwise, use A
+   A = Volume?
+If X is 7F, then X = Change volume, Y = Volume (cut off = 0)
+If X is 80 or greater, then # of empty rows, starting with 0 = 1
+
+Newer format:
+=============================================================
+Starting with Superman in 1997, the driver was heavily altered and uses an entirely different sequence format, possibly converted from MIDI.
+
+Song table
+=======================================
+Unlike the older version, there is an actual song table. In all three games, this is located at offset 0x400C, and is comprised of 16-bit values.
+The last few values in Superman are $D000. This is because these last few songs are stored compressed in other banks of the ROM, and are compressed with the same LZSS derivative algorithm as Prehistorik Man, and decompressed and loaded into RAM address $D000.
+
+Signature
+=======================================
+Following after is an identification string in ASCII. In Superman and Quest for Camelot, this is "MUSIC & SFX - by Elmar Krieger". In Roadsters Trophy, this is "GABRIEL - MUSIC & SFX - by Elmar Krieger".
+
+Song channel pointers
+=======================================
+Following the pointers in the song table, the pointers to each channel's patterns are stored as follows:
+1-2. Channel 1
+3-4. Channel 2
+5-6. Channel 3
+7-8. Channel 4
+
+Song channel patterns
+=======================================
+The patterns for each channel are simple lists of 16-bit values referencing a pointer to a channel sequence, ending with a value of 0000.
+
+Sequence commands
+=======================================
+Channel sequences are structured as follows:
+First byte - 
+  - If 80 or higher, than time delay (subtract from 80)
+  - Otherwise, then command:
+    - 0x (yy) (11) (22) zz = Play note (X = Note size, Y = Note, Z = Length, 1-2 = Effect (only if either values are greater than 0x80) (Y is disabled if "byte flag" is turned on)
+    - 1x yy zz (11) (22) aa bb = Play note with volume? (A = Note, B = Length), same effect rules as 0x
+    - 2x yy zz aa = Set instrument/volume? (X = Note size, Y = Instrument, Z = note, A = length) (Z is disabled if "byte flag" is turned on)
+       - If Y < 60, then 3-4 byte commands, otherwise 2-3 byte commands?
+    - 3x yy zz aa bb cc = Fade in note? (B = Note, C = Length)
+    - 4x = Stop channel
+    - 5x yy = Sweep? (Y = length)

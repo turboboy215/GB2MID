@@ -1,0 +1,312 @@
+Song pointers
+=======================================
+Pointers to songs are represented by a series of JP (C3) jump commands.
+
+The pointers to channels 1-3 are represented by a series of LD DE (CD 3D) commands, followed by CALL (11) commands to an address initializing the respective channels. Sometimes, the channels are not initialized in order in the code; see the address being called to get the correct order. Channel 4 is not directly called; instead, it is "controlled" by one of the other channels (see later).
+Each of the song's channels are comprised of "patterns" consisting of 16-bit pointers to each "position" of a song. For songs that loop at a different position than where they started with, the channel's patterns are terminated with "0000" followed by a pointer to the location of the pattern where the channel restarts. Other patterns only have one position.
+
+The pattern format
+=======================================
+Each of the patterns for channels 1-3 are comprised of the following commands: (Notes are the same as MIDI values but an octave higher)
+
+Pop Up:
+xx (00-5F) = Play note
+6B = Rest for a bar
+6C = Rest for a bar (v2)?
+72 xx = Transpose (all channels, signed)
+73 = End of sequence
+76 xx = Manually set length of note by X ticks (each "bar" is 8 ticks), if X is 6B, then rest for that amount of time + 1 bar
+77 = Hold note for a bar
+79 = ?
+7B = ?
+82 = Turn on "tom tom" mode (v2)?
+83 = Turn on "tom tom" mode?
+8B = Turn off "tom tom" mode?
+8D = ?
+9x = Effect
+E0-FF = Change channel speed
+
+Bomb Jack:
+60 xx = Enable "tom tom" mode, transpose (signed)
+61 xx = Double length of the following note
+62 xx yy zz = ?
+63 = Hold note for a bar
+64 = Rest for a bar
+66 = End of sequence (no loop)
+67 = Transpose (all channels, signed)
+68 = End of sequence
+6A xx = Manually set length of note by X ticks (each "bar" is 8 ticks), if X is 65, then rest for that amount of time + 1 bar
+6B xx yy yy = Set speed control of channel 4, then channel 4 pattern offset
+70 = ?
+72 xx yy zz = Rest?
+74 xx = Set duty
+75 xx xx =  Switch waveform
+77 xx = Set channel input on/off?
+79 xx xx = Jump to position
+7F = Play "tom tom" note
+80 = Switch to instrument type 1
+81 = Switch to instrument type 2
+82 = Switch to instrument type 3
+83 = Switch to instrument type 4
+84 = Switch to instrument type 5
+85 = Switch to instrument type 6
+86 = Switch to instrument type 7
+87 = Switch to instrument type 8
+88 = Switch to instrument type 9
+89 = Switch to instrument type 10
+8A = Switch to instrument type 11
+8B = Switch to instrument type 12
+8C = Switch to instrument type 13
+8D = Switch to instrument type 14
+8E = Switch to instrument type 15
+8F = Switch to instrument type 16
+9x = Set effect?
+C4 = ?
+C6 xx yy zz = Sweep parameters?
+C7-?? = Change channel speed
+??-FF = Repeat 2+x
+
+Asterix:
+xx (00-5F) = Play note
+63 xx yy zz = Set channel parameters
+64 = Half rest?
+65 = Rest or hold note for a bar?
+66 = No note/Rest?
+68 = End of final note
+69 xx = Transpose (all channels, signed)
+6A = End of sequence
+6C xx = Manually set length of note by X ticks (each "bar" is 8 ticks), if X is 65, then rest for that amount of time + 1 bar
+6D xx yy yy = Set speed control of channel 4, then channel 4 pattern offset
+6E = Stop current drum pattern?
+6F = Effect/decay option 1
+70 = Effect/decay option 2
+71 = Effect/decay option 3
+72 = Effect/decay option 4
+73 = Effect/decay option 5
+74 = Effect/decay option 6
+75 xx yy zz = Set channel parameters?
+76 xx = ?
+7A = Switch waveform
+7D = Transpose (current channel only)
+7E xx xx = Load routine?
+7F = ?
+80 xx xx = Go to loop point
+81 xx xx = Jump to position
+82 xx xx = Load routine? (2)
+84 xx = ?
+85 = Switch to instrument type 1
+86 = Switch to instrument type 2
+87 = Switch to instrument type 3
+88 = Switch to instrument type 4
+89 = Switch to instrument type 5
+8A = Switch to instrument type 6
+8B = Switch to instrument type 7
+8C = Switch to instrument type 8
+8D = Switch to instrument type 9
+8E = Switch to instrument type 10
+9E = ?
+Ax = Set effect?
+BD xx yy zz = ?
+Cx (C0-CC) xx yy zz = Set up waveform volume/envelope
+CD-FF = Change channel speed
+EA = Final note?
+
+For newer games:
+xx (00-5F) = Play note
+60 xx = Enable "tom tom" mode, transpose (signed)
+61 = Disable "tom tom" mode?
+62 = Rest for a bar?
+63 xx yy zz = Set channel parameters?
+64 = Half rest?
+65 = Rest or hold note for a bar?
+66 = No note/Rest?
+68 = End of final note
+69 xx = Transpose (all channels, signed)
+6A = End of sequence
+6B xx = Manually set length of note by X ticks (each "bar" is 8 ticks), if X is 65, then rest for that amount of time + 1 bar
+6C xx yy yy = Set speed control of channel 4, then channel 4 pattern offset
+6D = End channel without loop after 68 value
+6E = Effect/decay option 1
+6F = Effect/decay option 2
+70 = Effect/decay option 3
+71 = Effect/decay option 4
+72 = Effect/decay option 5
+73 = Effect/decay option 6
+74 xx yy zz = Set channel note length/others?
+75 xx = Set channel note size?
+76 xx = ?
+77 xx yy zz = Fade in effect (all channels)
+79 xx xx = Switch waveform
+7A xx = Transpose (current channel only)
+7B xx (yy) = Set channel envelope/echo (optional)
+7C = Turn off effect?
+7D xx xx = Go to loop point
+7E xx xx = Jump to position
+7F xx xx = Load routine? 
+80 = Repeat end point
+81 = ?
+82 = ?
+83 xx = ?
+84 = Switch to instrument type 1
+85 = Switch to instrument type 2
+86 = Switch to instrument type 3
+87 = Switch to instrument type 4
+88 = Switch to instrument type 5
+89 = Switch to instrument type 6
+8A = Switch to instrument type 7
+8B = Switch to instrument type 8
+8C = Switch to instrument type 9
+8D = Switch to instrument type 10
+8E = Switch to instrument type 11
+8F = Switch to instrument type 12
+9x = Set effect?
+Ax = Set effect?
+A9 xx yy zz = ?
+AD xx yy zz = ?
+Bx (B0-B9, later extends to BC) xx yy zz = Set up waveform volume/envelope
+
+
+Start and end of "change channel speed" and "repeat" commands per game:
+The Smurfs 1:
+BA-E8 = Change channel speed
+E9-FF = Repeat 2+x
+
+Obelix (GB version)/Tintin 1/Die Maus/Ottifanten:
+BD-EC = Change channel speed
+ED-FF = Repeat 2+x
+
+Spirou:
+BD-EC = Change channel speed
+ED-FF = Repeat 2+x
+
+Lucky Luke/The Smurfs 3/Sea Battle/Bugs Bunny:
+C1-EF = Change channel speed
+F0-FF = Repeat 2+x
+
+Sylvester and Tweety:
+BE-EC = Change channel speed
+ED-FF = Repeat 2+x
+
+Turok 1/V-Rally:
+C5-F3 = Change channel speed
+F4-FF = Repeat 2+x
+
+Turok 2:
+C8-F6 = Change channel speed
+F7-FF = Repeat 2+x
+
+Tintin 2:
+C5-F3 = Change channel speed
+F4-FF = Repeat 2+x
+
+Obelix (GBC version):
+C2-F1: Change channel speed
+F2-FF: Repeat 2+x
+
+Hugo 2:
+C3-F1: Change channel speed
+F2-FF: Repeat 2+x
+
+Ronaldo V-Football/UEFA 2000:
+C9-F7 = Change channel speed
+F8-FF = Repeat 2+x
+
+Radikal Bikers (prototype):
+C9-?? = Change channel speed
+??-FF = Repeat 2+x
+
+Baby Felix:
+C0-EE = Change channel speed
+EF-FF = Repeat 2+x
+
+For very late games:
+xx (00-5F) = Play note
+6C xx yy yy = Set speed control of channel 4, then channel 4 pattern offset
+84 = Switch to instrument type 1
+85 = Switch to instrument type 2
+86 = Switch to instrument type 3
+87 = Switch to instrument type 4
+88 = Switch to instrument type 5
+89 = Switch to instrument type 6
+8A = Switch to instrument type 7
+8B = Switch to instrument type 8
+8C = Switch to instrument type 9
+8D = Switch to instrument type 10
+8E = Switch to instrument type 11
+8F = Switch to instrument type 12
+
+
+
+Channel 4 patterns
+=======================================
+Note values on channel 4 are comprised of the following commands:
+XX (first value?) = Volume
+00 = Rest
+0x = Drum instrument
+4x = Drum instrument, 2x length
+FF = Loop
+
+
+Note values
+=======================================
+0C = C-0
+0D = C#-0
+0E = D-0
+0F = D#-0
+10 = E-0
+11 = F-0
+12 = F#-0
+13 = G-0
+14 = G#-0
+15 = A-0
+16 = A#-0
+17 = B-0
+18 = C-1
+19 = C#-1
+1A = D-1
+1B = D#-1
+1C = E-1
+1D = F-1
+1E = F#-1
+1F = G-1
+20 = G#-1
+21 = A-1
+22 - A#-1
+23 = B-1
+24 = C-2
+25 = C#-2
+26 = D-2
+27 = D#-2
+28 = E-2
+29 = F-2
+2A = F#-2
+2B = G-2
+2C = G#-2
+2D = A-2
+2E = A#-2
+2F = B-2
+30 = C-3
+31 = C#-3
+32 = D-3
+33 = D#-3
+34 = E-3
+35 = F-3
+36 = F#-3
+37 = G-3
+38 = G#-3
+39 = A-3
+3A = A#-3
+3B = B-3
+3C = C-4
+3D = C#-4
+3E = D-4
+3F = D#-4
+40 = E-4
+41 = F-4
+42 = F#-4
+43 = G-4
+44 = G#-4
+45 = A-4
+46 = A#-4
+47 = B-4
+48 = C-5

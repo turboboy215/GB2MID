@@ -1,0 +1,83 @@
+Song Pointer List
+=======================================
+Like Mega Man 1, music and sound effects are stored in the same way, and are accessed via the same pointer table. This pointer table can be found with the following instructions:
+
+    add a
+    add low[SongTable]
+    ld l, a
+    ld a, high[SongTable]
+    adc $00
+    ld h, a
+    ld a, [hl+]
+    ld h, [hl]
+    ld l, a
+
+Which equals the following in hex:
+87 C6 ?? 6F 3E ?? CE 00 67 2A 66 6F
+
+Another variant for Mega Man 4/5:
+87 C6 ?? 6F 3E ?? CE 00 67 F1 2A 66 6F
+
+Song Format
+=======================================
+Each "song" starts with two bytes, the first being a binary "mask" defining which channels are used, and the second being of uncertain use. Following that is 16-bit pointers to each channel's sequence (if each is present).
+
+1 (1): Channel mask (1234 1234 = SFX channels, then music channels)
+2 (1): Music/SFX flag? (0 = SFX, 1 = Music)
+3 (2): Channel 1 pointer
+4 (2): Channel 2 pointer
+5 (2): Channel 3 pointer
+6 (2): Channel 4 pointer
+
+Commands
+=======================================
+Each channel's sequence is comprised of the following commands:
+
+xy = Play note, length
+Cx = Rest
+Da bb cc dd ee (ff gg) = Set channel/instrument parameters (channel 1 and 2) - ee is signed; if positive, does not include the last two bytes
+Da bb cc dd = Set channel/instrument parameters (channel 3)
+Da = Set channel speed (channel 4) (In Bionic Commando, Da bb cc dd ee with additional parameters)
+Ex = Set octave
+E8 xx = Change noise?
+E9 xx = Change instrument parameter?
+EA xx = Modulate sweep frequency?
+EB xx = Change vibrato?
+EC xx = Set channel transpose
+ED xx = ?
+EE xx (yy zz) = Turn on sweep?
+EF xx = Set pitch tuning
+F0 xx = Set noise envelope?
+F1 xx = Set noise frequency?
+F2 xx = Change envelope
+F3 xx = Set echo?
+F4 xx = Noise sweep?
+F5 xx = ?
+F6 xx = Change channel speed
+F7 = Jump to position (1)
+F8 = Jump to position (2)
+F9 = Return from jump (1)
+FA = Return from jump (2)
+FB = Start of loop?
+FC = Song loop point?
+FD xx = Loop section amount of times (0 = infinite)
+FE xx = Loop entire song amount of times? (0 = infinite)
+FF = End track
+
+Notes are stored in essentially the same format as Mega Man 2, using values 0-B from the first four bits to represent a note, alternating between octaves, and the last four bits for the length.
+
+Differences in Pocket King format
+=======================================
+The GBC game Pocket King uses a slightly modified version of the format with the following differences:
+
+Unlike earlier games which store a copy of the driver in each individual bank, this game also stores a flag in each song's header indicating the bank in ROM the sequence data is stored in:
+
+1 (1): Channel mask (1234 1234 = SFX channels, then music channels)
+2 (1): Music/SFX flag? (0 = SFX, 1 = Music)
+3 (1): Bank number
+4 (2): Channel 1 pointer
+5 (2): Channel 2 pointer
+6 (2): Channel 3 pointer
+7 (2): Channel 4 pointer
+
+Whereas earlier games, for both note and rest commands, use a length value of 16 if the higher bits are set to 0, Pocket King instead uses this as a flag to get the note's length from the following byte, making these notes a 2-byte command.

@@ -1,0 +1,14 @@
+Song data
+=======================================
+The location of songs are usually described in the driver's code rather than as a table. This makes it fairly difficult to find the exact location of songs rather difficult.
+Similar to David Warhol, this sound engine uses a "frame-based" system in "rows" for all channels rather than each channel having its own sequence. Also like said sound engine, music was probably converted from MIDI, as it features similar commands and the same note values.
+Commands in each "row" are comprised of the following commands:
+ - xx (00-7F?) = End of row/Total time of row
+ - 8x = Note off (X = Channel)
+ - 9x yy (zz) = Note on/Play note (X = Channel, Y = Note, Z = Note size (later games only))
+ - Ax yy = Play sample
+ - Bx = ?
+ - Cx yy = Set instrument?
+ - Dx = ?
+ - Ex = End of song with loop
+ - Fx = End of song, no loop

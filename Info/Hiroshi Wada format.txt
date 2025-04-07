@@ -1,0 +1,50 @@
+Song pointer table
+===========================================
+This consists of values for the data locations of both music and sound effects which are in the same format. It consists of 16-bit values, which are not necessarily in order, and some are empty or duplicates.
+In Mega Man: Dr. Wily's Revenge, the pointer table values are accessed "indirectly" using a function in the first ROM bank. These start at 0x24B in all final versions of the ROM and 0x200 in the Japanese prototype ROM. The pointer table itself starts at RAM address $4015. SolarStriker and QIX don't have any pointer tables and instead relies on external code to load the address of each song.  Because of this, finding the correct pointer values can be difficult.
+
+The song format
+===========================================
+The song format is relatively simple. Each song starts with a "header" as follows:
+
+1: Speed/tempo (1 = fastest)
+2: Unknown (always 0 for music, seems to be related to music/sound effect types)
+3-4: Channel 1 start pointer (0 = empty)
+5: Channel 1 identifier (0 = sound effect, 4 = music)
+6-7: Channel 2 start pointer (0 = empty)
+8: Channel 2 identifier (0 = sound effect, 5 = music)
+9-10: Channel 3 start pointer (0 = empty)
+11: Channel 3 identifier (0 = sound effect, 6 = music)
+12-13: Channel 4 start pointer (0 = empty)
+14: Channel 4 identifier (0 = sound effect, 7 = music)
+
+Commands:
+
+xx yy = Note frequency, length
+8x yy = Modulation/sweep effect
+9x yy = Go back to loop point for amount of times and repeat, 90 = infinite
+Ax yy = Go back to loop point for amount of times and repeat, A0 = infinite
+Bx yy = Go back to loop point for amount of times and repeat, B0 = infinite - 90 xx and Ax xx can be used in combination with Bx to "multiply" this amount
+E1 xx = ?
+E6 xx = ?
+E7 xx = Transpose + 1 octave (1 = on, 0 = off)
+EB xx = ?
+EC xx = "Slow down" channel?
+ED xx = Set channel transpose
+EF xx = ?
+F0 xx = Set panning (0 = none, 1 = left only, 2 = right only, 3 = both)
+F1 xx = ?
+F2 xx = Set waveform (channel 3 only)
+F3 xx = ?
+F4 xx = Set instrument duty
+F5 xx = Set instrument sweep/pitch change
+F6 xx = ?
+F7 xx = ?
+F8 xx = Music/SFX identifier? (0 = SFX, 1 = music)
+F9 xx = ?
+FA xx = ?
+FB xx = Set note length
+FC xx = Set envelope length?
+FD xx = Set "echo" effect?
+FE xx = Set velocity/volume?
+FF = End channel

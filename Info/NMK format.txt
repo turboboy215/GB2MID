@@ -1,0 +1,54 @@
+Song pointer table
+===================
+The song pointer table consists of 16-bit (2 byte) values. It can be found using the following code:
+
+    ld [hl], $FF
+    ld hl, $DD31
+    inc [hl]
+    ld hl, SongTable
+
+Which equals the following in hex:
+21 31 DD 34 21 ????
+
+Song header
+===================
+Each song, which uses the same format for both music and sound effects, has a "header" which is stored as follows:
+xx yyyy
+  x (00-03) = SFX channel 1-4
+  x (01-04) = Music channel 1-4
+  y = Pointer
+(Repeat for each channel)
+FF = End of header
+
+Song commands
+===================
+Song commands work as follows:
+xy (00-BF) = Play note (or rest), length (X = length, Y = note)
+(The higher the value of X, the shorter note length)
+Cx = Select envelope?
+Dx = Set volume/envelope
+E0 xx yy = Set instrument, effect?
+E1 xx = Set sweep/distortion effect
+E2 xx = Set frequency
+E3 = Set envelope bit values 1
+E4 = Set envelope bit values 2
+E5 = Set envelope bit values 3
+E6 = Set envelope bit values 4
+E7 = Set envelope bit values 5
+E8 = Set envelope bit values 6
+E9 xx = Set noise tone
+EA xx = Set transpose
+(80+ = negative)
+EB = Set transpose +1 octave (+12)
+EC = Set transpose -1 octave (-12)
+ED-EF = Reset channels 1-4?
+F0-F3 = Set panning options?
+F4 xx = Set waveform
+F5-F8 = Set channel speed value (F5 = 00, F6 = 0C, F7 = 18, F8 = 24)
+F9 xxxx = Go to loop point
+FA xxxx = Jump to position if done repeating
+FB xx = Set repeat of section
+FC xxxx = Go to repeat point
+FD xxxx = Go to macro
+FE = Exit macro
+FF = End of track

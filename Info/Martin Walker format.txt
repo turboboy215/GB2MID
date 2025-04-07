@@ -1,0 +1,113 @@
+This driver loads many addresses in an unconventional way - rather than using direct pointers to locations, a "base value" is directly loaded and then additional values are added to from a table.
+
+Note Length Table
+=======================================
+Information about the lengths of envelopes/notes is located immediately after all code. It is loaded using the following unusual code:
+
+    and $1E
+    add LengthTableB
+    ld l, a
+    adc LengthTableA
+    sub l
+
+Which equals the following in hex:
+87 E6 1E C6 ?? 6F CE ??
+
+
+The Frequency Table
+=======================================
+Following the note length table is the frequency table. The frequency table is the standard format used in many drivers.
+
+Significant Pointers
+=======================================
+A series of 7 pointers are stored in RAM using the following code:
+
+    ld hl, [AddTable]
+    ld de, [BaseValue]
+    ld a, e
+    ld [RAMBase1], a
+    ld a, d
+    ld [RAMBase2], a
+    ld bc, RAMNextValue
+
+Which equals the following in hex:
+21 ?? ?? 11 9C ?? ?? EA ?? ?? 7A EA ?? ?? 01 ?? ??
+
+"AddTable" is a table of 7 16-bit numbers (14 bytes) which when sequentially added together each time on top of the base number, adds up to the location of the following memory locations:
+
+1. Start of sound effects data?
+2. Start of (unknown)
+3. Start of instrument data
+4. Start of sequence data pointer list
+5. Start of sequence data
+6. Start of song list
+7. Start of pattern data
+
+Pointer Lists
+=======================================
+Each pointer list is a series of 16-bit values that specify the location of each item in the data relative to the start of the data itself which is specified in the next pointer.
+
+Sequences
+=======================================
+80 xx = Change instrument
+81 xx = Rest
+82 xx = Turn on portamento with amount
+83 xx = Set tempo
+84 xx = Set effect type?
+85 xx = Change note length type
+86 xx = Set transpose (all channels)
+xx yy = Play note, length
+FF = End of sequence
+
+Note values are the same as general MIDI.
+
+Song List
+=======================================
+The song list/pointer table is structured as follows:
+
+1-2 = Channel 1 pointer
+3-4 = Channel 2 pointer
+5-6 = Channel 3 pointer
+7-8 = Unknown (unused?)
+
+Note that channel 4 is NOT controlled directly by these pointers, but by the instruments in the sequence itself. This means that only three channels can be played simultaneously, but some instruments are programmed to play notes on one channel and channel 4, although this seems to be absent in the Game Gear version of the driver.
+
+Song Patterns
+=======================================
+4x-50 = Repeat all patterns between this and a 40 command for the specified amount of times in the second bit
+xx yy (x = times to play (0 = endless loop), y = sequence number)
+FD = Same as FE?
+FE = End of channel pattern (no loop)
+FF = End of channel pattern (loop)
+00 = Usually follows FF or FE
+
+Early version - Speedball 2
+=======================================
+Speedball 2: Brutal Deluxe uses an early version of the driver with significant differences.
+
+The pointers are found using the following code:
+    bit 0, e
+    ld de, [BaseValue]
+    ld hl, [AddTable]
+
+Which equals the following in hex:
+CB 43 11 ?? ?? 21 ?? ??
+
+The "add table" repeats the addition for the second and third values twice (in this case 70 and 2B). Of the values in the "add table":
+1. ?
+2. ?
+3. Sequence data pointers 1 (lower bytes)
+4. Sequence data pointers 2 (upper bytes)
+5. Sequence data
+6. Song list
+7. Pattern data
+8. ?
+
+This is also found MULTIPLE times (for every song - Speedball 2 has only 2), instead of just once.
+
+For the sequence pointers, rather than having one 16-bit value per sequence pointer, the first pointer table is used for the lower bytes and the second pointer table is used for the upper bytes; for example, a value of 8F in the first pointer table and 01 in the second table at the same place means that the sequence starts at 18F bytes relative to the start of the sequence data. After channel 1, sequence pointers start following with a value of FF.
+
+For the song list, it once again consists of 8-bit values, of which there are only three per song. However, there are also 13 other values between the songs, the purpose of which are currently unknown. The last seven are set to 01.
+The song pattern data seems to be almost the same format as the version used in other games. Sequence numbers refer to starting from the first sequence each channel has a pointer for.
+
+The sequences, rather than using 8x commands for events like changing instruments, instead uses values higher than 80 to control the current length of notes. Notes themselves use two bytes, the first value for the instrument and the second for the note frequency.

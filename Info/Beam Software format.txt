@@ -1,0 +1,85 @@
+Song channel patterns table
+===================
+Each channel has its own series of patterns referenced by a pointer table that are joined together with their corresponding sequences of the same number to make up a full song or sound effect.
+
+To find the locations of each pointer table, the following code is seen:
+ld a, c
+rlca
+ld e, a
+ld a, [$????]
+ld hl, Ch1PatTable
+add hl, de
+add [hl]
+jr ?
+ld a, c
+sub a, $04
+rlca
+
+Note that the order of the channels is not necessarily equal to the audio channels they are mapped to; these are determined by the instruments.
+
+Which equals the following in hex:
+79 07 5F FA xx xx 21 ?? ?? 19 86 18 0D 79 D6 04 07
+
+Sequence data
+===================
+The sequences referenced are different for each song/sound effect, but is shared by all channels. Two pointers are used to look for the sequence data referenced by the song channel pattern: one for the location of each sequence relative to the start of the data, and the other the start of the sequence data for a song itself.
+
+The pointers can be found using the following code:
+rlca
+ld [$????], a
+ld e, a
+ld d, $00
+ld a, $00
+ld [rNR51]
+ld hl, SeqData
+add hl, de
+ldi a, [hl]
+ld [$????], a
+ld a, [hl]
+ld [$????], a
+ld hl, SeqPtrs
+add hl, de
+ldi a, [hl]
+ld [$????], a
+
+Which equals the following in hex:
+07 EA xx xx 5F 16 00 3E 00 E0 25 21 ?? ?? 19 2A EA xx xx 7E EA xx xx 21 ?? ?? 19 2A EA xx xx
+
+Song channel patterns
+===================
+Patterns for each channel are structured as follows:
+00 = Stop song
+01 xx = Play pattern
+02 xx = Go to song loop
+03 xx yy = Play pattern X, Y times
+
+Sequence format
+===================
+Sequences are structured with the following commands:
+xx yy (x = 00-7F) = Play note, length (0 = rest)
+(To get note length, mask off the lower five bits from the byte (use AND operation to 00011111), and then add to the base value of the note length table.) 
+xx (80-F9?) = Switch to instrument number (also affects play channel)
+FF = End of sequence
+
+Note length table
+===================
+The following table is used to calculate the note length for at least some, or possibly all games:
+03 06 09 0C 12 15 18 24 2A 30 48 54 60 90 A8 02 03 04 06 07 08 0C 0E 10 18 1C 20 30 38 FF FE FD FB F7 EF DF BF 7F 01 02 04 08 10 20 40 80
+
+Song tempos
+===================
+The song tempo table is accessed using the following code:
+rlca
+rlca
+rlca
+rlca
+ld hl, $????
+or [hl]
+xor a, $FF
+ld hl, $????
+and [hl]
+ld [hl], a
+ld hl, Tempos
+
+Which equals the following in hex:
+07 07 07 07 xx xx C1 B6 EE FF 21 xx xx A6 77 21 ?? ??

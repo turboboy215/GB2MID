@@ -1,0 +1,196 @@
+The Frequency Table
+=======================================
+The frequency table is the standard format used in many drivers. It can be found with the following commands:
+
+    ld a, [hl]
+    add c
+    ld e, a
+    ld d, $00
+    ld hl, FreqTable
+    add hl, de
+    add hl, de
+    ld a, [hl+]
+    ld e, a
+    ld d, [hl]
+    ld a, b
+    cp $02
+
+Which equals the following in hex:
+
+7E 81 5F 16 00 21 ?? ?? 19 19 2A 5F 56 78 FE 02
+
+Sound Effects Table
+=======================================
+Immediately following the frequency table is the sound effects table. It is accessed with the following commands:
+
+    ld d, $00
+    ld hl, [SFXTable]
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+
+Which equals the following in hex:
+
+16 00 21 ?? ?? 19 19 19
+
+For later games, this starts with the byte 7F. Meaning is unknown.
+
+Bytes:
+1-2: Sequence pointer
+3. Channel number (starting with 0)
+4. Volume? (later games only)
+
+Pattern Table
+=======================================
+Next is the pattern table, which gives IDs to each sequence in a song. it is accessed with the following commands:
+
+    ld hl, [PatTable]
+    ld d, $00
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+
+Which equals the following in hex:
+
+21 ?? ?? 16 00 19 19 19 19 19 19 19 19 19 19 19 19
+
+To determine whether the game is using the old or new format, check the byte immediately following. If it is an additional 19 (add hl, de), then old; if it is 2A (ld a, [hl+], which follows the additional add hl, de in the old version), then new.
+
+The game Carmageddon uses what appears to be an early and more rudimentary version of the pointer table, suggesting that it was the first game developed to use the driver. To look for the driver, use the following shorter version of the commands:
+
+    ld d, $00
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    ld a, [hl+]
+
+
+Which equals the following in hex:
+
+21 ?? ?? 16 00 19 19 19 19 19 19 2A
+
+Bytes (old format):
+First (empty song):
+1-2. Channel 1 pointer
+3-4. Channel 2 pointer
+5-6. Channel 3 pointer
+7-8. Channel 4 pointer
+9. Speed (in ticks, 00-0F)
+
+Other songs:
+1-2. Waveform pointer 1
+3-4. Waveform pointer 2
+5-6. Channel 1 pointer
+7-8. Channel 2 pointer
+9-10. Channel 3 pointer
+11-12. Channel 4 pointer
+13: Speed (in ticks, 00-0F)
+
+Bytes (new format):
+1: Speed (in ticks, 00-0F)
+2. Length? (always 0F)
+3-4. Channel 1 pointer
+5-6. Channel 2 pointer
+7-8. Channel 3 pointer
+9-10. Channel 4 pointer
+11-12. Waveform pointer 1
+13-14. Waveform pointer 2
+
+For most games, the first song is empty. For Carmageddon, the pointer table merely consists of three pointers to channels 1, 2, and 4 (the music doesn't use channel 3), and there is no speed control, as all three songs have the same tempo (seems to be value 7).
+
+Bytes (Carmageddon):
+1-2. Channel 1 pointer
+3-4. Channel 2 pointer
+5-6. Channel 4 pointer
+
+Sequence Table
+=======================================
+This is a table storing pointers to each sequence in 16-bit values.
+
+It can be found with the following set of instructions:
+
+    ld a, [de]
+    ld [hl+], a
+    inc de
+    ld a, [de]
+    inc de
+    ld [hl], e
+    inc l
+    ld [hl], d
+    ld e, a
+    ld d, $00
+    ld hl, [SeqTable]
+
+Which equals the following in hex:
+1A 22 13 1A 13 73 2C 72 5F 16 00 21 ?? ??
+
+Carmageddon uses the following slightly different set of commands:
+
+    ld a, [de]
+    ld [hl], a
+    inc de
+    ld a, [de]
+    inc de
+    inc hl
+    ld [hl], e
+    inc hl
+    ld [hl], d
+    ld e, a
+    ld d, $00
+    ld hl, [SeqTable]
+
+Which equals the following in hex:
+1A 77 13 1A 13 23 73 23 72 5F 16 00 21 ?? ??
+
+Some games using a slightly different version of the driver (see below), instead refer to the following instructions to find the offset:
+
+ld [hl], d
+ld e, c
+ld d, a
+ld hl, [SeqTable]
+
+Which equals the following in hex:
+72 59 57 21 ?? ??
+
+
+The Pattern Format:
+=======================================
+For most games, it is stored in a simple 16-bit format:
+
+Bytes:
+1. Transpose
+2. Sequence number ID
+
+However, some games using a slightly different version of the driver, including Extreme Ghostbusters, Total Soccer 2000/Barca Total 2000, and Wendy: Der Traum von Arizona, instead store their sequences in a different 32-bit format:
+
+Bytes:
+1. Transpose
+2. Unknown, sometimes set to FF
+3. Sequence number
+4. Unknown (unused?)
+
+The Sequence Format:
+=======================================
+xx yy zz = Length, note, instrument (0E = D, 1A = F#)
+xx FD = Repeat note? (x = Length?)
+xx FE = Rest (x = Length)
+xx FF = Hold note (x = Length) (same as FE?)
+FF yy zz = Loop back to point (yz = Pointer)
+00 = End of sequence
+
+To do:
+ - Figure out the format about other parts (instruments, sound effects).

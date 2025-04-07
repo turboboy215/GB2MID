@@ -1,0 +1,68 @@
+Song pointer table
+===================
+The table containing pointers to each song and sound effect immediately follows the frequency table. It contains 16-bit (2-byte) pointers.
+
+For all games (except the original Batman), the pointer can be found using the following code:
+add a
+ld hl, [SongTable]
+add hl, de
+ldi a, [hl]
+ld h, [hl]
+ld l, a
+
+Which equals the following in hex:
+87 5F 16 00 21 ?? ?? 19 2A 66 6F
+
+Alternatively, if this code is not present in the bank, it can be found immediately after the frequency table.
+
+Song headers
+===================
+The "header" of each song is structured as follows:
+xx yy zz zz
+X values:
+ 0-3: Music channel 1-4
+ 4-7: SFX channel 1-4
+Y values:
+ 0-3: Channel 1-4 mapping
+Z values: Pointer to channel sequence
+FF = End of header
+
+Channel sequences
+===================
+Sequence data for each channel is structured as follows:
+xx (yy) (00-C7?) = Play note, length (if not automatic mode)
+C8-CA xx = Set panning?
+CB-CE (xx) = Play drum note, length (if not automatic mode)
+CF xx yy (zz) = Set noise parameters (v1) - Batman uses 3 parameters, other games only use 2
+D0 xx yy (zz) = Set noise parameters (v2) - Batman uses 3 parameters, other games only use 2
+D1 xx yy (zz) = Set noise parameters (v3) - Batman uses 3 parameters, other games only use 2
+D2 xx yy (zz) = Set noise parameters (v4) - Batman uses 3 parameters, other games only use 2
+D3 = Turn off automatic note length (set to manual)
+D4-D9 = Tom tom
+DA-DF xxxx yy zz = Set waveform, volume options?
+E0-E4 = Set sweep?
+E5-E7 = Set volume values?
+E8 xxxx = Sweep effect
+E9 = Fade note effect (v1)
+EA = Fade note effect (v2)
+EB (xx) = Hold note - value X if not automatic
+EC xx = Set duty
+ED = Exit macro
+EE xxxx = Go to macro
+EF xx yyyy = Repeat section y, x times (v1)
+F0 xx yyyy = Repeat section y, x times (v2)
+F1 xxxx = Go to loop point
+F2 xx = Automatically set note length - if 0, then works same as D3
+F3 xx = Set tuning
+F4 xx = Set transpose
+F5 xx = Set echo?
+F6 (xx) = Rest, length (if not automatic mode)
+F7 xx = Set vibrato delay time
+F8 xxxx = Pointer to vibrato parameters
+F9 xx = Set envelope
+FA xxxx = Pointer to envelope parameters
+FB xxxx = Pointer to waveform?
+FC xxxx = Pointer to envelope fade parameters
+FD xx = Set noise sweep strength? (v1)
+FE xx = Set noise sweep strength? (v2)
+FF = End of track

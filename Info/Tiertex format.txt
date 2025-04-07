@@ -1,0 +1,76 @@
+The Frequency Table
+=======================================
+A standard frequency table is found with the following instructions:
+
+ld hl, note_table
+add a
+add l
+ld l, a
+adc h
+sub l
+
+In hex, this equates to:
+21 F7 ?? ?? 85 6F 8C 95
+
+Macro/Sequence Pointers
+=======================================
+Following the frequency table is a series of four 16-bit pointers denoting the location of each song's "macros", which represent channels of a song (see below).
+
+Song Control
+=======================================
+After the pointers to each song is a "control" list, each consisting of four bytes each. The format represents as follows:
+1. Volume
+2. Position (Panning?)
+3. Sounds on
+4. Unused (marked as "UNKOWN (Future development")
+
+These always seem to be set to $FF, $FF, $8F, $00.
+
+Channel 4 Instrument Table
+=======================================
+Next is the instrument table for data concerning channel 4 (noise channel)'s instruments. These are all a series of 24-bit pointers which are described as follows:
+"first byte = freq (ish)
+second byte = vol 0-F/ env...... 1 to 7 goes down ... 8 to f goes up
+third byte = max time ........ 63 = shortest ...... 00 = longest
+                 bit 6 = "continuous" 1: on, 0: off"
+
+Instrument Table
+=======================================
+After this is an "envelope table" which has 16-bit (data word) definitions of the pointers for each instrument on all channels. Since most instruments are unused, much of the space is filled with empty values.
+
+Channel 1/2 Instrument Format
+=======================================
+Next is the data representing each of channel 1 and 2 (pulse)'s instruments. Each byte is mapped as follows:
+1 = Number of sections (in bytes) for vibrato
+2-3 =  ?
+4 = ?
+4-6 = Envelopes/volume change pattern
+7+ = Vibrato/frequency change pattern (Number of bytes this takes is specified in 1)
+
+Channel 3 Instrument Format
+=======================================
+After channel 4 and 1/2 come the channel 3 (wave) instrument data, including the waveforms used themselves. These use the following format:
+1 = Number of sections (in bytes) for vibrato
+2-17 = The waveform to be loaded into wave RAM
+18+ = Vibrato/frequency change pattern (Number of bytes this takes is specified in 1)
+
+The Sequence Headers (Macros)
+=======================================
+Representing each sequence is a small "macro", which is a list giving parameters and pointers to each sequence.
+For channels 1-3, these begin with the instrument ID (one byte). Then, any of the following commands are used for a sequence:
+$F8 = End macro
+$F9 xx xx xx xx xx = Start macro, # of times to play, transpose value, pointer to the actual sequence itself
+$FC xx = Loop point, # of times to play
+$FD = End of loop
+$FE = Stop song (for non-looping tunes)
+$FF = Restart song (if loop point specified, restart there, otherwise beginning)
+
+The Sequence Format
+=======================================
+Note values are 16-bit, in the following format:
+
+11 22
+1 = Note (Same as standard MIDI note values)
+2 = Length (MIDI length divided by 5)
+
+As stated in the macro header, $F8 denotes the end of a sequence.

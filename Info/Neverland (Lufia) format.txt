@@ -1,0 +1,88 @@
+Song table
+=======================================
+The song table, as well as the main sound engine code, can be found at bank 21 (starting with 1) at offset $6500 in all three ROM versions. The song table is structured as follows:
+1-2. Pointer to song
+3. Bank number (starting with 0)
+
+Song header
+=======================================
+Each song has a "header" which is 84 bytes:
+1-4. "GB2M" in ASCII
+5. Stereo flag?
+6. Channel mask?
+7. Number of channels
+(If any of the following channels are unused, the value $FFFF is used here)
+8-9. Channel 3 pointer (always $0054)
+10-11. Channel 1 pointer
+12-13. Channel 2 pointer
+14-15. Channel 4 pointer
+(If any of the following channels are unused, all length values are 0)
+16-32. Channel 3 note length list
+33-49. Channel 1 note length list
+50-66. Channel 2 note length list
+67-83. Channel 4 note length list
+
+Each of the note length lists, if not all 0, consists of 6 bytes, a terminator value FF, and then 6 more bytes of unknown meaning.
+
+Song commands
+=======================================
+Songs are comprised of the following commands:
+
+xx (00-7F) yy (zz) (aa) (bb) = Play note
+ - This is followed by a length value, see below
+80-EF = Delay
+F0 xx = Set volume?
+F1 xx = Set envelope?
+F2 xx = Set vibrato
+F3 xx = Set instrument parameters?
+F4 xx = Set waveform
+F5 xx yy = Delay (X) and change frequency by signed amount (Y)
+F6 xx = Set sweep
+F7 xx = Set noise type
+F8 xx = Short delay
+F9 xx = Read bytes from relative position (optimized function)
+FA xx yy = Read Y bytes from relative position -X
+FB = Loop point
+FC (xx) yy = Manual note length (X) and manual size (Y) (X only used for channel 3?)
+FD xx yy = Set duty
+FE xx yy = Manual note length (X) and volume/envelope(Y)?
+FF = End of track (go to loop point if present in song)
+
+Code to find the lengths of notes:
+In order to determine the length, of notes, three tests are performed:
+
+Test 1:
+AND %11100000
+Swap upper and lower nibbles
+SRL A
+CP 7
+
+Test 2:
+AND A, %00011100
+SRL A
+SRL A
+CP 7
+
+If test 1 passes, then the byte's resulting value is used as a reference to the note length from the table.
+If test 1 fails, then it is defined manually with a 3-4 byte command.
+If test 2 fails, then an additional test is performed:
+
+Test 3:
+AND A, 00000111
+CP A, 3
+If this test fails, then an an additional byte is also used to define the note size.
+
+Byte B is only used if Y is equal to FF.
+
+
+
+F9 command formula:
+(To get the amount of bytes to get:)
+AND A, %11100000
+SWAP A
+SRL A
+ADD A, $02
+
+(To get the amount of bytes back:)
+AND A, %00011100
+ADD A, $02

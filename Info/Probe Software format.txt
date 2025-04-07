@@ -1,0 +1,46 @@
+Text string
+===================
+At the beginning of the sound data is the text string "(C)Probe" in ASCII.
+
+Song pointer table
+===================
+The song pointer table consists of 16-bit (2 byte) values. It can be found using the following code:
+pop af
+add a
+ld h, 00
+add l, a
+ld de, SongTable
+add hl, de
+
+Which equals the following in hex:
+F1 87 26 00 6F 11 ?? ?? 19
+
+Song header
+===================
+Like Climax's "IMEDGBoy" format, pointers here are relative to the start of each individual song rather than its absolute pointer in the bank.
+1. Number of channels (these are mapped via the instruments(?) to which of the 4 GB channels are used)
+2-3. Pointer to a channel (repeat for total # of channels)
+
+Sequence commands
+===================
+Sequences are comprised of the following commands:
+xx (yy) = Delay - then commands and then notes (if x is greater than 80, then use y to extend number, subtract 8000)
+xx yy = Play note (x = note, y = volume)
+8x yy  = Rest for period of time
+9x = Set vibrato?
+9F xx = Change note size
+9F 8x yy = Change note size (long) (subtract 8000)
+Ax-Bx yy = Rest
+F1 xx = Set envelope effect (1-4)
+F2 xx = Set SFX priority?
+F5 xx = Set bit 1 of envelope to 1
+F6 xx = Set bit 1 of envelope to 0
+F7 xx = ?
+F8 xx = Set SFX priority? (same as F2)
+F9 xx = Set bit 1 if envelope to 1 (v2)?
+FA xx = Repeat section # of times (0 = infinite)
+FB xx = End of repeat section
+FC xx = Set tempo
+FD xx = (Skip)
+FE xx = Set instrument
+FF xx = End of sequence

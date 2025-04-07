@@ -1,0 +1,87 @@
+Song header
+=======================================
+A header for a song is stored as follows:
+1. ?
+2. Channel mask
+
+Format 1 (Castlevania 1):
+1234 5678
+   1-2 = Unused?
+   3 = Channel 4 music
+   4 = Channel 3 music
+   5 = Channel 2 music
+   6 = Channel 1 music
+   7 = Channel 4 SFX
+   8 = Channel 1 SFX
+3-4. Channel 1 pointer
+5-6. Channel 2 pointer
+7-8. Channel 3 pointer
+9-10. Channel 4 pointer
+
+Format 2 (Nemesis/Castlevania 2):
+1234 5678
+   1 = Unused?
+   2 = Channel 4 music
+   3 = Channel 3 music
+   4 = Channel 2 music
+   5 = Channel 1 music
+   6 = Channel 4 SFX
+   7 = Channel 2 SFX?
+   8 = Channel 1 SFX
+
+Format 3 (Motocross Maniacs):
+1234 5678
+
+   1 = Unused?
+   2 = Channel 4 music
+   3 = Channel 2 music
+   4 = Channel 3 music
+   5 = Channel 1 music
+   6 = Channel 4 SFX
+   7 = Channel 1 SFX
+   8 = Unused?
+
+78 = 0111 1000
+
+
+Commands
+=======================================
+xy (00-DF) = Play note (X = note, Y = length - 0 = 16)
+    0 = Rest
+    1 = C
+    2 = C#
+    3 = D
+    4 = D#
+    5 = E
+    6 = F
+    7 = F#
+    8 = G
+    9 = G#
+    A = A
+    B = A#
+    C = B
+    D = C (octave higher)
+E0 xx yy zz = Set channel speed, duty (waveform on channel 3), fade out (only first two are used for noise)
+    For games from 1993 onwards, the second byte is split into x and y: octave and speed
+E1-E6 = Set octave
+E7 xx = Set channel speed
+E8 xx = Set note decay?
+E9 xx = Set channel pan?
+EA 0x = Transpose channel up
+EA 1x = Transpose channel down
+EA 7x = Transpose channel up (later games)
+EA 8x = Transpose channel down (later games)
+EA xx = Set instrument
+EB xx yy = Set portamento up
+EC xx yy = Set portamento down?
+ED xx = Set envelope?
+EE xx = Set tempo? (higher value is slower)
+EF xx = Set panning?
+F0-FA = Set note volume? (F0 = "normal", FA = quietest)
+F8 xx = ?, used for TMNT 2
+F9 02 xx xx = For Goemon (J) and later games?: The second time this is encountered, jump to the address X
+FB = Start of repeat point - for later format, an additional one with XX after means repeat # of times
+FC = Return from jump - for later format, used as a secondary repeat which functions like FB
+FD xx xx = Go to position - for later format, an additional one means to return from jump
+FE xx = Repeat section starting from FB value, xx = Amount of times, if FF then jump to loop point? For later format, just start/end of loop point?
+FF = Stop track

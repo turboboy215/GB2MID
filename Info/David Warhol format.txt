@@ -1,0 +1,39 @@
+Song pointer table
+===================
+The song pointer table can be found by looking for the following code:
+
+ld a, b
+and a, 3F
+add a
+ld e, a
+ld d, 00
+ld hl, SongTable
+add hl, de
+ldi a, [hl]
+
+Which equals the following in hex:
+
+78 E6 3F 87 5F 16 00 21 ?? ?? 19 2A
+
+Each of the song's pointers are represented by 16-bit numbers.
+
+Song headers
+===================
+Songs in this engine are stored in an unusual way. Note values are not called directly in the song, but are instead read from a table of fixed values.
+The first byte of the song determines the number of unique note frequencies used in the song by all channels total. This is used to determine the length of both of the two tables that follow:
+Table 1: These values "map" the values at the corresponding byte locations to determine which note values are used by each channel, from a range of 00 to 0F. Although the Game Boy only has 4 sound channels, there are 16 "virtual" channels, with 4 being able to be played simultaneously. These "virtual" channels are mapped to the Game Boy's actual sound channels, possibly in the instruments.
+Table 2: The frequency numbers themselves.
+
+Sequences
+===================
+Immediately following the two tables is the sequence data. Note data is not stored per channel, but rather "rows" or "frames" somewhat similar to a tracker format. The numbers for commands vary depending on the number value used for the number of note values, with the lowest using the total number of instruments:
+ xx (less than the total notes number) = Play note; see table 1 for channel mapping
+ +0-+15 = Rest (+1 to advance to advance to the next channel)
+ +16-+31 xx = Switch instrument (+1 to advance to advance to the next channel)
+ +32+ = End "frame" and specify its time/speed
+ FE xx = End of song with loop, then song number (starting with value 80) - This can make it so "one" song can be an intro and then play a separate song as the loop
+ FF = End of song without loop
+
+Other versions
+===================
+NES and Game Gear versions of the sound engine exist as well, with the sequence format seemingly being identical between the three versions. The NES version was used in games like Maniac Mansion and Rad Gravity. The Game Gear version appears to be a modified version of SEGA's own supplied driver with the sequence implementation completely changed to match that of the Game Boy driver. David Warhol also programmed an SNES driver, but it appears to be completely different than other versions, possibly using a more MIDI-like format.

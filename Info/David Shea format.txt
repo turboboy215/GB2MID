@@ -1,0 +1,47 @@
+This sound engine's sequence format is quite similar to Probe's. Both drivers were used by musician Steve Collett.
+
+Music pointer table
+===================
+The music pointer table is comprised of 16-bit values representing a pointer to each song or sound effect (these are both stored in the same format). However, like Martin Walker's driver, these pointers are stored as relative values rather than absolute (add the number to the start of the table offset to get the pointer).
+While there is no code within the sound bank to look for the table, it can be found by looking for what immediately follows the following bytes (end of some sound code):
+3E 80 E0 23 C9 24 00
+Almost always, the pointer table is located at offset $4D19. Space Invaders is the only known exception.
+
+Song header
+===================
+Each song has a "header" which is almost identical to that of Probe, the difference being the number of channels value is 2 bytes instead of 1. Once again, the pointers are stored as relative values to the start of each song.
+1-2. Number of channels (these are mapped via the instruments(?) to which of the 4 GB channels are used)
+3-4. Pointer to a channel (repeat for total # of channels)
+
+Sequence commands
+===================
+xx (yy) = Delay - then commands and then notes (if x is greater than 80, then use y to extend number, subtract 8000)
+xx (yy) (after delay) = X = note, then Y = note size if in "SFX mode"
+80 = Turn off channel?
+81 = Turn on channel?
+82 xx = Set tempo
+83 = Set envelope bits (1)
+84 = Set envelope bits (2) - enable "SFX mode"
+85 = Set envelope bits (3)
+86 xx = Set SFX volume (1)?
+87 xx = Set SFX volume (2)?
+88 xx = Set SFX volume (3)?
+89 xx = Set SFX effect?
+8A-8F = (Invalid)
+90 xx = Set envelope size
+91 xx yy = Set pitch bend?
+92 xx = Set note speed?
+93 xx = ?
+94 xx = Set instrument
+95 xx = ?
+96 xx = Set tuning
+97 xx = ?
+98 = Turn off noise channel?
+99 = Turn on noise channel?
+9A-9F = (Invalid)
+A0-AF = Set volume/envelope settings?
+B0 xx = Song loop point, number of times to loop
+B1 xx = Repeat point, number of times to loop
+B2-B3 = (Invalid)
+B4 = Go to song loop point
+B5 = Go to repeat point

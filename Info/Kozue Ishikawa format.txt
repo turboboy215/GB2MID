@@ -1,0 +1,78 @@
+Song pointer table
+===================
+There are two minor variations of the driver, which differ slightly between the song pointer table. For the earlier version (used in e.g. Wario Land 2), look for the following series of commands:
+
+ld l, c
+ld h, b
+add hl, hl
+add hl, bc
+add hl, hl
+ld bc, SongTable
+
+Which equals the following in hex:
+69 60 29 09 29 01 ?? ??
+
+For the later version (used in e.g. Wario Land 3), look for the following series of commands:
+
+ld l, c
+ld h, b
+add hl, hl
+add hl, hl
+add hl, hl
+ld bc, SongTable
+
+Which equals the following in hex:
+69 60 29 29 29 01 ?? ??
+
+In the earlier version of the driver, the song list is structured as follows:
+1-2 = pointer
+3 = bank
+4 = stereo/pan mask? (all music uses value of 64?)
+5 = ?
+6 = number of channels
+
+In the later version of the driver:
+1-2 = pointer
+3-4 = bank
+5-6 = stereo/pan mask? (all music uses value of 64?)
+7-8 = number of channels
+
+In both cases, the first 6 (earlier) or 8 (later) bytes should be skipped.
+
+
+Song headers
+===================
+Song headers are structured as follows:
+(NOTE: The mapping of channels corresponds to the instruments.)
+1 = Number of channels
+2 = Number of "patterns" (-1)?
+(Modify the following values below for the number of channels/patterns:)
+3-4 = Channel 2 start pointer
+5-6 = Channel 1 start pointer
+7-8 = Channel 3 start pointer
+9-10 = Channel 4 start pointer
+11-12 = Channel 2 loop pointer
+13-14 = Channel 1 loop pointer
+15-16 = Channel 3 loop pointer
+17-18 = Channel 4 loop pointer
+19-20 = Channel 2 end pointer
+21-22 = Channel 1 end pointer
+23-24 = Channel 3 end pointer
+25-26 = Channel 4 end pointer
+
+Song commands
+===================
+Commands:
+xx (00-23) = Set envelope
+xx (24-7F) = Change note (These are the same as MIDI values)
+xx (80-B0) = Play note OR rest at specified length (if not initialized, plays a rest) - the note length values are loaded from a table
+B1 = Stop track
+B2 xxxx = Go to loop point (infinite loop)
+B3 xxxx = Call macro
+B4 = End of pattern/macro
+BC xx = Set tempo
+BD xx = Transpose
+BE xx = Set instrument (this also
+BF xx (yy?) = Set channel/instrument parameters?
+Cx yy = Noise effect
+D0-FF? = Change note size

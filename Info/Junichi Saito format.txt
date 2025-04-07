@@ -1,0 +1,61 @@
+Song table
+=======================================
+The song table consists of 16-bit values pointing to each song. It can be found with the following code:
+ld l, a
+ld h, $00
+add hl, hl
+ld de, SongTable
+add hl, de
+ldi a, [hl]
+ld h, [hl]
+ld l, a
+
+Which equals the following in hex:
+6F 26 00 29 11 ?? ?? 19 2A 66 6F
+
+Song headers
+=======================================
+Headers for songs consist of 4 16-bit values which are pointers to channels 1-4:
+1-2. Channel 1 pointer
+3-4. Channel 2 pointer
+3-5. Channel 3 pointer
+6-7. Channel 4 pointer
+
+Channel sequences
+=======================================
+Sequence data for each channel is structured using the following commands:
+
+xy (00-CF) = Play note OR rest
+(If x = 0, then rest, if y = F, then manual note length (1 additional byte), if y = E, then repeat note with additional byte: ab (a = times, b = length, yet another additional byte if b = F (see note above))
+Dx (D0-D7) = Set octave
+D8 xx = Manually set volume
+Dx (D9-DF) = Set volume?
+Ex (E0-E7) = Set note size
+E8 xx = Set note size (manual value)
+E9 xx = Set vibrato?
+EA xy = Set transpose (X = Octave, Y = Pitch)
+(0-3 = + octave, 4-6 = - octave, 7 = 0, 8-B = + octave, C-E = - octave, F = 0)
+EB xx = Set noise type
+EC xx = Set noise frequency?
+ED xx = Set duty (CH1/2)/waveform (CH3)
+EE xx = Set global volume
+EF xx = Set individual volume?
+F0 xx = Set frequency/tuning
+F1 = Set panning to R
+F2 = Set panning to L
+F3 = Set panning to L/R
+F4 xx = Set all envelopes?
+F5 xx = Set sweep/distortion effect
+F6 = (No function)
+F7 xx xx = ?
+F8 xx xx = ?
+F9 = Exit macro
+FA xx xx = Go to macro (X = RELATIVE to current position, signed)
+FB xx = Noise sweep effect
+FC xx xx = Go to loop point
+FD xx = Set tempo
+FE = Reset envelopes?
+FF = End of channel (no loop)
+
+Note lengths are as follows:
+03 01 03 06 08 09 0C 10 12 18 20 24 30 48 60

@@ -1,0 +1,83 @@
+At 105 unique Game Boy and Game Boy Color games combined, this is the most widely used GB/GBC sound driver. It closely resembles its NES and Wonderswan counterparts.
+
+Channel sequence table
+===================
+There is a series of pointers to each song's channel to make up a full song (or sound effect). Music and sound effect sequences are stored in the same format.
+These headers are stored as a series of 4 bytes to each channel as follows:
+1: Channel mask:
+These values widely differ from game to game, but here are the most common values:
+   00 = Channel 1 of 2 (SFX)
+   19 = Channel 1 of 1 (SFX)
+   32 = Channel 1 of 4
+   4B = Channel 2 of 4
+   64 = Channel 3 of 4
+   7D = Channel 4 of 4
+
+2: Channel number: 00-03
+3-4: Pointer
+
+Channel sequence header:
+1. Speed (xy)
+ Y = Actual speed
+   For older games (1989-1996?):
+   (0 = 5)
+   (1 = 10)
+   (2 = 15)
+   (3 = 20)
+   (4 = 25)
+   (5 = 30)
+   (6 = 35)
+   (7 = 40)
+   (8 = 45)
+   (9 = 50)
+   (A = 55)
+   (B = 60)
+   (C = 65)
+   (D = 70)
+   (E = 75)
+   (F = 80)
+2. Duty
+3. Volume
+4. Sweep/waveform
+
+Often, these pointers follow one byte which denotes the number of the bank. However, some games set this byte to 00.
+
+Sequence headers
+===================
+Each channel sequence has its own 4-byte header which is constructed as follows:
+1. Speed
+2. Duty
+3. Volume
+4. Sweep/waveform
+
+Channel sequences
+===================
+Channel sequences are comprised of the following commands:
+xy zz (00-9F) = Note/rest (X = Octave, Y = Note (C-F = rest for channels 1-3, C-E are also used for drum values for channel 4 while F is a rest), Z = Length)
+A0 xx = Set envelope length
+A1 xx = Set panning 1?
+A2 xx = Set duty
+A3 xx = Set panning?
+A4 xx = Set panning 3?
+A5 xx = Set envelope?
+A6 xx = Set global volume
+A7 xx = Set delay
+A8 xx = Unknown (only used in late games (e.g. Metal Gear Solid), later replaced with the below command) 
+A8 xxxx yy = Go to macro X, Y times (only used in very late games (e.g. GB Harobots))
+A9 xx = Macro loop command (later games only (e.g. Metal Gear Solid)), later replaced with the below command:
+   x = 00 = Set repeat value to 0?
+   x = F0 = Decrease repeat value?
+   x = FF (XX XX) = Jump to the specified position (relative to the start of the pattern, multiply by 2) each additional time this instruction is accessed)
+   x = FE (XX XX) = Dynamic jump - Depending on certain conditions, jump to a specific position by multiplying 2 by a number. The jump position follows the same method as the FF command. This command only seems to be used in certain songs in both versions of Sanrio Timenet.
+A9 xx = Return from macro (only used in very late games (e.g. GB Harobots), same as above)
+AC xx yy yy = Jump to the following position Y for X times (relative from the start of the channel pattern, DO NOT multiply by 2 - newer games only)
+AD 00 = Return from jump (newer games only)
+AE xx = Set tuning
+AF xx = Set channel speed
+Bx yy = Repeat section
+ (X = Number of times - 0 = Endless)
+ (Y = Bytes to go back (if Y = 00, then go to the last repeat section), if X = 0, then *2 ahead of the track start; for very late games (e.g. GB Harobots), this value instead is used to refer to an "ID" of a repeat point, see below)
+Cx-Fx yy = Noise/effect settings
+FD xx = Start of repeat section (For most games, byte 2 always seems to be FE, and is ignored. For late games (e.g. Metal Gear Solid, GB Harobots), this value starting with F0 is used as an "ID" for the repeat section to go to. F0 often represents the track's loop point. F1, F2, and F3 are also used as repeat positions in addition to F0. FC xxxx is used to jump to a specific position relative from the start of a channel pattern (multiply by 2; this is used in Dragon Warrior Monsters).
+FE xx = (Skip?) (Doesn't seem to do anything)
+FF = End of track

@@ -1,0 +1,529 @@
+Song pointer table
+===================
+The song pointer table can be found by looking for the following code:
+    ld l, c
+    ld h, $00
+    add hl, hl
+    add hl, hl
+    add hl, hl
+    ld bc, SongChanPtrs
+    add hl, bc
+
+Each 16-bit pointer refers to individual channels; four, when joined, make a complete song.
+Donkey Kong Land uses a complex form of "bankswitching", with many of the songs' data being spread over multiple areas of the ROM rather than fitting everything in one bank, probably to make room for graphics and other data. Each song outside of the "main area" is loaded into work RAM offset $A000, and the pointers in the table refer to addresses in RAM. The GBS rip attempts to get around this by joining all the song data into a single bank and using commands to re-map the addresses, but these instructions do not work with GBS2GB, making the majority of the songs unplayable in conversion.
+Donkey Kong Land 2 uses a similar, although less complex method: the driver and most of the game's song data is stored as part of one bank, but five songs are instead stored in part of the last bank of the ROM, and the data all gets loaded into offset $D000 of work RAM. Unlike DKL1, all additional songs get loaded into RAM at once. The pointer table refers to these additional songs in RAM.
+With the exception of Conker's Pocket Tales and Croc, all GBC games use some form of bankswitching. For Mickey Mouse racing games and Perfect Dark, the pointer table is specified as three bytes per channel rather than two, with the first being the number of the bank in ROM the pointer refers to.
+
+Sequence commands
+===================
+Each command is referenced from an "event table" in the sound driver which tells which RAM address to go to after a byte of the sequence is accessed. Originally, the driver only included 23 internal commands, plus note values; however, later on, more commands were added. Games released from then up to Donkey Kong Land each feature a differing set of commands, with the most drastic being Donkey Kong Land, featuring a table of extra pre-determined note values, three different macro areas, and a repeat command, with this and the bankswitching trick likely done in a scramble to fit all the game's content into a 4MB ROM. However, Killer Instinct and later games, with the exception of Croc (which was not developed by RARE, but strangely uses a version of their driver) all use the same, consistent set of commands.
+Each command works as follows:
+
+Sneaky Snakes (and earlier games)
+============================
+xx yy (80-BF?) = Note, length, 80 = Rest
+Cx yy = Play drum note, length
+00 = End of song
+01 xxxx = Jump to position
+02 xx = Switch waveform (add x amount to address of waveform table)
+03 xx yy zz = Set channel envelope
+04 xx yyyy = Call macro X (manual) times
+05 = End of macro
+06 = Set panning 1
+07 = Set panning 2
+08 = Set panning 3
+09 xx = Set distortion effect?
+0A xx = Turn on automatic note length at custom speed
+0B = Turn off automatic note length (switch to manual)
+0C xx yy zz = Set duty effect, parameter?
+0D = Reset noise?
+0E xx yy zz aa bb = Portamento up, parameters
+0F xx yy zz aa bb = Portamento down, parameters
+10 xx = Manually set duty?
+11 xx = Change tempo (absolute value)?
+12 xx = Change tempo (add to value)
+13 xx = Set transpose (v1)
+14 xx = Set transpose (v2)
+15 xx = Set distortion pitch effect
+16 xx yy zz aa = Turn on vibrato (X, Y, Z, A = parameters)
+
+Exclusive to Sneaky Snakes:
+17 = Set duty to 40 (v1)
+18 = Set duty to 40 (v2)
+19 = Set duty to 80 (v1)
+1A = Set duty to 80 (v2)
+
+WWF Superstars
+============================
+xx yy (80-BF?) = Note, length, 80 = Rest
+Cx yy = Play drum note, length
+00 = End of song
+01 xxxx = Jump to position
+02 xx = Switch waveform (add x amount to address of waveform table)
+03 xx yy zz = Set channel envelope
+04 xx yyyy = Call macro X (manual) times
+05 = End of macro
+06 = Set panning 1
+07 = Set panning 2
+08 = Set panning 3
+09 xx = Set distortion effect?
+0A xx = Turn on automatic note length at custom speed
+0B = Turn off automatic note length (switch to manual)
+0C xx yy zz = Set duty effect, parameter?
+0D = Reset noise?
+0E xx yy zz aa bb = Portamento up, parameters
+0F xx yy zz aa bb = Portamento down, parameters
+10 xx = Manually set duty?
+11 xx = Change tempo (absolute value)?
+12 xx = Change tempo (add to value)
+13 xx = Set transpose (v1)
+14 xx = Set transpose (v2)
+15 xx = Set distortion pitch effect
+16 xx yy zz aa = Turn on vibrato (X, Y, Z, A = parameters)
+17 = Set note speed to 4
+18 = Set volume to 40
+19 = Set volume to 80
+1A = Set volume to 20
+1B = Set note speed to 8
+1C xxxx = Call macro 1 time
+1D xxxx = Call macro 2 times
+1E = Turn off vibrato?
+1F = Set volume to 70
+20 = Set volume to 30
+
+Battletoads
+============================
+xx yy (80-BF?) = Note, length, 80 = Rest
+Cx yy = Play drum note, length
+00 = End of song
+01 xxxx = Jump to position
+02 xx = Switch waveform (add x amount to address of waveform table)
+03 xx yy zz = Set channel envelope
+04 xx yyyy = Call macro X (manual) times
+05 = End of macro
+06 = Set panning 1
+07 = Set panning 2
+08 = Set panning 3
+09 xx = Set distortion effect?
+0A xx = Turn on automatic note length at custom speed
+0B = Turn off automatic note length (switch to manual)
+0C xx yy zz = Set duty effect, parameter?
+0D = Reset noise?
+0E xx yy zz aa bb = Portamento up, parameters
+0F xx yy zz aa bb = Portamento down, parameters
+10 xx = Manually set duty?
+12 xx = Change tempo
+13 xx = Set transpose (v1)
+14 xx = Set transpose (v2)
+15 xx = Set distortion pitch effect
+16 xx yy zz aa = Turn on vibrato (X, Y, Z, A = parameters)
+17 = Set note speed to 4
+18 = Set note speed to 8
+19 xxxx = Call macro 1 time
+1A xxxx = Call macro 2 times
+1B = Turn off effects?
+1C xxxx = Call macro 3 times
+1D xxxx = Call macro 4 times
+1E = Set note speed to 2
+1F = Turn off transpose
+20 = Set transpose to +7
+21 = Set transpose to +1 octave
+22 xxxx = Call macro 8 times
+23 = Set note speed to 12
+24 = Set note speed to 1
+25 = Set note speed to 3
+26 xxxx = Call macro 16 times
+27 xxxx = Call macro 13 times
+28 xx = Set decay?
+29 xxxx = Call macro 7 times
+2A xx = Load duty with 80
+2B xx = Load duty with 40
+2C xxxx = Call macro 6 times
+2D xx = Load duty with D0
+2E = Switch wave instrument? (v1)
+2F = Switch wave instrument? (v2)
+30 = Turn off automatic note length and end of macro
+31 = Turn on automatic note length and end of macro?
+XX (32-??) = Change envelope volume
+
+Beetlejuice
+============================
+xx yy (80-BF?) = Note, length, 80 = Rest
+Cx yy = Play drum note, length
+00 = End of song
+01 xxxx = Jump to position
+02 xx = Switch waveform (add x amount to address of waveform table)
+03 xx yy zz = Set channel envelope
+04 xx yyyy = Call macro X (manual) times
+05 = End of macro
+06 = Set panning 1
+07 = Set panning 2
+08 = Set panning 3
+09 xx = Set distortion effect?
+0A xx = Turn on automatic note length at custom speed
+0B = Turn off automatic note length (switch to manual)
+0C xx yy zz = Set duty effect, parameter?
+0D = Reset noise?
+0E xx yy zz aa bb = Portamento up, parameters
+0F xx yy zz aa bb = Portamento down, parameters
+10 xx = Manually set duty?
+11 xx = Change tempo (absolute value)?
+12 xx = Change tempo (add to value)
+13 xx = Set transpose (v1)
+14 xx = Set transpose (v2)
+15 xx = Set distortion pitch effect
+16 xx yy zz aa = Turn on vibrato (X, Y, Z, A = parameters)
+17 = Set note speed to 4
+18 = Set volume to 40
+19 = Set volume to 80
+1A = Set volume to 20
+1B = Set note speed to 8
+1C xxxx = Call macro 1 time
+1D xxxx = Call macro 2 times
+1E = Turn off effects?
+1F = Set volume to 70
+20 = Set volume to 30
+21 = Set note speed to 2
+22 = Set volume to 50
+23 = Set volume to 90
+24 = Set note speed to 1
+
+(Battletoads in Ragnarok's World/Battletoads & Double Dragon: The Ultimate Team)
+============================
+xx yy (80-BF?) = Note, length, 80 = Rest
+Cx yy = Play drum note, length
+00 = End of song
+01 xxxx = Jump to position (BE)
+02 xx = Switch waveform (add x amount to address of waveform table)
+03 xx yy zz = Set channel envelope
+04 xx yyyy = Call macro X (manual) times
+05 = End of macro
+06 = Set panning 1
+07 = Set panning 2
+08 = Set panning 3
+09 xx = Set distortion effect?
+0A xx = Turn on automatic note length at custom speed
+0B = Turn off automatic note length (switch to manual)
+0C xx yy zz = Set decay effect, parameters?
+0D = Reset noise?
+0E xx yy zz aa bb = Portamento up, parameters
+0F xx yy zz aa bb = Portamento down, parameters
+10 xx = Manually set drum length?
+12 xx = Change tempo
+13 xx = Set transpose (v1)
+14 xx = Set transpose (v2)
+15 xx = Set distortion pitch effect
+16 xx yy zz aa = Turn on vibrato (X, Y, Z, A = parameters)
+17 = Set volume to 40
+18 = Set volume to 20
+19 = Set volume to 10
+1A = Set volume to 30
+1B = Set volume to 50
+1C = Set volume to 60
+1D = Set volume to 70
+1E = Set volume to 80
+1F = Set volume to 90
+20 = Turn off transpose
+21 = Turn on transpose: +1 octave
+22 = Set note size to 40
+23 = Set note speed to 4
+24 = Set volume to A0
+25 = Set volume to B0
+26 xxxx = Call macro 1 time
+27 xxxx = Call macro 2 times
+28 xxxx = Call macro 4 times
+29 xxxx = Call macro 6 times
+2A = Set note size to F0
+2B = Set note speed to 2
+2C = Set note speed to 1
+2D xxxx = Call macro 8 times
+2E = Set note speed to 8
+2F xxxx = Call macro 16 times
+30 = Set volume to C0
+31 xxxx = Call macro 3 times
+32 = Turn off automatic note length and end of macro
+33 xx = Set channel envelope/volume
+34 xx = Change note size
+35 xx = Set duty to 80 and change note size
+36 xx = Change note size with echo effect?
+37 = Turn off volume effect
+38 = Set note speed to 6
+39 = Turn off automatic note length and end of macro (v2?)
+3A = Unknown (set stereo flag?)
+3B xx = Go back amount of bytes (signed)
+
+Exclusive to Battletoads & DD:
+3F xx = Set channel envelope (v2)?
+40 xx = Set duty?
+41 = Set volume to E0
+42 = Set note size to D0
+43 = Turn off effects
+44 xx yy = Repeat the following note X for Y amount of times (v1)
+45 xx = Turn on automatic note length at custom speed (v2?)
+
+(Monster Max)
+============================
+xx yy (80-BF?) = Note, length, 80 = Rest
+Cx yy = Play drum note, length
+00 = End of song
+01 xxxx = Jump to position (BE)
+02 xx = Switch waveform (add x amount to address of waveform table)
+03 xx yy zz = Set channel envelope
+04 xx yyyy = Call macro X (manual) times
+05 = End of macro
+06 = Set panning 1
+07 = Set panning 2
+08 = Set panning 3
+09 xx = Set distortion effect?
+0A xx = Turn on automatic note length at custom speed
+0B = Turn off automatic note length (switch to manual)
+0C xx yy zz = Set volume effect, parameters
+0D = Reset noise?
+0E xx yy zz aa bb = Portamento up, parameters
+0F xx yy zz aa bb = Portamento down, parameters
+10 xx = Manually set envelope
+12 xx = Change tempo
+13 xx = Set transpose
+14 xx = Add to transpose
+15 xx = Set distortion pitch effect
+16 xx yy zz aa = Turn on vibrato (X, Y, Z, A = parameters)
+17 = Turn off vibrato?
+18 = Set volume to 60
+19 = Set volume to 30
+1A = Set volume to 80
+1B = Set volume to 70
+1C = Set volume to 20
+1D xxxx = Call macro 1 time
+1E xxxx = Call macro 2 times
+1F xxxx = Call macro 3 times
+20 xxxx = Call macro 4 times
+21 xxxx = Call macro 8 times
+22 xxxx = Call macro 6 times
+23 xxxx = Call macro 7 times
+24 xxxx = Call macro 5 times
+25 xx = Set channel envelope and duty (0)
+26 xx = Set channel envelope and duty (40)
+27 xx = Set channel 3 note size
+28 xx = Set channel envelope and duty (80)
+29 xx = Set duty to 0?
+2A = End of macro and turn off automatic note length mode
+2B xx = Set duty effect?
+2C = Turn off vibrato (v2?)
+2D = ?
+2E = Set volume to 90
+
+(Donkey Kong Land 1)
+============================
+xx (50-7F) = Note (load frequency/length from table, continued values after FF)
+xx yy (80-BF?) = Note, length, 80 = Rest
+Cx yy = Play drum note, length
+xx (D0-FF) = Note (load frequency/length from table)
+00 = End of song
+01 xxxx = Jump to position
+02 xx = Go to loop point
+03 xx yy zz = Set channel 3 envelope
+04 xx yyyy = Call macro X (manual) times
+05 xxxx = Call macro 1 time
+06 xxxx = Call macro 2 times
+07 xxxx = Call macro 3 times
+08 xxxx = Call macro 4 times
+09 xxxx = Call macro 6 times
+0A xxxx = Call macro 8 times
+0B xxxx = Call macro 16 times
+0C = End of macro (v1)
+0D xx = Turn on automatic note length at custom speed
+0E = Turn on automatic note length at speed 1
+0F = Turn on automatic note length at speed 2
+10 = Turn on automatic note length at speed 4
+11 = Turn on automatic note length at speed 6
+12 = Turn on automatic note length at speed 8
+13 = Turn off automatic note length (switch to manual)
+14 xx yy zz = Turn on vibrato (v2) (X, Y, Z = parameters)
+15 = Turn off vibrato
+16 = Turn off transpose
+17 = Turn on transpose: +1 octave
+18 xx = Set transpose (v1)
+19 xx = Set transpose (v2)
+1A = Set transpose to +2
+1B = Set transpose to -2
+1C = Set transpose to +5
+1D = Set transpose to -5
+1E xx yy zz aa = Turn on vibrato (X, Y, Z, A = parameters)
+1F = Set volume to 10
+20 = Set volume to 20
+21 = Set volume to 30
+22 = Set volume to 40
+23 = Set volume to 50
+24 = Set volume to 60
+25 = Set volume to 70
+26 xx = Switch to duty 1, envelope
+27 xx = Switch to duty 2, envelope
+28 xx = Switch to duty 3, envelope
+29 xx yy = Set channel 3 envelope (v2)
+2A xxxx = Call macro (v2)
+2B = End of macro (v1) and turn off automatic note length mode
+2C xx = Switch waveform (add x amount to address of waveform table)
+2D xx = Switch to duty 4, envelope
+2E = Set note size to 23
+2F = Set note size to 51
+30 = Set note size to 71
+31 = Set note size to 61
+32 = Set note size to 37
+33 = Set note size to 38
+34 = Set note size to 53
+35 = Set note size to 67
+36 = Set note size to A1
+37 = Set note size to 58
+38 = Set note size to 68
+39 = Set note size to 32
+3A = Set note size to 33
+3B = Set note size to 22
+3C xx = Change note size
+3D = Exit macro (v2)
+3E xx = Set repeat times: manual
+3F = Set repeat times: 2
+40 = Set repeat times: 3
+41 = Set repeat times: 4
+42 = End of repeat section
+43 = End of macro (v1) and turn off transpose
+44 xxxx = Call macro (v3)
+45 = End of macro (v3)
+46 = End of macro (v3) and turn off automatic note length mode
+47 = End of macro (v3) and turn on automatic note length mode
+48 xx = Change note size (v2?)
+
+(Killer Instinct/Donkey Kong Land 2/3/Country/All other later games (except Croc))
+============================
+xx yy (80-FF) = Note, length, 80 = Rest
+00 = End of song
+01 xxxx = Jump to position
+02 xx = Go to loop point
+03 xx yy zz = Set channel 3 envelope
+04 xx yyyy = Call macro X (manual) times
+05 = End of macro
+06 = Set panning 1
+07 = Set panning 2
+08 = Set panning 3
+09 xx = Set distortion effect
+0A xx = Turn on automatic note length at custom speed
+0B = Turn off automatic note length (switch to manual)
+0C xx yy zz = Turn on vibrato (v2) (X, Y, Z = parameters)
+0D = Turn off vibrato
+0E xx yy zz aa = Portamento (X = time, Y = amount, Z = ?, A = ?)
+0F xx yy zz aa = Portamento (X = time, Y = amount, Z = ?, A = ?)
+10 xx yy zz = Pitch bend effect (X, Y, Z = parameters)
+12 xx = Change tempo
+13 xx = Set transpose (absolute value)
+14 xx = Set transpose (add to current transpose)
+16 xx yy zz aa = Turn on vibrato (X, Y, Z, A = parameters)
+17 = Set volume to 10
+18 = Set volume to 20
+19 = Set volume to 30
+1A = Set volume to 40
+1B = Set volume to 50
+1C = Set volume to 60
+1D = Set volume to 70
+1E = Set volume to 80
+1F = Set volume to 90
+20 = Set volume to A0
+21 = Set volume to B0
+22 = Set volume to C0
+23 = Set volume to D0
+24 = Set volume to E0
+25 = Set volume to F0
+26 xxxx = Call macro 1 time
+27 xxxx = Call macro 2 times
+28 xxxx = Call macro 3 times
+29 xxxx = Call macro 4 times
+2A xx yy = Set channel 3 envelope (v2)
+2B = Turn on automatic note length at speed 2
+2C = Turn on automatic note length at speed 1
+2D xxxx = Call macro 8 times
+2E = Turn on automatic note length at speed 8
+2F xxxx = Call macro 16 times
+30 = (Invalid)
+31 xxxx = Call macro 5 times
+32 = Turn off automatic note length and end of macro
+33 xx = Switch to duty 1, envelope
+34 xx = Switch to duty 2, envelope
+35 xx = Switch to duty 3, envelope
+36 xx = Switch to duty 4, envelope
+37 = Clear echo/envelope effect
+38 = Turn on automatic note length at speed 6
+3B xx = Switch waveform (add x amount to address of waveform table)
+3F xx = Change note size
+40 xx = Change note size (v2)?
+41 = Turn on automatic note length at speed 4
+42 = (Invalid)
+45 xx = Set distortion effect (v2)
+4F = Turn off transpose
+50 = Turn on transpose: +1 octave
+63 xx = ?
+
+Croc: Legend of the Gobbos
+============================
+xx yy (80-Bx) = Note, length, 80 = Rest
+Bx-Cx yy = Play drum note, length
+00 = End of song
+01 xxxx = Jump to position
+02 xx = Go to loop point
+03 xx yy zz = Set channel 3 envelope (v1)
+04 xx yy = Set channel 3 envelope (v2)
+05 xx = Switch waveform (add x amount to address of waveform table)
+06 xx yyyy = Call macro X (manual) times
+07 = End of macro
+08 = Turn on automatic note length
+09 = Turn off automatic note length (switch to manual)
+0A xx = Change note size (v1)
+0B xx = Change note size (v2)
+0C xx = Change note size (v3)
+0D xx = Turn on automatic note length at custom speed
+0E xx yy zz = Effect, parameters?
+0F xx yy zz = Turn off effect
+10 xx yy zz aa = Portamento (X = time, Y = amount, Z = ?, A = ?)
+11 xx yy zz = Pitch bend effect (X, Y, Z = parameters)
+12 xx = Set distortion effect (v1)
+13 xx = Set distortion effect (v2)
+14 xx yy zz aa = Turn on vibrato (X, Y, Z, A = parameters)
+15 xx = Switch to duty 1, envelope
+16 xx = Switch to duty 2, envelope
+17 xx = Switch to duty 3, envelope
+18 = Set volume to 00
+19 = Set volume to 10
+1A = Set volume to 20
+1B = Set volume to 30
+1C = Set volume to 40
+1D = Set volume to 50
+1E = Set volume to 60
+1F = Set volume to 70
+20 = Set volume to 80
+21 = Set volume to 90
+22 = Set volume to A0
+23 = Set volume to B0
+24 = Set volume to C0
+25 = Set volume to D0
+26 = Set volume to E0
+27 = Set volume to F0
+28 = Set note speed to 0/disable (same effect as 09?)
+29 = Set note speed to 1
+2A = Set note speed to 2
+2B = Set note speed to 3
+2C = Set note speed to 4
+2D = Set note speed to 5
+2E = Set note speed to 6
+2F = Set note speed to 7
+30 = Set note speed to 8
+31 xxxx = Call macro 1 time
+32 xxxx = Call macro 2 times
+33 xxxx = Call macro 3 times
+34 xxxx = Call macro 4 times
+35 xxxx = Call macro 5 times
+36 xxxx = Call macro 6 times
+37 xxxx = Call macro 8 times
+38 xxxx = Call macro 16 times
+
+Other notes
+===================
+ - The first game to use this driver, Wizards & Warriors Chapter X: The Fortress of Fear, which is also notable for being possibly the first Game Boy game developed outside of Japan, uses a non-standard frequency table which causes the music to sound at a higher pitch than intended. In The Amazing Spider-Man and all later games, this was changed to a standard frequency table seen in many Game Boy games.
+ - In all games, with the exception of the previously mentioned Wizards & Warriors game, the first song is an empty pointer, and sometimes the first several are empty. Sometimes there are other empty pointers in the data, possibly songs removed from the final game.
+ - The sound data from the Japanese Game Boy Color version of Donkey Kong Land III (Donkey Kong GB: Dinky Kong & Dixie Kong) is identical to the original mono version, and its sound data is stored in the same bank.

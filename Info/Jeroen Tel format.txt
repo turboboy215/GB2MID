@@ -1,0 +1,33 @@
+Song pattern pointer table
+===================
+Each "song", or rather pattern, is one channel only. To play a full "song", all individual channel's patterns need to be individually called to play at the same time.
+Due to an artificial limitation of the driver, music and sound effects CANNOT use the same channels at the same time. For this reason, in-game music where sound effects would play are "isolated" to only play at specific channels while sound effects play at the remaining channels.
+For example, the in-game music in Bram Stoker's Dracula only uses the two square channels, while sound effects play on the wave and noise channels. Other songs where sound effects don't play, including the opening theme and title theme, use all four channels.
+The tables themselves are comprised of 16-bit (2-byte) values pointing to each pattern.
+
+Sequence pointer table
+===================
+The patterns themselves call a number of sequences to play from a table (see below). This table, like the pattern table, is comprised of 16-bit (2-byte) values pointing to each sequence.
+
+Song patterns
+===================
+Song patterns are comprised of the following commands:
+xx (00-6F?) = Play number of sequence
+7x = Set effect
+xx (80-FD?) = Set transpose (subtract from 80 to get the value)
+FE = End pattern without loop
+FF xx = Loop back to pattern number
+Note that pattern 00 is always empty.
+
+Sequences
+===================
+Sequences are comprised of the following commands:
+xx (00-5F) = Play note
+xx (60-7F) = Set arpeggio?
+xx (80-BF) = Change note length
+xx (C0-DF) = Change instrument
+xx (E0-FC) = Rest/delay
+FD xx yy = Portamento
+FE = Stop sequence
+FF = End of pattern
+Note that sequence 00 is always empty.

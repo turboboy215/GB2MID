@@ -1,0 +1,148 @@
+For the older version of the format (Mario & Yoshi, Pokémon "Gen 1"):
+====================================================================================
+
+Song pointer table
+===================
+The start of the pointer table is identified by the three bytes "FFFFFF". In Mario & Yoshi, this is located towards the end of the bank, and in Pokémon games, this is located directly at the start of the bank. Pokémon games have three banks each to fit in all the audio data, with four used for Yellow version.
+Although music and sound effect pointers use the same format, the sequences themselves are structured differently. Each pointer is three bytes referring to a channel of each music/sound effect, with the second and third being a pointer to the channel data itself. The first byte is structured as follows, and can be used to differentiate music from sound effects:
+(For the first channel in a song/sound effect only; all the proceeding channels are set to 0)
+Low Bits: Channel count
+  0 = 1
+  4 = 2
+  8 = 3
+  C = 4
+High Bits:
+0 = Music channel 1
+1 = Music channel 2
+2 = Music channel 3
+3 = Music channel 4
+4 = SFX channel 1
+5 = SFX channel 2
+6 = SFX channel 3
+7 = SFX channel 4
+Note that in these games, the sound effect pointers are located BEFORE the music pointers.
+
+Sequence Data
+===================
+Music sequence data is structured as follows, using commands reminiscent of various other drivers including Konami's (MML-based?):
+xy (0x-Bx) = Play note (X = Note, Y = Length)
+	0 = C
+	1 = C#
+	2 = D
+	3 = D#
+	4 = E
+	5 = F
+	6 = F#
+	7 = G
+	8 = G#
+	9 = A
+	A = A#
+	B = B
+Bx yy = Drum note (Y = Note, X = Length)
+Cx = Rest (X = Length)
+Dx yz (CH1-3) = Note type (X = Speed, Y = Volume, Z = Fade)
+Dx (CH4) = Drum speed
+E0-E7 = Set octave
+E8 = Toggle "perfect pitch"
+E9 = (Invalid)
+EA xx yz = Vibrato (X = Delay, Y = Depth, Z = Rate)
+EB xx yz = Pitch slide
+EC xx = Set duty
+ED xx xx = Set tempo
+EE xx = Set pan
+EF = ?
+F0 xy = Set master volume
+F1 = Silent drum note? (Used only in Mario & Yoshi)
+F8 = Interpret SFX data as music
+FC xx = Duty cycle pattern
+FD xxxx = Call macro
+FE xx yyyy = Call macro Y, X amount of times (0 = infinite, used for loop)
+FF = End of song or return from macro
+
+For the later version of
+o the sound engine (Pokémon Pinball, "Gen 2"):
+====================================================================================
+
+Song Pointer Table
+===================
+
+Pokémon Pinball:
+The song pointer table can be found with the following method:
+	ld [hl], e ; song number
+	inc hl
+	ld [hl], d ; (always 0)
+	ld hl, Music
+	add hl, de ; two byte
+	add hl, de ; pointer
+
+
+Pokémon: Gold/Silver/Crystal Version:
+The song pointer table can be found with the following method:
+	ld [hl], e ; song number
+	inc hl
+	ld [hl], d ; (always 0)
+	ld hl, Music
+	add hl, de ; three
+	add hl, de ; byte
+	add hl, de ; pointer
+
+Which equals the following in hex:
+73 23 72 21 ?? ?? 19 19 19
+
+Pokémon Pinball stores a copy of the sound engine in each bank of audio data, and the pointers themselves are two bytes. However, in other games, since the sound engine is stored in a different bank than all the music and sound effect data, the pointers are three bytes, with the first byte representing the number of the bank that the current song is located in. Unlike the earlier version of the driver, each song only has one pointer, with the individual pointer data being located in a track's "header". Music pointers also come BEFORE sound effect pointers.
+
+Music/SFX Headers
+===================
+The music/SFX headers are structured the same as the pointer table in the earlier version.
+
+Sequence Data
+===================
+Music sequence data is structured as follows, using commands reminiscent of various other drivers including Konami's (MML-based?):
+xy (0x-Cx) = Play note (or rest) (X = Note, Y = Length)
+	0 = Rest
+	1 = C
+	2 = C#
+	3 = D
+	4 = D#
+	5 = E
+	6 = F
+	7 = F$
+	8 = G
+	9 = G#
+	A = A
+	B = A#
+	C = B
+D0-D7 = Set octave
+D8 xx yz (CH1-3) = Note type (X = Speed, Y = Volume, Z = Fade)
+D9 xy = Transpose (X = Octave, Y = Key)
+DA xx xx = Set tempo
+DB xx = Set duty
+DC xy = Volume envelope
+DD xx = Pitch sweep (SFX only)
+DE xx = Duty cycle pattern
+DF = Interpret SFX data as music
+Dx (CH4) = Drum speed
+E0 xx yz = Pitch slide
+E1 xx yz = Vibrato (X = Delay, Y = Depth, Z = Rate)
+E2 xx = ?
+E3 xx = Toggle noise command
+E4 xy = Force stereo panning
+E5 xy = Set master volume
+E6 xx xx = Set pitch offset
+E7 xx = ?
+E8 xx = ?
+E9 xx = Change tempo relative to previous value
+EA xxxx = Restart channel at address X
+EB xxxx = New song address
+EC = Turn SFX priority on
+ED = Turn SFX priority off
+EE xxxx = ?
+EF xy = Set pan
+F0 = Toggle noise (SFX only)
+F1-F9 = ?
+FA xx = Set condition command
+FB xx yyyy = Jump to position on condition (X = Condition, Y = Address)
+FC xxxx = Jump to address
+FD xx yyyy = Go to section Y, X amount of times (0 = infinite, used for loop)
+FE xxxx = Call macro
+FF = End of song or return from macro

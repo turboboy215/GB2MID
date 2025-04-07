@@ -1,0 +1,100 @@
+The Sound Effects Table
+=======================================
+The sound effects table is located immediately after all code. It consists of 16-bit value pointers to each sound effect. It it accessed with the following commands:
+
+    add a
+    ld c, a
+    xor a
+    ld b, a
+    ld [RAMValue], a
+    ld hl, SFXTable
+    add hl, bc
+
+Which equals the following in hex:
+
+87 4F AF 47 EA 01 D7 21 ?? ??
+
+Alternatively:
+87 4F AF 47 EA 02 DD 21 ?? ??
+
+The Frequency Table
+=======================================
+The frequency table is the standard format used in many drivers. It can be found with the following commands:
+    ld c, a
+    ld b, 0
+    ld hl, FreqTable
+    add hl, bc
+
+Which equals the following in hex:
+
+06 00 21 D0 ?? ??
+
+Song Pointers
+=======================================
+Pointers to each song are accessed with the following commands:
+
+    ld [hl+], a
+    dec b
+    jr nz, LoadSong
+
+    ld hl, SongPtrs
+    add hl, bc
+    ld a, [hl+]
+
+Which equals the following in hex:
+
+22 05 20 FC 21 ?? ?? 09 2A
+
+The table is structured as follows in bytes:
+1. Tempo
+2-3 - Channel 1 start
+4-5 = Channel 2 start
+6-7 = Channel 3 start
+8-9 = Channel 4 start
+
+Song Pattern Format
+=======================================
+Each channel's pattern is stored as a series of pointers to each sequence ending with two 00s to indicate the end of a pattern.
+
+Sequence Format
+=======================================
+The sequence format is comprised of the following event values:
+
+ - 0x-5x = Play note
+ - 6x-7x? = Set channel speed/note length (0 = fastest)
+ - F4 xx = Change tempo
+ - F5 xx xx = Set channel loop point (pointer to value in song pattern) and end of sequence
+ - F6 xy (F6 x0 y0 on channel 3) = Set envelope fade in/out speed (used to simulate echo effect in R-Type II continue music)
+ - F7 xx = Set vibrato
+ - F8 = Rest?
+ - F9 = Hold note
+ - FA xx = Set instrument duty
+ - FB xx = Transpose all channels
+ - FC xx = Transpose current channel
+ - FD xx = Portamento
+ - FE = End of channel (no loop)
+ - FF = End of sequence
+
+Notes appear to be based on MIDI values, but an octave lower. Note lengths can be converted to MIDI with the following equation:
+
+30 + (30 * (value - 96 (0x60))
+
+Waveform
+=======================================
+Earlier games, including all those released prior to 1992, do not initialize the Game Boy's wave pattern and rely on the somewhat random "default" values. Since this was changed on the Game Boy Color to have a different consistent pattern, this causes channel 3 to sound higher-pitched and "beepy" on GBC systems rather than the lower-pitched "scratchy" sound on mono systems. This is "fixed" in later games, which load a waveform using the following instructions:
+
+    ld hl, Waveform
+    ld de, $FF30
+    ld b, $10
+
+Of the "later" games, earlier games, including R-Type II, use the following waveform which "emulates" the Game Boy's default values:
+
+AC DD DA 48 36 02 CF 16 2C 04 E5 2C AC DD DA 48
+
+For the rest of the games, the following waveform is used:
+
+00 00 00 00 00 00 FF FF 00 00 00 00 00 00 FF FF
+
+End String
+=======================================
+In later games, the end of the sound data is marked by a message in ASCII. Almost always, this is "EndMusicFX.", but in Faceball 2000, it is "EndCode".

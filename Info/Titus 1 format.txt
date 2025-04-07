@@ -1,0 +1,58 @@
+Song pointer table
+=======================================
+The song pointer table is a series of four 16-bit (2-byte) pointers to the channel of each song, not necessarily the same order as the Game Boy's channels, followed by the tempo, again as a 16-bit value. It is structured as follows:
+1-2 = Channel 3 pointer
+3-4 = Channel 1 pointer
+5-6 = Channel 2 pointer
+7-8 = Channel 4 pointer
+9-10 = Tempo
+
+It can be found at the following addresses (two of these games are right at the start of the sound data):
+$4000 - The Blues Brothers
+$3A99 - Nick Faldo Golf
+$5040 - Titus the Fox: To Marrakech and Back
+
+Sound effect pointer table
+=======================================
+The sound effect pointer table can be found shortly after the song pointer table, and is a series of 16-bit pointers. These use the same commands as songs (see below), but only use channel 3 and run at the same speed.
+
+Song commands
+=======================================
+Commands for each song and sound effects are structured as follows:
+xy (00-7F) = Note (0C = rest)
+X = Octave, Y = Note
+(Y values:
+ 0 = C
+ 1 = C#
+ 2 = D
+ 3 = D#
+ 4 = E
+ 5 = F
+ 6 = F#
+ 7 = G
+ 8 = G#
+ 9 = A
+ A = A#
+ B = B
+ C = Rest
+ D = D (octave higher)
+ E = C (2 octaves higher)
+ F = C# (1 octave higher)
+80-AF = Change speed:
+ - Discard all but the bottom 3 bits
+ - If resulting value is not 7:
+ - Then shift the value $60 to the left the remaining number
+ - If resulting value is 7, then instead use "alternate" value (see below)
+B0-BF = Set "alternate" speed value:
+ - Discard all but the bottom 3 bits
+ - Then shift the value $40 to the left the remaining number
+C0-EF = Set instrument?
+F0 xxxx = Go to macro
+F1 xx = Repeat following section
+F2 xxxx = Jump to position
+F3 = Exit macro
+F4 xxxx = Go to loop point
+F5-FE = ?
+FF = End of sequence
+
+Note: Due to a bug in the sound engine, the first note on channel 3 is not heard. The wave channel RAM also tends to get corrupted at times when the music changes, making channel 3 in the music and all sound effects sound different.

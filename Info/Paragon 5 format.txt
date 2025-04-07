@@ -1,0 +1,65 @@
+Song List Table
+=======================================
+The song list table can be found with the following instructions:
+
+		pop af
+		add a
+		add a
+		add Music_Table & $FF
+		ld l, a
+		ld a, (Music_Table >> 8) & $FF
+		adc 0
+		ld h, a		
+        ;
+		ld a, [hli]
+
+Which equals the following in hex:
+F1 87 87 C6 ?? 6F 3E ?? CE 00 67 2A
+
+The song list table is comprised of 16-bit pointers to each song in most games. However, in multi-banked games (Project S-11 is the only known one), the following format is used instead:
+1-2. Bank number (only first byte is used?)
+3-4. Pointer to pattern
+
+Song Format
+=======================================
+The format of each song is structured as follows:
+
+1-2. Pointer to pattern
+3-4. Bank number (only first byte is used?)
+
+Patterns
+=======================================
+Patterns are structured with the following commands:
+
+00 xx = Break pattern after X rows
+   To calculate X: ((X - 1) / current speed) - 1
+00 xx = Following rows are empty (X = # of rows * pattern speed)
+00 0x = Change pattern speed per row
+01 xx yy = Play note, instrument
+02 xx = Play instrument
+02 0x = Note end on channel (before note played) - 0-3
+03 xy = Set starting volume of envelope (before note played) (x = volume, y = channel)
+04 xy = Vibrato (before note played) (x = volume, y = channel)
+05 xx = Effects off (0 for CH1, 1 for CH2, 2 for CH3, 3 for CH4)
+06 xx = Flag command (for game-specific data)
+07 = End of pattern?
+08 xx yy = Loop data
+09 = End song
+0A xx = Pattern speed
+0B = End of row
+0C = Skip row (next row is empty)
+0D = Skip 2 rows
+0E = Skip 3 rows
+0F xy = Pitch slide down (before note played) - X = amount, Y = channel
+10 xy = Pitch slide up (before note played) - X = amount, Y = channel
+11 xy zz = Arpeggio with halftones X and Y (Z = channel number)
+12 xy = Set pulse width (channel 1 and 2), set volume (only for channel 3) - X = amount, Y - 0-3
+
+NOTES:
+(Begin with 00 = C-0)
+
+INSTRUMENTS:
+Channel 1 = Multiply by 4, then add 4
+Channel 2 = Multiply by 4, then add 5
+Channel 3 = Multiply by 4, then add 6
+Channel 4 = Multiply by 4, then add 3

@@ -1,0 +1,91 @@
+Song List
+=======================================
+To find the pointer to the song list, the following instructions are used:
+add a
+ld e, a
+ld d, 00
+ld hl, [SongList]
+add hl, de
+ldi a, [hl]
+ldi h, [hl]
+
+
+Which equals the following in hex:
+87 5F 16 00 21 ?? ?? 19 2A 66 6F AF E0
+
+Alternate for Ayakashi no Shiro:
+21 ?? ?? 87 CF 2A 66 6F AF E0
+
+Alternate for Rentaiou/The Shinri Game 1/2:
+17 5F 16 00 21 ?? ?? 19 D1 2A 47 2A E5 6F
+
+Song Format:
+=======================================
+Each song starts with four 16-bit pointers to the sequence for each channel. Following next is the sequence data consisting of the following commands:
+
+C0 xx = Set tempo
+C1 xx = Set duty
+C2 xx = Set volume/note size
+C3 xx xx = Jump to loop position
+C4 xx = Set panning?
+C8 = ?
+C9 = Exit from CD jump
+CB = ?
+CD xxxx = Jump to position
+CE = End song
+CF = Disable channel
+Dx = Hold note
+Ex = Rest
+Fx = Set octave (0-7), +1 octave (8), -1 octave (E), disable control (F)
+xy = Play note, length
+
+Notes are stored in an unusual format: it uses 4-bit values which specify the note number and then length in a single byte, with commands to switch between octaves. Note values are as follows:
+
+0 = C
+1 = C#
+2 = D
+3 = D#
+4 = E
+5 = F
+6 = F#
+7 = G
+8 = G#
+9 = A
+A = A#
+B = B
+
+Lengths:
+0 = 480
+1 = 240
+2 = 120
+3 = 60
+4 = 30
+5 = 15?
+6 = 7?
+7 = 3?
+8 = 720
+9 = 360
+10 = 180
+11 = 90
+12 = 45?
+13 = 12?
+14 = 6?
+15 = 3?
+
+Lengths for Blaster Master:
+0 = 720?
+1 = 360
+2 = 180
+3 = 90
+4 = 45?
+5 = 22
+6 = 12?
+7 = 6?
+8 = 960
+9 = 480
+10 = 240
+11 = 120
+12 = 60
+13 = 30
+14 = 15
+15 = 7?

@@ -1,0 +1,78 @@
+Song pointer table
+===================
+The song pointer table, consisting of sequences for both music and sound effects, consists of 16-bit (2 byte) values. It can be found using the following code:
+	ld hl, SongTable
+	add l
+	ld l, a
+	ld a, 00
+	adc h
+	ld h, a
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+
+Which equals the following in hex:
+21 ?? ?? 85 6F 3E 00 8C 67 5E 23 56
+
+Alternatively, in some games, it uses the following code:
+	add a, HIGH (SongTable)
+	ld l, a
+	ld a, LOW (SongTable)
+	adc a, 00
+	ld h, a
+	ld e, [hl]
+	inc hl
+
+Which equals the following in hex:
+C6 ?? 6F 3E ?? CE 00 67 5E 23
+
+Song headers
+===================
+Each song (or sound effect) has a "header" consisting of the following:
+1. Channel mask
+2. Channel number:
+   0-3 = Music 1-4
+   4-7 = SFX 1-4
+3-4. Pointer to channel
+(Repeat 2-4 for each channel)
+5. End of header
+
+Song commands
+===================
+Song commands work as follows:
+xx (00-3F) = Set note length
+xx (40-7F?) = Play note
+xx yy (X = 80-BF?) = Play note with manual length?
+C0 = Set noise type
+C1 xx = Noise sweep effect 
+C2 xx = Set tuning
+C3 xx = Portamento effect
+C4 xx = Set volume/envelope
+C5 = Turn on "buzz" effect?
+C6 = Turn off "buzz" effect?
+C7 xx = Set note size
+C8 xx = Wave setting?
+C9 = Rest
+CA = Turn on effect mode?
+CB = Turn off effect mode?
+CC xx = Set tempo
+CD xxxx = Set instrument (pointer)
+CE xx yyyy = Repeat section # times (x = # of times, y = pointer)
+CF xx yyyy = Repeat section # times (x = # of times, y = pointer)
+D0 xxxx = Go to loop point
+D1 xxxx = Go to macro
+D2 = Exit macro
+D3 = Stop channel
+D4 xx = Tom tom effect
+D5 = Disable tom tom?
+D6 = Turn on "distortion pitch" mode
+D7 = Turn off "distortion pitch" mode
+D8 xx = Set transpose
+D9 xx = Play drum?
+DA xx = Repeat the following note X times
+DB xx yy zz = Set vibrato
+DC = Enable vibrato?
+DD = Disable vibrato?
+DE = ? (some games only)
+DF xx = ? (some games only)
+E0 xx = ? (some games only)

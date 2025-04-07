@@ -1,0 +1,51 @@
+Music Pointers List
+=======================================
+A list of pointers to values in the music table is located close to the start of the sound data immediately following sound effects pointers. It is accessed with the following instructions:
+    ld b, a
+    ld hl, SongList
+    ld a, b
+    and $1f
+
+Which equals the following in hex:
+47 21 ?? ?? 78 E6 1F CD (Super Mario Land)
+
+Alternatively:
+47 21 ?? ?? E6 1F CD (Other games)
+
+47 21 C4 47 CD
+
+
+47 21 F8 44 E6 3F CD
+47 21 D1 57 E6 7F CD
+
+Music Pointer Table
+=======================================
+The music pointer table is comprised of values to each channel's pattern in a song:
+
+1. Transpose amount for current song
+2-3. Pointer to note lengths table
+4-5. Channel 1 pattern pointer
+6-7. Channel 2 pattern pointer
+8-9. Channel 3 pattern pointer
+10-11. Channel 4 pattern pointer
+
+Channel Pattern Data
+=======================================
+Each channel's pattern data is comprised of pointers to each sequence, which end with one of the following:
+ - 0000 = End song?
+ - FFFF xxxx = Loop song, loop point?
+
+Sequences
+=======================================
+Sequences are structured with the following commands:
+00 = End of sequence?
+01-0F = Rest (This rest is calculated by multiplying this number by the current note length - used for all notes on channel 4 (except 01 = rest))
+10-90 = Play note (odd numbers only)
+91-99 = Tom tom effect?
+9B xx = Repeat point start, number of times
+9C = End of repeat point
+9D xx yy zz = Set volume, sweep, duty - Channel 1/2
+ Channel 3 = Pointer to waveform, volume?
+9E xx xx = Change step table
+9F xx = Transpose (all channels)
+Ax = Set note length

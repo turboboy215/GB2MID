@@ -1,0 +1,64 @@
+Song pointer list
+=======================================
+Music and sound effects are stored the same way, and are accessed via the same pointer table. The pointer table can be found with the following instructions:
+
+	ld d,$00
+	ld e,a
+	ld h,$00
+	ld l,a
+	sla l
+	rl h
+	add hl,de
+	ld d,h
+	ld e,l
+
+	ld hl,soundPointers
+	add hl,de
+
+Which equals the following in hex:
+16 00 5F 26 00 6F CB 25 CB 14 19 54 5D 21 ?? ?? 19
+
+Song pointers
+=======================================
+Song pointers are structured as follows:
+1. Bank number (relative from sound engine bank, starting with 00)
+2-3. Pointer to song
+
+Song headers
+=======================================
+Each song has a "header" specifying a pointer to each channel in a song. It is structured as follows:
+1. XY = Channel mask (X = ?, Y = channel number):
+	0 = Channel 1 music
+	1 = Channel 2 music
+	2 = Channel 1 SFX
+	3 = Channel 2 SFX
+	4 = Channel 3 music
+	5 = Channel 3 SFX
+	6 = Channel 4 music
+	7 = Channel 4 SFX
+2-3. Pointer to song channel
+(Repeat until FF value below)
+FF = End of header
+
+(NOTE: For most games, the header is stored in the song's bank. For Zelda games, it is always stored in the first bank.)
+
+Sequence commands
+=======================================
+Commands in a sequence of a song or sound effect are comprised of the following:
+xx yy (x = 00-5F) = Play note
+60 xx = Rest (v1)
+61 xx = Rest (v2)
+xx yy (xx = 62-7F?) = Play additional notes (channel 4)?
+Dx = Set volume
+Ex xx = Set envelope
+F0 xx = Turn on sweep/modulation mode (notes on channels 1 and 2 take up three bytes)
+F1-F3 = ?
+F4-F5 = ? (duplicates of FF?)
+F6 xx = Set duty
+F7 = ? (duplicate of FF?)
+F8 xx = Set wave counter 1
+F9 xx = Set vibrato
+FA-FC = ? (duplicate of FF?)
+FD xx = Set wave counter 2
+FE xxxx = Jump to position
+FF = Stop channel
