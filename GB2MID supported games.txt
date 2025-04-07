@@ -23,6 +23,8 @@ Adventures of Pinocchio, The (J)
 Adventures of Rocky and Bullwinkle, The (Beta1)
 Adventures of Rocky and Bullwinkle, The (Beta2)
 Adventures of Rocky and Bullwinkle, The (U)
+Adventures of Star Saver, The (U) [!]
+After Burst (J)
 Agro Soar (A) [!]
 Aguri Suzuki F-1 Super Driving (J)
 Aguri Suzuki F-1 Super Driving (J) [a1] (Unreleased) [!]
@@ -115,6 +117,8 @@ Batman Forever (U) [!]
 Battle Fishers (J) [C][!]
 Battle Unit Zeoth (J)
 Battle Unit Zeoth (U) [!]
+Battleship (U) [C][!]
+Battleship (U) [M][!]
 Battletoads (J)
 Battletoads (U) [!]
 Battletoads Double Dragon - The Ultimate Team (E) [!]
@@ -161,6 +165,7 @@ Bob the Builder - Fix It Fun! (E) (M3) (Eng-Ita-Fre) [C][!]
 Bob the Builder - Fix It Fun! (E) (M5) [C][!]
 Bob the Builder - Fix It Fun! (Sw) (M5) [C][!]
 Bob the Builder - Fix It Fun! (U) [C][!]
+Boku no Camp-jou (J) [C][!]
 Bokujou Monogatari GB (J) (Unreleased) [S][!]
 Bokujou Monogatari GB (J) (V1.0) [S][!]
 Bokujou Monogatari GB (J) (V1.1) [S]
@@ -183,6 +188,8 @@ Bomberman Max - Yami no Senshi (J) [C][!]
 Bomberman Selection (K) [C][!]
 Bonk's Adventure (U) [!]
 Bonk's Revenge (U) [S][!]
+Boomer's Adventure in ASMIK World (J)
+Boomer's Adventure in ASMIK World (U) [!]
 Bouken! Dondoko Shima (J) [C]
 Boulder Dash (J) [!]
 Boulder Dash (U) [!]
@@ -424,6 +431,7 @@ F-18 Thunder Strike (U) (Early) (Unreleased) [C][!]
 Faceball 2000 (U) [!]
 Fairy Kitty no Kaiun Jiten - Yousei no Kuni no Uranai Shugyou (J) (V1.0) [C][!]
 Fairy Kitty no Kaiun Jiten - Yousei no Kuni no Uranai Shugyou (J) (V1.1) [C][!]
+Fairy Tale's Club (J)
 Felix the Cat (U)
 Feng Kuang Da Fu Weng (Crazy Monopoly) (Unl) [C][f1]
 Ferrari - Grand Prix Challenge (J)
@@ -442,6 +450,7 @@ Final Fantasy Adventure (U) [!]
 Final Fantasy Legend II (U) [!]
 Final Fantasy Legend III (U) [!]
 Final Fantasy Legend, The (U) [!]
+Final Reverse (J)
 Fire Fighter (U)
 Fix & Foxi - Episode 1 Lupo (E) (M3) [C][!]
 Flintstones, The - Burgertime in Bedrock (E) (M5) [C][!]
@@ -617,6 +626,7 @@ It's a World Rally (J) [C][!]
 Itsudemo Nyanto Wonderful (J) [S][!]
 J.Cup Soccer (J)
 J.League Excite Stage GB (J) [C][!]
+Jankenman (J)
 Jankyuusei - Cosplay Paradise (J) [C][!]
 Janosch - Das grosse Panama-Spiel (G) [C][!]
 Jay und Die Spielzeugdiebe (G) [C][!]
@@ -630,6 +640,7 @@ Jimmy White's Cueball (E) [C][!]
 Jimmy White's Cueball (U) (Unreleased) [C][!]
 Jinsei Game (J) [S]
 Jisedai Begoma Battle Beyblade (J) [C][!]
+Jissen Mahjong Kyoshitsu (J) [S]
 Joe & Mac - Caveman Ninja (E) (M7) [!]
 Joe & Mac (U) [!]
 John Madden Football (U) (Unreleased) [S][!]
@@ -664,6 +675,7 @@ Kick Attack (J) (Unreleased) [!]
 Kick Boxing, The (J)
 Kid Dracula (U) [!]
 Kid Icarus - Of Myths and Monsters (UE) [!]
+Kikansha Thomas - Sodor-tou no Nakamatachi (J) [C][!]
 Killer Instinct (U) [S][!]
 Killer Instinct (U) [S][a1]
 Kira Kira Kids (J) [S]
@@ -850,6 +862,8 @@ Medarot Kabuto (J) (V1.0) [S]
 Medarot Kabuto (J) (V1.1) [S]
 Medarot Kuwagata (J) (V1.0) [S]
 Medarot Kuwagata (J) (V1.1) [S]
+Megalit (J)
+Megalit (U) [!]
 Megaman - Dr. Wily's Revenge (E) [!]
 Megaman - Dr. Wily's Revenge (U) [!]
 Megaman II (E) [!]
@@ -951,6 +965,8 @@ Nakayoshi Pet Series 5 - Kawaii Hamster 2 (J) [C][!]
 Namco Classics (J)
 NASCAR Heat (U) [C][!]
 Nations, The - Land of Legends (E) (M2) [C][!]
+Navy Blue (J)
+Navy Blue 90 (J)
 Navy Seals (U) [!]
 NBA 3 on 3 featuring Kobe Bryant (U) [C][!]
 NBA All Star Challenge (U) [!]
@@ -993,6 +1009,7 @@ Ninja Taro (Beta)
 Ninja Taro (U) [!]
 Ninku (J) [S]
 Ninku Dai 2 - Ninku Sensou Hen (J) [S]
+Nintama Rantarou - Ninjutsu Gakuen ni Nyuugakushou no Dan (J) [C][!]
 Nintendo Power Menu Program (J) [C][!]
 Nintendo World Cup (U) [!]
 No Fear - Downhill Mountain Biking (E) [C][!]
@@ -1140,6 +1157,7 @@ Pokemon Trading Card Game (E) (M3) (Eng-Ger-Fre) [C][!]
 Pokemon Trading Card Game (E) (M3) (Eng-Spa-Ita) [C][!]
 Pokemon Trading Card Game (U) [C][!]
 Polaris SnoCross (U) [C][!]
+Ponta to Hinako no Chindouchuu - Yuutou Hen (J)
 Pooh and Tigger's Hunny Safari (E) (M6) [C]
 Pooh and Tigger's Hunny Safari (U) [C][!]
 Pop 'N TwinBee (E) [!]
@@ -1300,6 +1318,8 @@ Sengoku Ninja-kun - Ninja Taro (J)
 Sensible Soccer - European Champions (E) [!]
 Sesame Street Sports (E) [C][!]
 Sesame Street Sports (U) [C]
+Serpent (J)
+Serpent (U) [!]
 Sewing Machine Operation Software (E) (M4) (Eng-Fre-Ger-Dut) [C][!]
 Sewing Machine Operation Software (E) (M4) (Eng-Fre-Spa-Por) (Unreleased) [C][!]
 Sewing Machine Operation Software (E) (M4) (Eng-Ger-Ita-Dut) (Unreleased) [C][!]
@@ -1348,6 +1368,9 @@ Smurfs Nightmare, The (U) [C][!]
 Smurfs, The (UE) (V1.0) (M4) [!]
 Smurfs, The (UE) (V1.1) (M3) [S][!]
 Sneaky Snakes (UE) [!]
+Snow Bros. Jr. (E) [!]
+Snow Bros. Jr. (J)
+Snow Bros. Jr. (U) [!]
 Snow White and the Seven Dwarfs (E) (M9) [C][!]
 Snow White and the Seven Dwarfs (U) [C]
 Snowboard Champion (J) [C][!]
@@ -1498,6 +1521,7 @@ Teenage Mutant Ninja Turtles 2 (J)
 Teenage Mutant Ninja Turtles 3 - Turtles Kiki Ippatsu (J)
 Teenage Mutant Ninja Turtles III - Radical Rescue (U) [!]
 Teenage Mutant Ninja Turtles III - Radical Rescue (U) (V1.1) (Unreleased) [!]
+Tekichuu Rush (J)
 Tennis (W) [!]
 Terminator 2 - Judgment Day (UE) [!]
 Test Drive 2001 (U) [C][!]
@@ -1708,6 +1732,7 @@ Yoshi no Cookie (J)
 Yoshi no Panepon (J) [S]
 Yoshi no Tamago (J)
 Yoshi's Cookie (U) [!]
+Yosou Umaban Club (J)
 Yu-Gi-Oh! Monster Capsule GB (J) [C][!]
 Yuu Yuu Hakusho - Ankoku Bujutsu Kai (J)
 Yuu Yuu Hakusho - Makai no Tobira (J)
