@@ -275,6 +275,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Adventures of Star Saver, The (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1312</checksum>
+        <crc32>5d461374</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>After Burst (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>23B3</checksum>
+        <crc32>c0049d77</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Agro Soar (A) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -1364,6 +1386,28 @@
 		<parameters>9</parameters>
 	</rom>
 	<rom>
+		<name>Battleship (U) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D379</checksum>
+        <crc32>8e6f8037</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Battleship (U) [M][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2C78</checksum>
+        <crc32>fef62da5</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Battletoads (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -1914,6 +1958,17 @@
 		<parameters>S</parameters>
 	</rom>
 	<rom>
+		<name>Boku no Camp-jou (J) [C][!]</name>
+		<gamecode>BDPJ</gamecode>
+		<rev>0</rev>
+		<checksum>108E</checksum>
+        <crc32>c87120b5</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>80</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Bokujou Monogatari GB (J) (Unreleased) [S][!]</name>
 		<gamecode>BYWJ</gamecode>
 		<rev>0</rev>
@@ -2208,6 +2263,28 @@
         <format>Hudson_Soft</format>
 		<part></part>
 		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Boomer's Adventure in ASMIK World (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6619</checksum>
+        <crc32>a817450d</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Boomer's Adventure in ASMIK World (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1B0C</checksum>
+        <crc32>105bc1c0</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>1</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -4994,6 +5071,17 @@
 		<parameters>CFG/Fairy Kitty no Kaiun Jiten - Yousei no Kuni no Uranai Shugyou (J) (V1.1) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Fairy Tale's Club (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>4CAD</checksum>
+        <crc32>cdfd660a</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Felix the Cat (U)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -5189,6 +5277,17 @@
         <format>Square</format>
 		<part></part>
 		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Final Reverse (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3B31</checksum>
+        <crc32>e94a6942</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>4</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -7282,6 +7381,17 @@
 		<parameters>2</parameters>
 	</rom>
 	<rom>
+		<name>Jankenman (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>4AF3</checksum>
+        <crc32>37b3d081</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Jankyuusei - Cosplay Paradise (J) [C][!]</name>
 		<gamecode>BHGJ</gamecode>
 		<rev>0</rev>
@@ -7433,6 +7543,17 @@
         <format>Hudson_Soft</format>
 		<part></part>
 		<banks>1D,1E</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Jissen Mahjong Kyoshitsu (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A761</checksum>
+        <crc32>9d335162</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>4</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -7808,6 +7929,17 @@
 		<part></part>
 		<banks>6</banks>
 		<parameters>CFG/Kid Icarus - Of Myths and Monsters (UE) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Kikansha Thomas - Sodor-tou no Nakamatachi (J) [C][!]</name>
+		<gamecode>BBWJ</gamecode>
+		<rev>0</rev>
+		<checksum>9F69</checksum>
+        <crc32>223bb19c</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Killer Instinct (U) [S][!]</name>
@@ -10219,6 +10351,28 @@
 		<parameters>4C22\3</parameters>
 	</rom>
 	<rom>
+		<name>Megalit (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>167A</checksum>
+        <crc32>c764b1f2</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Megalit (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>EB59</checksum>
+        <crc32>f315b842</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Megaman - Dr. Wily's Revenge (E) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -11517,6 +11671,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Navy Blue (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DDC0</checksum>
+        <crc32>afd8c47c</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Navy Blue 90 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9B92</checksum>
+        <crc32>8cfeb2e2</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Navy Seals (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -11968,17 +12144,6 @@
 		<parameters>CFG/Ninku (J) [S].cfg</parameters>
 	</rom>
 	<rom>
-		<name>Ninku (J) [S]</name>
-		<gamecode></gamecode>
-		<rev>0</rev>
-		<checksum>544B</checksum>
-        <crc32>b50119eb</crc32>
-        <format>TOSE</format>
-		<part></part>
-		<banks>A</banks>
-		<parameters>CFG/Ninku (J) [S].cfg</parameters>
-	</rom>
-	<rom>
 		<name>Ninku Dai 2 - Ninku Sensou Hen (J) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -11988,6 +12153,17 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters>CFG/Ninku Dai 2 - Ninku Sensou Hen (J) [S].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Nintama Rantarou - Ninjutsu Gakuen ni Nyuugakushou no Dan (J) [C][!]</name>
+		<gamecode>BNAJ</gamecode>
+		<rev>0</rev>
+		<checksum>7F94</checksum>
+        <crc32>4631d8bf</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>29</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Nintendo Power Menu Program (J) [C][!]</name>
@@ -13640,6 +13816,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Ponta to Hinako no Chindouchuu - Yuutou Hen (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A0DD</checksum>
+        <crc32>058b3dab</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Pooh and Tigger's Hunny Safari (E) (M6) [C]</name>
 		<gamecode>BP8P</gamecode>
 		<rev>0</rev>
@@ -15224,6 +15411,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Rubble Saver (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>40D4</checksum>
+        <crc32>e8aea452</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Rugrats - Totally Angelica (U) [C][!]</name>
 		<gamecode>BAGE</gamecode>
 		<rev>0</rev>
@@ -15540,6 +15738,28 @@
         <format>Mark_Cooksey</format>
 		<part></part>
 		<banks>5</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Serpent (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>94A5</checksum>
+        <crc32>bef1fe2b</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Serpent (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2B8A</checksum>
+        <crc32>74d466d7</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>1</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -16113,6 +16333,39 @@
 		<part></part>
 		<banks>6</banks>
 		<parameters>CFG/Sneaky Snakes (UE) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Snow Bros. Jr. (E) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2F4C</checksum>
+        <crc32>9014b3d8</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Snow Bros. Jr. (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7600</checksum>
+        <crc32>e5a22f5a</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Snow Bros. Jr. (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>EEA6</checksum>
+        <crc32>d45a1daa</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Snow White and the Seven Dwarfs (E) (M9) [C][!]</name>
@@ -17872,6 +18125,17 @@
         <format>Konami</format>
 		<part></part>
 		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tekichuu Rush (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D381</checksum>
+        <crc32>7b903a6f</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>1</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -20326,6 +20590,17 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters>CFG/Yoshi's Cookie (U) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Yousou Umaban Club (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C638</checksum>
+        <crc32>cafe0d2b</crc32>
+        <format>Junichi_Saito</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Yu-Gi-Oh! Monster Capsule GB (J) [C][!]</name>
