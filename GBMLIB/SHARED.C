@@ -18,6 +18,7 @@
 #include "HUDSON.H"
 #include "IMAGNRNG.H"
 #include "JEROTEL.H"
+#include "JSAITO.H"
 #include "KONAMI.H"
 #include "KSADA.H"
 #include "MCOOKSEY.H"
@@ -363,6 +364,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Imagineering:
 			ImgnProc(banks[curBank]);
+			break;
+		case Junichi_Saito:
+			JSaitoProc(banks[curBank]);
 			break;
 		case Jeroen_Tel:
 			JTProc(parameters);
