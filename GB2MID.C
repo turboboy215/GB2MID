@@ -651,6 +651,10 @@ int main(int args, char* argv[])
             {
                 driver = Capcom;
             }
+            else if (!strcmp(formatString, "Carillon_Player"))
+            {
+                driver = Carillon_Player;
+            }
             else if (!strcmp(formatString, "Climax"))
             {
                 driver = Climax;
