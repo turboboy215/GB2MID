@@ -45,6 +45,7 @@
 #define Cube				0x2A
 #define MPlay				0x2B
 #define Junichi_Saito		0x2C
+#define Carillon_Player		0x2D
 
 extern FILE * rom, * mid;
 extern long masterBank;

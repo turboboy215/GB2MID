@@ -323,6 +323,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case Capcom:
 			CapProc(banks[curBank]);
 			break;
+		case Carillon_Player:
+			CarillonProc(banks[curBank]);
+			break;
 		case Climax:
 			IMEDProc(parameters);
 			break;
