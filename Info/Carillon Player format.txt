@@ -1,0 +1,45 @@
+Block order list
+=======================================
+Each song is comprised of blocks, or patterns. The block order list is always located at address $4F00, and is $100 (128) bytes long.
+The block order list consists of single bytes which are each the low byte of a pointer to the address of the pattern (the high byte is always $00).
+
+Song patterns end with any of the following methods:
+ - $00 (default) = Loop from beginning
+ - $xx (block number) = Loop from block number
+ - $FF = End song without loop
+
+It is possible to store up to 8 distinct songs in one bank. These are always stored at the following list positions:
+Song 0 - Starting at $00
+Song 1 - Starting at $80
+Song 2 - Starting at $40
+Song 3 - Starting at $c0
+Song 4 - Starting at $20
+Song 5 - Starting at $60
+Song 6 - Starting at $a0
+Song 7 - Starting at $e0
+
+Block data
+=======================================
+Each block of a song is always 256 bytes, consisting of 32 8-byte rows. A maximum of 32 blocks can be stored.
+Each row of a block is 8 bytes, which are comprised of the following values:
+1. Channel 1 note
+2. Channel 1 instrument
+3. Channel 2 note
+4. Channel 2 instrument
+5. Channel 3 note
+6. Channel 3 instrument
+7. Channel 4 instrument
+8. Command (xy - X = effect, Y = parameter)
+
+Note that for some reason, notes increase every 2 values instead of 1.
+
+Effects are as follows:
+0 = No effect
+1 = Modulate channel (vibrato)
+2 = Slide channel
+3 = Set vibrato width
+4 = Set vibrato rate
+5 = Init slide up
+6 = Init slide down
+7 = Set tempo
+8 = Pattern break (parameter has no effect)
