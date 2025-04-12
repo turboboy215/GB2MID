@@ -1,0 +1,47 @@
+Song Table
+=======================================
+This pointer table can be found with the following instructions:
+ld a, c
+dec a
+ld hl, SongTable
+rst 28
+ld h, d
+ld l, e
+
+Which equals the following in hex:
+79 3D 21 ?? ?? EF 62 6B
+
+Song header
+=======================================
+A header for a song is stored as follows:
+1-2. Tempo
+3-4. Channel 1 pointer
+5-6. Channel 2 pointer
+7-8. Channel 3 pointer
+9-10. Channel 4 pointer
+11-12. Modulation definition table?
+
+In the NES version, the header is stored as follows:
+1. "F" (or "7") - identifies as music; otherwise SFX
+2-3. Channel 1 pointer
+4-5. Channel 2 pointer
+6-7. Channel 3 pointer
+8-9. Channel 4 pointer
+10-11. Modulation definition table
+
+Commands
+=======================================
+The sequence format is very close to the company's second NES format (used from around 1987-1989), which is used in the original NES version of the game. Like its NES counterpart, the driver was either heavily modified or replaced with another driver for some of Capcom's other games, including Gargoyle's Quest and Mega Man Xtreme 1/2. Each channel's sequence is comprised of the following commands:
+00 xx = Set pitch envelope (Duplicate of 01; is used to set tempo in NES version)
+01 xx = Set pitch envelope
+02 xx = Set duty
+03 xx = Set volume
+04 xx yy yy = Repeat section Y, X times
+05 xx = Set base note
+06 = Dotted note
+07 xy = Set volume envelope
+08 xx = Set modulation
+09 = End of channel
+21 = ?
+30 = Set the following note to value from "alternate" length table
+xx (40-FF) = Play note
