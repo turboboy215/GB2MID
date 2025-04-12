@@ -11,6 +11,7 @@
 #include "CUBE.H"
 #include "DAVDSHEA.H"
 #include "DE1.H"
+#include "DUCKT.H"
 #include "DW.H"
 #include "GAMEFRK.H"
 #include "GHX.H"
@@ -343,6 +344,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Digital_Eclipse_1:
 			DE1Proc(banks[curBank], parameters);
+			break;
+		case DuckTales:
+			DuckProc(banks[curBank]);
 			break;
 		case Game_Freak:
 			GFProc(banks[curBank]);
