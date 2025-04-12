@@ -4587,6 +4587,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Duck Tales (E) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8513</checksum>
+        <crc32>ac6483dc</crc32>
+        <format>DuckTales</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Duck Tales (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9F69</checksum>
+        <crc32>5b5410f5</crc32>
+        <format>DuckTales</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Duck Tales (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A3DD</checksum>
+        <crc32>2bbbb54d</crc32>
+        <format>DuckTales</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Dukes of Hazzard, The - Racing for Home (E) (M3) [C][!]</name>
 		<gamecode>BDCP</gamecode>
 		<rev>0</rev>
@@ -5302,6 +5335,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Fish Files, The (E) (M5) [C]</name>
+		<gamecode>BFQP</gamecode>
+		<rev>0</rev>
+		<checksum>8D75</checksum>
+        <crc32>d6abc1f8</crc32>
+        <format>Carillon_Player</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Fix & Foxi - Episode 1 Lupo (E) (M3) [C][!]</name>
 		<gamecode>BFFP</gamecode>
 		<rev>0</rev>
@@ -5519,6 +5563,39 @@
         <format>Imagineering</format>
 		<part></part>
 		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Full Time Soccer (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7E34</checksum>
+        <crc32>0634c196</crc32>
+        <format>Carillon_Player</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Full Time Soccer & Hang Time Basketball (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7E34</checksum>
+        <crc32>0634c196</crc32>
+        <format>Carillon_Player</format>
+		<part>1/2=Full Time Soccer</part>
+		<banks>5</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Full Time Soccer & Hang Time Basketball (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7E34</checksum>
+        <crc32>0634c196</crc32>
+        <format>Carillon_Player</format>
+		<part>2/2=Hang Time Basketball</part>
+		<banks>1F</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -6523,6 +6600,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Hang Time Basketball (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1ECE</checksum>
+        <crc32>3207b7d9</crc32>
+        <format>Carillon_Player</format>
+		<part></part>
+		<banks>F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Harry Boy and the Chamber of Secrets (Unl) [C][f1]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -7037,6 +7125,28 @@
         <format>Ocean</format>
 		<part></part>
 		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Hugo - Black Diamond Fever (E) (M11) [C][!]</name>
+		<gamecode>BHUP</gamecode>
+		<rev>0</rev>
+		<checksum>E7D1</checksum>
+        <crc32>685cafcc</crc32>
+        <format>Carillon_Player</format>
+		<part></part>
+		<banks>19,1B,1C,1D,1E,1F,20,21</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Hugo - The Evil Mirror (E) (M11) [C]</name>
+		<gamecode>BHXP</gamecode>
+		<rev>0</rev>
+		<checksum>015F</checksum>
+        <crc32>24b76cd0</crc32>
+        <format>Carillon_Player</format>
+		<part></part>
+		<banks>1B,1C,1D,1E,1F,20,21,22,23,24</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -11913,6 +12023,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>New Addams Family Series, The (E) (M6) [C]</name>
+		<gamecode>BAIP</gamecode>
+		<rev>0</rev>
+		<checksum>48D3</checksum>
+        <crc32>fbb97680</crc32>
+        <format>Carillon_Player</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>New Addams Family Series, The (E) (M6) (V1.1) (Unreleased) [C][!]</name>
+		<gamecode>BAIP</gamecode>
+		<rev>0</rev>
+		<checksum>6ED5</checksum>
+        <crc32>910df34b</crc32>
+        <format>Carillon_Player</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>New Adventures of Mary-Kate & Ashley, The (U) [C][!]</name>
 		<gamecode>AXFE</gamecode>
 		<rev>0</rev>
@@ -13288,6 +13420,17 @@
 		<parameters>4CAD\3</parameters>
 	</rom>
 	<rom>
+		<name>Pocket Smash Out & Race Time (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D1C2</checksum>
+        <crc32>0ad5b775</crc32>
+        <format>Carillon_Player</format>
+		<part>1/1=Race Time</part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Pocket Sonar (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -14528,6 +14671,17 @@
         <format>David_Whittaker</format>
 		<part></part>
 		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Race Time (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D1C2</checksum>
+        <crc32>599c867d</crc32>
+        <format>Carillon_Player</format>
+		<part></part>
+		<banks>10</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
