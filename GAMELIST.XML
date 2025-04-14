@@ -11077,6 +11077,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Monster AG, Die (G) [C][!]</name>
+		<gamecode>B4QD</gamecode>
+		<rev>0</rev>
+		<checksum>CCBF</checksum>
+        <crc32>3a9602e8</crc32>
+        <format>Cosmigo</format>
+		<part></part>
+		<banks>21,22,23,24</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Monster Max (U) (M6)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -11096,6 +11107,50 @@
         <format>Technos_Japan</format>
 		<part></part>
 		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Monsters, Inc. (E) (M3) (Eng-Ita-Fre) [C][!]</name>
+		<gamecode>B4QY</gamecode>
+		<rev>0</rev>
+		<checksum>29DA</checksum>
+        <crc32>712d40a5</crc32>
+        <format>Cosmigo</format>
+		<part></part>
+		<banks>21,22,23,24</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Monsters, Inc. (E) (M3) (Eng-Spa-Dut) [C]</name>
+		<gamecode>B4QX</gamecode>
+		<rev>0</rev>
+		<checksum>29DA</checksum>
+        <crc32>63e3bbb4</crc32>
+        <format>Cosmigo</format>
+		<part></part>
+		<banks>21,22,23,24</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Monsters, Inc. (E) (V1.1) [C][!]</name>
+		<gamecode>B4QP</gamecode>
+		<rev>1</rev>
+		<checksum>3F7D</checksum>
+        <crc32>3726858a</crc32>
+        <format>Cosmigo</format>
+		<part></part>
+		<banks>21,22,23,24</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Monsters, Inc. (U) [C][!]</name>
+		<gamecode>B4QE</gamecode>
+		<rev>0</rev>
+		<checksum>592A</checksum>
+        <crc32>183dbb31</crc32>
+        <format>Cosmigo</format>
+		<part></part>
+		<banks>21,22,23,24</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -11767,6 +11822,17 @@
         <format>GHX</format>
 		<part></part>
 		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>NASCAR Racers (U) [C][!]</name>
+		<gamecode>BNRE</gamecode>
+		<rev>0</rev>
+		<checksum>5D3F</checksum>
+        <crc32>f39a5c4f</crc32>
+        <format>Cosmigo</format>
+		<part></part>
+		<banks>38,39</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -18876,6 +18942,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Tonka Construction Site (U) [C]</name>
+		<gamecode>BCZE</gamecode>
+		<rev>0</rev>
+		<checksum>E143</checksum>
+        <crc32>8142a3e8</crc32>
+        <format>Cosmigo</format>
+		<part></part>
+		<banks>2,3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Tony Hawk's Pro Skater 3 (U) [C][!]</name>
 		<gamecode>B3TE</gamecode>
 		<rev>0</rev>
@@ -20229,6 +20306,17 @@
 		<parameters>o</parameters>
 	</rom>
 	<rom>
+		<name>World Destruction League - Thunder Tanks (U) (M3) [C][!]</name>
+		<gamecode>BBTE</gamecode>
+		<rev>0</rev>
+		<checksum>D127</checksum>
+        <crc32>1a0bf4d7</crc32>
+        <format>Cosmigo</format>
+		<part></part>
+		<banks>2,3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>World Ice Hockey (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -20941,6 +21029,17 @@
         <format>Game_Freak</format>
 		<part></part>
 		<banks>F5,F6,FA,FD,FE</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Zoboomafoo - Playtime In Zobooland (U) [C][!]</name>
+		<gamecode>BZBE</gamecode>
+		<rev>0</rev>
+		<checksum>ECC5</checksum>
+        <crc32>38d91885</crc32>
+        <format>Cosmigo</format>
+		<part></part>
+		<banks>33,34</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
