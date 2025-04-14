@@ -7,7 +7,9 @@
 #include "AUDIOART.H"
 #include "BEAM.H"
 #include "CAPCOM.H"
+#include "CARILLON.H"
 #include "CLIMAX.H"
+#include "COSMIGO.H"
 #include "CUBE.H"
 #include "DAVDSHEA.H"
 #include "DE1.H"
@@ -329,6 +331,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Climax:
 			IMEDProc(parameters);
+			break;
+		case Cosmigo:
+			CosmigoProc(banks[curBank]);
 			break;
 		case Cube:
 			CubeProc(banks[curBank], parameters);

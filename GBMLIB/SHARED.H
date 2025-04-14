@@ -47,6 +47,7 @@
 #define Junichi_Saito		0x2C
 #define Carillon_Player		0x2D
 #define DuckTales			0x2E
+#define Cosmigo				0x2F
 
 extern FILE * rom, * mid;
 extern long masterBank;

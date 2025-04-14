@@ -21,6 +21,10 @@ long bankAmt;
 int foundTable;
 int curInst;
 int curVol;
+int format;
+char string1[4];
+char string2[4];
+int tempoVal;
 
 unsigned char* romData;
 unsigned char* midData;
@@ -28,7 +32,9 @@ unsigned char* ctrlMidData;
 
 long midLength;
 
-const char DuckMagicBytes[3] = { 0x79, 0x3D, 0x21 };
+const char DuckMagicBytesNES[7] = { 0xC9, 0xFF, 0xD0, 0x0B, 0xA9, 0x01, 0x85 };
+const char DuckMagicBytesNES2[7] = { 0xC9, 0xFF, 0xD0, 0x03, 0x4C, 0x6A, 0x81 };
+const char DuckMagicBytesGB[3] = { 0x79, 0x3D, 0x21 };
 
 /*Function prototypes*/
 unsigned short ReadLE16(unsigned char* Data);
@@ -46,6 +52,7 @@ void DuckProc(int bank)
 	foundTable = 0;
 	curInst = 0;
 	curVol = 100;
+	tempoVal = 0;
 	if (bank != 1)
 	{
 		bankAmt = bankSize;
@@ -54,20 +61,58 @@ void DuckProc(int bank)
 	{
 		bankAmt = 0;
 	}
-	fseek(rom, ((bank - 1) * bankSize), SEEK_SET);
+	/*Check for NES ROM header*/
+	fgets(string1, 4, rom);
+	if (!memcmp(string1, "NES", 1))
+	{
+		fseek(rom, (((bank - 1) * bankSize)) + 0x10, SEEK_SET);
+	}
+	else
+	{
+		fseek(rom, ((bank - 1) * bankSize), SEEK_SET);
+	}
 	romData = (unsigned char*)malloc(bankSize);
 	fread(romData, 1, bankSize, rom);
 
 	/*Try to search the bank for song table loader*/
 	for (i = 0; i < bankSize; i++)
 	{
-		if ((!memcmp(&romData[i], DuckMagicBytes, 3)) && foundTable != 1)
+		if ((!memcmp(&romData[i], DuckMagicBytesNES, 7)) && foundTable != 1)
+		{
+			bankAmt = 0x8000;
+			tablePtrLoc = bankAmt + i + 18;
+			printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
+			tableOffset = ReadLE16(&romData[tablePtrLoc - bankAmt]);
+			printf("Song table starts at 0x%04x...\n", tableOffset);
+			foundTable = 1;
+			format = 1;
+		}
+	}
+
+	for (i = 0; i < bankSize; i++)
+	{
+		if ((!memcmp(&romData[i], DuckMagicBytesNES2, 7)) && foundTable != 1)
+		{
+			bankAmt = 0x8000;
+			tablePtrLoc = bankAmt + i + 10;
+			printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
+			tableOffset = ReadLE16(&romData[tablePtrLoc - bankAmt]);
+			printf("Song table starts at 0x%04x...\n", tableOffset);
+			foundTable = 1;
+			format = 1;
+		}
+	}
+
+	for (i = 0; i < bankSize; i++)
+	{
+		if ((!memcmp(&romData[i], DuckMagicBytesGB, 3)) && foundTable != 1)
 		{
 			tablePtrLoc = bankAmt + i + 3;
 			printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
 			tableOffset = ReadLE16(&romData[tablePtrLoc - bankAmt]);
 			printf("Song table starts at 0x%04x...\n", tableOffset);
 			foundTable = 1;
+			format = 2;
 		}
 	}
 
@@ -76,14 +121,37 @@ void DuckProc(int bank)
 		i = tableOffset - bankAmt;
 		songNum = 1;
 
-		while (songNum <= 11)
+		if (format == 1)
 		{
-			songPtr = ReadLE16(&romData[i]);
-			printf("Song %i: 0x%04X\n", songNum, songPtr);
-			Ducksong2mid(songNum, songPtr);
-			i += 2;
-			songNum++;
+			while (ReadLE16(&romData[i]) >= 0x8000)
+			{
+				songPtr = ReadLE16(&romData[i]);
+				if (romData[songPtr - bankAmt] == 0x0F || romData[songPtr - bankAmt] == 0x07)
+				{
+					printf("Song %i: 0x%04X\n", songNum, songPtr);
+					song2mid(songNum, songPtr);
+				}
+				else
+				{
+					printf("Song %i: 0x%04X (SFX, skipped)\n", songNum, songPtr);
+				}
+
+				i += 2;
+				songNum++;
+			}
 		}
+		else if (format == 2)
+		{
+			while (songNum <= 11)
+			{
+				songPtr = ReadLE16(&romData[i]);
+				printf("Song %i: 0x%04X\n", songNum, songPtr);
+				Ducksong2mid(songNum, songPtr);
+				i += 2;
+				songNum++;
+			}
+		}
+
 		free(romData);
 	}
 }
@@ -148,40 +216,48 @@ void Ducksong2mid(int songNum, long ptr)
 	{
 		romPos = songPtr - bankAmt;
 
-		if (romData[romPos] == 0x01)
+		if (format == 1)
 		{
-			tempoVal = 35;
+			romPos++;
 		}
-		else if (romData[romPos] == 0x02)
+		else if (format == 2)
 		{
-			tempoVal = 170;
+			if (romData[romPos] == 0x01)
+			{
+				tempoVal = 35;
+			}
+			else if (romData[romPos] == 0x02)
+			{
+				tempoVal = 170;
+			}
+			else if (romData[romPos] == 0x03)
+			{
+				tempoVal = 200;
+			}
+			else if (romData[romPos] == 0x04)
+			{
+				tempoVal = 230;
+			}
+			else if (romData[romPos] == 0x05)
+			{
+				tempoVal = 245;
+			}
+			else if (romData[romPos] == 0x06)
+			{
+				tempoVal = 260;
+			}
+			else if (romData[romPos] == 0x07)
+			{
+				tempoVal = 270;
+			}
+			else
+			{
+				tempoVal = 280;
+			}
+			tempo = tempoVal * (romData[romPos + 1] + 1);
+			romPos += 2;
 		}
-		else if (romData[romPos] == 0x03)
-		{
-			tempoVal = 200;
-		}
-		else if (romData[romPos] == 0x04)
-		{
-			tempoVal = 230;
-		}
-		else if (romData[romPos] == 0x05)
-		{
-			tempoVal = 245;
-		}
-		else if (romData[romPos] == 0x06)
-		{
-			tempoVal = 260;
-		}
-		else if (romData[romPos] == 0x07)
-		{
-			tempoVal = 270;
-		}
-		else
-		{
-			tempoVal = 280;
-		}
-		tempo = tempoVal * (romData[romPos + 1] + 1);
-		romPos += 2;
+
 		for (curTrack = 0; curTrack < 4; curTrack++)
 		{
 			songPtrs[curTrack] = ReadLE16(&romData[romPos]);
@@ -279,9 +355,25 @@ void Ducksong2mid(int songNum, long ptr)
 				command[1] = romData[seqPos + 1];
 				command[2] = romData[seqPos + 2];
 
-				/*Set tempo?*/
+				/*Set tempo*/
 				if (command[0] == 0x00)
 				{
+					if (format == 1 && tempoVal < 2)
+					{
+						if (tempoVal == 0)
+						{
+							tempoVal = 1;
+						}
+						ctrlMidPos++;
+						valSize = WriteDeltaTime(ctrlMidData, ctrlMidPos, ctrlDelay);
+						ctrlDelay = 0;
+						ctrlMidPos += valSize;
+						WriteBE24(&ctrlMidData[ctrlMidPos], 0xFF5103);
+						ctrlMidPos += 3;
+						tempo = (65535 / command[1]) / 37;
+						WriteBE24(&ctrlMidData[ctrlMidPos], 60000000 / tempo);
+						ctrlMidPos += 2;
+					}
 					seqPos += 2;
 				}
 
@@ -347,6 +439,10 @@ void Ducksong2mid(int songNum, long ptr)
 				/*Set volume envelope*/
 				else if (command[0] == 0x07)
 				{
+					if (format == 1)
+					{
+						seqPos++;
+					}
 					seqPos += 2;
 				}
 
@@ -457,6 +553,11 @@ void Ducksong2mid(int songNum, long ptr)
 						if (command[0] >= 0x40)
 						{
 							curNote = freq + (command[0] - subVal);
+
+							if (curTrack == 2)
+							{
+								curNote -= 12;
+							}
 							tempPos = WriteNoteEvent(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
 							firstNote = 0;
 							curDelay = 0;
@@ -476,6 +577,11 @@ void Ducksong2mid(int songNum, long ptr)
 			/*Calculate MIDI channel size*/
 			trackSize = midPos - midTrackBase;
 			WriteBE16(&midData[midTrackBase - 2], trackSize);
+
+			if (tempoVal == 1)
+			{
+				tempoVal = 2;
+			}
 
 		}
 
