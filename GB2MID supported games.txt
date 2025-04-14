@@ -923,8 +923,15 @@ Mogu Mogu Q (J) [S][!]
 Momoirozousan (J) (Unreleased) [!]
 Momotarou Densetsu 1-2 (J) [C][!]
 Momotarou Densetsu Gaiden (J) [!]
+Monster AG, Die (G) [C][!]
 Monster Max (U) (M6)
 Monster Truck (J)
+Monsters, Inc. (E) (M3) (Eng-Ita-Fre) [C][!]
+Monsters, Inc. (E) (M3) (Eng-Spa-Dut) [C]
+Monsters, Inc. (E) (V1.1) [C][!]
+Monsters, Inc. (U) [C][!]
+Moomin no Daibouken (J) [C][!]
+Moomin's Tale (U) (M3) [C][!]
 Mortal Kombat (J)
 Mortal Kombat (U) [!]
 Mortal Kombat 3 (E) [!]
@@ -936,8 +943,6 @@ Mortal Kombat II (U) [!]
 Mortal Kombat I & II (J)
 Mortal Kombat I & II (UE) [!]
 Mortal Kombat I & II (UE) [a1][!]
-Moomin no Daibouken (J) [C][!]
-Moomin's Tale (U) (M3) [C][!]
 Motocross Maniacs (E) [!]
 Motocross Maniacs (J)
 Motocross Maniacs (U) (V1.0) [!]
@@ -973,6 +978,7 @@ Nakayoshi Pet Series 4 - Kawaii Koneko (J) [C][!]
 Nakayoshi Pet Series 5 - Kawaii Hamster 2 (J) [C][!]
 Namco Classics (J)
 NASCAR Heat (U) [C][!]
+NASCAR Racers (U) [C][!]
 Nations, The - Land of Legends (E) (M2) [C][!]
 Navy Blue (J)
 Navy Blue 90 (J)
@@ -1586,6 +1592,7 @@ Tomb Raider (UE) (M5) [C][!]
 Tomb Raider (UE) (M5) (Beta) [C][!]
 Tomb Raider (Unl) [C][!]
 Tomb Raider 2 (Unl) [C][!]
+Tonka Construction Site (U) [C]
 Tony Hawk's Pro Skater 3 (U) [C][!]
 Toobin' (U) [C][!]
 Tootuff (E) (M6) [C][!]
@@ -1699,6 +1706,7 @@ World Cup Striker (E) (M3) [!]
 World Cup Striker (J)
 World Cup USA '94 (J) (M8)
 World Cup USA '94 (UE) (M8) [!]
+World Destruction League - Thunder Tanks (U) (M3) [C][!]
 World Ice Hockey (J)
 World Ice Hockey (U) (Unreleased) [!]
 World Soccer GB (J) [S]
@@ -1762,6 +1770,7 @@ Zen - Intergalactic Ninja (E)
 Zen - Intergalactic Ninja (U)
 Zen-Nippon Pro Wrestling Jet (J) [S]
 Zhi Zhu Xia III - Dian Ying Ban (Unl) [C][f1]
+Zoboomafoo - Playtime In Zobooland (U) [C][!]
 Zoop (J)
 Zoop (U) [!]
 
