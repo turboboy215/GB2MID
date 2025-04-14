@@ -659,6 +659,10 @@ int main(int args, char* argv[])
             {
                 driver = Climax;
             }
+            else if (!strcmp(formatString, "Cosmigo"))
+            {
+                driver = Cosmigo;
+            }
             else if (!strcmp(formatString, "Cube"))
             {
                 driver = Cube;
