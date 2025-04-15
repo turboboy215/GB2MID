@@ -1,0 +1,53 @@
+Pointers
+=======================================
+The essential pointers are found at the beginning of the sound bank as follows:
+0x400C = Song list
+0x400E = Sequence pointer list
+0x4010 = Instrument list?
+0x4012 = Instrument data
+0x4014 = Waveform list
+
+Alternatively, in the homebrew game "Margo", pointers are instead referred to in the following locations:
+0x4021 = Song list
+0x40DA = Sequence pointer list
+0x4324 = Instrument list?
+0x432F = Instrument data
+0x45E1 = Waveform list
+
+Song list
+=======================================
+The song list (for both music and sound effects) is structured as follows:
+1-2 = Pointer
+3 = Length of each song pattern
+4 = Tempo/number of ticks
+5 = Volume (Max: 7)
+
+Song patterns
+=======================================
+This is a tracker-based engine which uses patterns. The structure is as follows:
+1. Channel 1 sequence
+2. Channel 1 transpose
+3. Channel 2 sequence
+4. Channel 2 transpose
+5. Channel 3 sequence
+6. Channel 3 transpose
+7. Channel 4 sequence
+
+Any of the channel sequence numbers can be substituted with one of the following commands:
+FD = Empty pattern
+FE = End of song (no loop)
+FF xx yy = End of song (loop, XX = restart position, y = ?)
+
+Sequence data
+=======================================
+Sequences of note data are structured as follows for each row:
+1. Instrument (if 0, then no change)
+2. Effect/parameter:
+  X = Effect, Y = Parameter
+  Effects:
+  0 = No effect
+  1 = Vibrato up
+  2 = Vibrato down
+  3 = Volume slide up?
+  4 = Volume slide down?
+3. Note (if FE, then empty, if FD, then stop note?)
