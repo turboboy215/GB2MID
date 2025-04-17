@@ -209,6 +209,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Adventure Island (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9461</checksum>
+        <crc32>64f4fa44</crc32>
+        <format>Make_Software</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Adventure Island II (UE) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -2266,6 +2277,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Booby Boys (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>986E</checksum>
+        <crc32>ec83c0b6</crc32>
+        <format>Make_Software</format>
+		<part></part>
+		<banks>A</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Boomer's Adventure in ASMIK World (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -3553,6 +3575,50 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Darkwing Duck (E)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5285</checksum>
+        <crc32>be975b4f</crc32>
+        <format>Make_Software</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Darkwing Duck (G) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>ACA8</checksum>
+        <crc32>176c1fa2</crc32>
+        <format>Make_Software</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Darkwing Duck (S) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B323</checksum>
+        <crc32>a1d4c544</crc32>
+        <format>Make_Software</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Darkwing Duck (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5E11</checksum>
+        <crc32>238b9646</crc32>
+        <format>Make_Software</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Dave Mirra Freestyle BMX (UE) [C][!]</name>
 		<gamecode>BMXE</gamecode>
 		<rev>0</rev>
@@ -4617,6 +4683,39 @@
         <format>DuckTales</format>
 		<part></part>
 		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Duck Tales 2 (E)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9C22</checksum>
+        <crc32>169b00c1</crc32>
+        <format>Make_Software</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Duck Tales 2 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9955</checksum>
+        <crc32>2b693cde</crc32>
+        <format>Make_Software</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Duck Tales 2 (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9CA7</checksum>
+        <crc32>b151509d</crc32>
+        <format>Make_Software</format>
+		<part></part>
+		<banks>4</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -7037,6 +7136,17 @@
         <format>Imagineering</format>
 		<part></part>
 		<banks>6</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Honmei Boy (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>37EB</checksum>
+        <crc32>0d255d59</crc32>
+        <format>Make_Software</format>
+		<part></part>
+		<banks>A</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -10890,6 +11000,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Milon no Meiykuu Kumikyoku (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2BBB</checksum>
+        <crc32>f188c94c</crc32>
+        <format>Make_Software</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Milon's Secret Castle (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>939D</checksum>
+        <crc32>62b4cc8c</crc32>
+        <format>Make_Software</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Mini 4 Boy (J) [S][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -11028,8 +11160,19 @@
 		<checksum>028F</checksum>
         <crc32>ad376905</crc32>
         <format>Hudson_Soft</format>
-		<part>1/1=Main</part>
+		<part>1/2=Main</part>
 		<banks>F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Momotarou Collection (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>028F</checksum>
+        <crc32>ad376905</crc32>
+        <format>Make_Software</format>
+		<part>2/2=Super Momotarou Densetsu II</part>
+		<banks>27,28</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -11074,6 +11217,17 @@
         <format>Hudson_Soft</format>
 		<part></part>
 		<banks>F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Momotetsu Jr. (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>391A</checksum>
+        <crc32>218265b3</crc32>
+        <format>Make_Software</format>
+		<part></part>
+		<banks>1D,1E,1F,20</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -12273,6 +12427,17 @@
         <format>Probe_Software</format>
 		<part></part>
 		<banks>E</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Nichibutsu Mahjong - Yoshimoto Gekijou (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7D4C</checksum>
+        <crc32>d983ff48</crc32>
+        <format>Make_Software</format>
+		<part></part>
+		<banks>4</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -17787,6 +17952,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Super Momotarou Dentetsu II (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E5C5</checksum>
+        <crc32>e8b4891f</crc32>
+        <format>Make_Software</format>
+		<part></part>
+		<banks>7,8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Super Off Road (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -18037,6 +18213,17 @@
         <format>Hirotomo_Nakamura</format>
 		<part></part>
 		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Takahashi Meijin no Bouken Shima II (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>30D8</checksum>
+        <crc32>f1071e08</crc32>
+        <format>Make_Software</format>
+		<part></part>
+		<banks>4</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
