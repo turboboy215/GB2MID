@@ -747,6 +747,10 @@ int main(int args, char* argv[])
             {
                 driver = Lufia;
             }
+            else if (!strcmp(formatString, "Make_Software"))
+            {
+                driver = Make_Software;
+            }
             else if (!strcmp(formatString, "Mark_Cooksey"))
             {
                 driver = Mark_Cooksey;
