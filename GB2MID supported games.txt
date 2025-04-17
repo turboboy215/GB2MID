@@ -17,6 +17,7 @@ Addams Family, The - Pugsley's Scavenger Hunt (U) [a1]
 Addams Family, The (E) (M3) [!]
 Addams Family, The (J) [!]
 Addams Family, The (U) [!]
+Adventure Island (U) [!]
 Adventure Island II (UE) [!]
 Adventures of Lolo (U) [S][!]
 Adventures of Pinocchio, The (J)
@@ -188,6 +189,7 @@ Bomberman Max - Yami no Senshi (J) [C][!]
 Bomberman Selection (K) [C][!]
 Bonk's Adventure (U) [!]
 Bonk's Revenge (U) [S][!]
+Booby Boys (J)
 Boomer's Adventure in ASMIK World (J)
 Boomer's Adventure in ASMIK World (U) [!]
 Bouken! Dondoko Shima (J) [C]
@@ -299,6 +301,10 @@ Daffy Duck - The Marvin Missions (UE) [!]
 Daffy Duck - The Marvin Missions (UE) [S][!]
 Dancing Furby (J) [C][!]
 Darkman (U)
+Darkwing Duck (E)
+Darkwing Duck (G) [!]
+Darkwing Duck (S) [!]
+Darkwing Duck (U) [!]
 Dave Mirra Freestyle BMX (UE) [C][!]
 David Beckham Soccer (E) (M5) [C][!]
 David Beckham Soccer (U) (M2) (Unreleased) [C][!]
@@ -391,6 +397,9 @@ Driver (E) (M5) [C][!]
 Duck Tales (E) [!]
 Duck Tales (J) [!]
 Duck Tales (U) [!]
+Duck Tales 2 (E)
+Duck Tales 2 (J)
+Duck Tales 2 (U) [!]
 Dukes of Hazzard, The - Racing for Home (E) (M3) [C][!]
 Dukes of Hazzard, The - Racing for Home (U) [C][!]
 Dungeon Savior (J) [C][!]
@@ -596,6 +605,7 @@ Hole in One Golf (U) [C][!]
 Home Alone (J)
 Home Alone (U) [!]
 Home Alone 2 (U) [!]
+Honmei Boy (J)
 Hook (E) [!]
 Hook (J)
 Hook (U)
@@ -910,6 +920,8 @@ Microsoft Puzzle Collection (U) [C]
 Midori no Makibaoo (J) [S]
 Mighty Morphin Power Rangers - The Movie (U) [S]
 Mighty Morphin Power Rangers (U) [S][!]
+Milon no Meikyuu Kumikyoku (J)
+Milon's Secret Castle (U) [!]
 Mini 4 Boy (J) [S][!]
 Mini 4 Boy II - Final Evolution (J) [S]
 Mission Bravo (U) (Unreleased) [C][!]
@@ -923,6 +935,7 @@ Mogu Mogu Q (J) [S][!]
 Momoirozousan (J) (Unreleased) [!]
 Momotarou Densetsu 1-2 (J) [C][!]
 Momotarou Densetsu Gaiden (J) [!]
+Momotetsu Jr. (J) [S]
 Monster AG, Die (G) [C][!]
 Monster Max (U) (M6)
 Monster Truck (J)
@@ -1019,6 +1032,7 @@ NHL Blades of Steel (U) [C][!]
 NHL Blades of Steel 2000 (U) [C][!]
 NHL Hockey '95 (U) [S][!]
 NHL Hockey '96 (U) [S][!]
+Nichibutsu Mahjong - Yoshimoto Gekijou (J)
 Nick Faldo Golf (U) (Unreleased) [!]
 Ninja Gaiden Shadow (U)
 Ninja Ryuukenden (J)
@@ -1491,6 +1505,7 @@ Super Mario Land 4 (J) [!]
 Super Mario World 7 (Unl)
 Super Marrio Sunshine (Unl) [C][f1]
 Super Momotarou Dentetsu (J)
+Super Momotarou Dentetsu II (J) [!]
 Super Off Road (U) [!]
 Super R.C. Pro-Am (UE) [!]
 Super Robot Taisen - Link Battler (J) [C][!]
@@ -1513,6 +1528,7 @@ T2 - The Arcade Game (U) [!]
 Tail Gator (U) [!]
 Taiyou no Yuusha - Firebird GB (J)
 Taiyou no Yuusha - Firebird GB (J) [a1]
+Takahashi Meijin no Bouken Shima II (J)
 Takahashi Meijin no Bouken Shima III (J)
 Tale Spin (E)
 Tale Spin (S) (Unreleased) [!]
