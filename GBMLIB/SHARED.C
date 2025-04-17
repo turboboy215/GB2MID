@@ -24,6 +24,8 @@
 #include "JSAITO.H"
 #include "KONAMI.H"
 #include "KSADA.H"
+#include "LUFIA.H"
+#include "MAKE.H"
 #include "MCOOKSEY.H"
 #include "MEGAMAN1.H"
 #include "MEGAMAN2.H"
@@ -396,7 +398,10 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			SadaProc(banks[curBank], parameters);
 			break;
 		case Lufia:
-			LufiaProc(banks[curBank], parameters);
+			LufiaProc(banks[curBank]);
+			break;
+		case Make_Software:
+			MakeProc(banks[curBank]);
 			break;
 		case Mark_Cooksey:
 			MCProc(banks[curBank]);
