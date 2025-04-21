@@ -913,6 +913,72 @@
 		<parameters>CFG/Atsumete Asobu Kuma no Pooh-san - Mori no Takaramono (J) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Austin Powers - Oh, Behave! (E) (M5) [C][!]</name>
+		<gamecode>BAPX</gamecode>
+		<rev>0</rev>
+		<checksum>273C</checksum>
+        <crc32>bf99f8cb</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Austin Powers - Oh, Behave! (U) [C][!]</name>
+		<gamecode>BAPE</gamecode>
+		<rev>0</rev>
+		<checksum>AD2B</checksum>
+        <crc32>bb89190e</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Austin Powers - Welcome to My Underground Lair! (E) (M5) [C][!]</name>
+		<gamecode>BEAX</gamecode>
+		<rev>0</rev>
+		<checksum>295F</checksum>
+        <crc32>693f50da</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Austin Powers - Welcome to My Underground Lair! (U) [C][!]</name>
+		<gamecode>BEAE</gamecode>
+		<rev>0</rev>
+		<checksum>E571</checksum>
+        <crc32>aba42b78</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Austin Powers - Why Make Millions... (E) (M5) (Unreleased) [C][!]</name>
+		<gamecode>BA4P</gamecode>
+		<rev>0</rev>
+		<checksum>2A87</checksum>
+        <crc32>f038cda7</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>A</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Austin Powers - Yeah, Baby, Yeah! (E) (M5) (Unreleased) [C][!]</name>
+		<gamecode>BA3P</gamecode>
+		<rev>0</rev>
+		<checksum>D6CD</checksum>
+        <crc32>0903ed53</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>A</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Ayakashi no Shiro (J) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -2682,6 +2748,17 @@
 		<part></part>
 		<banks>69</banks>
 		<parameters>3</parameters>
+	</rom>
+	<rom>
+		<name>Carerra (E) (M3) (Unreleased) [C][!]</name>
+		<gamecode>BCEP</gamecode>
+		<rev>0</rev>
+		<checksum>641F</checksum>
+        <crc32>f8000653</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>A</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Carl Lewis Athletics 2000 (E) (Beta) (M6) [C][!]</name>
@@ -5027,6 +5104,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Evel Knievel (E) (M7) [C][!]</name>
+		<gamecode>AEVP</gamecode>
+		<rev>0</rev>
+		<checksum>6804</checksum>
+        <crc32>dfd6a908</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>16</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Evel Knievel (U) [C][!]</name>
+		<gamecode>AEVE</gamecode>
+		<rev>0</rev>
+		<checksum>6830</checksum>
+        <crc32>51e951b5</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>16</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Extreme Ghostbusters (E) (M6) [C][!]</name>
 		<gamecode>BEBP</gamecode>
 		<rev>0</rev>
@@ -5542,6 +5641,28 @@
 		<part></part>
 		<banks>10</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Formula One 2000 (E) (M5) (Unreleased) [C][!]</name>
+		<gamecode>BFMP</gamecode>
+		<rev>0</rev>
+		<checksum>AE15</checksum>
+        <crc32>e689bf16</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Formula One 2000 (U) [C][!]</name>
+		<gamecode>BFME</gamecode>
+		<rev>0</rev>
+		<checksum>16B5</checksum>
+        <crc32>703c057f</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Frank Thomas' Big Hurt Baseball (U) [!]</name>
@@ -6479,6 +6600,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Golden Goal (E) (M7) [C]</name>
+		<gamecode>AAFX</gamecode>
+		<rev>0</rev>
+		<checksum>6551</checksum>
+        <crc32>bb9b597d</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Golden Goal (G) (M7) [C][!]</name>
+		<gamecode>AAFD</gamecode>
+		<rev>0</rev>
+		<checksum>FD53</checksum>
+        <crc32>14d1adbe</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Golf (W) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -6532,6 +6675,50 @@
 		<part></part>
 		<banks>6</banks>
 		<parameters>4</parameters>
+	</rom>
+	<rom>
+		<name>Grand Theft Auto (E) (M5) [C][!]</name>
+		<gamecode>AOAP</gamecode>
+		<rev>0</rev>
+		<checksum>C648</checksum>
+        <crc32>25ba9231</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>B9</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Grand Theft Auto (U) [C][!]</name>
+		<gamecode>AOAE</gamecode>
+		<rev>0</rev>
+		<checksum>D3DA</checksum>
+        <crc32>924de366</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>9C</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Grand Theft Auto 2 (E) (M5) [C][!]</name>
+		<gamecode>BGTP</gamecode>
+		<rev>0</rev>
+		<checksum>779D</checksum>
+        <crc32>ad563bd9</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>71</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Grand Theft Auto 2 (U) [C][!]</name>
+		<gamecode>BGAE</gamecode>
+		<rev>0</rev>
+		<checksum>CF8B</checksum>
+        <crc32>68610203</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>71</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Gremlins 2 - The New Batch (W) [!]</name>
@@ -7104,6 +7291,28 @@
 		<part></part>
 		<banks>2</banks>
 		<parameters>4C75\3</parameters>
+	</rom>
+	<rom>
+		<name>Hollywood Pinball (J) [C][!]</name>
+		<gamecode>AHNJ</gamecode>
+		<rev>0</rev>
+		<checksum>175C</checksum>
+        <crc32>77d7e5b7</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>1E</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Hollywood Pinball (UE) (M4) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9983</checksum>
+        <crc32>8bd1f635</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>1E</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Home Alone (J)</name>
@@ -11308,6 +11517,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Montezuma's Return (E) (M5) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6823</checksum>
+        <crc32>659693de</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>3,5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Montezuma's Return (E) (M5) [M][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>15F7</checksum>
+        <crc32>659693de</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>3,5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Montezuma's Return (U) (M2) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D5D4</checksum>
+        <crc32>de04772f</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>3,5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Moomin no Daibouken (J) [C][!]</name>
 		<gamecode>A36J</gamecode>
 		<rev>0</rev>
@@ -11691,6 +11933,39 @@
 		<part></part>
 		<banks>D</banks>
 		<parameters>9</parameters>
+	</rom>
+	<rom>
+		<name>Muppets, The (E) (M7) [C][!]</name>
+		<gamecode>AX9P</gamecode>
+		<rev>0</rev>
+		<checksum>866F</checksum>
+        <crc32>0fafa3f2</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Muppets, The (E) (M7) [C][a1][!]</name>
+		<gamecode>AP9P</gamecode>
+		<rev>0</rev>
+		<checksum>D2D1</checksum>
+        <crc32>3204b92c</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Muppets, The (U) [C][!]</name>
+		<gamecode>BMUE</gamecode>
+		<rev>0</rev>
+		<checksum>EA82</checksum>
+        <crc32>3c476c6f</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Musashi Road (J)</name>
@@ -14619,6 +14894,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Pro Foot (F) (M7) [C][!]</name>
+		<gamecode>AAFF</gamecode>
+		<rev>0</rev>
+		<checksum>2D69</checksum>
+        <crc32>a9905932</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Probotector (E) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -15015,6 +15301,17 @@
 		<parameters>CFG/Rampage 2 - Universal Tour (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Rats! (U) (M2) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3A65</checksum>
+        <crc32>17635ad1</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Razor Freestyle Scooter (U) [C][!]</name>
 		<gamecode>BRZE</gamecode>
 		<rev>0</rev>
@@ -15112,6 +15409,28 @@
 		<part></part>
 		<banks>33</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Reservoir Rat (E) (M5) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CD8A</checksum>
+        <crc32>22621803</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Reservoir Rat (E) (M5) [M][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9694</checksum>
+        <crc32>2d33e175</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Resident Evil (E) (Prototype 1) [C][!]</name>
@@ -16962,6 +17281,17 @@
 		<parameters>CFG/Space-Net - Cosmo Red (J) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Spacestation Silicon Valley (E) (M7) [C][!]</name>
+		<gamecode>AV2P</gamecode>
+		<rev>0</rev>
+		<checksum>9336</checksum>
+        <crc32>63353c0f</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>30</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Spanky's Quest (E)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -18742,6 +19072,17 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters>4C40\3</parameters>
+	</rom>
+	<rom>
+		<name>Three Lions (U) (M7) [C][!]</name>
+		<gamecode>AAFP</gamecode>
+		<rev>0</rev>
+		<checksum>14FF</checksum>
+        <crc32>1cbea1aa</crc32>
+        <format>Tarantula_Studios</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Thunderbirds (E) [C][!]</name>
