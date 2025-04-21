@@ -1,0 +1,73 @@
+Song Table
+=======================================
+The song table is comprised of 16-bit pointers to each song. It can be found using the following code:
+
+ld hl, SongTable
+rst 20
+ld hl, ????
+ld [hl], e
+inc hl
+ld [hl], d
+ld a, [de]
+
+Which equals the following in hex:
+21 ?? ?? E7 21 8D XX XX 73 23 72 1A
+
+Song headers
+=======================================
+A header for a song is stored as follows:
+1. Channel mask
+(Format: 1234 5678 - 1-4 = SFX, 5-8 = Music)
+(Note that the following apply only if the channel mask includes the following channels:)
+2-3. Channel 1 pointer
+4-5. Channel 2 pointer
+6-7. Channel 3 pointer
+8-9. Channel 4 pointer
+
+Commands
+=======================================
+Songs use the following commands:
+(Note that commands EC and ED are not valid in earlier games.)
+xy (00-CF) = Play note (X = note, Y = length; X value of C = rest)
+D0-D6 = Set octave
+D7 = Raise octave
+D8 = Lower octave
+D9 xx = Transpose channel
+DA xx = Manually set octave control
+DB xx = Set tuning
+DC = (Invalid)
+DD = (Invalid)
+DE = (Invalid)
+DF xx = Unknown, only used in Momotarou games?
+E0 xx = Set channel speed
+E1 xx = Set channel effect?
+E2 xx = Set duty, used for instruments in NES version
+E3 xx = Set panning
+E4 xx = Set vibrato
+E5 xx = Set distortion effect
+E6 xx = Set envelope/volume?
+E7 = (Invalid)
+E8 = Next note is "held" as a continuation of the previous note
+E9 xx = Set envelope
+EA xx = Set envelope (v2)?
+EB xx = Set sweep
+EC xx = Set note size?
+ED xx = Set note size (v2)?
+EE = (Invalid)
+EF = (Invalid)
+F0 xx = Repeat the following section X times
+F1 = End of repeat
+F2 xx xx = Go to macro
+F3 = Return from macro
+F4 = (Invalid)
+F5 = (Invalid)
+F6 = (Invalid)
+F7 = (Invalid)
+F8 xx xx = Go to loop point
+F9 = (Invalid)
+FA = (Invalid)
+FB = (Invalid)
+FC = (Invalid)
+FD = (Invalid)
+FE = (Invalid)
+FF = End of channel

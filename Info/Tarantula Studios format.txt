@@ -1,0 +1,43 @@
+Song Table
+=======================================
+The song table is usually found at the start of the first sound bank. It consists of pointers to individual channels of both songs and sound effects.
+Reservoir Rat and Montezuma's Return!, originally released for the original Game Boy before being released again as Game Boy Color versions, store all their music/sound effects data in one bank (except for 2 songs in Montezuma's Return!), and the table is structured as follows:
+1. Number of songs
+(Repeat until end)
+1-2. Channel 1 pointer
+3-4. Channel 2 pointer
+5-6. Channel 3 pointer
+7-8. Channel 4 pointer
+
+The rest of the games store their data across multiple banks, and use the following structure:
+1. Number of songs
+(Repeat until end)
+1-2. Channel 1 pointer
+3. Channel 1 bank
+4-5. Channel 2 pointer
+6. Channel 2 bank
+7-8. Channel 3 pointer
+9. Channel 3 bank
+10-11. Channel 4 pointer
+12. Channel 4 bank
+
+Note that for a song or sound effect where a channel is not used, the value 0x0000 is used.
+
+Sequence commands
+=======================================
+Sequence commands of a channel are as follows:
+
+1. Time of note
+2. Note/flags
+ - If bit 7 is set, then event
+ - Otherwise, If bit 5 is set, then retain the previous saved time (no byte 1); if neither, then new time of note value byte afterwards
+ - Remaining bits (if not time or event: note)
+
+Event values:
+ - 8x = Set panning?
+ - 9x/Dx = Volume (if Dx, then start skipping the time)
+ - A0 xx yy zz = Pitch bend (X = parameter 1, Y = parameter 2, Z = time, triggers "skip next time")
+ - A1 xx = Repeat the following section X times
+ - A2 = End of repeat point
+ - E0 xx yy = Pitch bend
+ - FF = End of track
