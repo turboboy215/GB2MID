@@ -45,6 +45,7 @@
 #include "ROLAN.H"
 #include "SQUARE.H"
 #include "SUNSOFT.H"
+#include "TARANTLA.H"
 #include "TECHNOS.H"
 #include "TIERTEX.H"
 #include "TITUS1.H"
@@ -444,6 +445,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Sunsoft:
 			SSProc(banks[curBank]);
+			break;
+		case Tarantula_Studios:
+			TarantulaProc(banks[curBank], parameters);
 			break;
 		case Technos_Japan:
 			TJProc(banks[curBank]);

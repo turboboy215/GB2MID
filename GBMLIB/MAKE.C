@@ -27,6 +27,10 @@ int curInst;
 int curVol;
 int multiBanks;
 int curBank;
+char string1[4];
+int format;
+int usePALTempo;
+char* argv3;
 
 char folderName[100];
 
@@ -35,7 +39,9 @@ unsigned char* midData;
 unsigned char* ctrlMidData;
 
 long midLength;
-const char MakeMagicBytes[4] = { 0x73, 0x23, 0x72, 0x1A };
+const char MakeMagicBytesGB[4] = { 0x73, 0x23, 0x72, 0x1A };
+const char MakeMagicBytesNES[9] = { 0x00, 0x10, 0x20, 0x30, 0x40, 0x50, 0x0A, 0xAA, 0xBD };
+const char MakeMagicBytesNES2[4] = { 0x60, 0x0A, 0xAA, 0xBD };
 
 /*Function prototypes*/
 unsigned short ReadLE16(unsigned char* Data);
@@ -51,6 +57,7 @@ void MakeProc(int bank)
 {
 	foundTable = 0;
 	smd2 = 0;
+	usePALTempo = 0;
 
 	if (bank != 1)
 	{
@@ -60,14 +67,23 @@ void MakeProc(int bank)
 	{
 		bankAmt = 0;
 	}
-	fseek(rom, ((bank - 1) * bankSize), SEEK_SET);
+	/*Check for NES ROM header*/
+	fgets(string1, 4, rom);
+	if (!memcmp(string1, "NES", 1))
+	{
+		fseek(rom, (((bank - 1) * bankSize)) + 0x10, SEEK_SET);
+	}
+	else
+	{
+		fseek(rom, ((bank - 1) * bankSize), SEEK_SET);
+	}
 	romData = (unsigned char*)malloc(bankSize);
 	fread(romData, 1, bankSize, rom);
 
 	/*Try to search the bank for song table loader*/
 	for (i = 0; i < bankSize; i++)
 	{
-		if ((!memcmp(&romData[i], MakeMagicBytes, 4)) && foundTable != 1)
+		if ((!memcmp(&romData[i], MakeMagicBytesGB, 4)) && foundTable != 1)
 		{
 			tablePtrLoc = bankAmt + i - 6;
 			printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
@@ -83,6 +99,37 @@ void MakeProc(int bank)
 			}
 			printf("Song table starts at 0x%04x...\n", tableOffset);
 			foundTable = 1;
+		}
+	}
+
+	/*Try to search the bank for song table loader - NES version*/
+	for (i = 0; i < bankSize; i++)
+	{
+		if ((!memcmp(&romData[i], MakeMagicBytesNES, 9)) && foundTable != 1)
+		{
+			tablePtrLoc = bankAmt + i + 9;
+			printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
+			tableOffset = ReadLE16(&romData[tablePtrLoc - bankAmt]);
+
+			bankAmt = 0x8000;
+			printf("Song table starts at 0x%04x...\n", tableOffset);
+			foundTable = 1;
+			format = 1;
+		}
+	}
+
+	for (i = 0; i < bankSize; i++)
+	{
+		if ((!memcmp(&romData[i], MakeMagicBytesNES2, 4)) && foundTable != 1)
+		{
+			tablePtrLoc = bankAmt + i + 4;
+			printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
+			tableOffset = ReadLE16(&romData[tablePtrLoc - bankAmt]);
+
+			bankAmt = 0x8000;
+			printf("Song table starts at 0x%04x...\n", tableOffset);
+			foundTable = 1;
+			format = 1;
 		}
 	}
 
@@ -118,7 +165,8 @@ void MakeProc(int bank)
 /*Convert the song data to MIDI*/
 void Makesong2mid(int songNum, long ptr)
 {
-	static const char* TRK_NAMES[4] = { "Square 1", "Square 2", "Wave", "Noise" };
+	static const char* TRK_NAMES_GB[4] = { "Square 1", "Square 2", "Wave", "Noise" };
+	static const char* TRK_NAMES_NES[5] = { "Square 1", "Square 2", "Triangle", "Noise", "PCM" };
 	int activeChan[4];
 	int maskArray[4];
 	unsigned char mask = 0;
@@ -206,6 +254,14 @@ void Makesong2mid(int songNum, long ptr)
 	}
 	else
 	{
+		if (usePALTempo == 1)
+		{
+			tempo = 120;
+		}
+		else
+		{
+			tempo = 150;
+		}
 		/*Write MIDI header with "MThd"*/
 		WriteBE32(&ctrlMidData[ctrlMidPos], 0x4D546864);
 		WriteBE32(&ctrlMidData[ctrlMidPos + 4], 0x00000006);
@@ -299,10 +355,26 @@ void Makesong2mid(int songNum, long ptr)
 			midPos += valSize;
 			WriteBE16(&midData[midPos], 0xFF03);
 			midPos += 2;
-			Write8B(&midData[midPos], strlen(TRK_NAMES[curTrack]));
+			if (format == 2)
+			{
+				Write8B(&midData[midPos], strlen(TRK_NAMES_GB[curTrack]));
+
+			}
+			else
+			{
+				Write8B(&midData[midPos], strlen(TRK_NAMES_NES[curTrack]));
+			}
 			midPos++;
-			sprintf((char*)&midData[midPos], TRK_NAMES[curTrack]);
-			midPos += strlen(TRK_NAMES[curTrack]);
+			if (format == 2)
+			{
+				sprintf((char*)&midData[midPos], TRK_NAMES_GB[curTrack]);
+				midPos += strlen(TRK_NAMES_GB[curTrack]);
+			}
+			else
+			{
+				sprintf((char*)&midData[midPos], TRK_NAMES_NES[curTrack]);
+				midPos += strlen(TRK_NAMES_NES[curTrack]);
+			}
 
 			/*Calculate MIDI channel size*/
 			trackSize = midPos - midTrackBase;
