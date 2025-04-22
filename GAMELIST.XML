@@ -605,6 +605,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Alleyway (W) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D19E</checksum>
+        <crc32>5cc01586</crc32>
+        <format>Hirokazu_Tanaka</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Alone in the Dark - The New Nightmare (E) (M6) [C][!]</name>
 		<gamecode>BIDP</gamecode>
 		<rev>0</rev>
