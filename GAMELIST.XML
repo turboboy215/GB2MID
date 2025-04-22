@@ -16324,6 +16324,17 @@
 		<parameters>S</parameters>
 	</rom>
 	<rom>
+		<name>Sanrio Carnival (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E84B</checksum>
+        <crc32>63f9407d</crc32>
+        <format>Hirokazu_Tanaka</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Sanrio Timenet - Kako Hen (J) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
