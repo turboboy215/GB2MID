@@ -46,7 +46,7 @@
 #define MPlay				0x2B
 #define Junichi_Saito		0x2C
 #define Carillon_Player		0x2D
-#define DuckTales			0x2E
+#define Sheep				0x2E
 #define Cosmigo				0x2F
 #define Make_Software		0x30
 #define Tarantula_Studios	0x31

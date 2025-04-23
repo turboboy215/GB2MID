@@ -13,7 +13,6 @@
 #include "CUBE.H"
 #include "DAVDSHEA.H"
 #include "DE1.H"
-#include "DUCKT.H"
 #include "DW.H"
 #include "GAMEFRK.H"
 #include "GHX.H"
@@ -43,6 +42,7 @@
 #include "RARE.H"
 #include "REALTIME.H"
 #include "ROLAN.H"
+#include "SHEEP.H"
 #include "SQUARE.H"
 #include "SUNSOFT.H"
 #include "TARANTLA.H"
@@ -353,9 +353,6 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case Digital_Eclipse_1:
 			DE1Proc(banks[curBank], parameters);
 			break;
-		case DuckTales:
-			DuckProc(banks[curBank]);
-			break;
 		case Game_Freak:
 			GFProc(banks[curBank]);
 			break;
@@ -439,6 +436,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Ryohji_Yoshitomi:
 			M2Proc(banks[curBank]);
+			break;
+		case Sheep:
+			SheepProc(banks[curBank]);
 			break;
 		case Square:
 			SqrProc(banks[curBank]);
