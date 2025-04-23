@@ -4036,6 +4036,17 @@
 		<banks>3</banks>
 		<parameters></parameters>
 	</rom>
+		<rom>
+		<name>Doki X Doki Sasete (J) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>BP6J</checksum>
+        <crc32>19a73f60</crc32>
+        <format>Sheep</format>
+		<part></part>
+		<banks>75,76,77,78</banks>
+		<parameters></parameters>
+	</rom>
 	<rom>
 		<name>DokiDoki Densetsu - Mahoujin Guruguru (J) [C][!]</name>
 		<gamecode></gamecode>
@@ -4735,7 +4746,7 @@
 		<rev>0</rev>
 		<checksum>8513</checksum>
         <crc32>ac6483dc</crc32>
-        <format>DuckTales</format>
+        <format>Capcom</format>
 		<part></part>
 		<banks>3</banks>
 		<parameters></parameters>
@@ -4746,7 +4757,7 @@
 		<rev>0</rev>
 		<checksum>9F69</checksum>
         <crc32>5b5410f5</crc32>
-        <format>DuckTales</format>
+        <format>Capcom</format>
 		<part></part>
 		<banks>3</banks>
 		<parameters></parameters>
@@ -4757,7 +4768,7 @@
 		<rev>0</rev>
 		<checksum>A3DD</checksum>
         <crc32>2bbbb54d</crc32>
-        <format>DuckTales</format>
+        <format>Capcom</format>
 		<part></part>
 		<banks>3</banks>
 		<parameters></parameters>

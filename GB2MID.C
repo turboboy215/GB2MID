@@ -683,10 +683,6 @@ int main(int args, char* argv[])
             {
                 driver = Digital_Eclipse_1;
             }
-            else if (!strcmp(formatString, "DuckTales"))
-            {
-                driver = DuckTales;
-            }
             else if (!strcmp(formatString, "Game_Freak"))
             {
                 driver = Game_Freak;
@@ -798,6 +794,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "Ryohji_Yoshitomi"))
             {
                 driver = Ryohji_Yoshitomi;
+            }
+            else if (!strcmp(formatString, "Sheep"))
+            {
+                driver = Sheep;
             }
             else if (!strcmp(formatString, "Square"))
             {
