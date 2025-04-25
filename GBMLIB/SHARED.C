@@ -14,6 +14,7 @@
 #include "DAVDSHEA.H"
 #include "DE1.H"
 #include "DW.H"
+#include "EDMAGNIN.H"
 #include "GAMEFRK.H"
 #include "GHX.H"
 #include "HAL.H"
@@ -352,6 +353,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Digital_Eclipse_1:
 			DE1Proc(banks[curBank], parameters);
+			break;
+		case Ed_Magnin:
+			MagninProc(banks[curBank], parameters);
 			break;
 		case Game_Freak:
 			GFProc(banks[curBank]);
