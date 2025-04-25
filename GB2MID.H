@@ -48,3 +48,4 @@
 #define Cosmigo				0x2F
 #define Make_Software		0x30
 #define Tarantula_Studios	0x31
+#define Ed_Magnin			0x32

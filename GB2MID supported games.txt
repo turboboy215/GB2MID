@@ -66,6 +66,7 @@ Army Men - Air Combat (U) (M3) [C][!]
 Army Men - Sarge's Heroes 2 (U) (M3) [C][!]
 Army Men (U) (M3) [C][!]
 Army Men 2 (U) (M3) [C][!]
+Arthur's Absolutely Fun Day! (U) [C][!]
 Asterix - Search for Dogmatix (E) (M6) [C][!]
 Asterix & Obelix vs Caesar (E) (M5) [C][!]
 Asterix (U) (Unreleased) [!]
@@ -139,6 +140,8 @@ Bear in the Big Blue House (U) (M7) [C][!]
 Beauty and the Beast - A Board Game Adventure (E) (M5) [C][!]
 Beauty and the Beast - A Board Game Adventure (U) [C][!]
 Beavis and Butt-head (U) [!]
+Beethoven's 2nd (U) [S]
+Beethoven's 2nd (U) (Unreleased) [S][!]
 Beetlejuice (U)
 Benjamin Bluemchen - Ein Verrueckter Tag im Zoo (G) [C][!]
 Berlitz French Language Translator (U)
@@ -172,6 +175,8 @@ Bob the Builder - Fix It Fun! (E) (M3) (Eng-Ita-Fre) [C][!]
 Bob the Builder - Fix It Fun! (E) (M5) [C][!]
 Bob the Builder - Fix It Fun! (Sw) (M5) [C][!]
 Bob the Builder - Fix It Fun! (U) [C][!]
+Bobby's World (E) (Unreleased) [S][!]
+Bobby's World (U) (Unreleased) [S][!]
 Boku no Camp-jou (J) [C][!]
 Bokujou Monogatari GB (J) (Unreleased) [S][!]
 Bokujou Monogatari GB (J) (V1.0) [S][!]
@@ -204,6 +209,8 @@ Boulder Dash (U) [!]
 Boxing (J) [!]
 Boy and His Blob, A - The Rescue of Princess Blobette (E) [!]
 Boy and His Blob, A - The Rescue of Princess Blobette (U) [!]
+Brainbender (E) [!]
+Brainbender (U) [!]
 Bram Stoker's Dracula (UE) [!]
 BreakThru! (U) [!]
 Bubble Ghost (J)
@@ -222,6 +229,10 @@ Bust-A-Move 4 (UE) [C][!]
 Bundesliga Stars 2001 (G) [C][!]
 Buster Brothers (U) [!]
 Ca Da (J)
+Caesars Palace (E) (M5)
+Caesars Palace (J)
+Caesars Palace (U) (V1.0) [!]
+Caesars Palace (U) (V1.1) [!]
 Capcom Quiz (J)
 Captain America and the Avengers (U) [!]
 Captain Tsubasa (J) [S][!]
@@ -335,6 +346,8 @@ Digimon Sapphire 2003 (Unl) [C][f1]
 Dinosaur (E) (M5) [C][!]
 Dinosaur (U) [C][!]
 Dinosaur (U) [C][a1][!]
+Dirty Racin' (E) (Unreleased) [!]
+Dirty Racing (J) [!]
 Disney's Mulan (U) [S]
 Disney's Mulan (U) [S][a1][!]
 Dodge Ball (J)
@@ -441,6 +454,7 @@ Eurosport Pro Champ Fishing (E) (Unreleased) [C][!]
 Evel Knievel (E) (M7) [C][!]
 Evel Knievel (U) [C][!]
 Extreme Ghostbusters (E) (M6) [C][!]
+Extreme Sports with The Berenstain Bears (U) (M5) [C][!]
 F.A. Premier League Stars 2001, The (U) [C][!]
 F1 Championship Season 2000 (B) (M5) [C][!]
 F1 Championship Season 2000 (E) (M5) [C][!]
@@ -541,6 +555,7 @@ GB Harobots (J) [C][!]
 GB Pachislot Hissyouhou Jr. (J)
 George Foreman's KO Boxing (U) [!]
 Get Mushi Club - Minna no Konchu Daizukan (J) [C][!]
+Getaway, The (U)
 Gex 3 - Deep Cover Gecko (E) [C][!]
 Gex 3 - Deep Cover Gecko (U) [C][!]
 Ghostbusters II (J) [!]
@@ -566,6 +581,7 @@ Gold and Glory - The Road to El Dorado (U) [C][!]
 Golden Goal (E) (M7) [C]
 Golden Goal (G) (M7) [C][!]
 Golf (W) [!]
+Golf Classic (E) [S]
 Golf de Ohasuta (J) [C][!]
 Gradius - The Interstellar Assault (U)
 Gran Duel - Shinki Dungeon no Hihou (J) [C][!]
@@ -625,6 +641,7 @@ Hollywood Pinball (J) [C][!]
 Hollywood Pinball (UE) (M4) [C][!]
 Home Alone (J)
 Home Alone (U) [!]
+Home Alone 2 - Kevin's Dream (U) (Unreleased) [!]
 Home Alone 2 (U) [!]
 Honmei Boy (J)
 Hook (E) [!]
@@ -670,6 +687,8 @@ Jankenman (J)
 Jankyuusei - Cosplay Paradise (J) [C][!]
 Janosch - Das grosse Panama-Spiel (G) [C][!]
 Jay und Die Spielzeugdiebe (G) [C][!]
+Jeep Jamboree (E) (Unreleased) [!]
+Jeep Jamboree (U) [!]
 Jelly Boy (U)
 Jet Pack (Beta)
 Jida Igeki (J)
@@ -886,6 +905,7 @@ Maus, Die (E) (M4) [C][!]
 Maus, Die (E) (M4) [M]
 Maya the Bee - Garden Adventures (E) (M4) [C][!]
 Maya the Bee & Her Friends (E) (M3) [C][!]
+McDonaldland (U) [!]
 Medarot 2 - Kabuto Version (J) [C][!]
 Medarot 2 - Kuwagata Version (J) [C][!]
 Medarot 2 - Parts Collection (J) [C][!]
@@ -990,6 +1010,7 @@ Mr Nutz (U)
 Mr Nutz (U) (M3) [C][!]
 Mr. Do! (E) [!]
 Mr. Do! (U)
+MTV Sports - Skateboarding featuring Andy MacDonald (U) [C][!]
 MTV Sports - T.J. Lavin's Ultimate BMX (U) [C][!]
 Mummy Returns, The (E) (M5) [C]
 Mummy Returns, The (U) [C][!]
@@ -1109,6 +1130,8 @@ Parodius Da! (J)
 Parts Collection - Medarot Kuma (J) [S]
 Parts Collection 2 (J) [S]
 Perfect Dark (U) (M5) [C][!]
+PGA European Tour (U) [S][!]
+PGA Tour '96 (U) [S]
 Phantom Air Mission (E) [!]
 Pia Carrot he Youkoso!! 2.2 (J) [C][!]
 Pinball - 66hiki no Wani Daikoushin! (J)
@@ -1252,6 +1275,11 @@ Prehistorik Man (U)
 Primal Rage (U) [!]
 Primera Division Stars 2001 (S) (Unreleased) [C][!]
 Prince Naseem Boxing (E) (M3) [C][!]
+Prince of Persia (E) (M5) [C][!]
+Prince of Persia (E) (M5) [M][!]
+Prince of Persia (J) (M2) (Unreleased) [C][!]
+Prince of Persia (J)
+Prince of Persia (U)
 Pro Darts (U) [C][!]
 Pro Foot (F) (M7) [C][!]
 Probotector (E) [!]
@@ -1276,6 +1304,8 @@ Quarth (J)
 Quarth (U) [!]
 Quest for Camelot (E) (M6) [C][!]
 Quest for Camelot (U) (M3) [C][!]
+Race Days (Dirty Racing & 4 Wheel Drive) (E)
+Race Days (Dirty Racing & 4 Wheel Drive) (U) [!]
 Race Drivin' (U) [!]
 Race Time (Unl) [C][!]
 Radar Mission (J)
@@ -1321,6 +1351,8 @@ Robocop (U) (M6) [C][!]
 Robocop (U) (V1.0) [M][!]
 Robocop 2 (J)
 Robocop 2 (U)
+RoboCop Vs. The Terminator (E) [!]
+RoboCop Vs. The Terminator (U) [!]
 Robocopy (U) (V1.1)
 Robopon - Star Version (U) (Unreleased) [C][!]
 Robopon - Sun Version (U) [C][!]
@@ -1375,6 +1407,7 @@ Schiffe Versenken (G) (M4)
 Scooby-Doo! - Classic Creep Capers (U) [C][!]
 Sea Battle (E) (M4)
 Sea-Doo Hydrocross (U) (Unreleased) [C][!]
+SeaQuest DSV (U) [S][!]
 Seaside Volley (J)
 Seiken Densetsu (J) [!]
 Sengoku Ninja-kun - Ninja Taro (J)
@@ -1395,6 +1428,7 @@ Shanghai Pocket (J) [S]
 Shanghai Pocket (U) (V1.0) [C][!]
 Shanghai Pocket (U) (V1.1) [C][!]
 Shantae (U) [C][!]
+Shaq Fu (U) [S][!]
 Shawu Story (Unl) [C]
 Shawu Story (Unl) [C][a1]
 Shawu Story (Unl) [C][a2]
@@ -1464,6 +1498,7 @@ Spider-Man (J) [C][!]
 Spider-Man (U) [C][!]
 Spider-Man 2 - The Sinister Six (U) [C][!]
 Spider-Man 3 - Movie Version (Unl) [C][f1]
+Spider-Man and the X-Men in Arcade's Revenge (U)
 Spirit of F-1, The (E) [!]
 Spirou - La Panique Mecanique (E) (M7) [C][!]
 Spirou (Beta) (M4) [S]
@@ -1472,6 +1507,9 @@ Splitz (J)
 Splitz (UE) [!]
 SpongeBob SquarePants - Legend of the Lost Spatula (U) [C][!]
 Sports Collection (J)
+Sports Illustrated - Golf Classic (U) [!]
+Spot - The Cool Adventure (J)
+Spot - The Cool Adventure (U) [!]
 SS Spinner - Yo for it (J) [S]
 Star Hawk (U) [!]
 Star Trek - Generations - Beyond the Nexus (E) [S]
@@ -1733,6 +1771,9 @@ Wily & Light no Rockboard - That's Paradise (J) (Unreleased) [!]
 Winner's Horse (J) [!]
 Winnie the Pooh - Adventures in the 100 Acre Wood (E) (M7) [C][!]
 Winnie the Pooh - Adventures in the 100 Acre Wood (U) [C][!]
+Wings of Fury (E) (M3) [C][!]
+Wings of Fury (U) [C][!]
+Winter Gold (U)
 Wizardry Empire (J) (V1.0) [C][!]
 Wizardry Empire (J) (V1.1) [C][!]
 Wizardry Empire I - Fukkatsu no Tsue (J) [C][!]
@@ -1789,6 +1830,8 @@ Xtreme Sports (U) [C][!]
 Xtreme Wheels (E) [C][!]
 Xtreme Wheels (J) (Unreleased) [C][!]
 Xtreme Wheels (U) [C][!]
+XVII Olympic Winter Games, The - Lillehammer 1994 (U)
+XVII Olympic Winter Games, The - Lillehammer 1994 (U) (V1.1) (Unreleased) [!]
 Yakouchuu (J) [C][!]
 Yakyuuman (J) (V1.0) [!]
 Yakyuuman (J) (V1.1)

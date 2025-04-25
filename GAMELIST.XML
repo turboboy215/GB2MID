@@ -814,6 +814,17 @@
 		<parameters>CFG/Army Men 2 (U) (M3) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Arthur's Absolutely Fun Day! (U) [C][!]</name>
+		<gamecode>BFDE</gamecode>
+		<rev>0</rev>
+		<checksum>DA4E</checksum>
+        <crc32>f03599a3</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>1\46C6</parameters>
+	</rom>
+	<rom>
 		<name>Asterix - Search for Dogmatix (E) (M6) [C][!]</name>
 		<gamecode>AA6P</gamecode>
 		<rev>0</rev>
@@ -1628,6 +1639,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Beethoven's 2nd (U) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2A17</checksum>
+        <crc32>637e54e3</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Beethoven's 2nd (U) (Unreleased) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>423C</checksum>
+        <crc32>d7b75fa6</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Beetlejuice (U)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -2033,6 +2066,28 @@
 		<part>2/2=Samples</part>
 		<banks>3</banks>
 		<parameters>S</parameters>
+	</rom>
+	<rom>
+		<name>Bobby's World (E) (Unreleased) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>064D</checksum>
+        <crc32>ffe34a16</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Bobby's World (U) (Unreleased) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F3AE</checksum>
+        <crc32>531bf384</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Boku no Camp-jou (J) [C][!]</name>
@@ -2442,6 +2497,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Brainbender (E) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F1ED</checksum>
+        <crc32>b651bf5d</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Brainbender (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D707</checksum>
+        <crc32>fbb1f2a1</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Bram Stoker's Dracula (UE) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -2648,6 +2725,50 @@
         <format>Hirotomo_Nakamura</format>
 		<part></part>
 		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Caesars Palace (E) (M5)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>BDA2</checksum>
+        <crc32>78bf3633</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Caesars Palace (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>854C</checksum>
+        <crc32>000aaa74</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Caesars Palace (U) (V1.0) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>FE1B</checksum>
+        <crc32>d9f901a9</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Caesars Palace (U) (V1.1) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>FA19</checksum>
+        <crc32>87a9d605</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>3</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -3971,6 +4092,28 @@
 		<parameters>CFG/Dinosaur (U) [C][a1][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Dirty Racin' (E) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B844</checksum>
+        <crc32>974a3cbe</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
+		<name>Dirty Racing (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CC89</checksum>
+        <crc32>43af45b1</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
 		<name>Disney's Mulan (U) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -5148,6 +5291,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Extreme Sports with The Berenstain Bears (U) (M5) [C][!]</name>
+		<gamecode>BESE</gamecode>
+		<rev>0</rev>
+		<checksum>9722</checksum>
+        <crc32>5c0e7b44</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>1\448B</parameters>
+	</rom>
+	<rom>
 		<name>F1 Championship Season 2000 (B) (M5) [C][!]</name>
 		<gamecode>BFIB</gamecode>
 		<rev>0</rev>
@@ -6314,6 +6468,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Getaway, The (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>4270</checksum>
+        <crc32>8f2bf517</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>4,A</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Gex 3 - Deep Cover Gecko (E) [C][!]</name>
 		<gamecode>AXGP</gamecode>
 		<rev>0</rev>
@@ -6641,6 +6806,17 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>6</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Golf Classic (E) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E531</checksum>
+        <crc32>a6dadb1e</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>10</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -7348,6 +7524,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Home Alone 2 - Kevin's Dream (U) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>4993</checksum>
+        <crc32>f8087e88</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Home Alone 2 (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -7874,6 +8061,28 @@
 		<part></part>
 		<banks>0B</banks>
 		<parameters>CFG/Jay und Die Spielzeugdiebe (G) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Jeep Jamboree (E) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0141</checksum>
+        <crc32>96633953</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Jeep Jamboree (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>67D7</checksum>
+        <crc32>a1e76a33</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Jelly Boy (U)</name>
@@ -10615,6 +10824,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>McDonaldland (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1C31</checksum>
+        <crc32>81de6c13</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Medarot 2 - Kabuto Version (J) [C][!]</name>
 		<gamecode>A2MJ</gamecode>
 		<rev>0</rev>
@@ -11218,6 +11438,17 @@
 		<part></part>
 		<banks>10</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Migrain (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D800</checksum>
+        <crc32>ced936f8</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Milon no Meiykuu Kumikyoku (J)</name>
@@ -11856,6 +12087,17 @@
 		<part></part>
 		<banks>2</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>MTV Sports - Skateboarding featuring Andy MacDonald (U) [C][!]</name>
+		<gamecode>BMTE</gamecode>
+		<rev>0</rev>
+		<checksum>4AFB</checksum>
+        <crc32>744561f3</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>C</banks>
+		<parameters>1\43F7</parameters>
 	</rom>
 	<rom>
 		<name>MTV Sports - T.J. Lavin's Ultimate BMX (U) [C][!]</name>
@@ -13266,7 +13508,7 @@
 		<parameters>4C22\3</parameters>
 	</rom>
 	<rom>
-		<name>Pefect Dark (U) (M5) [C][!]</name>
+		<name>Perfect Dark (U) (M5) [C][!]</name>
 		<gamecode>VPDE</gamecode>
 		<rev>0</rev>
 		<checksum>AD0F</checksum>
@@ -13275,6 +13517,28 @@
 		<part></part>
 		<banks>D1</banks>
 		<parameters>CFG/Perfect Dark (U) (M5) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>PGA European Tour (U) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>06DC</checksum>
+        <crc32>7d7def64</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>F,10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>PGA Tour '96 (U) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F390</checksum>
+        <crc32>6ff72043</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>8,E,F</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Phantom Air Mission (E) [!]</name>
@@ -14894,6 +15158,61 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Prince of Persia (E) (M5) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1ADA</checksum>
+        <crc32>e6bec6d1</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Prince of Persia (E) (M5) [M][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2E07</checksum>
+        <crc32>b2cbf20f</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters>1\5F87</parameters>
+	</rom>
+	<rom>
+		<name>Prince of Persia (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>4BF5</checksum>
+        <crc32>1d16d689</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters>1\5F87</parameters>
+	</rom>
+	<rom>
+		<name>Prince of Persia (J) (M2) (Unreleased) [C][!]</name>
+		<gamecode>BPRJ</gamecode>
+		<rev>0</rev>
+		<checksum>C2B9</checksum>
+        <crc32>d7dbbe1e</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Prince of Persia (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8DC4</checksum>
+        <crc32>2bd995f1</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters>1\5F87</parameters>
+	</rom>
+	<rom>
 		<name>Pro Darts (U) [C][!]</name>
 		<gamecode>AVDE</gamecode>
 		<rev>0</rev>
@@ -15189,6 +15508,50 @@
 		<part></part>
 		<banks>20</banks>
 		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Race Days (Dirty Racing & 4 Wheel Drive) (E)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2BFB</checksum>
+        <crc32>442420b3</crc32>
+        <format>Ed_Magnin</format>
+		<part>1/2=Dirty Racing</part>
+		<banks>4</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
+		<name>Race Days (Dirty Racing & 4 Wheel Drive) (E)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2BFB</checksum>
+        <crc32>442420b3</crc32>
+        <format>Ed_Magnin</format>
+		<part>2/2=4 Wheel Drive</part>
+		<banks>B</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Race Days (Dirty Racing & 4 Wheel Drive) (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3F8E</checksum>
+        <crc32>b9ab5319</crc32>
+        <format>Ed_Magnin</format>
+		<part>1/2=Dirty Racing</part>
+		<banks>4</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
+		<name>Race Days (Dirty Racing & 4 Wheel Drive) (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3F8E</checksum>
+        <crc32>b9ab5319</crc32>
+        <format>Ed_Magnin</format>
+		<part>2/2=4 Wheel Drive</part>
+		<banks>B</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Race Drivin' (U) [!]</name>
@@ -15694,6 +16057,28 @@
         <format>Ocean</format>
 		<part></part>
 		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>RoboCop Vs. The Terminator (E) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>83B5</checksum>
+        <crc32>9e3b05c4</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>RoboCop Vs. The Terminator (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9E4C</checksum>
+        <crc32>f82d7223</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>7</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -16412,6 +16797,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>SeaQuest DSV (U) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D2C5</checksum>
+        <crc32>31a3bd99</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Seaside Volley (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -16629,6 +17025,17 @@
         <format>Paragon_5</format>
 		<part></part>
 		<banks>2D,2E,2F,30,31,32,33,34,35,36,37,38,39,3A,3B,3C,3D,3E,3F,40</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Shaq Fu (U) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>721B</checksum>
+        <crc32>7ed43fe6</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>4</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -17424,6 +17831,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Spider-Man and the X-Men in Arcade's Revenge (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8508</checksum>
+        <crc32>1009c6c0</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Spirit of F-1, The (E) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -17554,6 +17972,39 @@
 		<part>5/5=Dodge Boy</part>
 		<banks>D</banks>
 		<parameters>CFG/Sports Collection (J) - Dodge Boy.cfg</parameters>
+	</rom>
+	<rom>
+		<name>Sports Illustrated - Golf Classic (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0837</checksum>
+        <crc32>87b306b4</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Spot - The Cool Adventure (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2FF0</checksum>
+        <crc32>552a53b9</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Spot - The Cool Adventure (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2EF0</checksum>
+        <crc32>76f67428</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>SS Spinner - Yo for it (J) [S]</name>
@@ -20570,6 +21021,28 @@
 		<parameters>1</parameters>
 	</rom>
 	<rom>
+		<name>Wings of Fury (E) (M3) [C][!]</name>
+		<gamecode>AFXP</gamecode>
+		<rev>0</rev>
+		<checksum>82A4</checksum>
+        <crc32>6d59104f</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Wings of Fury (U) [C][!]</name>
+		<gamecode>AFXE</gamecode>
+		<rev>0</rev>
+		<checksum>BDF8</checksum>
+        <crc32>c94a413a</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Winner's Horse (J) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -20601,6 +21074,17 @@
 		<part></part>
 		<banks>50</banks>
 		<parameters>CFG/Winnie the Pooh - Adventures in the 100 Acre Wood (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Winter Gold (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>266F</checksum>
+        <crc32>3c4cd245</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Wizardry Empire (J) (V1.0) [C][!]</name>
@@ -21238,6 +21722,28 @@
         <format>Technos_Japan</format>
 		<part></part>
 		<banks>A</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>XVII Olympic Winter Games, The - Lillehammer 1994 (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>02B9</checksum>
+        <crc32>1a98f0a4</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>XVII Olympic Winter Games, The - Lillehammer 1994 (U) (V1.1) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>1</rev>
+		<checksum>02B9</checksum>
+        <crc32>1510305e</crc32>
+        <format>Ed_Magnin</format>
+		<part></part>
+		<banks>7</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
