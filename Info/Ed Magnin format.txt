@@ -1,0 +1,59 @@
+Song table
+=======================================
+The song table is comprised of 16-bit pointers to each song. It is usually found using the following commands:
+
+ld bc, SongTable
+sla a
+add c
+ld c, a
+jr nc, $????
+inc b
+ld a, [bc]
+
+Which equals the following in hex:
+CA xx xx 01 ?? ?? CB 27 81 4F
+
+Song header
+=======================================
+The song header is structured as follows (note that pointers are relative):
+1-2. Channel 1 pointer
+3-4. Channel 2 pointer
+5-6. Channel 3 pointer
+7-8. Channel 4 pointer
+
+Song structure
+=======================================
+Each song is comprised of a series of 5-byte events, structured as follows:
+1-2. Time
+3. Note (if 0, then end of song)
+4. Volume?
+5. Note size/duty
+
+To calculate the note size, the following code is used:
+and a, $7F
+srl a
+srl a
+srl a
+srl a
+jr nz, $02
+or a, $01
+or b
+
+Gremlin variant
+=======================================
+Two games developed by Gremlin, Brainbender and Dirty Racin', use a modified version of the driver with a very much reworked sequence format. In this version, song headers work as follows:
+1-2. Channel 1 pointer
+3-4. Channel 1 transpose
+5-6. Channel 2 pointer
+7-8. Channel 3 transpose
+9-10. Channel 3 pointer
+11-12. Channel 3 transpose
+13-14. Channel 4 pointer
+15-16. Channel 4 transpose
+
+Song events are structured as follows:
+1. Time
+2. Note
+3. Instrument/envelope (Dirty Racin' for channel 1-3 only)
+
+Note that using this version of the driver, the length of songs are limited. Longer songs are created by playing multiple songs sequentially.

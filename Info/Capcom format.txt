@@ -46,7 +46,7 @@ Capcom's Game Boy sequence format is very close to the company's later NES seque
 05 xx xx = Set tempo/speed
 06 xx = Set note size
 07 xx = Set volume (00-0F)
-08 xx = Set vibrato
+08 xx = Set vibrato (in NES version, set instrument)
 09 xx = Set octave transpose (0A same as 00?)
 0A xx = Transpose sequence (all channels) (Default: 00 - 01 to 7F)
 0B xx = Transpose sequence (current channel) (Default: 00 - 01 to 7F)
