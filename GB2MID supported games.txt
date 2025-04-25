@@ -884,6 +884,7 @@ Majokko Mari-chan no Kisekae Monogatari (J) (V1.1) [C][!]
 Makai Toushi SaGa (J) (V1.0)
 Makai Toushi SaGa (J) (V1.1) [!]
 Malibu Beach Volleyball (U) [!]
+Mani 4-in-1 (DMG-605 CHN) (Ch) [!]
 Marie no Atelier GB (J) [C][!]
 Mario & Yoshi (E) [!]
 Mario Family (J) [C]
@@ -961,6 +962,7 @@ Microsoft Puzzle Collection (U) [C]
 Midori no Makibaoo (J) [S]
 Mighty Morphin Power Rangers - The Movie (U) [S]
 Mighty Morphin Power Rangers (U) [S][!]
+Migrain (J)
 Milon no Meikyuu Kumikyoku (J)
 Milon's Secret Castle (U) [!]
 Mini 4 Boy (J) [S][!]
@@ -1867,12 +1869,9 @@ Zoop (J)
 Zoop (U) [!]
 
 Partially supported:
-DMG-604-CHN (Ch) [!]
 Mani 4-in-1 (DMG-601 CHN) (Ch) [!]
 Mani 4-in-1 (DMG-602 CHN) (Ch) [!]
-Mani 4-in-1 (DMG-603 CHN) (Ch) [!]
-Mani 4-in-1 (DMG-604 CHN) (Ch) [!]
-Mani 4-in-1 (DMG-605 CHN) (Ch) [!]
+Mani 4-in-1 (DMG-604-CHN) (Ch) [!]
 Momotarou Collection (J) [S]
 Momotarou Collection 2 (J) [S]
 Moon Patrol & Spy Hunter (U) [C][!]
