@@ -4136,17 +4136,6 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
-		<name>DMG-604-CHN (Ch) [!]</name>
-		<gamecode></gamecode>
-		<rev>0</rev>
-		<checksum>DA67</checksum>
-        <crc32>cb48b6d0</crc32>
-        <format>David_Whittaker</format>
-		<part>1/1=R-Type II</part>
-		<banks>7</banks>
-		<parameters></parameters>
-	</rom>
-	<rom>
 		<name>Dodge Ball (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -10579,6 +10568,61 @@
         <format>David_Whittaker</format>
 		<part>1/1=Chase H.Q.</part>
 		<banks>C</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mani 4-in-1 (DMG-604 CHN) (Ch) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DA67</checksum>
+        <crc32>cb48b6d0</crc32>
+        <format>David_Whittaker</format>
+		<part>1/1=R-Type II</part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mani 4-in-1 (DMG-605 CHN) (Ch) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D1BD</checksum>
+        <crc32>950773ee</crc32>
+        <format>Technos_Japan</format>
+		<part>1/4=GB Genjin</part>
+		<banks>6</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mani 4-in-1 (DMG-605 CHN) (Ch) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D1BD</checksum>
+        <crc32>950773ee</crc32>
+        <format>Hudson_Soft</format>
+		<part>2/4=Bomber Boy</part>
+		<banks>18</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mani 4-in-1 (DMG-605 CHN) (Ch) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D1BD</checksum>
+        <crc32>950773ee</crc32>
+        <format>Make_Software</format>
+		<part>3/4=Milon no Meikyuu Kumikyoku</part>
+		<banks>1C</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mani 4-in-1 (DMG-605 CHN) (Ch) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D1BD</checksum>
+        <crc32>950773ee</crc32>
+        <format>Make_Software</format>
+		<part>4/4=Takahashi Meijin no Bouken Shima II</part>
+		<banks>24</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
