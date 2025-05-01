@@ -4,8 +4,10 @@
 #include <stddef.h>
 #include "SHARED.H"
 #include "AJG.H"
+#include "ALLEYWAY.H"
 #include "AUDIOART.H"
 #include "BEAM.H"
+#include "CANNON.H"
 #include "CAPCOM.H"
 #include "CARILLON.H"
 #include "CLIMAX.H"
@@ -37,6 +39,7 @@
 #include "MWALKER.H"
 #include "NATSUME.H"
 #include "NINTENDO.H"
+#include "NOVA.H"
 #include "OCEAN.H"
 #include "PARAGON5.H"
 #include "PROBE.H"
@@ -321,11 +324,17 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case AJ_Gonzalez:
 			AJGProc(banks[curBank], parameters);
 			break;
+		case Alleyway:
+			AlleyProc(banks[curBank]);
+			break;
 		case AudioArts:
 			AAProc(banks[curBank]);
 			break;
 		case Beam_Software:
 			BeamProc(banks[curBank]);
+			break;
+		case Cannon_Fodder:
+			CannonProc(banks[curBank]);
 			break;
 		case Capcom:
 			CapProc(banks[curBank]);
@@ -425,6 +434,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case NMK:
 			RCProc(banks[curBank]);
+			break;
+		case Nova:
+			NovaProc(banks[curBank], parameters);
 			break;
 		case Ocean:
 			OcnProc(banks[curBank]);

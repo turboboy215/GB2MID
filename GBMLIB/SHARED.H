@@ -51,6 +51,9 @@
 #define Make_Software		0x30
 #define Tarantula_Studios	0x31
 #define Ed_Magnin			0x32
+#define Alleyway			0x33
+#define Nova				0x34
+#define Cannon_Fodder		0x35
 
 extern FILE * rom, * mid;
 extern long masterBank;
