@@ -53,12 +53,17 @@ Alien vs Predator - The Last of His Clan (U) [!]
 All-Star Baseball '99 (U) [!]
 All-Star Baseball 2000 (U) [C][!]
 All-Star Baseball 2001 (U) [C][!]
+Alleyway (W) [!]
 Alone in the Dark - The New Nightmare (E) (M6) [C][!]
 Alone in the Dark - The New Nightmare (U) (M3) [C][!]
 Amazing Penguin (UE) [!]
 Amazing Spider-Man 2, The (UE) [!]
 Amazing Spider-Man, The (UE) [!]
+America Oudan Ultra Quiz (J) [!]
+America Oudan Ultra Quiz Part 2 (J) [!]
+AMF Bowling (U) [C][!]
 Animastar GB (J) [C][!]
+Another Bible (J) [S]
 Anpfiff - Der RTL Fussball-Manager (G) [C]
 Armada - FX Racers (U) [C][!]
 Armorines - Project S.W.A.R.M. (E) (M2) [C][!]
@@ -112,6 +117,7 @@ Barbie - Pet Rescue (E) (M5) [C][!]
 Barbie - Pet Rescue (U) [C][!]
 Barbie - Shelly Club (E) (M5) [C][!]
 Barca Total 2000 (E) (M7) [C][!]
+Baseball (W) [!]
 Baseball Kids (J)
 Bases Loaded (U) [!]
 Bass Masters Classic (U) [C][!]
@@ -122,9 +128,13 @@ Batman - The Animated Series (U)
 Batman (JU) [!]
 Batman Forever (J)
 Batman Forever (U) [!]
+Battle Crusher (J) [S]
+Battle Dodge Ball (J)
 Battle Fishers (J) [C][!]
+Battle Space (J) [!]
 Battle Unit Zeoth (J)
 Battle Unit Zeoth (U) [!]
+BattleCity (J) [!]
 Battleship (U) [C][!]
 Battleship (U) [M][!]
 Battletoads (J)
@@ -159,6 +169,8 @@ Bill & Ted's Excellent Gameboy Adventure (UE) [!]
 Bionic Commando (E) [!]
 Bionic Commando (J)
 Bionic Commando (U) [!]
+Bishoujo Senshi Sailor Moon (J)
+Bishoujo Senshi Sailor Moon R (J)
 Blade (U) [C][!]
 Blades of Steel (E) [!]
 Blades of Steel (U) [!]
@@ -197,6 +209,9 @@ Bomberman Max - Blue Champion (U) [C][!]
 Bomberman Max - Hikari no Yuusha (J) [C][!]
 Bomberman Max - Red Challenger (U) [C][!]
 Bomberman Max - Yami no Senshi (J) [C][!]
+Bomberman Quest (E) (M3) [C][!]
+Bomberman Quest (J) [C][!]
+Bomberman Quest (U) [C][!]
 Bomberman Selection (K) [C][!]
 Bonk's Adventure (U) [!]
 Bonk's Revenge (U) [S][!]
@@ -233,6 +248,9 @@ Caesars Palace (E) (M5)
 Caesars Palace (J)
 Caesars Palace (U) (V1.0) [!]
 Caesars Palace (U) (V1.1) [!]
+Cannon Fodder (E) (M5) [C][!]
+Cannon Fodder (E) (M5) (Beta) [C][!]
+Cannon Fodder (U) (M5) [C][!]
 Capcom Quiz (J)
 Captain America and the Avengers (U) [!]
 Captain Tsubasa (J) [S][!]
@@ -308,6 +326,8 @@ Cross Hunter - Treasure Hunter Version (J) [C][!]
 Cross Hunter - X Hunter Version (J) [C][!]
 Cruis'n Exotica (U) [C][!]
 Cubix - Robots For Everyone - Race 'N Robots (U) (M5) [C][!]
+Cult Jump (J)
+Cult Master - Ultraman ni Miserarete (J)
 Cutthroat Island (J) (Unreleased) [!]
 Cutthroat Island (U)
 Cyber Tiger (U) [C][!]
@@ -414,6 +434,7 @@ Dragon Warrior Monsters 2 - Tara's Adventure (U) [C][!]
 Dragon's Lair - The Legend (E) [!]
 Dragon's Lair - The Legend (U) [!]
 Dragon's Lair (J)
+Dragonslayer Chapter - Surrounded (Unl) [C]
 Driver - You Are The Wheelman (U) (M5) [C][!]
 Driver (E) (M5) [C][!]
 Duck Tales (E) [!]
@@ -435,6 +456,7 @@ Earthworm Jim (E) [!]
 Earthworm Jim (U) [!]
 ECW Hardcore Revolution (U) [C][!]
 Edd the Duck (E) (Unreleased) [!]
+E'Fighter HOT (Unl) [C]
 Elie no Atelier GB (J) [C][!]
 Elite Soccer (U) [S]
 Elmo in Grouchland (E) [C][!]
@@ -469,8 +491,10 @@ Faceball 2000 (U) [!]
 Fairy Kitty no Kaiun Jiten - Yousei no Kuni no Uranai Shugyou (J) (V1.0) [C][!]
 Fairy Kitty no Kaiun Jiten - Yousei no Kuni no Uranai Shugyou (J) (V1.1) [C][!]
 Fairy Tale's Club (J)
+Family Jockey (J)
 Felix the Cat (U)
 Feng Kuang Da Fu Weng (Crazy Monopoly) (Unl) [C][f1]
+Feng Zhi Gou II (Unl) [C][f1]
 Ferrari - Grand Prix Challenge (J)
 Ferrari - Grand Prix Challenge (U) [!]
 Fidgetts, The (J)
@@ -487,6 +511,7 @@ Final Fantasy Adventure (U) [!]
 Final Fantasy Legend II (U) [!]
 Final Fantasy Legend III (U) [!]
 Final Fantasy Legend, The (U) [!]
+Final Fantasy X - Fantasy War (Unl) [C]
 Final Reverse (J)
 Fire Fighter (U)
 Fish Files, The (E) (M5) [C]
@@ -508,6 +533,9 @@ Frogger (U) (V1.0) [C][!]
 Frogger (U) (V1.1) [C][!]
 Frogger (U) (V1.2) [C][!]
 Frogger (U) [M][!]
+From TV Animation One Piece - Maboroshi no Grand Line Boukenki! (J) [C][!]
+From TV Animation One Piece - Yume no Luffy Kaizokudan Tanjou! (J) (V1.0) [C][!]
+From TV Animation One Piece - Yume no Luffy Kaizokudan Tanjou! (J) (V1.1) [C][!]
 From TV Animation Slam Dunk - Gakeppuchi no Kesshou League (J) [S][!]
 From TV Animation Slam Dunk - Gakeppuchi no Kesshou League (J) (Limited Edition) [S][!]
 From TV Animation Slam Dunk 2 - Zenkoku heno Tip Off (J) [S][!]
@@ -540,12 +568,16 @@ Gameboy Wars 3 (J) [C][!]
 Gameboy Wars Turbo (J) [S]
 Gameboy Wars Turbo (J) (Famitsu Magazine SE) [S]
 Games Frenzy (E) (M3) [C][!]
+Ganbaruga (J)
 Ganbare Goemon - Tengutou no Gyakushuu (J) [C][!]
 Ganbare Goemon (J)
 Ganbare Goemon 2 (J) [S]
 Ganbare! Nippon Olympic 2000 (J) [C]
 Gargoyle's Quest - Ghosts'n Goblins (UE) [!]
 Gargoyle's Quest - Ghosts'n Goblins (UE) [a1]
+Gargoyle's Quest II - The Demon Darkness (E) (Unreleased) [!]
+Gargoyle's Quest II - The Demon Darkness (U) (Unreleased) [!]
+Garou - Mark of the Wolves 2001 (Unl) [C][f1]
 GB Basketball (J)
 GB Genjin (J) [!]
 GB Genjin 2 (J) [S][!]
@@ -583,6 +615,14 @@ Golden Goal (G) (M7) [C][!]
 Golf (W) [!]
 Golf Classic (E) [S]
 Golf de Ohasuta (J) [C][!]
+Goukaku Boy Series - Gakken - Yojijukugo 288 (J)
+Goukaku Boy Series - Shikakui Atama wo Marukusuru - Kanji no Tatsujin (J) [!]
+Goukaku Boy Series - Shikakui Atama wo Marukusuru - Keisan no Tatsujin (J) [!]
+Goukaku Boy Series - Shikakui Atama wo Marukusuru - Kokugo Battle Hen (J) [!]
+Goukaku Boy Series - Shikakui Atama wo Marukusuru - Rika Battle Hen (J) [!]
+Goukaku Boy Series - Shikakui Atama wo Marukusuru - Sansuu Battle Hen (J) [!]
+Goukaku Boy Series - Shikakui Atama wo Marukusuru - Shakai Battle Hen (J) [!]
+Goukaku Boy Series - Shikakui Atama wo Marukusuru - Zukei no Tatsujin (J) [!]
 Gradius - The Interstellar Assault (U)
 Gran Duel - Shinki Dungeon no Hihou (J) [C][!]
 Gran Duel - Shinki Dungeon no Hihou Trial Version (J) [C][!]
@@ -620,6 +660,7 @@ Harvest Moon GB (G) [C][!]
 Harvest Moon GB (U) [C][!]
 Harvest Moon GB (U) [S][!]
 Hatris (U)
+He Jin Zhuang Bei II (Unl) [C][f1]
 Heavyweight Championship Boxing (U) [!]
 Hello Kitty no Beads Koubou (J) [C][!]
 Hello Kitty no Sweet Adventure - Daniel-kun ni Aitai (J) [C][!]
@@ -665,6 +706,7 @@ Hyper Dunk (U)
 Hyper Lode Runner (J) (V1.0) [!]
 Hyper Lode Runner (JU) (V1.1) [!]
 Hyper Olympic Series - Track & Field GB (J) [C][!]
+Hyper Olympic Winter 2000 (J) [C][!]
 Indiana Jones and the Infernal Machine (U) (M3) [C][!]
 Indiana Jones and the Last Crusade (J)
 Indiana Jones and the Last Crusade (UE) [!]
@@ -697,6 +739,7 @@ Jimmy Connors Tennis (J)
 Jimmy Connors Tennis (UE) [!]
 Jimmy White's Cueball (E) [C][!]
 Jimmy White's Cueball (U) (Unreleased) [C][!]
+Jinsei Game - Tomedachi Takusan Tsukurouyo! (J) [C][!]
 Jinsei Game (J) [S]
 Jisedai Begoma Battle Beyblade (J) [C][!]
 Jissen Mahjong Kyoshitsu (J) [S]
@@ -713,6 +756,8 @@ Jurassic Park (E) (M5) [!]
 Jurassic Park (U) [!]
 Jurassic Park 2 - The Chaos Continues (UE) (M4) [!]
 K1025 2-in-1 Zelda Ages+Seasons [C][p1][b1]
+Kachiu Mayoso Keiba Kizoku Ex '94 (J)
+Kachiu Mayoso Keiba Kizoku Ex '95 (J)
 Kaept'n Blaubaer - Die verrueckte Schatzsuche (G) [C][!]
 Kaeruno Tameni (J) [!]
 Kanji Boy 3 (J) [C][!]
@@ -726,10 +771,12 @@ Kawa no Nushi Tsuri 3 (J) [S][!]
 Kawa no Nushi Tsuri 4 (J) [C][!]
 Kawa no Nushi Tsuri 4 (J) (V1.1) (Unreleased) [C][!]
 Kawaii Pet Shop Monogatari 2 (J) [C][!]
+Keiba Kizoku (J)
 Keibajou he Ikou! Wide (J) [C][!]
 Keitai Denjuu Telefang - Power Version (J) [C][!]
 Keitai Denjuu Telefang - Speed Version (J) [C][!]
 Kelly Club - Clubhouse Fun (U) [C][!]
+Kettou Beast Wars - Beast Senshi Saikyou Ketteisen (J) [C][!]
 Kick Attack (J) (Unreleased) [!]
 Kick Boxing, The (J)
 Kid Dracula (U) [!]
@@ -737,6 +784,13 @@ Kid Icarus - Of Myths and Monsters (UE) [!]
 Kikansha Thomas - Sodor-tou no Nakamatachi (J) [C][!]
 Killer Instinct (U) [S][!]
 Killer Instinct (U) [S][a1]
+Kindaichi Shounen no Jikenbo - 10nenme no Shoutaijou (J) [C][!]
+King of Fighters '95, The (E) [S][!]
+King of Fighters '95, The (U) [S][!]
+King of Fighters 98, The (Unl)
+King of Fighters R-2 (Unl) [C]
+King of Fighters, The - Heat of Battle (E)
+Kinnikuman DM (J)
 Kira Kira Kids (J) [S]
 Kirby 2 - Hoshinoka 2 (J) [S]
 Kirby Family (J) (Unreleased) [C][!]
@@ -768,6 +822,7 @@ Konami Golf (E)
 Konami Golf (J)
 Konami Ice Hockey (J)
 Konami Sports (J)
+Konami Winter Games (E) [C][!]
 Koro Koro Kirby (J) [C][!]
 Kung-Fu Master (U)
 Kyorochan Land (J)
@@ -852,6 +907,7 @@ Looney Tunes Collector - Martian Revenge! (E) (M6) [C][!]
 Loopz (U)
 Loppi Puzzle Magazine - Nintendo Power Menu (J) [C]
 Lord of the Rings 3, The (Unl) [C][f2]
+Lord of the Rings, The - The Fellowship of the Ring (Unl) [C]][f1]
 Lost World, The - Jurassic Park (U) [S][!]
 Love Hina Party (J) [C][!]
 Love Hina Pocket (J) [C][!]
@@ -883,7 +939,9 @@ Majokko Mari-chan no Kisekae Monogatari (J) (V1.0) [C][!]
 Majokko Mari-chan no Kisekae Monogatari (J) (V1.1) [C][!]
 Makai Toushi SaGa (J) (V1.0)
 Makai Toushi SaGa (J) (V1.1) [!]
+Makaimura Gaiden (J)
 Malibu Beach Volleyball (U) [!]
+Mani 4-in-1 (DMG-601 CHN) (Ch) [!]
 Mani 4-in-1 (DMG-605 CHN) (Ch) [!]
 Marie no Atelier GB (J) [C][!]
 Mario & Yoshi (E) [!]
@@ -894,6 +952,8 @@ Mario Golf GB (J) [C][!]
 Mario Tennis (E) [C][!]
 Mario Tennis (U) [C][!]
 Mario Tennis GB (J) [C][!]
+Mark of the Wolfs (Unl) [C]
+Mark of the Wolves (Unl) [C]
 Marmalade Boy (J) [S]
 Maru's Mission (U) [!]
 Marvin Strikes Back! (U) (M3) [C]
@@ -963,14 +1023,18 @@ Midori no Makibaoo (J) [S]
 Mighty Morphin Power Rangers - The Movie (U) [S]
 Mighty Morphin Power Rangers (U) [S][!]
 Migrain (J)
+Millenium Winter Sports (U) [C][!]
 Milon no Meikyuu Kumikyoku (J)
 Milon's Secret Castle (U) [!]
+Minesweeper (J)
 Mini 4 Boy (J) [S][!]
 Mini 4 Boy II - Final Evolution (J) [S]
+Miracle Adventure of Esparks (J)
 Mission Bravo (U) (Unreleased) [C][!]
 Mission Impossible (E) (M5) (V1.0) [C][!]
 Mission Impossible (E) (M5) (V1.1) [C][!]
 Mission Impossible (U) (M3) [C][!]
+Mo Shou Zheng Ba 3 - Hun Luan Zhi Jie (Warcraft 3) (Unl) [C]
 Mobile Golf (J) [C][!]
 Mobile Trainer (J) [C][!]
 Mogu Mogu Gombo (J) [S]
@@ -980,7 +1044,11 @@ Momotarou Densetsu 1-2 (J) [C][!]
 Momotarou Densetsu Gaiden (J) [!]
 Momotetsu Jr. (J) [S]
 Monster AG, Die (G) [C][!]
+Monster Maker 2 (J)
 Monster Max (U) (M6)
+Monster Race (J) [S]
+Monster Race 2 (J) [C][!]
+Monster Race Other (J) [S]
 Monster Truck (J)
 Monsters, Inc. (E) (M3) (Eng-Ita-Fre) [C][!]
 Monsters, Inc. (E) (M3) (Eng-Spa-Dut) [C]
@@ -1065,6 +1133,10 @@ Nemesis (U) [!]
 Nemesis (U) (V1.1) (Unreleased) [!]
 Nemesis II - The Return of the Hero (E) [!]
 Nemesis II (J)
+Nettou Garou 2 (J) [S]
+Nettou King of Fighters '95 (J) [S]
+Nettou King of Fighters '96 (J) [S]
+Nettou King of Fighters '97 (J) [S][p1]
 New Addams Family Series, The (E) (M6) [C]
 New Addams Family Series, The (E) (M6) (V1.1) (Unreleased) [C][!]
 New Adventures of Mary-Kate & Ashley, The (U) [C][!]
@@ -1109,6 +1181,7 @@ Osawagase Penguin Boy (J) [!]
 Othello (J)
 Othello (UE) [!]
 Othello World (J) [S][!]
+Otogi Banasi Tai (J) [S]
 Other Life - Azure Dreams GB Azure Dreams (J) [C][!]
 Otoko Jyuku (J)
 Otto's Ottifanten (E)
@@ -1136,6 +1209,7 @@ PGA European Tour (U) [S][!]
 PGA Tour '96 (U) [S]
 Phantom Air Mission (E) [!]
 Pia Carrot he Youkoso!! 2.2 (J) [C][!]
+Pian Wai Zhang Huang Jin Tai Yang - Feng Yin De Yuan Gu Lian Jin Shu (Unl) [C][f1]
 Pinball - 66hiki no Wani Daikoushin! (J)
 Pinball - Revenge of the Gator (U) [!]
 Pinball Deluxe (U)
@@ -1162,6 +1236,7 @@ Pocket Camera (J) (V1.1) [S]
 Pocket Color Block (J) [C][!]
 Pocket Color Billiard (J) [C][!]
 Pocket Cooking (J) [C][!]
+Pocket Family (J) [S]
 Pocket Family GB2 (J) [C][!]
 Pocket GI Stable (J) [C][!]
 Pocket GT (J) [C][!]
@@ -1301,11 +1376,14 @@ Puzzled (U) [C][!]
 Q-bert (U) [C][!]
 Q-bert II (J)
 Q-bert II (UE) [!]
+Qi Tian Da Sheng - Sun Wu Kong (Unl) [C]
 Qix (JU) [!]
+Quan Ba Tian Xia (Unl) [C][f1]
 Quarth (J)
 Quarth (U) [!]
 Quest for Camelot (E) (M6) [C][!]
 Quest for Camelot (U) (M3) [C][!]
+Quiz Sekai wa Show by Shoubai!! (J)
 Race Days (Dirty Racing & 4 Wheel Drive) (E)
 Race Days (Dirty Racing & 4 Wheel Drive) (U) [!]
 Race Drivin' (U) [!]
@@ -1319,6 +1397,9 @@ Raku x Raku - Mishin (J) [C][!]
 Raku x Raku - Moji (J) [C][!]
 Raku x Raku 3 (J) (Unreleased) [C][!]
 Rampage 2 - Universal Tour (U) [C][!]
+Ranma Nibun no Ichi - Kakugeki!! (J)
+Ranma Nibun no Ichi - Part 2 (J)
+Ranma Nibun no Ichi (J)
 Rats! (U) (M2) [C][!]
 Razor Freestyle Scooter (U) [C][!]
 Ready 2 Rumble Boxing (E) [C][!]
@@ -1326,6 +1407,7 @@ Ready 2 Rumble Boxing (U) [C][!]
 Real Pro Yakyuu! - Central League Hen (J) [C][!]
 Real Pro Yakyuu! - Pacific League Hen (J) [C][!]
 Red Arremer - Makaimura Gaiden (J)
+Rekishi Masters 512 (J)
 Ren & Stimpy Show, The - Space Cadet Adventures (U) [!]
 Rentaiou (J)
 Rescue Heroes - Fire Frenzy (U) [C][!]
@@ -1383,6 +1465,7 @@ Rolan's Curse (U) [!]
 Rolan's Curse II (U) [!]
 Ronaldo V.Football (E) (M7) [C][!]
 Ronaldo V.Soccer (U) (M4) [C][!]
+RPG Tsukuru GB (J) [C][!]
 R-Type (J) [!]
 R-Type (U) [!]
 R-Type DX (J) [C][!]
@@ -1402,16 +1485,21 @@ Sakura Taisen GB - Geki Hana Kumi Nyuutai! (J) [C][!]
 Sakura Tasien GB2 - Thunder Volt Sakusen (J) [C][!]
 Same Game (J) [S]
 San Francisco Rush 2049 (U) [C][!]
+San Goku Shi - Act C (Unl) [C]
+San Goku Shi - GameBoy Ban 2 (J) [C][!]
+Sanrio Carnival (J)
 Sanrio Timenet - Kako Hen (J) [C][!]
 Sanrio Timenet - Mirai Hen (J) [C][!]
 Santa Claus Junior (E) [C][!]
 Schiffe Versenken (G) (M4)
 Scooby-Doo! - Classic Creep Capers (U) [C][!]
+SD Lupin III - Kinko Yaburi Daisakusen (J) [!]
 Sea Battle (E) (M4)
 Sea-Doo Hydrocross (U) (Unreleased) [C][!]
 SeaQuest DSV (U) [S][!]
 Seaside Volley (J)
 Seiken Densetsu (J) [!]
+Seme COM Dungeon - Drururuaga (J) [C][!]
 Sengoku Ninja-kun - Ninja Taro (J)
 Sensible Soccer - European Champions (E) [!]
 Sesame Street Sports (E) [C][!]
@@ -1430,6 +1518,8 @@ Shanghai Pocket (J) [S]
 Shanghai Pocket (U) (V1.0) [C][!]
 Shanghai Pocket (U) (V1.1) [C][!]
 Shantae (U) [C][!]
+Shao Lin Shi San Gun - Ying Xiong Jiu Zhu (Unl) [C][f1]
+Shaoling Legend - Hero, the Saver (Unl) [C][f1]
 Shaq Fu (U) [S][!]
 Shawu Story (Unl) [C]
 Shawu Story (Unl) [C][a1]
@@ -1437,20 +1527,36 @@ Shawu Story (Unl) [C][a2]
 Shawu Story (Unl) [C][a3]
 Shawu Story (Unl) [C][a4]
 Shawu Story (Unl) [C][a5]
+Sheng Huo Jiang Mo Lu Wai Chuan (Unl) [C]
 Sheng Shou Wu Yu - Shen Long Chuan Shuo (Unl) [C][f1]
 Shi Kong Xing Shou (Unl) [C][f1]
+Shi Mian Maifu - Fengyun Pian (Unl) [C][f1]
+Shikakui Atama o Maruku Suru - Joushiki no Shou (J)
+Shikakui Atama o Maruku Suru - Nanmon no Shou (J)
+Shikakui Atama o Maruku Suru - Rika Battle Hen (J)
+Shikakui Atama o Maruku Suru - Sansu Battle (J) (V1.0)
+Shikakui Atama o Maruku Suru - Sansu Battle (J) (V1.1)
+Shikakui Atama o Maruku Suru - Shakai Battle (J)
+Shikakui Atama o Maruku Suru (J)
 Shin Megami Tensei Devil Children - Aka no Shou (J) [C][!]
 Shin Megami Tensei Devil Children - Kuro no Shou (J) [C][!]
 Shin Megami Tensei Devil Children - Shiro no Shou (J) [C][!]
 Shin Megami Tensei Devil Children - Shiro no Shou (J) (V1.1) (Unreleased) [C][!]
 Shin Megami Tensei Trading Card - Card Summoner (J) [C][!]
+Shin San Guo Shi 2 (Unl) [C]
 Shinri Game 2, The - Daihan Hen (J)
 Shinri Game, The (J)
 Shippo de Bun! (J) [!]
 Shou Hyper Fish (J) [S]
 Shrek - Fairy Tale Freakdown (U) (M6) [C][!]
+Shu Ma Bao Long 3 - Shui Jing Ban (Unl) [C][f1]
+Shu Ma Bao Long 2003 - Ge Dou Ban (Unl) [C][f1]
+Shuihu Shenshou (Unl) [C][f2]
 Shuma Baolong - Shuijing Ban (Unl) [C][f1]
 Shutokou Racing, The (J) [C][!]
+Sika Kokugo (J)
+Sika Kunanman (J) (Unreleased) [!]
+Sika Kujosika (J) [!]
 Simpsons, The - Bart vs the Juggernauts (U) [!]
 Simpsons, The - Escape from Camp Deadly (J) [!]
 Simpsons, The - Escape from Camp Deadly (U) [!]
@@ -1460,6 +1566,7 @@ Singer - Sewing Machine Operation Software (U) (M3) [C][!]
 Skate or Die - Bad 'N Rad (E) [!]
 Skate or Die - Bad 'N Rad (U) [!]
 Skate or Die - Tour de Thrash (U)
+Sky Dragon (Unl) [C]
 Small Soldiers (U) [S][!]
 Smurfs 3, The (E) (M4) [!]
 Smurfs Nightmare, The (E) (M4) [C][!]
@@ -1494,6 +1601,8 @@ Spanky's Quest (U) [!]
 Spartan X (J)
 Speedball 2 - Brutal Deluxe (J) (Unreleased) [!]
 Speedball 2 - Brutal Deluxe (UE) [!]
+Speedy Gonzales - Aztec Adventure (J) (Unreleased) [C][!]
+Speedy Gonzales - Aztec Adventure (U) [C][!]
 Speedy Gonzales (U) [!]
 Spider-Man (F) [C][!]
 Spider-Man (J) [C][!]
@@ -1535,6 +1644,9 @@ Street Fighter Alpha - Warriors' Dreams (E) [C][!]
 Street Fighter Alpha - Warriors' Dreams (E) (V1.1) (Unreleased) [C][!]
 Street Fighter Alpha - Warriors' Dreams (J) [C][!]
 Street Fighter Alpha - Warriors' Dreams (U) [C][!]
+Street Fighter II (J) [S]
+Street Fighter II (UE) (V1.0) [S][!]
+Street Fighter II (UE) (V1.1) [S][!]
 Street Racer (J)
 Street Racer (U) [!]
 Stuart Little - The Journey Home (E) (M2) [C]
@@ -1555,6 +1667,7 @@ Super Breakout! (E) (M6) [C][!]
 Super Breakout! (U) [C][!]
 Super Breakout! (U) [M][!]
 Super Donkey Kong GB (J) [S]
+Super Fighters '99 (Unl) [C]
 Super Hunchback (E)
 Super Hunchback (J) [!]
 Super Hunchback (U)
@@ -1582,6 +1695,7 @@ Super Off Road (U) [!]
 Super R.C. Pro-Am (UE) [!]
 Super Robot Taisen - Link Battler (J) [C][!]
 Super Scrabble (U) [!]
+Super SLG (Unl) [C]
 Super Snakey (J) [S]
 Super Street Basketball 2 (J) [S]
 Supercross Freestyle (E) (M5) [C][!]
@@ -1597,6 +1711,8 @@ Sylvester and Tweety (E) (M6) [C][!]
 Sylvester and Tweety (U) (M3) [C][!]
 T2 - The Arcade Game (J)
 T2 - The Arcade Game (U) [!]
+Taachiyan (J) [S]
+Taikong Zhanshi DX3 - Zuizhong Huanxiang (Unl) [C][f1]
 Tail Gator (U) [!]
 Taiyou no Yuusha - Firebird GB (J)
 Taiyou no Yuusha - Firebird GB (J) [a1]
@@ -1628,6 +1744,8 @@ Teenage Mutant Ninja Turtles 3 - Turtles Kiki Ippatsu (J)
 Teenage Mutant Ninja Turtles III - Radical Rescue (U) [!]
 Teenage Mutant Ninja Turtles III - Radical Rescue (U) (V1.1) (Unreleased) [!]
 Tekichuu Rush (J)
+Tekkyu Fight! - The Great Battle Gaiden (J)
+Tenchi o Kurau (J)
 Tennis (W) [!]
 Terminator 2 - Judgment Day (UE) [!]
 Test Drive 2001 (U) [C][!]
@@ -1719,6 +1837,8 @@ Tweenies - Doodles' Bones (Sw) (M5) [C][!]
 TwinBee da!! (J) [!]
 Tyco RC - Racin' Ratz (U) [C][!]
 Tyrannosaurus Tex (U) (Prototype) [C][!]
+Uchuu Nin Tanaka Tarou de RPG Tsukuru GB2 (J) [C][!]
+Uchuu no Kishi Tekkaman Blade (J) [!]
 UEFA 2000 (E) (M6) [C][!]
 Ultimate Fighting Championship (E) [C][!]
 Ultimate Fighting Championship (U) [C][!]
@@ -1734,6 +1854,7 @@ Uno (U) [C][!]
 Vegas Stakes (U) [S][!]
 Velious - Roland no Majuu (J) [!]
 Velious II - Fukushuu no Jashin (J)
+Versus Hero - Kakutou Ou heno Michi (J)
 VIP (E) (M5) [C][!]
 VIP (U) [C][!]
 VR Sports Powerboat Racing (U) [C][!]
@@ -1834,12 +1955,14 @@ Xtreme Wheels (J) (Unreleased) [C][!]
 Xtreme Wheels (U) [C][!]
 XVII Olympic Winter Games, The - Lillehammer 1994 (U)
 XVII Olympic Winter Games, The - Lillehammer 1994 (U) (V1.1) (Unreleased) [!]
+Yaiba (J) [!]
 Yakouchuu (J) [C][!]
 Yakyuuman (J) (V1.0) [!]
 Yakyuuman (J) (V1.1)
 Yannick Noah Tennis (F)
 Yogi Bear in Yogi Bear's Goldrush (E) [!]
 Yogi Bear in Yogi Bear's Goldrush (U) [!]
+Yojijukugo 288 (J)
 Yong Zhe Dou E Long VIII (Unl) [C][f1]
 Yoshi (U) [!]
 Yoshi no Cookie (J)
@@ -1853,6 +1976,8 @@ Yuu Yuu Hakusho - Makai no Tobira (J)
 Yuu Yuu Hakusho - Makai Touitsu (J) [S]
 Yuu Yuu Hakusho (J)
 Z - The Miracle of the Zone (J) [S]
+Z Kai - Kyukyoku no Kobun Tango (J)
+Z Kai - Kyukyoku no Kobun Tango (J) [a1]
 Zelda no Densetsu - Fushigi no Kinomi - Daichi no Shou (J) [C][!]
 Zelda no Densetsu - Fushigi no Kinomi - Jikuu no Shou (J) [C][!]
 Zelda no Densetsu - Yume o Miru Shima (J) (V1.0)
@@ -1863,14 +1988,18 @@ Zelda no Densetsu - Yume o Miru Shima DX (J) (V1.2) [C][!]
 Zen - Intergalactic Ninja (E)
 Zen - Intergalactic Ninja (U)
 Zen-Nippon Pro Wrestling Jet (J) [S]
+Zhen San Guo Wu Shuang 2 - Shin Sangokumusou 2 (Unl) [C][f1]
+Zhi Huan Wang - Shou Bu Qu (Unl) [C][f1]
 Zhi Zhu Xia III - Dian Ying Ban (Unl) [C][f1]
+Zhong Zhuan Qi Bing (Unl) [C]
 Zoboomafoo - Playtime In Zobooland (U) [C][!]
+Zoids Densetsu (J)
 Zoop (J)
 Zoop (U) [!]
 
 Partially supported:
-Mani 4-in-1 (DMG-601 CHN) (Ch) [!]
 Mani 4-in-1 (DMG-602 CHN) (Ch) [!]
+Mani 4-in-1 (DMG-603 CHN) (Ch) [!]
 Mani 4-in-1 (DMG-604-CHN) (Ch) [!]
 Momotarou Collection (J) [S]
 Momotarou Collection 2 (J) [S]
