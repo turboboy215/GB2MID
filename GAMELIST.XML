@@ -605,6 +605,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Alleyway (W) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D19E</checksum>
+        <crc32>5cc01586</crc32>
+        <format>Alleyway</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Alone in the Dark - The New Nightmare (E) (M6) [C][!]</name>
 		<gamecode>BIDP</gamecode>
 		<rev>0</rev>
@@ -682,6 +693,28 @@
 		<parameters>CFG/Amazing Spider-Man, The (UE) [!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>America Oudan Ultra Quiz (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>65A4</checksum>
+        <crc32>3be275cd</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>America Oudan Ultra Quiz Part 2 (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9951</checksum>
+        <crc32>1b3231c8</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>4</parameters>
+	</rom>
+	<rom>
 		<name>AMF Bowling (U) [C][!]</name>
 		<gamecode>AFPE</gamecode>
 		<rev>0</rev>
@@ -702,6 +735,17 @@
 		<part></part>
 		<banks>6</banks>
 		<parameters>3</parameters>
+	</rom>
+	<rom>
+		<name>Another Bible (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8FEB</checksum>
+        <crc32>4a486435</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>4</parameters>
 	</rom>
 	<rom>
 		<name>Anpfiff - Der RTL Fussball-Manager (G) [C]</name>
@@ -1331,6 +1375,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Baseball (W) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3890</checksum>
+        <crc32>6eea2526</crc32>
+        <format>Alleyway</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Baseball Kids (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -1441,6 +1496,39 @@
 		<parameters>4062</parameters>
 	</rom>
 	<rom>
+		<name>Battle Crusher (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8BAF</checksum>
+        <crc32>ea4eb1a1</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1\4000</parameters>
+	</rom>
+	<rom>
+		<name>Battle Dodge Ball (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>11EE</checksum>
+        <crc32>a99242c0</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Battle Space (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E6A6</checksum>
+        <crc32>a828fd4f</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Battle Unit Zeoth (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -1472,6 +1560,17 @@
 		<part></part>
 		<banks>7C</banks>
 		<parameters>9</parameters>
+	</rom>
+	<rom>
+		<name>BattleCity (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F33B</checksum>
+        <crc32>a37a814a</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Battleship (U) [C][!]</name>
@@ -1845,6 +1944,28 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Bishoujo Senshi Sailor Moon (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B0AC</checksum>
+        <crc32>c2763e73</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Bishoujo Senshi Sailor Moon R (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>60A0</checksum>
+        <crc32>ea759875</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>E</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -2343,6 +2464,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Bomberman Quest (E) (M3) [C][!]</name>
+		<gamecode>AQVP</gamecode>
+		<rev>0</rev>
+		<checksum>AC39</checksum>
+        <crc32>5a9b9ae6</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Bomberman Quest (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E735</checksum>
+        <crc32>55210934</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Bomberman Quest (U) [C][!]</name>
+		<gamecode>AQVE</gamecode>
+		<rev>0</rev>
+		<checksum>EAA7</checksum>
+        <crc32>a089c656</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Bomberman Selection (K) [C][!]</name>
 		<gamecode>B2CK</gamecode>
 		<rev>0</rev>
@@ -2769,6 +2923,39 @@
         <format>Ed_Magnin</format>
 		<part></part>
 		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Cannon Fodder (E) (M5) [C][!]</name>
+		<gamecode>BCFP</gamecode>
+		<rev>0</rev>
+		<checksum>D1BC</checksum>
+        <crc32>824c3bf3</crc32>
+        <format>Cannon_Fodder</format>
+		<part></part>
+		<banks>2F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Cannon Fodder (E) (M5) (Beta) [C][!]</name>
+		<gamecode>BCFP</gamecode>
+		<rev>0</rev>
+		<checksum>B8ED</checksum>
+        <crc32>222c9dc6</crc32>
+        <format>Cannon_Fodder</format>
+		<part></part>
+		<banks>2F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Cannon Fodder (U) (M5) [C][!]</name>
+		<gamecode>BCFE</gamecode>
+		<rev>0</rev>
+		<checksum>D1BC</checksum>
+        <crc32>26f8e1a0</crc32>
+        <format>Cannon_Fodder</format>
+		<part></part>
+		<banks>2F</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -3616,6 +3803,28 @@
         <format>AudioArts</format>
 		<part></part>
 		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Cult Jump (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5FED</checksum>
+        <crc32>943059ba</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>1\4197</parameters>
+	</rom>
+	<rom>
+		<name>Cult Master - Ultraman ni Miserarete (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0AC3</checksum>
+        <crc32>c3eb82ef</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>10</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -4851,6 +5060,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Dragonslayer Chapter - Surrounded (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3C97</checksum>
+        <crc32>a8f20133</crc32>
+        <format>Natsume</format>
+		<part></part>
+		<banks>25,26,27</banks>
+		<parameters>5FE2\3</parameters>
+	</rom>
+	<rom>
 		<name>Driver - You Are The Wheelman (U) (M5) [C][!]</name>
 		<gamecode>BDRE</gamecode>
 		<rev>0</rev>
@@ -5068,6 +5288,17 @@
         <format>Beam_Software</format>
 		<part></part>
 		<banks>6</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>E'Fighter HOT (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D4C5</checksum>
+        <crc32>8fa2539d</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>20</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -5467,6 +5698,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Family Jockey (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>34E3</checksum>
+        <crc32>d6ef1450</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Felix the Cat (U)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -5478,7 +5720,7 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
-		<name>Feng Kuang Da Fu Weng (Crazy Monopoly) [C][f1]</name>
+		<name>Feng Kuang Da Fu Weng (Crazy Monopoly) (Unl) [C][f1]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
 		<checksum>5208</checksum>
@@ -5486,6 +5728,17 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>55,56,57</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Feng Zhi Gou II (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CDBC</checksum>
+        <crc32>a7b53474</crc32>
+        <format>Konami</format>
+		<part></part>
+		<banks>71</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -5662,6 +5915,17 @@
         <format>Square</format>
 		<part></part>
 		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Final Fantasy X - Fantasy War (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>774E</checksum>
+        <crc32>09fedecc</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>30</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -5893,6 +6157,39 @@
         <format>Imagineering</format>
 		<part></part>
 		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>From TV Animation One Piece - Maboroshi no Grand Line Boukenki! (J) [C][!]</name>
+		<gamecode>BZOJ</gamecode>
+		<rev>0</rev>
+		<checksum>7794</checksum>
+        <crc32>a7317bb8</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>E</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>From TV Animation One Piece - Yume no Luffy Kaizokudan Tanjou! (J) (V1.0) [C][!]</name>
+		<gamecode>BLUJ</gamecode>
+		<rev>0</rev>
+		<checksum>7DE0</checksum>
+        <crc32>c693aa37</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>E</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>From TV Animation One Piece - Yume no Luffy Kaizokudan Tanjou! (J) (V1.1) [C][!]</name>
+		<gamecode>BLUJ</gamecode>
+		<rev>1</rev>
+		<checksum>397F</checksum>
+        <crc32>a4dde805</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>E</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -6303,6 +6600,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Ganbaruga (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5AFF</checksum>
+        <crc32>6226d280</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Gargoyle's Quest - Ghosts'n Goblins (UE) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -6322,6 +6630,39 @@
         <format>Capcom</format>
 		<part></part>
 		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Gargoyle's Quest II - The Demon Darkness (E) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8102</checksum>
+        <crc32>a7447341</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1\4891</parameters>
+	</rom>
+	<rom>
+		<name>Gargoyle's Quest II - The Demon Darkness (U) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>65FA</checksum>
+        <crc32>db6f5930</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1\4891</parameters>
+	</rom>
+	<rom>
+		<name>Garou - Mark of the Wolves 2001 (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D21C</checksum>
+        <crc32>12d1b2f3</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>20</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -6820,6 +7161,94 @@
 		<parameters>4C75\3</parameters>
 	</rom>
 	<rom>
+		<name>Goukaku Boy Series - Gakken - Yojijukugo 288 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7074</checksum>
+        <crc32>631a752e</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>5</parameters>
+	</rom>
+	<rom>
+		<name>Goukaku Boy Series - Shikakui Atama wo Marukusuru - Kanji no Tatsujin (J) [!]</name>
+		<gamecode>BK4J</gamecode>
+		<rev>0</rev>
+		<checksum>F2B9</checksum>
+        <crc32>62b00f69</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Goukaku Boy Series - Shikakui Atama wo Marukusuru - Keisan no Tatsujin (J) [!]</name>
+		<gamecode>BC4J</gamecode>
+		<rev>0</rev>
+		<checksum>C002</checksum>
+        <crc32>71acbb67</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Goukaku Boy Series - Shikakui Atama wo Marukusuru - Koguko Battle Hen (J) [!]</name>
+		<gamecode>BF3J</gamecode>
+		<rev>0</rev>
+		<checksum>5510</checksum>
+        <crc32>7e6e16d5</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>1\5D36</parameters>
+	</rom>
+	<rom>
+		<name>Goukaku Boy Series - Shikakui Atama wo Marukusuru - Rika Battle Hen (J) [!]</name>
+		<gamecode>BH4J</gamecode>
+		<rev>0</rev>
+		<checksum>6B64</checksum>
+        <crc32>62aa54a4</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Goukaku Boy Series - Shikakui Atama wo Marukusuru - Sansuu Battle Hen (J) [!]</name>
+		<gamecode>BB4J</gamecode>
+		<rev>0</rev>
+		<checksum>2A24</checksum>
+        <crc32>de74fd69</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Goukaku Boy Series - Shikakui Atama wo Marukusuru - Shakai Battle Hen (J) [!]</name>
+		<gamecode>BE3J</gamecode>
+		<rev>0</rev>
+		<checksum>B2A9</checksum>
+        <crc32>8ba62b3d</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Goukaku Boy Series - Shikakui Atama wo Marukusuru - Zukei no Tatsujin (J) [!]</name>
+		<gamecode>BZ4J</gamecode>
+		<rev>0</rev>
+		<checksum>B6AB</checksum>
+        <crc32>479e2c18</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Gradius - The Interstellar Assault (U)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -7260,6 +7689,17 @@
 		<parameters>CFG/Hatris (U).cfg</parameters>
 	</rom>
 	<rom>
+		<name>He Jin Zhuang Bei II (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>BC5A</checksum>
+        <crc32>91eccf13</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Heavyweight Championship Boxing (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -7447,6 +7887,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Hinsyutu Eibunpo (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>EFCC</checksum>
+        <crc32>41c17421</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Hisshatsu Pachinko Boy - CR Monster House (J) [C][!]</name>
 		<gamecode>BHPJ</gamecode>
 		<rev>0</rev>
@@ -7532,6 +7983,17 @@
         <format>Imagineering</format>
 		<part></part>
 		<banks>6</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Hon Shougi (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>539B</checksum>
+        <crc32>6c407eed</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>2</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -7777,6 +8239,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Hyper Olympic Winter 2000 (J) [C][!]</name>
+		<gamecode>A2HJ</gamecode>
+		<rev>0</rev>
+		<checksum>5A85</checksum>
+        <crc32>a9b8f072</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>A</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Indiana Jones and the Infernal Machine (U) (M3) [C][!]</name>
 		<gamecode>BIJE</gamecode>
 		<rev>0</rev>
@@ -7918,6 +8391,17 @@
 		<part></part>
 		<banks>F</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Iron League (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7640</checksum>
+        <crc32>8e3c7e15</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>1\690D</parameters>
 	</rom>
 	<rom>
 		<name>Ironman - X-O Manowar in Heavy Metal (U) [S][!]</name>
@@ -8162,6 +8646,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Jinsei Game - Tomedachi Takusan Tsukurouyo! (J) [C][!]</name>
+		<gamecode>ACJJ</gamecode>
+		<rev>0</rev>
+		<checksum>7C1B</checksum>
+        <crc32>c8d46e99</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>3D</banks>
+		<parameters>1\4010</parameters>
+	</rom>
+	<rom>
 		<name>Jinsei Game (J) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -8338,6 +8833,28 @@
 		<parameters>1</parameters>
 	</rom>
 	<rom>
+		<name>Kachiu Mayoso Keiba Kizoku Ex '94 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>67DF</checksum>
+        <crc32>d4319169</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Kachiu Mayoso Keiba Kizoku Ex '95 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>456E</checksum>
+        <crc32>9c6a4918</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Kaept'n Blaubaer - Die verrueckte Schatzsuche (G) [C][!]</name>
 		<gamecode>BVRD</gamecode>
 		<rev>0</rev>
@@ -8380,6 +8897,17 @@
 		<part></part>
 		<banks>10</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Kanyoku Kotowaza 210 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9EFB</checksum>
+        <crc32>44f5a443</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>5</parameters>
 	</rom>
 	<rom>
 		<name>Karamucho Ziken (J) [S]</name>
@@ -8481,6 +9009,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Keiba Kizoku (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D1A6</checksum>
+        <crc32>a57e1ac1</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Keibajou he Ikou! Wide (J) [C][!]</name>
 		<gamecode>A5CJ</gamecode>
 		<rev>0</rev>
@@ -8523,6 +9062,17 @@
 		<part></part>
 		<banks>3F</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Kettou Beast Wars - Beast Senshi Saikyou Ketteisen (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1789</checksum>
+        <crc32>72895639</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>2F,30</banks>
+		<parameters>1\4723</parameters>
 	</rom>
 	<rom>
 		<name>Kick Attack (J) (Unreleased) [!]</name>
@@ -8602,6 +9152,72 @@
 		<parameters>CFG/Killer Instinct (U) [S][a1].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Kindaichi Shounen no Jikenbo - 10nenme no Shoutaijou (J) [C][!]</name>
+		<gamecode>BKSJ</gamecode>
+		<rev>0</rev>
+		<checksum>8005</checksum>
+        <crc32>de52ffdc</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>80</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>King of Fighters '95, The (E) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C50F</checksum>
+        <crc32>a3e9b148</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>King of Fighters '95, The (U) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E11E</checksum>
+        <crc32>1ff84e8c</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>King of Fighters 98, The (Unl)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>ACD5</checksum>
+        <crc32>c99dfe6f</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>1\46A5</parameters>
+	</rom>
+	<rom>
+		<name>King of Fighters R-2 (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9163</checksum>
+        <crc32>f7630d88</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>30</banks>
+		<parameters>1\46A5</parameters>
+	</rom>
+	<rom>
+		<name>King of Fighters, The - Heat of Battle (E)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>867A</checksum>
+        <crc32>4d2d8bc3</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>1\46A5</parameters>
+	</rom>
+	<rom>
 		<name>Kinniku Banzuke GB - Chousensha wa Kimida! (J) [C][!]</name>
 		<gamecode>A5KJ</gamecode>
 		<rev>0</rev>
@@ -8610,6 +9226,17 @@
         <format>Konami</format>
 		<part></part>
 		<banks>1E,1F,20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Kinnikuman DM (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>87CE</checksum>
+        <crc32>48c2cd38</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>8</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -9215,6 +9842,17 @@
         <format>Konami</format>
 		<part></part>
 		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Konami Winter Games (E) [C][!]</name>
+		<gamecode>A2HP</gamecode>
+		<rev>0</rev>
+		<checksum>D8CB</checksum>
+        <crc32>1c644040</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>A</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -10153,6 +10791,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Lord of the Rings, The - The Fellowship of the Ring (Unl) [C]][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5181</checksum>
+        <crc32>5fded510</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>11</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Lost World, The - Jurassic Park (U) [S][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -10516,6 +11165,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Makaimura Gaiden (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CC20</checksum>
+        <crc32>cfa358de</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1\4891</parameters>
+	</rom>
+	<rom>
 		<name>Malibu Beach Volleyball (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -10533,8 +11193,19 @@
 		<checksum>4CB7</checksum>
         <crc32>0c38a775</crc32>
         <format>Hirokazu_Tanaka</format>
-		<part>1/3=Tetris</part>
+		<part>1/4=Tetris</part>
 		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+		<rom>
+		<name>Mani 4-in-1 (DMG-601 CHN) (Ch) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>4CB7</checksum>
+        <crc32>0c38a775</crc32>
+        <format>Alleyway</format>
+		<part>2/4=Alleyway</part>
+		<banks>6</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -10544,7 +11215,7 @@
 		<checksum>4CB7</checksum>
         <crc32>0c38a775</crc32>
         <format>Hirokazu_Tanaka</format>
-		<part>2/3=Yakyuuman</part>
+		<part>3/4=Yakyuuman</part>
 		<banks>8</banks>
 		<parameters></parameters>
 	</rom>
@@ -10555,7 +11226,7 @@
 		<checksum>4CB7</checksum>
         <crc32>0c38a775</crc32>
         <format>TOSE</format>
-		<part>3/3=Tennis</part>
+		<part>4/4=Tennis</part>
 		<banks>9</banks>
 		<parameters>CFG/Mani 4-in-1 (DMG-601 CHN) (Ch) [!].cfg</parameters>
 	</rom>
@@ -10568,6 +11239,39 @@
         <format>David_Whittaker</format>
 		<part>1/1=Chase H.Q.</part>
 		<banks>C</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mani 4-in-1 (DMG-603 CHN) (Ch) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5AFF</checksum>
+        <crc32>c373ac09</crc32>
+        <format>Nova</format>
+		<part>1/3=Ganbaruga</part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mani 4-in-1 (DMG-603 CHN) (Ch) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5AFF</checksum>
+        <crc32>c373ac09</crc32>
+        <format>Nova</format>
+		<part>2/3=Miracle Adventure of Esparks</part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mani 4-in-1 (DMG-603 CHN) (Ch) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5AFF</checksum>
+        <crc32>c373ac09</crc32>
+        <format>Nova</format>
+		<part>3/3=Zoids Densetsu</part>
+		<banks>16</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -10723,6 +11427,28 @@
 		<part></part>
 		<banks>79</banks>
 		<parameters>CFG/Mario Tennis GB (J) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Mark of the Wolfs (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9C19</checksum>
+        <crc32>50a1e9a9</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mark of the Wolves (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CE00</checksum>
+        <crc32>219decf9</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Marmalade Boy (J) [S]</name>
@@ -11494,6 +12220,17 @@
 		<banks>1</banks>
 		<parameters>2</parameters>
 	</rom>
+		<rom>
+		<name>Millenium Winter Sports (U) [C][!]</name>
+		<gamecode>A2HE</gamecode>
+		<rev>0</rev>
+		<checksum>D9CC</checksum>
+        <crc32>b57dabae</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>A</banks>
+		<parameters></parameters>
+	</rom>
 	<rom>
 		<name>Milon no Meiykuu Kumikyoku (J)</name>
 		<gamecode></gamecode>
@@ -11517,6 +12254,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Minesweeper (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>BB76</checksum>
+        <crc32>5532b3d1</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Mini 4 Boy (J) [S][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -11536,6 +12284,17 @@
         <format>Technos_Japan</format>
 		<part></part>
 		<banks>20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Miracle Adventure of Esparks (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>17B3</checksum>
+        <crc32>b3ad9b76</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>8</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -11591,6 +12350,17 @@
         <format>AudioArts</format>
 		<part></part>
 		<banks>F,10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mo Shou Zheng Ba 3 - Hun Luan Zhi Jie (Warcraft 3) (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>21C6</checksum>
+        <crc32>d40a87e7</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>F</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -11737,6 +12507,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Monster Maker 2 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9657</checksum>
+        <crc32>66e708fc</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Monster Max (U) (M6)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -11746,6 +12527,39 @@
 		<part></part>
 		<banks>6</banks>
 		<parameters>CFG/Monster Max (U) (M6).cfg</parameters>
+	</rom>
+	<rom>
+		<name>Monster Race (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>BA58</checksum>
+        <crc32>ad529057</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>6\385F</parameters>
+	</rom>
+	<rom>
+		<name>Monster Race 2 (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>792B</checksum>
+        <crc32>b985f0d8</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>8\0D65</parameters>
+	</rom>
+	<rom>
+		<name>Monster Race Other (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>EC56</checksum>
+        <crc32>bd3039e5</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>7\2CBD</parameters>
 	</rom>
 	<rom>
 		<name>Monster Truck (J)</name>
@@ -12815,6 +13629,50 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Nettou Garou 2 (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2F1F</checksum>
+        <crc32>aa98687f</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>9\1C59</parameters>
+	</rom>
+	<rom>
+		<name>Nettou King of Fighters '95 (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B2B7</checksum>
+        <crc32>8712f17b</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Nettou King of Fighters '96 (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E11B</checksum>
+        <crc32>fecdae42</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>1\46A5</parameters>
+	</rom>
+	<rom>
+		<name>Nettou King of Fighters '97 (J) [S][p1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B01C</checksum>
+        <crc32>ac61ef47</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>1\46A5</parameters>
+	</rom>
+	<rom>
 		<name>New Addams Family Series, The (E) (M6) [C]</name>
 		<gamecode>BAIP</gamecode>
 		<rev>0</rev>
@@ -13321,6 +14179,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Otogi Banasi Tai (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0F07</checksum>
+        <crc32>98500521</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1\4000</parameters>
+	</rom>
+	<rom>
 		<name>Otoko Jyuku (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -13607,6 +14476,17 @@
 		<parameters>CFG/Pia Carrot he Youkoso!! 2.2 (J) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Pian Wi Zhang Huang Jin Tai Yang - Feng Yin De Yuan Gu Lian Jin Shu (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6DB4</checksum>
+        <crc32>be02aac9</crc32>
+        <format>Konami</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>	
+	<rom>
 		<name>Pinball - 66hiki no Wani Daikoushin! (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -13891,6 +14771,17 @@
 		<part></part>
 		<banks>F5</banks>
 		<parameters>3</parameters>
+	</rom>
+	<rom>
+		<name>Pocket Family (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B103</checksum>
+        <crc32>48993d4f</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>1\6A46</parameters>
 	</rom>
 	<rom>
 		<name>Pocket Family GB2 (J) [C][!]</name>
@@ -15499,6 +16390,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Qi Tian Da Sheng - Sun Wu Kong (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E11B</checksum>
+        <crc32>a336c40c</crc32>
+        <format>Konami</format>
+		<part></part>
+		<banks>F</banks>
+		<parameters></parameters>
+	</rom>	
+	<rom>
 		<name>Qix (JU) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -15507,6 +16409,17 @@
         <format>Hiroshi_Wada</format>
 		<part></part>
 		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Quan Ba Tian Xia (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1F0D</checksum>
+        <crc32>5bcf90fa</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>10</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -15552,6 +16465,17 @@
 		<part></part>
 		<banks>20</banks>
 		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Quiz Sekai wa Show by Shoubai!! (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>FF7D</checksum>
+        <crc32>d8c33dcd</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Race Days (Dirty Racing & 4 Wheel Drive) (E)</name>
@@ -15719,6 +16643,39 @@
 		<parameters>CFG/Rampage 2 - Universal Tour (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Ranma Nibun no Ichi - Kakugeki!! (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>12B6</checksum>
+        <crc32>613e657a</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Ranma Nibun no Ichi - Part 2 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>40C2</checksum>
+        <crc32>d9d57151</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>4</parameters>
+	</rom>
+	<rom>
+		<name>Ranma Nibun no Ichi (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E735</checksum>
+        <crc32>4e05537e</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>1\2A9C</parameters>
+	</rom>
+	<rom>
 		<name>Rats! (U) (M2) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -15763,6 +16720,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Real Bout Special (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F00D</checksum>
+        <crc32>f4031d4c</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>1\46A5</parameters>
+	</rom>
+	<rom>
 		<name>Real Pro Yakyuu! - Central League Hen (J) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -15793,6 +16761,17 @@
         <format>Capcom</format>
 		<part></part>
 		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Rekishi Masters 512 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DA6E</checksum>
+        <crc32>10bd83ba</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>1</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -16478,6 +17457,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>RPG Tsukuru GB (J) [C][!]</name>
+		<gamecode>A2QJ</gamecode>
+		<rev>0</rev>
+		<checksum>7E5E</checksum>
+        <crc32>0b614307</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>78</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>R-Type (J) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -16764,6 +17754,39 @@
 		<parameters>S</parameters>
 	</rom>
 	<rom>
+		<name>San Goku Shi - Act C (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>49C2</checksum>
+        <crc32>02747bcf</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>79</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>San Goku Shi - GameBoy Ban 2 (J) [C][!]</name>
+		<gamecode>AS9J</gamecode>
+		<rev>0</rev>
+		<checksum>E29E</checksum>
+        <crc32>e787b44c</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>A\15AE</parameters>
+	</rom>
+	<rom>
+		<name>Sanrio Carnival (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E84B</checksum>
+        <crc32>48d8ab7a</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
 		<name>Sanrio Timenet - Kako Hen (J) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -16819,6 +17842,17 @@
 		<parameters>CFG/Scooby-Doo! - Classic Creep Capers (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>SD Lupin III - Kinko Yaburi Daisakusen (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B1BC</checksum>
+        <crc32>f0b73db4</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>1\1A19</parameters>
+	</rom>
+	<rom>
 		<name>Sea Battle (E) (M4)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -16871,6 +17905,17 @@
         <format>Square</format>
 		<part></part>
 		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Seme COM Dungeon - Druruaga (J) [C][!]</name>
+		<gamecode>BV6J</gamecode>
+		<rev>0</rev>
+		<checksum>9D3A</checksum>
+        <crc32>0b1b928c</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>79</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -17072,6 +18117,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Shao Lin Shi San Gun - Ying Xiong Jiu Zhu (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>01DA</checksum>
+        <crc32>91160598</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>C4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Shaoling Legend - Hero, the Saver (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>4393</checksum>
+        <crc32>88ba4490</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>C4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Shaq Fu (U) [S][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -17149,6 +18216,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Sheng Huo Jiang Mo Lu Wai Chuan (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>21C6</checksum>
+        <crc32>1066ec96</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Sheng Shou Wu Yu - Shen Long Chuan Shuo (Unl) [C][f1]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -17168,6 +18246,105 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>3,4,1E</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Shi Mian Maifu - Fengyun Pian (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D2F1</checksum>
+        <crc32>7cdf4636</crc32>
+        <format>Natsume</format>
+		<part></part>
+		<banks>25,26,27</banks>
+		<parameters>5FE2\3</parameters>
+	</rom>
+	<rom>
+		<name>Shikakui Atama o Maruku Suru - Joushiki no Shou (J)</name>
+		<gamecode>BS4J</gamecode>
+		<rev>0</rev>
+		<checksum>5D70</checksum>
+        <crc32>5d43a385</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>17</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Shikakui Atama o Maruku Suru - Nanmon no Shou (J)</name>
+		<gamecode>BD4J</gamecode>
+		<rev>0</rev>
+		<checksum>B877</checksum>
+        <crc32>3c907f2c</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>17</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Shikakui Atama o Maruku Suru - Rika Battle Hen (J)</name>
+		<gamecode>AE8J</gamecode>
+		<rev>0</rev>
+		<checksum>888A</checksum>
+        <crc32>c34ae38f</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Shikakui Atama o Maruku Suru - Sansu Battle (J) (V1.0)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>01E5</checksum>
+        <crc32>0dadb829</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Shikakui Atama o Maruku Suru - Sansu Battle (J) (V1.1)</name>
+		<gamecode></gamecode>
+		<rev>1</rev>
+		<checksum>BF1E</checksum>
+        <crc32>74821248</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Shikakui Atama o Maruku Suru - Shakai Battle (J)</name>
+		<gamecode>AK8J</gamecode>
+		<rev>0</rev>
+		<checksum>B893</checksum>
+        <crc32>87f0cfad</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Shikakui Atama o Maruku Suru (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8517</checksum>
+        <crc32>f141b2dc</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Shin San Guo Shi 2 (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8083</checksum>
+        <crc32>33f56c90</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>79</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -17292,6 +18469,28 @@
 		<parameters>S</parameters>
 	</rom>
 	<rom>
+		<name>Shu Ma Bao Long 3 - Shui Jing Ban (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>064D</checksum>
+        <crc32>b1d60b8b</crc32>
+        <format>Kouji_Murata</format>
+		<part></part>
+		<banks>B</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Shu Ma Bao Long 2003 - Ge Dou Ban (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E603</checksum>
+        <crc32>0c0bb798</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>C4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Shuihi Shenshou (Unl) [C][f2]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -17323,6 +18522,39 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Sika Kokugo (J)</name>
+		<gamecode>AJ6J</gamecode>
+		<rev>0</rev>
+		<checksum>CE8A</checksum>
+        <crc32>8bd567d1</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>1\5D36</parameters>
+	</rom>
+	<rom>
+		<name>Sika Kujosika (J) [!]</name>
+		<gamecode>BJ3J</gamecode>
+		<rev>0</rev>
+		<checksum>6073</checksum>
+        <crc32>26772e04</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>17</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Sika Kunanman (J) (Unreleased) [!]</name>
+		<gamecode>BN3J</gamecode>
+		<rev>0</rev>
+		<checksum>568F</checksum>
+        <crc32>91ab959f</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>17</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Simpsons, The - Bart vs the Juggernauts (U) [!]</name>
@@ -17422,6 +18654,17 @@
 		<part></part>
 		<banks>D</banks>
 		<parameters>4D90\3</parameters>
+	</rom>
+	<rom>
+		<name>Sky Dragon (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>AFB8</checksum>
+        <crc32>5843817e</crc32>
+        <format>Natsume</format>
+		<part></part>
+		<banks>25,26,27</banks>
+		<parameters>5FE2\3</parameters>
 	</rom>
 	<rom>
 		<name>Small Soldiers (U) [S][!]</name>
@@ -17806,6 +19049,28 @@
         <format>Martin_Walker</format>
 		<part></part>
 		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Speedy Gonzales - Aztec Adventure (J) (Unreleased) [C][!]</name>
+		<gamecode>A35J</gamecode>
+		<rev>0</rev>
+		<checksum>948F</checksum>
+        <crc32>c97d74f5</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Speedy Gonzales - Aztec Adventure (U) [C][!]</name>
+		<gamecode>ALZE</gamecode>
+		<rev>0</rev>
+		<checksum>4E53</checksum>
+        <crc32>ae82afa4</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>2</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -18304,6 +19569,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Street Fighter II (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>1</rev>
+		<checksum>568A</checksum>
+        <crc32>c775f488</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>1F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Street Fighter II (UE) (V1.0) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>1</rev>
+		<checksum>60DA</checksum>
+        <crc32>54a0aaa3</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>1F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Street Fighter II (UE) (V1.1) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>1</rev>
+		<checksum>78C5</checksum>
+        <crc32>54a0aaa3</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>1F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Street Racer (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -18544,6 +19842,17 @@
 		<part></part>
 		<banks>D</banks>
 		<parameters>CFG/Super Donkey Kong GB (J) [S].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Super Fighters '99 (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E11B</checksum>
+        <crc32>ce41b1bb</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>1\46A5</parameters>
 	</rom>
 	<rom>
 		<name>Super Hunchback (E)</name>
@@ -18843,6 +20152,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Super SLG (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C605</checksum>
+        <crc32>808f19d7</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>C</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Super Snakey (J) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -19005,6 +20325,28 @@
         <format>Beam_Software</format>
 		<part></part>
 		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Taachiyan (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>56EB</checksum>
+        <crc32>96555e9a</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1\6352</parameters>
+	</rom>
+	<rom>
+		<name>Taikong Zhanshi DX3 - Zuizhong Huanxiang (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>02E1</checksum>
+        <crc32>b28a34d2</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>36</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -19380,6 +20722,28 @@
 		<part></part>
 		<banks>1</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tekkyu Fight! - The Great Battle Gaiden (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2019</checksum>
+        <crc32>b8da8eb5</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>1\55FB</parameters>
+	</rom>
+	<rom>
+		<name>Tenchi o Kurau (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>006A</checksum>
+        <crc32>a9018354</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1\67C6</parameters>
 	</rom>
 	<rom>
 		<name>Tennis (W) [!]</name>
@@ -20449,6 +21813,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Uchuu Nin Tanaka Tarou de RPG Tsukuru GB2 (J) [C][!]</name>
+		<gamecode>B3QJ</gamecode>
+		<rev>0</rev>
+		<checksum>BECA</checksum>
+        <crc32>219e42e3</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>F1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Uchuu no Kishi Tekkaman Blade (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>FBB2</checksum>
+        <crc32>22d8889e</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>1\51FE</parameters>
+	</rom>
+	<rom>
 		<name>UEFA 2000 (E) (M6) [C][!]</name>
 		<gamecode>BUEP</gamecode>
 		<rev>0</rev>
@@ -20633,6 +22019,17 @@
         <format>NMK</format>
 		<part></part>
 		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Versus Hero - Kakutou Ou heno Michi (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>EB27</checksum>
+        <crc32>449cf2e4</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>7</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -21791,6 +23188,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Yaiba (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CDCD</checksum>
+        <crc32>cc19768e</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>1\4006</parameters>
+	</rom>
+	<rom>
 		<name>Yakouchuu (J) [C][!]</name>
 		<gamecode>AYTJ</gamecode>
 		<rev>0</rev>
@@ -21855,6 +23263,17 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Yojijukugo 288 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0CB8</checksum>
+        <crc32>c8e01c7c</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>5</parameters>
 	</rom>
 	<rom>
 		<name>Yong Zhe Dou E Long VIII (Unl) [C][f1]</name>
@@ -22000,6 +23419,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Z Kai - Kyukyoku no Kobun Tango (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C84C</checksum>
+        <crc32>99062c13</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Z Kai - Kyukyoku no Kobun Tango (J) [a1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C84C</checksum>
+        <crc32>b3114619</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Zelda no Densetsu - Yume o Miru Shima (J) (V1.0)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -22110,6 +23551,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Zhen San Guo Wu Shuang 2 - Shin Sangokumusou 2 (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CC6C</checksum>
+        <crc32>8de5f8d5</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>F2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Zhi Huan Wang - Shou Bu Qu (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5180</checksum>
+        <crc32>49e77dd9</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>11</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Zhi Zhu Xia III - Dian Ying Ban (Unl) [C][f1]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -22121,6 +23584,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Zhong Zhuan Qi Bing (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1007</checksum>
+        <crc32>7175f80a</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>7C</banks>
+		<parameters>B\486F</parameters>
+	</rom>
+	<rom>
 		<name>Zoboomafoo - Playtime In Zobooland (U) [C][!]</name>
 		<gamecode>BZBE</gamecode>
 		<rev>0</rev>
@@ -22129,6 +23603,17 @@
         <format>Cosmigo</format>
 		<part></part>
 		<banks>33,34</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Zoids Densetsu (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2038</checksum>
+        <crc32>c32dca06</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>2</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
