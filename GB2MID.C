@@ -639,6 +639,10 @@ int main(int args, char* argv[])
             {
                 driver = AJ_Gonzalez;
             }
+            else if (!strcmp(formatString, "Alleyway"))
+            {
+                driver = Alleyway;
+            }
             else if (!strcmp(formatString, "AudioArts"))
             {
                 driver = AudioArts;
@@ -650,6 +654,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "Capcom"))
             {
                 driver = Capcom;
+            }
+            else if (!strcmp(formatString, "Cannon_Fodder"))
+            {
+                driver = Cannon_Fodder;
             }
             else if (!strcmp(formatString, "Carillon_Player"))
             {
@@ -778,6 +786,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "NMK"))
             {
                 driver = NMK;
+            }
+            else if (!strcmp(formatString, "Nova"))
+            {
+                driver = Nova;
             }
             else if (!strcmp(formatString, "Ocean"))
             {

@@ -1,0 +1,7 @@
+﻿  TIERTEX.C
+C:\Users\Super\source\repos\GBMLIB\GBMLIB\TIERTEX.C(89,18): warning C4047: '!=': 'long' differs in levels of indirection from 'void *'
+C:\Users\Super\source\repos\GBMLIB\GBMLIB\TIERTEX.C(294,30): warning C4267: 'function': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\Super\source\repos\GBMLIB\GBMLIB\TIERTEX.C(297,14): warning C4267: '+=': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\Super\source\repos\GBMLIB\GBMLIB\TIERTEX.C(189,16): warning C4101: 'lowNibble': unreferenced local variable
+C:\Users\Super\source\repos\GBMLIB\GBMLIB\TIERTEX.C(190,16): warning C4101: 'highNibble': unreferenced local variable
+  GBMLIB.vcxproj -> C:\Users\Super\source\repos\GBMLIB\x64\Debug\GBMLIB.lib
