@@ -318,6 +318,25 @@ void NovaProc(int bank, char parameters[4][50])
 							songBank = 0x3F;
 						}
 					}
+					else if (bankNum == 0xF1)
+					{
+						if (songBank == 0x77)
+						{
+							songBank = 0xF0;
+						}
+						else if (songBank == 0x78)
+						{
+							songBank = 0xF8;
+						}
+						else if (songBank == 0x79)
+						{
+							songBank = 0xF4;
+						}
+						else if (songBank == 0x7A)
+						{
+							songBank = 0xFC;
+						}
+					}
 				}
 				fseek(rom, (songBank * bankSize), SEEK_SET);
 				exRomData = (unsigned char*)malloc(bankSize);
