@@ -7447,6 +7447,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Hai Zhan Qi Bing (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3577</checksum>
+        <crc32>bb78f17e</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>25</banks>
+		<parameters>B\486F</parameters>
+	</rom>
+	<rom>
 		<name>Hamster Club (J) [C][!]</name>
 		<gamecode>AJNJ</gamecode>
 		<rev>0</rev>
