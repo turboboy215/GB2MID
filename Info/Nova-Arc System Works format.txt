@@ -1,0 +1,85 @@
+Song table
+=======================================
+There are two main variants of this driver: a single-banked version and a multi-banked version.
+
+The single-banked version is found using the following code:
+ld c, a
+ld b, 00
+ld hl, SongTable
+add hl, bc
+add hl, bc
+
+Which equals the following in hex:
+4F 06 00 21 ?? ?? 09 09
+
+For the multi-banked version, the following code is used:
+xor a
+ld d, a
+ld hl, BankMapping
+add hl, de
+ld a, [hl]
+call ????
+ld hl, SongTable
+add hl, de
+add hl, de
+ldi a, [hl]
+ld b, [hl]
+ld c, a
+
+Which equals the following in hex:
+AF 57 21 ?? ?? 19 7E CD xx xx 21 ?? ?? 19 19 2A 46 4F
+
+The bank-mapping is a series of single bytes that specifies the bank number.
+
+Song header
+=======================================
+Song headers are structured as follows:
+1. Number of channels
+2. Music/SFX identifier (if lower 4 bits are 0, than music, if lower 4 bits are 8, then SFX)
+3. Channel identifier (13 = 1, 18 = 2, 1D = 3, 22 = 4)
+4-5. Channel pointer
+6. Channel transpose
+7. End of channel flag?
+(Repeat 2-7 for number of channels)
+
+(NOTE: some games have 2 bytes between the number of channels and the music/SFX identifier.)
+
+Song commands
+=======================================
+Songs are comprised of the following commands:
+xx (00-7F) = Set note length (and play note)
+(For most variants on channel 4, it is xx yy (X = Drum note, Y = Length, if Y is less than 80.)
+80-DF (xx) = Play note (80 = rest) (If X is less than 80, then X = length.)
+E0-E2 = (Invalid)
+E3 xx = End of channel (no loop)
+E4 xy = Set envelope
+E5 xx xx = Jump to position (usually used for loop)
+E6 xx = Set transpose (in addition to specified in header)
+E7 xx yy zz zz  = Repeat (instance X) section Z for Y times 
+E8 xx = Set distortion effect?
+E9 xx = Set pan?
+EA xx xx = Set tempo (Another Bible only)
+EC xx xx = Go to macro
+ED = Exit macro
+EE xx = Set duty
+EF xx = Set sweep
+F0 = Turn off vibrato?
+F1 xx = Set vibrato?
+F2 = Turn on vibrato?
+F3 xx = Set waveform
+F4 xx = End of channel (no loop) (v2)?
+F5 xx = Set note size
+F6 xx = Set tempo
+F7-F9 = (Invalid)
+FA xx = Hold note?
+FB-FF = (Invalid)
+
+Sanrio Carnival variant
+=======================================
+The game Sanrio Carnival uses a non-standard variation of the driver with the following differences:
+ - There are two bytes following the number of channels in the header representing the current tempo.
+ - The "set note length" command does not additionally play a note of that length.
+ - The "play note" command does not ever use an additional byte for the length.
+ - The commands F5 and F6 are used for conditional jumps, as follows:
+F5 = Conditional jump 1 to position Y on time X (F5 xx yy yy)
+F6 = Conditional jump 2 to position Y on time X (F6 xx yy yy)

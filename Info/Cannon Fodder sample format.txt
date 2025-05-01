@@ -1,0 +1,5 @@
+Sample table
+=======================================
+1-2. Offset
+3-4. Length (multiply by 0x10)
+5. Bank number

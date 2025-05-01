@@ -1,0 +1,88 @@
+This driver is very basic. It does not feature a proper song table; rather, it loads songs from hardcoded addresses. The sound engine was only used in 2 early first-party releases - Alleyway and Baseball. Alleyway only uses channel 2 and 3 for music, while Baseball uses these channels and sometimes channel 1 for some songs, but neither game uses channel 4.
+
+Song addresses (Alleyway)
+=======================================
+$75E3 - CH2
+$7652 - CH3
+
+$76C3 - CH2
+$76D9 - CH3
+
+$76F0 - CH2
+$7712 - CH3
+
+$7733 - CH2
+$7738 - CH3
+
+$773B - CH2
+$7750 - CH3
+
+$7765 - CH2
+$779B - CH3
+
+$77D7 - CH2
+$780D - CH3
+
+$7849 - CH2
+$785C - CH3
+
+$7875 - CH2
+$7887 - CH3
+
+$789C - CH2
+$78D6 - CH3
+
+$790F - CH2
+$7919 - CH3
+
+$791F - CH2
+$7988 - CH3
+
+Song addresses (Baseball)
+=======================================
+$7670 - CH2
+$76DA - CH3
+
+$7751 - CH1
+$7794 - CH2
+$77D9 - CH3
+
+$798F - CH1
+$79E6 - CH2
+
+$7A4D - CH1
+$7A6C - CH2
+$7A8B - CH3
+
+$7699 - CH2
+$76F1 - CH3
+
+$7AAF - CH1
+$7AEC - CH2
+$7B24 - CH3
+
+$7B6C - CH1
+$7BAB - CH2
+$7BEA - CH3
+
+$7C66 - CH1
+$7C71 - CH2
+$7C7C - CH3
+
+$781E - CH1
+$7834 - CH2
+$7848 - CH3
+
+$785E - CH1
+$78F7 - CH2
+
+$7515 - CH1
+$75B3 - CH2
+
+Commands
+=======================================
+00 = End of song (no loop)
+01 = Rest
+02-7E = Play note
+7F = End of song (loop)
+80+ = Set note length (length comes from table)
