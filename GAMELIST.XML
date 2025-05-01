@@ -4257,6 +4257,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Digimon Fight (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0B45</checksum>
+        <crc32>5d2dcb3c</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>F1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Digimon Sapphire 2003 (Unl) [C][f1]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
