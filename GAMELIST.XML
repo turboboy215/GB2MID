@@ -2211,6 +2211,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Boggle Plus (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>469F</checksum>
+        <crc32>70c8c799</crc32>
+        <format>Sculptured_Software</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>A</parameters>
+	</rom>
+	<rom>
 		<name>Boku no Camp-jou (J) [C][!]</name>
 		<gamecode>BDPJ</gamecode>
 		<rev>0</rev>
@@ -7909,6 +7920,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>High Stakes Gambling (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>EF81</checksum>
+        <crc32>6b17abe5</crc32>
+        <format>Sculptured_Software</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>1F</parameters>
+	</rom>
+	<rom>
 		<name>Hinsyutu Eibunpo (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -8501,6 +8523,28 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Jack Nicklaus Golf (F) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E64E</checksum>
+        <crc32>374893d7</crc32>
+        <format>Sculptured_Software</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>26</parameters>
+	</rom>
+	<rom>
+		<name>Jack Nicklaus Golf (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B1DF</checksum>
+        <crc32>654988b2</crc32>
+        <format>Sculptured_Software</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>26</parameters>
 	</rom>
 	<rom>
 		<name>Jankenman (J)</name>
@@ -9238,6 +9282,17 @@
 		<part></part>
 		<banks>20</banks>
 		<parameters>1\46A5</parameters>
+	</rom>
+	<rom>
+		<name>Kingdom Crusade (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B28E</checksum>
+        <crc32>920202dc</crc32>
+        <format>Sculptured_Software</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>31</parameters>
 	</rom>
 	<rom>
 		<name>Kinniku Banzuke GB - Chousensha wa Kimida! (J) [C][!]</name>
@@ -10063,6 +10118,17 @@
 		<part></part>
 		<banks>10</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Legend of Prince Valiant, The (E)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8EEC</checksum>
+        <crc32>179c494e</crc32>
+        <format>Sculptured_Software</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>31</parameters>
 	</rom>
 	<rom>
 		<name>Legend of the River King 2 (E) [C][!]</name>
@@ -12516,6 +12582,61 @@
 		<part></part>
 		<banks>1D,1E,1F,20</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Monopoly (E)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E287</checksum>
+        <crc32>987b621e</crc32>
+        <format>Sculptured_Software</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>13</parameters>
+	</rom>
+	<rom>
+		<name>Monopoly (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>45C0</checksum>
+        <crc32>0503e567</crc32>
+        <format>Sculptured_Software</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>13</parameters>
+	</rom>
+	<rom>
+		<name>Monopoly (J) [M]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DAA5</checksum>
+        <crc32>d8ac08b5</crc32>
+        <format>Sculptured_Software</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>13</parameters>
+	</rom>
+	<rom>
+		<name>Monopoly (U) [C][!]</name>
+		<gamecode>ANOE</gamecode>
+		<rev>0</rev>
+		<checksum>63B1</checksum>
+        <crc32>e559a717</crc32>
+        <format>Sculptured_Software</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>13</parameters>
+	</rom>
+	<rom>
+		<name>Monopoly (U) [M][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8734</checksum>
+        <crc32>fd90f0d6</crc32>
+        <format>Sculptured_Software</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>13</parameters>
 	</rom>
 	<rom>
 		<name>Monster AG, Die (G) [C][!]</name>
@@ -17435,6 +17556,39 @@
 		<parameters>S</parameters>
 	</rom>
 	<rom>
+		<name>Roger Clemens MVP Baseball (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5392</checksum>
+        <crc32>38c126aa</crc32>
+        <format>Sculptured_Software</format>
+		<part></part>
+		<banks>E</banks>
+		<parameters>17</parameters>
+	</rom>
+	<rom>
+		<name>Roger Clemens MVP Baseball (U) (V1.0) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8B5C</checksum>
+        <crc32>9da8595b</crc32>
+        <format>Sculptured_Software</format>
+		<part></part>
+		<banks>E</banks>
+		<parameters>17</parameters>
+	</rom>
+	<rom>
+		<name>Roger Clemens MVP Baseball (U) (V1.1) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5392</checksum>
+        <crc32>fa955b39</crc32>
+        <format>Sculptured_Software</format>
+		<part></part>
+		<banks>E</banks>
+		<parameters>17</parameters>
+	</rom>
+	<rom>
 		<name>Ronaldo V.Football (E) (M7) [C][!]</name>
 		<gamecode>AORP</gamecode>
 		<rev>0</rev>
@@ -20614,6 +20768,28 @@
 		<parameters>S</parameters>
 	</rom>
 	<rom>
+		<name>Tecmo Bowl (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>BC79</checksum>
+        <crc32>cfd74e34</crc32>
+        <format>Sculptured_Software</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>26</parameters>
+	</rom>
+	<rom>
+		<name>Tecmo Bowl (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C47D</checksum>
+        <crc32>e4f29760</crc32>
+        <format>Sculptured_Software</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>26</parameters>
+	</rom>
+	<rom>
 		<name>Teenage Mutant Hero Turtles - Back from the Sewers (E) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -21417,6 +21593,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Total Carnage (UE) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DD93</checksum>
+        <crc32>3700927f</crc32>
+        <format>Sculptured_Software</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>11\6335</parameters>
+	</rom>
+	<rom>
 		<name>Total Soccer 2000 (E) (M6) [C][!]</name>
 		<gamecode>AO3P</gamecode>
 		<rev>0</rev>
@@ -21866,6 +22053,28 @@
 		<part></part>
 		<banks>20</banks>
 		<parameters>406A</parameters>
+	</rom>
+	<rom>
+		<name>Ultima - Runes of Virtue (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CFFE</checksum>
+        <crc32>d2f94181</crc32>
+        <format>Sculptured_Software</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>29\U</parameters>
+	</rom>
+	<rom>
+		<name>Ultima - Runes of Virtue (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>512C</checksum>
+        <crc32>c44a0f1e</crc32>
+        <format>Sculptured_Software</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>29\U</parameters>
 	</rom>
 	<rom>
 		<name>Ultimate Fighting Championship (E) [C][!]</name>
@@ -22922,6 +23131,28 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters>CFG/WWF Superstars (UE) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>WWF Superstars 2 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>184D</checksum>
+        <crc32>ca12d752</crc32>
+        <format>Sculptured_Software</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>10</parameters>
+	</rom>
+	<rom>
+		<name>WWF Superstars 2 (UE) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>197A</checksum>
+        <crc32>8ece1c04</crc32>
+        <format>Sculptured_Software</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>10</parameters>
 	</rom>
 	<rom>
 		<name>WWF Warzone (U) [!]</name>
