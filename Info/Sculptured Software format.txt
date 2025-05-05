@@ -1,0 +1,69 @@
+Song table
+=======================================
+The song table contains pointers to all four channels of each song or sound effect. It can be found using the following code:
+
+add hl, hl
+add hl, hl
+add hl, hl
+add hl, bc
+ld bc, SongTable
+add hl, bc
+
+Which equals the following in hex:
+29 29 29 09 01 ?? ?? 09
+
+Pointers are stored as follows:
+
+1-2. Channel 1 pointer
+3-4. Channel 2 pointer
+5-6. Channel 3 pointer
+7-8. Channel 4 pointer
+9. Unknown (priority?)
+
+A pointer value of 0xFFFF means that the channel is not used.
+
+Channel header
+=======================================
+Pointers for each channel lead to a "header" which is stored as follows:
+1-2. Channel pointer
+3. Unknown, always 81?
+4. FF = End of header?
+
+Sequence commands
+=======================================
+Sequences for each channel are comprised of the following commands:
+xx yy (X = 00-7F) = Play note, length (X = Note, Y = Length)
+80 (yy) = Rest
+81 = ?
+9x = Set channel/noise type
+Ax yy zz aa bb cc dd ee ff gg hh ii = Set channel/instrument parameters
+Bx yy = Set frequency?
+C0 xx = Set channel volumes (NR50)
+C1 xx = Set panning?
+C2 xx = Repeat the following section X times
+C3 = Song loop point
+C4 = Go to repeat point/song loop point
+C5 xx xx = Go to macro
+C6 = ?
+C7 = ?
+Dx yy = Portamento?
+Ex yy = Set tuning
+FF = End of channel or return from macro
+
+Ultima: Runes of Virtue
+=======================================
+Ultima: Runes of Virtue uses a variant of the driver with several differences:
+ - Ax command only uses 11 bytes.
+ - 82 will enable "note mode", where each of the following notes are selected from a table of pre-defined note values, based on division by 8 which is 28 bytes long. The remainder will be used to determine the length of the note, based on the speed value controlled by command 83:
+0 = x
+1 = x / 2
+2 = x / 4
+3 = x / 8
+4 = x / 16
+5 = x * 0.75
+6 = x * 0.75 / 2
+7 = x * 0.75 / 4
+If the division equals 1C, then the following byte will be used to play a manually defined note. (use 1 more byte)
+If the division equals 1D, then it is a rest.
+If the division equals 1E, then exit "note mode".
+ - 83 xx will control the speed for the "note mode".
