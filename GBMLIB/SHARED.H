@@ -54,6 +54,7 @@
 #define Alleyway			0x33
 #define Nova				0x34
 #define Cannon_Fodder		0x35
+#define Sculptured_Software	0x36
 
 extern FILE * rom, * mid;
 extern long masterBank;

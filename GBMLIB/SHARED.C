@@ -46,6 +46,7 @@
 #include "RARE.H"
 #include "REALTIME.H"
 #include "ROLAN.H"
+#include "SCULPT.H"
 #include "SHEEP.H"
 #include "SQUARE.H"
 #include "SUNSOFT.H"
@@ -452,6 +453,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Ryohji_Yoshitomi:
 			M2Proc(banks[curBank]);
+			break;
+		case Sculptured_Software:
+			SculptProc(banks[curBank], parameters);
 			break;
 		case Sheep:
 			SheepProc(banks[curBank]);

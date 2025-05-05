@@ -28,6 +28,7 @@ int curVol;
 int multiBanks;
 int curBank;
 char string1[4];
+char string2[9];
 int format;
 int usePALTempo;
 char* argv3;
@@ -42,6 +43,8 @@ long midLength;
 const char MakeMagicBytesGB[4] = { 0x73, 0x23, 0x72, 0x1A };
 const char MakeMagicBytesNES[9] = { 0x00, 0x10, 0x20, 0x30, 0x40, 0x50, 0x0A, 0xAA, 0xBD };
 const char MakeMagicBytesNES2[4] = { 0x60, 0x0A, 0xAA, 0xBD };
+const char MakeMagicBytesNES3[6] = { 0x60, 0x80, 0xA0, 0x0A, 0xAA, 0xBD };
+const char MakeMagicBytesGG[7] = { 0x32, 0xB7, 0xD1, 0xD1, 0xE1, 0xC9, 0x21 };
 
 /*Function prototypes*/
 unsigned short ReadLE16(unsigned char* Data);
@@ -57,6 +60,7 @@ void MakeProc(int bank)
 {
 	foundTable = 0;
 	smd2 = 0;
+	format = 2;
 	usePALTempo = 0;
 
 	if (bank != 1)
@@ -75,34 +79,63 @@ void MakeProc(int bank)
 	}
 	else
 	{
+		fseek(rom, 0x7FF0, SEEK_SET);
+		fgets(string2, 9, rom);
+		if (!memcmp(string2, "TMR SEGA", 1))
+		{
+			format = 3;
+		}
 		fseek(rom, ((bank - 1) * bankSize), SEEK_SET);
 	}
-	romData = (unsigned char*)malloc(bankSize);
-	fread(romData, 1, bankSize, rom);
 
-	/*Try to search the bank for song table loader*/
-	for (i = 0; i < bankSize; i++)
+	if (format != 3)
 	{
-		if ((!memcmp(&romData[i], MakeMagicBytesGB, 4)) && foundTable != 1)
-		{
-			tablePtrLoc = bankAmt + i - 6;
-			printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
-			tableOffset = ReadLE16(&romData[tablePtrLoc - bankAmt]);
-
-			if (tableOffset == 0x235E)
-			{
-				tableOffset = 0x4BCC;
-			}
-			else if (tableOffset == 0x4000)
-			{
-				smd2 = 1;
-			}
-			printf("Song table starts at 0x%04x...\n", tableOffset);
-			foundTable = 1;
-		}
+		romData = (unsigned char*)malloc(bankSize);
+		fread(romData, 1, bankSize, rom);
+	}
+	else if (format == 3)
+	{
+		romData = (unsigned char*)malloc(bankSize * 2);
+		fread(romData, 1, (bankSize * 2), rom);
 	}
 
-	/*Try to search the bank for song table loader - NES version*/
+	if (format != 3)
+	{
+		/*Try to search the bank for song table loader*/
+		for (i = 0; i < bankSize; i++)
+		{
+			if ((!memcmp(&romData[i], MakeMagicBytesGB, 4)) && foundTable != 1)
+			{
+				tablePtrLoc = bankAmt + i - 6;
+				printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
+				tableOffset = ReadLE16(&romData[tablePtrLoc - bankAmt]);
+
+				if (tableOffset == 0x235E)
+				{
+					tableOffset = 0x4BCC;
+				}
+				else if (tableOffset == 0x4000)
+				{
+					smd2 = 1;
+				}
+				printf("Song table starts at 0x%04x...\n", tableOffset);
+				foundTable = 1;
+				format = 2;
+			}
+		}
+
+	}
+
+
+	if (foundTable == 0 && ReadLE16(&romData[0x00]) == 0x4040)
+	{
+		tableOffset = 0x4000;
+		printf("Song table starts at 0x%04x...\n", tableOffset);
+		smd2 = 1;
+		foundTable = 1;
+	}
+
+	/*Try to search the bank for song table loader*/
 	for (i = 0; i < bankSize; i++)
 	{
 		if ((!memcmp(&romData[i], MakeMagicBytesNES, 9)) && foundTable != 1)
@@ -133,32 +166,88 @@ void MakeProc(int bank)
 		}
 	}
 
-	if (foundTable == 0 && ReadLE16(&romData[0x00]) == 0x4040)
+	for (i = 0; i < bankSize; i++)
 	{
-		tableOffset = 0x4000;
-		printf("Song table starts at 0x%04x...\n", tableOffset);
-		smd2 = 1;
-		foundTable = 1;
+		if ((!memcmp(&romData[i], MakeMagicBytesNES3, 6)) && foundTable != 1)
+		{
+			tablePtrLoc = bankAmt + i + 6;
+			printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
+			tableOffset = ReadLE16(&romData[tablePtrLoc - bankAmt]);
+
+			bankAmt = 0x8000;
+			printf("Song table starts at 0x%04x...\n", tableOffset);
+			foundTable = 1;
+			format = 1;
+		}
+	}
+
+	for (i = 0; i < bankSize; i++)
+	{
+		if ((!memcmp(&romData[i], MakeMagicBytesGG, 7)) && foundTable != 1)
+		{
+			tablePtrLoc = bankAmt + i + 7;
+			printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
+			tableOffset = ReadLE16(&romData[tablePtrLoc - bankAmt]);
+
+			bankAmt = 0x4000;
+			printf("Song table starts at 0x%04x...\n", tableOffset);
+			foundTable = 1;
+			format = 3;
+		}
 	}
 
 	if (foundTable == 1)
 	{
-		i = tableOffset - bankAmt;
-		songNum = 1;
-		while (ReadLE16(&romData[i]) > bankAmt && ReadLE16(&romData[i]) < (bankSize * 2))
+		if (format == 2)
 		{
-			songPtr = ReadLE16(&romData[i]);
-			printf("Song %i: 0x%04X\n", songNum, songPtr);
-			Makesong2mid(songNum, songPtr);
+			i = tableOffset - bankAmt;
+			songNum = 1;
 			i += 2;
-			songNum++;
+			while (ReadLE16(&romData[i]) > bankAmt && ReadLE16(&romData[i]) < (bankSize * 2))
+			{
+				songPtr = ReadLE16(&romData[i]);
+				printf("Song %i: 0x%04X\n", songNum, songPtr);
+				Makesong2mid(songNum, songPtr);
+				i += 2;
+				songNum++;
+			}
 		}
+		else if (format == 3)
+		{
+			i = tableOffset - bankAmt;
+			songNum = 1;
+			i += 2;
+			while (ReadLE16(&romData[i]) > bankAmt && ReadLE16(&romData[i]) < (bankSize * 2))
+			{
+				songPtr = ReadLE16(&romData[i]);
+				printf("Song %i: 0x%04X\n", songNum, songPtr);
+				Makesong2mid(songNum, songPtr);
+				i += 2;
+				songNum++;
+			}
+		}
+		else
+		{
+			i = tableOffset - bankAmt;
+			songNum = 1;
+			i += 2;
+			while (ReadLE16(&romData[i]) > bankAmt)
+			{
+				songPtr = ReadLE16(&romData[i]);
+				printf("Song %i: 0x%04X\n", songNum, songPtr);
+				Makesong2mid(songNum, songPtr);
+				i += 2;
+				songNum++;
+			}
+		}
+
 	}
 	else
 	{
 		printf("ERROR: Magic bytes not found!\n");
 		exit(-1);
 	}
+
 	free(romData);
 }
 
@@ -355,7 +444,7 @@ void Makesong2mid(int songNum, long ptr)
 			midPos += valSize;
 			WriteBE16(&midData[midPos], 0xFF03);
 			midPos += 2;
-			if (format == 2)
+			if (format == 2 || format == 3)
 			{
 				Write8B(&midData[midPos], strlen(TRK_NAMES_GB[curTrack]));
 
@@ -365,7 +454,7 @@ void Makesong2mid(int songNum, long ptr)
 				Write8B(&midData[midPos], strlen(TRK_NAMES_NES[curTrack]));
 			}
 			midPos++;
-			if (format == 2)
+			if (format == 2 || format == 3)
 			{
 				sprintf((char*)&midData[midPos], TRK_NAMES_GB[curTrack]);
 				midPos += strlen(TRK_NAMES_GB[curTrack]);
