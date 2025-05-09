@@ -24,6 +24,7 @@
 #include "IMAGNRNG.H"
 #include "JEROTEL.H"
 #include "JSAITO.H"
+#include "KEMCO.H"
 #include "KONAMI.H"
 #include "KSADA.H"
 #include "LUFIA.H"
@@ -396,6 +397,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Jeroen_Tel:
 			JTProc(parameters);
+			break;
+		case Kemco:
+			KemcoProc(banks[curBank], parameters);
 			break;
 		case Konami:
 			KonProc(banks[curBank], parameters);
