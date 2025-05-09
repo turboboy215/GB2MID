@@ -1463,6 +1463,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Batman Beyond - Return of the Joker (J) [C][!]</name>
+		<gamecode>BTKJ</gamecode>
+		<rev>0</rev>
+		<checksum>9136</checksum>
+        <crc32>b8b1f8f8</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>D,E,F</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
+		<name>Batman Beyond - Return of the Joker (U) [C][!]</name>
+		<gamecode>BTKE</gamecode>
+		<rev>0</rev>
+		<checksum>6F28</checksum>
+        <crc32>b32f4586</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>D,E,F</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
 		<name>Batman Forever (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -1483,6 +1505,17 @@
 		<part></part>
 		<banks>2</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Batman of the Future - Return of the Joker (E) (M3) [C][!]</name>
+		<gamecode>BTKP</gamecode>
+		<rev>0</rev>
+		<checksum>D4DA</checksum>
+        <crc32>f9d5b399</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>D,E,F</banks>
+		<parameters>3</parameters>
 	</rom>
 	<rom>
 		<name>Bataille Navale (E) (M4) [!]</name>
@@ -2794,6 +2827,72 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Bugs Bunny - Crazy Castle 3 (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1335</checksum>
+        <crc32>ae839cae</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>9</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Bugs Bunny - Crazy Castle 3 (U) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>266D</checksum>
+        <crc32>7a2801fb</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>9</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Bugs Bunny - Crazy Castle 4 (E) [C][!]</name>
+		<gamecode>AO4P</gamecode>
+		<rev>0</rev>
+		<checksum>459B</checksum>
+        <crc32>53155e60</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>9,A,B,C</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Bugs Bunny - Crazy Castle 4 (J) [C][!]</name>
+		<gamecode>AO4J</gamecode>
+		<rev>0</rev>
+		<checksum>3F1B</checksum>
+        <crc32>d6387eaa</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>9,A,B,C</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Bugs Bunny - Crazy Castle 4 (U) [C][!]</name>
+		<gamecode>AO4E</gamecode>
+		<rev>0</rev>
+		<checksum>40F7</checksum>
+        <crc32>98dbffe0</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>9,A,B,C</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Bugs Bunny - Crazy Castle II (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2665</checksum>
+        <crc32>a973e604</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Bugs Bunny & Lola Bunny -  Carrot Crazy (U) (M3) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -2814,6 +2913,72 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters>4062</parameters>
+	</rom>
+	<rom>
+		<name>Bugs Bunny (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A8A1</checksum>
+        <crc32>403e1b7e</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Bugs Bunny Collection (J) (V1.0) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2339</checksum>
+        <crc32>d2dbea8f</crc32>
+        <format>Kemco</format>
+		<part>1/2=Bugs Bunny</part>
+		<banks>B</banks>
+		<parameters>1\4000</parameters>
+	</rom>
+	<rom>
+		<name>Bugs Bunny Collection (J) (V1.1) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2339</checksum>
+        <crc32>d2dbea8f</crc32>
+        <format>Kemco</format>
+		<part>2/2=Bugs Bunny II</part>
+		<banks>5</banks>
+		<parameters>1\5D06</parameters>
+	</rom>
+	<rom>
+		<name>Bugs Bunny Collection (J) (V1.1) [S]</name>
+		<gamecode></gamecode>
+		<rev>1</rev>
+		<checksum>F126</checksum>
+        <crc32>8244220b</crc32>
+        <format>Kemco</format>
+		<part>1/2=Bugs Bunny</part>
+		<banks>B</banks>
+		<parameters>1\4000</parameters>
+	</rom>
+	<rom>
+		<name>Bugs Bunny Collection (J) (V1.1) [S]</name>
+		<gamecode></gamecode>
+		<rev>1</rev>
+		<checksum>F126</checksum>
+        <crc32>8244220b</crc32>
+        <format>Kemco</format>
+		<part>2/2=Bugs Bunny II</part>
+		<banks>5</banks>
+		<parameters>1\5D06</parameters>
+	</rom>
+	<rom>
+		<name>Bugs Bunny et le Chateau des Catastrophes (F) [C][!]</name>
+		<gamecode>AO4F</gamecode>
+		<rev>0</rev>
+		<checksum>0330</checksum>
+        <crc32>6da8e6eb</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>9,A,B,C</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Bundesliga Stars 2001 (G) [C][!]</name>
@@ -3320,6 +3485,39 @@
 		<part></part>
 		<banks>5,6</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Catwoman (E) [C][!]</name>
+		<gamecode>A3CP</gamecode>
+		<rev>0</rev>
+		<checksum>A156</checksum>
+        <crc32>41e78645</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>9,A</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Catwoman (J) (Unreleased) [C][!]</name>
+		<gamecode>A3CJ</gamecode>
+		<rev>0</rev>
+		<checksum>2CE1</checksum>
+        <crc32>e8dfae9d</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>9,A</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Catwoman (U) [C][!]</name>
+		<gamecode>A3CE</gamecode>
+		<rev>0</rev>
+		<checksum>9FE8</checksum>
+        <crc32>12f0c196</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>9,A</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Cave Noire (J)</name>
@@ -3949,6 +4147,61 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Daikatana (Beta) [C]</name>
+		<gamecode>A22X</gamecode>
+		<rev>0</rev>
+		<checksum>32F4</checksum>
+        <crc32>f9742f7b</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>8,9</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Daikatana (E) (M3) (Eng-Fre-Ita) [C][!]</name>
+		<gamecode>A22X</gamecode>
+		<rev>0</rev>
+		<checksum>A07F</checksum>
+        <crc32>d9062e49</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>8,9</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Daikatana (E) (M3) (Fre-Ger-Spa) [C][!]</name>
+		<gamecode>A22Y</gamecode>
+		<rev>0</rev>
+		<checksum>A22Y</checksum>
+        <crc32>f7e83313</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>8,9</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Daikatana (J) [C][!]</name>
+		<gamecode>A22J</gamecode>
+		<rev>0</rev>
+		<checksum>ABE6</checksum>
+        <crc32>2bb01aad</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>8,9</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Daikatana (U) (Unreleased) [C][!]</name>
+		<gamecode>A22E</gamecode>
+		<rev>0</rev>
+		<checksum>4E1D</checksum>
+        <crc32>7d451688</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>8,9</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Daikaijuu Monogatari - The Miracle of the Zone II (J) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -4123,6 +4376,50 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Deja Vu I & II (E) (M2) (Eng-Fre) [C][!]</name>
+		<gamecode>ADTX</gamecode>
+		<rev>0</rev>
+		<checksum>FB6C</checksum>
+        <crc32>71f798b5</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>2\4A2D</parameters>
+	</rom>
+	<rom>
+		<name>Deja Vu I & II (E) (M2) (Ger-Fre) [C][!]</name>
+		<gamecode>ADTY</gamecode>
+		<rev>0</rev>
+		<checksum>B065</checksum>
+        <crc32>c6e7f3c6</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>2\4A2D</parameters>
+	</rom>
+	<rom>
+		<name>Deja Vu I & II (J) [C][!]</name>
+		<gamecode>ADTJ</gamecode>
+		<rev>0</rev>
+		<checksum>8CAC</checksum>
+        <crc32>baf2cc96</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>2\4A2D</parameters>
+	</rom>
+	<rom>
+		<name>Deja Vu I & II (U) [C][!]</name>
+		<gamecode>ADTE</gamecode>
+		<rev>0</rev>
+		<checksum>4D06</checksum>
+        <crc32>ad0937f4</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>2\4A2D</parameters>
 	</rom>
 	<rom>
 		<name>Denki Blocks! (E) (M5) [C][!]</name>
@@ -6633,6 +6930,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Garfield Labyrinth (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>03F9</checksum>
+        <crc32>6a043abd</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Garfield Labyrinth (U) [a1] (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E59E</checksum>
+        <crc32>06884616</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Gargoyle's Quest - Ghosts'n Goblins (UE) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -8160,6 +8479,17 @@
 		<part></part>
 		<banks>1B,1C,1D,1E,1F,20,21,22,23,24</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Hugo (E) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2170</checksum>
+        <crc32>74aa5e0f</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Hugo 2 (G) [S][!]</name>
@@ -12155,6 +12485,72 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Mickey Mouse - Magic Wand (U) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5464</checksum>
+        <crc32>f0482567</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Mickey Mouse (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C542</checksum>
+        <crc32>4ca75d4d</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Mickey Mouse (UE) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5899</checksum>
+        <crc32>fc50dee7</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Mickey Mouse II (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3E95</checksum>
+        <crc32>dfee8bcc</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Mickey Mouse IV (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E59E</checksum>
+        <crc32>0d30b3a1</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Mickey Mouse V (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5DEF</checksum>
+        <crc32>44cd01dd</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Mickey's Dangerous Chase (E) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -13704,7 +14100,18 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters></parameters>
-	</rom>	
+	</rom>
+	<rom>
+		<name>Nekojara (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>87E6</checksum>
+        <crc32>3d6d309b</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>1</parameters>
+	</rom>
 	<rom>
 		<name>Nemesis (E) [!]</name>
 		<gamecode></gamecode>
@@ -16874,6 +17281,17 @@
 		<parameters>1\46A5</parameters>
 	</rom>
 	<rom>
+		<name>Real Ghostbusters, The (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E436</checksum>
+        <crc32>e1592b83</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Real Pro Yakyuu! - Central League Hen (J) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -18084,6 +18502,50 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Selection - Erabareshi Mono (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D9E5</checksum>
+        <crc32>799c5cdb</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Selection I & II (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A572</checksum>
+        <crc32>a6027919</crc32>
+        <format>Kemco</format>
+		<part>1/2=Selection: Erabareshi Mono</part>
+		<banks>1B</banks>
+		<parameters>1\4BCD</parameters>
+	</rom>
+	<rom>
+		<name>Selection I & II (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A572</checksum>
+        <crc32>a6027919</crc32>
+        <format>Kemco</format>
+		<part>2/2=Selection II</part>
+		<banks>1A</banks>
+		<parameters>1\4BCD</parameters>
+	</rom>
+	<rom>
+		<name>Selection II (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>008C</checksum>
+        <crc32>d09073f6</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>9</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Seme COM Dungeon - Druruaga (J) [C][!]</name>
 		<gamecode>BV6J</gamecode>
 		<rev>0</rev>
@@ -18203,6 +18665,39 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters>4A5F\1</parameters>
+	</rom>
+	<rom>
+		<name>Shadowgate Classic (E) (V1.0) (M5) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7E0B</checksum>
+        <crc32>f6a876a5</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Shadowgate Classic (E) (V1.1) (M5) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>1</rev>
+		<checksum>E4BB</checksum>
+        <crc32>d337f450</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Shadowgate Return (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>BE2A</checksum>
+        <crc32>1bcd7d70</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Shanghai (J)</name>
@@ -18920,6 +19415,28 @@
 		<parameters>CFG/Sneaky Snakes (UE) [!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Snoopy - Magic Show (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>101B</checksum>
+        <crc32>4892984d</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Snoopy - Magic Show (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>157B</checksum>
+        <crc32>2b7a5034</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Snow Bros. Jr. (E) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -19061,6 +19578,17 @@
 		<part></part>
 		<banks>F</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Soreyuke!! Kid (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6976</checksum>
+        <crc32>2a4a2d2b</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>2\4000</parameters>
 	</rom>
 	<rom>
 		<name>Soul Falchion (Unl) [C]</name>
@@ -19490,6 +20018,94 @@
 		<part></part>
 		<banks>7</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Spy vs. Spy - Operation Boobytrap (U) (1992) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C1FD</checksum>
+        <crc32>6d40e5a2</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Spy vs. Spy - Operation Boobytrap (U) (1996)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E45C</checksum>
+        <crc32>36645203</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Spy vs. Spy (E) (M7) [C][!]</name>
+		<gamecode>AS6P</gamecode>
+		<rev>0</rev>
+		<checksum>1E75</checksum>
+        <crc32>713c6c17</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>29</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Spy vs. Spy (E) (M7) (V1.1) (Unreleased) [C][!]</name>
+		<gamecode>AS6P</gamecode>
+		<rev>1</rev>
+		<checksum>FD8A</checksum>
+        <crc32>6ca71209</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>29</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Spy vs. Spy (J) [C][!]</name>
+		<gamecode>AS6J</gamecode>
+		<rev>0</rev>
+		<checksum>3A4E</checksum>
+        <crc32>0e783117</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>29</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Spy vs. Spy (J) (V1.1) (Unreleased) [C][!]</name>
+		<gamecode>AS6J</gamecode>
+		<rev>1</rev>
+		<checksum>8044</checksum>
+        <crc32>eb47d63b</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>29</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Spy vs. Spy (U) [C][!]</name>
+		<gamecode>AS6E</gamecode>
+		<rev>0</rev>
+		<checksum>48A4</checksum>
+        <crc32>f0463d51</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>29</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Spy vs. Spy (U) (V1.1) (Unreleased) [C][!]</name>
+		<gamecode>AS6E</gamecode>
+		<rev>1</rev>
+		<checksum>FD8A</checksum>
+        <crc32>549bf1e4</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>29</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>SS Spinner - Yo for it (J) [S]</name>
@@ -20438,6 +21054,72 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Sword of Hope II, The (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2778</checksum>
+        <crc32>5b7ff38c</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>9</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Sword of Hope, The (E) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D0D3</checksum>
+        <crc32>c360f279</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Sword of Hope, The (G)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>331B</checksum>
+        <crc32>498e0e9f</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Sword of Hope, The (S) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>4545</checksum>
+        <crc32>28c311d7</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Sword of Hope, The (Sw) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8FFF</checksum>
+        <crc32>c7e48c7c</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Sword of Hope, The (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7ACA</checksum>
+        <crc32>7e923846</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Sylvanian Families 3 - Hoshi Furu Yoru no Sunadokei (J) [C]</name>
 		<gamecode>BL3J</gamecode>
 		<rev>0</rev>
@@ -21296,6 +21978,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Titi - Le Tour du Monde en 80 Chats (F) [C][!]</name>
+		<gamecode>BTWF</gamecode>
+		<rev>0</rev>
+		<checksum>6B57</checksum>
+        <crc32>ce55ed18</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>9,A,B</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
 		<name>Titus the Fox (E) [C][!]</name>
 		<gamecode>BFXP</gamecode>
 		<rev>0</rev>
@@ -21747,6 +22440,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Trappers Tengoku - Spy vs Spy (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>845F</checksum>
+        <crc32>afefd085</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Trax (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -21976,6 +22680,50 @@
 		<part>2/2=Samples</part>
 		<banks>3</banks>
 		<parameters>S</parameters>
+	</rom>
+	<rom>
+		<name>Tweety Sekaiisshuu (J) [C][!]</name>
+		<gamecode>BTWJ</gamecode>
+		<rev>0</rev>
+		<checksum>4443</checksum>
+        <crc32>147f427a</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>9,A,B</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
+		<name>Tweety's High-Flying Adventure (E) (M3) (Eng-Fre-Ger) [C][!]</name>
+		<gamecode>BTWX</gamecode>
+		<rev>0</rev>
+		<checksum>AA40</checksum>
+        <crc32>7361d6bc</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>9,A,B</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
+		<name>Tweety's High-Flying Adventure (E) (M3) (Eng-Spa-Ita) [C][!]</name>
+		<gamecode>BTWY</gamecode>
+		<rev>0</rev>
+		<checksum>6B57</checksum>
+        <crc32>ca9e5385</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>9,A,B</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
+		<name>Tweety's High-Flying Adventure (U) [C]</name>
+		<gamecode>BTWE</gamecode>
+		<rev>0</rev>
+		<checksum>6B57</checksum>
+        <crc32>4e226396</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>9,A,B</banks>
+		<parameters>3</parameters>
 	</rom>
 	<rom>
 		<name>TwinBee da!! (J) [!]</name>
