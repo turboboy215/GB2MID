@@ -1,0 +1,77 @@
+Song Table
+=======================================
+For earlier games, this pointer table can be found with the following instructions:
+sub a, 01
+sla a
+ld hl, SongTable
+call ????
+
+Which equals the following in hex:
+D6 01 CB 27 21 ?? ?? CD xx xx
+
+For later games, the following instructions are used:
+sla a
+ld c, a
+ld b, $00
+ld hl, SongTable
+add hl, bc
+ldi a, [hl]
+
+Which equals the following in hex:
+CB 27 4F 06 00 21 ?? ?? 09 2A
+
+There are three different versions of the driver. For the first version, used in most games:
+1. Channel mask (if 0, then all 4 channels, if 1, all 4, but 1 and 2 are inverted, if more, than only some channels)
+2-3. Channel 1 pointer
+4-5. Channel 2 pointer
+6-7. Channel 3 pointer
+8-9. Channel 4 pointer
+10. Tempo
+
+For most games from 1999 and later:
+1. Channel mask
+2. Tempo
+3-4. Channel 1 pointer
+5-6. Channel 2 pointer
+7-8. Channel 3 pointer
+9-10. Channel 4 pointer
+
+Sequence commands
+=======================================
+Sequences are comprised of the following commands:
+00-04 = Set channel volumes?
+xx (10-7D) = Play note
+7E = Rest
+7F = Connect - Add the current note's length to the next note's length
+xx (80-BF) = Set note size
+C0-C9 = Repeat point
+CA = Song loop point
+CF = Go to repeat point/loop point
+Dx = Play the following section if on repeat number X from Cx, otherwise skip to next CF command
+Ex yy yy = Set instrument (in late games, Ex yy)
+FF = End of channel
+
+Differences in version 2
+=======================================
+ - The following commands have been added:
+05 = ?
+06 xx = ?
+07 = ?
+08 xx = Transpose
+0A xx = Portamento
+7D = Rest
+CE = Song loop point (same as CA?)
+ - The "connect" function (7F) works differently.
+ - The Dx command also looks for another Dx command as a jump position if the section is skipped.
+
+Differences in version 3
+=======================================
+The final version, used only in Batman of the Future and Tweety's High-Flying Adventure, is very similar to version 2, but some commands are different or added:
+07 = Repeat the following section 2 times
+08 = On 2nd "07" repeat, play the following section, else skip to 09
+09 = End of "07" repeat section
+0B xx = ?
+0C xx = ?
+0D xx = ?
+0E xx = ?
+0F xx = ?
