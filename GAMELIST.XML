@@ -14894,6 +14894,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Paperboy (EU)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7EC9</checksum>
+        <crc32>c0a98305</crc32>
+        <format>Digital_Eclipse_1</format>
+		<part></part>
+		<banks>64</banks>
+		<parameters>CFG/Paperboy (EU).cfg</parameters>
+	</rom>
+	<rom>
 		<name>Papuwakunn (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
