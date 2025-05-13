@@ -1,0 +1,66 @@
+Song pattern table
+=======================================
+The song pattern table is a series of 5 pointers for patterns for each channel of a song. Interestingly, channel 4 uses 2 patterns. It can be found with the following code:
+sla c
+rlc b
+sla c
+rlc b
+add hl, bc
+ld bc, SongTable
+add hl, bc
+
+Which equals the following in hex:
+CB 21 CB 00 CB 21 CB 00 09 01 ?? ?? 09
+
+Song pattern tables are structured as follows:
+1-2. Channel 1 pointer
+3-4. Channel 2 pointer
+5-6. Channel 3 pointer
+7-8. Channel 4 pointer (1)
+9-10. Channel 4 pointer (2)
+
+Sequence table
+=======================================
+The sequence table consists of 2-byte (16-bit) pointers to each sequence. It can be found with the following code:
+ld l, a
+ld h, $00
+add hl, hl
+ld bc, SeqTable
+add hl, bc
+inc de
+ld a, e
+
+Which equals the following in hex:
+6F 26 00 29 01 ?? ?? 09 13 7B
+
+Song channel patterns
+=======================================
+Song channel patterns are structured with the following commands:
+00-7F = Play pattern
+80 xx = Set transpose
+A0 = End of repeat section
+A1 xx = Repeat the following section X times
+FD xx xx = Loop back to pattern position
+FE = Loop back to start of pattern
+FF = End of pattern (no loop)
+
+Sequence commands
+=======================================
+Sequences use the following commands:
+00-7F = Play note
+80 xx = Set note length (custom/manual value)
+81-9F = Set note length
+A0 = Initialize channel envelopes?
+A1 xx (yy zz) = Set channel envelope (use Y and Z for channel 3)
+A2 xx yy zz = Set pitch modulation
+A3 xx yy zz = Set duty parameters
+A4 xx yy zz = Set arpeggio
+A5 xx yy = Set sweep
+A6 xx yy zz = Set vibrato
+A7 xx = Set waveform
+B0 xx = Delay for length X
+C0 = Enable portamento
+C1 = Disable portamento
+D0 xx xx = Go to macro position
+D1 = Exit macro
+FF = End of sequence
