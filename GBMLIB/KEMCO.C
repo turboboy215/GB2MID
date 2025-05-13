@@ -200,13 +200,36 @@ void KemcoProc(int bank, char parameters[4][50])
 			i = tableOffset;
 			songNum = 1;
 
-			while (ReadLE16(&romData[i]) > bankAmt && ReadLE16(&romData[i]) < 0x8000)
+			/*Fix for Snoopy 2*/
+			firstPtr = ReadLE16(&romData[i]);
+			if (drvVers == 2 && ptrOverride == 1 && tableOffset == 0x5F00)
 			{
-				songPtr = ReadLE16(&romData[i]);
-				printf("Song %i: 0x%04X\n", songNum, songPtr);
-				Kemcosong2mid(songNum, songPtr);
-				i += 2;
-				songNum++;
+				while (i < firstPtr)
+				{
+					songPtr = ReadLE16(&romData[i]);
+					if (songPtr != 0x0000)
+					{
+						printf("Song %i: 0x%04X\n", songNum, songPtr);
+						Kemcosong2mid(songNum, songPtr);
+					}
+					else if (songPtr == 0x0000)
+					{
+						printf("Song %i: 0x%04X (empty, skipped)\n", songNum, songPtr);
+					}
+					i += 2;
+					songNum++;
+				}
+			}
+			else
+			{
+				while (ReadLE16(&romData[i]) > bankAmt && ReadLE16(&romData[i]) < 0x8000)
+				{
+					songPtr = ReadLE16(&romData[i]);
+					printf("Song %i: 0x%04X\n", songNum, songPtr);
+					Kemcosong2mid(songNum, songPtr);
+					i += 2;
+					songNum++;
+				}
 			}
 		}
 

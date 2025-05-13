@@ -39,6 +39,7 @@
 #include "MUSYX.H"
 #include "MWALKER.H"
 #include "NATSUME.H"
+#include "NBALDWIN.H"
 #include "NINTENDO.H"
 #include "NOVA.H"
 #include "OCEAN.H"
@@ -213,6 +214,55 @@ unsigned int WriteNoteEventGen(unsigned char* buffer, unsigned int pos, unsigned
 		}
 
 
+
+		pos += 4;
+	}
+
+	Write8B(&buffer[pos], note);
+	pos++;
+	Write8B(&buffer[pos], curVol);
+	pos++;
+
+	deltaValue = WriteDeltaTime(buffer, pos, length);
+	pos += deltaValue;
+
+	Write8B(&buffer[pos], note);
+	pos++;
+	Write8B(&buffer[pos], 0);
+	pos++;
+
+	return pos;
+
+}
+
+unsigned int WriteNoteEvent45(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst)
+{
+	int deltaValue;
+	deltaValue = WriteDeltaTime(buffer, pos, delay);
+	pos += deltaValue;
+
+	if (firstNote == 1)
+	{
+		if (curChan != 3 && curChan != 4)
+		{
+			Write8B(&buffer[pos], 0xC0 | curChan);
+		}
+		else
+		{
+			Write8B(&buffer[pos], 0xC9);
+		}
+
+		Write8B(&buffer[pos + 1], inst);
+		Write8B(&buffer[pos + 2], 0);
+
+		if (curChan != 3 && curChan != 4)
+		{
+			Write8B(&buffer[pos + 3], 0x90 | curChan);
+		}
+		else
+		{
+			Write8B(&buffer[pos + 3], 0x99);
+		}
 
 		pos += 4;
 	}
@@ -436,6 +486,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Natsume:
 			NatProc(banks[curBank], parameters);
+			break;
+		case Neil_Baldwin:
+			NBProc(banks[curBank]);
 			break;
 		case NMK:
 			RCProc(banks[curBank]);

@@ -7,6 +7,7 @@
 
 #define bankSize 16384
 #define bankSizeNES 8192
+#define ramSize 65536
 
 FILE* rom, * mid;
 long bank;
@@ -18,6 +19,7 @@ char outfile[1000000];
 int songNum;
 long seqPtrs[4];
 long songPtr;
+long firstPtr;
 long bankAmt;
 int foundTable;
 int curInst;
@@ -27,21 +29,27 @@ int usePALTempo;
 char* argv3;
 
 char string[4];
+char spcString[12];
 
 int format;
 int drvVers;
 
+char* tempPnt;
+char OutFileBase[0x100];
+
 long switchPoint[400][2];
 int switchNum = 0;
+
+int cvtSFX;
 
 int multiBanks;
 int curBank;
 
 char folderName[100];
 
-unsigned static char* romData;
-unsigned static char* midData;
-unsigned static char* ctrlMidData;
+unsigned char* romData;
+unsigned char* midData;
+unsigned char* ctrlMidData;
 
 long midLength;
 
@@ -51,6 +59,10 @@ const char CapMagicBytesBNES2[7] = { 0xC9, 0xFF, 0xD0, 0x03, 0x4C, 0x6A, 0x81 };
 const char CapMagicBytesBGB[3] = { 0x79, 0x3D, 0x21 };
 const char CapMagicBytesCNES[4] = { 0x90, 0x06, 0x38, 0xED };
 const char CapMagicBytesCGB[5] = { 0x7C, 0x65, 0x6F, 0xB4, 0xC8 };
+const char CapMagicBytesSNES1[3] = { 0x1C, 0x5D, 0xF5 };
+const char CapMagicBytesSNES2[3] = { 0x8D, 0x00, 0xDD };
+const char CapMagicBytesSNES3[6] = { 0xA3, 0x1C, 0x90, 0x02, 0xAB, 0xA3 };
+
 
 /*Function prototypes*/
 unsigned short ReadLE16(unsigned char* Data);
@@ -72,6 +84,7 @@ void CapProc(int bank)
 	curInst = 0;
 	switchNum = 0;
 	usePALTempo = 0;
+	cvtSFX = 0;
 	isSong = 1;
 
 	/*Check for NES ROM header*/
@@ -81,6 +94,20 @@ void CapProc(int bank)
 		fseek(rom, (((bank - 1) * bankSizeNES)) + 0x10, SEEK_SET);
 		format = 1;
 		bankAmt = 0x8000;
+	}
+	else if (!memcmp(spcString, "SNES-SPC700", 1))
+	{
+		fseek(rom, 0x100, SEEK_SET);
+		format = 3;
+		bankAmt = 0x0000;
+		/*Copy filename from argument - based on code by ValleyBell*/
+		/*strcpy(OutFileBase, argv[1]);*/
+		tempPnt = strrchr(OutFileBase, '.');
+		if (tempPnt == NULL)
+		{
+			tempPnt = OutFileBase + strlen(OutFileBase);
+		}
+		*tempPnt = 0;
 	}
 	else
 	{
@@ -218,6 +245,37 @@ void CapProc(int bank)
 
 	}
 
+	else if (format == 3)
+	{
+		/*Try to search the bank for song table loader (early driver)*/
+		for (i = 0; i < ramSize; i++)
+		{
+			if ((!memcmp(&romData[i], CapMagicBytesSNES1, 3)) && foundTable != 1)
+			{
+				tablePtrLoc = i + 3;
+				printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
+				tableOffset = ReadLE16(&romData[tablePtrLoc]);
+				printf("Song table starts at 0x%04x...\n", tableOffset);
+				foundTable = 1;
+				drvVers = 1;
+			}
+		}
+
+		/*Try to search the bank for song table loader (later driver)*/
+		for (i = 0; i < ramSize; i++)
+		{
+			if ((!memcmp(&romData[i], CapMagicBytesSNES2, 3)) && foundTable != 1)
+			{
+				tablePtrLoc = i - 8;
+				printf("Found pointer to song at address 0x%04x!\n", tablePtrLoc);
+				songPtr = romData[i - 5] + (romData[i - 8] * 0x100);
+				printf("Song starts at 0x%04x...\n", songPtr);
+				foundTable = 1;
+				drvVers = 2;
+			}
+		}
+		}
+
 
 	if (foundTable == 1)
 	{
@@ -297,28 +355,160 @@ void CapProc(int bank)
 					songNum++;
 				}
 			}
+			else if (format == 3)
+			{
+				songNum = 1;
+				Capsong2mid3(songNum, songPtr);
+
+				/*Look for SFX/additional music table*/
+				for (i = 0; i < ramSize; i++)
+				{
+					if ((!memcmp(&romData[i], CapMagicBytesSNES3, 6)) && foundTable != 2)
+					{
+						tablePtrLoc = i - 4;
+						tableOffset = romData[i - 4] + (romData[i - 1] * 0x100);
+						printf("SFX/additional music table: 0x%04X\n", tableOffset);
+						foundTable = 2;
+					}
+				}
+
+				if (foundTable == 2)
+				{
+					i = tableOffset + 1;
+
+					if (ReadBE16(&romData[tableOffset]) == 0x0000)
+					{
+						i++;
+					}
+					firstPtr = ReadBE16(&romData[i]);
+
+					while (i < firstPtr)
+					{
+						songPtr = ReadBE16(&romData[i]);
+						if (songPtr != 0x0000 && songPtr != 0xFFFF)
+						{
+							if (romData[songPtr - bankAmt] == 0x00)
+							{
+								printf("Song %i: 0x%04X\n", songNum, songPtr);
+								Capsong2mid3(songNum, songPtr);
+							}
+							else
+							{
+								if (cvtSFX == 1)
+								{
+									printf("Song %i: 0x%04X (SFX)\n", songNum, songPtr);
+									Capsong2mid3(songNum, songPtr);
+								}
+								else
+								{
+									printf("Song %i: 0x%04X (SFX, skipped)\n", songNum, songPtr);
+								}
+							}
+						}
+						else
+						{
+							printf("Song %i: 0x%04X (empty, skipped)\n", songNum, songPtr);
+						}
+
+						i += 2;
+						songNum++;
+					}
+				}
+			}
 		}
 
 		else if (drvVers == 1)
 		{
-			songNum = 1;
-
-			while (ReadLE16(&romData[i]) >= 0x8000)
+			if (format == 1)
 			{
-				songPtr = ReadLE16(&romData[i]);
-				if (romData[songPtr - bankAmt] == 0x0E || romData[songPtr - bankAmt] == 0x0F || romData[songPtr - bankAmt] == 0x02 || romData[songPtr - bankAmt] == 0x01)
+				songNum = 1;
+
+				while (ReadLE16(&romData[i]) >= 0x8000)
 				{
-					printf("Song %i: 0x%04X\n", songNum, songPtr);
-					Capsong2mid1(songNum, songPtr);
+					songPtr = ReadLE16(&romData[i]);
+					if (romData[songPtr - bankAmt] == 0x0E || romData[songPtr - bankAmt] == 0x0F || romData[songPtr - bankAmt] == 0x02 || romData[songPtr - bankAmt] == 0x01)
+					{
+						printf("Song %i: 0x%04X\n", songNum, songPtr);
+						Capsong2mid1(songNum, songPtr);
+					}
+					else
+					{
+						printf("Song %i: 0x%04X (SFX, skipped)\n", songNum, songPtr);
+					}
+
+					i += 2;
+					songNum++;
 				}
-				else
+			}
+
+			else if (format == 3)
+			{
+				songNum = 1;
+				/*Check for "active song"*/
+				for (i = 0; i < ramSize; i++)
 				{
-					printf("Song %i: 0x%04X (SFX, skipped)\n", songNum, songPtr);
+					if ((!memcmp(&romData[i], CapMagicBytesSNES2, 3)))
+					{
+						songPtr = romData[i - 5] + (romData[i - 8] * 0x100);
+
+						if (songPtr < 0x6000)
+						{
+							if (tableOffset != 0x2002)
+							{
+								printf("Song %i: 0x%04X\n", songNum, songPtr);
+								Capsong2mid3(songNum, songPtr);
+								songNum++;
+							}
+						}
+
+						break;
+					}
+				}
+				i = tableOffset + 1;
+				if (ReadBE16(&romData[tableOffset]) == 0x0000)
+				{
+					i++;
+				}
+				firstPtr = ReadBE16(&romData[i]);
+
+				if (i == 0x2004)
+				{
+					firstPtr = 0x2100;
 				}
 
-				i += 2;
-				songNum++;
+				while (i < firstPtr)
+				{
+					songPtr = ReadBE16(&romData[i]);
+					if (songPtr != 0x0000 && songPtr != 0xFFFF)
+					{
+						if (romData[songPtr - bankAmt] == 0x00)
+						{
+							printf("Song %i: 0x%04X\n", songNum, songPtr);
+							Capsong2mid3(songNum, songPtr);
+						}
+						else
+						{
+							if (cvtSFX == 1)
+							{
+								printf("Song %i: 0x%04X (SFX)\n", songNum, songPtr);
+								Capsong2mid3(songNum, songPtr);
+							}
+							else
+							{
+								printf("Song %i: 0x%04X (SFX, skipped)\n", songNum, songPtr);
+							}
+						}
+					}
+					else
+					{
+						printf("Song %i: 0x%04X (empty, skipped)\n", songNum, songPtr);
+					}
+
+					i += 2;
+					songNum++;
+				}
 			}
+
 		}
 
 
@@ -334,8 +524,8 @@ void CapProc(int bank)
 
 void Capsong2mid1(int songNum, long ptr)
 {
-	static const char* TRK_NAMES_NES[5] = { "Square 1", "Square 2", "Triangle", "Noise", "PCM" };
-	static const char* TRK_NAMES_GB[4] = { "Square 1", "Square 2", "Wave", "Noise" };
+	const char* TRK_NAMES_NES[5] = { "Square 1", "Square 2", "Triangle", "Noise", "PCM" };
+	const char* TRK_NAMES_GB[4] = { "Square 1", "Square 2", "Wave", "Noise" };
 	unsigned char command[3];
 	long romPos = 0;
 	long seqPos = 0;
@@ -726,8 +916,8 @@ void Capsong2mid1(int songNum, long ptr)
 
 void Capsong2mid2(int songNum, long ptr)
 {
-	static const char* TRK_NAMES_NES[5] = { "Square 1", "Square 2", "Triangle", "Noise", "PCM" };
-	static const char* TRK_NAMES_GB[4] = { "Square 1", "Square 2", "Wave", "Noise" };
+	const char* TRK_NAMES_NES[5] = { "Square 1", "Square 2", "Triangle", "Noise", "PCM" };
+	const char* TRK_NAMES_GB[4] = { "Square 1", "Square 2", "Wave", "Noise" };
 	unsigned char command[3];
 	long romPos = 0;
 	long seqPos = 0;
@@ -1190,12 +1380,12 @@ void Capsong2mid2(int songNum, long ptr)
 
 void Capsong2mid3(int songNum, long ptr)
 {
-	static const char* TRK_NAMES_NES[5] = { "Square 1", "Square 2", "Triangle", "Noise", "PCM" };
-	static const char* TRK_NAMES_GB[4] = { "Square 1", "Square 2", "Wave", "Noise" };
+	const char* TRK_NAMES_NES[5] = { "Square 1", "Square 2", "Triangle", "Noise", "PCM" };
+	const char* TRK_NAMES_GB[4] = { "Square 1", "Square 2", "Wave", "Noise" };
 	unsigned char command[3];
 	long seqPos = 0;
 	unsigned int midPos = 0;
-	long songPtrs[4];
+	long songPtrs[8];
 	int trackCnt = 4;
 	int curTrack = 0;
 	long midTrackBase = 0;
@@ -1249,6 +1439,7 @@ void Capsong2mid3(int songNum, long ptr)
 	int connExt = 0;
 	long speedCtrl = 0;
 	long masterDelay = 0;
+	int prevNote = 0;
 
 	midPos = 0;
 	ctrlMidPos = 0;
@@ -1426,8 +1617,12 @@ void Capsong2mid3(int songNum, long ptr)
 				{
 					for (switchNum = 0; switchNum < 90; switchNum++)
 					{
-						if (switchPoint[switchNum][0] == masterDelay)
+						if (masterDelay >= switchPoint[switchNum][0] && switchPoint[switchNum][0] != -1)
 						{
+							if (curTrack == 2)
+							{
+								curTrack = 2;
+							}
 							transpose2 = switchPoint[switchNum][1];
 						}
 					}
@@ -1655,7 +1850,7 @@ void Capsong2mid3(int songNum, long ptr)
 				/*Set vibrato*/
 				else if (command[0] == 0x08)
 				{
-					if (format == 1)
+					if (format == 1 || format == 3)
 					{
 						curInst = command[1];
 						if (curInst >= 0x80)
@@ -2170,6 +2365,8 @@ void Capsong2mid3(int songNum, long ptr)
 					if (command[0] == 0x20 || command[0] == 0x40 || command[0] == 0x60 || command[0] == 0x80 || command[0] == 0xA0 || command[0] == 0xC0 || command[0] == 0xE0)
 					{
 						curDelay += curNoteLen;
+						ctrlDelay += curNoteLen;
+						masterDelay += curNoteLen;
 					}
 					else
 					{
@@ -2186,6 +2383,11 @@ void Capsong2mid3(int songNum, long ptr)
 								curNote -= 12;
 							}
 
+							if (format == 3 && curNote > 24)
+							{
+								curNote -= 24;
+							}
+
 							curNoteLen += connExt;
 							tempPos = WriteNoteEvent(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
 							firstNote = 0;
@@ -2197,8 +2399,37 @@ void Capsong2mid3(int songNum, long ptr)
 						}
 						else if (connect == 1)
 						{
+							if (format == 3)
+							{
+								curNote = command[0] - subVal + 23 + (octave * 12) + transpose1 + transpose2;
+								if (highOct == 1)
+								{
+									curNote += 24;
+								}
+
+								if (format == 1 && curTrack != 3)
+								{
+									curNote -= 12;
+								}
+
+								if (format == 3 && curNote > 24)
+								{
+									curNote -= 24;
+								}
+								if (curNote != prevNote && prevNote != -1)
+								{
+									tempPos = WriteNoteEvent(midData, midPos, prevNote, connExt, curDelay, firstNote, curTrack, curInst);
+									firstNote = 0;
+									curDelay = 0;
+									ctrlDelay += curNoteLen;
+									masterDelay += curNoteLen;
+									midPos = tempPos;
+									connExt = 0;
+								}
+							}
 							connExt += curNoteLen;
 						}
+						prevNote = curNote;
 					}
 					seqPos++;
 				}
