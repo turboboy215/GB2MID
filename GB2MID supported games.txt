@@ -782,6 +782,7 @@ Jordan vs Bird - One-on-One (J)
 Jordan vs Bird - One-on-One (U)
 Judge Dredd (J)
 Judge Dredd (U) [!]
+Jungle Book, The (U) [!]
 Jungle Strike (U)
 Jungle Strike (U) [a1][!]
 Jurassic Park (E) (M5) [!]
@@ -916,6 +917,7 @@ Les Aventures De TinTin - Le Temple du Soleil (E) (M3) [C][!]
 Les Aventures De TinTin - Le Temple du Soleil (E) (M3) [M]
 Les Razmoket - 100% Angelica (F) [C][!]
 Les Visiteurs (F) [C][!]
+Lethal Weapon (U) [!]
 Lion King, The (E)
 Lion King, The (U) [!]
 Little Indian in Big City (U) [S]
@@ -1509,6 +1511,8 @@ Rockman World 5 (J) [S]
 Rockman X - Cyber Mission (J) [C][!]
 Rockman X2 - Soul Eraser (J) [C][!]
 Rocky Mountain Trophy Hunter (U) [C][!]
+Rodland (E) [!]
+Rodland (J)
 Roger Clemens MVP Baseball (J) [!]
 Roger Clemens MVP Baseball (U) (V1.0) [!]
 Roger Clemens MVP Baseball (U) (V1.1) [!]
@@ -1532,6 +1536,7 @@ Sabrina - The Animated Series - Zapped! (U) [C][!]
 SaGa 2 - Hihou Densetsu (J) (V1.0)
 SaGa 2 - Hihou Densetsu (J) (V1.1)
 SaGa 3 - Jikuu no Hasha (J)
+Saishuu Gensou (Unl) [C]
 Sakura Taisen GB - Geki Hana Kumi Nyuutai! (J) [C][!]
 Sakura Tasien GB2 - Thunder Volt Sakusen (J) [C][!]
 Same Game (J) [S]
@@ -1633,6 +1638,7 @@ Smurfs, The (UE) (V1.1) (M3) [S][!]
 Sneaky Snakes (UE) [!]
 Snoopy - Magic Show (J)
 Snoopy - Magic Show (U) [!]
+Snoopy no Hajimete no Otsukai (J) [S][!]
 Snow Bros. Jr. (E) [!]
 Snow Bros. Jr. (J)
 Snow Bros. Jr. (U) [!]
@@ -1825,6 +1831,9 @@ Tekkyu Fight! - The Great Battle Gaiden (J)
 Tenchi o Kurau (J)
 Tennis (W) [!]
 Terminator 2 - Judgment Day (UE) [!]
+Tesserae (E) (M5) [!]
+Tesserae (U) [!]
+Tesserae (U) [a1] (Unreleased) [!]
 Test Drive 2001 (U) [C][!]
 Test Drive Le Mans (U) (M3) [C][!]
 Tetris (W) (V1.0) [!]

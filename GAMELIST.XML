@@ -9163,6 +9163,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Jungle Book, The (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A214</checksum>
+        <crc32>b64d27ee</crc32>
+        <format>Neil_Baldwin</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Jungle Strike (U)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -10920,6 +10931,17 @@
         <format>Mark_Cooksey</format>
 		<part></part>
 		<banks>5</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Lethal Weapon (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B4DD</checksum>
+        <crc32>1f8d207c</crc32>
+        <format>Neil_Baldwin</format>
+		<part></part>
+		<banks>7</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -17974,6 +17996,28 @@
 		<parameters>S</parameters>
 	</rom>
 	<rom>
+		<name>Rodland (E) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5F9A</checksum>
+        <crc32>6093f4ec</crc32>
+        <format>Neil_Baldwin</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Rodland (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5C8C</checksum>
+        <crc32>6093f4ec</crc32>
+        <format>Neil_Baldwin</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Roger Clemens MVP Baseball (J) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -18291,6 +18335,17 @@
 		<part></part>
 		<banks>10</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Saishuu Gensou (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6DB3</checksum>
+        <crc32>44484cfc</crc32>
+        <format>Nova</format>
+		<part></part>
+		<banks>7C</banks>
+		<parameters>B\486F</parameters>
 	</rom>
 	<rom>
 		<name>Sakura Taisen GB - Geki Hana Kumi Nyuutai! (J) [C][!]</name>
@@ -19435,6 +19490,17 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Snoopy no Hajimete no Otsukai (J) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0E0E</checksum>
+        <crc32>8900a7c0</crc32>
+        <format>Kemco</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters>2\5F00</parameters>
 	</rom>
 	<rom>
 		<name>Snow Bros. Jr. (E) [!]</name>
@@ -21645,6 +21711,39 @@
         <format>David_Whittaker</format>
 		<part></part>
 		<banks>5</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tesserae (E) (M5) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>81F4</checksum>
+        <crc32>679b6530</crc32>
+        <format>Neil_Baldwin</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tesserae (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>624D</checksum>
+        <crc32>c77e316f</crc32>
+        <format>Neil_Baldwin</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tesserae (U) [a1] (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5E34</checksum>
+        <crc32>c6f2d5fa</crc32>
+        <format>Neil_Baldwin</format>
+		<part></part>
+		<banks>2</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
