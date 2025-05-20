@@ -4730,6 +4730,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Donkey Kong (JU) (V1.0) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>12E7</checksum>
+        <crc32>edab3378</crc32>
+        <format>Taisuke_Araki</format>
+		<part></part>
+		<banks>3,4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Donkey Kong (JU) (V1.1) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>1</rev>
+		<checksum>4F8C</checksum>
+        <crc32>f777a5d8</crc32>
+        <format>Taisuke_Araki</format>
+		<part></part>
+		<banks>3,4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Donkey Kong 5  - The Journey of Over Time and Space (Unl) [C][f1]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -7788,6 +7810,17 @@
 		<parameters>B\486F</parameters>
 	</rom>
 	<rom>
+		<name>Hajimari no Mori (J) (Unreleased) [C][!]</name>
+		<gamecode>AHJJ</gamecode>
+		<rev>0</rev>
+		<checksum>6264</checksum>
+        <crc32>fecc8ee8</crc32>
+        <format>Taisuke_Araki</format>
+		<part></part>
+		<banks>F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Hamster Club (J) [C][!]</name>
 		<gamecode>AJNJ</gamecode>
 		<rev>0</rev>
@@ -7807,6 +7840,28 @@
         <format>Hudson_Soft</format>
 		<part></part>
 		<banks>C</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Hamtaro - Ham-Hams Unite! (E) (M5) [C]</name>
+		<gamecode>B68P</gamecode>
+		<rev>0</rev>
+		<checksum>B715</checksum>
+        <crc32>45be9d9b</crc32>
+        <format>Taisuke_Araki</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Hamtaro - Ham-Hams Unite! (U) [C][!]</name>
+		<gamecode>B68E</gamecode>
+		<rev>0</rev>
+		<checksum>4F56</checksum>
+        <crc32>1271117f</crc32>
+        <format>Taisuke_Araki</format>
+		<part></part>
+		<banks>8</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -22385,6 +22440,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Top Rank Tennis (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E8AE</checksum>
+        <crc32>d577d8e0</crc32>
+        <format>Taisuke_Araki</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Top Ranking Tennis (E) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0277</checksum>
+        <crc32>d577d8e0</crc32>
+        <format>Taisuke_Araki</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Total Carnage (UE) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -22415,6 +22492,39 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tottoko Hamutarou - Tomodachi Daisuken Dechu (J) (V1.0) [C][!]</name>
+		<gamecode>BJTJ</gamecode>
+		<rev>0</rev>
+		<checksum>5B6C</checksum>
+        <crc32>19eb4516</crc32>
+        <format>Taisuke_Araki</format>
+		<part></part>
+		<banks>3E</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tottoko Hamutarou - Tomodachi Daisuken Dechu (J) (V1.1) [C][!]</name>
+		<gamecode>BJTJ</gamecode>
+		<rev>1</rev>
+		<checksum>4C72</checksum>
+        <crc32>d549e074</crc32>
+        <format>Taisuke_Araki</format>
+		<part></part>
+		<banks>3E</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tottoko Hamutarou 2 - Hamu-chan Zu Daishuugou Dechu (J) [C][!]</name>
+		<gamecode>B68J</gamecode>
+		<rev>0</rev>
+		<checksum>11D2</checksum>
+        <crc32>f1fbcf84</crc32>
+        <format>Taisuke_Araki</format>
+		<part></part>
+		<banks>9</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -23394,6 +23504,17 @@
         <format>Martin_Walker</format>
 		<part></part>
 		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Wave Race (E) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>FBC6</checksum>
+        <crc32>a6595506</crc32>
+        <format>Taisuke_Araki</format>
+		<part></part>
+		<banks>3</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -24385,6 +24506,17 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Yongzhe Dou Elong 1 & 2 (Unl) [C]</name>
+		<gamecode>AEDJ</gamecode>
+		<rev>0</rev>
+		<checksum>C280</checksum>
+        <crc32>2a783280</crc32>
+        <format>TOSE</format>
+		<part></part>
+		<banks>71</banks>
+		<parameters>CFG/Yongzhe Dou Elong 1 & 2 (Unl) [C].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Yoshi (U) [!]</name>

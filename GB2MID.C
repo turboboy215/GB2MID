@@ -835,6 +835,10 @@ int main(int args, char* argv[])
             {
                 driver = Sunsoft;
             }
+            else if (!strcmp(formatString, "Taisuke_Araki"))
+            {
+                driver = Taisuke_Araki;
+            }
             else if (!strcmp(formatString, "Tarantula_Studios"))
             {
                 driver = Tarantula_Studios;
