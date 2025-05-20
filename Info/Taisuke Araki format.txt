@@ -1,0 +1,65 @@
+Song table
+=======================================
+The song table consists of 16-bit pointers to each song. In Donkey Kong and later games, the code is as follows:
+ld hl, SongTable
+sla a
+ld e, a
+ld d, $00
+add hl, de
+
+Which equals the following in hex:
+21 ?? ?? CB 27 5F 16 00 19
+
+Previous games (Wave Race and Top Ranking Tennis), however, use different methods. GBC games use a multi-banked system where the bank numbers used for different songs are hardcoded into the driver.
+
+Song headers and patterns
+=======================================
+Headers for each song are comprised of 16-bit pointers to each channel, plus a "step pointer" which points to an array of note lengths. These are structured as follows:
+
+1. Unknown (0 byte), only present in Wave Race and Top Ranking Tennis
+2-3. Step table pointer
+5. Tempo, only present in Hamtaro/Tottoko Hamutarou games
+6-7. Channel 1 pointer
+8-9. Channel 2 pointer
+10-11. Channel 3 pointer
+12-13. Channel 4 pointer
+
+Each pointer leads to a "pattern", which is a list of pointers leading to each phrase that is played. The following commands are used:
+xxxx = Pointer to phrase
+0000 = End of song (no loop)
+FFFF xxxx = Go to song pattern loop point
+
+Channel phrases
+=======================================
+Channel phrases are used by each channel to play a section of the song as part of the pattern. In most games, the following commands are used:
+00 = Exit phrase
+01 = Rest
+02-C9 = Play note (in Top Ranking Tennis, higher notes play sound effects)
+CA = Extend note length (not present in Top Ranking Tennis)
+D0-EA = Set channel speed (speed values are from speed pointer in song header)
+EB xx = Repeat the following section X times
+EC = End of repeat
+ED (aa bb) xx yy yy = Set panning/waveform info? (A/B only used on channel 3)
+EE xx yy = ?
+F0 xx yy zz (aa) = Set instrument parameters (X = delay), A is only used if Y (mask) is 41; some GBC games use additional flags, including 14 (1 additional byte like 41), 54 (2 additional bytes), 55 (3 additional bytes)
+F1 xx xx = Set pitch bend pointer
+F2 = Disable pitch bend
+F3 xx yy zz = Set vibrato effect?
+F4 xx = Delay for X time
+F5 xx xx = Set volume envelope pointer?
+F6 = Activate "slow motion" mode? (only present in GBC games)
+FF xx xx = Jump to position
+
+However, in Wave Race, the first game to use this engine, the commands are different and instead are as follows:
+00 = End of phrase
+01 = Rest
+02-91 = Play note
+9B xx = Repeat the following section X times
+9C = End of repeat
+9D (aa bb) xx yy yy = Set panning/waveform info? (A/B only used on channel 3)
+9E = ?
+9F = ?
+A0-AF = Set note size
+B0 xx yy zz = Set instrument parameters
+B1 xx xx =  Set pitch bend/tuning
+B3 xx yy zz = Play sound effect
