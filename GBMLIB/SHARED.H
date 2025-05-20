@@ -57,6 +57,7 @@
 #define Sculptured_Software	0x36
 #define Kemco				0x37
 #define Neil_Baldwin		0x38
+#define Taisuke_Araki		0x39
 
 extern FILE * rom, * mid;
 extern long masterBank;

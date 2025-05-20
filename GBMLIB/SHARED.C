@@ -15,6 +15,7 @@
 #include "CUBE.H"
 #include "DAVDSHEA.H"
 #include "DE1.H"
+#include "DKONG.H"
 #include "DW.H"
 #include "EDMAGNIN.H"
 #include "GAMEFRK.H"
@@ -522,6 +523,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Sunsoft:
 			SSProc(banks[curBank]);
+			break;
+		case Taisuke_Araki:
+			DKongProc(banks[curBank]);
 			break;
 		case Tarantula_Studios:
 			TarantulaProc(banks[curBank], parameters);
