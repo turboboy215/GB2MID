@@ -17,6 +17,7 @@
 #include "DE1.H"
 #include "DKONG.H"
 #include "DW.H"
+#include "EASTRDGE.H"
 #include "EDMAGNIN.H"
 #include "GAMEFRK.H"
 #include "GHX.H"
@@ -30,6 +31,7 @@
 #include "KSADA.H"
 #include "LUFIA.H"
 #include "MAKE.H"
+#include "MARBLE.H"
 #include "MCOOKSEY.H"
 #include "MEGAMAN1.H"
 #include "MEGAMAN2.H"
@@ -470,6 +472,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case Make_Software:
 			MakeProc(banks[curBank]);
 			break;
+		case Marble_Madness:
+			MarbleProc(banks[curBank]);
+			break;
 		case Mark_Cooksey:
 			MCProc(banks[curBank]);
 			break;
@@ -490,6 +495,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Neil_Baldwin:
 			NBProc(banks[curBank]);
+			break;
+		case Nick_Eastridge:
+			NEProc(banks[curBank], parameters);
 			break;
 		case NMK:
 			RCProc(banks[curBank]);
