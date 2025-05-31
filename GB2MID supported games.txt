@@ -570,6 +570,7 @@ Frommer's Personal Organizer (U) [!]
 Full Time Soccer (Unl) [C][!]
 Full Time Soccer & Hang Time Basketball (Unl) [C][!]
 Gaiamaster Duel - Card Attackers (J) [C][!]
+Galaga - Destination Earth (U) [C][!]
 Gals Fighters (Unl) [C]
 Game & Watch Gallery (E) [S][!]
 Game & Watch Gallery (U) (V1.0) [S][!]
@@ -607,6 +608,7 @@ Gargoyle's Quest - Ghosts'n Goblins (UE) [a1]
 Gargoyle's Quest II - The Demon Darkness (E) (Unreleased) [!]
 Gargoyle's Quest II - The Demon Darkness (U) (Unreleased) [!]
 Garou - Mark of the Wolves 2001 (Unl) [C][f1]
+Gauntlet II (U) [!]
 GB Basketball (J)
 GB Genjin (J) [!]
 GB Genjin 2 (J) [S][!]
@@ -1069,6 +1071,7 @@ Migrain (J)
 Millenium Winter Sports (U) [C][!]
 Milon no Meikyuu Kumikyoku (J)
 Milon's Secret Castle (U) [!]
+Miner 2049er (U) [!]
 Minesweeper (J)
 Mini 4 Boy (J) [S][!]
 Mini 4 Boy II - Final Evolution (J) [S]
@@ -1246,6 +1249,8 @@ Palamedes (J)
 Palamedes (UE) [!]
 Palamedes (U) (Unreleased) [!]
 Pang (U)
+Paperboy (U) [M][!]
+Paperboy 2 (U) [!]
 Papuwakunn (J)
 Papyrus (E) (M6) [C][!]
 Parasol Stars (UE) [!]
@@ -1270,6 +1275,7 @@ Pinocchio (U) (1995)
 Pinocchio (U) (1996) [!]
 Pipe Dream (J)
 Pipe Dream (U) [!]
+Pit Fighter (U) [!]
 Pitfall - Beyond the Jungle (U) [C][!]
 Pitfall GB (J) [C][!]
 Planet of the Apes (E) (M6) [C]
@@ -1364,6 +1370,7 @@ Pokemon Trading Card Game (E) (M3) (Eng-Ger-Fre) [C][!]
 Pokemon Trading Card Game (E) (M3) (Eng-Spa-Ita) [C][!]
 Pokemon Trading Card Game (U) [C][!]
 Polaris SnoCross (U) [C][!]
+Pong - The Next Level (U) [C][!]
 Ponta to Hinako no Chindouchuu - Yuutou Hen (J)
 Pooh and Tigger's Hunny Safari (E) (M6) [C]
 Pooh and Tigger's Hunny Safari (U) [C][!]
@@ -1459,6 +1466,7 @@ Real Pro Yakyuu! - Pacific League Hen (J) [C][!]
 Red Arremer - Makaimura Gaiden (J)
 Rekishi Masters 512 (J)
 Ren & Stimpy Show, The - Space Cadet Adventures (U) [!]
+Ren & Stimpy Show, The - Veediots! (U) [!]
 Rentaiou (J)
 Rescue Heroes - Fire Frenzy (U) [C][!]
 Reservoir Rat (E) (M5) [C][!]
@@ -2023,6 +2031,8 @@ Worms Armageddon (E) (M6) [C][!]
 Worms Armageddon (U) (M3) [C][!]
 WWF Attitude (U) [C][!]
 WWF Betrayal (U) [C][!]
+WWF King of the Ring (J)
+WWF King of the Ring (U) [!]
 WWF Raw (UE) [!]
 WWF Superstars (J)
 WWF Superstars (UE) [!]
