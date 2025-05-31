@@ -56,3 +56,5 @@
 #define Kemco				0x37
 #define Neil_Baldwin		0x38
 #define Taisuke_Araki		0x39
+#define Nick_Eastridge		0x3A
+#define Marble_Madness		0x3B

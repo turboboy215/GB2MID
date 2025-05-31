@@ -6633,6 +6633,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Galaga - Destination Earth (U) [C][!]</name>
+		<gamecode>BGGE</gamecode>
+		<rev>0</rev>
+		<checksum>F3CB</checksum>
+        <crc32>e3c4abc6</crc32>
+        <format>Nick_Eastridge</format>
+		<part></part>
+		<banks>D</banks>
+		<parameters>CFG/Galaga - Destination Earth (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Gals Fighters (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A498</checksum>
+        <crc32>2f8ac081</crc32>
+        <format>Kouji_Murata</format>
+		<part></part>
+		<banks>C,D</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Game & Watch Gallery (E) [S][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -7027,6 +7049,17 @@
 		<part></part>
 		<banks>20</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Gauntlet II (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CC41</checksum>
+        <crc32>1907dac5</crc32>
+        <format>Nick_Eastridge</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Gauntlet II (U) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>GB Basketball (J)</name>
@@ -11836,6 +11869,17 @@
 		<parameters>CFG/Marie no Atelier GB (J) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Marble Madness (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8372</checksum>
+        <crc32>b9725e66</crc32>
+        <format>Marble_Madness</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Mario & Yoshi (E) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -12813,6 +12857,17 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Miner 2049er (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C413</checksum>
+        <crc32>1a6bd577</crc32>
+        <format>Nick_Eastridge</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Miner 2049er (U) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Minesweeper (J)</name>
@@ -14971,6 +15026,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Paperboy (U) [M][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>622C</checksum>
+        <crc32>46de32ba</crc32>
+        <format>Nick_Eastridge</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>CFG/Paperboy (U) [M][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Paperboy 2 (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5DD9</checksum>
+        <crc32>8ee404ca</crc32>
+        <format>Nick_Eastridge</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>CFG/Paperboy 2 (U) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Papuwakunn (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -15233,6 +15310,17 @@
 		<part></part>
 		<banks>2</banks>
 		<parameters>CFG/Pipe Dream (U) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Pit Fighter (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B528</checksum>
+        <crc32>0680bfc3</crc32>
+        <format>Nick_Eastridge</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters>CFG/Pit Fighter (U) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Pitfall - Beyond the Jungle (U) [C][!]</name>
@@ -16300,6 +16388,17 @@
 		<part></part>
 		<banks>15</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pong - The Next Level (U) [C][!]</name>
+		<gamecode>AOVE</gamecode>
+		<rev>0</rev>
+		<checksum>1CD2</checksum>
+        <crc32>476bd39d</crc32>
+        <format>Nick_Eastridge</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Pong - The Next Level (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Ponta to Hinako no Chindouchuu - Yuutou Hen (J)</name>
@@ -17422,6 +17521,17 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Ren & Stimpy Show, The - Veediots! (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>74CC</checksum>
+        <crc32>504cbd1d</crc32>
+        <format>Nick_Eastridge</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>CFG/Ren & Stimpy Show, The - Veediots! (U) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Rentaiou (J)</name>
@@ -24066,6 +24176,28 @@
 		<part></part>
 		<banks>10</banks>
 		<parameters>M</parameters>
+	</rom>
+	<rom>
+		<name>WWF King of the Ring (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8A2D</checksum>
+        <crc32>3ab55613</crc32>
+        <format>Nick_Eastridge</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>CFG/WWF King of the Ring (J).cfg</parameters>
+	</rom>
+	<rom>
+		<name>WWF King of the Ring (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CF18</checksum>
+        <crc32>7f0cd87c</crc32>
+        <format>Nick_Eastridge</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>CFG/WWF King of the Ring (U) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>WWF Raw (UE) [!]</name>

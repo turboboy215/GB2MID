@@ -763,6 +763,10 @@ int main(int args, char* argv[])
             {
                 driver = Make_Software;
             }
+            else if (!strcmp(formatString, "Marble_Madness"))
+            {
+                driver = Marble_Madness;
+            }
             else if (!strcmp(formatString, "Mark_Cooksey"))
             {
                 driver = Mark_Cooksey;
@@ -790,6 +794,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "Neil_Baldwin"))
             {
                 driver = Neil_Baldwin;
+            }
+            else if (!strcmp(formatString, "Nick_Eastridge"))
+            {
+                driver = Nick_Eastridge;
             }
             else if (!strcmp(formatString, "NMK"))
             {
