@@ -1,0 +1,21 @@
+This source of this game's sound engine is unknown, although it possibly could be a variant of the first version of Nick Eastridge's. This sound engine is only used in the original Game Boy version; it is not used in the Game Boy Color version.
+
+Song table
+=======================================
+The song table is comprised of 16-bit pointers, 1 for each song.
+
+Song header
+=======================================
+Each song is comprised of a header of 4 16-bit pointers, 1 for each channel, as follows:
+
+1-2. Channel 1 pointer
+3-4. Channel 2 pointer
+5-6. Channel 3 pointer
+7-8. Channel 4 pointer
+
+Song data
+=======================================
+Data for each channel of a song is structured as follows:
+xx yy (X = 0-7F) = Play note (X = Note, Y = Length; 00 00 = channel unused?)
+80 xx yy zz = Set channel/instrument parameters (X = Duty/size, Y = Envelope, Z = Sweep?)
+FF = End of channel

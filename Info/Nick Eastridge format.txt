@@ -1,0 +1,47 @@
+Version 1
+==============================================================================
+Version 1 of the sound engine uses a simple format, and does not use channel 4 for music. This version was used in Paperboy (mono version), Gauntlet II, and Miner 2049er.
+
+Song table
+=======================================
+There are three song tables, each consisting of 16-bit pointer tables of each song for each channel.
+
+Example:
+1-2. Song 1, channel 1
+2-4. Song 2, channel 1
+3-4. Song 1, channel 2
+5-6. Song 2, channel 2
+7-8. Song 1, channel 3
+9-10. Song 2, channel 3
+
+Channel sequences
+=======================================
+Each channel's sequence data is comprised as follows:
+
+xx yy = Play note (X = Note, Y = Length (values from a table)
+(If X is 0, then rest; if either value is FF, then end of song)
+
+Version 2
+==============================================================================
+Version 2 uses an entirely different song format. Like David Warhol and some other sound engines, all channels are interleaved into one pattern consisting of "rows" of varying lengths.
+This version was used in Paperboy 2 and Pit Fighter.
+
+Commands are as follows:
+1a xx yy zz = Play note (A = channel, X = note, Y = volume?, Z = size)
+20 xx = Time/end of row (X = length)
+30 = End of song (no loop)?
+40 = End of song (loop)
+
+Version 3
+==============================================================================
+Version 3 is similar to version 2, but the format is modified.
+This version was used in later games, including GBC.
+
+Commands are as follows:
+0x yy zz = Play channel 1 note (X = volume?, Y = note, Z = size)
+1x yy zz = Play channel 2 note (X = volume?, Y = note, Z = size)
+2x yy zz = Play channel 3 note (X = volume?, Y = note, Z = size)
+30 = End of song (no loop)?
+40 = End of song (loop)
+5x = Play channel 4 note
+8x-FF = Time/end of row
