@@ -60,6 +60,8 @@
 #define Taisuke_Araki		0x39
 #define Nick_Eastridge		0x3A
 #define Marble_Madness		0x3B
+#define Namco				0x3C
+#define Now_Production		0x3D
 
 extern FILE * rom, * mid;
 extern long masterBank;

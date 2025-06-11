@@ -41,9 +41,11 @@
 #include "MPLAY.H"
 #include "MUSYX.H"
 #include "MWALKER.H"
+#include "NAMCO.H"
 #include "NATSUME.H"
 #include "NBALDWIN.H"
 #include "NINTENDO.H"
+#include "NOWPRO.H"
 #include "NOVA.H"
 #include "OCEAN.H"
 #include "PARAGON5.H"
@@ -490,6 +492,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case MusyX:
 			MXProc(banks[curBank], parameters);
 			break;
+		case Namco:
+			NamcoProc(banks[curBank], parameters);
+			break;
 		case Natsume:
 			NatProc(banks[curBank], parameters);
 			break;
@@ -504,6 +509,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Nova:
 			NovaProc(banks[curBank], parameters);
+			break;
+		case Now_Production:
+			NowProc(banks[curBank], parameters);
 			break;
 		case Ocean:
 			OcnProc(banks[curBank]);
