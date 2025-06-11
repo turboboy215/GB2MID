@@ -787,6 +787,10 @@ int main(int args, char* argv[])
             {
                 driver = MusyX;
             }
+            else if (!strcmp(formatString, "Namco"))
+            {
+                driver = Namco;
+            }
             else if (!strcmp(formatString, "Natsume"))
             {
                 driver = Natsume;
@@ -806,6 +810,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "Nova"))
             {
                 driver = Nova;
+            }
+            else if (!strcmp(formatString, "Now_Production"))
+            {
+                driver = Now_Production;
             }
             else if (!strcmp(formatString, "Ocean"))
             {

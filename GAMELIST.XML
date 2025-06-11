@@ -4213,6 +4213,50 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Dance Dance Revolution GB - Disney Mix (J) [C][!]</name>
+		<gamecode>BD7J</gamecode>
+		<rev>0</rev>
+		<checksum>4828</checksum>
+        <crc32>b31a59bf</crc32>
+        <format>Now_Production</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>39DC\41\2</parameters>
+	</rom>
+	<rom>
+		<name>Dance Dance Revolution GB (J) [C][!]</name>
+		<gamecode>BDGJ</gamecode>
+		<rev>0</rev>
+		<checksum>80A3</checksum>
+        <crc32>c64ff2b6</crc32>
+        <format>Now_Production</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>3AE0\32\2</parameters>
+	</rom>
+	<rom>
+		<name>Dance Dance Revolution GB2 (J) [C][!]</name>
+		<gamecode>BD2J</gamecode>
+		<rev>0</rev>
+		<checksum>0954</checksum>
+        <crc32>565fec36</crc32>
+        <format>Now_Production</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>3B19\28\2</parameters>
+	</rom>
+	<rom>
+		<name>Dance Dance Revolution GB3 (J) [C][!]</name>
+		<gamecode>BD6J</gamecode>
+		<rev>0</rev>
+		<checksum>A15C</checksum>
+        <crc32>58f26f36</crc32>
+        <format>Now_Production</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>3BEF\39\2</parameters>
+	</rom>
+	<rom>
 		<name>Dancing Furby (J) [C][!]</name>
 		<gamecode>BFBJ</gamecode>
 		<rev>0</rev>
@@ -4288,6 +4332,28 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Data-Navi Pro Yakyuu (J) [C][!]</name>
+		<gamecode>A89J</gamecode>
+		<rev>0</rev>
+		<checksum>A979</checksum>
+        <crc32>c958ad75</crc32>
+        <format>Now_Production</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>4BD0\31\2</parameters>
+	</rom>
+	<rom>
+		<name>Data-Navi Pro Yakyuu 2 (J) [C]</name>
+		<gamecode>B8QJ</gamecode>
+		<rev>0</rev>
+		<checksum>D6EE</checksum>
+        <crc32>96071ad0</crc32>
+        <format>Now_Production</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>4BD0\31\2</parameters>
 	</rom>
 	<rom>
 		<name>Dave Mirra Freestyle BMX (UE) [C][!]</name>
@@ -5841,6 +5907,17 @@
 		<parameters>2</parameters>
 	</rom>
 	<rom>
+		<name>Extra Bases! (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFE</checksum>
+        <crc32>19608641</crc32>
+        <format>Namco</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>CFG/Extra Bases! (U) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Extreme Ghostbusters (E) (M6) [C][!]</name>
 		<gamecode>BEBP</gamecode>
 		<rev>0</rev>
@@ -6048,6 +6125,39 @@
 		<part></part>
 		<banks>6</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Famista (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0108</checksum>
+        <crc32>3d3c059e</crc32>
+        <format>Namco</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>CFG/Famista (J) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Famista 2 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B785</checksum>
+        <crc32>241a6e4c</crc32>
+        <format>Namco</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>CFG/Famista 2 (J).cfg</parameters>
+	</rom>
+	<rom>
+		<name>Famista 3 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>88CE</checksum>
+        <crc32>bdc4ccc3</crc32>
+        <format>Namco</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>CFG/Famista 3 (J).cfg</parameters>
 	</rom>
 	<rom>
 		<name>Felix the Cat (U)</name>
@@ -6644,6 +6754,39 @@
 		<parameters>CFG/Galaga - Destination Earth (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Galaga & Galaxian (E) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>728D</checksum>
+        <crc32>d06b3f8a</crc32>
+        <format>Now_Production</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>457C\2C\1</parameters>
+	</rom>
+	<rom>
+		<name>Galaga & Galaxian (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>25B1</checksum>
+        <crc32>532036d5</crc32>
+        <format>Now_Production</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>457C\2C\1</parameters>
+	</rom>
+	<rom>
+		<name>Galaga & Galaxian (U) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>70AD</checksum>
+        <crc32>6a6ecfec</crc32>
+        <format>Now_Production</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>457C\2C\1</parameters>
+	</rom>
+	<rom>
 		<name>Gals Fighters (Unl) [C]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -6928,6 +7071,17 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters>CFG/Ganbare! Nippon Olympic 2000 (J) [C].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Ganbare Goemon - Hoshizorashi Dynamites Arawaru!! (J) [C][!]</name>
+		<gamecode>BEKJ</gamecode>
+		<rev>0</rev>
+		<checksum>AA17</checksum>
+        <crc32>2ea8d9d4</crc32>
+        <format>Now_Production</format>
+		<part></part>
+		<banks>28,29,2A</banks>
+		<parameters>4C62\48\1</parameters>
 	</rom>
 	<rom>
 		<name>Ganbare Goemon - Tengutou no Gyakushuu (J) [C][!]</name>
@@ -7720,6 +7874,17 @@
 		<part></part>
 		<banks>71</banks>
 		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Great Greed (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>EC30</checksum>
+        <crc32>c4cbf6b1</crc32>
+        <format>Namco</format>
+		<part></part>
+		<banks>F</banks>
+		<parameters>CFG/Great Greed (U) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Gremlins 2 - The New Batch (W) [!]</name>
@@ -9009,6 +9174,17 @@
 		<parameters>S</parameters>
 	</rom>
 	<rom>
+		<name>Jantaku Boy (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1957</checksum>
+        <crc32>04daa03b</crc32>
+        <format>Namco</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Jantaku Boy (J).cfg</parameters>
+	</rom>
+	<rom>
 		<name>Jay und Die Spielzeugdiebe (G) [C][!]</name>
 		<gamecode>BJYD</gamecode>
 		<rev>0</rev>
@@ -9458,6 +9634,17 @@
 		<part></part>
 		<banks>10</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Kattobi Road (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F03C</checksum>
+        <crc32>efbc23fc</crc32>
+        <format>Now_Production</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>4C63\1E\1</parameters>
 	</rom>
 	<rom>
 		<name>Kawa no Nushi Tsuri 3 (J) [S][!]</name>
@@ -13041,7 +13228,7 @@
 		<checksum>028F</checksum>
         <crc32>ad376905</crc32>
         <format>Hudson_Soft</format>
-		<part>1/2=Main</part>
+		<part>1/3=Main</part>
 		<banks>F</banks>
 		<parameters></parameters>
 	</rom>
@@ -13051,8 +13238,19 @@
 		<rev>0</rev>
 		<checksum>028F</checksum>
         <crc32>ad376905</crc32>
+        <format>Now_Production</format>
+		<part>2/3=Momotarou Dengeki</part>
+		<banks>12</banks>
+		<parameters>4B77\19\1</parameters>
+	</rom>
+	<rom>
+		<name>Momotarou Collection (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>028F</checksum>
+        <crc32>ad376905</crc32>
         <format>Make_Software</format>
-		<part>2/2=Super Momotarou Densetsu II</part>
+		<part>2/3=Super Momotarou Densetsu II</part>
 		<banks>27,28</banks>
 		<parameters></parameters>
 	</rom>
@@ -13063,7 +13261,7 @@
 		<checksum>B2B6</checksum>
         <crc32>562c8f7f</crc32>
         <format>Hudson_Soft</format>
-		<part>1/2=Main</part>
+		<part>1/3=Main</part>
 		<banks>40</banks>
 		<parameters></parameters>
 	</rom>
@@ -13074,9 +13272,42 @@
 		<checksum>B2B6</checksum>
         <crc32>562c8f7f</crc32>
         <format>Hudson_Soft</format>
-		<part>2/2=Momotarou Densetsu Gaiden</part>
+		<part>2/3=Momotarou Densetsu Gaiden</part>
 		<banks>2F</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Momotarou Collection 2 (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B2B6</checksum>
+        <crc32>562c8f7f</crc32>
+        <format>Now_Production</format>
+		<part>2\3=Momotarou Dengeki 2</part>
+		<banks>2,3</banks>
+		<parameters>4001\A7\1</parameters>
+	</rom>
+	<rom>
+		<name>Momotarou Dengeki (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D670</checksum>
+        <crc32>f09b34ab</crc32>
+        <format>Now_Production</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>4B77\19\1</parameters>
+	</rom>
+	<rom>
+		<name>Momotarou Dengeki 2 (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B2B6</checksum>
+        <crc32>3c1c5eb4</crc32>
+        <format>Now_Production</format>
+		<part></part>
+		<banks>2,3</banks>
+		<parameters>4001\A7\1</parameters>
 	</rom>
 	<rom>
 		<name>Momotarou Densetsu 1-2 (J) [C][!]</name>
@@ -13618,6 +13849,116 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Mr. Driller (E) [C][!]</name>
+		<gamecode>BMDP</gamecode>
+		<rev>0</rev>
+		<checksum>8F2B</checksum>
+        <crc32>bdf9b05c</crc32>
+        <format>Namco</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Mr. Driller (E) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Mr. Driller (J) [a1] (Unreleased) [C][!]</name>
+		<gamecode>BV3J</gamecode>
+		<rev>0</rev>
+		<checksum>A3AA</checksum>
+        <crc32>35fd440d</crc32>
+        <format>Namco</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Mr. Driller (J) [a1] (Unreleased) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Mr. Driller (J) [C][!]</name>
+		<gamecode>BMDJ</gamecode>
+		<rev>0</rev>
+		<checksum>9F8C</checksum>
+        <crc32>773729af</crc32>
+        <format>Namco</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Mr. Driller (J) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Mr. Driller (U) [C][!]</name>
+		<gamecode>BMDE</gamecode>
+		<rev>0</rev>
+		<checksum>9B19</checksum>
+        <crc32>492c0ebf</crc32>
+        <format>Namco</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Mr. Driller (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Ms. Pac-Man (E)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B6FA</checksum>
+        <crc32>e19f67d7</crc32>
+        <format>Now_Production</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>5740\14\1</parameters>
+	</rom>
+	<rom>
+		<name>Ms. Pac-Man (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B3FD</checksum>
+        <crc32>0e5bb1c4</crc32>
+        <format>Now_Production</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>5740\14\1</parameters>
+	</rom>
+	<rom>
+		<name>Ms. Pac-Man Special Color Edition (E) [C][!]</name>
+		<gamecode>AQCP</gamecode>
+		<rev>0</rev>
+		<checksum>A786</checksum>
+        <crc32>f2335da9</crc32>
+        <format>Now_Production</format>
+		<part>1/2=Ms. Pac-Man</part>
+		<banks>2</banks>
+		<parameters>683F\12\1</parameters>
+	</rom>
+	<rom>
+		<name>Ms. Pac-Man Special Color Edition (E) [C][!]</name>
+		<gamecode>AQCP</gamecode>
+		<rev>0</rev>
+		<checksum>A786</checksum>
+        <crc32>f2335da9</crc32>
+        <format>Now_Production</format>
+		<part>2/2=Super Pac-Man</part>
+		<banks>B</banks>
+		<parameters>514D\F\1</parameters>
+	</rom>
+	<rom>
+		<name>Ms. Pac-Man Special Color Edition (U) [C][!]</name>
+		<gamecode>AQCE</gamecode>
+		<rev>0</rev>
+		<checksum>5298</checksum>
+        <crc32>103e212d</crc32>
+        <format>Now_Production</format>
+		<part>1/2=Ms. Pac-Man</part>
+		<banks>2</banks>
+		<parameters>683F\12\1</parameters>
+	</rom>
+	<rom>
+		<name>Ms. Pac-Man Special Color Edition (U) [C][!]</name>
+		<gamecode>AQCE</gamecode>
+		<rev>0</rev>
+		<checksum>5298</checksum>
+        <crc32>103e212d</crc32>
+        <format>Now_Production</format>
+		<part>2/2=Super Pac-Man</part>
+		<banks>B</banks>
+		<parameters>514D\F\1</parameters>
+	</rom>
+	<rom>
 		<name>MTV Sports - Skateboarding featuring Andy MacDonald (U) [C][!]</name>
 		<gamecode>BMTE</gamecode>
 		<rev>0</rev>
@@ -13965,7 +14306,7 @@
 		<checksum>84B3</checksum>
         <crc32>1902c6bd</crc32>
         <format>TOSE</format>
-		<part>1/2=Main</part>
+		<part>1/3=Main</part>
 		<banks>10</banks>
 		<parameters>CFG/Namco Gallery Vol.1 (J) [S].cfg</parameters>
 	</rom>
@@ -13975,8 +14316,19 @@
 		<rev>0</rev>
 		<checksum>84B3</checksum>
         <crc32>1902c6bd</crc32>
+        <format>Now_Production</format>
+		<part>2/2=Galaga</part>
+		<banks>2</banks>
+		<parameters>4581\2C\1</parameters>
+	</rom>
+	<rom>
+		<name>Namco Gallery Vol.1 (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>84B3</checksum>
+        <crc32>1902c6bd</crc32>
         <format>TOSE</format>
-		<part>2/2=Namco Classics</part>
+		<part>2/3=Namco Classics</part>
 		<banks>10</banks>
 		<parameters>CFG/Namco Gallery Vol.1 (J) [S] - Namco Classics.cfg</parameters>
 	</rom>
@@ -13987,7 +14339,7 @@
 		<checksum>1D81</checksum>
         <crc32>a69b9260</crc32>
         <format>TOSE</format>
-		<part>1/3=Main</part>
+		<part>1/5=Main</part>
 		<banks>1B</banks>
 		<parameters>CFG/Namco Gallery Vol.2 (J) [S].cfg</parameters>
 	</rom>
@@ -13997,8 +14349,19 @@
 		<rev>0</rev>
 		<checksum>1D81</checksum>
         <crc32>a69b9260</crc32>
+        <format>Now_Production</format>
+		<part>2/5=Galaxian</part>
+		<banks>19</banks>
+		<parameters>5F93\F\1</parameters>
+	</rom>
+	<rom>
+		<name>Namco Gallery Vol.2 (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1D81</checksum>
+        <crc32>a69b9260</crc32>
         <format>Technos_Japan</format>
-		<part>2/3=Dig Dug</part>
+		<part>3/5=Dig Dug</part>
 		<banks>13</banks>
 		<parameters></parameters>
 	</rom>
@@ -14009,9 +14372,20 @@
 		<checksum>1D81</checksum>
         <crc32>a69b9260</crc32>
         <format>TOSE</format>
-		<part>3/3=The Tower of Druaga</part>
+		<part>4/5=The Tower of Druaga</part>
 		<banks>1B</banks>
 		<parameters>CFG/Namco Gallery Vol.2 (J) [S] - The Tower of Druaga.cfg</parameters>
+	</rom>
+	<rom>
+		<name>Namco Gallery Vol.2 (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1D81</checksum>
+        <crc32>a69b9260</crc32>
+        <format>Namco</format>
+		<part>5/5=Famista 4</part>
+		<banks>5</banks>
+		<parameters>CFG/Namco Gallery Vol.2 (J) [S] - Famista 4.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Namco Gallery Vol.3 (J) [S]</name>
@@ -14020,9 +14394,20 @@
 		<checksum>4209</checksum>
         <crc32>7740341e</crc32>
         <format>TOSE</format>
-		<part>1/1=Main</part>
+		<part>1/2=Main</part>
 		<banks>8</banks>
 		<parameters>CFG/Namco Gallery Vol.3 (J) [S].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Namco Gallery Vol.3 (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>4209</checksum>
+        <crc32>7740341e</crc32>
+        <format>Namco</format>
+		<part>2/2=Jantaku Boy</part>
+		<banks>8</banks>
+		<parameters>CFG/Namco Gallery Vol.3 (J) [S] - Jantaku Boy.cfg</parameters>
 	</rom>
 	<rom>
 		<name>NASCAR Heat (U) [C][!]</name>
@@ -14751,6 +15136,17 @@
 		<parameters>405C</parameters>
 	</rom>
 	<rom>
+		<name>Ohasuta Dance Dance Revolution GB (J) [C][!]</name>
+		<gamecode>BD5J</gamecode>
+		<rev>0</rev>
+		<checksum>D47C</checksum>
+        <crc32>e338c118</crc32>
+        <format>Now_Production</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>3DBD\49\2</parameters>
+	</rom>
+	<rom>
 		<name>Oira Jajamaru! Sekai Daibouken (J) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -14927,6 +15323,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Pac-Attack (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6A1F</checksum>
+        <crc32>94e0af9c</crc32>
+        <format>Now_Production</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>4C29\1A\1</parameters>
+	</rom>
+	<rom>
 		<name>Pachi Pachi Pachi-Slot - New Pulsar Hen (J) [C][!]</name>
 		<gamecode>ANPJ</gamecode>
 		<rev>0</rev>
@@ -14947,6 +15354,105 @@
 		<part></part>
 		<banks>10</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pac-Man (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>25CB</checksum>
+        <crc32>65998f48</crc32>
+        <format>Namco</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Pac-Man (J).cfg</parameters>
+	</rom>
+	<rom>
+		<name>Pac-Man (U) (Namco)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F6D9</checksum>
+        <crc32>0509069c</crc32>
+        <format>Namco</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Pac-Man (U) (Namco).cfg</parameters>
+	</rom>
+	<rom>
+		<name>Pac-Man (U) (Namco Hometek) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0685</checksum>
+        <crc32>b681e243</crc32>
+        <format>Namco</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Pac-Man (U) (Namco Hometek) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Pac-Man Special Color Edition (E) [C][!]</name>
+		<gamecode>AACP</gamecode>
+		<rev>0</rev>
+		<checksum>7DB2</checksum>
+        <crc32>f565647f</crc32>
+        <format>Namco</format>
+		<part>1/2=Pac-Man</part>
+		<banks>D</banks>
+		<parameters>CFG/Pac-Man Special Color Edition (E) [C][!] - Pac-Man.cfg</parameters>
+	</rom>
+	<rom>
+		<name>Pac-Man Special Color Edition (E) [C][!]</name>
+		<gamecode>AACP</gamecode>
+		<rev>0</rev>
+		<checksum>7DB2</checksum>
+        <crc32>f565647f</crc32>
+        <format>Now_Production</format>
+		<part>2/2=Pac-Panic</part>
+		<banks>8</banks>
+		<parameters>4C35\1A\1</parameters>
+	</rom>
+	<rom>
+		<name>Pac-Man Special Color Edition (U) [C][!]</name>
+		<gamecode>AACE</gamecode>
+		<rev>0</rev>
+		<checksum>D09A</checksum>
+        <crc32>3485ef86</crc32>
+        <format>Namco</format>
+		<part>1/2=Pac-Man</part>
+		<banks>D</banks>
+		<parameters>CFG/Pac-Man Special Color Edition (U) [C][!] - Pac-Man.cfg</parameters>
+	</rom>
+	<rom>
+		<name>Pac-Man Special Color Edition (U) [C][!]</name>
+		<gamecode>AACE</gamecode>
+		<rev>0</rev>
+		<checksum>D09A</checksum>
+        <crc32>3485ef86</crc32>
+        <format>Now_Production</format>
+		<part>2/2=Pac-Attack</part>
+		<banks>8</banks>
+		<parameters>4C35\1A\1</parameters>
+	</rom>
+	<rom>
+		<name>Pac-Panic (E) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A153</checksum>
+        <crc32>e4af8f75</crc32>
+        <format>Now_Production</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>4C29\1A\1</parameters>
+	</rom>
+	<rom>
+		<name>Pac-Panic (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>BDAA</checksum>
+        <crc32>aaebd509</crc32>
+        <format>Now_Production</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>4C29\1A\1</parameters>
 	</rom>
 	<rom>
 		<name>Pagemaster, The (E) [S][!]</name>
@@ -17138,6 +17644,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Qui Qui (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8748</checksum>
+        <crc32>56d76ba2</crc32>
+        <format>Now_Production</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>4C42\23\1</parameters>
+	</rom>
+	<rom>
 		<name>Quan Ba Tian Xia (Unl) [C][f1]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -18709,6 +19226,17 @@
 		<part></part>
 		<banks>1</banks>
 		<parameters>CFG/Seaside Volley (J).cfg</parameters>
+	</rom>
+	<rom>
+		<name>Sei Hai Densetsu (J) [C][!]</name>
+		<gamecode>AEOJ</gamecode>
+		<rev>0</rev>
+		<checksum>CB37</checksum>
+        <crc32>612f0529</crc32>
+        <format>Now_Production</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>4C42\24\1</parameters>
 	</rom>
 	<rom>
 		<name>Seiken Densetsu (J) [!]</name>
@@ -21868,6 +22396,17 @@
 		<parameters>CFG/Tennis (W) [!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Tensai Bakabon (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F49E</checksum>
+        <crc32>ac044e9a</crc32>
+        <format>Namco</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>CFG/Tensai Bakabon (J).cfg</parameters>
+	</rom>
+	<rom>
 		<name>Terminator 2 - Judgment Day (UE) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -23351,6 +23890,17 @@
 		<part></part>
 		<banks>5,7</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Vitamina Oukoku Monogatari (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>39A1</checksum>
+        <crc32>89a7aeca</crc32>
+        <format>Namco</format>
+		<part></part>
+		<banks>F</banks>
+		<parameters>CFG/Vitamina Oukoku Monogatari (J).cfg</parameters>
 	</rom>
 	<rom>
 		<name>VR Sports Powerboat Racing (U) [C][!]</name>
