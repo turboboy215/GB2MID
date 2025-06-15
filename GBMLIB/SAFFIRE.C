@@ -368,7 +368,7 @@ void Saffiresong2mid(int songNum, long ptr, int tempo)
 				else
 				{
 					offFlag = 0;
-					curVol = (command[3] & 0xF0) * 0.6;
+					curVol = (command[3] & 0xF0) * 0.5;
 
 					if (curVol == 0)
 					{
