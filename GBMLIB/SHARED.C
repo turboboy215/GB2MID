@@ -53,6 +53,7 @@
 #include "RARE.H"
 #include "REALTIME.H"
 #include "ROLAN.H"
+#include "SAFFIRE.H"
 #include "SCULPT.H"
 #include "SHEEP.H"
 #include "SQUARE.H"
@@ -368,6 +369,78 @@ unsigned int WriteNoteEventOff(unsigned char* buffer, unsigned int pos, unsigned
 	return pos;
 }
 
+unsigned int WriteNoteEventAltOn(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst)
+{
+	int deltaValue;
+	deltaValue = WriteDeltaTime(buffer, pos, delay);
+	pos += deltaValue;
+
+	if (firstNote == 1)
+	{
+		if (curChan != 3)
+		{
+			Write8B(&buffer[pos], 0xC0 | curChan);
+		}
+		else
+		{
+			Write8B(&buffer[pos], 0xC9);
+		}
+
+
+		Write8B(&buffer[pos + 1], inst);
+		Write8B(&buffer[pos + 2], 0);
+
+		if (curChan != 3)
+		{
+			Write8B(&buffer[pos + 3], 0x90 | curChan);
+		}
+		else
+		{
+			Write8B(&buffer[pos + 3], 0x99);
+		}
+
+		pos += 4;
+	}
+
+	Write8B(&buffer[pos], note);
+	pos++;
+	Write8B(&buffer[pos], curVol);
+	pos++;
+
+	return pos;
+
+}
+
+unsigned int WriteNoteEventAltOff(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst)
+{
+	int deltaValue;
+
+	deltaValue = WriteDeltaTime(buffer, pos, delay);
+	pos += deltaValue;
+
+	if (firstNote == 1)
+	{
+		if (curChan != 3)
+		{
+			Write8B(&buffer[pos], 0x90 | curChan);
+		}
+		else
+		{
+			Write8B(&buffer[pos], 0x99);
+		}
+
+
+		pos++;
+	}
+
+	Write8B(&buffer[pos], note);
+	pos++;
+	Write8B(&buffer[pos], 0);
+	pos++;
+
+	return pos;
+}
+
 void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameters[4][50])
 {
 	if (numBanks > 1)
@@ -527,6 +600,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Ryohji_Yoshitomi:
 			M2Proc(banks[curBank]);
+			break;
+		case Saffire:
+			SaffireProc(banks[curBank], parameters);
 			break;
 		case Sculptured_Software:
 			SculptProc(banks[curBank], parameters);

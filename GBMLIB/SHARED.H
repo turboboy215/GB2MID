@@ -62,6 +62,7 @@
 #define Marble_Madness		0x3B
 #define Namco				0x3C
 #define Now_Production		0x3D
+#define Saffire				0x3E
 
 extern FILE * rom, * mid;
 extern long masterBank;
