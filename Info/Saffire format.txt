@@ -1,0 +1,16 @@
+Song values
+=======================================
+While there (at least observed) aren't any standard song tables, the code initializes pointers to each song with 3 variables. These are as follows:
+
+1. Bank number
+2. Tempo
+3. Loop flag (0 = no, 1 = yes)
+
+Song patterns
+=======================================
+Songs are stored in a very simple yet also very inefficient array of patterns of 6 bytes each, using time values like Ed Magnin, although only for 1 channel at a time. Patterns are structured as follows (note that 16-bit values are big-endian):
+
+1-2. Total time
+3. Channel number
+4. Envelope/volume flag
+5-6. Note frequency

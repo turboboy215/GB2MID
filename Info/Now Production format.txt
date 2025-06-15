@@ -1,0 +1,85 @@
+Song table
+=======================================
+The song table consists of 16-bit (2-byte) pointers to each song or sound effect.
+
+Song headers
+=======================================
+Each song or sound effect has a "header" which consists of a binary mask telling which channels are used, as well as the pointers to each channel's sequence. It is stored as follows:
+1. Channel mask (format: 1234 = channels 1-4)
+2-3. Channel 1 pointer (if present)
+4-5. Channel 2 pointer (if present)
+6-7. Channel 3 pointer (if present)
+8-9. Channel 4 pointer (if present)
+
+Channel sequences
+=======================================
+Sequences for each channel are comprised of the following commands:
+
+xy (00-CF) = Play note, length (X = Note (0 = Rest), Y = Length)
+D0-D5 = Set octave
+D6 = Raise octave
+D7 = Lower octave
+D8 xx = Set decay?
+D9 xx = Set duty
+DA xx = Set panning
+DB xx = Set channel speed
+DC xx = Set channel effect?
+DD xx = Set envelope (absolute)
+DE xx = Set envelope (relative)
+DF xx = Set tuning (absolute)
+E0 xx = Set tuning (relative)
+E1 xx = Repeat the following section X times
+E2 = End of repeat section
+E3 xx xx = Jump to position on final repeat
+E4 xx xx = Go to song loop
+E5 xx xx = Go to macro
+E6 = Return from macro
+E7 xx = ?
+E8 xx = Set transpose (absolute)
+E9 xx = Set transpose (relative)
+EA xx = ?
+EB xx = Set note size
+EC xx = Set arpeggio effect
+ED xx = ?
+EE xx yy = Set vibrato
+EF xx = Set channel unknown
+F0-FD = (Invalid)
+FE = Tie to next note
+FF = End of channel (no loop)
+
+Late version
+=======================================
+Several late games, including all the Dance Dance Revolution games, use a different version of the driver with an entirely different set of commands. The song table is also slightly different as it is multi-banked, and each pointer is preceded by a 1-byte value specifying the bank number of each track.
+
+Sequences for each channel are comprised of the following commands:
+xx yy (X = 00-7F) = Play note, length (0 = Rest)
+8x = Set note size
+90 xx = Set envelope decay
+91-94 = Set duty
+95 xx = Set waveform
+96 = Set panning: left only
+97 = Set panning: left and right
+98 = Set panning: right
+99 = Set noise type 1
+9A = Set noise type 2
+9B xx = Set envelope volume (absolute)
+9C xx = Set envelope volume (relative)
+9D xx = Set tuning (absolute)
+9E xx = Set tuning (relative)
+9F xx = Repeat the following section X times 
+A0 = End of repeat section
+A1 xx xx = Jump to position on final repeat
+A2 xx xx = Go to song loop
+A3 xx xx = Go to macro
+A4 = Return from macro
+A5 xx = ?
+A6 xx = Set transpose (absolute)
+A7 xx = Set transpose (relative)
+A8 xx = Set pitch bend (up)
+A9 xx = Set pitch bend (down)
+AA xx yy = Set channel pitch effect
+AB xx = ?
+AC = End of channel
+AD xx = ?
+AE xx = Set global volume
+FF = Tie to next note

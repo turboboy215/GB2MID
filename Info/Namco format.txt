@@ -1,0 +1,35 @@
+General table
+=======================================
+The song table contains pointers to various parts of audio, including the songs and sound effects, which are the first element in the array. It is currently unknown what the other pointers lead to. The other pointers appear to be related to instruments.
+
+Song table
+=======================================
+The song table consists of 16-bit (2-byte) pointers to each song or sound effect. However, it is preceeded by 1 byte; the meaning of this is unknown. Later games have 3 bytes at the start instead.
+In Great Greed, and possibly other games, a bankswitching solution is used to "cross over" banks, with pointers referring to addresses outside work RAM that actually are part of the next bank.
+
+Sequence commands
+=======================================
+Songs and sound effects are stored in an interleaved format where all four channels are part of the same sequence. This format is also heavily based on binary masks which specifies the channels that are being played at once.
+Commands are as follows:
+x0 = Set song parameters
+ - 00 xx = Set song channel mask
+ - 40 xx = Set tempo
+ - 80 xx = End of song/Exit macro
+ - F0 xx = ?
+x1 = ?
+x2 = ?
+x3 xx xx = Go to macro/loop (Loop if X = 0)
+x4 (yy zz aa bb) = Set channel volume(s) (depends on mask)
+x5 (yy zz aa bb) = Play row of note(s) on channels 1-4 (depends on mask) (0 = empty row)
+x6 (yy zz aa bb) = Load instruments for channels 1-4 (depends on mask)
+x7 (yy zz aa bb) = Set channel envelope(s) (depends on mask)
+x8 (yy zz aa bb) = Set channel note size(s) (depends on mask)
+x9 (yy zz aa bb) = Set channel decay time(s) (depends on mask)
+xA (yy zz aa bb) = Set channel volume(s)? (depends on mask)
+xB (yy zz aa bb) = Set channel duty (depends on mask)
+xC (yy zz aa bb) = Set channel unknown 1 (depends on mask)
+xD (yy zz aa bb) = Set channel distortion effect (depends on mask)
+xE (yy zz aa bb) = Set channel transpose (depends on mask)
+xF (yy zz aa bb) = Set channel unknown 2 (depends on mask)
+
+Mask: 1234 (for each channel)
