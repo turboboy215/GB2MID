@@ -835,6 +835,10 @@ int main(int args, char* argv[])
             {
                 driver = Ryohji_Yoshitomi;
             }
+            else if (!strcmp(formatString, "Saffire"))
+            {
+                driver = Saffire;
+            }
             else if (!strcmp(formatString, "Sculptured_Software"))
             {
                 driver = Sculptured_Software;

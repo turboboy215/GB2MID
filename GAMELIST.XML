@@ -1947,6 +1947,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Billy Bob's Huntin' 'n' Fishin' (U) [C][!]</name>
+		<gamecode>AHZE</gamecode>
+		<rev>0</rev>
+		<checksum>D638</checksum>
+        <crc32>fa1e6853</crc32>
+        <format>Saffire</format>
+		<part></part>
+		<banks>27</banks>
+		<parameters>CFG/Billy Bob's Huntin' 'n' Fishin' (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Bionic Commando (E) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -3520,6 +3531,28 @@
 		<parameters>2</parameters>
 	</rom>
 	<rom>
+		<name>Catz - Your Virtual Petz Palz (E) [C][!]</name>
+		<gamecode>AZCP</gamecode>
+		<rev>0</rev>
+		<checksum>91E7</checksum>
+        <crc32>099d6555</crc32>
+        <format>Saffire</format>
+		<part></part>
+		<banks>C</banks>
+		<parameters>CFG/Catz - Your Virtual Petz Palz (E) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Catz - Your Virtual Petz Palz (U) [C][!]</name>
+		<gamecode>AZCE</gamecode>
+		<rev>0</rev>
+		<checksum>2C47</checksum>
+        <crc32>769a2c5a</crc32>
+        <format>Saffire</format>
+		<part></part>
+		<banks>C</banks>
+		<parameters>CFG/Catz - Your Virtual Petz Palz (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Cave Noire (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -4762,7 +4795,29 @@
 		<banks>3</banks>
 		<parameters></parameters>
 	</rom>
-		<rom>
+	<rom>
+		<name>Dogz - Your Virtual Petz Palz (E) [C][!]</name>
+		<gamecode>AOZP</gamecode>
+		<rev>0</rev>
+		<checksum>A570</checksum>
+        <crc32>ce8dd179</crc32>
+        <format>Saffire</format>
+		<part></part>
+		<banks>C</banks>
+		<parameters>CFG/Dogz - Your Virtual Petz Palz (E) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Dogz - Your Virtual Petz Palz (U) [C][!]</name>
+		<gamecode>AOZE</gamecode>
+		<rev>0</rev>
+		<checksum>BFE4</checksum>
+        <crc32>a8397183</crc32>
+        <format>Saffire</format>
+		<part></part>
+		<banks>C</banks>
+		<parameters>CFG/Dogz - Your Virtual Petz Palz (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Doki X Doki Sasete (J) [C]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -5619,6 +5674,28 @@
 		<part>2/2=Samples</part>
 		<banks>2</banks>
 		<parameters>S</parameters>
+	</rom>
+	<rom>
+		<name>E.T. The Extra Terrestrial - Escape from Planet Earth (E) (M6) [C][!]</name>
+		<gamecode>BERP</gamecode>
+		<rev>0</rev>
+		<checksum>0611</checksum>
+        <crc32>b25f3db5</crc32>
+        <format>Saffire</format>
+		<part></part>
+		<banks>39</banks>
+		<parameters>CFG/E.T. The Extra Terrestrial - Escape from Planet Earth (E) (M6) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>E.T. The Extra Terrestrial - Escape from Planet Earth (U) [C][!]</name>
+		<gamecode>BERE</gamecode>
+		<rev>0</rev>
+		<checksum>0EF6</checksum>
+        <crc32>086106de</crc32>
+        <format>Saffire</format>
+		<part></part>
+		<banks>39</banks>
+		<parameters>CFG/E.T. The Extra Terrestrial - Escape from Planet Earth (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Earthworm Jim - Menace 2 the Galaxy (U) [C][!]</name>
@@ -9130,6 +9207,17 @@
 		<parameters>26</parameters>
 	</rom>
 	<rom>
+		<name>James Bond 007 (U) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>FD22</checksum>
+        <crc32>ca3bc3ce</crc32>
+        <format>Saffire</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>CFG/James Bond 007 (U) [S][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Jankenman (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -12232,6 +12320,28 @@
 		<parameters>CFG/Masakari Densetsu Kintarou ACG (J).cfg</parameters>
 	</rom>
 	<rom>
+		<name>Mask of Zorro, The (E) [C][!]</name>
+		<gamecode>AZRP</gamecode>
+		<rev>0</rev>
+		<checksum>0694</checksum>
+        <crc32>909c870f</crc32>
+        <format>Saffire</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Mask of Zorro, The (E) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Mask of Zorro, The (U) [C][!]</name>
+		<gamecode>AZRE</gamecode>
+		<rev>0</rev>
+		<checksum>9AB8</checksum>
+        <crc32>2c92ad12</crc32>
+        <format>Saffire</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Mask of Zorro, The (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Master Karateka (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -12945,6 +13055,50 @@
 		<part></part>
 		<banks>2</banks>
 		<parameters>CFG/Micro Maniacs (E) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Microsoft Entertainment Pack (E) [C][!]</name>
+		<gamecode>BMZP</gamecode>
+		<rev>0</rev>
+		<checksum>E786</checksum>
+        <crc32>0f02d708</crc32>
+        <format>Saffire</format>
+		<part></part>
+		<banks>14</banks>
+		<parameters>CFG/Microsoft Entertainment Pack (E) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Microsoft Entertainment Pack (U) [C][!]</name>
+		<gamecode>BMEE</gamecode>
+		<rev>0</rev>
+		<checksum>2946</checksum>
+        <crc32>d2d88cfa</crc32>
+        <format>Saffire</format>
+		<part></part>
+		<banks>14</banks>
+		<parameters>CFG/Microsoft Entertainment Pack (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Microsoft Pinball Arcade (E) [C][!]</name>
+		<gamecode>BMQP</gamecode>
+		<rev>0</rev>
+		<checksum>7A9D</checksum>
+        <crc32>4eb7db14</crc32>
+        <format>Saffire</format>
+		<part></part>
+		<banks>9</banks>
+		<parameters>CFG/Microsoft Pinball Arcade (E) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Microsoft Pinball Arcade (U) [C][!]</name>
+		<gamecode>BMQE</gamecode>
+		<rev>0</rev>
+		<checksum>ACDC</checksum>
+        <crc32>504f55c5</crc32>
+        <format>Saffire</format>
+		<part></part>
+		<banks>9</banks>
+		<parameters>CFG/Microsoft Pinball Arcade (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Microsoft Puzzle Collection (E) (M5) [C][!]</name>
@@ -15134,6 +15288,39 @@
 		<part></part>
 		<banks>7</banks>
 		<parameters>405C</parameters>
+	</rom>
+	<rom>
+		<name>Oddworld Adventures (UE) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6E47</checksum>
+        <crc32>6510c0e2</crc32>
+        <format>Saffire</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Oddworld Adventures (UE) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Oddworld Adventures II (E) (M5) [C][!]</name>
+		<gamecode>AOWP</gamecode>
+		<rev>0</rev>
+		<checksum>F6D0</checksum>
+        <crc32>4b83b14f</crc32>
+        <format>Saffire</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>CFG/Oddworld Adventures II (E) (M5) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Oddworld Adventures II (U) (M5) [C][!]</name>
+		<gamecode>AOWE</gamecode>
+		<rev>0</rev>
+		<checksum>BBC5</checksum>
+        <crc32>5c260d5a</crc32>
+        <format>Saffire</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>CFG/Oddworld Adventures II (U) (M5) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Ohasuta Dance Dance Revolution GB (J) [C][!]</name>
@@ -18918,6 +19105,17 @@
 		<part>2/2=Samples</part>
 		<banks>3</banks>
 		<parameters>S</parameters>
+	</rom>
+	<rom>
+		<name>Runelords (U) (Unreleased) [C][!]</name>
+		<gamecode>BRLE</gamecode>
+		<rev>0</rev>
+		<checksum>5959</checksum>
+        <crc32>392af730</crc32>
+        <format>Saffire</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Runelords (U) (Unreleased) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Sabrina - The Animated Series - Spooked! (U) [C][!]</name>
