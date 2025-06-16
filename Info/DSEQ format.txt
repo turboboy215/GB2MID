@@ -1,0 +1,132 @@
+There are at least three different versions of the sound engine - the original, used in Mario's Picross, and the second and third version, both known as DSEQ Lite, according to the header.
+The sound engine's name is known from ASCII text present in the ROMs.
+
+Header text
+=======================================
+ASCII text at the start of a sound bank for each game reads as follows:
+
+(Mario's Picross)
+DSEQ
+APE (C) mcmxciv by Toshiyuki Ueno
+pcs26448@asciinet.or.jp
+
+(Picross 2/Pokémon Picross/Racing Mini 4WD)
+DSEQLITE
+CRTS(C) mcmxcvi by Toshiyuki Ueno
+toshi-u@tau.bekkoame.or.jp
+
+(Racing Mini 4WD: Let's Go!! MAX)
+DSEQLITE
+CRTS(C) 1996,1997 by Toshiyuki Ueno
+toshi-u@pobox.com
+
+Note that although Racing Mini 4WD has the same string as the later 2 Picross games, its sequence format is different, and is the same as the other Racing Max 4WD game.
+
+Original version (DSEQ)
+==============================================================================
+
+Song table
+=======================================
+The song table consists of a series of four 16-bit (2-byte) pointers which are for each channel of a song.
+
+The song table can be found using the following code:
+    ld      [wDSEQ_MusicID],a
+    ld      de,DSEQ_MusicPointers
+    cp      -1 ;$FF
+    jr      nz,.notblank
+
+Which equals the following in hex:
+79 EA xx xx 11 ?? ?? FE FF 20 07
+
+Song commands
+=======================================
+Sequences for each channel are comprised of the following commands:
+xy (00-DF) = Play note, length (X = Note, Y = Length (C = Hold note, D = Rest))
+E0-E8 = Set octave
+E9 = Octave up
+EA = Octave down
+EB = (Invalid)
+EC = (Invalid)
+ED xx = ?
+EE xx xx = Jump to position
+EF = End of song or return from macro
+F0 xx yy zz = Set pulse/wave parameters (X = Attack (Waveform in channel 3), Y = Hold, Z = Decay)
+F1 xx = Repeat the following section X times
+F2 = End of repeat section
+F3 = (Invalid)
+F4 xx = Set tuning (v1)
+F5 xx yy zz = Set vibrato
+F6 xx = Set tuning (v2)
+F7 xx = Set volume
+F8 = (Invalid)
+F9 xx = Set tempo
+FA xx = Set note type (Release volume and delay)
+FB xx = Set panning
+FC xx = Set noise
+FD = (Invalid)
+FE xx xx = Go to macro
+FF = (Invalid)
+
+2nd version (DSEQ Lite)
+==============================================================================
+
+Song table
+=======================================
+Just like version 1, the song table consists of a series of four 16-bit (2-byte) pointers which are for each channel of a song. However, channel 4 doesn't seem to be used in either version 3 or 4, despite there being a 4th pointer listed for each song.
+
+The table can be found using the following code:
+
+call ????
+pop af
+ld de, SongTable
+ld hl, $DD00
+call ????
+
+Which equals the following in hex:
+CD xx xx F1 11 ?? ?? 21 00 DD CD xx xx
+
+Song commands
+=======================================
+Sequences for each channel are comprised of the following commands:
+xx yy (X = 00-7F) = Play note, length (X = Note (6C = Hold note, 6D = Rest), Y = Length)
+80 = End of channel
+81 xx xx = Jump to position
+82-84 xx = Set tempo
+ (In Pokémon Picross: 82 xx = Repeat the following section X times, 83 = End of repeat section, 84 xx = Set tempo)
+85 = Set panning - left
+86 = Set envelope - middle
+87 = Set envelope - right
+88/89 xx = Set envelope settings
+8A/8B = Set waveform
+8C xx = Set duty
+8D xx = Set wave length
+8E xx = Set transpose 
+8F xx yy zz = Set vibrato?
+
+3rd version (DSEQ Lite)
+==============================================================================
+
+Song table
+=======================================
+The song table format is the same as version 2.
+
+Song commands
+=======================================
+Sequences for each channel are comprised of the following commands:
+xy (00-DF) = Play note, length (X = Note, Y = Length (C = Hold note, D = Rest))
+Ex = Set octave
+F0 = End of channel
+F1 xx xx = Jump to position
+F2 xx = Repeat the following section X times
+F3 = End of repeat section
+F4 xx = Set tempo
+F5 = Set panning - left
+F6 = Set panning - middle
+F7 = Set panning - right
+F8/F9 xx = Set envelope
+FA xx = ?
+FB xx = Set waveform
+FC xx = Set duty
+FD xx = Set wave length
+FE xx = ?
+FF xx = Set transpose
