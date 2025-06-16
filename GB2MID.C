@@ -691,6 +691,10 @@ int main(int args, char* argv[])
             {
                 driver = Digital_Eclipse_1;
             }
+            else if (!strcmp(formatString, "DSEQ"))
+            {
+                driver = DSEQ;
+            }
             else if (!strcmp(formatString, "Ed_Magnin"))
             {
                 driver = Ed_Magnin;

@@ -12243,6 +12243,39 @@
 		<parameters>CFG/Mario Tennis GB (J) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Mario's Picross (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A6EA</checksum>
+        <crc32>17533700</crc32>
+        <format>DSEQ</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Mario's Picross (UE) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2A49</checksum>
+        <crc32>f2d652ad</crc32>
+        <format>DSEQ</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Mario's Picross 2 (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>4B02</checksum>
+        <crc32>f5aa5902</crc32>
+        <format>DSEQ</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Mark of the Wolfs (Unl) [C]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -16951,6 +16984,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Pokemon Picross (J) (Unreleased) [C][!]</name>
+		<gamecode>AKVJ</gamecode>
+		<rev>0</rev>
+		<checksum>B1E1</checksum>
+        <crc32>cf647f4b</crc32>
+        <format>DSEQ</format>
+		<part></part>
+		<banks>7F,80</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
 		<name>Pokemon Pikecho (Unl) [C][f1]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -17972,6 +18016,28 @@
 		<part></part>
 		<banks>10</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Racing Mini 4WD - Let's Go!! MAX (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6C34</checksum>
+        <crc32>97ebd21d</crc32>
+        <format>DSEQ</format>
+		<part></part>
+		<banks>3F,40</banks>
+		<parameters>4</parameters>
+	</rom>
+	<rom>
+		<name>Racing Mini 4WD (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F626</checksum>
+        <crc32>fc0c180b</crc32>
+        <format>DSEQ</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>4</parameters>
 	</rom>
 	<rom>
 		<name>Radar Mission (J)</name>
