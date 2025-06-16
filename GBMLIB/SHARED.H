@@ -63,6 +63,7 @@
 #define Namco				0x3C
 #define Now_Production		0x3D
 #define Saffire				0x3E
+#define DSEQ				0x3F
 
 extern FILE * rom, * mid;
 extern long masterBank;

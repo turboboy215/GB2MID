@@ -16,6 +16,7 @@
 #include "DAVDSHEA.H"
 #include "DE1.H"
 #include "DKONG.H"
+#include "DSEQ.H"
 #include "DW.H"
 #include "EASTRDGE.H"
 #include "EDMAGNIN.H"
@@ -492,6 +493,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Digital_Eclipse_1:
 			DE1Proc(banks[curBank], parameters);
+			break;
+		case DSEQ:
+			DSEQProc(banks[curBank], parameters);
 			break;
 		case Ed_Magnin:
 			MagninProc(banks[curBank], parameters);
