@@ -699,6 +699,10 @@ int main(int args, char* argv[])
             {
                 driver = Ed_Magnin;
             }
+            else if (!strcmp(formatString, "Factor_5"))
+            {
+                driver = Factor_5;
+            }
             else if (!strcmp(formatString, "Game_Freak"))
             {
                 driver = Game_Freak;
