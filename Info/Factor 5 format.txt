@@ -1,0 +1,26 @@
+Song table
+=======================================
+The song table is comprised of 16-bit (2-byte) pointers to each song.
+
+Song patterns
+=======================================
+These are a series of 16-bit pointers to each pattern of a song. These end with two possible terminator strings: 0000 = Song ends with no loop, and xxFF = Loop back to position -X.
+
+Sequences
+=======================================
+Each pointer leads to the sequence header, which consists of 4 16-bit pointers, one for each channel. A value of 0000 of any pointer means that the channel is not used during the sequence.
+1-2. Channel 1 pointer
+3-4. Channel 2 pointer
+5-6. Channel 3 pointer
+7-8. Channel 4 pointer
+
+The sequence data for each channel is comprised of a series of 3 bytes for each row of a pattern:
+
+1. Row length/flags - other values are different if flag
+2. Note
+3. Instrument
+
+Flags are as follows:
+FD xx 00 = Rest
+FE xx yy = Repeat: go back to position -Y, X times
+FF xx = End of sequence (X = ?)
