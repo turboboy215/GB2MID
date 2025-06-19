@@ -726,6 +726,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Animaniacs (E) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D038</checksum>
+        <crc32>7b23e05c</crc32>
+        <format>Factor_5</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Animaniacs (U) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D037</checksum>
+        <crc32>673c815d</crc32>
+        <format>Factor_5</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Animastar GB (J) [C][!]</name>
 		<gamecode>BNMJ</gamecode>
 		<rev>0</rev>
@@ -3784,6 +3806,17 @@
 		<parameters>CFG/Conker's Pocket Tales (UE) (M3) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Contra - The Alien Wars (U) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7DCB</checksum>
+        <crc32>f1c81eb0</crc32>
+        <format>Factor_5</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Contra (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -3792,6 +3825,17 @@
         <format>Konami</format>
 		<part></part>
 		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Contra Spirits (J) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C6AD</checksum>
+        <crc32>7fc22df5</crc32>
+        <format>Factor_5</format>
+		<part></part>
+		<banks>4</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -17641,6 +17685,28 @@
         <format>Konami</format>
 		<part></part>
 		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Probotector 2 (Beta) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>947B</checksum>
+        <crc32>b5090e43</crc32>
+        <format>Factor_5</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Probotector 2 (E) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>925A</checksum>
+        <crc32>b5090e43</crc32>
+        <format>Factor_5</format>
+		<part></part>
+		<banks>4</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
