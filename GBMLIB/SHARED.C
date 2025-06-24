@@ -5,6 +5,7 @@
 #include "SHARED.H"
 #include "AJG.H"
 #include "ALLEYWAY.H"
+#include "ATLUS.H"
 #include "AUDIOART.H"
 #include "BEAM.H"
 #include "CANNON.H"
@@ -458,6 +459,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Alleyway:
 			AlleyProc(banks[curBank]);
+			break;
+		case Atlus:
+			AtlusProc(banks[curBank]);
 			break;
 		case AudioArts:
 			AAProc(banks[curBank]);
