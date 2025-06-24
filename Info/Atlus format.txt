@@ -1,0 +1,34 @@
+Song table
+=======================================
+The song table is a series of 16-bit (2-byte) pointers, one for each song. This can be found immediately after the frequency table.
+
+Song header
+=======================================
+The header of each song is comprised of the following:
+1. Channel number: 0-3 = music channel 1-4, 4-7 = sound effect channel 1-4
+2-3. Pointer to each channel sequence (-1 byte)
+(Repeat until the following:)
+FF = End of header
+
+Sequences
+=======================================
+Channel sequences are comprised of the following commands:
+00-7F = Play note (0 = rest?)
+80-BF = Change note length
+C0-EF = Set volume?
+F0 xx = Set note size/decay
+F1 xx = Set duty
+F2 xx = Set envelope size/volume
+F3 xx = Set transpose
+F4 xx = Repeat the following section X times
+F5 = End of repeat section
+F6 xx xx = Go to macro
+F7 = Exit macro
+F8 xx xx = Go to song loop
+F9 xx = Set tuning
+FA xx = Set sweep effect
+FB = Turn off sweep?
+FC xx xx = Set waveform
+FD = ?
+FE = ?
+FF = End of channel (no loop)
