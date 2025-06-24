@@ -693,6 +693,17 @@
 		<parameters>CFG/Amazing Spider-Man, The (UE) [!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Amazing Tater (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A7D0</checksum>
+        <crc32>d229ac62</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>America Oudan Ultra Quiz (J) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -723,6 +734,17 @@
         <format>GHX</format>
 		<part></part>
 		<banks>A</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Animal Breeder 3 (J) [C][!]</name>
+		<gamecode>AA3J</gamecode>
+		<rev>0</rev>
+		<checksum>4AF7</checksum>
+        <crc32>c62a4c30</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>80</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -3080,6 +3102,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Bynasty Warriors Advance 5 (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6EAA</checksum>
+        <crc32>9d332731</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>F2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Ca Da (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -3674,6 +3707,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Chiki Race (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DCFA</checksum>
+        <crc32>7e40044a</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Choplifter II - Rescue & Survive (E) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -3924,6 +3968,39 @@
         <format>Mark_Cooksey</format>
 		<part></part>
 		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Cosmo Tank (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DBD2</checksum>
+        <crc32>80b21df1</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Cosmo Tank (J) (Prototype)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0000</checksum>
+        <crc32>2022bbb9</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Cosmo Tank (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B5F8</checksum>
+        <crc32>2e767d25</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>5</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -4697,6 +4774,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Digimon Adventure 6 2002 (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>279E</checksum>
+        <crc32>17bbf6f6</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Digimon Adventure 2001 (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3217</checksum>
+        <crc32>7c6e1b32</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Digimon D-3 (Unl) [C]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -4727,6 +4826,17 @@
         <format>Game_Freak</format>
 		<part></part>
 		<banks>F5,F6,FA,FD,FE</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Digimon Yellow Jade (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F1E8</checksum>
+        <crc32>ce6d09fa</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>3E</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -7832,6 +7942,17 @@
 		<parameters>4C75\3</parameters>
 	</rom>
 	<rom>
+		<name>Goraku Ou Tango! (J) [C][!]</name>
+		<gamecode>AOEJ</gamecode>
+		<rev>0</rev>
+		<checksum>7761</checksum>
+        <crc32>81fb43e1</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>1F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Goukaku Boy Series - Gakken - Yojijukugo 288 (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -8140,6 +8261,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Hamster Club - Awasete Chuu (J) [C][!]</name>
+		<gamecode>BJHJ</gamecode>
+		<rev>0</rev>
+		<checksum>D22D</checksum>
+        <crc32>d56d68ff</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>40</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Hamster Club - Oshiema Chuu (J) [C][!]</name>
+		<gamecode>BJSJ</gamecode>
+		<rev>0</rev>
+		<checksum>EEB9</checksum>
+        <crc32>79ceef4e</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>7E</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Hamster Club (J) [C][!]</name>
 		<gamecode>AJNJ</gamecode>
 		<rev>0</rev>
@@ -8239,6 +8382,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Harry Potter (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CFD4</checksum>
+        <crc32>5bebe333</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Harry Potter 2 - The Black Art Wrestle Edition (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CFD4</checksum>
+        <crc32>5c6c4306</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Harry Potter 2 2003 (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>AEEA</checksum>
+        <crc32>764cf9ac</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>3E</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Harry Potter 3 (Unl) [C]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -8292,6 +8468,28 @@
 		<part>2/2=Samples</part>
 		<banks>10</banks>
 		<parameters>S</parameters>
+	</rom>
+	<rom>
+		<name>Harry Potter II (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A46A</checksum>
+        <crc32>2ff706c0</crc32>
+		<format>Konami</format>
+		<part></part>
+		<banks>F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Harry Potter IV 2003 (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A46A</checksum>
+        <crc32>d3cf8b1b</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>3E</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Harry Potter to Kenja no Ishi (J) [C][!]</name>
@@ -8446,6 +8644,17 @@
 		<part></part>
 		<banks>6</banks>
 		<parameters>CFG/Hello Kitty no Beads Koubou (J) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Hello Kitty no Happy House (J) [C][!]</name>
+		<gamecode>BK7J</gamecode>
+		<rev>0</rev>
+		<checksum>1B13</checksum>
+        <crc32>159fe5e7</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Hello Kitty no Sweet Adventure - Daniel-kun ni Aitai (J) [C][!]</name>
@@ -10054,6 +10263,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Kinniku Banzuke GB2 - Mezase! Muscle Champion (J) [C][!]</name>
+		<gamecode>B6KJ</gamecode>
+		<rev>0</rev>
+		<checksum>5650</checksum>
+        <crc32>42de9092</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>10,71</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Kinnikuman DM (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -10703,6 +10923,17 @@
 		<parameters>1</parameters>
 	</rom>
 	<rom>
+		<name>Kou Dai Yao Guai - Bai Jin Ban (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0F2E</checksum>
+        <crc32>936682e2</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>7D</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Kung-Fu Master (U)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -10711,6 +10942,17 @@
         <format>Hirotomo_Nakamura</format>
 		<part></part>
 		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Kwirk (UE) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6D0A</checksum>
+        <crc32>21c98af2</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>2</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -10767,6 +11009,17 @@
 		<part></part>
 		<banks>2</banks>
 		<parameters>CFG/Land Before Time, The (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Lao Fuzi Chuanqi (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1DA7</checksum>
+        <crc32>0e732071</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>7D</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Las Super Nenas - El Malvado Mojo Jojo (S) [C][!]</name>
@@ -11231,6 +11484,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Lemmings & Oh No! More Lemmings (E) (Unreleased) [C][!]</name>
+		<gamecode>ALEP</gamecode>
+		<rev>0</rev>
+		<checksum>24A6</checksum>
+        <crc32>5ea0796b</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>80</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Lemmings & Oh No! More Lemmings (U) [C][!]</name>
+		<gamecode>ALEE</gamecode>
+		<rev>0</rev>
+		<checksum>5F7C</checksum>
+        <crc32>97e5ce2f</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>80</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Lemmings (E) (V1.0) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -11679,6 +11954,17 @@
         <format>Hudson_Soft</format>
 		<part></part>
 		<banks>37,38</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Luca no Puzzle de Daibouken! (J) [C][!]</name>
+		<gamecode>ARCJ</gamecode>
+		<rev>0</rev>
+		<checksum>D6BB</checksum>
+        <crc32>3aebfad8</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>7</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -12848,6 +13134,50 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Megami Tensei Gaiden - Last Bible (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A968</checksum>
+        <crc32>bd9ba639</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Megami Tensei Gaiden - Last Bible (J) [M][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>00B1</checksum>
+        <crc32>fe9dd4c0</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Megami Tensei Gaiden - Last Bible II (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>55B9</checksum>
+        <crc32>f8e519d9</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Megami Tensei Gaiden - Last Bible II (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1257</checksum>
+        <crc32>9caa00b5</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Meitantei Conan 2 (J) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -12934,6 +13264,17 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters>CFG/Metal Gear Solid (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Metal Slug 3 (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8A93</checksum>
+        <crc32>cc45c725</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>3E</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Metal Slug X (Unl) [C][f1]</name>
@@ -15312,6 +15653,17 @@
 		<parameters>S</parameters>
 	</rom>
 	<rom>
+		<name>Nontan to Issho - Kurukuru Puzzle (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CB66</checksum>
+        <crc32>6cd63b0b</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>NSYNC - Get to the Show (U) [C][!]</name>
 		<gamecode>BNSE</gamecode>
 		<rev>0</rev>
@@ -16643,6 +16995,17 @@
 		<parameters>CFG/Pocket Sonar (J).cfg</parameters>
 	</rom>
 	<rom>
+		<name>Pocket Stadium (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E3E9</checksum>
+        <crc32>c7bd9228</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Pokemon - Blaue Edition (G) [S][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -17864,6 +18227,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Puzzle Boy (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>61F6</checksum>
+        <crc32>2ae2d71c</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Puzzle Boy II (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1411</checksum>
+        <crc32>e5463a1d</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Puzzled (E) (M3) [C][!]</name>
 		<gamecode>AZWP</gamecode>
 		<rev>0</rev>
@@ -18455,6 +18840,17 @@
         <format>Mark_Cooksey</format>
 		<part></part>
 		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Revelations - The Demon Slayer (U) [C][!]</name>
+		<gamecode>ALBE</gamecode>
+		<rev>0</rev>
+		<checksum>EBCE</checksum>
+        <crc32>d1a65d74</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>2</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -20229,6 +20625,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Shu Ma Bao Long 9 - Bao Long Pian 2002 (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2054</checksum>
+        <crc32>e7365dca</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Shu Ma Bao Long 2003 - Ge Dou Ban (Unl) [C][f1]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -21106,6 +21513,17 @@
         <format>Ed_Magnin</format>
 		<part></part>
 		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Spud's Adventure (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CED7</checksum>
+        <crc32>70e5ed99</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>4</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -23474,6 +23892,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Totsugeki Valations (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D74A</checksum>
+        <crc32>f2119a2d</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Tottoko Hamutarou - Tomodachi Daisuken Dechu (J) (V1.0) [C][!]</name>
 		<gamecode>BJTJ</gamecode>
 		<rev>0</rev>
@@ -24286,6 +24715,17 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters>408C</parameters>
+	</rom>
+	<rom>
+		<name>VS Lemmings (J) [C][!]</name>
+		<gamecode>ALEJ</gamecode>
+		<rev>0</rev>
+		<checksum>14D9</checksum>
+        <crc32>947d45ae</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>80</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Wacky Races (E) (M6) [C][!]</name>
@@ -25234,6 +25674,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Xiao Tai Ji - Shen Hua Li Xian (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>FBD3</checksum>
+        <crc32>fab140ab</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>3E</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Xin Feng Shen Bang (Unl) [C][f2]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -25782,6 +26233,17 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters>8</parameters>
+	</rom>
+	<rom>
+		<name>Zen-Nihon Shounen Soccer Taikai - Mezase Nihon Ichi! (J) [C][!]</name>
+		<gamecode>BJFJ</gamecode>
+		<rev>0</rev>
+		<checksum>D39C</checksum>
+        <crc32>efad8b34</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>79</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Zen-Nippon Pro Wrestling Jet (J) [S]</name>

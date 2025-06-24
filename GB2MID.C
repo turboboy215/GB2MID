@@ -643,6 +643,10 @@ int main(int args, char* argv[])
             {
                 driver = Alleyway;
             }
+            else if (!strcmp(formatString, "Atlus"))
+            {
+                driver = Atlus;
+            }
             else if (!strcmp(formatString, "AudioArts"))
             {
                 driver = AudioArts;
