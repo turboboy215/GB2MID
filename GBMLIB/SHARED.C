@@ -12,6 +12,7 @@
 #include "CAPCOM.H"
 #include "CARILLON.H"
 #include "CLIMAX.H"
+#include "CODEMONK.H"
 #include "COSMIGO.H"
 #include "CUBE.H"
 #include "DAVDSHEA.H"
@@ -480,6 +481,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Climax:
 			IMEDProc(parameters);
+			break;
+		case The_Code_Monkeys:
+			CodeMonkProc(parameters);
 			break;
 		case Cosmigo:
 			CosmigoProc(banks[curBank]);

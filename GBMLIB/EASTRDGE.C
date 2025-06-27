@@ -22,7 +22,6 @@ long songPtrs[4];
 long seqPtrs[4];
 long songPtr;
 int numSongs;
-int masterBank;
 int songBank;
 long bankAmt;
 int curInst;

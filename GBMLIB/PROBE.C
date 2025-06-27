@@ -315,6 +315,8 @@ void Probsong2mid(int songNum, long ptr)
 	int repeat1Pos = 0;
 	int repeat2Times = 0;
 	int repeat2Pos = 0;
+	int repeat3Times = 0;
+	int repeat3Pos = 0;
 	unsigned char command[8];
 	unsigned int midPos = 0;
 	unsigned int ctrlMidPos = 0;
@@ -421,6 +423,8 @@ void Probsong2mid(int songNum, long ptr)
 			repeat1Pos = -1;
 			repeat2Times = -1;
 			repeat2Pos = -1;
+			repeat3Times = -1;
+			repeat3Pos = -1;
 			delayPos = 0;
 
 			/*Add track header*/
@@ -465,7 +469,7 @@ void Probsong2mid(int songNum, long ptr)
 					}
 					else if (noteOn == 1)
 					{
-						curNote = command[0] - 12;
+						curNote = command[0];
 						curVol = command[1] * 0.5;
 						delayPos = seqPos + 2;
 
@@ -534,7 +538,7 @@ void Probsong2mid(int songNum, long ptr)
 				}
 
 				/*Rest*/
-				else if (command[0] > 0x9F && command[0] < 0xF1)
+				else if (command[0] > 0x9F && command[0] <= 0xEF)
 				{
 					curDelay = command[0];
 					seqPos++;
@@ -599,26 +603,79 @@ void Probsong2mid(int songNum, long ptr)
 				/*Repeat section # of times*/
 				else if (command[0] == 0xFA)
 				{
-					repeat1Times = command[1];
-					repeat1Pos = seqPos + 2;
-					seqPos += 2;
+					if (repeat1Times == -1)
+					{
+						repeat1Times = command[1];
+						repeat1Pos = seqPos + 2;
+						seqPos += 2;
+					}
+					else if (repeat2Times == -1)
+					{
+						repeat2Times = command[1];
+						repeat2Pos = seqPos + 2;
+						seqPos += 2;
+					}
+					else
+					{
+						repeat3Times = command[1];
+						repeat3Pos = seqPos + 2;
+						seqPos += 2;
+					}
 					noteOn = 0;
 				}
 
 				/*End of repeat*/
 				else if (command[0] == 0xFB)
 				{
-					if (repeat1Times > 1)
+					if (repeat3Times > -1)
 					{
-						seqPos = repeat1Pos;
-						repeat1Times--;
-						noteOn = 0;
+						if (repeat3Times > 1)
+						{
+							seqPos = repeat3Pos;
+							repeat3Times--;
+							noteOn = 0;
+						}
+						else if (repeat3Times <= 1)
+						{
+							repeat3Times = -1;
+							seqPos += 2;
+							noteOn = 0;
+						}
 					}
+					else if (repeat2Times == -1)
+					{
+						if (repeat1Times > 1)
+						{
+							seqPos = repeat1Pos;
+							repeat1Times--;
+							noteOn = 0;
+						}
+						else if (repeat1Times <= 1)
+						{
+							repeat1Times = -1;
+							seqPos += 2;
+							noteOn = 0;
+						}
+					}
+					else if (repeat2Times > -1)
+					{
+						if (repeat2Times > 1)
+						{
+							seqPos = repeat2Pos;
+							repeat2Times--;
+							noteOn = 0;
+						}
+						else if (repeat2Times <= 1)
+						{
+							repeat2Times = -1;
+							seqPos += 2;
+							noteOn = 0;
+						}
+					}
+
 					else
 					{
-						seqPos += 2;
-						noteOn = 0;
-						repeat1Times = -1;
+						seqEnd = 1;
 					}
 
 				}
@@ -730,6 +787,8 @@ void ProbSNESsong2mid(int songNum, long ptr)
 	int repeat1Pos = 0;
 	int repeat2Times = 0;
 	int repeat2Pos = 0;
+	int repeat3Times = 0;
+	int repeat3Pos = 0;
 	unsigned char command[8];
 	unsigned int midPos = 0;
 	unsigned int ctrlMidPos = 0;
@@ -1278,6 +1337,8 @@ void ProbSNESsong2mid2(int songNum, long ptr)
 	int repeat1Pos = 0;
 	int repeat2Times = 0;
 	int repeat2Pos = 0;
+	int repeat3Times = 0;
+	int repeat3Pos = 0;
 	unsigned char command[8];
 	unsigned int midPos = 0;
 	unsigned int ctrlMidPos = 0;
@@ -1385,6 +1446,8 @@ void ProbSNESsong2mid2(int songNum, long ptr)
 			repeat1Pos = -1;
 			repeat2Times = -1;
 			repeat2Pos = -1;
+			repeat3Times = -1;
+			repeat3Pos = -1;
 			delayPos = 0;
 
 			/*Add track header*/
@@ -1574,19 +1637,76 @@ void ProbSNESsong2mid2(int songNum, long ptr)
 				/*Repeat section # of times*/
 				else if (command[0] == 0xFA)
 				{
-					repeat1Times = command[1];
-					repeat1Pos = seqPos + 2;
-					seqPos += 2;
+					if (repeat1Times == -1)
+					{
+						repeat1Times = command[1];
+						repeat1Pos = seqPos + 2;
+						seqPos += 2;
+					}
+					else if (repeat2Times == -1)
+					{
+						repeat2Times = command[1];
+						repeat2Pos = seqPos + 2;
+						seqPos += 2;
+					}
+					else
+					{
+						repeat3Times = command[1];
+						repeat3Pos = seqPos + 2;
+						seqPos += 2;
+					}
 					noteOn = 0;
 				}
 
 				/*End of repeat*/
 				else if (command[0] == 0xFB)
 				{
-					if (repeat1Times > 1)
+					if (repeat3Times > -1)
 					{
-						seqEnd = 1;
+						if (repeat3Times > 1)
+						{
+							seqPos = repeat3Pos;
+							repeat3Times--;
+							noteOn = 0;
+						}
+						else if (repeat3Times <= 1)
+						{
+							repeat3Times = -1;
+							seqPos++;
+							noteOn = 0;
+						}
 					}
+					else if (repeat2Times == -1)
+					{
+						if (repeat1Times > 1)
+						{
+							seqPos = repeat1Pos;
+							repeat1Times--;
+							noteOn = 0;
+						}
+						else if (repeat1Times <= 1)
+						{
+							repeat1Times = -1;
+							seqPos++;
+							noteOn = 0;
+						}
+					}
+					else if (repeat2Times > -1)
+					{
+						if (repeat2Times > 1)
+						{
+							seqPos = repeat2Pos;
+							repeat2Times--;
+							noteOn = 0;
+						}
+						else if (repeat2Times <= 1)
+						{
+							repeat2Times = -1;
+							seqPos++;
+							noteOn = 0;
+						}
+					}
+
 					else
 					{
 						seqEnd = 1;
@@ -1708,6 +1828,8 @@ void ProbSMDsong2mid(int songNum, long ptr)
 	int repeat1Pos = 0;
 	int repeat2Times = 0;
 	int repeat2Pos = 0;
+	int repeat3Times = 0;
+	int repeat3Pos = 0;
 	unsigned char command[8];
 	unsigned int midPos = 0;
 	unsigned int ctrlMidPos = 0;
@@ -1814,6 +1936,8 @@ void ProbSMDsong2mid(int songNum, long ptr)
 			repeat1Pos = -1;
 			repeat2Times = -1;
 			repeat2Pos = -1;
+			repeat3Times = -1;
+			repeat3Pos = -1;
 			delayPos = 0;
 
 			/*Add track header*/
@@ -1997,26 +2121,79 @@ void ProbSMDsong2mid(int songNum, long ptr)
 				/*Repeat section # of times*/
 				else if (command[0] == 0xFA)
 				{
-					repeat1Times = command[1];
-					repeat1Pos = seqPos + 2;
-					seqPos += 2;
+					if (repeat1Times == -1)
+					{
+						repeat1Times = command[1];
+						repeat1Pos = seqPos + 2;
+						seqPos += 2;
+					}
+					else if (repeat2Times == -1)
+					{
+						repeat2Times = command[1];
+						repeat2Pos = seqPos + 2;
+						seqPos += 2;
+					}
+					else
+					{
+						repeat3Times = command[1];
+						repeat3Pos = seqPos + 2;
+						seqPos += 2;
+					}
 					noteOn = 0;
 				}
 
 				/*End of repeat*/
 				else if (command[0] == 0xFB)
 				{
-					if (repeat1Times > 1)
+					if (repeat3Times > -1)
 					{
-						seqPos = repeat1Pos;
-						repeat1Times--;
-						noteOn = 0;
+						if (repeat3Times > 1)
+						{
+							seqPos = repeat3Pos;
+							repeat3Times--;
+							noteOn = 0;
+						}
+						else if (repeat3Times <= 1)
+						{
+							repeat3Times = -1;
+							seqPos += 2;
+							noteOn = 0;
+						}
 					}
+					else if (repeat2Times == -1)
+					{
+						if (repeat1Times > 1)
+						{
+							seqPos = repeat1Pos;
+							repeat1Times--;
+							noteOn = 0;
+						}
+						else if (repeat1Times <= 1)
+						{
+							repeat1Times = -1;
+							seqPos += 2;
+							noteOn = 0;
+						}
+					}
+					else if (repeat2Times > -1)
+					{
+						if (repeat2Times > 1)
+						{
+							seqPos = repeat2Pos;
+							repeat2Times--;
+							noteOn = 0;
+						}
+						else if (repeat2Times <= 1)
+						{
+							repeat2Times = -1;
+							seqPos += 2;
+							noteOn = 0;
+						}
+					}
+
 					else
 					{
-						seqPos += 2;
-						noteOn = 0;
-						repeat1Times = -1;
+						seqEnd = 1;
 					}
 
 				}

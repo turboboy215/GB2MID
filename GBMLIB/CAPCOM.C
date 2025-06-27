@@ -359,6 +359,7 @@ void CapProc(int bank)
 			{
 				songNum = 1;
 				Capsong2mid3(songNum, songPtr);
+				songNum++;
 
 				/*Look for SFX/additional music table*/
 				for (i = 0; i < ramSize; i++)

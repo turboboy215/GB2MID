@@ -305,7 +305,7 @@ void DShsong2mid(int songNum, long ptr)
 					}
 					else if (noteOn == 1)
 					{
-						curNote = command[0] - 12;
+						curNote = command[0];
 
 						if (curNote >= 0x80)
 						{

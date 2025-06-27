@@ -165,6 +165,81 @@
     <ClInclude Include="CUBE.H">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MPLAY.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="JSAITO.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CARILLON.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DUCKT.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="COSMIGO.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MAKE.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TARANTLA.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SHEEP.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EDMAGNIN.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ALLEYWAY.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NOVA.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CANNON.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SCULPT.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KEMCO.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NBALDWIN.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DKONG.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EASTRDGE.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MARBLE.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NAMCO.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NOWPRO.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SAFFIRE.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DSEQ.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FACTOR5.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ATLUS.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CODEMONK.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SHARED.C">
@@ -309,6 +384,81 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BGDEC.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MPLAY.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JSAITO.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CARILLON.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DUCKT.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="COSMIGO.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MAKE.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TARANTLA.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SHEEP.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EDMAGNIN.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ALLEYWAY.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NOVA.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CANNON.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SCULPT.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KEMCO.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NBALDWIN.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DKONG.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EASTRDGE.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MARBLE.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NAMCO.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NOWPRO.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SAFFIRE.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DSEQ.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FACTOR5.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ATLUS.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CODEMONK.C">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
