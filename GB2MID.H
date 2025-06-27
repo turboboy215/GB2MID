@@ -64,3 +64,4 @@
 #define DSEQ				0x3F
 #define Factor_5			0x40
 #define Atlus				0x41
+#define The_Code_Monkeys	0x42

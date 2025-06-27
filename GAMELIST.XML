@@ -957,6 +957,39 @@
 		<parameters>4000</parameters>
 	</rom>
 	<rom>
+		<name>Asteroids & Missile Command (U) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>AB03</checksum>
+        <crc32>8259ac54</crc32>
+        <format>The_Code_Monkeys</format>
+		<part>1/2=Menu/Missile Command</part>
+		<banks>1</banks>
+		<parameters>CFG/Asteroids & Missile Command (U) [S][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Asteroids & Missile Command (U) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>AB03</checksum>
+        <crc32>8259ac54</crc32>
+        <format>The_Code_Monkeys</format>
+		<part>2/2=Asteroids</part>
+		<banks>1</banks>
+		<parameters>CFG/Asteroids & Missile Command (U) [S][!] - Asteroids.cfg</parameters>
+	</rom>
+	<rom>
+		<name>Asteroids (U) [M][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0801</checksum>
+        <crc32>c1f88833</crc32>
+        <format>The_Code_Monkeys</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Asteroids (U) [M][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Atlantis - The Lost Empire (E) (M3) (Eng-Spa-Ita) [C][!]</name>
 		<gamecode>BABX</gamecode>
 		<rev>0</rev>
@@ -3617,6 +3650,50 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Centipede (E) [M][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1C68</checksum>
+        <crc32>245afcdc</crc32>
+        <format>The_Code_Monkeys</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Centipede (E) [M][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Centipede (E) (M6) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1F56</checksum>
+        <crc32>255db8be</crc32>
+        <format>The_Code_Monkeys</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>CFG/Centipede (E) (M6) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Centipede (U) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A5BF</checksum>
+        <crc32>13ad07b1</crc32>
+        <format>The_Code_Monkeys</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>CFG/Centipede (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Centipede (U) [M][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F6AF</checksum>
+        <crc32>e957014f</crc32>
+        <format>The_Code_Monkeys</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>CFG/Centipede (U) [M][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Championship Motocross 2001 featuring Ricky Carmichael (U) [C][!]</name>
@@ -6721,6 +6798,17 @@
 		<parameters>CFG/Football International (U).cfg</parameters>
 	</rom>
 	<rom>
+		<name>Force 21 (U) (M3) [C][!]</name>
+		<gamecode>BFCE</gamecode>
+		<rev>0</rev>
+		<checksum>32A3</checksum>
+        <crc32>2dcd0a0a</crc32>
+        <format>The_Code_Monkeys</format>
+		<part></part>
+		<banks>2C</banks>
+		<parameters>CFG/Force 21 (U) (M3) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Foreman for Real (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -7115,6 +7203,17 @@
 		<part></part>
 		<banks>3F,40</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Game of Harmony, The (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8998</checksum>
+        <crc32>b0074acb</crc32>
+        <format>The_Code_Monkeys</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Game of Harmony, The (U).cfg</parameters>
 	</rom>
 	<rom>
 		<name>Gameboy Camera (UE) [S][!]</name>
@@ -7554,6 +7653,17 @@
         <format>Technos_Japan</format>
 		<part></part>
 		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>GBC 18-in-1 (Menu) (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>347A</checksum>
+        <crc32>272edbfe</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>2</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -13596,6 +13706,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Millipede - Centipede (UE) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0801</checksum>
+        <crc32>b14c3b31</crc32>
+        <format>The_Code_Monkeys</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>CFG/Millipede - Centipede (UE) [S][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Milon no Meiykuu Kumikyoku (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -13671,6 +13792,39 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Missile Command (E) [C][!]</name>
+		<gamecode>ALCP</gamecode>
+		<rev>0</rev>
+		<checksum>5A75</checksum>
+        <crc32>18216e26</crc32>
+        <format>The_Code_Monkeys</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Missile Command (U) [M][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Missile Command (U) [C][!]</name>
+		<gamecode>VLCE</gamecode>
+		<rev>0</rev>
+		<checksum>AFB3</checksum>
+        <crc32>47543c51</crc32>
+        <format>The_Code_Monkeys</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Missile Command (U) [M][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Missile Command (U) [M][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2877</checksum>
+        <crc32>3a6cd4d8</crc32>
+        <format>The_Code_Monkeys</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Missile Command (U) [M][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Mission Bravo (U) (Unreleased) [C][!]</name>
@@ -18896,6 +19050,17 @@
 		<part></part>
 		<banks>40</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Road Rash (U) [M][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>4120</checksum>
+        <crc32>88edc83d</crc32>
+        <format>The_Code_Monkeys</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>CFG/Road Rash (U) [M][!] (original pitch).cfg</parameters>
 	</rom>
 	<rom>
 		<name>Roadster (J)</name>
@@ -24255,6 +24420,17 @@
 		<parameters>4087</parameters>
 	</rom>
 	<rom>
+		<name>Turrican (UE) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E7D0</checksum>
+        <crc32>2359bf0c</crc32>
+        <format>The_Code_Monkeys</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>CFG/Turrican (UE) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Tweenies - Doodles' Bones (E) (M4) [C][!]</name>
 		<gamecode>B2ZP</gamecode>
 		<rev>0</rev>
@@ -24550,6 +24726,17 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Universal Soldier (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>194A</checksum>
+        <crc32>99ae9d06</crc32>
+        <format>The_Code_Monkeys</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>CFG/Universal Soldier (U).cfg</parameters>
 	</rom>
 	<rom>
 		<name>Vegas Games (E) (M3) [C][!]</name>
