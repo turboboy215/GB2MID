@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stddef.h>
 #include "SHARED.H"
+#include "ACT.H"
 #include "AJG.H"
 #include "ALLEYWAY.H"
 #include "ATLUS.H"
@@ -62,6 +63,7 @@
 #include "SHEEP.H"
 #include "SQUARE.H"
 #include "SUNSOFT.H"
+#include "TAITO.H"
 #include "TARANTLA.H"
 #include "TECHNOS.H"
 #include "TIERTEX.H"
@@ -455,6 +457,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 	{
 		switch (format)
 		{
+		case ACT_Japan:
+			ACTProc(banks[curBank]);
+			break;
 		case AJ_Gonzalez:
 			AJGProc(banks[curBank], parameters);
 			break;
@@ -634,6 +639,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Taisuke_Araki:
 			DKongProc(banks[curBank]);
+			break;
+		case Taito:
+			TaitoProc(banks[curBank], parameters);
 			break;
 		case Tarantula_Studios:
 			TarantulaProc(banks[curBank], parameters);
