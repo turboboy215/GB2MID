@@ -1,0 +1,65 @@
+Song table
+=======================================
+The song table consists of both music and sound effects. It can be found with the following code:
+set 7, a
+ldi [hl], a
+inc hl
+res 7, [hl]
+ld hl, SongTable
+ld de, ????
+
+Which equals the following in hex:
+CB FF 22 23 CB BE 21 ?? ?? 11 xx xx
+
+Song headers
+=======================================
+Each song or sound effect has a "header" which is constructed as follows:
+1. Song note pointer (add to "base address" plus value x 0x10)
+2-3. Channel 1 pointer
+4-5. Channel 2 pointer
+6-7. Channel 3 pointer
+8-9. Channel 4 pointer
+
+If any of the following pointer values are 0000 or FFFF, then they are not used.
+
+In later games, including some GBC games by Natsume, 1 is instead used as a tempo value (note lengths are always the same).
+
+Sequence data
+=======================================
+Channel sequences are comprised of the following commands:
+00-4F = Set note
+5x = Set decay/release
+6x = Set noise type
+7x = Set duty/volume?
+8x = Tie note (add length)
+9x = Play note with length
+Ax = Rest
+Bx = Cut off note/rest?
+C0 = End of channel (no repeat)
+C2 xx = Repeat the following section (1)
+C4 xx = Repeat the following section (2)
+C6 xx xx = End of repeat section - jump to position X
+C8 xx xx = End of repeat section - jump to position X (2)
+CA xx xx = Go to macro
+CC xx xx = Go to song loop
+CE = Return from macro
+D0 xx = Set pitch sweep speed
+D2 xx = Set tuning
+D4 = Set tuning to 0
+D6 xx yy = Set vibrato
+D8 = Reset tuning
+DA xx xx yy = Set transpose/tuning and delay (X = Transpose, Y = Delay) 
+DC xx = Set envelope
+DE xx = Set global volume?
+E0 xx = Set envelope (v2)
+E2 = Reset envelope?
+E4 xx = Set envelope (v3)
+E6 xx xx = Pitch bend effect amount
+E8 xx yy = Sweep effect
+EA xx = Set noise frequency?
+EC xx = Noise effect?
+EE xx = Set pitch effect?
+F0 xx = Set effect volume?
+F2 xx = ?
+F4 xx = ?
+F6 xx = ?

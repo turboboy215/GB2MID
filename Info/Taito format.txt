@@ -1,0 +1,45 @@
+Song table
+=======================================
+The song table consists of both music and sound effects. It can be found with the following code:
+ld h, $00
+ld l, a
+add hl, hl
+add de, SongTable
+add hl, de
+ld e, hl
+inc hl
+
+Which equals the following in hex:
+26 00 6F 29 11 ?? ?? 19 5E 23
+
+Song headers
+=======================================
+Each song or sound effect has a "header" which is constructed as follows:
+1. Number of channels
+2. Channel mask (xy, X = Channel number - 0-3 = music, 4-7 = SFX, Y = ?)
+3-4. Pointer
+(Repeat 2-4 for each channel)
+
+Sequence data
+=======================================
+Channel sequences are comprised of the following commands:
+(NOTE: The following commands are for Bubble Bobble. VCMDs differ slightly in some later games.)
+
+00 = End of channel
+01-8B = Set note length
+8C xx = Set volume
+8D xx = Set sweep
+8E xx = Set duty
+8F xx yy = Set tuning and play note (X = Note, Y = Tuning value)
+9C xx = Set noise
+9D xx = Set waveform
+9E xx = Set panning
+9F xx = Set global volume
+AC xx xx = Go to song loop
+AD xx = Set length/envelope
+AE = Repeat note
+AF = ?
+BC = ?
+BD = ?
+EE = Rest
+Other values = Play note
