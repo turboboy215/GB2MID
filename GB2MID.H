@@ -65,3 +65,5 @@
 #define Factor_5			0x40
 #define Atlus				0x41
 #define The_Code_Monkeys	0x42
+#define Taito				0x43
+#define ACT_Japan			0x44

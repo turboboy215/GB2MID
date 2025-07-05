@@ -18,6 +18,9 @@
     <ClCompile Include="GB2MID.C">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ZLIB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GB2MID.H">

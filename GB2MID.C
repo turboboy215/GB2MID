@@ -635,7 +635,11 @@ int main(int args, char* argv[])
             }
 
             /*Now parse the sound engine/format*/
-            if (!strcmp(formatString, "AJ_Gonzalez"))
+            if (!strcmp(formatString, "ACT_Japan"))
+            {
+                driver = ACT_Japan;
+            }
+            else if (!strcmp(formatString, "AJ_Gonzalez"))
             {
                 driver = AJ_Gonzalez;
             }
@@ -874,6 +878,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "Taisuke_Araki"))
             {
                 driver = Taisuke_Araki;
+            }
+            else if (!strcmp(formatString, "Taito"))
+            {
+                driver = Taito;
             }
             else if (!strcmp(formatString, "Tarantula_Studios"))
             {

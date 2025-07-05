@@ -239,6 +239,8 @@ Brainbender (E) [!]
 Brainbender (U) [!]
 Bram Stoker's Dracula (UE) [!]
 BreakThru! (U) [!]
+Bubble Bobble (J)
+Bubble Bobble (U) [M][!]
 Bubble Ghost (J)
 Bubble Ghost (U) [!]
 Bubsy 2 (E)
@@ -519,6 +521,8 @@ Earthworm Jim (U) [!]
 ECW Hardcore Revolution (U) [C][!]
 Edd the Duck (E) (Unreleased) [!]
 E'Fighter HOT (Unl) [C]
+Elevator Action (J) [!]
+Elevator Action (U) [!]
 Elie no Atelier GB (J) [C][!]
 Elite Soccer (U) [S]
 Elmo in Grouchland (E) [C][!]
@@ -535,6 +539,7 @@ ESPN National Hockey Night (U) [C][!]
 Estpolis Denki - Yomigaeru Densetsu (J) [C][!]
 European Super League (E) (M5) [C][!]
 Eurosport Pro Champ Fishing (E) (Unreleased) [C][!]
+Eurosport XS Racing (E) (Unreleased) [C][!]
 Evel Knievel (E) (M7) [C][!]
 Evel Knievel (U) [C][!]
 Extra Bases! (U) [!]
@@ -585,6 +590,8 @@ Fix & Foxi - Episode 1 Lupo (E) (M3) [C][!]
 Flintstones, The - Burgertime in Bedrock (E) (M5) [C][!]
 Flintstones, The - Burgertime in Bedrock (E) (M5) (Beta) [C][!]
 Flintstones, The - Burgertime in Bedrock (U) [C][!]
+Flintstones, The - King Rock Treasure Island (J) (Unreleased) [!]
+Flintstones, The - King Rock Treasure Island (U)
 Flintstones, The (U) [!]
 Flipper & Lopaka (E) (M10) [C][!]
 Football International (U)
@@ -818,6 +825,7 @@ It's a World Rally (J) [C][!]
 Itsudemo Nyanto Wonderful (J) [S][!]
 J.Cup Soccer (J)
 J.League Excite Stage GB (J) [C][!]
+J.League Excite Stage Tactics (J) [C][!]
 James Bond 007 (U) [S][!]
 Jankenman (J)
 Jankyuusei - Cosplay Paradise (J) [C][!]
@@ -826,8 +834,11 @@ Jantaku Boy (J)
 Jay und Die Spielzeugdiebe (G) [C][!]
 Jeep Jamboree (E) (Unreleased) [!]
 Jeep Jamboree (U) [!]
+Jeff Gordon XS Racing (U) [C][!]
 Jelly Boy (U)
 Jet Pack (Beta)
+Jetsons, The (J) (Unreleased) [!]
+Jetsons, The (U)
 Jida Igeki (J)
 Jikuu Senki Mu (J)
 Jimmy Connors Tennis (J)
@@ -908,6 +919,7 @@ Kirby's Tilt 'n' Tumble (U) [C][!]
 Kirikou (E) (M6) [C][!]
 Kisekae Series 2 - Oshare Nikki (J) (V1.0) [C][!]
 Kisekae Series 2 - Oshare Nikki (J) (V1.1) [C][!]
+Kitarou (J) [S]
 Klax (J) [M]
 Koguru Guruguru - Guruguru to Nakayoshi (J) [C]
 Konami Basketball (J)
@@ -1051,6 +1063,7 @@ Makai Toushi SaGa (J) (V1.1) [!]
 Makaimura Gaiden (J)
 Malibu Beach Volleyball (U) [!]
 Mani 4-in-1 (DMG-601 CHN) (Ch) [!]
+Mani 4-in-1 (DMG-602 CHN) (Ch) [!]
 Mani 4-in-1 (DMG-605 CHN) (Ch) [!]
 Marble Madness (U) [!]
 Marie no Atelier GB (J) [C][!]
@@ -1116,6 +1129,7 @@ Megami Tensei Gaiden - Last Bible (J) [C][!]
 Megami Tensei Gaiden - Last Bible (J) [M][!]
 Megami Tensei Gaiden - Last Bible II (J)
 Megami Tensei Gaiden - Last Bible II (J) [C][!]
+Meitantei Conan (J) [S]
 Meitantei Conan 2 (J) [S]
 Men In Black - The Series (U) [C][!]
 Men In Black 2 - The Series (E) (M3) [C][!]
@@ -1228,6 +1242,7 @@ Mr. Driller (E) [C][!]
 Mr. Driller (J) [a1] (Unreleased) [C][!]
 Mr. Driller (J) [C][!]
 Mr. Driller (U) [C][!]
+Mr. Gono no Baken Tekichu Jyutsu (J)
 Ms. Pac-Man (E)
 Ms. Pac-Man (U) [!]
 Ms. Pac-Man Special Color Edition (E) [C][!]
@@ -1263,6 +1278,7 @@ Namco Classics (J)
 Namco Gallery Vol.1 (J) [S]
 Namco Gallery Vol.2 (J) [S]
 Namco Gallery Vol.3 (J) [S]
+Naminori Yarou! (J) [C][!]
 NASCAR Heat (U) [C][!]
 NASCAR Racers (U) [C][!]
 Nations, The - Land of Legends (E) (M2) [C][!]
@@ -1552,6 +1568,8 @@ Puzzle Boy (J)
 Puzzle Boy II (J)
 Puzzled (E) (M3) [C][!]
 Puzzled (U) [C][!]
+Puzznic (J)
+Puzznic (U) (Unreleased) [!]
 Q-bert (U) [C][!]
 Q-bert II (J)
 Q-bert II (UE) [!]
@@ -1601,6 +1619,8 @@ Resident Evil (E) (Prototype 1) [C][!]
 Resident Evil (E) (Prototype 1) [C][a1][!]
 Resident Evil (E) (Prototype 2) [C][!]
 Resident Evil (E) (Prototype 2) [C][a1][!]
+Return of the Ninja (E) [C][!]
+Return of the Ninja (U) [C][!]
 Revelations - The Demon Slayer (U) [C][!]
 Rhino Rumble (U) [C][!]
 Rip-Tide Racer (E) (M5) [C][!]
@@ -1673,6 +1693,7 @@ Sabrina - The Animated Series - Zapped! (U) [C][!]
 SaGa 2 - Hihou Densetsu (J) (V1.0)
 SaGa 2 - Hihou Densetsu (J) (V1.1)
 SaGa 3 - Jikuu no Hasha (J)
+Sagaia (J) [!]
 Saishuu Gensou (Unl) [C]
 Sakura Taisen GB - Geki Hana Kumi Nyuutai! (J) [C][!]
 Sakura Tasien GB2 - Thunder Volt Sakusen (J) [C][!]
@@ -1795,7 +1816,11 @@ Soreyuke!! Kid (J)
 Soul Falchion (Unl) [C]
 South Park (U) (Prototype) [C][!]
 Space Date (E) (Unreleased) [!]
+Space Invaders (E) [a1] (Unreleased) [S][!]
+Space Invaders (E) [S][!]
+Space Invaders (J)
 Space Invaders (U) [C][!]
+Space Invaders (U) [S]
 Space Invaders X (J) [C][!]
 Space-Net - Cosmo Blue (J) [C][!]
 Space-Net - Cosmo Neo (J) (Unreleased) [C][!]
@@ -1934,6 +1959,7 @@ T2 - The Arcade Game (U) [!]
 Taachiyan (J) [S]
 Taikong Zhanshi DX3 - Zuizhong Huanxiang (Unl) [C][f1]
 Tail Gator (U) [!]
+Taito Variety Pack (J)
 Taiyou no Yuusha - Firebird GB (J)
 Taiyou no Yuusha - Firebird GB (J) [a1]
 Takahashi Meijin no Bouken Shima II (J)
@@ -2028,6 +2054,9 @@ Tomb Raider (UE) (M5) (Beta) [C][!]
 Tomb Raider (Unl) [C][!]
 Tomb Raider 2 (Unl) [C][!]
 Tonka Construction Site (U) [C]
+Tony Hawk's Pro Skater (J) (Unreleased) [C][!]
+Tony Hawk's Pro Skater (U) [C][!]
+Tony Hawk's Pro Skater 2 (U) [C][!]
 Tony Hawk's Pro Skater 3 (U) [C][!]
 Toobin' (U) [C][!]
 Tootuff (E) (M6) [C][!]
@@ -2052,6 +2081,9 @@ Toy Story Racer (U) [C][!]
 Track & Field (U) [!]
 Trappers Tengoku - Spy vs Spy (J)
 Trax (U) [!]
+Trick Boarder (E) [C][!]
+Trick Boarder (U) [C][!]
+Trickboarder GP (J) [C][!]
 Trip World (E) [!]
 Trip World (J)
 Triple Play 2001 (U) [C][!]
@@ -2085,6 +2117,9 @@ Ultima - Runes of Virtue (J) [!]
 Ultima - Runes of Virtue (U) [!]
 Ultimate Fighting Championship (E) [C][!]
 Ultimate Fighting Championship (U) [C][!]
+Ultimate Surfing (E) [C]
+Ultimate Surfing (J) (Unreleased) [C][!]
+Ultimate Surfing (U) [C][!]
 Ultra Golf (U)
 Ultraman Ball (J) [S][!]
 Ultraman Chou Toushi Gekiden (J) [S]
@@ -2251,10 +2286,8 @@ Zoop (J)
 Zoop (U) [!]
 
 Partially supported:
-Mani 4-in-1 (DMG-602 CHN) (Ch) [!]
 Mani 4-in-1 (DMG-603 CHN) (Ch) [!]
 Mani 4-in-1 (DMG-604-CHN) (Ch) [!]
 Moon Patrol & Spy Hunter (U) [C][!]
 Pocket Smash Out & Race Time (Unl) [C][!]
 Space Invasion & Painter (Unl) [C][!]
-Taito Variety Pack (J)

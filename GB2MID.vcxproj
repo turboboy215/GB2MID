@@ -132,12 +132,13 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories> C:\Users\Super\source\repos\GB2MID\GB2MID\GBMLIB</AdditionalLibraryDirectories>
-      <AdditionalDependencies>GBMLIB.lib;Zlib-1.2.7-win32-x86\lib\zlib.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories> C:\Users\Super\source\repos\GB2MID\GB2MID\Zlib-1.2.7-win32-x86\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>legacy_stdio_definitions.lib;GBMLIB.lib;Zlib-1.2.7-win32-x86\lib\zlib.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GB2MID.C" />
+    <ClCompile Include="ZLIB.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GB2MID.H" />

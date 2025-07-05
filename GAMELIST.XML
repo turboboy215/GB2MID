@@ -2827,6 +2827,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Bubble Bobble (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>097C</checksum>
+        <crc32>ad9b300c</crc32>
+        <format>Taito</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Bubble Bobble (U) [M][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1EF9</checksum>
+        <crc32>d516841d</crc32>
+        <format>Taito</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Bubble Ghost (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -6017,6 +6039,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Elevator Action (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>85EC</checksum>
+        <crc32>bead8ae4</crc32>
+        <format>Taito</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>3\7537</parameters>
+	</rom>
+	<rom>
+		<name>Elevator Action (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A26A</checksum>
+        <crc32>b749a927</crc32>
+        <format>Taito</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>3\71FB</parameters>
+	</rom>
+	<rom>
 		<name>Elie no Atelier GB (J) [C][!]</name>
 		<gamecode>A8EJ</gamecode>
 		<rev>0</rev>
@@ -6190,6 +6234,17 @@
         <format>Hudson_Soft</format>
 		<part></part>
 		<banks>20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Eurosport XS Racing (E) (Unreleased) [C][!]</name>
+		<gamecode>AJZP</gamecode>
+		<rev>0</rev>
+		<checksum>CC55</checksum>
+        <crc32>ca0abfca</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>2,3</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -6763,6 +6818,28 @@
 		<part></part>
 		<banks>39,3A</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Flintstones, The - King Rock Treasure Island (J) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>81FF</checksum>
+        <crc32>437600bb</crc32>
+        <format>Taito</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>2\468D</parameters>
+	</rom>
+	<rom>
+		<name>Flintstones, The - King Rock Treasure Island (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B40D</checksum>
+        <crc32>508282d0</crc32>
+        <format>Taito</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>2\468D</parameters>
 	</rom>
 	<rom>
 		<name>Flintstones, The (U) [!]</name>
@@ -9548,6 +9625,17 @@
 		<parameters>2</parameters>
 	</rom>
 	<rom>
+		<name>J.League Excite Stage Tactics (J) [C][!]</name>
+		<gamecode>AJEJ</gamecode>
+		<rev>0</rev>
+		<checksum>2AFE</checksum>
+        <crc32>558f4631</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>2,3,6</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Jack Nicklaus Golf (F) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -9669,6 +9757,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Jeff Gordon XS Racing (U) [C][!]</name>
+		<gamecode>AJZE</gamecode>
+		<rev>0</rev>
+		<checksum>AC54</checksum>
+        <crc32>a41ed926</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>2,3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Jelly Boy (U)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -9689,6 +9788,28 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters>CFG/Jet Pack (Beta).cfg</parameters>
+	</rom>
+	<rom>
+		<name>Jetsons, The (J) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D56C</checksum>
+        <crc32>d016d141</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Jetsons, The (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F517</checksum>
+        <crc32>6386c870</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Jida Igeki (J)</name>
@@ -10569,6 +10690,17 @@
 		<part></part>
 		<banks>1E</banks>
 		<parameters>CFG/Kisekae Series 2 - Oshare Nikki (J) (V1.1) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Kitarou (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DE42</checksum>
+        <crc32>28e507b0</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Klax (J) [M]</name>
@@ -12479,9 +12611,42 @@
 		<rev>0</rev>
 		<checksum>2853</checksum>
         <crc32>5bfc3ef5</crc32>
+        <format>Taito</format>
+		<part>1/4=Bubble Bobble</part>
+		<banks>18</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mani 4-in-1 (DMG-602 CHN) (Ch) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2853</checksum>
+        <crc32>5bfc3ef5</crc32>
+        <format>Taito</format>
+		<part>2/4=Elevator Action</part>
+		<banks>1C</banks>
+		<parameters>3\71FB</parameters>
+	</rom>
+	<rom>
+		<name>Mani 4-in-1 (DMG-602 CHN) (Ch) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2853</checksum>
+        <crc32>5bfc3ef5</crc32>
         <format>David_Whittaker</format>
-		<part>1/1=Chase H.Q.</part>
+		<part>3/4=Chase H.Q.</part>
 		<banks>C</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mani 4-in-1 (DMG-602 CHN) (Ch) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2853</checksum>
+        <crc32>5bfc3ef5</crc32>
+        <format>ACT_Japan</format>
+		<part>4/4=Sagaia</part>
+		<banks>2</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -13283,6 +13448,17 @@
 		<checksum>1257</checksum>
         <crc32>9caa00b5</crc32>
         <format>Atlus</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Meitantei Conan (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>344A</checksum>
+        <crc32>3945bc0d</crc32>
+        <format>ACT_Japan</format>
 		<part></part>
 		<banks>2</banks>
 		<parameters></parameters>
@@ -14619,6 +14795,17 @@
 		<parameters>CFG/Mr. Driller (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Mr. Gono no Baken Tekichu Jyutsu (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7348</checksum>
+        <crc32>eadaf1e7</crc32>
+        <format>Taito</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>2\468D</parameters>
+	</rom>
+	<rom>
 		<name>Ms. Pac-Man (E)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -15134,6 +15321,17 @@
 		<part>2/2=Jantaku Boy</part>
 		<banks>8</banks>
 		<parameters>CFG/Namco Gallery Vol.3 (J) [S] - Jantaku Boy.cfg</parameters>
+	</rom>
+	<rom>
+		<name>Naminori Yarou! (J) [C][!]</name>
+		<gamecode>BNYJ</gamecode>
+		<rev>0</rev>
+		<checksum>36B8</checksum>
+        <crc32>ac5e477d</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>F,10</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>NASCAR Heat (U) [C][!]</name>
@@ -18425,6 +18623,28 @@
 		<parameters>CFG/Puzzled (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Puzznic (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>03B7</checksum>
+        <crc32>916e638d</crc32>
+        <format>Taito</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Puzznic (U) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5F4D</checksum>
+        <crc32>dace3e4a</crc32>
+        <format>Taito</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Q-bert (U) [C][!]</name>
 		<gamecode>BQTE</gamecode>
 		<rev>0</rev>
@@ -18994,6 +19214,28 @@
         <format>Mark_Cooksey</format>
 		<part></part>
 		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Return of the Ninja (E) [C][!]</name>
+		<gamecode>BNJP</gamecode>
+		<rev>0</rev>
+		<checksum>B655</checksum>
+        <crc32>8e04849a</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>2,3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Return of the Ninja (U) [C][!]</name>
+		<gamecode>BNJE</gamecode>
+		<rev>0</rev>
+		<checksum>899C</checksum>
+        <crc32>a07da702</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>2,3</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -19907,6 +20149,17 @@
         <format>Square</format>
 		<part></part>
 		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Sagaia (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2853</checksum>
+        <crc32>e43da090</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>2</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -21282,6 +21535,50 @@
         <format>David_Warhol</format>
 		<part></part>
 		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Space Invaders (E) [a1] (Unreleased) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B8CF</checksum>
+        <crc32>2d03dc38</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Space Invaders (E) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1FA8</checksum>
+        <crc32>891b8f04</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Space Invaders (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2DE2</checksum>
+        <crc32>868b57b2</crc32>
+        <format>Taito</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Space Invaders (U) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>AB00</checksum>
+        <crc32>7f0f5762</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>2</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -22896,9 +23193,42 @@
 		<rev>0</rev>
 		<checksum>573E</checksum>
         <crc32>6f8b3bc3</crc32>
+        <format>Taito</format>
+		<part>1/4=Bubble Bobble</part>
+		<banks>1A</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Taito Variety Pack (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>573E</checksum>
+        <crc32>6f8b3bc3</crc32>
+        <format>Taito</format>
+		<part>2/4=Elevator Action</part>
+		<banks>1E</banks>
+		<parameters>3\71FB</parameters>
+	</rom>
+	<rom>
+		<name>Taito Variety Pack (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>573E</checksum>
+        <crc32>6f8b3bc3</crc32>
         <format>David_Whittaker</format>
-		<part>1/1=Chase H.Q.</part>
+		<part>3/4=Chase H.Q.</part>
 		<banks>E</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Taito Variety Pack (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>573E</checksum>
+        <crc32>6f8b3bc3</crc32>
+        <format>ACT_Japan</format>
+		<part>4/4=Sagaia</part>
+		<banks>4</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -23958,6 +24288,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Tony Hawk's Pro Skater (J) (Unreleased) [C][!]</name>
+		<gamecode>BTFJ</gamecode>
+		<rev>0</rev>
+		<checksum>958E</checksum>
+        <crc32>48f17f97</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>2,9</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tony Hawk's Pro Skater (U) [C][!]</name>
+		<gamecode>BTFE</gamecode>
+		<rev>0</rev>
+		<checksum>595A</checksum>
+        <crc32>8d8bb5c4</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>2,9</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tony Hawk's Pro Skater 2 (U) [C][!]</name>
+		<gamecode>BTGE</gamecode>
+		<rev>0</rev>
+		<checksum>A757</checksum>
+        <crc32>2c27c61f</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>2,3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Tony Hawk's Pro Skater 3 (U) [C][!]</name>
 		<gamecode>B3TE</gamecode>
 		<rev>0</rev>
@@ -24241,6 +24604,39 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Trick Boarder (E) [C][!]</name>
+		<gamecode>BTBP</gamecode>
+		<rev>0</rev>
+		<checksum>1D3A</checksum>
+        <crc32>efe3fc64</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>2,9</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Trick Boarder (U) [C][!]</name>
+		<gamecode>BTBE</gamecode>
+		<rev>0</rev>
+		<checksum>1D3A</checksum>
+        <crc32>e856dc3d</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>2,9</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Trickboarder GP (J) [C][!]</name>
+		<gamecode>BTBJ</gamecode>
+		<rev>0</rev>
+		<checksum>1E70</checksum>
+        <crc32>31740097</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>2,9</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -24637,6 +25033,39 @@
         <format>Mark_Cooksey</format>
 		<part></part>
 		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Ultimate Surfing (E) [C]</name>
+		<gamecode>BSUP</gamecode>
+		<rev>0</rev>
+		<checksum>7AD6</checksum>
+        <crc32>b3398a9b</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>F,10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Ultimate Surfing (J) (Unreleased) [C][!]</name>
+		<gamecode>BNYJ</gamecode>
+		<rev>0</rev>
+		<checksum>36B8</checksum>
+        <crc32>ac5e477d</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>F,10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Ultimate Surfing (U) [C][!]</name>
+		<gamecode>BSUP</gamecode>
+		<rev>0</rev>
+		<checksum>7728</checksum>
+        <crc32>e84df1f0</crc32>
+        <format>ACT_Japan</format>
+		<part></part>
+		<banks>F,10</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
