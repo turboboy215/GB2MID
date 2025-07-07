@@ -803,6 +803,17 @@
 		<parameters>CFG/Anpfiff - Der RTL Fussball-Manager (G) [C].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Arle no Bouken - Mahou no Jewel (J) [C][!]</name>
+		<gamecode>BRBJ</gamecode>
+		<rev>0</rev>
+		<checksum>DF3F</checksum>
+        <crc32>8ee043ea</crc32>
+        <format>Compile</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Armada - FX Racers (U) [C][!]</name>
 		<gamecode>BARE</gamecode>
 		<rev>0</rev>
@@ -4400,6 +4411,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Dai-2-Ji Super Robot Taisen G (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D126</checksum>
+        <crc32>df8b2b20</crc32>
+        <format>Winkysoft</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Dai-2-Ji Super Robot Taisen G (J) [S][a1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DC81</checksum>
+        <crc32>82a26c13</crc32>
+        <format>Winkysoft</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Daikatana (Beta) [C]</name>
 		<gamecode>A22X</gamecode>
 		<rev>0</rev>
@@ -4892,6 +4925,17 @@
         <format>Atlus</format>
 		<part></part>
 		<banks>20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Digimon Crystal II (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>38DE</checksum>
+        <crc32>72678816</crc32>
+        <format>Winkysoft</format>
+		<part></part>
+		<banks>71</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -8052,6 +8096,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Godzilla (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CE71</checksum>
+        <crc32>ed204600</crc32>
+        <format>Compile</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Godzilla (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6ADD</checksum>
+        <crc32>fe4f80b7</crc32>
+        <format>Compile</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Gold and Glory - The Road to El Dorado (E) (M6) [C][!]</name>
 		<gamecode>BEDP</gamecode>
 		<rev>0</rev>
@@ -11163,6 +11229,17 @@
 		<part></part>
 		<banks>F,10</banks>
 		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Kou Dai Guai Shou - Lan Bao Shi 2003 (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3623</checksum>
+        <crc32>3a08c8eb</crc32>
+        <format>Winkysoft</format>
+		<part></part>
+		<banks>2D</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Kou Dai Yao Guai - Bai Jin Ban (Unl) [C][f1]</name>
@@ -16159,6 +16236,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Oni (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D1DC</checksum>
+        <crc32>b7f48649</crc32>
+        <format>Winkysoft</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Operation C (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -17050,6 +17138,28 @@
 		<parameters>N</parameters>
 	</rom>
 	<rom>
+		<name>Pocket Monster Ruby (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0CC2</checksum>
+        <crc32>4a68fd38</crc32>
+        <format>Winkysoft</format>
+		<part></part>
+		<banks>2D</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pocket Monster Sapphire (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5090</checksum>
+        <crc32>81d1e6ff</crc32>
+        <format>Winkysoft</format>
+		<part></part>
+		<banks>2D</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Pocket Monsters - Blue Version (J) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -17301,6 +17411,50 @@
 		<part></part>
 		<banks>11,12,40</banks>
 		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Pocket Puyo Puyo 2 Tsuu (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9878</checksum>
+        <crc32>43e47a81</crc32>
+        <format>Compile</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pocket Puyo Puyo 2 Tsuu (J) (V1.1) (Unreleased) [S][!]</name>
+		<gamecode>APYJ</gamecode>
+		<rev>1</rev>
+		<checksum>DECA</checksum>
+        <crc32>cae8a317</crc32>
+        <format>Compile</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pocket Puyo Puyo 4 (J) [C][!]</name>
+		<gamecode>BPYJ</gamecode>
+		<rev>0</rev>
+		<checksum>DA1A</checksum>
+        <crc32>870db337</crc32>
+        <format>Compile</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pocket Puyo Sun (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>34A9</checksum>
+        <crc32>45661ec3</crc32>
+        <format>Compile</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Pocket Racing (E) [C][!]</name>
@@ -18546,6 +18700,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Puyo Puyo (J) (V1.0) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CA00</checksum>
+        <crc32>9e372d13</crc32>
+        <format>Winkysoft</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Puyo Puyo (J) (V1.1) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>1</rev>
+		<checksum>C2AB</checksum>
+        <crc32>20e48285</crc32>
+        <format>Winkysoft</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Puyo Puyo Gaiden - Puyo Wars (J) [C][!]</name>
+		<gamecode>AWYJ</gamecode>
+		<rev>0</rev>
+		<checksum>D65F</checksum>
+        <crc32>67350bc9</crc32>
+        <format>Compile</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Puzz Loop (J) [C][!]</name>
 		<gamecode>BPZJ</gamecode>
 		<rev>0</rev>
@@ -18640,6 +18827,28 @@
 		<checksum>5F4D</checksum>
         <crc32>dace3e4a</crc32>
         <format>Taito</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Q Billion (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5C0E</checksum>
+        <crc32>979ed154</crc32>
+        <format>Winkysoft</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Q Billion (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6260</checksum>
+        <crc32>7202e973</crc32>
+        <format>Winkysoft</format>
 		<part></part>
 		<banks>1</banks>
 		<parameters></parameters>
@@ -21032,6 +21241,17 @@
 		<parameters>S</parameters>
 	</rom>
 	<rom>
+		<name>Shu Ma Bao Long - Shui Jing Ban II (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D68B</checksum>
+        <crc32>5f2472ad</crc32>
+        <format>Winkysoft</format>
+		<part></part>
+		<banks>2D</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Shu Ma Bao Long 3 - Shui Jing Ban (Unl) [C][f1]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -22899,6 +23119,39 @@
         <format>Hudson_Soft</format>
 		<part></part>
 		<banks>3D,3E,3F,40</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Super Robot Taisen (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>BBC8</checksum>
+        <crc32>7dd9d7d6</crc32>
+        <format>Winkysoft</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Super Robot War X (Unl) [C][a1][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>EF44</checksum>
+        <crc32>0cea6b33</crc32>
+        <format>Winkysoft</format>
+		<part></part>
+		<banks>2D</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Super Robot War X (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2DE8</checksum>
+        <crc32>378b182d</crc32>
+        <format>Winkysoft</format>
+		<part></part>
+		<banks>2D</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
