@@ -679,6 +679,10 @@ int main(int args, char* argv[])
             {
                 driver = The_Code_Monkeys;
             }
+            else if (!strcmp(formatString, "Compile"))
+            {
+                driver = Compile;
+            }
             else if (!strcmp(formatString, "Cosmigo"))
             {
                 driver = Cosmigo;
@@ -906,6 +910,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "TOSE"))
             {
                 driver = TOSE;
+            }
+            else if (!strcmp(formatString, "Winkysoft"))
+            {
+                driver = Winkysoft;
             }
             else
             {

@@ -67,3 +67,5 @@
 #define The_Code_Monkeys	0x42
 #define Taito				0x43
 #define ACT_Japan			0x44
+#define Winkysoft			0x45
+#define Compile				0x46
