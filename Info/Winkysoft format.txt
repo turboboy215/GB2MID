@@ -1,0 +1,27 @@
+Song table
+=======================================
+The song table can be found with the following instructions:
+ld [????], a
+push af
+call ????
+pop af
+ld hl, SongTable
+
+Which equals the following in hex:
+EA xx xx F5 CD xx xx F1 ?? ??
+
+The song table is comprised of a series of either 3 or 4 pointers to various channels. Q Billion and Oni have only 3 channel pointers, not using channel 3, while other games have 4 pointers; however, no games appear to actually use channel 3 outside of sound effects.
+
+Sequence data
+=======================================
+Commands for each channel sequence are as follows:
+xx yy = Play note, length (X = Note, Y = Length)
+F2 xx = Set note size
+F4 xx = ?
+F5 xx = Set duty
+F6 xx = Set envelope
+F7 xx = ?
+FB xx = Song loop point
+FC xx = End of repeat section - in the last 2 games, this is start of repeat point
+FD xx = Repeat the following section (in earlier games, this starts from 00; in other games, this starts from 01) - in last 2 games, this means go to repeat point X times
+FE xx = End of channel
