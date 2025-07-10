@@ -682,6 +682,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Amazing Spider-Man 3, The - Invasion of the Spider-Slayers (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A703</checksum>
+        <crc32>cbb2f22c</crc32>
+        <format>BITS</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>CFG/Amazing Spider-Man 3, The - Invasion of the Spider-Slayers (U) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Amazing Spider-Man, The (UE) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -801,6 +812,17 @@
 		<part></part>
 		<banks>1E</banks>
 		<parameters>CFG/Anpfiff - Der RTL Fussball-Manager (G) [C].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Antz World Sportz (E) (M6) [C][!]</name>
+		<gamecode>BA7P</gamecode>
+		<rev>0</rev>
+		<checksum>048E</checksum>
+        <crc32>67c7f85c</crc32>
+        <format>BITS</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Antz World Sportz (E) (M6) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Arle no Bouken - Mahou no Jewel (J) [C][!]</name>
@@ -2044,6 +2066,17 @@
 		<part></part>
 		<banks>27</banks>
 		<parameters>CFG/Billy Bob's Huntin' 'n' Fishin' (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Biohazard Gaiden (J) [C][!]</name>
+		<gamecode>BIOJ</gamecode>
+		<rev>0</rev>
+		<checksum>6ABB</checksum>
+        <crc32>c2531d36</crc32>
+        <format>BITS</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Biohazard Gaiden (J) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Bionic Commando (E) [!]</name>
@@ -7821,6 +7854,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Gex - Enter the Gecko (U) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F5BE</checksum>
+        <crc32>dccc7514</crc32>
+        <format>FIRQ</format>
+		<part></part>
+		<banks>22,23,24,25</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Gex 3 - Deep Cover Gecko (E) [C][!]</name>
 		<gamecode>AXGP</gamecode>
 		<rev>0</rev>
@@ -9845,6 +9889,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Jeremy McGrath Supercross 2000 (J) (Unreleased) [C][!]</name>
+		<gamecode>AJUJ</gamecode>
+		<rev>0</rev>
+		<checksum>B214</checksum>
+        <crc32>666d2a75</crc32>
+        <format>BITS</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>CFG/Jeremy McGrath Supercross 2000 (J) (Unreleased) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Jeremy McGrath Supercross 2000 (U) [C][!]</name>
+		<gamecode>AJUE</gamecode>
+		<rev>0</rev>
+		<checksum>B214</checksum>
+        <crc32>f0f9abe6</crc32>
+        <format>BITS</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>CFG/Jeremy McGrath Supercross 2000 (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Jet Pack (Beta)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -11383,6 +11449,17 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Last Action Hero (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5A97</checksum>
+        <crc32>10499af6</crc32>
+        <format>BITS</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>CFG/Last Action Hero (U) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Laura (E) (M8) [C][!]</name>
@@ -13022,6 +13099,17 @@
 		<part></part>
 		<banks>F,10</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mary-Kate & Ashley - Winners Circle (U) [C][!]</name>
+		<gamecode>BHFE</gamecode>
+		<rev>0</rev>
+		<checksum>DA43</checksum>
+        <crc32>35d6ddcc</crc32>
+        <format>BITS</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>CFG/Mary-Kate & Ashley - Winners Circle (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Masakari Densetsu Kintarou ACG (J)</name>
@@ -15970,6 +16058,39 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters>4A5F\1</parameters>
+	</rom>
+	<rom>
+		<name>Ninja Spirit (E) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>72A7</checksum>
+        <crc32>1d266dd2</crc32>
+        <format>BITS</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Ninja Spirit (E) (Unreleased) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Ninja Spirit (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8BB6</checksum>
+        <crc32>b864a3b6</crc32>
+        <format>BITS</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Ninja Spirit (J).cfg</parameters>
+	</rom>
+	<rom>
+		<name>Ninja Spirit (U) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7ADA</checksum>
+        <crc32>4573ce77</crc32>
+        <format>BITS</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Ninja Spirit (U) (Unreleased) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Ninja Taro (Beta)</name>
@@ -19424,6 +19545,28 @@
 		<part></part>
 		<banks>7</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Resident Evil Gaiden (E) (M5) [C][!]</name>
+		<gamecode>BIOP</gamecode>
+		<rev>0</rev>
+		<checksum>975D</checksum>
+        <crc32>f85c3f2c</crc32>
+        <format>BITS</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Resident Evil Gaiden (E) (M5) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Resident Evil Gaiden (U) [C][!]</name>
+		<gamecode>ARHE</gamecode>
+		<rev>0</rev>
+		<checksum>5973</checksum>
+        <crc32>f8c5021b</crc32>
+        <format>BITS</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Resident Evil Gaiden (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Return of the Ninja (E) [C][!]</name>
@@ -23670,6 +23813,28 @@
 		<part></part>
 		<banks>6</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tazmanian Devil - Munching Madness (E) (M5) [C][!]</name>
+		<gamecode>AVZP</gamecode>
+		<rev>0</rev>
+		<checksum>9635</checksum>
+        <crc32>683752a0</crc32>
+        <format>BITS</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>CFG/Tazmanian Devil - Munching Madness (E) (M5) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Tazmanian Devil - Munching Madness (U) (M5) [C][!]</name>
+		<gamecode>ATIE</gamecode>
+		<rev>0</rev>
+		<checksum>99FA</checksum>
+        <crc32>3611d0d8</crc32>
+        <format>BITS</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>CFG/Tazmanian Devil - Munching Madness (U) (M5) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>TDL Fantasy Tour (J) [S]</name>

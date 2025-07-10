@@ -69,3 +69,5 @@
 #define ACT_Japan			0x44
 #define Winkysoft			0x45
 #define Compile				0x46
+#define BITS				0x47
+#define FIRQ				0x48
