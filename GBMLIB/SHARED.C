@@ -9,11 +9,13 @@
 #include "ATLUS.H"
 #include "AUDIOART.H"
 #include "BEAM.H"
+#include "BITS.H"
 #include "CANNON.H"
 #include "CAPCOM.H"
 #include "CARILLON.H"
 #include "CLIMAX.H"
 #include "CODEMONK.H"
+#include "COMPILE.H"
 #include "COSMIGO.H"
 #include "CUBE.H"
 #include "DAVDSHEA.H"
@@ -25,6 +27,7 @@
 #include "EDMAGNIN.H"
 #include "FACTOR5.H"
 #include "GAMEFRK.H"
+#include "GEX.H"
 #include "GHX.H"
 #include "HAL.H"
 #include "HUDSON.H"
@@ -71,6 +74,7 @@
 #include "TITUS2.H"
 #include "TOSE.H"
 #include "WARIOL2.H"
+#include "WINKYSFT.H"
 #define bankSize 16384
 
 int foundTable = 0;
@@ -475,6 +479,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case Beam_Software:
 			BeamProc(banks[curBank]);
 			break;
+		case BITS:
+			BITSProc(banks[curBank], parameters);
+			break;
 		case Cannon_Fodder:
 			CannonProc(banks[curBank]);
 			break;
@@ -489,6 +496,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case The_Code_Monkeys:
 			CodeMonkProc(parameters);
+			break;
+		case Compile:
+			CompileProc(banks[curBank]);
 			break;
 		case Cosmigo:
 			CosmigoProc(banks[curBank]);
@@ -516,6 +526,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Factor_5:
 			F5Proc(banks[curBank]);
+			break;
+		case FIRQ:
+			GexProc(banks[curBank]);
 			break;
 		case Game_Freak:
 			GFProc(banks[curBank]);
@@ -660,6 +673,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case TOSE:
 			TOSEProc(parameters);
+			break;
+		case Winkysoft:
+			WinkyProc(banks[curBank]);
 			break;
 		default:
 			MIDProc();
