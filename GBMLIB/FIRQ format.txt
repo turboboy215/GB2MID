@@ -1,0 +1,41 @@
+Song table
+=======================================
+The song table is a series of 4 16-bit (2-byte pointers). The first pointer in the table's value is the number of actual songs. The rest of the pointers are stored as follows for each song in the table:
+
+1-2. Channel 1 pointer
+3-4. Channel 2 pointer
+5-6. Channel 3 pointer
+7-8. Channel 4 pointer
+
+These addresses are stored as RELATIVE values to the start of each pointer. For example, for one song, the pointers are as follows:
+
+1. $0094
+2. $037E
+3. $05B8
+4. $0A21
+
+These are the addresses in the bank for each of these pointers:
+1. $4662
+2. $4664
+3. $4666
+4. $4568
+
+When added together, the pointers in absolute values are as follows:
+
+1. $44F6
+2. $47E2
+3. $4A1E
+4. $4E89
+
+Following these song pointers are the sound effects, which are each 1 channel and are also relative to the start of each pointer.
+
+Sequence pointers
+=======================================
+Each channel's sequence consists of the following commands:
+xx yy (X = 00-9F) = Play note, length (0 = Rest)
+49 xx = Hold note
+C0-DF xx = ?
+E0-FC xx = Set direct channel register values
+FD xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx = Set waveform
+FE xx yy = Go to song loop
+FF = End of song (no loop)?

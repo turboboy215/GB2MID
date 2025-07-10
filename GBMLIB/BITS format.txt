@@ -1,0 +1,38 @@
+Song table
+=======================================
+The song table is a series of 4 16-bit (2-byte) pointers to each channel of a song, as follows:
+1-2. Channel 1 pointer
+3-4. Channel 2 pointer
+5-6. Channel 3 pointer
+7-8. Channel 4 pointer
+
+Tempo map
+=======================================
+There is also a "tempo map" which is a series of 8-bit (1-byte) values for the tempo of each song.
+
+Bank map
+=======================================
+In GBC games (developed by M4), these are also accompanied by a "bank map" which is a series of 8-bit (1-byte) values for the bank that each song is present in.
+
+Sequence commands
+=======================================
+Commands for each channel's sequence in a song are as follows:
+xx yy (aa) zz (bb) = Play note (X = Note, Y = Length (if 80 or more, then use with byte A for long value (lower bit is A - 80)), Z = Delay after note, same rule as Y to use byte B for long value))
+80 = (No effect)
+81 xx xx = Go to macro
+82 xx = Set instrument
+83 = End of channel track
+84 = End of channel track (loop)
+85 = End of channel track (no loop)
+86 xx (yy) = Rest (if X is 80 or more, then use with byte Y for long value (lower bit is Y - 80))
+87 xx xx = Set waveform (from pointer)
+88 = Restart song
+89 xx = Set transpose
+8A xx = Set envelope
+8B xx = Set panning?
+8C = Reset panning?
+8D = Start of song loop?
+8E = Return from macro
+8F = Enter "pattern mode": play a list of macros in order, ending with the terminator 00 00
+90 = Exit "pattern mode"
+91 = ?
