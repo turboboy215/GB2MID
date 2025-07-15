@@ -10252,6 +10252,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Jing Ling Wang III (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>834A</checksum>
+        <crc32>15a4b4ec</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>7F,80</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Jinsei Game - Tomedachi Takusan Tsukurouyo! (J) [C][!]</name>
 		<gamecode>ACJJ</gamecode>
 		<rev>0</rev>
@@ -12328,6 +12339,17 @@
         <format>Neil_Baldwin</format>
 		<part></part>
 		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Lion King Advance 3 2003 (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>4AFC</checksum>
+        <crc32>e6b3d907</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>7F,80</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -24165,6 +24187,28 @@
 		<part></part>
 		<banks>10</banks>
 		<parameters>1\6352</parameters>
+	</rom>
+	<rom>
+		<name>Taikong Baobei (Unl) [C][a1][f2]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F998</checksum>
+        <crc32>823854ea</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>FD,FE</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Taikong Baobei (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>FBDF</checksum>
+        <crc32>5b49af92</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>FD,FE</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Taikong Zhanshi DX3 - Zuizhong Huanxiang (Unl) [C][f1]</name>
