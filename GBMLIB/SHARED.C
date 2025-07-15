@@ -464,6 +464,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case ACT_Japan:
 			ACTProc(banks[curBank]);
 			break;
+		case Aicom:
+			AicomProc(banks[curBank], parameters);
+			break;
 		case AJ_Gonzalez:
 			AJGProc(banks[curBank], parameters);
 			break;

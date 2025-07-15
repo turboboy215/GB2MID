@@ -785,6 +785,11 @@ void Compilesong2mid(int songNum, long ptr)
 				{
 					noteVal = command[0] - 0xC0;
 
+					if (noteVal == 0x00)
+					{
+						noteVal = 40;
+					}
+
 					if (command[1] == 0xDE)
 					{
 						curNoteLen = command[2] * 10;
