@@ -1,0 +1,79 @@
+Song table
+=======================================
+The song table is comprised of 16-bit (2-byte) pointers for songs as well as sound effects. Usually, it can be found with the following code:
+push af
+ld a, [????]
+cp a, FF
+jr z, ????
+pop af
+ld bc, SongTable
+
+Which equals the following in hex:
+F5 FA xx xx FE FF 28 F2 F1 01 ?? ??
+
+For early games from 1990, it is instead with the following code:
+bit 7, a
+jr z, ????
+cp a, 97
+jr nc, ????
+sub a, 80
+jr z, ????
+ld hl, SongTable
+Which equals the following in hex:
+CB 7F 28 21 FE 97 30 1E D6 80 28 19 21 ?? ??
+
+In several late games, each of the pointers in the table is followed by 1 byte specifying the bank number the song is present inside.
+
+Song headers
+=======================================
+Each song has a "header" which specifies information about each channel's track. For most games, it is structured as follows:
+
+Song header:
+1. Number of channels
+2-3. Tempo
+
+Channel header:
+1-2. Pointer to sequence data
+3. Transpose
+4. Vibrato
+5. Duty?
+6. Channel number
+
+However, for early games, the header is different:
+1. Number of channels
+(Repeat for all channels)
+1. Panning?
+2. Channel number
+3. ?
+4-5. Pointer to sequence data
+6. Transpose
+7. Vibrato
+8. Envelope
+
+Sequence commands
+=======================================
+Sequences for each channel are comprised of the following commands:
+
+00-7F = Set note length
+80-E0 (xx) (yy) = Play note (80 = Rest), if X is less than 80, then set length
+ - If in pitch bend mode, then X = Pitch bend amount, Y = Length
+E1 xx xx = Go to macro
+E2 = Exit macro
+E3 = End of channel (no loop)
+E4 xx yy zz zz = Repeat section (X = Control number, Y = Number of times, Z = Position)
+E5 xx xx = Go to song loop
+E6 xx = Set envelope (v2)
+E7 xx = Add to transpose
+E8 xx = Set duty
+E9 xx = ?
+EA xx = Set waveform
+EB = End of channel (v2)?
+EC = Turn on pitch bend mode
+ED = Turn off pitch bend mode
+EE = Hold note?
+EF = Turn off hold note?
+F0 xx = Set vibrato
+F1 xx = ?
+F2 xx = ?
+F3 xx = Set envelope
+F4 xx = ?
