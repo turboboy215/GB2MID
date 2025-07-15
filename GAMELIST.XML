@@ -14696,6 +14696,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Mo Shou Shi Ji - Zhan Shen (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E292</checksum>
+        <crc32>4d2bf2ee</crc32>
+        <format>Atlus</format>
+		<part></part>
+		<banks>3E</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Mo Shou Zheng Ba 3 - Hun Luan Zhi Jie (Warcraft 3) (Unl) [C]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
