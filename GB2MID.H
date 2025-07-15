@@ -71,3 +71,4 @@
 #define Compile				0x46
 #define BITS				0x47
 #define FIRQ				0x48
+#define Aicom				0x49

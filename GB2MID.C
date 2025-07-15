@@ -639,6 +639,10 @@ int main(int args, char* argv[])
             {
                 driver = ACT_Japan;
             }
+            else if (!strcmp(formatString, "Aicom"))
+            {
+                driver = Aicom;
+            }
             else if (!strcmp(formatString, "AJ_Gonzalez"))
             {
                 driver = AJ_Gonzalez;

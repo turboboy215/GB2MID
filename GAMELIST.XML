@@ -297,6 +297,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Aero Star (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E875</checksum>
+        <crc32>dfa3b28a</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Aero Star (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B05F</checksum>
+        <crc32>f6fd275e</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>After Burst (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -748,6 +770,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Animal Breeder (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>ADDC</checksum>
+        <crc32>c2eec22f</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Animal Breeder 2 (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>BB25</checksum>
+        <crc32>8d573f37</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Animal Breeder 3 (J) [C][!]</name>
 		<gamecode>AA3J</gamecode>
 		<rev>0</rev>
@@ -1023,6 +1067,17 @@
 		<parameters>CFG/Asteroids (U) [M][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Astro Rabby (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B7A8</checksum>
+        <crc32>61e48eef</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>2\6B9C</parameters>
+	</rom>
+	<rom>
 		<name>Atlantis - The Lost Empire (E) (M3) (Eng-Spa-Ita) [C][!]</name>
 		<gamecode>BABX</gamecode>
 		<rev>0</rev>
@@ -1263,6 +1318,17 @@
 		<part></part>
 		<banks>14</banks>
 		<parameters>CFG/Bakusou Senki Metal Walker GB - Koutetsu no Yuujou (J) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Bakukyuu Renpatsu!! Super B-Daman - Gekitan! Rising Valkyre!! (J) [C][!]</name>
+		<gamecode>A4RJ</gamecode>
+		<rev>0</rev>
+		<checksum>0C51</checksum>
+        <crc32>5c95d5a2</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Bakuten Shoot Beyblade (J) [C]</name>
@@ -1639,6 +1705,28 @@
 		<parameters>4062</parameters>
 	</rom>
 	<rom>
+		<name>Battle Arena Toshinden (E) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>39FF</checksum>
+        <crc32>ce34cca4</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Battle Arena Toshinden (U) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6532</checksum>
+        <crc32>2d0c1073</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Battle Crusher (J) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -1804,6 +1892,28 @@
 		<parameters>CFG/Battletoads in Ragnarok's World (U) [!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>B-Daman Bakugaiden - Victory heno Michi (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F136</checksum>
+        <crc32>ddce76d6</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>B-Daman Bakugaiden V - Final Mega Tune (J) [C][!]</name>
+		<gamecode>AIRJ</gamecode>
+		<rev>0</rev>
+		<checksum>39F8</checksum>
+        <crc32>547a9a69</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>6A</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Beach Volleyball (J) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -1811,7 +1921,7 @@
         <crc32>abfb84df</crc32>
         <format>Technos_Japan</format>
 		<part></part>
-		<banks>3</banks>
+		<banks>6A</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -1966,6 +2076,17 @@
         <format>Imagineering</format>
 		<part></part>
 		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Berutomo Kurabu (J) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DCC8</checksum>
+        <crc32>ad3f851d</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>20</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -2758,6 +2879,17 @@
         <format>Junichi_Saito</format>
 		<part></part>
 		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Boomer's Adventure in ASMIK World 2 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A2A8</checksum>
+        <crc32>caae6b11</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>5</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -4147,6 +4279,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Crash II Advance 2003 (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C78B</checksum>
+        <crc32>0af243bf</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>FD,FE</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Crayon Shin-Chan (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -4387,6 +4530,17 @@
 		<part></part>
 		<banks>D</banks>
 		<parameters>9</parameters>
+	</rom>
+	<rom>
+		<name>Daedalean Opus (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2FCC</checksum>
+        <crc32>b6b51fce</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Daffy Duck - Fowl Play (U) [C][!]</name>
@@ -5146,6 +5300,17 @@
 		<part></part>
 		<banks>C</banks>
 		<parameters>CFG/Dogz - Your Virtual Petz Palz (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Dokapon! - Millenium Quest (J) [C][!]</name>
+		<gamecode>BDKJ</gamecode>
+		<rev>0</rev>
+		<checksum>3FDF</checksum>
+        <crc32>4fe9e966</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>7D,7E,7F,80</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Doki X Doki Sasete (J) [C]</name>
@@ -8041,6 +8206,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Go Go Hitchike (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>198D</checksum>
+        <crc32>845735de</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Goal! (E)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -8415,6 +8591,17 @@
 		<parameters>2</parameters>
 	</rom>
 	<rom>
+		<name>Great Battle Pocket, The (J) [C][!]</name>
+		<gamecode>AGVJ</gamecode>
+		<rev>0</rev>
+		<checksum>2E53</checksum>
+        <crc32>b471c095</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Great Greed (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -8490,6 +8677,17 @@
 		<part></part>
 		<banks>3E</banks>
 		<parameters>9</parameters>
+	</rom>
+	<rom>
+		<name>Gu Huo Lang II 2003 (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7327</checksum>
+        <crc32>1dd1d080</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>FD,FE</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Gurander Musashi RV (J) [S]</name>
@@ -9152,6 +9350,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Hit the Ice (UE) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>09CB</checksum>
+        <crc32>2c77f399</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Hole in One Golf (U) [C][!]</name>
 		<gamecode>VHIE</gamecode>
 		<rev>0</rev>
@@ -9501,6 +9710,39 @@
         <format>Nova</format>
 		<part></part>
 		<banks>A</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Ice Age (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E7C8</checksum>
+        <crc32>7ca57891</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>7F,80</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Ice Age II (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0000</checksum>
+        <crc32>b149f421</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>7F,80</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Ice Age II (Unl) [C][a1][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D23C</checksum>
+        <crc32>6fb6e261</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>D0,F0</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -10252,6 +10494,28 @@
 		<parameters>1</parameters>
 	</rom>
 	<rom>
+		<name>Kandume Monsters (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>750B</checksum>
+        <crc32>82e03e10</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>1F,20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Kandume Monsters Parfait (J) [C][!]</name>
+		<gamecode>AQPJ</gamecode>
+		<rev>0</rev>
+		<checksum>32BD</checksum>
+        <crc32>6d5b59c0</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>1F,20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Kanji Boy 3 (J) [C][!]</name>
 		<gamecode>BK3J</gamecode>
 		<rev>0</rev>
@@ -10635,6 +10899,17 @@
 		<part></part>
 		<banks>10,71</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Kinniku Banzuke GB3 - Shinseiki Survival Retsuden! (J) [C][!]</name>
+		<gamecode>B7KJ</gamecode>
+		<rev>0</rev>
+		<checksum>B03F</checksum>
+        <crc32>e2f6253e</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>3D</banks>
+		<parameters>3</parameters>
 	</rom>
 	<rom>
 		<name>Kinnikuman DM (J)</name>
@@ -11275,6 +11550,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Konchuu Hakase (J) (V1.0) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DE97</checksum>
+        <crc32>f6b3e291</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Konchuu Hakase (J) (V1.1) [S]</name>
+		<gamecode></gamecode>
+		<rev>1</rev>
+		<checksum>8607</checksum>
+        <crc32>05753790</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Konchuu Hakase 2 (J) [C][!]</name>
 		<gamecode>A2KJ</gamecode>
 		<rev>0</rev>
@@ -11284,6 +11581,17 @@
 		<part></part>
 		<banks>20</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Konchuu Hakase 3 (J) [C][!]</name>
+		<gamecode>A3KJ</gamecode>
+		<rev>0</rev>
+		<checksum>2643</checksum>
+        <crc32>380f19ed</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters>3</parameters>
 	</rom>
 	<rom>
 		<name>Koro Koro Kirby (J) [C][!]</name>
@@ -13233,6 +13541,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Mazekko Monster (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F7F8</checksum>
+        <crc32>b3e8028d</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mazekko Monster (J) (Beta) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>608B</checksum>
+        <crc32>e6c3a473</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mazekko Monster 2 (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D3CB</checksum>
+        <crc32>e5520693</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>McDonaldland (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -13618,6 +13959,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Meitantei Conan - Karakuri Jiin Satsujin Jiken (J) [C][!]</name>
+		<gamecode>A4BJ</gamecode>
+		<rev>0</rev>
+		<checksum>2502</checksum>
+        <crc32>3b5f24fc</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Meitantei Conan - Kigantou Hihou Densetsu (J) [C][!]</name>
+		<gamecode>A5BJ</gamecode>
+		<rev>0</rev>
+		<checksum>C04A</checksum>
+        <crc32>e620fae2</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Meitantei Conan - Norowareta Kouro (J) [C][!]</name>
+		<gamecode>BC3J</gamecode>
+		<rev>0</rev>
+		<checksum>77AF</checksum>
+        <crc32>cabdd802</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Meitantei Conan (J) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -13717,6 +14091,28 @@
 		<parameters>CFG/Metal Gear Solid (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Metal Slug (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2ACF</checksum>
+        <crc32>8ef044b2</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Metal Slug (Unl) [C][a1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F6B1</checksum>
+        <crc32>424cea4a</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Metal Slug 3 (Unl) [C][f1]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -13725,6 +14121,61 @@
         <format>Atlus</format>
 		<part></part>
 		<banks>3E</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Metal Slug 2001 (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5F27</checksum>
+        <crc32>bf0028d9</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Metal Slug 2001 (Unl) [C][a1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DCC9</checksum>
+        <crc32>a658d85e</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Metal Slug 2001 (Unl) [C][a2]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2ACF</checksum>
+        <crc32>e9c6a39d</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Metal Slug 2001 (Unl) [C][a3]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DCC9</checksum>
+        <crc32>c88e25a6</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Metal Slug 2001 (Unl) [C][a4]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5051</checksum>
+        <crc32>c19b912a</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>20</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -15554,6 +16005,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Navy Blue 98 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>39FF</checksum>
+        <crc32>2cbe5381</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Navy Seals (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -15827,6 +16289,39 @@
 		<part></part>
 		<banks>20</banks>
 		<parameters>1\46A5</parameters>
+	</rom>
+	<rom>
+		<name>Nettou Toushinden (J) (V1.0) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>52D0</checksum>
+        <crc32>dde161a5</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Nettou Toushinden (J) (V1.1) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>1</rev>
+		<checksum>3AF7</checksum>
+        <crc32>dde161a5</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Nettou World Heroes 2 Jet (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E219</checksum>
+        <crc32>0a12f53c</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>F</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>New Addams Family Series, The (E) (M6) [C]</name>
@@ -16368,6 +16863,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Onimusha 2 (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>57CE</checksum>
+        <crc32>cac67f91</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>D0,F0</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Operation C (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -16465,6 +16971,28 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters>4062</parameters>
+	</rom>
+	<rom>
+		<name>Ou Dorobou Jing - Angel Version (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D5CF</checksum>
+        <crc32>d47c0dcf</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>1E</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Ou Dorobou Jing - Devil Version (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D5D0</checksum>
+        <crc32>2a39a874</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>1E</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Out Burst (J) [!]</name>
@@ -16663,6 +17191,17 @@
 		<part></part>
 		<banks>10</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Painter Momo Pie (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F43B</checksum>
+        <crc32>fb79ef58</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>4</parameters>
 	</rom>
 	<rom>
 		<name>Palamedes (J)</name>
@@ -18557,6 +19096,17 @@
 		<parameters>1\CFG/Prehistorik Man (U).cfg</parameters>
 	</rom>
 	<rom>
+		<name>Pri Pri - Primitive Princess! (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>86A6</checksum>
+        <crc32>55da3515</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>4</parameters>
+	</rom>
+	<rom>
 		<name>Primal Rage (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -18904,6 +19454,17 @@
 		<checksum>1411</checksum>
         <crc32>e5463a1d</crc32>
         <format>Atlus</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Puzzle Road (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>4D61</checksum>
+        <crc32>9f0f3606</crc32>
+        <format>Aicom</format>
 		<part></part>
 		<banks>2</banks>
 		<parameters></parameters>
@@ -19611,6 +20172,28 @@
 		<part></part>
 		<banks>18</banks>
 		<parameters>CFG/Rhino Rumble (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Ring Rage (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>383A</checksum>
+        <crc32>fd3d5ba7</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>2\4A0D</parameters>
+	</rom>
+	<rom>
+		<name>Ring Rage (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3C8A</checksum>
+        <crc32>bce5dfb7</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>2\4A0D</parameters>
 	</rom>
 	<rom>
 		<name>Rip-Tide Racer (E) (M5) [C][!]</name>
@@ -21890,6 +22473,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Space Baby (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>AFDF</checksum>
+        <crc32>66539153</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>FD,FE</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Space Date (E) (Unreleased) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -23394,6 +23988,17 @@
         <format>Konami</format>
 		<part></part>
 		<banks>1E,1F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Survival Kids 2 - Dasshutsu!! Futago Shima! (J) [C][!]</name>
+		<gamecode>B2VJ</gamecode>
+		<rev>0</rev>
+		<checksum>1E17</checksum>
+        <crc32>ab8b25d8</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>40</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -25146,6 +25751,28 @@
 		<parameters>1</parameters>
 	</rom>
 	<rom>
+		<name>Tsuri Sensei (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>51A0</checksum>
+        <crc32>dc324100</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>1D</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tsuri Sensei 2 (J) [C][!]</name>
+		<gamecode>AF2J</gamecode>
+		<rev>0</rev>
+		<checksum>9524</checksum>
+        <crc32>1be00a6e</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Tsuriiko!! (J) [C][!]</name>
 		<gamecode>BAFJ</gamecode>
 		<rev>0</rev>
@@ -26444,6 +27071,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>World Heroes 2 Jet (U) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>14D7</checksum>
+        <crc32>67303954</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>World Ice Hockey (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -27167,6 +27805,17 @@
         <format>Nova</format>
 		<part></part>
 		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Zankurou Musouken (J) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8CF5</checksum>
+        <crc32>995d0838</crc32>
+        <format>Aicom</format>
+		<part></part>
+		<banks>E,F</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
