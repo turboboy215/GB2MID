@@ -1,5 +1,16 @@
 <set>
 	<rom>
+		<name>2nd Space (Sachen 4-in-1 Vol. 6) (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6431</checksum>
+        <crc32>1d0f279c</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>CFG/2nd Space (Sachen 4-in-1 Vol. 6) (Unl) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>3 Choume no Tama - Tama and Friends - 3 Choume Obake Panic!! (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -66,6 +77,94 @@
 		<parameters>CFG/007 - The World is Not Enough (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>8-in-1 (Sachen) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>16BF</checksum>
+        <crc32>e3c8b0c0</crc32>
+        <format>Ei_How_Yang</format>
+		<part>1/8=Ant Soldiers</part>
+		<banks>1</banks>
+		<parameters>CFG/8-in-1 (Sachen) [C] - Ant Soldiers.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>8-in-1 (Sachen) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>16BF</checksum>
+        <crc32>e3c8b0c0</crc32>
+        <format>Ei_How_Yang</format>
+		<part>2/8=Sky Ace</part>
+		<banks>1</banks>
+		<parameters>CFG/8-in-1 (Sachen) [C] - Sky Ace.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>8-in-1 (Sachen) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>16BF</checksum>
+        <crc32>e3c8b0c0</crc32>
+        <format>Ei_How_Yang</format>
+		<part>3/8=Dan Laser</part>
+		<banks>1</banks>
+		<parameters>CFG/8-in-1 (Sachen) [C] - Dan Laser.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>8-in-1 (Sachen) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>16BF</checksum>
+        <crc32>e3c8b0c0</crc32>
+        <format>Ei_How_Yang</format>
+		<part>4/8=Zoo Block</part>
+		<banks>1</banks>
+		<parameters>CFG/8-in-1 (Sachen) [C] - Zoo Block.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>8-in-1 (Sachen) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>16BF</checksum>
+        <crc32>e3c8b0c0</crc32>
+        <format>Ei_How_Yang</format>
+		<part>5/8=Captain Knick-Knack</part>
+		<banks>1</banks>
+		<parameters>CFG/8-in-1 (Sachen) [C] - Captain Knick-Knack.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>8-in-1 (Sachen) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>16BF</checksum>
+        <crc32>e3c8b0c0</crc32>
+        <format>Ei_How_Yang</format>
+		<part>6/8=Flea War</part>
+		<banks>1</banks>
+		<parameters>CFG/8-in-1 (Sachen) [C] - Flea War.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>8-in-1 (Sachen) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>16BF</checksum>
+        <crc32>e3c8b0c0</crc32>
+        <format>Ei_How_Yang</format>
+		<part>7/8=Explosive Brick '94</part>
+		<banks>1</banks>
+		<parameters>CFG/8-in-1 (Sachen) [C] - Explosive Brick '94.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>8-in-1 (Sachen) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>16BF</checksum>
+        <crc32>e3c8b0c0</crc32>
+        <format>Ei_How_Yang</format>
+		<part>8/8=Magic Maze</part>
+		<banks>1</banks>
+		<parameters>CFG/8-in-1 (Sachen) [C] - Magic Maze.cfg\M</parameters>
+	</rom>
+	<rom>
 		<name>10-Pin Bowling (U) (Unreleased) [M][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -75,6 +174,622 @@
 		<part></part>
 		<banks>6</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>1/1C=Rocman X</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Rocman X.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>2/1C=Jurassic Boy 2</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Jurassic Boy 2.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>3/1C=Street Rider</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Street Rider.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>4/1C=Bomb Disposer</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Bomb Disposer.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>5/1C=Dan Laser</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Dan Laser.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>6/1C=Vex Block</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Vex Block.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>7/1C=Explosive Brick '94</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Explosive Brick '94.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>8/1C=Small Gorilla</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Small Gorilla.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>9/1C=Trap & Turn</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Trap & Turn.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>10/1C=Pile Wonder</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Pile Wonder.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>11/1C=Arctic Zone</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Arctic Zone.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>12/1C=Zoo Block</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Zoo Block.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>13/1C=Magic Maze</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Magic Maze.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>14/1C=Magical Tower</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Magical Tower.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>15/1C=Virus Attack/Electron World/Trouble Zone/Dice Square</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Virus Attack.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>16/1C=Railway</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Railway.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>17/1C=Worm Visitor</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Worm Visitor.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>18/1C=2nd Space</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - 2nd Space.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>19/1C=Black Forest Tale</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Black Forest Tale.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>20/1C=A-Force</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - A-Force.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>21/1C=Sky Ace</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Sky Ace.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>22/1C=Flea War</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Flea War.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>23/1C=Crazy Burger</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Crazy Burger.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>24/1C=Deep: Final Mission</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Deep - Final Mission.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>25/1C=Zipball</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Zipball.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>26/1C=Captain Knick-Knack</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Captain Knick-Knack.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>27/1C=Ant Soldiers</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Ant Soldiers.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 (As) (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>0eb8ddfb</crc32>
+        <format>Ei_How_Yang</format>
+		<part>28/1C=Duck Adventures</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 (As) (Unl) [C][!] - Duck Adventures.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>1/1C=Thunder Blast Man</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Thunder Blast Man.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>2/1C=Jurassic Boy 2</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Jurassic Boy 2.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>3/1C=Street Rider</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Street Rider.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>4/1C=Bomb Disposer</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Bomb Disposer.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>5/1C=Dan Laser</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Dan Laser.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>6/1C=Vex Block</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Vex Block.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>7/1C=Explosive Brick '94</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Explosive Brick '94.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>8/1C=Small Gorilla</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Small Gorilla.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>9/1C=Trap & Turn</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Trap & Turn.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>10/1C=Pile Wonder</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Pile Wonder.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>11/1C=Arctic Zone</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Arctic Zone.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>12/1C=Zoo Block</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Zoo Block.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>13/1C=Magic Maze</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Magic Maze.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>14/1C=Magical Tower</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Magical Tower.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>15/1C=Virus Attack/Electron World/Trouble Zone/Dice Square</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Virus Attack.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>16/1C=Railway</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Railway.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>17/1C=Worm Visitor</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Worm Visitor.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>18/1C=2nd Space</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - 2nd Space.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>19/1C=Black Forest Tale</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Black Forest Tale.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>20/1C=A-Force</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - A-Force.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>21/1C=Sky Ace</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Sky Ace.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>22/1C=Flea War</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Flea War.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>23/1C=Crazy Burger</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Crazy Burger.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>24/1C=Deep: Final Mission</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Deep - Final Mission.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>25/1C=Zipball</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Zipball.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>26/1C=Captain Knick-Knack</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Captain Knick-Knack.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>27/1C=Ant Soldiers</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Ant Soldiers.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>31-in-1 Mighty Mix (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FF2</checksum>
+        <crc32>21524051</crc32>
+        <format>Ei_How_Yang</format>
+		<part>28/1C=Duck Adventures</part>
+		<banks>1</banks>
+		<parameters>CFG/31-in-1 Mighty Mix (Unl) [C][!] - Duck Adventures.cfg\M</parameters>
 	</rom>
 	<rom>
 		<name>102 Dalmatas - Cacharros Al Rescate (S) [C][!]</name>
@@ -317,6 +1032,17 @@
 		<part></part>
 		<banks>7</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>A-Force (Sachen 4-in-1 Vol. 6) (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E7EC</checksum>
+        <crc32>776d03dc</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>CFG/A-Force (Sachen 4-in-1 Vol. 6) (Unl) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>After Burst (J)</name>
@@ -858,6 +1584,17 @@
 		<parameters>CFG/Anpfiff - Der RTL Fussball-Manager (G) [C].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Ant Soldiers (Sachen) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>4CF2</checksum>
+        <crc32>b4a5936e</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>CFG/Ant Soldiers (Sachen) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Antz World Sportz (E) (M6) [C][!]</name>
 		<gamecode>BA7P</gamecode>
 		<rev>0</rev>
@@ -867,6 +1604,17 @@
 		<part></part>
 		<banks>2</banks>
 		<parameters>CFG/Antz World Sportz (E) (M6) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Arctic Zone (Sachen 4-in-1 Vol. 5) (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7ACA</checksum>
+        <crc32>eefe1001</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Arctic Zone (Sachen 4-in-1 Vol. 5) (Unl) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Arle no Bouken - Mahou no Jewel (J) [C][!]</name>
@@ -1958,6 +2706,28 @@
 		<parameters>CFG/Bear in the Big Blue House (U) (M7) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Beast Fighter (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>16BF</checksum>
+        <crc32>018c5819</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>CFG/Beast Fighter (Unl) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Beast Fighter (Unl) [a1][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0F00</checksum>
+        <crc32>0bc7a3c6</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>CFG/Beast Fighter (Unl) [a1][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Beauty and the Beast - A Board Game Adventure (E) (M5) [C][!]</name>
 		<gamecode>AVUP</gamecode>
 		<rev>0</rev>
@@ -2253,6 +3023,17 @@
 		<part></part>
 		<banks>E</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Black Forest Tale (Sachen 4-in-1 Vol. 6) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>62A0</checksum>
+        <crc32>3d4e1779</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>CFG/Black Forest Tale (Sachen 4-in-1 Vol. 6) (Unl) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Blade (U) [C][!]</name>
@@ -3454,6 +4235,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Captain Knick-Knack (Sachen) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>16BF</checksum>
+        <crc32>6b4fefb0</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters>CFG/Captain Knick-Knack (Sachen) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Captain Tsubasa (J) [S][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -4345,6 +5137,17 @@
 		<parameters>CFG/Crayon Shin-Chan 5 (J) [S].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Crazy Burger (Sachen) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>BF10</checksum>
+        <crc32>cd6e3136</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>CFG/Crazy Burger (Sachen) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Crazy Richman 2 (J) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -4686,6 +5489,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Dan Laser (Sachen) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E36F</checksum>
+        <crc32>aabc00f6</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Dan Laser (Sachen) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Dance Dance Revolution GB - Disney Mix (J) [C][!]</name>
 		<gamecode>BD7J</gamecode>
 		<rev>0</rev>
@@ -4895,6 +5709,17 @@
 		<parameters>CFG/Dear Daniel no Sweet Adventure - Kitty-chan o Sagashite (J) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Deep - Final Mission (Sachen) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>33FA</checksum>
+        <crc32>44e97af9</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>CFG/Deep - Final Mission (Sachen) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Deer Hunter (U) [C][!]</name>
 		<gamecode>AXHE</gamecode>
 		<rev>0</rev>
@@ -5082,6 +5907,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Digimon 2 (Jade) (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>4136</checksum>
+        <crc32>c64818eb</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Digimon 2 (Jade) (Unl) [C].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Digimon 2 (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>EC66</checksum>
+        <crc32>aabbec08</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Digimon 2 (Unl) [C].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Digimon 3 (Unl) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -5091,6 +5938,39 @@
 		<part></part>
 		<banks>B,4B</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Digimon 4 (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2413</checksum>
+        <crc32>2ee18ab2</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Digimon 4 (Unl) [C].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Digimon 5 #2 (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>01C5</checksum>
+        <crc32>5666e0f6</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Digimon 5 #2 (Unl) [C].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Digimon 5 #2 (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5120</checksum>
+        <crc32>5ba9f8b5</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Digimon 5 #2 (Unl) [C][a1].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Digimon Adventure 6 2002 (Unl) [C][f1]</name>
@@ -5135,6 +6015,17 @@
 		<part></part>
 		<banks>C,D,E,F,10</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Digimon Diamond (Unl) [C][f2]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>33B2</checksum>
+        <crc32>e34edd08</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Digimon Diamond (Unl) [C][f2].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Digimon Fight (Unl) [C][f1]</name>
@@ -5377,6 +6268,17 @@
 		<part></part>
 		<banks>F5,F6,FA,FD,FE</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Donkey Kong 5 (Unl) [C][b1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>68E9</checksum>
+        <crc32>e097ce67</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Donkey Kong 5 (Unl) [C][b1].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Donkey Kong 2001 (J) [C][!]</name>
@@ -6050,6 +6952,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Duck Adventures (Sachen 4-in-1 Vol. 1) (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2608</checksum>
+        <crc32>d25f3b3c</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Duck Adventures (Sachen 4-in-1 Vol. 1) (Unl) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Duck Tales (E) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -6510,6 +7423,17 @@
 		<part></part>
 		<banks>16</banks>
 		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Explosive Brick '94 (Sachen) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>16BF</checksum>
+        <crc32>e5541ff5</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Explosive Brick '94 (Sachen) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Extra Bases! (U) [!]</name>
@@ -10417,6 +11341,61 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Jurassic Boy 2 (E) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B447</checksum>
+        <crc32>44827e74</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>D</banks>
+		<parameters>CFG/Jurassic Boy 2 (E) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Jurassic Boy 2 (Sachen) (V1.0) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>EB20</checksum>
+        <crc32>d17636b0</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>D</banks>
+		<parameters>CFG/Jurassic Boy 2 (Sachen) (V1.0) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Jurassic Boy 2 (Sachen) (V1.1) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>1</rev>
+		<checksum>0F00</checksum>
+        <crc32>a3ba0db4</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>D</banks>
+		<parameters>CFG/Jurassic Boy 2 (Sachen) (V1.1) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Jurassic Boy 2 + Thunder Blast Man (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0F00</checksum>
+        <crc32>497be52b</crc32>
+        <format>Ei_How_Yang</format>
+		<part>1/2=Jurassic Boy 2</part>
+		<banks>D</banks>
+		<parameters>CFG/Jurassic Boy 2 + Thunder Blast Man (Unl) [C][!] - Jurassic Boy 2.cfg</parameters>
+	</rom>
+	<rom>
+		<name>Jurassic Boy 2 + Thunder Blast Man (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0F00</checksum>
+        <crc32>497be52b</crc32>
+        <format>Ei_How_Yang</format>
+		<part>2/2=Thunder Blast Man</part>
+		<banks>D</banks>
+		<parameters>CFG/Jurassic Boy 2 + Thunder Blast Man (Unl) [C][!] - Thunder Blast Man.cfg</parameters>
+	</rom>
+	<rom>
 		<name>Jurassic Park (E) (M5) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -12892,6 +13871,17 @@
 		<parameters>S</parameters>
 	</rom>
 	<rom>
+		<name>Magic Maze (Sachen) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>16BF</checksum>
+        <crc32>b1acbd28</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Magic Maze (Sachen) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Magical Chase GB (J) [C][!]</name>
 		<gamecode>AIFJ</gamecode>
 		<rev>0</rev>
@@ -12967,6 +13957,17 @@
 		<part></part>
 		<banks>4,14</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Magical Tower (Sachen 4-in-1 Vol. 5) (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3007</checksum>
+        <crc32>f157ae9e</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Magical Tower (Sachen 4-in-1 Vol. 5) (Unl) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Magnetic Soccer (U)</name>
@@ -17908,6 +18909,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Pocket Monsters Diamond (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0363</checksum>
+        <crc32>c465d53c</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>CFG/Pocket Monsters Diamond (Unl) [C][f1].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Pocket Monsters Eun (K) [C]</name>
 		<gamecode>AAXK</gamecode>
 		<rev>0</rev>
@@ -18359,6 +19371,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Pokemon - Mewtwo Strikes Back (Unl) (Ch) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CBC8</checksum>
+        <crc32>f6dc0c54</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>CFG/Pokemon - Mewtwo Strikes Back (Unl) (Ch) [C][f1].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Pokemon - Red Version (UE) [S][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -18555,6 +19578,17 @@
 		<part></part>
 		<banks>3B</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pokemon Adventure (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1ABB</checksum>
+        <crc32>8edb9eb7</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Pokemon Adventure (Unl) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Pokemon Card GB (J) [C][!]</name>
@@ -19833,6 +20867,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Railway (Sachen 4-in-1 Vol. 5) (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2C1C</checksum>
+        <crc32>a19ca3c1</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Railway (Sachen 4-in-1 Vol. 5) (Unl) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Raku x Raku - Cut Shuu (J) [C][!]</name>
 		<gamecode>BELJ</gamecode>
 		<rev>0</rev>
@@ -20614,6 +21659,17 @@
 		<parameters>S</parameters>
 	</rom>
 	<rom>
+		<name>Rockman 8 (Unl) [p1][b1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8A24</checksum>
+        <crc32>cc131a94</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Rockman 8 (Unl) [p1][b1].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Rockman DX3 (Unl) [C]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -21085,6 +22141,743 @@
 		<part>2/2=Samples</part>
 		<banks>10</banks>
 		<parameters>S</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #1 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFF</checksum>
+        <crc32>e7224f14</crc32>
+        <format>Ei_How_Yang</format>
+		<part>1/5=Virus Attack/Electron World/Trouble Zone/Dice Block</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #1 (Unl) [C][!] - Virus Attack.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #1 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFF</checksum>
+        <crc32>e7224f14</crc32>
+        <format>Ei_How_Yang</format>
+		<part>2/5=Pile Wonder</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #1 (Unl) [C][!] - Pile Wonder.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #1 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFF</checksum>
+        <crc32>e7224f14</crc32>
+        <format>Ei_How_Yang</format>
+		<part>3/5=Snake Roy</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #1 (Unl) [C][!] - Snake Roy.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #1 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFF</checksum>
+        <crc32>e7224f14</crc32>
+        <format>Ei_How_Yang</format>
+		<part>4/5=Puppet Knight</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #1 (Unl) [C][!] - Puppet Knight.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #1 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFF</checksum>
+        <crc32>e7224f14</crc32>
+        <format>Ei_How_Yang</format>
+		<part>5/5=Suleiman's Treasure</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #1 (Unl) [C][!] - Suleiman's Treasure.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #2 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFF</checksum>
+        <crc32>b18465d2</crc32>
+        <format>Ei_How_Yang</format>
+		<part>1/8=Arctic Zone</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #2 (Unl) [C][!] - Arctic Zone.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #2 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFF</checksum>
+        <crc32>b18465d2</crc32>
+        <format>Ei_How_Yang</format>
+		<part>2/8=Magical Tower</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #2 (Unl) [C][!] - Magical Tower.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #2 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFF</checksum>
+        <crc32>b18465d2</crc32>
+        <format>Ei_How_Yang</format>
+		<part>3/8=Railway</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #2 (Unl) [C][!] - Railway.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #2 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFF</checksum>
+        <crc32>b18465d2</crc32>
+        <format>Ei_How_Yang</format>
+		<part>4/8=Worm Visitor</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #2 (Unl) [C][!] - Worm Visitor.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #2 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFF</checksum>
+        <crc32>b18465d2</crc32>
+        <format>Ei_How_Yang</format>
+		<part>5/8=Bomb Disposer</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #2 (Unl) [C][!] - Bomb Disposer.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #2 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFF</checksum>
+        <crc32>b18465d2</crc32>
+        <format>Ei_How_Yang</format>
+		<part>6/8=2nd Space</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #2 (Unl) [C][!] - 2nd Space.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #2 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFF</checksum>
+        <crc32>b18465d2</crc32>
+        <format>Ei_How_Yang</format>
+		<part>7/8=Black Forest Tale</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #2 (Unl) [C][!] - Black Forest Tale.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #2 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFF</checksum>
+        <crc32>b18465d2</crc32>
+        <format>Ei_How_Yang</format>
+		<part>8/8=A-Force</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #2 (Unl) [C][!] - A-Force.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #3 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFA</checksum>
+        <crc32>0a504426</crc32>
+        <format>Ei_How_Yang</format>
+		<part>1/8=Ant Soldiers</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #3 (Unl) [C][!] - Ant Soldiers.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #3 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFA</checksum>
+        <crc32>0a504426</crc32>
+        <format>Ei_How_Yang</format>
+		<part>2/8=Sky Ace</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #3 (Unl) [C][!] - Sky Ace.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #3 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFA</checksum>
+        <crc32>0a504426</crc32>
+        <format>Ei_How_Yang</format>
+		<part>3/8=Dan Laser</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #3 (Unl) [C][!] - Dan Laser.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #3 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFA</checksum>
+        <crc32>0a504426</crc32>
+        <format>Ei_How_Yang</format>
+		<part>4/8=Zoo Block</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #3 (Unl) [C][!] - Zoo Block.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #3 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFA</checksum>
+        <crc32>0a504426</crc32>
+        <format>Ei_How_Yang</format>
+		<part>5/8=Captain Knick-Knack</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #3 (Unl) [C][!] - Captain Knick-Knack.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #3 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFA</checksum>
+        <crc32>0a504426</crc32>
+        <format>Ei_How_Yang</format>
+		<part>6/8=Flea War</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #3 (Unl) [C][!] - Flea War.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #3 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFA</checksum>
+        <crc32>0a504426</crc32>
+        <format>Ei_How_Yang</format>
+		<part>7/8=Explosive Brick '94</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #3 (Unl) [C][!] - Explosive Brick '94.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #3 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFA</checksum>
+        <crc32>0a504426</crc32>
+        <format>Ei_How_Yang</format>
+		<part>8/8=Magic Maze</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #3 (Unl) [C][!] - Magic Maze.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #4 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFF</checksum>
+        <crc32>42a2fdf8</crc32>
+        <format>Ei_How_Yang</format>
+		<part>1/8=Zipball</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #4 (Unl) [C][!] - Zipball.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #4 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFF</checksum>
+        <crc32>42a2fdf8</crc32>
+        <format>Ei_How_Yang</format>
+		<part>2/8=Deep: Final Mission</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #4 (Unl) [C][!] - Deep - Final Mission.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #4 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFF</checksum>
+        <crc32>42a2fdf8</crc32>
+        <format>Ei_How_Yang</format>
+		<part>3/8=Crazy Burger</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #4 (Unl) [C][!] - Crazy Burger.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #4 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFF</checksum>
+        <crc32>42a2fdf8</crc32>
+        <format>Ei_How_Yang</format>
+		<part>4/8=Small Gorilla</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #4 (Unl) [C][!] - Small Gorilla.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #4 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFF</checksum>
+        <crc32>42a2fdf8</crc32>
+        <format>Ei_How_Yang</format>
+		<part>5/8=Street Rider</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #4 (Unl) [C][!] - Street Rider.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #4 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFF</checksum>
+        <crc32>42a2fdf8</crc32>
+        <format>Ei_How_Yang</format>
+		<part>6/8=Vex Block</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #4 (Unl) [C][!] - Vex Block.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #4 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFF</checksum>
+        <crc32>42a2fdf8</crc32>
+        <format>Ei_How_Yang</format>
+		<part>7/8=Trap & Turn</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #4 (Unl) [C][!] - Trap & Turn.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 + 8-in-1 #4 (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FFF</checksum>
+        <crc32>42a2fdf8</crc32>
+        <format>Ei_How_Yang</format>
+		<part>8/8=Duck Adventures</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 + 8-in-1 #4 (Unl) [C][!] - Duck Adventures.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 1 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>82f06e93</crc32>
+        <format>Ei_How_Yang</format>
+		<part>1/5=Menu</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 1 (Unl) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 1 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>82f06e93</crc32>
+        <format>Ei_How_Yang</format>
+		<part>2/5=Street Rider</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 1 (Unl) [!] - Street Rider.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 1 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>82f06e93</crc32>
+        <format>Ei_How_Yang</format>
+		<part>3/5=Vex Block</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 1 (Unl) [!] - Vex Block.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 1 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>82f06e93</crc32>
+        <format>Ei_How_Yang</format>
+		<part>4/5=Trap & Turn</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 1 (Unl) [!] - Trap & Turn.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 1 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>82f06e93</crc32>
+        <format>Ei_How_Yang</format>
+		<part>5/5=Duck Adventures</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 1 (Unl) [!] - Duck Adventures.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 2 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>5e438db8</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 2 (Unl) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 3 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>63FA</checksum>
+        <crc32>4136eb1c</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 3 (Unl) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 4 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>c69a19f6</crc32>
+        <format>Ei_How_Yang</format>
+		<part>1/5=Menu</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 4 (Unl) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 4 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>c69a19f6</crc32>
+        <format>Ei_How_Yang</format>
+		<part>2/5=Pile Wonder</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 4 (Unl) [!] - Pile Wonder.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 4 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>c69a19f6</crc32>
+        <format>Ei_How_Yang</format>
+		<part>3/5=Snake Roy</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 4 (Unl) [!] - Snake Roy.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 4 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>c69a19f6</crc32>
+        <format>Ei_How_Yang</format>
+		<part>4/5=Puppet Knight</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 4 (Unl) [!] - Puppet Knight.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 4 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>c69a19f6</crc32>
+        <format>Ei_How_Yang</format>
+		<part>5/5=Suleiman's Treasure</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 4 (Unl) [!] - Suleiman's Treasure.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 5 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>f4310eb3</crc32>
+        <format>Ei_How_Yang</format>
+		<part>1/5=Menu</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 5 (Unl) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 5 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>f4310eb3</crc32>
+        <format>Ei_How_Yang</format>
+		<part>2/5=Arctic Zone</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 5 (Unl) [!] - Arctic Zone.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 5 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>f4310eb3</crc32>
+        <format>Ei_How_Yang</format>
+		<part>3/5=Magical Tower</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 5 (Unl) [!] - Magical Tower.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 5 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>f4310eb3</crc32>
+        <format>Ei_How_Yang</format>
+		<part>4/5=Railway</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 5 (Unl) [!] - Railway.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 5 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>f4310eb3</crc32>
+        <format>Ei_How_Yang</format>
+		<part>5/5=Worm Visitor</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 5 (Unl) [!] - Worm Visitor.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 6 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>95398da5</crc32>
+        <format>Ei_How_Yang</format>
+		<part>1/5=Menu</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 6 (Unl) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 6 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>95398da5</crc32>
+        <format>Ei_How_Yang</format>
+		<part>2/5=Bomb Disposer</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 6 (Unl) [!] - Bomb Disposer.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 6 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>95398da5</crc32>
+        <format>Ei_How_Yang</format>
+		<part>3/5=Black Forest Tale</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 6 (Unl) [!] - Black Forest Tale.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 6 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>95398da5</crc32>
+        <format>Ei_How_Yang</format>
+		<part>4/5=A-Force</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 6 (Unl) [!] - A-Force.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 6 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>95398da5</crc32>
+        <format>Ei_How_Yang</format>
+		<part>5/5=2nd Space</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 6 (Unl) [!] - 2nd Space.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 7 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>62d9350e</crc32>
+        <format>Ei_How_Yang</format>
+		<part>1/4=Ant Soldiers</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 7 (Unl) [!] - Ant Soldiers.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 7 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>62d9350e</crc32>
+        <format>Ei_How_Yang</format>
+		<part>2/4=Sky Ace</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 7 (Unl) [!] - Sky Ace.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 7 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>62d9350e</crc32>
+        <format>Ei_How_Yang</format>
+		<part>3/4=Dan Laser</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 7 (Unl) [!] - Dan Laser.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 7 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFA</checksum>
+        <crc32>62d9350e</crc32>
+        <format>Ei_How_Yang</format>
+		<part>4/4=Zoo Block</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 7 (Unl) [!] - Zoo Block.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 7 (Unl) [a1][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>16BF</checksum>
+        <crc32>5e618d10</crc32>
+        <format>Ei_How_Yang</format>
+		<part>1/4=Ant Soldiers</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 7 (Unl) [a1][!] - Ant Soldiers.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 7 (Unl) [a1][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>16BF</checksum>
+        <crc32>5e618d10</crc32>
+        <format>Ei_How_Yang</format>
+		<part>2/4=Sky Ace</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 7 (Unl) [a1][!] - Sky Ace.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 7 (Unl) [a1][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>16BF</checksum>
+        <crc32>5e618d10</crc32>
+        <format>Ei_How_Yang</format>
+		<part>3/4=Dan Laser</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 7 (Unl) [a1][!] - Dan Laser.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 7 (Unl) [a1][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>16BF</checksum>
+        <crc32>5e618d10</crc32>
+        <format>Ei_How_Yang</format>
+		<part>4/4=Zoo Block</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 7 (Unl) [a1][!] - Zoo Block.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 8 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFF</checksum>
+        <crc32>740e9bc8</crc32>
+        <format>Ei_How_Yang</format>
+		<part>1/4=Captain Knick-Knack</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 8 (Unl) [!] - Captain Knick-Knack.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 8 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFF</checksum>
+        <crc32>740e9bc8</crc32>
+        <format>Ei_How_Yang</format>
+		<part>2/4=Flea War</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 8 (Unl) [!] - Flea War.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 8 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFF</checksum>
+        <crc32>740e9bc8</crc32>
+        <format>Ei_How_Yang</format>
+		<part>3/4=Explosive Brick '94</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 8 (Unl) [!] - Explosive Brick '94.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 8 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFF</checksum>
+        <crc32>740e9bc8</crc32>
+        <format>Ei_How_Yang</format>
+		<part>4/4=Magic Maze</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 8 (Unl) [!] - Magic Maze.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 9 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFF</checksum>
+        <crc32>114e1f1e</crc32>
+        <format>Ei_How_Yang</format>
+		<part>1/4=Zipball</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 9 (Unl) [!] - Zipball.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 9 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFF</checksum>
+        <crc32>114e1f1e</crc32>
+        <format>Ei_How_Yang</format>
+		<part>2/4=Deep: Final Mission</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 9 (Unl) [!] - Deep - Final Mission.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 9 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFF</checksum>
+        <crc32>114e1f1e</crc32>
+        <format>Ei_How_Yang</format>
+		<part>3/4=Crazy Burger</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 9 (Unl) [!] - Crazy Burger.cfg\M</parameters>
+	</rom>
+	<rom>
+		<name>Sachen 4-in-1 Vol. 9 (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CCFF</checksum>
+        <crc32>114e1f1e</crc32>
+        <format>Ei_How_Yang</format>
+		<part>4/4=Small Gorilla</part>
+		<banks>1</banks>
+		<parameters>CFG/Sachen 4-in-1 Vol. 9 (Unl) [!] - Small Gorilla.cfg\M</parameters>
 	</rom>
 	<rom>
 		<name>SaGa 2 - Hihou Densetsu (J) (V1.0)</name>
@@ -22209,6 +24002,17 @@
 		<parameters>4D90\3</parameters>
 	</rom>
 	<rom>
+		<name>Sky Ace (Sachen 4-in-1 Vol. 7) (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6B77</checksum>
+        <crc32>395fe571</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>CFG/Sky Ace (Sachen 4-in-1 Vol. 7) (Unl) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Sky Dragon (Unl) [C]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -22451,6 +24255,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Sonic 3D Blast 5 (Unl)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3B96</checksum>
+        <crc32>5fed0068</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Sonic 3D Blast 5 (Unl).cfg</parameters>
+	</rom>
+	<rom>
 		<name>Sonic 6 (Unl)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -22460,6 +24275,17 @@
 		<part></part>
 		<banks>1B</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Sonic 7 (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F3D1</checksum>
+        <crc32>dec1260e</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Sonic 7 (Unl) [C].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Soreyuke! Speedy Gonzales (J)</name>
@@ -23353,6 +25179,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Street Hero (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0F21</checksum>
+        <crc32>b580cb1f</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Street Hero (Unl) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Street Racer (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -23373,6 +25210,17 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Street Rider (Sachen 4-in-1 Vol. 1) (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5281</checksum>
+        <crc32>7751e066</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Street Rider (Sachen 4-in-1 Vol. 1) (Unl) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Stuart Little - The Journey Home (E) (M2) [C]</name>
@@ -23813,6 +25661,17 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters>CFG/Super Mario Land 4 (J) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Super Mario Special 3 (Unl) [C][b1][f2]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C6EA</checksum>
+        <crc32>39c332a2</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Super Mario Special 3 (Unl) [C][b1][f2].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Super Mario World 7 (Unl)</name>
@@ -24959,6 +26818,39 @@
 		<parameters>2</parameters>
 	</rom>
 	<rom>
+		<name>Thunder Blast Man (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7DD9</checksum>
+        <crc32>648e44b8</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Thunder Blast Man (J) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Thunder Blast Man (J) [C][a1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>FBB9</checksum>
+        <crc32>4be37733</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Thunder Blast Man (J) [C][a1].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Thunder Blast Man (Sachen) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0F01</checksum>
+        <crc32>1a719ead</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Thunder Blast Man (Sachen) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Thunderbirds (E) [C][!]</name>
 		<gamecode>BTNP</gamecode>
 		<rev>0</rev>
@@ -25663,6 +27555,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Trap & Turn (Sachen) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2629</checksum>
+        <crc32>1c2fc6bf</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Trap & Turn (Sachen) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Trappers Tengoku - Spy vs Spy (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -26343,6 +28246,17 @@
 		<part></part>
 		<banks>7</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Vex Block (Sachen) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0117</checksum>
+        <crc32>642aee97</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Vex Block (Sachen) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>VIP (E) (M5) [C][!]</name>
@@ -27181,6 +29095,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Worm Visitor (Sachen 4-in-1 Vol. 5) (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>484C</checksum>
+        <crc32>66130a7a</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Worm Visitor (Sachen 4-in-1 Vol. 5) (Unl) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Worms Armageddon (E) (M6) [C][!]</name>
 		<gamecode>AWUP</gamecode>
 		<rev>0</rev>
@@ -27654,6 +29579,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Yingxiong Tianxia (Unl) [C][f2]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C525</checksum>
+        <crc32>d20b75ea</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>CFG/Yingxiong Tianxia (Unl) [C][f2].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Yogi Bear in Yogi Bear's Goldrush (E) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -28039,6 +29975,17 @@
 		<parameters>B\486F</parameters>
 	</rom>
 	<rom>
+		<name>Zipball (Sachen 4-in-1 Vol. 9) (Unl) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>911E</checksum>
+        <crc32>7279b3c4</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Zipball (Sachen 4-in-1 Vol.9) (Unl) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Zoboomafoo - Playtime In Zobooland (U) [C][!]</name>
 		<gamecode>BZBE</gamecode>
 		<rev>0</rev>
@@ -28059,6 +30006,17 @@
 		<part></part>
 		<banks>2</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Zoo Block (Sachen) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E5BB</checksum>
+        <crc32>fc6f3bc2</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>CFG/Zoo Block (Sachen) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Zoop (J)</name>
