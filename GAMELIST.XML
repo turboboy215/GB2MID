@@ -21824,6 +21824,17 @@
 		<parameters>S</parameters>
 	</rom>
 	<rom>
+		<name>Rocman X (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0F01</checksum>
+        <crc32>7e1351cf</crc32>
+        <format>Ei_How_Yang</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Rocman X (Unl) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Rodland (E) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
