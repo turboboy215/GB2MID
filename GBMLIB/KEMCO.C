@@ -58,7 +58,7 @@ int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 void Kemcosong2mid(int songNum, long ptr);
 void Kemcosong2midNES(int songNum, long ptr);
 
-void KemcoProc(int bank, char parameters[4][50])
+void KemcoProc(int bank, char parameters[4][100])
 {
 	foundTable = 0;
 	sysMode = 2;

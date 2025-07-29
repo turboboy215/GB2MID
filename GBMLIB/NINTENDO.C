@@ -82,9 +82,9 @@ unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned in
 int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 void Nintsong2mid(int songNum, long ptrList[4], long speedPtr, int songTrans);
 void NintgetLength(long ptrList[4]);
-void NintProc(int bank, char parameters[4][50]);
+void NintProc(int bank, char parameters[4][100]);
 
-void NintProc(int bank, char parameters[4][50])
+void NintProc(int bank, char parameters[4][100])
 {
 	if (bank != 1)
 	{

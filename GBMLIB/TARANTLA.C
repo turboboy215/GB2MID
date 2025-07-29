@@ -46,7 +46,7 @@ unsigned int WriteNoteEventOff(unsigned char* buffer, unsigned int pos, unsigned
 int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 void Tarantulasong2mid(int songNum, long ptrs[4], int banks[4]);
 
-void TarantulaProc(int bank, char parameters[4][50])
+void TarantulaProc(int bank, char parameters[4][100])
 {
 	curInst = 0;
 	format = 2;

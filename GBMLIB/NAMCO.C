@@ -55,7 +55,7 @@ unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned in
 int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 void Namcosong2mid(int songNum, long ptr);
 
-void NamcoProc(int bank, char parameters[4][50])
+void NamcoProc(int bank, char parameters[4][100])
 {
 	curInsts[0] = 0;
 	curInsts[1] = 0;

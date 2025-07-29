@@ -240,6 +240,30 @@
     <ClInclude Include="CODEMONK.H">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TAITO.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ACT.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WINKYSFT.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="COMPILE.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BITS.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GEX.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AICOM.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EHY.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SHARED.C">
@@ -459,6 +483,30 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CODEMONK.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TAITO.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ACT.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WINKYSFT.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="COMPILE.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BITS.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GEX.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AICOM.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EHY.C">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

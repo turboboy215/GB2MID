@@ -451,7 +451,7 @@ unsigned int WriteNoteEventAltOff(unsigned char* buffer, unsigned int pos, unsig
 	return pos;
 }
 
-void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameters[4][50])
+void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameters[4][100])
 {
 	if (numBanks > 1)
 	{
@@ -526,6 +526,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Ed_Magnin:
 			MagninProc(banks[curBank], parameters);
+			break;
+		case Ei_How_Yang:
+			EHYProc(banks[curBank], parameters);
 			break;
 		case Factor_5:
 			F5Proc(banks[curBank]);

@@ -42,7 +42,7 @@ unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned in
 int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 void DE1song2mid(int songNum, long songPtr);
 
-void DE1Proc(int bank, char parameters[4][50])
+void DE1Proc(int bank, char parameters[4][100])
 {
 	cfgPtr = 0;
 	exitError = 0;

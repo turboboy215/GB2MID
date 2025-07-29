@@ -5,4 +5,4 @@
 #include <stddef.h>
 
 /*Function prototypes*/
-void SaffireProc(int bank, char parameters[4][50]);
+void SaffireProc(int bank, char parameters[4][100]);

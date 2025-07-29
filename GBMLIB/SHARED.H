@@ -74,6 +74,7 @@
 #define BITS				0x47
 #define FIRQ				0x48
 #define Aicom				0x49
+#define Ei_How_Yang			0x4A
 
 extern FILE * rom, * mid;
 extern long masterBank;
@@ -114,4 +115,4 @@ extern unsigned int WriteNoteEvent45(unsigned char* buffer, unsigned int pos, un
 extern unsigned int WriteNoteEventOn(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 extern unsigned int WriteNoteEventOff(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 extern int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
-extern void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameters[4][50]);
+extern void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameters[4][100]);

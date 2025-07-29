@@ -17,7 +17,6 @@ long songPtrs[4];
 long seqPtrs[4];
 long songPtr;
 int numSongs;
-int masterBank;
 int songBank;
 long bankAmt;
 long sizeBank;
@@ -49,7 +48,7 @@ unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned in
 int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 void Nowsong2mid(int songNum, long ptr);
 
-void NowProc(int bank, char parameters[4][50])
+void NowProc(int bank, char parameters[4][100])
 {
 	tableOffset = strtol(parameters[0], NULL, 16);
 	numSongs = strtol(parameters[1], NULL, 16);

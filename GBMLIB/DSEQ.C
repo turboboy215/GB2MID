@@ -50,7 +50,7 @@ unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned in
 int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 void DSEQsong2mid(int songNum, long songPtrs[4]);
 
-void DSEQProc(int bank, char parameters[4][50])
+void DSEQProc(int bank, char parameters[4][100])
 {
 	foundTable = 0;
 	curInst = 0;

@@ -101,7 +101,7 @@ void copyData(unsigned char* source, unsigned char* dest, long base, long dataSt
 		}
 	}
 }
-void Tit2Proc(int bank, char parameters[4][50])
+void Tit2Proc(int bank, char parameters[4][100])
 {
 	drvVers = 0;
 	fileExit = 0;

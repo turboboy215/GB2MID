@@ -5,4 +5,4 @@
 #include <stddef.h>
 
 /*Function prototypes*/
-void CodeMonkProc(char parameters[4][50]);
+void CodeMonkProc(char parameters[4][100]);

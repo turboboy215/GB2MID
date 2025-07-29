@@ -5,4 +5,4 @@
 #include <stddef.h>
 
 /*Function prototypes*/
-extern void NintProc(int bank, char parameters[4][50]);
+extern void NintProc(int bank, char parameters[4][100]);

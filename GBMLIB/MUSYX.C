@@ -76,7 +76,7 @@ int compare(const void* a, const void* b) {
 	return (*rowA)[1] - (*rowB)[1];
 }
 
-void MXProc(int bank, char parameters[4][50])
+void MXProc(int bank, char parameters[4][100])
 {
 	bankAmt = bankSize;
 	mode = 1;

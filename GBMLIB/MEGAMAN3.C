@@ -53,7 +53,7 @@ int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 void song2mid(int songNum, long ptr);
 void pksong2mid(int songNum, long ptr);
 
-extern void MM3Proc(int bank, char parameters[4][50])
+extern void MM3Proc(int bank, char parameters[4][100])
 {
 	foundTable = 0;
 	if (bank != 1)

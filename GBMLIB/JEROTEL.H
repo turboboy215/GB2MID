@@ -5,4 +5,4 @@
 #include <stddef.h>
 
 /*Function prototypes*/
-void JTProc(char parameters[4][50]);
+void JTProc(char parameters[4][100]);

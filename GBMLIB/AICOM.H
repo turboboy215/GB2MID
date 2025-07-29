@@ -5,4 +5,4 @@
 #include <stddef.h>
 
 /*Function prototypes*/
-void AicomProc(int bank, char parameters[4][50]);
+void AicomProc(int bank, char parameters[4][100]);

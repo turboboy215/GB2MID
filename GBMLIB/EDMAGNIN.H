@@ -5,4 +5,4 @@
 #include <stddef.h>
 
 /*Function prototypes*/
-void MagninProc(int bank, char parameters[4][50]);
+void MagninProc(int bank, char parameters[4][100]);

@@ -5,4 +5,4 @@
 #include <stddef.h>
 
 /*Function prototypes*/
-int SadaProc(int bank, char parameters[4][50]);
+int SadaProc(int bank, char parameters[4][100]);

@@ -71,7 +71,7 @@ void TOSEsong2mid(int songNum, long ptr, int chanNums);
 unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 
-void TOSEProc(char parameters[4][50])
+void TOSEProc(char parameters[4][100])
 {
 	exitError = 0;
 	fileExit = 0;

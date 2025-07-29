@@ -5,4 +5,4 @@
 #include <stddef.h>
 
 /*Function prototypes*/
-void TOSEProc(char parameters[4][50]);
+void TOSEProc(char parameters[4][100]);

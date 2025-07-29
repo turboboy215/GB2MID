@@ -5,4 +5,4 @@
 #include <stddef.h>
 
 /*Function prototypes*/
-void Tit2Proc(int bank, char parameters[4][50]);
+void Tit2Proc(int bank, char parameters[4][100]);

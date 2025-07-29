@@ -5,4 +5,4 @@
 #include <stddef.h>
 
 /*Function prototypes*/
-void DSEQProc(int bank, char parameters[4][50]);
+void DSEQProc(int bank, char parameters[4][100]);

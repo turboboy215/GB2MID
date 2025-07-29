@@ -1,8 +1,8 @@
-/*Nova/Arc System Works*/
+/*Ei-How Yang (Sachen/Yong Yong (Makon Soft))*/
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <stddef.h>
 
 /*Function prototypes*/
-void NovaProc(int bank, char parameters[4][100]);
+void EHYProc(int bank, char parameters[4][100]);

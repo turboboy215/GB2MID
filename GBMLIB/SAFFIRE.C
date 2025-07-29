@@ -57,7 +57,7 @@ unsigned int WriteNoteEventAltOn(unsigned char* buffer, unsigned int pos, unsign
 unsigned int WriteNoteEventAltOff(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 void Saffiresong2mid(int songNum, long ptr, int tempo);
 
-void SaffireProc(int bank, char parameters[4][50])
+void SaffireProc(int bank, char parameters[4][100])
 {
 	curInst = 0;
 	firstPtr = 0;

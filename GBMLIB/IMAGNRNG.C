@@ -22,7 +22,7 @@ int cmdFmt;
 int songNum;
 long songPtrs[4];
 long patPtrs[4];
-long patList[4][50];
+long patList[4][100];
 long bankAmt;
 int seqDiff;
 int foundTable;

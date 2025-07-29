@@ -82,7 +82,7 @@ void WriteLE32(unsigned char* buffer, unsigned long value);
 void imed2mod(long list, long dir);
 void IMEDcopyData(unsigned char* source, unsigned char* dest, long base, long dataStart, long dataEnd);
 
-void IMEDProc(char parameters[4][50])
+void IMEDProc(char parameters[4][100])
 {
 	if ((cfg = fopen(parameters[0], "r")) == NULL)
 	{

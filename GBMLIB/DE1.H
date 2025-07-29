@@ -5,4 +5,4 @@
 #include <stddef.h>
 
 /*Function prototypes*/
-void DE1Proc(int bank, char parameters[4][50]);
+void DE1Proc(int bank, char parameters[4][100]);

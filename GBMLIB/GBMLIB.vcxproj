@@ -125,9 +125,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
@@ -139,17 +139,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ACT.H" />
+    <ClInclude Include="AICOM.H" />
     <ClInclude Include="AJG.H" />
     <ClInclude Include="ALLEYWAY.H" />
     <ClInclude Include="ATLUS.H" />
     <ClInclude Include="AUDIOART.H" />
     <ClInclude Include="BEAM.H" />
     <ClInclude Include="BGDEC.H" />
+    <ClInclude Include="BITS.H" />
     <ClInclude Include="CANNON.H" />
     <ClInclude Include="CAPCOM.H" />
     <ClInclude Include="CARILLON.H" />
     <ClInclude Include="CLIMAX.H" />
     <ClInclude Include="CODEMONK.H" />
+    <ClInclude Include="COMPILE.H" />
     <ClInclude Include="COSMIGO.H" />
     <ClInclude Include="CUBE.H" />
     <ClInclude Include="DAVDSHEA.H" />
@@ -160,9 +164,11 @@
     <ClInclude Include="DW.H" />
     <ClInclude Include="EASTRDGE.H" />
     <ClInclude Include="EDMAGNIN.H" />
+    <ClInclude Include="EHY.H" />
     <ClInclude Include="FACTOR5.H" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="GAMEFRK.H" />
+    <ClInclude Include="GEX.H" />
     <ClInclude Include="GHX.H" />
     <ClInclude Include="HAL.H" />
     <ClInclude Include="HUDSON.H" />
@@ -205,6 +211,7 @@
     <ClInclude Include="SQUARE.H" />
     <ClInclude Include="SQZDEC.H" />
     <ClInclude Include="SUNSOFT.H" />
+    <ClInclude Include="TAITO.H" />
     <ClInclude Include="TARANTLA.H" />
     <ClInclude Include="TECHNOS.H" />
     <ClInclude Include="TIERTEX.H" />
@@ -214,19 +221,24 @@
     <ClInclude Include="TOSE.H" />
     <ClInclude Include="WARIOL2.H" />
     <ClInclude Include="WAV.H" />
+    <ClInclude Include="WINKYSFT.H" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ACT.C" />
+    <ClCompile Include="AICOM.C" />
     <ClCompile Include="AJG.C" />
     <ClCompile Include="ALLEYWAY.C" />
     <ClCompile Include="ATLUS.C" />
     <ClCompile Include="AUDIOART.C" />
     <ClCompile Include="BEAM.C" />
     <ClCompile Include="BGDEC.C" />
+    <ClCompile Include="BITS.C" />
     <ClCompile Include="CANNON.C" />
     <ClCompile Include="CAPCOM.C" />
     <ClCompile Include="CARILLON.C" />
     <ClCompile Include="CLIMAX.C" />
     <ClCompile Include="CODEMONK.C" />
+    <ClCompile Include="COMPILE.C" />
     <ClCompile Include="COSMIGO.C" />
     <ClCompile Include="CUBE.C" />
     <ClCompile Include="DAVDSHEA.C" />
@@ -237,8 +249,10 @@
     <ClCompile Include="DW.C" />
     <ClCompile Include="EASTRDGE.C" />
     <ClCompile Include="EDMAGNIN.C" />
+    <ClCompile Include="EHY.C" />
     <ClCompile Include="FACTOR5.C" />
     <ClCompile Include="GAMEFRK.C" />
+    <ClCompile Include="GEX.C" />
     <ClCompile Include="GHX.C" />
     <ClCompile Include="HAL.C" />
     <ClCompile Include="HUDSON.C" />
@@ -286,6 +300,7 @@
     <ClCompile Include="SQUARE.C" />
     <ClCompile Include="SQZDEC.C" />
     <ClCompile Include="SUNSOFT.C" />
+    <ClCompile Include="TAITO.C" />
     <ClCompile Include="TARANTLA.C" />
     <ClCompile Include="TECHNOS.C" />
     <ClCompile Include="TIERTEX.C" />
@@ -294,6 +309,7 @@
     <ClCompile Include="TITUSDEC.C" />
     <ClCompile Include="TOSE.C" />
     <ClCompile Include="WARIOL2.C" />
+    <ClCompile Include="WINKYSFT.C" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

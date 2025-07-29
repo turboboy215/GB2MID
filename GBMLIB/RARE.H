@@ -5,4 +5,4 @@
 #include <stddef.h>
 
 /*Function prototypes*/
-void RAREProc(char parameters[4][50]);
+void RAREProc(char parameters[4][100]);

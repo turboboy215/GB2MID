@@ -56,7 +56,7 @@ int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 void Taitosong2mid(int songNum, long ptr);
 void Taitosong2midMB(int songNum, long ptr);
 
-void TaitoProc(int bank, char parameters[4][50])
+void TaitoProc(int bank, char parameters[4][100])
 {
 	foundTable = 0;
 	curInst = 0;

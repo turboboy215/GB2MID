@@ -116,7 +116,7 @@ unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned in
 int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 void RAREsong2mid(int songNum, long ptrList[4]);
 
-void RAREProc(char parameters[4][50])
+void RAREProc(char parameters[4][100])
 {
 	cfgPtr = 0;
 	exitError = 0;

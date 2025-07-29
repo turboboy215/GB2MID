@@ -57,7 +57,7 @@ int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 void Sadasong2mid(int songNum, long ptr, int bank);
 void Sadasong2midOld(int songNum, long ptr);
 
-int SadaProc(int bank, char parameters[4][50])
+int SadaProc(int bank, char parameters[4][100])
 {
 	masterBank = bank;
 	drvVers = 1;

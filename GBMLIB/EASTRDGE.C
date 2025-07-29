@@ -58,7 +58,7 @@ void NEsong2mid(int songNum, long ptrs[4]);
 unsigned int WriteNoteEventOn(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 unsigned int WriteNoteEventOff(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 
-void NEProc(int bank, char parameters[4][50])
+void NEProc(int bank, char parameters[4][100])
 {
 	curInst = 0;
 	firstPtr = 0;

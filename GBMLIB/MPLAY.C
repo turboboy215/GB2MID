@@ -63,7 +63,7 @@ char string1[100];
 char string2[100];
 char MPlaycheckStrings[9][100] = { "masterBank=", "numSongs=", "format", "songList=", "patData=", "seqList=", "bankMap=", "tempoMap=", "numBanks=" };
 
-void MPlayProc(int bank, char parameters[4][50])
+void MPlayProc(int bank, char parameters[4][100])
 {
 	exitError = 0;
 	fileExit = 0;

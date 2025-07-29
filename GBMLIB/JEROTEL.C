@@ -41,7 +41,7 @@ void JTsong2mid(int songNum, long ptrList[4], int songTrans);
 unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 
-void JTProc(char parameters[4][50])
+void JTProc(char parameters[4][100])
 {
 	if ((cfg = fopen(parameters[0], "r")) == NULL)
 	{

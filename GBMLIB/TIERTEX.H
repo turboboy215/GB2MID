@@ -5,4 +5,4 @@
 #include <stddef.h>
 
 /*Function prototypes*/
-void TTProc(int bank, char parameters[4][50]);
+void TTProc(int bank, char parameters[4][100]);

@@ -55,7 +55,7 @@ unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned in
 int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 void Novasong2mid(int songNum, long ptr, int songBank);
 
-void NovaProc(int bank, char parameters[4][50])
+void NovaProc(int bank, char parameters[4][100])
 {
 	foundTable = 0;
 	curInst = 0;

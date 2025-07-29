@@ -5,4 +5,4 @@
 #include <stddef.h>
 
 /*Function prototypes*/
-void KonProc(int bank, char parameters[4][50]);
+void KonProc(int bank, char parameters[4][100]);

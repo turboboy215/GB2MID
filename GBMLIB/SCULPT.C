@@ -47,7 +47,7 @@ unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned in
 int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 void Sculptsong2mid(int songNum, long ptrs[4]);
 
-void SculptProc(int bank, char parameters[4][50])
+void SculptProc(int bank, char parameters[4][100])
 {
 	foundTable = 0;
 	ptrOverride = 0;
