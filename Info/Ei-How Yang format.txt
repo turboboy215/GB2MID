@@ -1,0 +1,53 @@
+Song table
+=======================================
+The song table is comprised of 16-bit (2-byte) pointers for songs.
+
+Sequence table
+=======================================
+Like the song table, the sequence table is comprised of 16-bit pointers which make up various segments of songs. These are shared by all channels.
+
+Song headers
+=======================================
+Each song has a "header" which is used to determine the pointer to pattern data for each channel:
+
+1. Channel mask (Uses only last 4 bits, channel numbers: 4,-1)
+2-3. Channel 1 pointer
+4-5. Channel 2 pointer
+6-7. Channel 3 pointer
+8-9. Channel 4 pointer
+
+Pattern commands
+=======================================
+There are at least three main variants of the sound engine which use different pattern commands.
+
+In what is likely the earliest version, the commands are as follows:
+00-FE = Play sequence
+FF xx yy = Special command
+ - X values:
+   00 = Set tempo (Tempo = Y)
+   01 = Set duty (Duty = Y)
+   02 = Set envelope (channel)
+   03 = Set global volume
+   04 = Set start position Y in bytes for repeat
+   05 = Repeat - Go to repeat start position Y times
+   06 = Set volume/envelope (Volume/envelope = Y)
+   07 = End of channel (no loop)
+
+
+In another (probably later) version, each channel's pattern is comprised of the following commands (this variant is also used in 2 early Yong Yong/Makon Soft games):
+00-FB? = Play sequence
+FC xx = End of pattern (X: 00 = Loop, 01 = No loop?)
+FD xx = Set volume/envelope
+FE xx = Set tempo
+FF xx yy zz = Set channel parameters
+
+In most of Yong Yong/Makon Soft's games, it is almost the same as the second version, but one command is slightly different, as seen below. The tempo control is also different, the frequency table is changed to use more standard tuning, and later games also load a waveform into channel 3, whereas other games don't initialize the wave channel and rely on the default waveform data (which on the Game Boy Color, makes it sound significantly higher-pitched than on the original Game Boy). Additionally, most (all?) games using this driver version have the first song be empty, likely used for initialization.
+
+This command has been altered:
+FF xx yy zz aa bb cc (dd) = Set channel parameters (D is only used for channel 1)
+
+Sequence commands
+=======================================
+Sequences are comprised of the following commands:
+00 = End of sequence
+xx yy (X > 00) = Play note (X = Length, Y = Note (0 = Rest))
