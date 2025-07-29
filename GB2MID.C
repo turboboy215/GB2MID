@@ -23,7 +23,7 @@ char outfile[1000000];
 int songPtr;
 int songPtrs[4];
 char gameCode[5];
-char parameters[4][50];
+char parameters[4][100];
 unsigned long crc;
 unsigned long hash;
 unsigned long tempCrc;
@@ -722,6 +722,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "Ed_Magnin"))
             {
                 driver = Ed_Magnin;
+            }
+            else if (!strcmp(formatString, "Ei_How_Yang"))
+            {
+                driver = Ei_How_Yang;
             }
             else if (!strcmp(formatString, "Factor_5"))
             {

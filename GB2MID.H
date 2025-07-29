@@ -72,3 +72,4 @@
 #define BITS				0x47
 #define FIRQ				0x48
 #define Aicom				0x49
+#define Ei_How_Yang			0x4A
