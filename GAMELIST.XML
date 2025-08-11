@@ -13981,6 +13981,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Mahou Kishi Rayearth (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F215</checksum>
+        <crc32>94838a81</crc32>
+        <format>Pandora_Box</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>CFG/Mahou Kishi Rayearth (J) [S].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Mahou Kishi Rayearth 2nd - The Missing Colors (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>285A</checksum>
+        <crc32>00202dfa</crc32>
+        <format>Pandora_Box</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>CFG/Mahou Kishi Rayearth 2nd - The Missing Colors (J) [S].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Majokko Mari-chan no Kisekae Monogatari (J) (V1.0) [C][!]</name>
 		<gamecode>A23J</gamecode>
 		<rev>0</rev>
@@ -17895,6 +17917,61 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Oni 2 - Innin Densetsu (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A368</checksum>
+        <crc32>2f895df5</crc32>
+        <format>Pandora_Box</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>CFG/Oni 2 - Innin Densetsu (J) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Oni 3 - Kuro no Hakaishin (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A03B</checksum>
+        <crc32>6cd62fdb</crc32>
+        <format>Pandora_Box</format>
+		<part></part>
+		<banks>0F</banks>
+		<parameters>CFG/Oni 3 - Kuro no Hakaishin (J) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Oni 4 - Kishin no Ketsuzoku (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1BB8</checksum>
+        <crc32>beff4f57</crc32>
+        <format>Pandora_Box</format>
+		<part></part>
+		<banks>B</banks>
+		<parameters>CFG/Oni 4 - Kishin no Ketsuzoku (J) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Oni 4 - Kishin no Ketsuzoku (J) (V1.1) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>1</rev>
+		<checksum>1990</checksum>
+        <crc32>19eba26f</crc32>
+        <format>Pandora_Box</format>
+		<part></part>
+		<banks>B</banks>
+		<parameters>CFG/Oni 4 - Kishin no Ketsuzoku (J) (V1.1) (Unreleased) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Oni 5 - Innin o Tsugumono (J) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>769A</checksum>
+        <crc32>af030940</crc32>
+        <format>Pandora_Box</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>CFG/Oni 5 - Innin o Tsugumono (J) [S][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Onimusha 2 (Unl) [C][f1]</name>

@@ -73,3 +73,4 @@
 #define FIRQ				0x48
 #define Aicom				0x49
 #define Ei_How_Yang			0x4A
+#define Pandora_Box			0x4B
