@@ -1,0 +1,47 @@
+Song pointers
+=======================================
+ - Usually begins at 0x4000 (start of bank)
+ - Oni 2 uses relative pointers, while other games use absolute pointers.
+ - Oni 2 and 3 both have two separate banks with different songs (Oni 2's second bank data is located in the bank before the first bank at offset $7F00)
+ - Oni 5 reads its data relative from bank 0x14000 in the ROM, with its song table beginning at 0x9EBB (relative to offset 0x4000 = 0x14000) with all song pointers using a relative pointer (e.g. 0x9F08 = 0x5F08 in the current bank).
+
+Song header format
+=======================================
+2x4 bytes = Track pointer (relative) = first is always 0008
+
+Sequence commands
+=======================================
+00-53 xx = Play note (X = length)
+54 xx = Rest (X = length)
+55 xx = Drum/percussion note (type 1) (X = length)
+80-D4? xx = Hold note (X = length)
+D5 xx = Drum "cymbal" note (X = length)
+E7 = ?
+E8 = Set duty: 00
+E9 = Set duty: 40
+EA = Set duty: 80
+EB = Set duty: C0
+EC = Manually set volume: 0
+ED = Manually set volume: 1
+EE = Manually set volume: 2
+EF = Manually set volume: 3
+F0 xx = Set waveform
+F1 xx = Set volume
+F2 xx = Set note size
+F3 xx = Set tuning
+F4 xx = Set noise
+F5 xx = Set tempo
+F6 xx yy yy = Repeat section X times, go back Y bytes (can be used in a "nested" way)
+F7 xx yy zz (aa) = Set portamento? (A is not used if X = 0)
+F8 = ?
+F9 xx = Set envelope
+FA xx = Set waveform volume
+FB = Enable sweep
+FC = Disable sweep
+FD = Go to the highest "nested" repeat point on final loop
+FE = Reset volume?
+FF xx xx = End of channel/Jump back to position
+
+Notes:
+ - Oni 4 and 5 and Mahou Kishi Rayearth 1 store their songs compressed and are decompressed in RAM. Oni 4 uses a different compression algorithm than the other 2 games.
+ - Commands D5 and E7-EB are only present in Mahou Kishi Rayearth games.
