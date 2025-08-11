@@ -57,6 +57,7 @@
 #include "NOVA.H"
 #include "OCEAN.H"
 #include "PARAGON5.H"
+#include "PBOX.H"
 #include "PROBE.H"
 #include "RARE.H"
 #include "REALTIME.H"
@@ -628,6 +629,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Ocean:
 			OcnProc(banks[curBank]);
+			break;
+		case Pandora_Box:
+			PBProc(banks[curBank], parameters);
 			break;
 		case Paragon_5:
 			P5Proc(banks[curBank]);

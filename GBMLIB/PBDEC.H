@@ -1,0 +1,1 @@
+void PBDecomp(unsigned char* compData, unsigned char* decompData, long compLen, int cmpMethod);
