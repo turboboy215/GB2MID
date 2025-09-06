@@ -102,7 +102,7 @@ int main(int args, char* argv[])
             crc = crc32(hash, fullRomData, romSize);
 
             /*Now get some information from the ROM header*/
-            
+
             /*Get game code (if present)*/
             for (i = 0; i < 4; i++)
             {
@@ -427,7 +427,7 @@ int main(int args, char* argv[])
             }
 
 
-            
+
             if (romMatch == 1)
             {
                 printf("Identified ROM: \"%s\"\n", foundROM);
@@ -930,6 +930,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "TOSE"))
             {
                 driver = TOSE;
+            }
+            else if (!strcmp(formatString, "Visual_Impact"))
+            {
+                driver = Visual_Impact;
             }
             else if (!strcmp(formatString, "Winkysoft"))
             {
