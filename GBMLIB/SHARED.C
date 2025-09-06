@@ -684,6 +684,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case TOSE:
 			TOSEProc(parameters);
 			break;
+		case Visual_Impact:
+			VIProc(banks[curBank], parameters);
+			break;
 		case Winkysoft:
 			WinkyProc(banks[curBank]);
 			break;
