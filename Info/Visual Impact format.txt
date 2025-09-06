@@ -1,0 +1,95 @@
+Song structure
+=======================================
+Data for each song can be stored anywhere in a ROM. It uses the following structure:
+1. ?
+2. Tempo
+3. Channel mask?
+4. ?
+128 bytes = Instrument data (16 x 8)
+256 bytes = Track data (64 x 4)
+4 bytes = ?
+128 x number of patterns = Pattern data
+
+Instrument data (8 bytes)
+=======================================
+There is a constant value of 16 instruments in a song, each 8 bytes.
+1. Channel number
+2. ?
+3. Pitch bend?
+4. ?
+5. ?
+6. ?
+7. ?
+8. ?
+
+Track format (4 x number of tracks)
+=======================================
+Tracks are used by songs to show which pattern is used for each channel for different segments of a song.
+xx yy zz aa = Number of pattern (not necessarily mapped to each hardware channel, but controlled by the instruments)
+
+Pattern format
+=======================================
+Patterns are all the same length (64 bars), and each row uses data compact into 2 bytes, which store the note frequency and current instrument of each note, meaning each pattern for a channel is 128 bytes.
+2 x 64 bytes = Values for notes and instruments
+ - If both bytes are 0, then the row is empty.
+ - If the second byte is FF, then command (byte 1) is used:
+   - 00 = Mute channel 1
+   - 01 = Mute channel 2
+   - 02 = Mute channel 3
+   - 03 = Mute channel 4
+   - 05 = Break pattern?
+ - The instrument pointer is determined from the first byte by using the SLA instruction 3 times, and adding to the start of the song plus the first 4 bytes.
+ - To get the note frequency:
+       - AND E0 byte 1
+       - SWAP the result
+       - SRA the result
+       - Use byte 2 as the lower byte
+
+
+
+Old version (Brain Drain)
+=======================================
+An early version of the sound engine is used in the mono game Brain Drain. In this game, a song is structured as follows:
+
+128 bytes = Instrument data
+1 byte = Tempo
+1 byte = Channel mask?
+256 bytes = Track data (4 x 64)
+128 x number of patterns = Pattern data
+
+Track format (4 x number of tracks)
+==========================
+This game does not appear to use the wave channel (3).
+xx yy zz aa = Number of pattern (not necessarily mapped to each hardware channel, but controlled by the instruments)
+
+Pattern format
+==========================
+Note and instrument data is stored in a more straightforward way, with frequencies using different values.
+2 x 16 bytes = Values for notes and instruments (0000 = rest)
+1. Instrument number
+2. Note frequency
+ - To get the actual note frequency, the following code is used:
+   ld a, [frequency]
+   ld c, a
+   ld a, $00
+   sla c
+   adc a, $00
+   sla a
+   sla c
+   adc a, $00
+   sla a
+   sla c
+   ld b, a
+   (BC = Final frequency value)
+
+Compression
+=======================================
+Some games using this sound engine store at least some of their songs compressed. For the majority of games, these use RNC (type 2). Lucky Luke: Desperado Train stores all of its songs except 2 jingles compressed using another algorithm known as Pucrunch. Tyrian 2000 (prototype) uses yet another algorithm which works as follows:
+ - 1 byte = Bit mask followed by block of bytes
+ - If bit mask is 0, then end of file
+ - If both bit 6 and 7 set, then mask off remaining bits and copy number of bytes (-1)
+ - If just bit 7 set, then this + next 2 bytes are a reference to previous data:
+    - Remaining bits of mask: bytes to copy - 1
+    - Next 2 bytes: pointer to previous data (relative to current position)
+ - If just bit 6 set, then copy the next two bytes remaining bits (-1) for number of times
+ - If no other bits set, then copy the following byte for the next remaining bits (-1) amount of bytes
