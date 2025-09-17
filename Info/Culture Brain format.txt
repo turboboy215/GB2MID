@@ -1,0 +1,65 @@
+Song table
+=======================================
+The song table is comprised of a series of 4 pointers specifying each individual channel of a song. These are stored as follows:
+
+1-2. Channel 1 pointer
+3-4. Channel 2 pointer
+5-6. Channel 3 pointer
+7-8. Channel 4 pointer
+
+If any of these values are set to $0000, then they are not used.
+
+Sequence commands
+=======================================
+In most games, commands for each channel's sequence are as follows:
+
+00-3F = Play note with automatic length
+40-7F (xx) yy = Play note with volume (If 0x80 or above, then is volume (subtract 0x80), and Y is automatic length; otherwise Y is volume)
+80-BF xx = Play note with manual length (X = Manual length)
+C0 xx = Set envelope
+C1 xx = Set volume
+C2 xx = Set transpose
+C3 xx = Set tempo
+C4 xx = Set duty
+C5 xx xx = Go to macro
+C6 = Return from macro
+C7 xx yy yy = Jump to position Y, X times
+C8 = (No effect)
+C9 xx = ?
+CA = Set bit of C9 variable
+CB = Reset bit of C9 variable
+CC = Reset envelope
+CD = Set envelope - short
+CE = Set envelope - long
+CF xx = Rest
+D0 xx = ?
+D1 = ?
+D2 xx = Set waveform length?
+D3 xx = Set waveform
+D4 xx = Set envelope decay?
+D5 = Reset envelope decay?
+D6 = Invert envelope decay?
+D7 = (No effect, only functional in Ninja Boy 2?)
+D8 = (No effect, only functional in Ninja Boy 2?)
+D9 xx = ?
+DA = ?
+DB = ?
+DC xx yy zz aa = Set channel parameters (Z = Transpose, A = Duty)
+FF = End of channel
+
+However, Ninja Boy, probably Culture Brain's first Game Boy game, uses a different set of commands:
+
+(Bits 3-7)
+00-1D = Play note
+1E = ?
+1F = Command? (use bits 0-2)
+
+(Bits 0-2 if 1F)
+00 xx = Set base note
+20 xx yy zz aa = Set channel parameters (X = Volume, Y = Envelope decay type, Z = Note length table address (SLA 3 times and add to note length table), A = Duty cycle)
+40 xx = Set tempo
+60 xx xx = Jump to position (loop)
+80 xx yy yy = Go to repeat point Y, X times
+A0 = ?
+
+FF = End of channel
