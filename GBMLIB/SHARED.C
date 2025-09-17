@@ -4,6 +4,7 @@
 #include <stddef.h>
 #include "SHARED.H"
 #include "ACT.H"
+#include "AICOM.H"
 #include "AJG.H"
 #include "ALLEYWAY.H"
 #include "ATLUS.H"
@@ -18,6 +19,7 @@
 #include "COMPILE.H"
 #include "COSMIGO.H"
 #include "CUBE.H"
+#include "CULTRBRN.H"
 #include "DAVDSHEA.H"
 #include "DE1.H"
 #include "DKONG.H"
@@ -25,6 +27,7 @@
 #include "DW.H"
 #include "EASTRDGE.H"
 #include "EDMAGNIN.H"
+#include "EHY.H"
 #include "FACTOR5.H"
 #include "GAMEFRK.H"
 #include "GEX.H"
@@ -74,6 +77,7 @@
 #include "TITUS1.H"
 #include "TITUS2.H"
 #include "TOSE.H"
+#include "VI.H"
 #include "WARIOL2.H"
 #include "WINKYSFT.H"
 #define bankSize 16384
@@ -509,6 +513,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Cube:
 			CubeProc(banks[curBank], parameters);
+			break;
+		case Culture_Brain:
+			CBProc(banks[curBank], parameters);
 			break;
 		case David_Shea:
 			DShProc(banks[curBank]);
