@@ -507,6 +507,7 @@ Double Dragon (J) [!]
 Double Dragon (U) [!]
 Double Dragon 2 (U) [!]
 Double Dribble - 5 on 5 (U) [!]
+Doubutsu Ura GB (J) (Unreleased) [C][!]
 Doug - Le Grande Aventure (F) [C][!]
 Doug's Big Game (E) [C][!]
 Doug's Big Game (G) [C][!]
@@ -625,6 +626,7 @@ Feng Kuang Da Fu Weng (Crazy Monopoly) (Unl) [C][f1]
 Feng Zhi Gou II (Unl) [C][f1]
 Ferrari - Grand Prix Challenge (J)
 Ferrari - Grand Prix Challenge (U) [!]
+Ferret Monogatari (J) [C][!]
 Fidgetts, The (J)
 Fidgetts, The (UE) (M7) [!]
 FIFA 2000 (U) [C][!]
@@ -633,6 +635,7 @@ FIFA Soccer '96 (UE) (M4) [S][!]
 FIFA Soccer '97 (UE) [S][!]
 FIFA Soccer '98 - Road to the World Cup (U) (V1.0) [S]
 FIFA Soccer '98 - Road to the World Cup (U) (V1.1) [S][!]
+Fighting Simulator 2in1 - Flying Warriors (U) [!]
 Final Fantasy 4 (Unl)
 Final Fantasy 4 (Unl) [a1]
 Final Fantasy Adventure (U) [!]
@@ -796,6 +799,7 @@ Halloween Racer (E) (M6) [C][!]
 Hamster Club - Awasete Chuu (J) [C][!]
 Hamster Club - Oshiema Chuu (J) [C][!]
 Hamster Club (J) [C][!]
+Hamster Monogatari GB + Magi Ham Mahou no Shoujo (J) [C][!]
 Hamster Paradise (J) [C][!]
 Hamtaro - Ham-Hams Unite! (E) (M5) [C]
 Hamtaro - Ham-Hams Unite! (U) [C][!]
@@ -840,6 +844,8 @@ Heroes of Might and Magic II (U) (M3) [C][!]
 Hexcite - The Shapes of Victory (E) (M3) (Unreleased) [C][!]
 Hexcite - The Shapes of Victory (U) [C][!]
 High Stakes Gambling (U) [!]
+Hiryuu Gaiden (J)
+Hiryuu no Ken Retsuden GB (J) [C][!]
 Hisshatsu Pachinko Boy - CR Monster House (J) [C][!]
 Hit the Ice (UE) [!]
 Hole in One Golf (U) [C][!]
@@ -928,6 +934,7 @@ Joe & Mac (U) [!]
 John Madden Football (U) (Unreleased) [S][!]
 Jordan vs Bird - One-on-One (J)
 Jordan vs Bird - One-on-One (U)
+Joryuu Janshi ni Chousen GB - Watashitachi ni Chousen Shitene (J) [C][!]
 Judge Dredd (J)
 Judge Dredd (U) [!]
 Jungle Book, The (U) [!]
@@ -1445,6 +1452,8 @@ NHL Hockey '95 (U) [S][!]
 NHL Hockey '96 (U) [S][!]
 Nichibutsu Mahjong - Yoshimoto Gekijou (J)
 Nick Faldo Golf (U) (Unreleased) [!]
+Ninja Boy (U) [!]
+Ninja Boy 2 (U)
 Ninja Gaiden Shadow (U)
 Ninja Ryuukenden (J)
 Ninja Spirit (E) (Unreleased) [!]
@@ -1454,7 +1463,9 @@ Ninja Taro (Beta)
 Ninja Taro (U) [!]
 Ninku (J) [S]
 Ninku Dai 2 - Ninku Sensou Hen (J) [S]
+Nintama Eawase (J) [S]
 Nintama Rantarou - Ninjutsu Gakuen ni Nyuugakushou no Dan (J) [C][!]
+Nintama Rantarou - Ninjutsu Gakuen ni Nyuugakushou no Dan (J) [S]
 Nintendo Power Menu Program (J) [C][!]
 Nintendo World Cup (U) [!]
 No Fear - Downhill Mountain Biking (E) [C][!]
@@ -1690,6 +1701,8 @@ Prince of Persia (J)
 Prince of Persia (U)
 Pro Darts (U) [C][!]
 Pro Foot (F) (M7) [C][!]
+Pro Mahjong Tsuwamono GB (J) [C][!]
+Pro Mahjong Tsuwamono GB2 (J) [C][!]
 Probotector (E) [!]
 Probotector 2 (Beta) [S]
 Probotector 2 (E) [S]
@@ -1709,6 +1722,7 @@ Puzzle Bobble 4 (J) [C][!]
 Puzzle Bobble GB (J)
 Puzzle Boy (J)
 Puzzle Boy II (J)
+Puzzle Nintama Rantarou (J) [S]
 Puzzle Road (J)
 Puzzled (E) (M3) [C][!]
 Puzzled (U) [C][!]
@@ -1875,6 +1889,9 @@ Sanrio Timenet - Mirai Hen (J) [C][!]
 Santa Claus Junior (E) [C][!]
 Schiffe Versenken (G) (M4)
 Scooby-Doo! - Classic Creep Capers (U) [C][!]
+SD Hiryuu no Ken EX (J) [C][!]
+SD Hiryuu no Ken Gaiden (J) [S][!]
+SD Hiryuu no Ken Gaiden 2 (J) [S][!]
 SD Lupin III - Kinko Yaburi Daisakusen (J) [!]
 Sea Battle (E) (M4)
 Sea-Doo Hydrocross (U) (Unreleased) [C][!]
@@ -2080,6 +2097,13 @@ Super Bombliss DX (J) [C][!]
 Super Breakout! (E) (M6) [C][!]
 Super Breakout! (U) [C][!]
 Super Breakout! (U) [M][!]
+Super Chinese Fighter EX (J) [C][!]
+Super Chinese Fighter GB (J) [S]
+Super Chinese Land (J)
+Super Chinese Land 1.2.3.Dash (J) [S]
+Super Chinese Land 2 (J)
+Super Chinese Land 3 (J) [S]
+Super Chinese Land 3 Dash (J) [S]
 Super Donkey Kong GB (J) [S]
 Super Fighters '99 (Unl) [C]
 Super Hunchback (E)
