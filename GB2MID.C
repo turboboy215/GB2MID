@@ -847,6 +847,10 @@ int main(int args, char* argv[])
             {
                 driver = Nick_Eastridge;
             }
+            else if (!strcmp(formatString, "Nintendo_ST"))
+            {
+                driver = Nintendo_ST;
+            }
             else if (!strcmp(formatString, "NMK"))
             {
                 driver = NMK;
