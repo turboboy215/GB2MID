@@ -3036,6 +3036,17 @@
 		<parameters>CFG/Biohazard Gaiden (J) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Bionic Commando - Elite Forces (U) [C][!]</name>
+		<gamecode>AV4E</gamecode>
+		<rev>0</rev>
+		<checksum>7C45</checksum>
+        <crc32>a663cf31</crc32>
+        <format>Nintendo_ST</format>
+		<part></part>
+		<banks>14</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Bionic Commando (E) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -5343,6 +5354,17 @@
         <format>David_Shea</format>
 		<part></part>
 		<banks>5,6,7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Crystalis (U) [C][!]</name>
+		<gamecode>AYJE</gamecode>
+		<rev>0</rev>
+		<checksum>4796</checksum>
+        <crc32>909bb02d</crc32>
+        <format>Nintendo_ST</format>
+		<part></part>
+		<banks>55</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
