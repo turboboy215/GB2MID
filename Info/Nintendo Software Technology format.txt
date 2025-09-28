@@ -1,0 +1,11 @@
+This sound engine is only used in 2 games - Bionic Commando: Elite Forces and Crystalis. There are no pointer tables; instead, the locations for each channel's sequence in a song are hard-coded.
+
+Sequence commands
+=======================================
+00-6F xx xx = Play note (00-6F = Note, X = Length)
+70 xx xx = Set delay
+71 xx yy yy = Set NRx2 (volume/envelope) and delay
+74 xx = Set NRx1 (length/duty cycle)
+75 xx yy yy = Repeat section (X = Repeat times (0 = Infinite), Y = Position)
+77 xx yy yy = Go to macro (X = Bank, Y = Position)
+7E = Return from macro
