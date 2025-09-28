@@ -10,6 +10,7 @@
 #include "ATLUS.H"
 #include "AUDIOART.H"
 #include "BEAM.H"
+#include "BIONIC.H"
 #include "BITS.H"
 #include "CANNON.H"
 #include "CAPCOM.H"
@@ -624,6 +625,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Nick_Eastridge:
 			NEProc(banks[curBank], parameters);
+			break;
+		case Nintendo_ST:
+			BionicProc(banks[curBank]);
 			break;
 		case NMK:
 			RCProc(banks[curBank]);
