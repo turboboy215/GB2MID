@@ -21,6 +21,7 @@
 #include "COSMIGO.H"
 #include "CUBE.H"
 #include "CULTRBRN.H"
+#include "DATAEAST.H"
 #include "DAVDSHEA.H"
 #include "DE1.H"
 #include "DKONG.H"
@@ -517,6 +518,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Culture_Brain:
 			CBProc(banks[curBank], parameters);
+			break;
+		case Data_East:
+			DEastProc(banks[curBank]);
 			break;
 		case David_Shea:
 			DShProc(banks[curBank]);
