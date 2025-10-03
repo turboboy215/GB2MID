@@ -4169,6 +4169,17 @@
 		<parameters>CFG/Bundesliga Stars 2001 (G) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Burger Time Deluxe (JU) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8A78</checksum>
+        <crc32>88219a49</crc32>
+        <format>Data_East</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Burning Paper (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -10373,6 +10384,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Hercules Eikou (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5464</checksum>
+        <crc32>4f8a61bf</crc32>
+        <format>Data_East</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Hero Hero Kun (J) [C][!]</name>
 		<gamecode>BH9J</gamecode>
 		<rev>0</rev>
@@ -13726,6 +13748,17 @@
 		<part></part>
 		<banks>0E</banks>
 		<parameters>CFG/LNF Stars 2001 (F) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Lock 'N Chase (JU) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E5D1</checksum>
+        <crc32>dab91c7a</crc32>
+        <format>Data_East</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Lodoss Tou Senki - Eiyuu Kishiden GB (J) [C][!]</name>
@@ -24420,6 +24453,17 @@
 		<parameters>1</parameters>
 	</rom>
 	<rom>
+		<name>Side Pocket (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9BB4</checksum>
+        <crc32>9a1e30b4</crc32>
+        <format>Data_East</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Sika Kokugo (J)</name>
 		<gamecode>AJ6J</gamecode>
 		<rev>0</rev>
@@ -28477,6 +28521,28 @@
 		<part></part>
 		<banks>2</banks>
 		<parameters>CFG/Tsuriiko!! (J) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Tumble Pop (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F763</checksum>
+        <crc32>881afd62</crc32>
+        <format>Data_East</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tumble Pop (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>006D</checksum>
+        <crc32>8a3aab31</crc32>
+        <format>Data_East</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Turn and Burn (U) [!]</name>

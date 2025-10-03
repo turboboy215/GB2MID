@@ -296,6 +296,7 @@ Bugs Bunny Collection (J) (V1.1) [S]
 Bugs Bunny et le Chateau des Catastrophes (F) [C][!]
 Bug's Life, A (E) [C][!]
 Bug's Life, A (U) [C][!]
+Burger Time Deluxe (JU) [!]
 Burning Paper (J)
 Bust-A-Move 2 - Arcade Edition (U)
 Bust-A-Move 3 DX (U)
@@ -838,6 +839,7 @@ Hello Kitty's Cube Frenzy (E) (Unreleased) [C][!]
 Hello Kitty's Cube Frenzy (U) [C][!]
 Hercules - The Legendary Journeys (U) (M6) [C][!]
 Hercules (U) [S]
+Hercules Eikou (J)
 Hero Hero Kun (J) [C][!]
 Heroes of Might and Magic (E) (M3) [C][!]
 Heroes of Might and Magic (U) (M3) [C][!]
@@ -1109,6 +1111,7 @@ Little Mermaid, The (S) (Unreleased) [!]
 Little Mermaid, The (U) [!]
 Little Nicky (U) [C][!]
 LNF Stars 2001 (F) [C][!]
+Lock 'N Chase (JU) [!]
 Lodoss Tou Senki - Eiyuu Kishiden GB (J) [C][!]
 Logical (U) (Sunsoft) [C][!]
 Logical (U) (THQ) [C][!]
@@ -1964,6 +1967,7 @@ Shu Ma Bao Long 2003 - Ge Dou Ban (Unl) [C][f1]
 Shuihu Shenshou (Unl) [C][f2]
 Shuma Baolong - Shuijing Ban (Unl) [C][f1]
 Shutokou Racing, The (J) [C][!]
+Side Pocket (U) [!]
 Sika Kokugo (J)
 Sika Kunanman (J) (Unreleased) [!]
 Sika Kujosika (J) [!]
@@ -2317,6 +2321,8 @@ Tsume Shougi - Mondai Teikyou Shougi Sekai (J)
 Tsuri Sensei (J) [S]
 Tsuri Sensei 2 (J) [C][!]
 Tsuriiko!! (J) [C][!]
+Tumble Pop (J)
+Tumble Pop (U) [!]
 Turn and Burn (U) [!]
 Turok - Battle of the Bionosaurs (J)
 Turok - Battle of the Bionosaurs (UE) (M4) [!]
