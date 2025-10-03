@@ -1,0 +1,99 @@
+Song table
+=======================================
+The song table is comprised of 16-bit (2-byte) pointers for songs as well as sound effects. It can be found with the following code (starts after 2 bytes):
+
+ld hl, [SongTable]
+ld c, a
+ld b, $00
+sla c
+rl b
+add hl, bc
+
+Which equals the following in hex:
+21 ?? ?? 4F 06 00 CB 21 CB 10 09
+
+Song headers
+=======================================
+Each song has a "header" which is structured as follows:
+1. Channel mask
+2-3. ?
+4-5. Channel 4 pointer
+6-7. Channel 3 pointer
+8-9. Channel 2 pointer
+10-11. Channel 1 pointer
+
+Sequences
+=======================================
+Sequences for each channel use the following commands:
+00-7F = Set note length
+80-8F = Play note
+90 = Rest
+91 = Octave up
+92 = Octave down
+93 xx = Set channel transpose
+94 xx = Set noise envelope
+95 = Tie (slur) the following note
+96 xx = Set duty
+97 xx yy yy = Go to macro with base note (X = Note, Y = Macro position)
+98 = (Invalid)
+99 xx = Set panning (left)
+9A xx = Set panning (right)
+9B xx = Set channel envelope?
+9C xx = Set channel transpose (v2)
+9D = (Invalid)
+9E = (No effect)
+9F = (Invalid)
+A0 = (Invalid)
+A1 xx xx = Jump to position
+A2 xx = End of channel
+A3 xx = Repeat the following section X times (SFX)
+A4 = End of repeat section (SFX)
+A5 = (Invalid)
+A6 = (Invalid)
+A7 xx = Set note length (SFX)
+A8 xx xx = Set frequency (SFX)
+A9 xx = Set duty (SFX)
+AA = (Invalid)
+AB xx = ?
+AC xx = Effect 1
+AD = (Invalid)
+AE = (Invalid)
+AF = (Invalid)
+B0 xx = Effect 2
+B1 xx = Slide down effect
+B2 = (Invalid)
+B3 = (Invalid)
+B4 = (Invalid)
+B5 = (Invalid)
+B6 xx = End of channel (SFX)
+B7 = (Invalid)
+B8 = (Invalid)
+B9 = (Invalid)
+BA = (Invalid)
+BB xx yy = Set tempo (X = ?, Y = Tempo)
+BC xx = Repeat the following section X times
+BD = End of repeat section
+BE xx xx = Go to macro
+BF = Return from macro
+C0 = (Invalid)
+C1 xx = Set vibrato
+C2 = (Invalid)
+C3 = (Invalid)
+C4 xx = Set sweep 1
+C5 xx = Set sweep 2
+C6 xx = Set decay
+C7 xx = Set noise frequency
+C8 xx = ?
+C9 xx = Hold note
+CA xx = Set noise envelope effect
+CB xx = Set volume
+CC xx yy zz aa bb cc dd ee ff gg hh ii jj kk ll mm = Set waveform
+CD = (No effect)
+CE xx = Set noise sweep
+CF xx = Set noise effect
+D0-DF = Set note size
+E0 xx = ?
+E1 xx = ?
+E2-E5 xx = Store note value into RAM
+E6-E9 = Read stored note value from RAM
+EA-EF = (Invalid)
