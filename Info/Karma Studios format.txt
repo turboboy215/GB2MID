@@ -1,0 +1,27 @@
+This sound engine was used in all games developed by Karma Studios; unfortunately, however, only 2 games were finished and only one of these games made it to stores.
+
+Music in these games were supposedly converted from XM (FastTracker II) format. Music tracks are stored as "modules" which use a rather simple, although "ineffecient" structure. Each of the songs are stored at the beginning of a bank.
+
+Song headers
+=======================================
+Each song begins with a "header" which is stored as follows:
+1. Song length
+2. Number of patterns
+3. Number of instruments?
+4. Speed (ticks)
+5. Speed (tempo)
+
+Following this, the pattern index is stored, which is the size of the song length specified.
+After this is the instrument data, which uses the following format:
+Channel identifier (2 (also used for channel 1), 3, or 4)
+ - If 2, then proceeded by 2 bytes
+ - If 3, then proceeded by 16 bytes (waveform)
+ - If 4, then proceeded by 1 byte
+
+Pattern data
+=======================================
+Patterns are always 256 bytes in length; they are 64 rows consisting of 16 bytes each, 4 for each channel in increasing order. Each channel's row data is comprised as follows:
+1. Note (FF if empty)
+2. Volume
+3. Instrument (bits 0-3)/effect (bits 4-7) (Effect numbers appear to be the same as in XM/FT2)
+4. Effect amount
