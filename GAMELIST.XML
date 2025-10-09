@@ -3784,6 +3784,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Bounced (E) (Unreleased) [C][!]</name>
+		<gamecode>AUDP</gamecode>
+		<rev>0</rev>
+		<checksum>A16B</checksum>
+        <crc32>3948aee9</crc32>
+        <format>Karma_Studios</format>
+		<part></part>
+		<banks>7,A,B,C,D,E</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Boxing (J) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -11943,6 +11954,17 @@
         <format>Hudson_Soft</format>
 		<part></part>
 		<banks>5</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Keep the Balance (E) (M5) [C][!]</name>
+		<gamecode>BKNP</gamecode>
+		<rev>0</rev>
+		<checksum>A445</checksum>
+        <crc32>b868e846</crc32>
+        <format>Karma_Studios</format>
+		<part></part>
+		<banks>B,C,12,13,14,15,16</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>

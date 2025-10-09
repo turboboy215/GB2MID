@@ -78,3 +78,4 @@
 #define Culture_Brain		0x4D
 #define Nintendo_ST			0x4E
 #define Data_East			0x4F
+#define Karma_Studios		0x50
