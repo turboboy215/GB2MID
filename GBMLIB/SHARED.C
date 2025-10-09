@@ -39,6 +39,7 @@
 #include "IMAGNRNG.H"
 #include "JEROTEL.H"
 #include "JSAITO.H"
+#include "KARMA.H"
 #include "KEMCO.H"
 #include "KONAMI.H"
 #include "KSADA.H"
@@ -578,6 +579,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Jeroen_Tel:
 			JTProc(parameters);
+			break;
+		case Karma_Studios:
+			KarmaProc(banks[curBank]);
 			break;
 		case Kemco:
 			KemcoProc(banks[curBank], parameters);
