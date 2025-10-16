@@ -2123,17 +2123,6 @@
 		<parameters>CFG/Bakuchou Retrieve Master (J) [S].cfg</parameters>
 	</rom>
 	<rom>
-		<name>Bakusou Senki Metal Walker GB - Koutetsu no Yuujou (J) [C][!]</name>
-		<gamecode>AUEJ</gamecode>
-		<rev>1</rev>
-		<checksum>3DE8</checksum>
-        <crc32>d514c9a0</crc32>
-        <format>TOSE</format>
-		<part></part>
-		<banks>14</banks>
-		<parameters>CFG/Bakusou Senki Metal Walker GB - Koutetsu no Yuujou (J) [C][!].cfg</parameters>
-	</rom>
-	<rom>
 		<name>Bakukyuu Renpatsu!! Super B-Daman - Gekitan! Rising Valkyre!! (J) [C][!]</name>
 		<gamecode>A4RJ</gamecode>
 		<rev>0</rev>
@@ -2143,6 +2132,28 @@
 		<part></part>
 		<banks>10</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Bakusou Dekotora Densetsu GB Special - Otoko Dokyou no Tenka Touitsu (J) [C][!]</name>
+		<gamecode>BDBJ</gamecode>
+		<rev>0</rev>
+		<checksum>A10C</checksum>
+        <crc32>92c8b9b5</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>3F,40</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Bakusou Senki Metal Walker GB - Koutetsu no Yuujou (J) [C][!]</name>
+		<gamecode>AUEJ</gamecode>
+		<rev>1</rev>
+		<checksum>3DE8</checksum>
+        <crc32>d514c9a0</crc32>
+        <format>TOSE</format>
+		<part></part>
+		<banks>14</banks>
+		<parameters>CFG/Bakusou Senki Metal Walker GB - Koutetsu no Yuujou (J) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Bakuten Shoot Beyblade (J) [C]</name>
@@ -3905,6 +3916,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Bubble Bobble (E) [C][!]</name>
+		<gamecode>AVWP</gamecode>
+		<rev>0</rev>
+		<checksum>C35C</checksum>
+        <crc32>a0f66d87</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>25</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Bubble Bobble (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -3916,12 +3938,56 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Bubble Bobble (J) [C][!]</name>
+		<gamecode>BJBJ</gamecode>
+		<rev>0</rev>
+		<checksum>1C2F</checksum>
+        <crc32>388c6760</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>25</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Bubble Bobble (U) [C][!]</name>
+		<gamecode>AVWE</gamecode>
+		<rev>0</rev>
+		<checksum>CD62</checksum>
+        <crc32>c1b22246</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>25</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Bubble Bobble (U) [M][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
 		<checksum>1EF9</checksum>
         <crc32>d516841d</crc32>
         <format>Taito</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Bubble Bobble Jr. (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5FBA</checksum>
+        <crc32>39e261b9</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Bubble Bobble Part 2 (UE) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8040</checksum>
+        <crc32>4106d781</crc32>
+        <format>MMSS</format>
 		<part></part>
 		<banks>8</banks>
 		<parameters></parameters>
@@ -4180,6 +4246,39 @@
 		<parameters>CFG/Bundesliga Stars 2001 (G) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Burai Fighter Color (J) [C][!]</name>
+		<gamecode>AZYJ</gamecode>
+		<rev>0</rev>
+		<checksum>4A78</checksum>
+        <crc32>e52fbd12</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Burai Fighter Deluxe (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9DAA</checksum>
+        <crc32>5a1a20f3</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Burai Fighter Deluxe (UE) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2A94</checksum>
+        <crc32>3c86f5db</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Burger Time Deluxe (JU) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -4233,6 +4332,17 @@
 		<part></part>
 		<banks>20</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Bust-A-Move Millennium (U) [C][!]</name>
+		<gamecode>BANE</gamecode>
+		<rev>0</rev>
+		<checksum>57BD</checksum>
+        <crc32>f8da0c4a</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>4\1F3C</parameters>
 	</rom>
 	<rom>
 		<name>Buster Brothers (U) [!]</name>
@@ -4851,6 +4961,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Chase H.Q. - Secret Police (J) [C][!]</name>
+		<gamecode>BJCJ</gamecode>
+		<rev>0</rev>
+		<checksum>46E9</checksum>
+        <crc32>6a0c272d</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>4\4400</parameters>
+	</rom>
+	<rom>
+		<name>Chase H.Q. - Secret Police (U) [C][!]</name>
+		<gamecode>AH9P</gamecode>
+		<rev>0</rev>
+		<checksum>015F</checksum>
+        <crc32>cfdf816b</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>4\4400</parameters>
+	</rom>
+	<rom>
+		<name>Chase H.Q. - Secret Police (U) (Metro 3D re-release) [C][!]</name>
+		<gamecode>AH9E</gamecode>
+		<rev>0</rev>
+		<checksum>46E9</checksum>
+        <crc32>7c7fdefc</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>4\4400</parameters>
+	</rom>
+	<rom>
 		<name>Chase H.Q. (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -4892,6 +5035,61 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>3F,40</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Chibi Maruko-chan - Go Chounai Minna de Game dayo! (J) [C]</name>
+		<gamecode>BCNJ</gamecode>
+		<rev>0</rev>
+		<checksum>63A5</checksum>
+        <crc32>20faa0d1</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>4\4000</parameters>
+	</rom>
+	<rom>
+		<name>Chibi Maruko-chan - Maruko Deluxe Gekijou (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>59CB</checksum>
+        <crc32>886049f9</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Chibi Maruko-chan 2 - Deluxe Maruko World (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9424</checksum>
+        <crc32>abff3314</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Chibi Maruko-chan 3 - Mezase! Game Taishou no Maki (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2514</checksum>
+        <crc32>44e933c8</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Chibi Maruko-chan 4 - Kore ga Nippon dayo! Ouji-sama (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C1C9</checksum>
+        <crc32>e55138be</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>4</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -5993,6 +6191,39 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Densha de Go! (J) [C][!]</name>
+		<gamecode>A72J</gamecode>
+		<rev>0</rev>
+		<checksum>66DF</checksum>
+        <crc32>14375072</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>2C</banks>
+		<parameters>4\4000</parameters>
+	</rom>
+	<rom>
+		<name>Densha de Go! (Unl) [!]</name>
+		<gamecode>A72J</gamecode>
+		<rev>0</rev>
+		<checksum>B2C6</checksum>
+        <crc32>9d3a098e</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>2C</banks>
+		<parameters>4\4000</parameters>
+	</rom>
+	<rom>
+		<name>Densha de Go! 2 (J) [C][!]</name>
+		<gamecode>B82J</gamecode>
+		<rev>0</rev>
+		<checksum>95FC</checksum>
+        <crc32>b72603fc</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>4\4000</parameters>
 	</rom>
 	<rom>
 		<name>Desert Strike - Return to the Gulf (E) (Ocean) [S]</name>
@@ -7876,6 +8107,28 @@
 		<parameters>CFG/Famista 3 (J).cfg</parameters>
 	</rom>
 	<rom>
+		<name>Fastest Lap (JU) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0550</checksum>
+        <crc32>59285f0a</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Fastest Lap (JU) [a1][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5E74</checksum>
+        <crc32>a9ba7875</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Felix the Cat (U)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -8470,6 +8723,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Front Row (J) [C][!]</name>
+		<gamecode>AZDJ</gamecode>
+		<rev>0</rev>
+		<checksum>C57B</checksum>
+        <crc32>6eea9243</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>11</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Full Time Soccer (Unl) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -8844,6 +9108,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Gamera - Daikai Jukuchuu Kessen (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D3E6</checksum>
+        <crc32>62769ec1</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Games Frenzy (E) (M3) [C][!]</name>
 		<gamecode>BFGP</gamecode>
 		<rev>0</rev>
@@ -9127,6 +9402,28 @@
         <format>Atlus</format>
 		<part></part>
 		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Gem Gem Monster (J) [C][!]</name>
+		<gamecode>AJYJ</gamecode>
+		<rev>0</rev>
+		<checksum>E91C</checksum>
+        <crc32>de7505c0</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>5,6</banks>
+		<parameters>1\4000</parameters>
+	</rom>
+	<rom>
+		<name>Genjin Cottu (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>EA86</checksum>
+        <crc32>95e8fcb1</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>B</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -9546,6 +9843,17 @@
 		<part></part>
 		<banks>10</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Golf Daisuki! (J) [C][!]</name>
+		<gamecode>AAGJ</gamecode>
+		<rev>0</rev>
+		<checksum>DDC0</checksum>
+        <crc32>80444a86</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>1\4000</parameters>
 	</rom>
 	<rom>
 		<name>Golf de Ohasuta (J) [C][!]</name>
@@ -10010,6 +10318,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Hanasaka Tenshi Tenten-kun no Beat Breaker (J) [C][!]</name>
+		<gamecode>AHTJ</gamecode>
+		<rev>0</rev>
+		<checksum>8980</checksum>
+        <crc32>6e988c07</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>2,17,19,1D,1E,1F,20,21,24,25,26,27,28,29,2A,2B,2C,2D,2E,2F,30,31,32,39,3B,3C,3D,3E,3F,40</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Hands of Time (UE) (M6) [C][!]</name>
 		<gamecode>BWCE</gamecode>
 		<rev>0</rev>
@@ -10294,6 +10613,28 @@
 		<part></part>
 		<banks>1</banks>
 		<parameters>CFG/Heavyweight Championship Boxing (U) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Heiankyo Alien (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>79DD</checksum>
+        <crc32>08bf29c9</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Heiankyo Alien (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F395</checksum>
+        <crc32>1495bbe5</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Hello Kitty no Beads Koubou (J) [C][!]</name>
@@ -12188,6 +12529,17 @@
 		<parameters>31</parameters>
 	</rom>
 	<rom>
+		<name>Kingyo Chuuihou! 2 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3C3E</checksum>
+        <crc32>f3ccadc3</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Kinniku Banzuke GB - Chousensha wa Kimida! (J) [C][!]</name>
 		<gamecode>A5KJ</gamecode>
 		<rev>0</rev>
@@ -12439,6 +12791,17 @@
 		<part></part>
 		<banks>14</banks>
 		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Kokiatsu Boy (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>FE79</checksum>
+        <crc32>53ff8041</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>1F</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Konami Basketball (J)</name>
@@ -12934,6 +13297,17 @@
 		<part></part>
 		<banks>7D</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Koushien Pocket (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2DB1</checksum>
+        <crc32>6910ff3a</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>40</banks>
+		<parameters>4\4400</parameters>
 	</rom>
 	<rom>
 		<name>Kung-Fu Master (U)</name>
@@ -13640,6 +14014,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Lil' Monster (U) [C][!]</name>
+		<gamecode>AJYE</gamecode>
+		<rev>0</rev>
+		<checksum>CC50</checksum>
+        <crc32>c6859b34</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>5,6</banks>
+		<parameters>1\4000</parameters>
+	</rom>
+	<rom>
 		<name>Lion King Advance 3 2003 (Unl) [C][f1]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -14342,6 +14727,17 @@
 		<part></part>
 		<banks>10</banks>
 		<parameters>CFG/Mahou Kishi Rayearth 2nd - The Missing Colors (J) [S].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Mahoujin Guru Guru (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>682F</checksum>
+        <crc32>2d439d0d</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Majokko Mari-chan no Kisekae Monogatari (J) (V1.0) [C][!]</name>
@@ -17776,6 +18172,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Network Boukenki Bug Site - Alpha Version (J) [C][!]</name>
+		<gamecode>BAUJ</gamecode>
+		<rev>0</rev>
+		<checksum>8EF3</checksum>
+        <crc32>d65c8ba1</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Network Boukenki Bug Site - Beta Version (J) [C][!]</name>
+		<gamecode>BBUJ</gamecode>
+		<rev>0</rev>
+		<checksum>8EF4</checksum>
+        <crc32>56f52663</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>New Addams Family Series, The (E) (M6) [C]</name>
 		<gamecode>BAIP</gamecode>
 		<rev>0</rev>
@@ -19261,6 +19679,28 @@
 		<parameters>3</parameters>
 	</rom>
 	<rom>
+		<name>Pocket Densha (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>38AE</checksum>
+        <crc32>845bb677</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pocket Densha 2 (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>EFB7</checksum>
+        <crc32>4d26e880</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>1B</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Pocket Family (J) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -19292,6 +19732,17 @@
 		<part></part>
 		<banks>1E</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pocket Golf (U) (Unreleased) [C][!]</name>
+		<gamecode>AAGE</gamecode>
+		<rev>0</rev>
+		<checksum>1D90</checksum>
+        <crc32>d06ecb1f</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>1\4000</parameters>
 	</rom>
 	<rom>
 		<name>Pocket GT (J) [C][!]</name>
@@ -19347,6 +19798,28 @@
 		<part></part>
 		<banks>F</banks>
 		<parameters>N</parameters>
+	</rom>
+	<rom>
+		<name>Pocket Love (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2271</checksum>
+        <crc32>d570a9df</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pocket Love 2 (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5504</checksum>
+        <crc32>9f8440b5</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Pocket Monster Ruby (Unl) [C][f1]</name>
@@ -20350,6 +20823,28 @@
 		<parameters>4000</parameters>
 	</rom>
 	<rom>
+		<name>Pop'n Pop (E) [C][!]</name>
+		<gamecode>BPIP</gamecode>
+		<rev>0</rev>
+		<checksum>1C51</checksum>
+        <crc32>fc67f7e4</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>2D</banks>
+		<parameters>4\4000</parameters>
+	</rom>
+	<rom>
+		<name>Pop'n Pop (J) [C][!]</name>
+		<gamecode>BJPJ</gamecode>
+		<rev>0</rev>
+		<checksum>0EC5</checksum>
+        <crc32>1cffb764</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>2D</banks>
+		<parameters>4\4000</parameters>
+	</rom>
+	<rom>
 		<name>Populous (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -20867,6 +21362,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Puchi Carat (E) [C][!]</name>
+		<gamecode>AIQP</gamecode>
+		<rev>0</rev>
+		<checksum>48E6</checksum>
+        <crc32>a9a89dda</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>A</banks>
+		<parameters>4\4000</parameters>
+	</rom>
+	<rom>
+		<name>Puchi Carat (J) [C][!]</name>
+		<gamecode>AUCJ</gamecode>
+		<rev>0</rev>
+		<checksum>F6BD</checksum>
+        <crc32>f0d0c36d</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>A</banks>
+		<parameters>4\4000</parameters>
+	</rom>
+	<rom>
+		<name>Puchi Carat (U) (Unreleased) [C][!]</name>
+		<gamecode>AIQE</gamecode>
+		<rev>0</rev>
+		<checksum>1CF8</checksum>
+        <crc32>a97ea742</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>A</banks>
+		<parameters>4\4000</parameters>
+	</rom>
+	<rom>
 		<name>Pumuckl's Abenteuer bei den Piraten (G) [C][!]</name>
 		<gamecode>AVED</gamecode>
 		<rev>0</rev>
@@ -21041,6 +21569,17 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Puzzle Bobble Millennium (J) [C][!]</name>
+		<gamecode>BP5J</gamecode>
+		<rev>0</rev>
+		<checksum>BA2E</checksum>
+        <crc32>00fded94</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>4\1F3D</parameters>
 	</rom>
 	<rom>
 		<name>Puzzle Boy (J)</name>
@@ -21426,6 +21965,17 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters>CFG/Railway (Sachen 4-in-1 Vol. 5) (Unl) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Rainbow Islands (E) (M5) [C][!]</name>
+		<gamecode>BISP</gamecode>
+		<rev>0</rev>
+		<checksum>B662</checksum>
+        <crc32>6decc6b3</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>3F</banks>
+		<parameters>4\4000</parameters>
 	</rom>
 	<rom>
 		<name>Raku x Raku - Cut Shuu (J) [C][!]</name>
@@ -25047,6 +25597,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Space Marauder (U) [C][!]</name>
+		<gamecode>AZYE</gamecode>
+		<rev>0</rev>
+		<checksum>9DAA</checksum>
+        <crc32>4f83b35e</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Space-Net - Cosmo Blue (J) [C][!]</name>
 		<gamecode>BNBJ</gamecode>
 		<rev>0</rev>
@@ -25883,6 +26444,28 @@
 		<parameters>S</parameters>
 	</rom>
 	<rom>
+		<name>Sumo Fighter (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2AAA</checksum>
+        <crc32>badc7cee</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Sumou Fighter - Toukaidou Basho (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>316F</checksum>
+        <crc32>a6905fb2</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Super 02 in 1 - Pokemon Gold & Silver [p1][C]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -26045,6 +26628,17 @@
         <format>Imagineering</format>
 		<part></part>
 		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Super Chase H.Q. (UE) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>361A</checksum>
+        <crc32>630e0e00</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>8</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -26453,6 +27047,17 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters>CFG/Super R.C. Pro-Am (UE) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Super Robot Pinball (J) [C][!]</name>
+		<gamecode>BSUJ</gamecode>
+		<rev>0</rev>
+		<checksum>7A8F</checksum>
+        <crc32>6e330fcd</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>D</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Super Robot Taisen - Link Battler (J) [C][!]</name>
@@ -27335,6 +27940,17 @@
 		<parameters>1\67C6</parameters>
 	</rom>
 	<rom>
+		<name>Tenjin Kaisen 2 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E14E</checksum>
+        <crc32>211c4611</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>2\4000</parameters>
+	</rom>
+	<rom>
 		<name>Tennis (W) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -27643,6 +28259,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Thunderbirds (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>71C3</checksum>
+        <crc32>149e9393</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Tintin in Tibet (E) (M4) (Eng-Fre-Ger-Dut) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -27838,6 +28465,17 @@
         <format>Technos_Japan</format>
 		<part></part>
 		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tokoro Jr. (J) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9735</checksum>
+        <crc32>56afca4c</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>1</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -29005,6 +29643,17 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters>CFG/Universal Soldier (U).cfg</parameters>
+	</rom>
+	<rom>
+		<name>Urusei Yatsura - Miss Tomobiki o Saguse! (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>254B</checksum>
+        <crc32>56800c6b</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>F</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Vegas Games (E) (M3) [C][!]</name>
@@ -30426,6 +31075,17 @@
 		<parameters>CFG/Yingxiong Tianxia (Unl) [C][f2].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Yogi Bear - Great Balloon Blast (U) [C][!]</name>
+		<gamecode>BBXE</gamecode>
+		<rev>0</rev>
+		<checksum>8B42</checksum>
+        <crc32>f817e978</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>2D</banks>
+		<parameters>4\4000</parameters>
+	</rom>
+	<rom>
 		<name>Yogi Bear in Yogi Bear's Goldrush (E) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -30544,6 +31204,28 @@
         <format>Junichi_Saito</format>
 		<part></part>
 		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Yu-Gi-Oh! Duel Monsters (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>130F</checksum>
+        <crc32>8875ec54</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>3F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Yu-Gi-Oh! Duel Monsters II - Yamikai Kettouki (J) [C][!]</name>
+		<gamecode>AYKJ</gamecode>
+		<rev>0</rev>
+		<checksum>9813</checksum>
+        <crc32>ba7182c3</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>3F</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -30841,6 +31523,17 @@
         <format>Nova</format>
 		<part></part>
 		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Zok Zok Heroes (J) [C][!]</name>
+		<gamecode>BZHJ</gamecode>
+		<rev>0</rev>
+		<checksum>78AA</checksum>
+        <crc32>c09f9e1b</crc32>
+        <format>MMSS</format>
+		<part></part>
+		<banks>3</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
