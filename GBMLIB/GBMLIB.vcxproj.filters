@@ -264,6 +264,36 @@
     <ClInclude Include="EHY.H">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PBOX.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PBDEC.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VI.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PUCRUNCH.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="T2KDEC.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CULTRBRN.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BIONIC.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DATAEAST.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KARMA.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MMSS.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SHARED.C">
@@ -507,6 +537,36 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EHY.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PBOX.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PBDEC.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VI.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PUCRUNCH.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="T2KDEC.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CULTRBRN.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BIONIC.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DATAEAST.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KARMA.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MMSS.C">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

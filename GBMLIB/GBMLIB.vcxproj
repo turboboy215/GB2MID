@@ -147,6 +147,7 @@
     <ClInclude Include="AUDIOART.H" />
     <ClInclude Include="BEAM.H" />
     <ClInclude Include="BGDEC.H" />
+    <ClInclude Include="BIONIC.H" />
     <ClInclude Include="BITS.H" />
     <ClInclude Include="CANNON.H" />
     <ClInclude Include="CAPCOM.H" />
@@ -156,6 +157,8 @@
     <ClInclude Include="COMPILE.H" />
     <ClInclude Include="COSMIGO.H" />
     <ClInclude Include="CUBE.H" />
+    <ClInclude Include="CULTRBRN.H" />
+    <ClInclude Include="DATAEAST.H" />
     <ClInclude Include="DAVDSHEA.H" />
     <ClInclude Include="DE1.H" />
     <ClInclude Include="DKONG.H" />
@@ -175,6 +178,7 @@
     <ClInclude Include="IMAGNRNG.H" />
     <ClInclude Include="JEROTEL.H" />
     <ClInclude Include="JSAITO.H" />
+    <ClInclude Include="KARMA.H" />
     <ClInclude Include="KEMCO.H" />
     <ClInclude Include="KONAMI.H" />
     <ClInclude Include="KSADA.H" />
@@ -187,6 +191,7 @@
     <ClInclude Include="MEGAMAN3.H" />
     <ClInclude Include="METROID2.H" />
     <ClInclude Include="MIDI.H" />
+    <ClInclude Include="MMSS.H" />
     <ClInclude Include="MPLAY.H" />
     <ClInclude Include="MUSYX.H" />
     <ClInclude Include="MWALKER.H" />
@@ -198,8 +203,11 @@
     <ClInclude Include="NOWPRO.H" />
     <ClInclude Include="OCEAN.H" />
     <ClInclude Include="PARAGON5.H" />
+    <ClInclude Include="PBDEC.H" />
+    <ClInclude Include="PBOX.H" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PROBE.H" />
+    <ClInclude Include="PUCRUNCH.H" />
     <ClInclude Include="RARE.H" />
     <ClInclude Include="REALTIME.H" />
     <ClInclude Include="RNC.H" />
@@ -211,6 +219,7 @@
     <ClInclude Include="SQUARE.H" />
     <ClInclude Include="SQZDEC.H" />
     <ClInclude Include="SUNSOFT.H" />
+    <ClInclude Include="T2KDEC.H" />
     <ClInclude Include="TAITO.H" />
     <ClInclude Include="TARANTLA.H" />
     <ClInclude Include="TECHNOS.H" />
@@ -219,6 +228,7 @@
     <ClInclude Include="TITUS2.H" />
     <ClInclude Include="TITUSDEC.H" />
     <ClInclude Include="TOSE.H" />
+    <ClInclude Include="VI.H" />
     <ClInclude Include="WARIOL2.H" />
     <ClInclude Include="WAV.H" />
     <ClInclude Include="WINKYSFT.H" />
@@ -232,6 +242,7 @@
     <ClCompile Include="AUDIOART.C" />
     <ClCompile Include="BEAM.C" />
     <ClCompile Include="BGDEC.C" />
+    <ClCompile Include="BIONIC.C" />
     <ClCompile Include="BITS.C" />
     <ClCompile Include="CANNON.C" />
     <ClCompile Include="CAPCOM.C" />
@@ -241,6 +252,8 @@
     <ClCompile Include="COMPILE.C" />
     <ClCompile Include="COSMIGO.C" />
     <ClCompile Include="CUBE.C" />
+    <ClCompile Include="CULTRBRN.C" />
+    <ClCompile Include="DATAEAST.C" />
     <ClCompile Include="DAVDSHEA.C" />
     <ClCompile Include="DE1.C" />
     <ClCompile Include="DKONG.C" />
@@ -259,6 +272,7 @@
     <ClCompile Include="IMAGNRNG.C" />
     <ClCompile Include="JEROTEL.C" />
     <ClCompile Include="JSAITO.C" />
+    <ClCompile Include="KARMA.C" />
     <ClCompile Include="KEMCO.C" />
     <ClCompile Include="KONAMI.C" />
     <ClCompile Include="KSADA.C" />
@@ -270,6 +284,7 @@
     <ClCompile Include="MEGAMAN2.C" />
     <ClCompile Include="MEGAMAN3.C" />
     <ClCompile Include="METROID2.C" />
+    <ClCompile Include="MMSS.C" />
     <ClCompile Include="MPLAY.C" />
     <ClCompile Include="MUSYX.C" />
     <ClCompile Include="MWALKER.C" />
@@ -281,7 +296,10 @@
     <ClCompile Include="NOWPRO.C" />
     <ClCompile Include="OCEAN.C" />
     <ClCompile Include="PARAGON5.C" />
+    <ClCompile Include="PBDEC.C" />
+    <ClCompile Include="PBOX.C" />
     <ClCompile Include="PROBE.C" />
+    <ClCompile Include="PUCRUNCH.C" />
     <ClCompile Include="RARE.C" />
     <ClCompile Include="REALTIME.C" />
     <ClCompile Include="RNC.C" />
@@ -300,6 +318,7 @@
     <ClCompile Include="SQUARE.C" />
     <ClCompile Include="SQZDEC.C" />
     <ClCompile Include="SUNSOFT.C" />
+    <ClCompile Include="T2KDEC.C" />
     <ClCompile Include="TAITO.C" />
     <ClCompile Include="TARANTLA.C" />
     <ClCompile Include="TECHNOS.C" />
@@ -308,6 +327,7 @@
     <ClCompile Include="TITUS2.C" />
     <ClCompile Include="TITUSDEC.C" />
     <ClCompile Include="TOSE.C" />
+    <ClCompile Include="VI.C" />
     <ClCompile Include="WARIOL2.C" />
     <ClCompile Include="WINKYSFT.C" />
   </ItemGroup>
