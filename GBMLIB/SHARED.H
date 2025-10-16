@@ -81,6 +81,7 @@
 #define Nintendo_ST			0x4E
 #define Data_East			0x4F
 #define Karma_Studios		0x50
+#define MMSS				0x51
 
 extern FILE * rom, * mid;
 extern long masterBank;

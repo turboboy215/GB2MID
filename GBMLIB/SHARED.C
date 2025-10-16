@@ -52,6 +52,7 @@
 #include "MEGAMAN3.H"
 #include "METROID2.H"
 #include "MIDI.H"
+#include "MMSS.H"
 #include "MPLAY.H"
 #include "MUSYX.H"
 #include "MWALKER.H"
@@ -600,6 +601,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Lufia:
 			LufiaProc(banks[curBank]);
+			break;
+		case MMSS:
+			MMSSProc(banks[curBank], parameters);
 			break;
 		case Make_Software:
 			MakeProc(banks[curBank]);
