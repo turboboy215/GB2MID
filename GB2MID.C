@@ -831,6 +831,10 @@ int main(int args, char* argv[])
             {
                 driver = MIDI;
             }
+            else if (!strcmp(formatString, "MMSS"))
+            {
+                driver = MMSS;
+            }
             else if (!strcmp(formatString, "MPlay"))
             {
                 driver = MPlay;
