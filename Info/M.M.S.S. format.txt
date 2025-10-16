@@ -1,0 +1,108 @@
+There are several variants of this sound engine, with the first being the most common version.
+
+Song table
+=======================================
+
+Version 1
+===================
+In version 1, used mainly by KID, the song table consists of a series of 4 sequence numbers, one for each channel. It can be found using the following code:
+
+add a
+add a
+ld hl, SongTable
+ld b, $00
+ld c, a
+add hl, bc
+ld bc, $????
+ldi a, [hl]
+
+Which equals the following in hex:
+87 87 21 ?? ?? 06 00 4F 09 01 xx xx 2A
+
+The song pointer format is as follows:
+1. Channel 1 sequence
+2. Channel 2 sequence
+3. Channel 3 sequence
+4. Channel 4 sequence
+
+Each of the sequences referred to above refers to pointers (16-bit/2 byte) values in a table, which can be found using the code below:
+
+ld [hl], c
+add a
+add a, SeqTableLow
+ld e, a
+ld a, $00
+adc a, SeqTableHigh
+ld d, a
+ld l, 22
+ld a, [de]
+ld [hl], a
+inc de
+inc l
+ld a, [de]
+
+Which equals the following in hex:
+
+71 87 C6 ?? 5F 3E 00 CE ?? 57 2E 22 1A 77 13 2C 1A
+
+Version 2
+===================
+In version 2, the song table is loaded using the following code:
+
+ld [hl], a
+inc h
+dec c
+jr nz, ????
+ld hl, SongTable
+ld c, $00
+ldi a, [hl]
+ld b, a
+ldi a, [hl]
+or a
+jr z, ????
+
+Which equals the following in hex:
+
+77 24 0D 28 21 ?? ?? 0E 00 2A 47 2A B7 28 07
+
+The song pointer format is the same as version 1.
+
+Version 3
+===================
+Version 3, used by Taito/Light Link Music, does not appear to have a consistent song table load method. However, its song pointer format is somewhat different, and supports multiple banks:
+
+1. Bank number
+2-3. Channel 1 pointer
+4-5. Channel 2 pointer (big-endian)
+6-7. Channel 3 pointer
+8-9. Channel 4 pointer (big-endian)
+
+Sequence commands
+=======================================
+Each sequence for a channel is comprised of the following commands:
+
+00-BF xx = Play note (X = Length) (6F = Rest)
+ - Note lengths are stored as follows: xxxyyyyy (X = Envelope, Y = Note length)
+D0-D3 xx = Repeat section X times
+D4-D7 xx xx = End of repeat section - Jump to position
+D8 = Reset channel envelope attack?
+D9-DB = Set channel envelope attack
+DC-DF = ?
+E0-E7 = Set noise
+E8-EF xx = Set channel instrument parameters
+F0-F3 = Set duty
+F4-F5 = End of channel
+F6 = Reset sweep
+F7 xx = Set sweep
+F8 xx = Set transpose
+F9 xx = Set speed
+FA xx = Set global volume
+FB xx = ?
+FC xx xx = Go to macro
+FD xx xx = Jump to position
+FE = Exit macro
+FF = End of channel
+
+Version 1 and 3 appear to have exactly the same commands. In version 2, commands D0-D7 are absent, and F4 and F5 are different, replacing the removed commands D0-D7:
+F4 xx = Repeat section X times
+F5 = End of repeat section
