@@ -1,0 +1,43 @@
+Despite seemingly being an entirely different sound engine than the previous engine by Stephen Ruddy, it shares some commands as well as the song table format as the later version used in the Rugrats Movie.
+
+Song table
+=======================================
+The song table is a series of entries containing the tempo followed by the pointer for each channel of a song. Usually, the pointer for the song table is found at offset 0x5A4C. It is structured as follows (same as The Rugrats Movie):
+1. Tempo
+2-3. Channel 1 pointer
+4-5. Channel 2 pointer
+6-7. Channel 3 pointer
+8-9. Channel 4 pointer
+
+Commands
+=======================================
+Commands for each channel of a song are structured as follows:
+00-7F (xx (zz) yy) = Play note (X = Length if not automatic - if X is 80 or greater, then Z byte is used - subtract 80 from the first byte), Y = Size if not automatic, if 60, then is a rest)
+80 xx = Repeat the following section (X = number of times)
+81 = End of repeat section
+82 xx (yy) = Set automatic note length (If greater than 80, then Y is used - subtract 80 from X)
+83 = End of channel
+84 xx xx = Go to macro
+85 = Return from macro
+86 xx xx = Jump to position
+87 xx = "Wobble" effect
+88 xx = "Distort" effect
+89 xx = Set vibrato
+8A xx = ?
+8B xx = Set sweep
+8C xx = Set panning
+8D = Set panning - L
+8E = Set panning - R
+8F = Set panning - LR
+90 = Set panning - none
+91 xx = Set instrument
+92 xx = Set automatic note size
+93 = Set song loop point
+94 = Go to song loop point
+95 = Disable automatic note length
+96 = Disable automatic note size
+97 = Set ? to FF
+98 = Set ? to 0
+99 xx = ?
+9A xx = ?
+C0-FF = Rest

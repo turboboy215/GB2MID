@@ -1,0 +1,72 @@
+Common version
+==============================================================================
+
+Song table
+=======================================
+Song table values are hard-coded into the sound engine and consist of 8 tables - 2 for the upper and lower bytes of each channel.
+
+Commands
+=======================================
+The following commands are used:
+00-7F (xx) = Play note/rest
+80 xx = Repeat the following section (X = number of times) 
+81 = End of repeat section
+82 xx = Set automatic note length
+83 = End of channel
+84 xx xx = Go to macro
+85 = Return from macro
+86 xx = Transpose = (on channel 4, this has a different meaning with only 1 byte)
+87 xx = "Distort" effect = (same note as 86)
+88 xx xx = Jump to position
+89 xx yy zz  = Set envelope
+8A xx yy zz = Set channel/envelope parameters (XX XX is used instead for channel 3)
+8B xx = Toggle "wobble"
+8C xx yy zz = Portamento
+8D xx = Set vibrato
+8E xx = Set duty
+8F xx yy zz aa = Set effect
+90 = ?
+91 xx yy zz aa = ?
+92 xx yy zz = ?
+93 xx = ?
+94 xx = Set note size
+95 xx = Set panning
+96 xx (yy zz) = Set panning (conditional), if X is 0, then ignore Y and Z?
+97 = ?
+98 = ?
+99 = End of channel
+
+Late version (The Rugrats Movie)
+==============================================================================
+The Rugrats Movie uses a revised version of the sound engine. While music in previous games were probably written directly in ASM code, this game's music was likely converted from MIDI, and the sound engine was reprogrammed to better suit the conversion.
+
+Song table
+=======================================
+Each song in the pointer table has an entry as follows:
+1. Tempo
+2-3. Channel 1 pointer
+4-5. Channel 2 pointer
+6-7. Channel 3 pointer
+8-9. Channel 4 pointer
+
+Commands
+=======================================
+The following commands are used:
+00-7F (xx yy) = Play note/rest (60 = Rest, 61-7F = Rest with automatic length + (X - 61), X = Note length, Y = Note size, X not present if 82 command active, Y not present if 99 command active or rest)
+80 xx = Repeat the following section (X = number of times) 
+81 = End of repeat section
+82 xx = Set automatic note length
+83 = End of channel
+84 xx xx = Go to macro
+85 = Return from macro
+86 = (Invalid)
+87 = (Invalid)
+88 xx xx = Jump to position
+89-97 = (Invalid)
+98 xx = Set duty
+99 xx = Set automatic size length
+9A = Set song loop point
+9B = Go to song loop point
+9C = Disable automatic note length
+9D = Disable automatic note size
+9E-A0 = ?
