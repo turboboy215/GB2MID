@@ -74,6 +74,8 @@
 #include "SHEEP.H"
 #include "SQUARE.H"
 #include "SUNSOFT.H"
+#include "SWC1.H"
+#include "SWC2.H"
 #include "TAITO.H"
 #include "TARANTLA.H"
 #include "TECHNOS.H"
@@ -676,6 +678,12 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Sheep:
 			SheepProc(banks[curBank]);
+			break;
+		case Software_Creations1:
+			SWC1Proc(banks[curBank], parameters);
+			break;
+		case Software_Creations2:
+			SWC2Proc(banks[curBank]);
 			break;
 		case Square:
 			SqrProc(banks[curBank]);

@@ -400,6 +400,10 @@ void Compilesong2mid(int songNum, long ptr)
 						else
 						{
 							curNote = noteVal + 23 + transpose1 + transpose2;
+							if (curTrack == 2)
+							{
+								curNote -= 12;
+							}
 							tempPos = WriteNoteEvent(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
 							firstNote = 0;
 							holdNote = 0;
@@ -421,6 +425,10 @@ void Compilesong2mid(int songNum, long ptr)
 						else
 						{
 							curNote = noteVal + 23 + transpose1 + transpose2;
+							if (curTrack == 2)
+							{
+								curNote -= 12;
+							}
 							tempPos = WriteNoteEvent(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
 							firstNote = 0;
 							holdNote = 0;
@@ -440,6 +448,10 @@ void Compilesong2mid(int songNum, long ptr)
 						else
 						{
 							curNote = noteVal + 23 + transpose1 + transpose2;
+							if (curTrack == 2)
+							{
+								curNote -= 12;
+							}
 							tempPos = WriteNoteEvent(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
 							firstNote = 0;
 							holdNote = 0;
@@ -789,7 +801,6 @@ void Compilesong2mid(int songNum, long ptr)
 					{
 						noteVal = 40;
 					}
-
 					if (command[1] == 0xDE)
 					{
 						curNoteLen = command[2] * 10;
@@ -802,6 +813,11 @@ void Compilesong2mid(int songNum, long ptr)
 						else
 						{
 							curNote = noteVal + 36 + transpose1 + transpose2;
+
+							if (curTrack == 2)
+							{
+								curNote -= 12;
+							}
 							tempPos = WriteNoteEvent(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
 							firstNote = 0;
 							holdNote = 0;
@@ -823,6 +839,11 @@ void Compilesong2mid(int songNum, long ptr)
 						else
 						{
 							curNote = noteVal + 36 + transpose1 + transpose2;
+
+							if (curTrack == 2)
+							{
+								curNote -= 12;
+							}
 							tempPos = WriteNoteEvent(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
 							firstNote = 0;
 							holdNote = 0;
@@ -842,6 +863,11 @@ void Compilesong2mid(int songNum, long ptr)
 						else
 						{
 							curNote = noteVal + 36 + transpose1 + transpose2;
+
+							if (curTrack == 2)
+							{
+								curNote -= 12;
+							}
 							tempPos = WriteNoteEvent(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
 							firstNote = 0;
 							holdNote = 0;
@@ -866,6 +892,11 @@ void Compilesong2mid(int songNum, long ptr)
 					else
 					{
 						curNote = noteVal + 23 + transpose1 + transpose2;
+
+						if (curTrack == 2)
+						{
+							curNote -= 12;
+						}
 						tempPos = WriteNoteEvent(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
 						firstNote = 0;
 						holdNote = 0;
@@ -889,6 +920,11 @@ void Compilesong2mid(int songNum, long ptr)
 					else
 					{
 						curNote = noteVal + 23 + transpose1 + transpose2;
+
+						if (curTrack == 2)
+						{
+							curNote -= 12;
+						}
 						tempPos = WriteNoteEvent(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
 						firstNote = 0;
 						holdNote = 0;
