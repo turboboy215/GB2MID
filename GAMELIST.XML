@@ -1419,6 +1419,39 @@
 		<parameters>S</parameters>
 	</rom>
 	<rom>
+		<name>Altered Space (E) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6096</checksum>
+        <crc32>24d5f785</crc32>
+        <format>Software_Creations1</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>1\5239\20</parameters>
+	</rom>
+	<rom>
+		<name>Altered Space (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>990A</checksum>
+        <crc32>ce36e36e</crc32>
+        <format>Software_Creations1</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>1\5239\20</parameters>
+	</rom>
+	<rom>
+		<name>Altered Space (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>BC53</checksum>
+        <crc32>141675d3</crc32>
+        <format>Software_Creations1</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>1\5239\20</parameters>
+	</rom>
+	<rom>
 		<name>Amazing Penguin (UE) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -3242,6 +3275,17 @@
         <format>GHX</format>
 		<part></part>
 		<banks>B</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Boarder Zone (U) [C][!]</name>
+		<gamecode>AXWE</gamecode>
+		<rev>0</rev>
+		<checksum>875B</checksum>
+        <crc32>a7152869</crc32>
+        <format>Software_Creations2</format>
+		<part></part>
+		<banks>32</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -7227,6 +7271,28 @@
 		<parameters>S</parameters>
 	</rom>
 	<rom>
+		<name>Dragon Tales - Dragon Wings (E) [C][!]</name>
+		<gamecode>BDZP</gamecode>
+		<rev>0</rev>
+		<checksum>393D</checksum>
+        <crc32>137d7b45</crc32>
+        <format>Software_Creations2</format>
+		<part></part>
+		<banks>25,26</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Dragon Tales - Dragon Wings (U) [C][!]</name>
+		<gamecode>BDZE</gamecode>
+		<rev>0</rev>
+		<checksum>515B</checksum>
+        <crc32>191d31ec</crc32>
+        <format>Software_Creations2</format>
+		<part></part>
+		<banks>25,26</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Dragon Warrior I & II (U) [C][!]</name>
 		<gamecode>AEDE</gamecode>
 		<rev>0</rev>
@@ -7522,6 +7588,28 @@
 		<part></part>
 		<banks>39</banks>
 		<parameters>CFG/E.T. The Extra Terrestrial - Escape from Planet Earth (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>E.T. The Extra Terrestrial and the Cosmic Garden (E) (M6) [C][!]</name>
+		<gamecode>BEOP</gamecode>
+		<rev>0</rev>
+		<checksum>E8A1</checksum>
+        <crc32>8321a1b9</crc32>
+        <format>Software_Creations2</format>
+		<part></part>
+		<banks>2,A,B</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>E.T. The Extra-Terrestrial and the Cosmic Garden (U) [C][!]</name>
+		<gamecode>BEOE</gamecode>
+		<rev>0</rev>
+		<checksum>6E93</checksum>
+        <crc32>32c87958</crc32>
+        <format>Software_Creations2</format>
+		<part></part>
+		<banks>2,A,B</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Earthworm Jim - Menace 2 the Galaxy (U) [C][!]</name>
@@ -11286,6 +11374,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Incredible Crash Dummies, The (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9CAD</checksum>
+        <crc32>d81c08fa</crc32>
+        <format>Software_Creations1</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>1\3783\E</parameters>
+	</rom>
+	<rom>
 		<name>Indiana Jones and the Infernal Machine (U) (M3) [C][!]</name>
 		<gamecode>BIJE</gamecode>
 		<rev>0</rev>
@@ -12361,6 +12460,28 @@
         <format>GHX</format>
 		<part></part>
 		<banks>3F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Ken Griffey Jr. Presents Major League Baseball (U) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1426</checksum>
+        <crc32>0a9859c1</crc32>
+        <format>Software_Creations1</format>
+		<part></part>
+		<banks>1F</banks>
+		<parameters>1\4002\4</parameters>
+	</rom>
+	<rom>
+		<name>Ken Griffey Jr.'s Slugfest (U) [C][!]</name>
+		<gamecode>AYAE</gamecode>
+		<rev>0</rev>
+		<checksum>7392</checksum>
+        <crc32>1e64d19c</crc32>
+        <format>Software_Creations2</format>
+		<part></part>
+		<banks>25</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -13990,6 +14111,28 @@
 		<part>2/2=Samples</part>
 		<banks>3</banks>
 		<parameters>S</parameters>
+	</rom>
+	<rom>
+		<name>Les Razmoket - Voyages dans le Temps (F) [C][!]</name>
+		<gamecode>BRTF</gamecode>
+		<rev>0</rev>
+		<checksum>B7AC</checksum>
+        <crc32>2f8fef3f</crc32>
+        <format>Software_Creations2</format>
+		<part></part>
+		<banks>20,40</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Les Razmoket A Paris - Le Film (F) [C][!]</name>
+		<gamecode>BPRF</gamecode>
+		<rev>0</rev>
+		<checksum>CA96</checksum>
+        <crc32>094494e9</crc32>
+        <format>Software_Creations2</format>
+		<part></part>
+		<banks>20,33,40</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Les Visiteurs (F) [C][!]</name>
@@ -17795,6 +17938,17 @@
         <format>ACT_Japan</format>
 		<part></part>
 		<banks>F,10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>NASCAR 2000 (E) [C][!]</name>
+		<gamecode>BN2E</gamecode>
+		<rev>0</rev>
+		<checksum>DBDF</checksum>
+        <crc32>54d90a4c</crc32>
+        <format>Software_Creations2</format>
+		<part></part>
+		<banks>2,3,4</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -23188,6 +23342,72 @@
 		<parameters>S</parameters>
 	</rom>
 	<rom>
+		<name>Rugrats - Time Travelers (U) [C][!]</name>
+		<gamecode>AVME</gamecode>
+		<rev>0</rev>
+		<checksum>1D80</checksum>
+        <crc32>9c743f03</crc32>
+        <format>Software_Creations2</format>
+		<part></part>
+		<banks>20,40</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Rugrats Movie, The (E) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B12E</checksum>
+        <crc32>b4091600</crc32>
+        <format>Software_Creations1</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>2\4100\8</parameters>
+	</rom>
+	<rom>
+		<name>Rugrats Movie, The (U) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5D4F</checksum>
+        <crc32>febe2606</crc32>
+        <format>Software_Creations1</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>2\4100\8</parameters>
+	</rom>
+	<rom>
+		<name>Rugrats Movie, The (U) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1FEF</checksum>
+        <crc32>124a0d06</crc32>
+        <format>Software_Creations1</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>2\4100\8</parameters>
+	</rom>
+	<rom>
+		<name>Rugrats en Paris - La Pelicula (S) (M2) [C][!]</name>
+		<gamecode>BPRX</gamecode>
+		<rev>0</rev>
+		<checksum>A10B</checksum>
+        <crc32>35323432</crc32>
+        <format>Software_Creations2</format>
+		<part></part>
+		<banks>20,33,40</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Rugrats in Paris - The Movie (U) [C][!]</name>
+		<gamecode>BPRE</gamecode>
+		<rev>0</rev>
+		<checksum>963D</checksum>
+        <crc32>8b195237</crc32>
+        <format>Software_Creations2</format>
+		<part></part>
+		<banks>20,33,40</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Runelords (U) (Unreleased) [C][!]</name>
 		<gamecode>BRLE</gamecode>
 		<rev>0</rev>
@@ -25069,6 +25289,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Simpsons, The - Bart & the Beanstalk (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2273</checksum>
+        <crc32>7aa4e0bb</crc32>
+        <format>Software_Creations1</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>1\5ABC\20</parameters>
+	</rom>
+	<rom>
+		<name>Simpsons, The - Bart & the Beanstalk (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2273</checksum>
+        <crc32>517a614c</crc32>
+        <format>Software_Creations1</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>1\5ABC\20</parameters>
+	</rom>
+	<rom>
 		<name>Simpsons, The - Bart vs the Juggernauts (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -25121,6 +25363,17 @@
         <format>David_Whittaker</format>
 		<part></part>
 		<banks>6</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Simpsons, The - Night of the Living Treehouse of Horror (U) [C][!]</name>
+		<gamecode>BNOE</gamecode>
+		<rev>0</rev>
+		<checksum>C93A</checksum>
+        <crc32>ebaf4888</crc32>
+        <format>Software_Creations2</format>
+		<part></part>
+		<banks>20,33,40</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -25969,6 +26222,39 @@
 		<part></part>
 		<banks>7</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Spot (E) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D987</checksum>
+        <crc32>04e241e4</crc32>
+        <format>Software_Creations1</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>1\5B00\10</parameters>
+	</rom>
+	<rom>
+		<name>Spot (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DE68</checksum>
+        <crc32>2ca58280</crc32>
+        <format>Software_Creations1</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>1\5B00\10</parameters>
+	</rom>
+	<rom>
+		<name>Spot (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0068</checksum>
+        <crc32>fcd61b98</crc32>
+        <format>Software_Creations1</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>1\5942\10</parameters>
 	</rom>
 	<rom>
 		<name>Spud's Adventure (U)</name>
@@ -27181,6 +27467,17 @@
 		<parameters>2\CFG/Superman (U) [S][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Supreme Snowboarding (E) (M3) [C][!]</name>
+		<gamecode>AXWP</gamecode>
+		<rev>0</rev>
+		<checksum>A5FB</checksum>
+        <crc32>53b1e661</crc32>
+        <format>Software_Creations2</format>
+		<part></part>
+		<banks>32</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Survival Kids - Kotou no Boukensha (J) [C][!]</name>
 		<gamecode>AVKJ</gamecode>
 		<rev>0</rev>
@@ -28322,6 +28619,28 @@
 		<format>Konami</format>
 		<part></part>
 		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tiny Toon Adventures - Buster Saves the Day (E) (M5) [C][!]</name>
+		<gamecode>BUSP</gamecode>
+		<rev>0</rev>
+		<checksum>E00D</checksum>
+        <crc32>7aa371ed</crc32>
+        <format>Software_Creations2</format>
+		<part></part>
+		<banks>2,3,4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tiny Toon Adventures - Buster Saves the Day (U) [C][!]</name>
+		<gamecode>BUSE</gamecode>
+		<rev>0</rev>
+		<checksum>D328</checksum>
+        <crc32>800efb3d</crc32>
+        <format>Software_Creations2</format>
+		<part></part>
+		<banks>2,3,4</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>

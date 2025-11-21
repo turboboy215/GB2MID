@@ -911,6 +911,14 @@ int main(int args, char* argv[])
             {
                 driver = Sheep;
             }
+            else if (!strcmp(formatString, "Software_Creations1"))
+            {
+                driver = Software_Creations1;
+            }
+            else if (!strcmp(formatString, "Software_Creations2"))
+            {
+                driver = Software_Creations2;
+            }
             else if (!strcmp(formatString, "Square"))
             {
                 driver = Square;
