@@ -1,0 +1,74 @@
+Version 1
+==============================================================================
+This version of the sound engine is used in at least 3 games - Rox, Backgammon, and Checkmate. It does not use channel 4 for music. These games store all their sound data in one bank.
+
+Song table
+=======================================
+The song table consists of a series of four pointers for each song, used for channels 1-3 followed by a value representing the number of a hardcoded note length table to be used (each consisting of 10 values) of each song. It can be found using the following code:
+
+add a
+add a
+add a
+ld e, a
+ld d, $00
+ld hl, SongTable
+add hl, de
+
+Which equals the following in hex:
+
+87 87 87 5F 16 00 21 ?? ?? 19
+
+Entries for pointers in the song table are structured as follows:
+
+1-2. Channel 1 pointer
+3-4. Channel 2 pointer
+5-6. Channel 3 pointer
+7-8. Pointer to note length table number
+
+Song commands
+=======================================
+Data for each channel of a song uses the following commands:
+(Note for the X values, these should be subtracted from 0x30).
+
+3C = Octave down
+3E = Octave up
+48 = Go to song loop
+4C xx = Set channel speed
+4F xx = Set octave
+52 xx = Rest (custom length)
+53 = End of channel?
+
+43 (xx) = Play note (C) (If X is between 30 and 39, then note length number)
+44 (xx) = Play note (D) (If X is between 30 and 39, then note length number)
+45 (xx) = Play note (E) (If X is between 30 and 39, then note length number)
+46 (xx) = Play note (F) (If X is between 30 and 39, then note length number)
+47 (xx) = Play note (G) (If X is between 30 and 39, then note length number)
+41 (xx) = Play note (A) (If X is between 30 and 39, then note length number)
+42 (xx) = Play note (B) (If X is between 30 and 39, then note length number)
+55 (xx) = Play note (C#) (If X is between 30 and 39, then note length number)
+57 (xx) = Play note (D#) (If X is between 30 and 39, then note length number)
+58 (xx) = Play note (F#) (If X is between 30 and 39, then note length number)
+59 (xx) = Play note (G#) (If X is between 30 and 39, then note length number)
+5A (xx) = Play note (C) (If X is between 30 and 39, then note length number)
+
+Version 2
+==============================================================================
+Version 2 was first used in Little Magic. It can use channel 4 for music, unlike version 1, and almost always uses multiple banks.
+
+Song table
+=======================================
+The song table consists of a series of four pointers for each song, one for each channel. The code to find the table is the same as version 1. They are structured as follows:
+
+1-2. Channel 1 pointer
+3-4. Channel 2 pointer
+5-6. Channel 3 pointer
+7-8. Channel 4 pointer
+
+Song commands
+=======================================
+Data for each channel of a song uses the following commands, entirely different than version 1:
+
+00-FC? xx = Play note (X = Length)
+FD xx = Rest (X = Length)
+FE = Restart channel
+FF = End of channel
