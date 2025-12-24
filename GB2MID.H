@@ -82,3 +82,4 @@
 #define MMSS				0x51
 #define Software_Creations1 0x52
 #define Software_Creations2	0x53
+#define Altron				0x54

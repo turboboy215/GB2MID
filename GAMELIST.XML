@@ -2134,6 +2134,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Backgammon (E) (M4) [C][!]</name>
+		<gamecode>AAKP</gamecode>
+		<rev>0</rev>
+		<checksum>E727</checksum>
+        <crc32>d33d6f7b</crc32>
+        <format>Altron</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Backgammon (J) [C][!]</name>
+		<gamecode>AAKJ</gamecode>
+		<rev>0</rev>
+		<checksum>DD57</checksum>
+        <crc32>712a49b3</crc32>
+        <format>Altron</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Bad Badtz-Maru Robo Battle (J) [C][!]</name>
 		<gamecode>BBRJ</gamecode>
 		<rev>0</rev>
@@ -3056,6 +3078,17 @@
 		<part></part>
 		<banks>5</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Billiard Club (J) (Unreleased) [C][!]</name>
+		<gamecode>BBCJ</gamecode>
+		<rev>0</rev>
+		<checksum>2BEF</checksum>
+        <crc32>210c4137</crc32>
+        <format>Altron</format>
+		<part></part>
+		<banks>2,3,4,5,26</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Billy Bob's Huntin' 'n' Fishin' (U) [C][!]</name>
@@ -5060,6 +5093,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Checkmate (J) (M2) [C][!]</name>
+		<gamecode>ACZJ</gamecode>
+		<rev>0</rev>
+		<checksum>603A</checksum>
+        <crc32>1aab415d</crc32>
+        <format>Altron</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Chicken Run (U) (M5) [C][!]</name>
 		<gamecode>BCKE</gamecode>
 		<rev>0</rev>
@@ -6290,6 +6334,17 @@
 		<part></part>
 		<banks>F</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Dexter's Laboratory - Robot Rampage (U) [C][!]</name>
+		<gamecode>BROE</gamecode>
+		<rev>0</rev>
+		<checksum>AB05</checksum>
+        <crc32>d24d6601</crc32>
+        <format>Altron</format>
+		<part></part>
+		<banks>2,3,4,5</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Dick Tracy (U)</name>
@@ -7722,6 +7777,28 @@
 		<parameters>3\71FB</parameters>
 	</rom>
 	<rom>
+		<name>Elevator Action EX (E) (M5) [C][!]</name>
+		<gamecode>BEXP</gamecode>
+		<rev>0</rev>
+		<checksum>EB10</checksum>
+        <crc32>2154763c</crc32>
+        <format>Altron</format>
+		<part></part>
+		<banks>2,3,4,5</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Elevator Action EX (J) [C][!]</name>
+		<gamecode>BEXJ</gamecode>
+		<rev>0</rev>
+		<checksum>825B</checksum>
+        <crc32>b70c4ddb</crc32>
+        <format>Altron</format>
+		<part></part>
+		<banks>2,3,4,5</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Elie no Atelier GB (J) [C][!]</name>
 		<gamecode>A8EJ</gamecode>
 		<rev>0</rev>
@@ -8809,6 +8886,17 @@
 		<part></part>
 		<banks>1</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Front Line - The Next Mission (J) [C][!]</name>
+		<gamecode>BFRJ</gamecode>
+		<rev>0</rev>
+		<checksum>B2AE</checksum>
+        <crc32>f48e1643</crc32>
+        <format>Altron</format>
+		<part></part>
+		<banks>2,3,4,5</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Front Row (J) [C][!]</name>
@@ -10087,6 +10175,17 @@
 		<parameters>4</parameters>
 	</rom>
 	<rom>
+		<name>Grand Casino (J) (Unreleased) [C][!]</name>
+		<gamecode>BGCJ</gamecode>
+		<rev>0</rev>
+		<checksum>9A92</checksum>
+        <crc32>8ba3988b</crc32>
+        <format>Altron</format>
+		<part></part>
+		<banks>16,17</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Grand Theft Auto (E) (M5) [C][!]</name>
 		<gamecode>AOAP</gamecode>
 		<rev>0</rev>
@@ -11077,6 +11176,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Honkaku Hanafuda GB (J) [C][!]</name>
+		<gamecode>AH3J</gamecode>
+		<rev>0</rev>
+		<checksum>D4A7</checksum>
+        <crc32>05dcbd55</crc32>
+        <format>Altron</format>
+		<part></part>
+		<banks>1B,1C,1D,1E</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Honmei Boy (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -11814,6 +11924,17 @@
 		<parameters>CFG/Jeremy McGrath Supercross 2000 (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Jet de Go! - Let's go by Airliner (J) [C][!]</name>
+		<gamecode>BJEJ</gamecode>
+		<rev>0</rev>
+		<checksum>5922</checksum>
+        <crc32>20c4ccf6</crc32>
+        <format>Altron</format>
+		<part></part>
+		<banks>2,3,4,5,6</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Jet Pack (Beta)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -12175,6 +12296,17 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>K.O. - The Pro Boxing (J) [C][!]</name>
+		<gamecode>BKOJ</gamecode>
+		<rev>0</rev>
+		<checksum>280C</checksum>
+        <crc32>69f08c89</crc32>
+        <format>Altron</format>
+		<part></part>
+		<banks>2,3,4,5</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>K1025 2-in-1 Zelda Ages+Seasons [C][p1][b1]]</name>
@@ -14210,6 +14342,17 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters>1\CFG/Little Indian in Big City (U) [S].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Little Magic (J) [C][!]</name>
+		<gamecode>ALJJ</gamecode>
+		<rev>0</rev>
+		<checksum>0C26</checksum>
+        <crc32>ca38283d</crc32>
+        <format>Altron</format>
+		<part></part>
+		<banks>2,3,4,5</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Little Mermaid II, The - Pinball Frenzy (E) (M5) [C][!]</name>
@@ -23199,6 +23342,28 @@
 		<parameters>CFG/Roland Garros French Open (E) (M6) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Rox (E) [C][!]</name>
+		<gamecode>ARXE</gamecode>
+		<rev>0</rev>
+		<checksum>EAE5</checksum>
+        <crc32>2e944775</crc32>
+        <format>Altron</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Rox (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6DC6</checksum>
+        <crc32>4bd73d99</crc32>
+        <format>Altron</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>RPG Tsukuru GB (J) [C][!]</name>
 		<gamecode>A2QJ</gamecode>
 		<rev>0</rev>
@@ -24682,6 +24847,17 @@
 		<part></part>
 		<banks>D</banks>
 		<parameters>4D90\3</parameters>
+	</rom>
+	<rom>
+		<name>Sgt. Rock - On The Front Line (U) [C][!]</name>
+		<gamecode>BRFE</gamecode>
+		<rev>0</rev>
+		<checksum>50BB</checksum>
+        <crc32>521a2f77</crc32>
+        <format>Altron</format>
+		<part></part>
+		<banks>2,3,4,5</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Shadow Warriors (E)</name>
