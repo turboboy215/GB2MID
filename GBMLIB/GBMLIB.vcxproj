@@ -143,6 +143,7 @@
     <ClInclude Include="AICOM.H" />
     <ClInclude Include="AJG.H" />
     <ClInclude Include="ALLEYWAY.H" />
+    <ClInclude Include="ALTRON.H" />
     <ClInclude Include="ATLUS.H" />
     <ClInclude Include="AUDIOART.H" />
     <ClInclude Include="BEAM.H" />
@@ -219,6 +220,8 @@
     <ClInclude Include="SQUARE.H" />
     <ClInclude Include="SQZDEC.H" />
     <ClInclude Include="SUNSOFT.H" />
+    <ClInclude Include="SWC1.H" />
+    <ClInclude Include="SWC2.H" />
     <ClInclude Include="T2KDEC.H" />
     <ClInclude Include="TAITO.H" />
     <ClInclude Include="TARANTLA.H" />
@@ -238,6 +241,7 @@
     <ClCompile Include="AICOM.C" />
     <ClCompile Include="AJG.C" />
     <ClCompile Include="ALLEYWAY.C" />
+    <ClCompile Include="ALTRON.C" />
     <ClCompile Include="ATLUS.C" />
     <ClCompile Include="AUDIOART.C" />
     <ClCompile Include="BEAM.C" />
@@ -318,6 +322,8 @@
     <ClCompile Include="SQUARE.C" />
     <ClCompile Include="SQZDEC.C" />
     <ClCompile Include="SUNSOFT.C" />
+    <ClCompile Include="SWC1.C" />
+    <ClCompile Include="SWC2.C" />
     <ClCompile Include="T2KDEC.C" />
     <ClCompile Include="TAITO.C" />
     <ClCompile Include="TARANTLA.C" />

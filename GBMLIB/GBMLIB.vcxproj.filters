@@ -294,6 +294,15 @@
     <ClInclude Include="MMSS.H">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SWC1.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SWC2.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ALTRON.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SHARED.C">
@@ -567,6 +576,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MMSS.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SWC1.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SWC2.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ALTRON.C">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

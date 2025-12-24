@@ -7,6 +7,7 @@
 #include "AICOM.H"
 #include "AJG.H"
 #include "ALLEYWAY.H"
+#include "ALTRON.H"
 #include "ATLUS.H"
 #include "AUDIOART.H"
 #include "BEAM.H"
@@ -483,6 +484,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Alleyway:
 			AlleyProc(banks[curBank]);
+			break;
+		case Altron:
+			AltronProc(banks[curBank], parameters);
 			break;
 		case Atlus:
 			AtlusProc(banks[curBank]);
