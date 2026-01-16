@@ -111,15 +111,8 @@ void CompileProc(int bank)
 				fread(exRomData + bankSize, 1, bankSize, rom);
 
 				songPtr = ReadLE16(&romData[i]);
-				if (songNum != 14 && songNum != 15 && songNum != 16)
-				{
-					printf("Song %i: 0x%04X\n", songNum, songPtr);
-					Compilesong2mid(songNum, songPtr);
-				}
-				else
-				{
-					printf("Song %i: 0x%04X (invalid)\n", songNum, songPtr);
-				}
+				printf("Song %i: 0x%04X\n", songNum, songPtr);
+				Compilesong2mid(songNum, songPtr);
 
 				i += 2;
 				songNum++;
@@ -297,14 +290,23 @@ void Compilesong2mid(int songNum, long ptr)
 
 		for (k = 0; k < numTracks; k++)
 		{
-			curTrack = exRomData[romPos + 7];
-			/*Pointer*/
-			seqPtrs[curTrack][0] = ReadLE16(&exRomData[romPos + 8]);
-			/*Transpose*/
-			seqPtrs[curTrack][1] = (signed char)exRomData[romPos + 5];
-			/*Tempo*/
-			seqPtrs[curTrack][2] = exRomData[romPos + 6];
-			romPos += 12;
+			if (exRomData[romPos + 1] != 0x00)
+			{
+				curTrack = exRomData[romPos + 7];
+
+				/*Pointer*/
+				seqPtrs[curTrack][0] = ReadLE16(&exRomData[romPos + 8]);
+				/*Transpose*/
+				seqPtrs[curTrack][1] = (signed char)exRomData[romPos + 5];
+				/*Tempo*/
+				seqPtrs[curTrack][2] = exRomData[romPos + 6];
+				romPos += 12;
+			}
+			else
+			{
+				romPos += 2;
+			}
+
 		}
 
 		for (curTrack = 0; curTrack < trackCnt; curTrack++)

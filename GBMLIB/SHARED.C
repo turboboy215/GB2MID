@@ -8,6 +8,7 @@
 #include "AJG.H"
 #include "ALLEYWAY.H"
 #include "ALTRON.H"
+#include "ARCHON.H"
 #include "ATLUS.H"
 #include "AUDIOART.H"
 #include "BEAM.H"
@@ -55,6 +56,7 @@
 #include "MIDI.H"
 #include "MMSS.H"
 #include "MPLAY.H"
+#include "MUSICBOX.H"
 #include "MUSYX.H"
 #include "MWALKER.H"
 #include "NAMCO.H"
@@ -488,6 +490,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case Altron:
 			AltronProc(banks[curBank], parameters);
 			break;
+		case archOnPlayer:
+			archOnProc(banks[curBank]);
+			break;
 		case Atlus:
 			AtlusProc(banks[curBank]);
 			break;
@@ -628,6 +633,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case MPlay:
 			MPlayProc(banks[curBank], parameters);
+			break;
+		case MusicBox:
+			MusicBoxProc(banks[curBank], parameters);
 			break;
 		case MusyX:
 			MXProc(banks[curBank], parameters);
