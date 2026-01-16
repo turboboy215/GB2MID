@@ -23,7 +23,8 @@ Song header
 Each song or sound effect is comprised of a "header" which is described as a single byte specifying the number of channels present in the song followed by the following data for each channel:
 
 1. Channel number (of song)
-2. Channel ID (1 = melodic, 2 = noise?)
+2. Channel ID (1 = melodic, 2 = noise?, 0 = Not used - Skip to next channel)
+(If channel ID is not 0, then continue here:)
 3. Envelope speed
 4. Envelope amount
 5. Vibrato
