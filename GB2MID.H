@@ -83,3 +83,5 @@
 #define Software_Creations1 0x52
 #define Software_Creations2	0x53
 #define Altron				0x54
+#define MusicBox			0x55
+#define archOnPlayer		0x56

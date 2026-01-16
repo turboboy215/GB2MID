@@ -1,0 +1,51 @@
+archOnPlayer, also known as Freaq and PEAK Soundsystem, was developed by Stello Doussis. It was used in two German games: Das Geheimnis der Happy Hippo-Insel and Ottifanten: Kommando Störtbeker, both published by JoWood and developed by Kritzelkratz 3000 and released in 2001. Music for these games was composed in XM (FastTracker 2) format and converted to source code files.
+
+Song table
+=======================================
+The song table contains the data for both music and sound effects. It consists of 16-bit (2-byte) pointers. Only one song is stored in each bank, which is the last entry in the table. The address is located at offset $406A.
+
+Module (song/SFX) header
+=======================================
+Each song or sound effect (known as a "module" in the source code) is structured as follows:
+
+1 = Copy to slot
+2 = Restart flag
+3 = Music/SFX flag
+4-7 = IDs (find out meaning?)
+8-9 = Bar addresses
+10-11 = Master track address
+12-13 = Channel 1 address
+14-15 = Channel 2 address
+16-17 = Channel 3 address
+18-19 = Channel 4 address
+
+The "master" track is used to set the speed (in ticks) for each row of a pattern (bar) as well as set a flag for the end of each pattern.
+
+Track commands
+=======================================
+Each track is composed of a series of commands that play "bars" which are equivalent to patterns in tracker modules, each usually equivalent to 64 rows, although each channel, as well as the master track, has its own track. The following commands are used:
+00-BF = Play bar
+C0-DF = Transpose track up
+E0-FD = Transpose track down
+FE xx xx = Jump to track address
+FF = End of track
+
+Bar commands (channel 1-4)
+=======================================
+Channel 1-4 uses an optional command followed by the following information. If the first byte is 7B or more, it is a command followed by parameters, otherwise, skip. Commands are as follows:
+7B xx yy zz = Pitch bend (X = ?, Y = Time, Z = Pitch bend amount)
+7D xx = Add wave offset
+7E xx yy = Set music volume
+7F = End of bar
+80-FF = Set instrument
+
+After an optional command, the following information is used for each row (or multiple rows):
+1. Note/parameter (if 7A, then rest)
+2. Number of rows
+3. Effect/macro
+
+Bar commands (master)
+=======================================
+The "master" track uses the following commands:
+00-FE = Set tempo
+FF = End of bar/Jump to next bar (affects all channels)

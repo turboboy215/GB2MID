@@ -655,6 +655,10 @@ int main(int args, char* argv[])
             {
                 driver = Altron;
             }
+            else if (!strcmp(formatString, "archOnPlayer"))
+            {
+                driver = archOnPlayer;
+            }
             else if (!strcmp(formatString, "Atlus"))
             {
                 driver = Atlus;
@@ -842,6 +846,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "MPlay"))
             {
                 driver = MPlay;
+            }
+            else if (!strcmp(formatString, "MusicBox"))
+            {
+                driver = MusicBox;
             }
             else if (!strcmp(formatString, "MusyX"))
             {

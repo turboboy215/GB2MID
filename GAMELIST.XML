@@ -6050,6 +6050,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Das Geheimnis der Happy Hippo-Insel (G) [C][!]</name>
+		<gamecode>BHOD</gamecode>
+		<rev>0</rev>
+		<checksum>C39C</checksum>
+        <crc32>25b480c3</crc32>
+        <format>archOnPlayer</format>
+		<part></part>
+		<banks>1B,1C,1D,1E,1F,20</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Data-Navi Pro Yakyuu (J) [C][!]</name>
 		<gamecode>A89J</gamecode>
 		<rev>0</rev>
@@ -6620,6 +6631,50 @@
 		<part></part>
 		<banks>5</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Diva Starz - Mall Mania (U) [C][!]</name>
+		<gamecode>BD8E</gamecode>
+		<rev>0</rev>
+		<checksum>0BE9</checksum>
+        <crc32>ebe0ecd6</crc32>
+        <format>MusicBox</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>CFG/Diva Starz - Mall Mania (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Diva Starz (E) [C][!]</name>
+		<gamecode>BD8P</gamecode>
+		<rev>0</rev>
+		<checksum>951E</checksum>
+        <crc32>4476e79f</crc32>
+        <format>MusicBox</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>CFG/Diva Starz (E) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Diva Starz (F) [C][!]</name>
+		<gamecode>BD8F</gamecode>
+		<rev>0</rev>
+		<checksum>737A</checksum>
+        <crc32>fc1b36d1</crc32>
+        <format>MusicBox</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>CFG/Diva Starz (F) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Diva Starz (G) [C][!]</name>
+		<gamecode>BD8D</gamecode>
+		<rev>0</rev>
+		<checksum>3503</checksum>
+        <crc32>56095f86</crc32>
+        <format>MusicBox</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>CFG/Diva Starz (G) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Dodge Ball (J)</name>
@@ -7918,6 +7973,28 @@
 		<part></part>
 		<banks>F,10,11</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Emperor's New Groove, The (E) (M5) [C][!]</name>
+		<gamecode>BENP</gamecode>
+		<rev>0</rev>
+		<checksum>D2C4</checksum>
+        <crc32>4caa8cd0</crc32>
+        <format>MusicBox</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>CFG/Emperor's New Groove, The (E) (M5) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Emperor's New Groove, The (U) [C][!]</name>
+		<gamecode>BENE</gamecode>
+		<rev>0</rev>
+		<checksum>F7EB</checksum>
+        <crc32>6ebad539</crc32>
+        <format>MusicBox</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>CFG/Emperor's New Groove, The (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>ESPN International Track & Field (U) [C][!]</name>
@@ -12175,6 +12252,17 @@
 		<part></part>
 		<banks>10</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>JumpStart Dino Adventure - Field Trip (U) [C]</name>
+		<gamecode>BJQE</gamecode>
+		<rev>0</rev>
+		<checksum>FB67</checksum>
+        <crc32>6d50772d</crc32>
+        <format>MusicBox</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>CFG/JumpStart Dino Adventure - Field Trip (U) [C].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Jungle Book, The (U) [!]</name>
@@ -19151,6 +19239,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Original Moorhuhn Jagd, Die (G) [C][!]</name>
+		<gamecode>BOMD</gamecode>
+		<rev>0</rev>
+		<checksum>F50D</checksum>
+        <crc32>714ec204</crc32>
+        <format>MusicBox</format>
+		<part></part>
+		<banks>14</banks>
+		<parameters>CFG/Original Moorhuhn Jagd, Die (G) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Osawagase Penguin Boy (J) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -19237,6 +19336,17 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters>4062</parameters>
+	</rom>
+	<rom>
+		<name>Ottifanten - Kommando Stoertebeker (G) [C][!]</name>
+		<gamecode>BOTD</gamecode>
+		<rev>0</rev>
+		<checksum>2B2B</checksum>
+        <crc32>3eac3d1c</crc32>
+        <format>archOnPlayer</format>
+		<part></part>
+		<banks>3B,3C,3D,3E,3F,40</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Ou Dorobou Jing - Angel Version (J) [C][!]</name>
@@ -20502,6 +20612,83 @@
 		<part></part>
 		<banks>2</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pocket Voice V1.2 (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F0FE</checksum>
+        <crc32>b5d34632</crc32>
+        <format>MusicBox</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Pocket Voice V1.2 (Unl) [C].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Pocket Voice V2.0 (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F0FE</checksum>
+        <crc32>c34621ad</crc32>
+        <format>MusicBox</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>CFG/Pocket Voice V2.0 (Unl) [C].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Pocket Voice V2.0 Demo 1c (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F0FE</checksum>
+        <crc32>d97dc94d</crc32>
+        <format>MusicBox</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>CFG/Pocket Voice V2.0 Demo 1c (Unl) [C].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Pocket Voice V2.0 Demo 2c (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F0FE</checksum>
+        <crc32>b7508147</crc32>
+        <format>MusicBox</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>CFG/Pocket Voice V2.0 Demo 2c (Unl) [C].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Pocket Voice V2.0 Demo 3e (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F0FE</checksum>
+        <crc32>7cc884b4</crc32>
+        <format>MusicBox</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>CFG/Pocket Voice V2.0 Demo 3e (Unl) [C].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Pocket Voice V2.0 Demo 4c (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F0FE</checksum>
+        <crc32>733f71c9</crc32>
+        <format>MusicBox</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>CFG/Pocket Voice V2.0 Demo 4c (Unl) [C].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Pocket Voice V2.0 Demo 4e (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F0FE</checksum>
+        <crc32>443fef63</crc32>
+        <format>MusicBox</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>CFG/Pocket Voice V2.0 Demo 4e (Unl) [C].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Pokemon - Blaue Edition (G) [S][!]</name>
@@ -27896,6 +28083,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Taikong Zhanshi - Jingdian Ban (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1D72</checksum>
+        <crc32>7c6ae6da</crc32>
+        <format>MusicBox</format>
+		<part></part>
+		<banks>25</banks>
+		<parameters>CFG/Taikong Zhanshi - Jingdian Ban (Unl) [C][f1].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Taikong Zhanshi DX3 - Zuizhong Huanxiang (Unl) [C][f1]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -30941,6 +31139,17 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Work Master 2 DEMO V1.99 (Unl) [C]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>367F</checksum>
+        <crc32>cf80fe7a</crc32>
+        <format>MusicBox</format>
+		<part></part>
+		<banks>1D</banks>
+		<parameters>CFG/Work Master 2 DEMO V1.99 (Unl) [C].cfg</parameters>
 	</rom>
 	<rom>
 		<name>World Circuit Series (U)</name>

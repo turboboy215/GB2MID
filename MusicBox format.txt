@@ -1,0 +1,35 @@
+Song structure
+=======================================
+Data for each song can be found anywhere in ROM data. They are structured as follows, relative to the start of the song:
+
+0x0000-0x00FF = Waveform data
+0x0100-0x01FF = Channel 1-4 pattern list (each 0x40 (64) bytes)
+0x0200-0x02FF = Instrument data
+0x0300-0x03FF = Arpeggio data
+0x0400-0x1FFF = Pattern data (0x38 (56 total), each 0x80 (128) bytes)
+
+Sound effects are also stored in the data for each song as instruments.
+
+Pattern table
+=======================================
+Each channel has its own individual pattern which is comprised of the following values:
+00-37 = Play pattern
+FE = Stop song
+FF = Restart song
+
+Pattern data
+=======================================
+Each pattern is 128 bytes, which is comprised of a series of 2 bytes for each row in a series of 64 rows. Each row is structured as follows:
+
+1. Note (0 if empty)
+2. Instrument (0 if empty)
+
+DICE variant
+=======================================
+Two games developed by DICE (Diva Starz and JumpStart Dino Adventure) use a bizarrely modified version of this sound engine with a form of encryption.
+
+In these games, the channel 1-4 pattern list starts at relative offset 0x0300, and the actual pattern data starts at offset 0x0700.
+
+The values for both of these are the same, but are stored in the ROM encrypted. To decrypt the values for both of these:
+ = Pattern list: Use the byte at offset 0x00E2 and XOR the value, then XOR $29 to get the final value.
+ = Pattern data: Use the byte at offset 0x007A and XOR the value, then XOR $B1 to get the final value.
