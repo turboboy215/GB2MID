@@ -85,3 +85,6 @@
 #define Altron				0x54
 #define MusicBox			0x55
 #define archOnPlayer		0x56
+#define KCE_Kobe			0x57
+#define KCE_Osaka			0x58
+#define KCE_Japan			0x59

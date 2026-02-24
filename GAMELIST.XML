@@ -2860,6 +2860,17 @@
 		<parameters>CFG/Beast Fighter (Unl) [a1][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Beatmania GB (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>75E4</checksum>
+        <crc32>0d9cb195</crc32>
+        <format>KCE_Kobe</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>4000\1</parameters>
+	</rom>
+	<rom>
 		<name>Beauty and the Beast - A Board Game Adventure (E) (M5) [C][!]</name>
 		<gamecode>AVUP</gamecode>
 		<rev>0</rev>
@@ -5247,6 +5258,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Chou Gals! Kotobuki Ran (J) [C][!]</name>
+		<gamecode>BGLJ</gamecode>
+		<rev>0</rev>
+		<checksum>3ADA</checksum>
+        <crc32>90379c16</crc32>
+        <format>KCE_Japan</format>
+		<part></part>
+		<banks>E1</banks>
+		<parameters>4010\1</parameters>
+	</rom>
+	<rom>
 		<name>Chuan Shuo (Unl) [C][f1]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -5553,6 +5575,17 @@
 		<part></part>
 		<banks>5</banks>
 		<parameters>CFG/Crayon Shin-Chan 5 (J) [S].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Crazy Bikers (E) [C][!]</name>
+		<gamecode>AMHP</gamecode>
+		<rev>0</rev>
+		<checksum>A086</checksum>
+        <crc32>53e02b87</crc32>
+        <format>KCE_Osaka</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Crazy Burger (Sachen) [!]</name>
@@ -9405,6 +9438,17 @@
 		<parameters>4C62\48\1</parameters>
 	</rom>
 	<rom>
+		<name>Ganbare Goemon - Mononoke Douchuu Tobisuise Nabebugyou! (J) [C][!]</name>
+		<gamecode>AEFJ</gamecode>
+		<rev>0</rev>
+		<checksum>B5F3</checksum>
+        <crc32>73311cfa</crc32>
+        <format>KCE_Kobe</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>4000\2</parameters>
+	</rom>
+	<rom>
 		<name>Ganbare Goemon - Tengutou no Gyakushuu (J) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -11451,6 +11495,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Hunter X Hunter - Hunter no Keifu (J) [C][!]</name>
+		<gamecode>BHHJ</gamecode>
+		<rev>0</rev>
+		<checksum>ADD8</checksum>
+        <crc32>a1361642</crc32>
+        <format>KCE_Japan</format>
+		<part></part>
+		<banks>C9</banks>
+		<parameters>4010\1</parameters>
+	</rom>
+	<rom>
 		<name>Hype - The Time Quest (E) (M8) [C][!]</name>
 		<gamecode>BHQP</gamecode>
 		<rev>0</rev>
@@ -11702,6 +11757,28 @@
 		<part>2/2=Music</part>
 		<banks>20</banks>
 		<parameters>5\3</parameters>
+	</rom>
+	<rom>
+		<name>International Superstar Soccer 2000 (E) [C][!]</name>
+		<gamecode>BSWP</gamecode>
+		<rev>0</rev>
+		<checksum>06C7</checksum>
+        <crc32>57ea1ec8</crc32>
+        <format>KCE_Osaka</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>International Superstar Soccer 2000 (U) [C][!]</name>
+		<gamecode>BSWE</gamecode>
+		<rev>0</rev>
+		<checksum>6D63</checksum>
+        <crc32>e8fa7203</crc32>
+        <format>KCE_Osaka</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>International Track & Field - Summer Games (E) [C][!]</name>
@@ -12384,6 +12461,17 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Juukou Senki Bullet Battlers (J) [C][!]</name>
+		<gamecode>AZXJ</gamecode>
+		<rev>0</rev>
+		<checksum>32C9</checksum>
+        <crc32>4039c187</crc32>
+        <format>KCE_Kobe</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>4000\1</parameters>
 	</rom>
 	<rom>
 		<name>K.O. - The Pro Boxing (J) [C][!]</name>
@@ -17512,6 +17600,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Motocross Maniacs 2 (U) [C][!]</name>
+		<gamecode>AMHE</gamecode>
+		<rev>0</rev>
+		<checksum>18B0</checksum>
+        <crc32>17d27fa9</crc32>
+        <format>KCE_Osaka</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Mousetrap Hotel (U)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -18304,6 +18403,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>NBA In The Zone (U) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>4E4C</checksum>
+        <crc32>be949f74</crc32>
+        <format>KCE_Kobe</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>4110\1</parameters>
+	</rom>
+	<rom>
+		<name>NBA In The Zone 2000 (E) [C][!]</name>
+		<gamecode>AJ7P</gamecode>
+		<rev>0</rev>
+		<checksum>86C3</checksum>
+        <crc32>e6af6d07</crc32>
+        <format>KCE_Osaka</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>NBA In The Zone 2000 (U) [C][!]</name>
+		<gamecode>AJ7E</gamecode>
+		<rev>0</rev>
+		<checksum>9630</checksum>
+        <crc32>fdb38c49</crc32>
+        <format>KCE_Osaka</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>NBA Jam - Tournament Edition (J) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -18368,6 +18500,17 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>NBA Pro '99 (E) [C][!]</name>
+		<gamecode>ANZP</gamecode>
+		<rev>0</rev>
+		<checksum>48D3</checksum>
+        <crc32>748564ae</crc32>
+        <format>KCE_Kobe</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>4110\1</parameters>
 	</rom>
 	<rom>
 		<name>Nectaris GB (J) [S][!]</name>
@@ -19402,6 +19545,17 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Owarai Yowiko no Game-dou - Oyaji Sagashite Sanchoume (J) [C][!]</name>
+		<gamecode>AYIJ</gamecode>
+		<rev>0</rev>
+		<checksum>CEF9</checksum>
+        <crc32>3f635a4f</crc32>
+        <format>KCE_Kobe</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>4000\2</parameters>
 	</rom>
 	<rom>
 		<name>Pac-Attack (U)</name>
@@ -21307,6 +21461,39 @@
 		<parameters>4000</parameters>
 	</rom>
 	<rom>
+		<name>Pop'n Music GB - Animated Melody (J) [C][!]</name>
+		<gamecode>BPAJ</gamecode>
+		<rev>0</rev>
+		<checksum>7FDC</checksum>
+        <crc32>9b2429a7</crc32>
+        <format>KCE_Kobe</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>4000\3</parameters>
+	</rom>
+	<rom>
+		<name>Pop'n Music GB - Disney Tunes (J) [C][!]</name>
+		<gamecode>BPDJ</gamecode>
+		<rev>0</rev>
+		<checksum>9DBF</checksum>
+        <crc32>48c3c6ef</crc32>
+        <format>KCE_Kobe</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>4000\3</parameters>
+	</rom>
+	<rom>
+		<name>Pop'n Music GB (J) [C][!]</name>
+		<gamecode>BPMJ</gamecode>
+		<rev>0</rev>
+		<checksum>04EE</checksum>
+        <crc32>07e6ca95</crc32>
+        <format>KCE_Kobe</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>4000\3</parameters>
+	</rom>
+	<rom>
 		<name>Pop'n Pop (E) [C][!]</name>
 		<gamecode>BPIP</gamecode>
 		<rev>0</rev>
@@ -21392,6 +21579,39 @@
         <format>Konami</format>
 		<part></part>
 		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pocket Pro Kun Pocket (J) (V1.0) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C4E9</checksum>
+        <crc32>145540d8</crc32>
+        <format>KCE_Osaka</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pocket Pro Kun Pocket (J) (V1.1) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>1</rev>
+		<checksum>B727</checksum>
+        <crc32>894d88f2</crc32>
+        <format>KCE_Osaka</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pocket Pro Kun Pocket 2 (J) [C][!]</name>
+		<gamecode>BPWJ</gamecode>
+		<rev>0</rev>
+		<checksum>A977</checksum>
+        <crc32>c2a4a3eb</crc32>
+        <format>KCE_Osaka</format>
+		<part></part>
+		<banks>7</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -26301,6 +26521,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Spawn (U) [C][!]</name>
+		<gamecode>AAWE</gamecode>
+		<rev>0</rev>
+		<checksum>83A1</checksum>
+        <crc32>72fcb0ad</crc32>
+        <format>KCE_Osaka</format>
+		<part></part>
+		<banks>7D</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Speedball 2 - Brutal Deluxe (J) (Unreleased) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -29150,6 +29381,28 @@
 		<parameters>CFG/TOCA Touring Car Championship (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Tokimeki Memorial Pocket - Culture Hen - Komorebi no Melody (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>4F56</checksum>
+        <crc32>4be4a8ed</crc32>
+        <format>KCE_Kobe</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>4004\1</parameters>
+	</rom>
+	<rom>
+		<name>Tokimeki Memorial Pocket - Sport Hen - Koutei no Photograph (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9886</checksum>
+        <crc32>78e14fa9</crc32>
+        <format>KCE_Kobe</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>4004\1</parameters>
+	</rom>
+	<rom>
 		<name>Tokio Senki (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -31273,6 +31526,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>World Soccer GB 2000 (J) [C][!]</name>
+		<gamecode>BSWJ</gamecode>
+		<rev>0</rev>
+		<checksum>6D63</checksum>
+        <crc32>6775b29e</crc32>
+        <format>KCE_Osaka</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>World Soccer GB2 (J) [C][!]</name>
 		<gamecode>AWZJ</gamecode>
 		<rev>0</rev>
@@ -31911,6 +32175,72 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Yu-Gi-Oh! - Das Dunkle Duell (G) [C][!]</name>
+		<gamecode>BY3D</gamecode>
+		<rev>0</rev>
+		<checksum>FCEA</checksum>
+        <crc32>6ca75ba0</crc32>
+        <format>KCE_Japan</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>2B74\2</parameters>
+	</rom>
+	<rom>
+		<name>Yu-Gi-Oh! - Duel des Tenebres (F) [C][!]</name>
+		<gamecode>BY3F</gamecode>
+		<rev>0</rev>
+		<checksum>A34F</checksum>
+        <crc32>5b72bab5</crc32>
+        <format>KCE_Japan</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>2B74\2</parameters>
+	</rom>
+	<rom>
+		<name>Yu-Gi-Oh! - Duelo en las Tinieblas (S) [C][!]</name>
+		<gamecode>BY3S</gamecode>
+		<rev>0</rev>
+		<checksum>7DC0</checksum>
+        <crc32>dc160f10</crc32>
+        <format>KCE_Japan</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>2B74\2</parameters>
+	</rom>
+	<rom>
+		<name>Yu-Gi-Oh! - Racconti Oscuri (I) [C][!]</name>
+		<gamecode>BY3I</gamecode>
+		<rev>0</rev>
+		<checksum>AEFB</checksum>
+        <crc32>8a6b0948</crc32>
+        <format>KCE_Japan</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>2B74\2</parameters>
+	</rom>
+	<rom>
+		<name>Yu-Gi-Oh! Dark Duel Stories (E) [C][!]</name>
+		<gamecode>BY3P</gamecode>
+		<rev>0</rev>
+		<checksum>2B74</checksum>
+        <crc32>338e2cda</crc32>
+        <format>KCE_Japan</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>2B74\2</parameters>
+	</rom>
+	<rom>
+		<name>Yu-Gi-Oh! Dark Duel Stories (U) [C][!]</name>
+		<gamecode>BY3E</gamecode>
+		<rev>0</rev>
+		<checksum>E8F4</checksum>
+        <crc32>803a56ae</crc32>
+        <format>KCE_Japan</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>2B74\2</parameters>
+	</rom>
+	<rom>
 		<name>Yu-Gi-Oh! Duel Monsters (J) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -31922,6 +32252,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Yu-Gi-Oh! Duel Monsters 4 - Saikyou Kettousha Senki - Jounouchi Deck (J) [C][!]</name>
+		<gamecode>BY6J</gamecode>
+		<rev>0</rev>
+		<checksum>B72B</checksum>
+        <crc32>298bd054</crc32>
+        <format>KCE_Japan</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>2949\1</parameters>
+	</rom>
+	<rom>
+		<name>Yu-Gi-Oh! Duel Monsters 4 - Saikyou Kettousha Senki - Kaiba Deck (J) [C][!]</name>
+		<gamecode>BY5J</gamecode>
+		<rev>0</rev>
+		<checksum>0AF7</checksum>
+        <crc32>a4d06001</crc32>
+        <format>KCE_Japan</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>2949\1</parameters>
+	</rom>
+	<rom>
+		<name>Yu-Gi-Oh! Duel Monsters 4 - Saikyou Kettousha Senki - Yuugi Deck (J) [C][!]</name>
+		<gamecode>BY4J</gamecode>
+		<rev>0</rev>
+		<checksum>F335</checksum>
+        <crc32>4d6105f6</crc32>
+        <format>KCE_Japan</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>2949\1</parameters>
+	</rom>
+	<rom>
 		<name>Yu-Gi-Oh! Duel Monsters II - Yamikai Kettouki (J) [C][!]</name>
 		<gamecode>AYKJ</gamecode>
 		<rev>0</rev>
@@ -31931,6 +32294,17 @@
 		<part></part>
 		<banks>3F</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Yu-Gi-Oh! Duel Monsters III - Sanseisenshin Kourin (J) [C][!]</name>
+		<gamecode>BY3J</gamecode>
+		<rev>0</rev>
+		<checksum>3AE7</checksum>
+        <crc32>9f9dbab4</crc32>
+        <format>KCE_Japan</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>2B67\2</parameters>
 	</rom>
 	<rom>
 		<name>Yu-Gi-Oh! Monster Capsule GB (J) [C][!]</name>

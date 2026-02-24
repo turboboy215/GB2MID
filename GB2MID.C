@@ -795,6 +795,18 @@ int main(int args, char* argv[])
             {
                 driver = Karma_Studios;
             }
+            else if (!strcmp(formatString, "KCE_Japan"))
+            {
+                driver = KCE_Japan;
+            }
+            else if (!strcmp(formatString, "KCE_Kobe"))
+            {
+                driver = KCE_Kobe;
+            }
+            else if (!strcmp(formatString, "KCE_Osaka"))
+            {
+                driver = KCE_Osaka;
+            }
             else if (!strcmp(formatString, "Kemco"))
             {
                 driver = Kemco;
