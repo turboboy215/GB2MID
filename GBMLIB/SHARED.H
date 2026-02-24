@@ -87,6 +87,9 @@
 #define Altron				0x54
 #define MusicBox			0x55
 #define archOnPlayer		0x56
+#define KCE_Kobe			0x57
+#define KCE_Osaka			0x58
+#define KCE_Japan			0x59
 
 extern FILE * rom, * mid;
 extern long masterBank;
@@ -126,5 +129,7 @@ extern unsigned int WriteNoteEventGen(unsigned char* buffer, unsigned int pos, u
 extern unsigned int WriteNoteEvent45(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 extern unsigned int WriteNoteEventOn(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 extern unsigned int WriteNoteEventOff(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
+extern unsigned int WriteNoteEventAltOn(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
+extern unsigned int WriteNoteEventAltOff(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 extern int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 extern void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameters[4][100]);

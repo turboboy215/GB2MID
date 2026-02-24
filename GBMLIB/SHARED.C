@@ -42,6 +42,9 @@
 #include "JEROTEL.H"
 #include "JSAITO.H"
 #include "KARMA.H"
+#include "KCEK.H"
+#include "KCEO.H"
+#include "KCEJ.H"
 #include "KEMCO.H"
 #include "KONAMI.H"
 #include "KSADA.H"
@@ -594,6 +597,15 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Karma_Studios:
 			KarmaProc(banks[curBank]);
+			break;
+		case KCE_Japan:
+			KCEJProc(banks[curBank], parameters);
+			break;
+		case KCE_Kobe:
+			KCEKProc(banks[curBank], parameters);
+			break;
+		case KCE_Osaka:
+			KCEOProc(banks[curBank]);
 			break;
 		case Kemco:
 			KemcoProc(banks[curBank], parameters);
