@@ -1,0 +1,27 @@
+Song table
+=======================================
+The song table is comprised as follows:
+
+(Version 1)
+1-2. Song pointer
+3-4. Bank number
+
+(Version 2)
+1-2. Bank number
+3-4. Song pointer
+
+Song commands
+=======================================
+Songs have all channels "interleaved" into one, with multiple "bars" as time units. The instrumentation is limited, with all instruments using the same duty cycle. Each "bar" ends with a time unit representing the amount of time per bar, and is structured as follows:
+
+00-7F = End of bar (Time)
+8x yy = Note on (X = Channel, Y = Note)
+9x = Note off
+Ax yy = Set channel volume (X = Channel, Y = Note)
+C0 = (Invalid)
+C8 = (Invalid)
+F0 = Song loop
+FE = End of song (no loop)?
+FF = End of song (loop)
+
+Based on these observations, music was likely converted from MIDI, specifically type 0.

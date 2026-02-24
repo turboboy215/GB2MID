@@ -1,0 +1,83 @@
+Song table
+=======================================
+The song table includes the bank number and pointers for each of the four channels of a song. It can be found with the following code:
+
+add hl, hl
+add hl, hl
+add hl, hl
+add hl, de
+ld de, SongTable
+add hl, de
+
+Which equals the following in hex:
+29 29 29 19 11 ?? ?? 19
+
+Each entry in the song table is structured as follows:
+1. Bank number
+2-3. Channel 1 pointer
+4-5. Channel 2 pointer
+6-7. Channel 3 pointer
+8-9. Channel 4 pointer
+
+Channel patterns
+=======================================
+Data for each channel of a song is comprised of the following commands:
+00-7F (xx yy zz) = Play note
+7654 3210
+(Bit 4: Note or rest?)
+(Bit 5: Length)
+(Bit 6: New note)
+(Bit 0-3: ?)
+(Byte 2: Note size?)
+(Byte 3: Note length)
+(Byte 4: Note)
+80 = Set duty = 00
+81 = Set duty = 40
+82 = Set duty = 80
+83 = Set duty = C0
+84-93 = Set waveform
+94 = Noise mode = 00
+95 = Noise mode = 08
+96-A5 = Set note size?
+A6-AD = Set decay?
+AE = Set panning - L
+AF = Set panning - R
+B0 = Set panning - L/R
+B1-BF = Invalid (same as C0)
+C0 = End of song
+C1 = Repeat 1 start
+C2 = Repeat 2 start
+C3 = Song loop start
+C4 = Mark conditional jump point
+C5 = Repeat end (conditional)
+ - If 0 (default), then increase C4 count variable by 1
+ - If 1, then subtract 1 (0), mark current position as end of conditional repeat section, and jump to point marked by C4
+ - Else, then subtract 1 and go to current position previously marked
+C6 = Song loop end
+C7-CF = Invalid (same as C0)
+D0 xx = Set tempo
+D1 xx = ?
+D2 xx = Set note size? (absolute)
+D3 xx = ?
+D4 xx = Set transpose
+D5 xx = Set tuning
+D6 xx = Set decay? (absolute) 
+D7 = Invalid
+D8 = Invalid
+D9 xx = Rest
+DA xx = Set envelope gain?
+DB = Reset channel 1?
+DC-DF = Invalid (same as C0)
+E0 xx = ?
+E1 xx yy = Pitch bend
+E2 xx yy = Fade effect
+E3 xx yy = Hold note (X = Length, Y = Size)
+E4 xx xx = Jump to position
+E5-EF = Invalid (same as C0)
+F0 = ?
+F1 xx yy zz = Set pitch distortion?
+F2 xx yy zz = ?
+F3 xx yy zz = Repeat 1 end (X = Number of times)
+F4 xx yy zz = Repeat 2 end (X = Number of times)
+F5 xx yy = ?
+F6 xx yy = ?

@@ -1,0 +1,74 @@
+Song table
+=======================================
+The song table, consisting of the data for both music and sound effects, is a series of 16-bit (2-byte) pointers.
+
+Song headers
+=======================================
+Each song or sound effect has a "header" as follows:
+
+1. ?
+2. Channel mask (interestingly, appears to be the same as the original Konami engine):
+1234 5678
+   1 = Unused?
+   2 = Channel 4 music
+   3 = Channel 3 music
+   4 = Channel 2 music
+   5 = Channel 1 music
+   6 = Channel 4 SFX
+   7 = Channel 2 SFX?
+   8 = Channel 1 SFX
+3. Bank
+4-5. (repeat for number of channels present) = Channel pointer
+
+NOTE: In later games, the position of the channel mask and bank are switched around.
+
+Channel patterns
+=======================================
+Data for each channel of a song or sound effect is comprised of the following commands:
+00-60 xx = Play note (X = Length)
+61-6C = Set transpose (positive) - 1-12
+6D-6F = (Invalid)
+70-7C = Set transpose (negative) - 1-12
+7D xx = Slur?
+7E xx (yy) = Pitch bend (if X is 0, then skip Y)
+7F xx = Set duty (absolute)
+80-8F = Set waveform
+90-93 = Set duty
+94 xx = Set sweep?
+95 = (Invalid)
+96 xx yy = Set fade effect?
+97 xx = Envelope fade speed?
+98-9F = (Invalid)
+A0-A7/A9-AB = Set pitch bend speed?
+A8 = (Invalid)
+AC-AF = (Invalid)
+B0 xx yy zz = Set channel speed and set fade effect?
+B1 xx yy zz = Set vibrato?, panning?, and channel speed
+B2 xx yy zz = Set channel speed, duty, and fade effect?
+B3 xx yy zz aa = Set fade effect?, vibrato?, panning?, and channel speed
+B4 xx yy zz aa = Set channel speed, vibrato?, panning?, and duty
+B5 xx yy zz aa = Set vibrato?, panning?, duty, and fade effect?
+B6 xx yy zz aa bb = Set channel speed, vibrato?, panning?, duty, and fade effect?
+B7-BC = (Invalid)
+BD xx = Play the next note X times? (Lengths of note uses the following X bytes after the note value itself)
+BE (xx) = Toggle automatic note length (if 1st time, then X = length, if 2nd time, then disable automatic note length)
+BF = Repeat last note and length
+C0-CF = Set note volume?
+D0 xx = Set channel speed
+D1-D3 = Set panning?
+D4 xx = ?
+D5 xx = ?
+D6-DE = (Invalid)
+DF = ?
+E0 xx yy = Set fade effect? and ?
+E1 xx yy zz = Set fade effect, ?, and panning
+E2 xx yy zz = Set ?, panning, and ?
+E3 xx yy zz aa = Set fade effect?, ?, panning, and ?
+E4-F8 = (Invalid)
+F9 xx yy yy = Conditional jump (X = ?, Y = Jump to position)
+FA xx xx = Jump to position
+FB (xx) = Repeat 1 (1st time: Start of repeat, 2nd time with X: Repeat this section X times)
+FC (xx) = Repeat 2 (1st time: Start of repeat, 2nd time with X: Repeat this section X times)
+FD (xx xx) = Go to macro (if in macro, then return from macro)
+FE = Channel loop point
+FF = End of channel
