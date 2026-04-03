@@ -88,3 +88,5 @@
 #define KCE_Kobe			0x57
 #define KCE_Osaka			0x58
 #define KCE_Japan			0x59
+#define Equilibrium			0x5A
+#define UGB_Player			0x5B

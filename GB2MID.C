@@ -743,6 +743,10 @@ int main(int args, char* argv[])
             {
                 driver = Ei_How_Yang;
             }
+            else if (!strcmp(formatString, "Equilibrium"))
+            {
+                driver = Equilibrium;
+            }
             else if (!strcmp(formatString, "Factor_5"))
             {
                 driver = Factor_5;
@@ -982,6 +986,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "TOSE"))
             {
                 driver = TOSE;
+            }
+            else if (!strcmp(formatString, "UGB_Player"))
+            {
+                driver = UGB_Player;
             }
             else if (!strcmp(formatString, "Visual_Impact"))
             {

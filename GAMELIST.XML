@@ -1980,6 +1980,28 @@
 		<parameters>CFG/Atsumete Asobu Kuma no Pooh-san - Mori no Takaramono (J) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Attack of the Killer Tomatoes (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B291</checksum>
+        <crc32>23068679</crc32>
+        <format>Equilibrium</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>CFG/Attack of the Killer Tomatoes (J).cfg</parameters>
+	</rom>
+	<rom>
+		<name>Attack of the Killer Tomatoes (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7C8F</checksum>
+        <crc32>b5b38860</crc32>
+        <format>Equilibrium</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>CFG/Attack of the Killer Tomatoes (U) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Austin Powers - Oh, Behave! (E) (M5) [C][!]</name>
 		<gamecode>BAPX</gamecode>
 		<rev>0</rev>
@@ -3320,6 +3342,17 @@
 		<part></part>
 		<banks>B</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Bo Jackson Hit and Run (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>AFEB</checksum>
+        <crc32>7edb78ab</crc32>
+        <format>Equilibrium</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>CFG/Bo Jackson Hit and Run (U) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Boarder Zone (U) [C][!]</name>
@@ -8690,6 +8723,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Flash, The (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C89A</checksum>
+        <crc32>6deb1f06</crc32>
+        <format>Equilibrium</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>CFG/Flash, The (U) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Flintstones, The - Burgertime in Bedrock (E) (M5) [C][!]</name>
 		<gamecode>BFSP</gamecode>
 		<rev>0</rev>
@@ -11691,6 +11735,17 @@
 		<part></part>
 		<banks>05</banks>
 		<parameters>CFG/Inspector Gadget - Operation Madkactus (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>International Karate (E) [C][!]</name>
+		<gamecode>BIKP</gamecode>
+		<rev>0</rev>
+		<checksum>5225</checksum>
+        <crc32>12e00808</crc32>
+        <format>UGB_Player</format>
+		<part></part>
+		<banks>2F</banks>
+		<parameters>CFG/International Karate (E) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>International Rally (U) [C][!]</name>
@@ -14993,6 +15048,28 @@
 		<parameters>CFG/Mach Go Go Go (J) [S].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Madden '95 (UE) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E077</checksum>
+        <crc32>d2585bbb</crc32>
+        <format>Equilibrium</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>CFG/Madden '95 (UE) [S][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Madden '96 (U) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3869</checksum>
+        <crc32>fd9dc1ad</crc32>
+        <format>Equilibrium</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>CFG/Madden '96 (U) [S][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Madden '97 (U) [S][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -15013,6 +15090,28 @@
 		<part></part>
 		<banks>18</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Madden NFL 2001 (U) [C][!]</name>
+		<gamecode>BNFE</gamecode>
+		<rev>0</rev>
+		<checksum>93FF</checksum>
+        <crc32>160e9e3c</crc32>
+        <format>Equilibrium</format>
+		<part></part>
+		<banks>22</banks>
+		<parameters>CFG/Madden NFL 2001 (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Madden NFL 2002 (U) [C][!]</name>
+		<gamecode>B2ME</gamecode>
+		<rev>0</rev>
+		<checksum>871B</checksum>
+        <crc32>de1338d2</crc32>
+        <format>Equilibrium</format>
+		<part></part>
+		<banks>22</banks>
+		<parameters>CFG/Madden NFL 2002 (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Magi Nation - Keeper's Quest (U) (Unreleased) [C][!]</name>
@@ -22770,6 +22869,17 @@
 		<parameters>1\2A9C</parameters>
 	</rom>
 	<rom>
+		<name>Rap Quest (U) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>78E7</checksum>
+        <crc32>37de1978</crc32>
+        <format>Equilibrium</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>CFG/Rap Quest (U) (Unreleased) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Rats! (U) (M2) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -23054,6 +23164,28 @@
 		<part></part>
 		<banks>18</banks>
 		<parameters>CFG/Rhino Rumble (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Riddick Bowe Boxing (E) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>BEF5</checksum>
+        <crc32>8de1ae9c</crc32>
+        <format>Equilibrium</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Riddick Bowe Boxing (E) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Riddick Bowe Boxing (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>994D</checksum>
+        <crc32>fb5d24e0</crc32>
+        <format>Equilibrium</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Riddick Bowe Boxing (U).cfg</parameters>
 	</rom>
 	<rom>
 		<name>Ring Rage (J)</name>
@@ -26422,13 +26554,46 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Space Invasion (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7855</checksum>
+        <crc32>2b2d9868</crc32>
+        <format>UGB_Player</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>CFG/Space Invasion (Unl) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Space Invasion & Karate Joe (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D580</checksum>
+        <crc32>6a184c55</crc32>
+        <format>UGB_Player</format>
+		<part>1/1=Space Invasion</part>
+		<banks>3</banks>
+		<parameters>CFG/Space Invasion & Karate Joe (Unl) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Space Invasion & Painter (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>19C9</checksum>
+        <crc32>bd4c1065</crc32>
+        <format>UGB_Player</format>
+		<part>1/2=Space Invasion</part>
+		<banks>3</banks>
+		<parameters>CFG/Space Invasion & Painter (Unl) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Space Invasion & Painter (Unl) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
 		<checksum>19C9</checksum>
         <crc32>bd4c1065</crc32>
         <format>AudioArts</format>
-		<part>1/1=Painter</part>
+		<part>2/2=Painter</part>
 		<banks>20</banks>
 		<parameters></parameters>
 	</rom>
@@ -26785,6 +26950,17 @@
 		<parameters>CFG/Sports Collection (J) - Dodge Boy.cfg</parameters>
 	</rom>
 	<rom>
+		<name>Sports Illustrated - Football & Baseball (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>BEF5</checksum>
+        <crc32>235171c4</crc32>
+        <format>Equilibrium</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>CFG/Sports Illustrated - Football & Baseball (U) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Sports Illustrated - Golf Classic (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -26794,6 +26970,17 @@
 		<part></part>
 		<banks>10</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Sports Illustrated for Kids - The Ultimate Triple Dare! (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C66B</checksum>
+        <crc32>f0d76d49</crc32>
+        <format>Equilibrium</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>CFG/Sports Illustrated for Kids - The Ultimate Triple Dare! (U) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Spot - The Cool Adventure (J)</name>
@@ -28125,6 +28312,17 @@
 		<part></part>
 		<banks>11</banks>
 		<parameters>CFG/Suzuki Alstare Extreme Racing (U) (Unreleased) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Swamp Thing (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F7B3</checksum>
+        <crc32>76ae62c8</crc32>
+        <format>Equilibrium</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>CFG/Swamp Thing (U) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Sweet Ange (J) [C][!]</name>
@@ -32569,6 +32767,17 @@
 		<part></part>
 		<banks>7C</banks>
 		<parameters>B\486F</parameters>
+	</rom>
+	<rom>
+		<name>Zidane Football Generation (E) (M5) [C][!]</name>
+		<gamecode>BZSP</gamecode>
+		<rev>0</rev>
+		<checksum>CDAC</checksum>
+        <crc32>e96dbfb5</crc32>
+        <format>UGB_Player</format>
+		<part></part>
+		<banks>E</banks>
+		<parameters>CFG/Zidane Football Generation (E) (M5) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Zipball (Sachen 4-in-1 Vol. 9) (Unl) [!]</name>
