@@ -1,0 +1,63 @@
+Song header
+=======================================
+Each song has a header which is comprised as follows:
+
+1. Number of channels
+2-3. Channel pointer
+4. Channel number
+(Repeat 2-3 for the number of channels specified)
+
+Song commands
+=======================================
+In Bo Jackson Hit and Run and Attack of the Killer Tomatoes, the following commands are used:
+
+00-7F xx = Play note (X = Length)
+80 xx = Rest (X = Length)
+81 xx = Set duty
+82 xx = Set transpose
+83 xx = Set note size
+84 xx = Set decay
+85 xx = Set volume
+86 xx = Set panning
+87 xx = Set sweep
+88 xx = Set tuning
+8F = Restart song
+90 = Restart channel
+91 xx yy yy = Repeat section (level 1) (X = Number of times, Y = Position)
+92 xx yy yy = Repeat section (level 2) (X = Number of times, Y = Position)
+93 xx xx yy yy = Conditional jump?
+94 xx xx = Jump to position
+95 xx xx = Go to macro
+96 = Return from macro
+A2 xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx = Set waveform
+B0 xx yy = ?
+FD = Restart channel?
+FE = End channel
+
+In all other games, the following commands are used:
+
+00-7F xx = Play note (X = Length)
+80 xx = Rest (X = Length - if 00, then 256)
+EA xx = Set duty
+EB xx = Set transpose
+EC xx = Set note size
+ED xx = Set decay
+EE xx = Set volume
+EF xx = Set panning
+F0 xx = Set sweep
+F1 xx = Set tuning
+F2 = Restart song
+F3 = Restart channel
+F4 xx yy yy = Repeat section (X = Number of times, Y = Position)
+F5 xx xx = ?
+F6 xx xx = Jump to position
+F7/F8 xx yy yy = Conditional jump? (X = ?, Y = Position)
+F9 xx xx = Go to macro
+FA = Return from macro
+FB xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx = Set waveform
+FC = ?
+FD = ?
+FE = End of channel
+FF = Restart channel?
+
+In most games, pointers are little-endian. Note that in Madden NFL 2001 and 2002, however, pointers are big-endian.

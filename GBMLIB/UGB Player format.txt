@@ -1,0 +1,32 @@
+Song pointers
+=======================================
+Each song has four pointers, one for each channel of the song. These are structured as follows:
+
+1-2. Channel 1 pointer
+3-4. Channel 2 pointer
+5-6. Channel 4 pointer?
+7-8. Channel 3 pointer?
+
+Song patterns
+=======================================
+Each channel of a song has its own pattern which call various sequences from a table. Each pattern uses the following commands:
+
+00-FD? xy = Play sequence (X = Transpose, Y = Number of times to play)
+FE = End of channel
+FF = Restart channel
+
+Sequences
+=======================================
+Each sequence uses the following commands:
+
+00-F9 xx = Play note (X = Length)
+FA xx yy = Pitch bend (X = Amount, Y = Length)
+FB xx = Set instrument
+FC xx = Hold note
+FD xx = Rest
+FE = End of pattern
+
+Notes
+=======================================
+ - Each song has its own tempo which is hardcoded as two byte values. This should be addressed.
+ - International Karate copies the necessary sound data into RAM and the sound data is loaded there. However, the RAM start addresses differ between songs, and the relevant information is required to play each song.
