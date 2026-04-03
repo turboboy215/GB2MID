@@ -1,0 +1,47 @@
+/*Equilibrium*/
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <stddef.h>
+
+/*Equilibrium*/
+
+#define EQUIL_VER_EARLY		1
+#define EQUIL_VER_COMMON	2
+#define EQUIL_VER_GBC		3
+
+enum EquilEventTypes
+{
+	EQUIL_EVENT_UNKNOWN0 = 1,
+	EQUIL_EVENT_NOP,
+	EQUIL_EVENT_UNKNOWN1,
+	EQUIL_EVENT_UNKNOWN2,
+	EQUIL_EVENT_DUTY,
+	EQUIL_EVENT_TRANSPOSE,
+	EQUIL_EVENT_NOTEDUR,
+	EQUIL_EVENT_DECAY,
+	EQUIL_EVENT_VOLUME,
+	EQUIL_EVENT_PAN,
+	EQUIL_EVENT_SWEEP,
+	EQUIL_EVENT_TUNING,
+	EQUIL_EVENT_RESTART_SONG,
+	EQUIL_EVENT_RESTART_CHANNEL,
+	EQUIL_EVENT_REPEAT1,
+	EQUIL_EVENT_REPEAT2,
+	EQUIL_EVENT_CONDITIONAL_JUMP,
+	EQUIL_EVENT_JUMP,
+	EQUIL_EVENT_CALL,
+	EQUIL_EVENT_RETURN,
+	EQUIL_EVENT_WAVE,
+	EQUIL_EVENT_STOP,
+
+};
+
+unsigned int EQUIL_STATUS_REST;
+unsigned int EQUIL_STATUS_NOTE_MIN;
+unsigned int EQUIL_STATUS_NOTE_MAX;
+
+unsigned int EventMap[256];
+
+/*Function prototypes*/
+void EquilProc(char parameters[4][100]);

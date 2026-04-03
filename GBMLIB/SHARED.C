@@ -32,6 +32,7 @@
 #include "EASTRDGE.H"
 #include "EDMAGNIN.H"
 #include "EHY.H"
+#include "EQUIL.H"
 #include "FACTOR5.H"
 #include "GAMEFRK.H"
 #include "GEX.H"
@@ -89,6 +90,7 @@
 #include "TITUS1.H"
 #include "TITUS2.H"
 #include "TOSE.H"
+#include "UGB.H"
 #include "VI.H"
 #include "WARIOL2.H"
 #include "WINKYSFT.H"
@@ -559,6 +561,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case Ei_How_Yang:
 			EHYProc(banks[curBank], parameters);
 			break;
+		case Equilibrium:
+			EquilProc(parameters);
+			break;
 		case Factor_5:
 			F5Proc(banks[curBank]);
 			break;
@@ -738,6 +743,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case TOSE:
 			TOSEProc(parameters);
+			break;
+		case UGB_Player:
+			UGBProc(parameters);
 			break;
 		case Visual_Impact:
 			VIProc(banks[curBank], parameters);
