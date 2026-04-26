@@ -1,7 +1,12 @@
 /*Cosmigo*/
 #include <stdio.h>
 #include <string.h>
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include "SHARED.H"
 #include "COSMIGO.H"
 
@@ -192,7 +197,11 @@ void Cosmigosong2xm(int songNum, long ptr, int numRows, int tempo, int volume)
 	if (multiBanks != 0)
 	{
 		snprintf(folderName, sizeof(folderName), "Bank %i", (curBank + 1));
+		#ifdef _WIN32
 		_mkdir(folderName);
+		#else
+		mkdir(folderName, 0777);
+		#endif
 	}
 
 	xmLength = 0x10000;

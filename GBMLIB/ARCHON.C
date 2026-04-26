@@ -4,6 +4,12 @@
 #include <stdio.h>
 #include <string.h>
 #include <stddef.h>
+#ifdef _WIN32
+#include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include "ARCHON.H"
 
 #define bankSize 16384
@@ -121,7 +127,11 @@ void archOnsong2xm(int songNum, long songPtr)
 	if (multiBanks != 0)
 	{
 		snprintf(folderName, sizeof(folderName), "Bank %i", (curBank + 1));
+		#ifdef _WIN32
 		_mkdir(folderName);
+		#else
+		mkdir(folderName, 0777);
+		#endif
 	}
 
 	xmLength = 0x40000;

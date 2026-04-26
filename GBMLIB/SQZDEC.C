@@ -24,6 +24,7 @@ int decompPos;
 unsigned char* compData;
 unsigned char* decompData;
 
+unsigned short ReadLE16(unsigned char* Data);
 unsigned short ReadLE162(unsigned char* Data);
 
 /*Convert little-endian pointer to big-endian*/
@@ -130,7 +131,7 @@ void UnSQZ(unsigned char* compData, unsigned char* decompData, long compLength)
             if (dict_character != NULL)
                 free(dict_character);
             printf("ERROR: Insufficient memory!\n");
-            return (-2);
+            return;
         }
 
         while ((k_pos < compLength) && (out_pos < decmpSize)) {
@@ -168,7 +169,7 @@ void UnSQZ(unsigned char* compData, unsigned char* decompData, long compLength)
                             free(dict_prefix);
                             free(dict_character);
                             printf("ERROR: Invalid file!\n");
-                            return (-1);
+                            return;
                         }
                     }
                     dict_stack[i++] = tmp_k;
@@ -191,7 +192,7 @@ void UnSQZ(unsigned char* compData, unsigned char* decompData, long compLength)
                         {
                             free(dict_prefix);
                             free(dict_character);
-                            return (-1);
+                            return;
                         }
                     }
                     dict_stack[i++] = tmp_k;

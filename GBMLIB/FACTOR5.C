@@ -1,7 +1,12 @@
 /*Factor 5 (early - Probotector 2/Animaniacs)*/
 #include <stdio.h>
 #include <string.h>
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include "SHARED.H"
 #include "FACTOR5.H"
 

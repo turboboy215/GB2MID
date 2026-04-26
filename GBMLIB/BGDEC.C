@@ -6,6 +6,8 @@
 #include <stddef.h>
 #include <stdint.h>
 
+unsigned short ReadLE16(unsigned char* Data);
+
 #define bankSize 16384
 
 FILE* cmp, * bin;

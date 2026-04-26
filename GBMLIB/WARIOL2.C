@@ -1,7 +1,12 @@
 /*Nintendo (Kozue Ishikawa) (Wario Land 2/3)*/
 #include <stdio.h>
 #include <string.h>
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include "SHARED.H"
 #include "WARIOL2.H"
 

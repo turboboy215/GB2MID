@@ -1,7 +1,12 @@
 /*AudioArts*/
 #include <stdio.h>
 #include <string.h>
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include "SHARED.H"
 #include "AUDIOART.H"
 
@@ -172,7 +177,7 @@ void AAProc(int bank)
 		}
 	}
 
-	if (tableOffset != NULL && seqOffset != NULL)
+	if (tableOffset != 0 && seqOffset != 0)
 	{
 		songNum = 1;
 		i = tableOffset;
@@ -180,7 +185,11 @@ void AAProc(int bank)
 		if (multiBanks != 0)
 		{
 			snprintf(folderName, sizeof(folderName), "Bank %i", (curBank + 1));
+			#ifdef _WIN32
 			_mkdir(folderName);
+			#else
+			mkdir(folderName, 0777);
+			#endif
 		}
 
 		if (format == 1)

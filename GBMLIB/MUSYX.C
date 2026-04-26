@@ -1,7 +1,12 @@
 /*MusyX (Factor 5)*/
 #include <stdio.h>
 #include <string.h>
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include "SHARED.H"
 #include "MUSYX.H"
 #include "WAV.H"
@@ -686,7 +691,7 @@ void sam2wav(int sampNum, long ptr, long size, int bank, int quality)
 	int sampleRate = 8192;
 	unsigned char lowNibble = 0;
 	unsigned char highNibble = 0;
-	unsigned static char* rawData;
+	unsigned char* rawData;
 	int rawLength = 0x100000;
 
 	sprintf(outfile2, "sample%i.wav", sampNum);

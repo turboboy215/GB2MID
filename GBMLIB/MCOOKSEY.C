@@ -1,7 +1,12 @@
 /*Mark Cooksey*/
 #include <stdio.h>
 #include <string.h>
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include "SHARED.H"
 #include "MCOOKSEY.H"
 
@@ -317,7 +322,7 @@ void MCProc(int bank)
 
 	}
 
-	if (tableOffset != NULL)
+	if (tableOffset != 0)
 	{
 		songNum = 1;
 		if (sysMode == 1)
@@ -526,7 +531,11 @@ void MCsong2mid(int songNum, long ptrs[], long nextPtr)
 	if (multiBanks != 0)
 	{
 		snprintf(folderName, sizeof(folderName), "Bank %i", (curBank + 1));
+		#ifdef _WIN32
 		_mkdir(folderName);
+		#else
+		mkdir(folderName, 0777);
+		#endif
 	}
 
 	midLength = 0x10000;
@@ -1246,7 +1255,7 @@ void MCgetMacroList(unsigned long list[], long offset, long sfxTable)
 				tempCurValue = (ReadLE16(&romData[newOffset + 2 - bankAmt]));
 				if (tempCurValue == 10794)
 				{
-					list[j] = NULL;
+					list[j] = 0;
 					highestMacro = j - 1;
 					break;
 				}

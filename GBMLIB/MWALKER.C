@@ -2,7 +2,12 @@
 /*For Metal Walker, see TOSE.*/
 #include <stdio.h>
 #include <string.h>
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include "SHARED.H"
 #include "MWALKER.H"
 
@@ -51,9 +56,9 @@ unsigned long seqList[500];
 unsigned long chanPts[3];
 int totalSeqs;
 
-unsigned static char* romData;
-unsigned static char* midData;
-unsigned static char* ctrlMidData;
+unsigned char* romData;
+unsigned char* midData;
+unsigned char* ctrlMidData;
 
 long midLength;
 
@@ -371,7 +376,11 @@ void MWsong2mid(int songNum, long ptrs[4], long nextPtr)
 	if (multiBanks != 0)
 	{
 		snprintf(folderName, sizeof(folderName), "Bank %i", (curBank + 1));
+		#ifdef _WIN32
 		_mkdir(folderName);
+		#else
+		mkdir(folderName, 0777);
+		#endif
 	}
 
 	for (switchNum = 0; switchNum < 400; switchNum++)

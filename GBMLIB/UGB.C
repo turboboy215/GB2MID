@@ -1,7 +1,12 @@
 /*UGB Player (by Thalamus/Jon Wells)*/
 #include <stdio.h>
 #include <string.h>
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include "SHARED.H"
 #include "UGB.H"
 
@@ -19,7 +24,7 @@ long bankAmt;
 int curInst;
 int drvVers;
 int curVol;
-int masterBank;
+long masterBank;
 int songBank;
 int songIndex;
 int speed1;
@@ -53,10 +58,10 @@ void Write8B(unsigned char* buffer, unsigned int value);
 void WriteBE32(unsigned char* buffer, unsigned long value);
 void WriteBE24(unsigned char* buffer, unsigned long value);
 void WriteBE16(unsigned char* buffer, unsigned int value);
-unsigned int WriteNoteEvent(unsigned static char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
+unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 unsigned int WriteNoteEventOn(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 unsigned int WriteNoteEventOff(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
-int WriteDeltaTime(unsigned static char* buffer, unsigned int pos, unsigned int value);
+int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 void UGBsong2mid(int songNum);
 
 void UGBProc(char parameters[4][100])

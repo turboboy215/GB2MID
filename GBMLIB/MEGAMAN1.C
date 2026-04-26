@@ -5,7 +5,12 @@
 #include <stdio.h>
 #include <string.h>
 #include <stddef.h>
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include "SHARED.H"
 #include "MEGAMAN1.H"
 
@@ -57,9 +62,9 @@ unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned in
 int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 void MM1song2mid(int songNum, long ptr);
 
-unsigned static char* romData;
-unsigned static char* midData;
-unsigned static char* ctrlMidData;
+unsigned char* romData;
+unsigned char* midData;
+unsigned char* ctrlMidData;
 
 long midLength;
 
@@ -197,7 +202,11 @@ void MM1song2mid(int songNum, long ptr)
 	if (multiBanks != 0)
 	{
 		snprintf(folderName, sizeof(folderName), "Bank %i", (curBank + 1));
+		#ifdef _WIN32
 		_mkdir(folderName);
+		#else
+		mkdir(folderName, 0777);
+		#endif
 	}
 
 	midLength = 0x10000;

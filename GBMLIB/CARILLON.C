@@ -1,7 +1,12 @@
 /*Carillon Player (Aleski Eeben)*/
 #include <stdio.h>
 #include <string.h>
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include "SHARED.H"
 #include "CARILLON.H"
 
@@ -26,9 +31,9 @@ int curBank;
 
 char folderName[100];
 
-unsigned static char* romData;
-unsigned static char* xmData;
-unsigned static char* endData;
+unsigned char* romData;
+unsigned char* xmData;
+unsigned char* endData;
 long xmLength;
 
 const unsigned int SongLocs[8] = { 0x00, 0x80, 0x40, 0xC0, 0x20, 0x60, 0xA0, 0xE0 };
@@ -144,7 +149,11 @@ void Carillonsong2xm(int songNum, long ptr)
 	if (multiBanks != 0)
 	{
 		snprintf(folderName, sizeof(folderName), "Bank %i", (curBank + 1));
+		#ifdef _WIN32
 		_mkdir(folderName);
+		#else
+		mkdir(folderName, 0777);
+		#endif
 	}
 
 	xmLength = 0x10000;

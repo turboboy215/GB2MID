@@ -1,7 +1,12 @@
 /*Nintendo Software Technology (Bionic Commando: Elite Forces/Crystalis)*/
 #include <stdio.h>
 #include <string.h>
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include "SHARED.H"
 #include "BIONIC.H"
 

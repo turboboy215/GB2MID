@@ -1,7 +1,12 @@
 /*Tiertex*/
 #include <stdio.h>
 #include <string.h>
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include "SHARED.H"
 #include "TIERTEX.H"
 
@@ -86,7 +91,7 @@ void TTProc(int bank, char parameters[4][100])
 			break;
 		}
 	}
-	if (tableOffset != NULL)
+	if (tableOffset != 0)
 	{
 		if (oldMode == 0)
 		{

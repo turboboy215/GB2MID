@@ -1,7 +1,12 @@
 /*GHX (Shin'en)*/
 #include <stdio.h>
 #include <string.h>
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include "SHARED.H"
 #include "GHX.H"
 
@@ -84,7 +89,7 @@ void GHXProc(int bank)
 					break;
 				}
 			}
-			if (headerOffset != NULL)
+			if (headerOffset != 0)
 			{
 				numSongs = romData[headerOffset - bankAmt + 3];
 				if (numSongs == 0)
@@ -183,7 +188,11 @@ void GHXsong2xm(int songNum, long info[4])
 	if (multiBanks != 0)
 	{
 		snprintf(folderName, sizeof(folderName), "Bank %i", (curBank + 1));
+		#ifdef _WIN32
 		_mkdir(folderName);
+		#else
+		mkdir(folderName, 0777);
+		#endif
 	}
 
 	xmLength = 0x10000;
