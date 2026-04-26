@@ -21,8 +21,8 @@ long cmpSize;
 long decmpSize;
 int counter;
 int mask;
-CPU mask1 = { 0, 0 };
-CPU mask2 = { 0, 0 };
+static CPU mask1 = { 0, 0 };
+static CPU mask2 = { 0, 0 };
 int compPos;
 int decompPos;
 int carry;
@@ -57,6 +57,7 @@ unsigned short ReadBE162(unsigned char* Data)
 
 void TitusDecomp(unsigned char* compData, unsigned char* decompData, long compLen)
 {
+	int endData = 0;
 	tempByte = 0;
 	tempByteFF = 0;
 	bytesCopy = 0;
@@ -191,7 +192,7 @@ void TitusDecomp(unsigned char* compData, unsigned char* decompData, long compLe
 
 	}
 
-	return 0;
+	return;
 
 Method20E6:
 	/*CALL $2162*/

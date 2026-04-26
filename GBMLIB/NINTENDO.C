@@ -1,7 +1,12 @@
 /*Nintendo (Hirokazu Tanaka)*/
 #include <stdio.h>
 #include <string.h>
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include "SHARED.H"
 #include "NINTENDO.H"
 
@@ -25,9 +30,9 @@ int highestSeq;
 int curVol;
 int endList = 0;
 int curStepTab[16];
-unsigned static char* romData;
-unsigned static char* midData;
-unsigned static char* ctrlMidData;
+unsigned char* romData;
+unsigned char* midData;
+unsigned char* ctrlMidData;
 unsigned long seqList[30];
 unsigned long patList[30];
 unsigned long songList[90];
@@ -401,7 +406,11 @@ void Nintsong2mid(int songNum, long ptrList[4], long speedPtr, int songTrans)
 	if (multiBanks != 0)
 	{
 		snprintf(folderName, sizeof(folderName), "Bank %i", (curBank + 1));
+		#ifdef _WIN32
 		_mkdir(folderName);
+		#else
+		mkdir(folderName, 0777);
+		#endif
 	}
 
 	midLength = 0x10000;

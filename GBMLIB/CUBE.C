@@ -3,7 +3,12 @@
 #include <stdio.h>
 #include <string.h>
 #include <stddef.h>
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include "SHARED.H"
 #include "CUBE.H"
 #include "BGDEC.H"
@@ -54,7 +59,7 @@ int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 void Cubesong2mid(int songNum, long ptr);
 void copyDataCube(unsigned char* source, unsigned char* dest, long dataStart, long dataEnd);
 
-void CubeProc(int bank, char parameters[4][50])
+void CubeProc(int bank, char parameters[4][100])
 {
 	version = strtol(parameters[0], NULL, 16);
 
@@ -273,7 +278,11 @@ void Cubesong2mid(int songNum, long ptr)
 	if (multiBanks != 0)
 	{
 		snprintf(folderName, sizeof(folderName), "Bank %i", (curBank + 1));
+		#ifdef _WIN32
 		_mkdir(folderName);
+		#else
+		mkdir(folderName, 0777);
+		#endif
 	}
 
 	midLength = 0x10000;

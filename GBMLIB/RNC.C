@@ -9,7 +9,12 @@
 #ifndef _WIN32
 #include <sys/stat.h>
 #else
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #define mkdir(name, mode) mkdir(name)
 #endif
 

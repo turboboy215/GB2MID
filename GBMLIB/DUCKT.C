@@ -1,7 +1,12 @@
 /*Capcom (early - DuckTales 1)*/
 #include <stdio.h>
 #include <string.h>
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include "SHARED.H"
 #include "DUCKT.H"
 
@@ -129,7 +134,7 @@ void DuckProc(int bank)
 				if (romData[songPtr - bankAmt] == 0x0F || romData[songPtr - bankAmt] == 0x07)
 				{
 					printf("Song %i: 0x%04X\n", songNum, songPtr);
-					song2mid(songNum, songPtr);
+					Ducksong2mid(songNum, songPtr);
 				}
 				else
 				{

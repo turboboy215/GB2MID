@@ -1,7 +1,12 @@
 /*BITS/M4 (Shahid Ahmad)*/
 #include <stdio.h>
 #include <string.h>
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include "SHARED.H"
 #include "BITS.H"
 

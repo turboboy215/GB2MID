@@ -1,7 +1,12 @@
 /*Ei-How Yang (Sachen/Yong Yong (Makon Soft))*/
 #include <stdio.h>
 #include <string.h>
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include <math.h>
 #include "SHARED.H"
 #include "EHY.H"

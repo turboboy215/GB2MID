@@ -16,9 +16,9 @@
 
 #define bankSize 16384
 FILE* rom, * mid, * xm, * mod, * txt, * raw, * wav, * cfg, *xml;
-int masterBank;
+long masterBank;
 int bank;
-int banks[50];
+long banks[50];
 char outfile[1000000];
 int songPtr;
 int songPtrs[4];
@@ -53,14 +53,14 @@ uint8_t* bankString;
 uint8_t* paramString;
 uint8_t* formatString;
 
-unsigned static char* romData;
-unsigned static char* fullRomData;
-unsigned static char* exRomData;
-unsigned static char* midData;
-unsigned static char* ctrlMidData;
-unsigned static char* xmData;
-unsigned static char* modData;
-unsigned static char* headerBank;
+unsigned char* romData;
+unsigned char* fullRomData;
+unsigned char* exRomData;
+unsigned char* midData;
+unsigned char* ctrlMidData;
+unsigned char* xmData;
+unsigned char* modData;
+unsigned char* headerBank;
 
 long midLength;
 long xmLength;

@@ -2,7 +2,12 @@
 /*Also works with other games with audio by Giraffe Soft*/
 #include <stdio.h>
 #include <string.h>
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include "SHARED.H"
 #include "MEGAMAN2.H"
 
@@ -31,9 +36,9 @@ int curInst;
 int compatibility;
 int octaveSet;
 
-unsigned static char* romData;
-unsigned static char* midData;
-unsigned static char* ctrlMidData;
+unsigned char* romData;
+unsigned char* midData;
+unsigned char* ctrlMidData;
 
 long midLength;
 

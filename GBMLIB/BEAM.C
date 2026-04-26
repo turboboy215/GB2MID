@@ -1,7 +1,12 @@
 /*Beam Software*/
 #include <stdio.h>
 #include <string.h>
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include "SHARED.H"
 #include "BEAM.H"
 
@@ -32,9 +37,9 @@ long tempoTablePtrLoc;
 long tempoTableOffset;
 int songTempo;
 
-unsigned static char* romData;
-unsigned static char* midData;
-unsigned static char* ctrlMidData;
+unsigned char* romData;
+unsigned char* midData;
+unsigned char* ctrlMidData;
 
 long midLength;
 

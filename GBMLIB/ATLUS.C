@@ -1,7 +1,12 @@
 /*Atlus (Tsukasa Masuko)*/
 #include <stdio.h>
 #include <string.h>
+#ifdef _WIN32
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
 #include "SHARED.H"
 #include "ATLUS.H"
 
@@ -43,8 +48,8 @@ void Write8B(unsigned char* buffer, unsigned int value);
 void WriteBE32(unsigned char* buffer, unsigned long value);
 void WriteBE24(unsigned char* buffer, unsigned long value);
 void WriteBE16(unsigned char* buffer, unsigned int value);
-unsigned int WriteNoteEvent(unsigned static char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
-int WriteDeltaTime(unsigned static char* buffer, unsigned int pos, unsigned int value);
+unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
+int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 void Atlussong2mid(int songNum, long ptr);
 
 void AtlusProc(int bank)
@@ -184,7 +189,11 @@ void Atlussong2mid(int songNum, long ptr)
 	if (multiBanks != 0)
 	{
 		snprintf(folderName, sizeof(folderName), "Bank %i", (curBank + 1));
+		#ifdef _WIN32
 		_mkdir(folderName);
+		#else
+		mkdir(folderName, 0777);
+		#endif
 	}
 
 	midLength = 0x10000;
