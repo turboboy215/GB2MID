@@ -1100,6 +1100,17 @@
 		<parameters>1</parameters>
 	</rom>
 	<rom>
+		<name>Ah Harimanada (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>62DE</checksum>
+        <crc32>5bffcc28</crc32>
+        <format>Atelier_Double</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Ah Harimanada (J) [!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>AirForce Delta (J) [C][!]</name>
 		<gamecode>BDLJ</gamecode>
 		<rev>0</rev>
@@ -3223,6 +3234,17 @@
 		<parameters>CFG/Black Forest Tale (Sachen 4-in-1 Vol. 6) (Unl) [!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Black Onyx, The (J) [C][!]</name>
+		<gamecode>BBOJ</gamecode>
+		<rev>0</rev>
+		<checksum>09C0</checksum>
+        <crc32>582fe338</crc32>
+        <format>Atelier_Double</format>
+		<part></part>
+		<banks>18</banks>
+		<parameters>CFG/Black Onyx, The (J) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Blade (U) [C][!]</name>
 		<gamecode>BLEE</gamecode>
 		<rev>0</rev>
@@ -3936,6 +3958,28 @@
 		<part></part>
 		<banks>1</banks>
 		<parameters>CFG/Boxing (J) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Boxxle (U) (V1.1) [!]</name>
+		<gamecode></gamecode>
+		<rev>1</rev>
+		<checksum>0704</checksum>
+        <crc32>c09cee99</crc32>
+        <format>Atelier_Double</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>CFG/Boxxle (U) (V1.1) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Boxxle 2 (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>AED5</checksum>
+        <crc32>c08e9756</crc32>
+        <format>Atelier_Double</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Boxxle 2 (U) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Boy and His Blob, A - The Rescue of Princess Blobette (E) [!]</name>
@@ -11011,6 +11055,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Hello Kitty no Magical Museum (J) [C][!]</name>
+		<gamecode>AHKJ</gamecode>
+		<rev>0</rev>
+		<checksum>A465</checksum>
+        <crc32>5174584f</crc32>
+        <format>Atelier_Double</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Hello Kitty no Magical Museum (J) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Hello Kitty no Sweet Adventure - Daniel-kun ni Aitai (J) [C][!]</name>
 		<gamecode>BKTJ</gamecode>
 		<rev>0</rev>
@@ -11990,6 +12045,17 @@
 		<parameters>26</parameters>
 	</rom>
 	<rom>
+		<name>Jack no Daibouken - Daimaou no Gyakushuu (J) [C][!]</name>
+		<gamecode>AQJJ</gamecode>
+		<rev>0</rev>
+		<checksum>A699</checksum>
+        <crc32>cff5325a</crc32>
+        <format>Atelier_Double</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Jack no Daibouken - Daimaou no Gyakushuu (J) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>James Bond 007 (U) [S][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -12406,6 +12472,17 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Jungle Wars (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9642</checksum>
+        <crc32>2ad46ac7</crc32>
+        <format>Atelier_Double</format>
+		<part></part>
+		<banks>B</banks>
+		<parameters>CFG/Jungle Wars (J).cfg</parameters>
 	</rom>
 	<rom>
 		<name>Jungle Strike (U)</name>
@@ -17259,6 +17336,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Monkey Puncher (E) [C][!]</name>
+		<gamecode>BSPP</gamecode>
+		<rev>0</rev>
+		<checksum>EBF3</checksum>
+        <crc32>bc1809ce</crc32>
+        <format>Atelier_Double</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>CFG/Monkey Puncher (E) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Monopoly (E)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -19789,6 +19877,17 @@
 		<parameters>4C29\1A\1</parameters>
 	</rom>
 	<rom>
+		<name>Pachinko Gaiden (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9ACA</checksum>
+        <crc32>52adb7f9</crc32>
+        <format>Atelier_Double</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Pachinko Gaiden (J) [S].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Pagemaster, The (E) [S][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -19974,6 +20073,17 @@
 		<part></part>
 		<banks>7</banks>
 		<parameters>4C22\3</parameters>
+	</rom>
+	<rom>
+		<name>Penguin Land (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>03E4</checksum>
+        <crc32>a9e62e88</crc32>
+        <format>Atelier_Double</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Penguin Land (J).cfg</parameters>
 	</rom>
 	<rom>
 		<name>Perfect Dark (U) (M5) [C][!]</name>
@@ -22616,6 +22726,17 @@
 		<parameters>2</parameters>
 	</rom>
 	<rom>
+		<name>Quest RPG - Brian's Journey (U) [C][!]</name>
+		<gamecode>AQRE</gamecode>
+		<rev>0</rev>
+		<checksum>AFBB</checksum>
+        <crc32>9ac27645</crc32>
+        <format>Atelier_Double</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Quest RPG - Brian's Journey (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Quiz Sekai wa Show by Shoubai!! (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -25102,6 +25223,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Saru Puncher (J) [C][!]</name>
+		<gamecode>BSPJ</gamecode>
+		<rev>0</rev>
+		<checksum>48B8</checksum>
+        <crc32>b02564fc</crc32>
+        <format>Atelier_Double</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>CFG/Saru Puncher (J) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Schiffe Versenken (G) (M4)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -26442,6 +26574,28 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters>2\4000</parameters>
+	</rom>
+	<rom>
+		<name>Soukoban (J)</name>
+		<gamecode></gamecode>
+		<rev>1</rev>
+		<checksum>52AD</checksum>
+        <crc32>d50d6d0a</crc32>
+        <format>Atelier_Double</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>CFG/Soukoban (J).cfg</parameters>
+	</rom>
+	<rom>
+		<name>Soukoban 2 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5BA0</checksum>
+        <crc32>d9da6741</crc32>
+        <format>Atelier_Double</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Soukoban 2 (J).cfg</parameters>
 	</rom>
 	<rom>
 		<name>Soul Falchion (Unl) [C]</name>
@@ -28114,6 +28268,17 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters>CFG/Super R.C. Pro-Am (UE) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Super Real Fishing (J) [C][!]</name>
+		<gamecode>VPFJ</gamecode>
+		<rev>0</rev>
+		<checksum>795F</checksum>
+        <crc32>00865161</crc32>
+        <format>Atelier_Double</format>
+		<part></part>
+		<banks>40</banks>
+		<parameters>CFG/Super Real Fishing (J) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Super Robot Pinball (J) [C][!]</name>
@@ -31227,6 +31392,17 @@
 		<part></part>
 		<banks>3E</banks>
 		<parameters>CFG/WCW Mayhem (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Wedding Peach - Jamapii Panic (J) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A9FD</checksum>
+        <crc32>9812a6c6</crc32>
+        <format>Atelier_Double</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Wedding Peach - Jamapii Panic (J) [S][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>We're Back! - A Dinosaur's Story (U) [!]</name>

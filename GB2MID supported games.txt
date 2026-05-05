@@ -37,6 +37,7 @@ After Burst (J)
 Agro Soar (A) [!]
 Aguri Suzuki F-1 Super Driving (J)
 Aguri Suzuki F-1 Super Driving (J) [a1] (Unreleased) [!]
+Ah Harimanada (J) [!]
 AirForce Delta (J) [C][!]
 AirForce Delta (U) [C][!]
 Akazukin Cha Cha (J) [S]
@@ -223,6 +224,7 @@ Bionic Commando (U) [!]
 Bishoujo Senshi Sailor Moon (J)
 Bishoujo Senshi Sailor Moon R (J)
 Black Forest Tale (Sachen 4-in-1 Vol. 6) (Unl) [!]
+Black Onyx, The (J) [C][!]
 Blade (U) [C][!]
 Blades of Steel (E) [!]
 Blades of Steel (U) [!]
@@ -279,6 +281,8 @@ Boulder Dash (J) [!]
 Boulder Dash (U) [!]
 Bounced (E) (Unreleased) [C][!]
 Boxing (J) [!]
+Boxxle (U) (V1.1) [!]
+Boxxle 2 (U) [!]
 Boy and His Blob, A - The Rescue of Princess Blobette (E) [!]
 Boy and His Blob, A - The Rescue of Princess Blobette (U) [!]
 Brain Drain (E) [S]
@@ -896,6 +900,7 @@ Heiankyo Alien (J) [!]
 Heiankyo Alien (U) [!]
 Hello Kitty no Beads Koubou (J) [C][!]
 Hello Kitty no Happy House (J) [C][!]
+Hello Kitty no Magical Museum (J) [C][!]
 Hello Kitty no Sweet Adventure - Daniel-kun ni Aitai (J) [C][!]
 Hello Kitty to Dear Daniel no Dream Adventure (J) [C][!]
 Hello Kitty's Cube Frenzy (E) (Unreleased) [C][!]
@@ -976,6 +981,9 @@ Itsudemo Nyanto Wonderful (J) [S][!]
 J.Cup Soccer (J)
 J.League Excite Stage GB (J) [C][!]
 J.League Excite Stage Tactics (J) [C][!]
+Jack Nicklaus Golf (F) [!]
+Jack Nicklaus Golf (U) [!]
+Jack no Daibouken - Daimaou no Gyakushuu (J) [C][!]
 James Bond 007 (U) [S][!]
 Jankenman (J)
 Jankyuusei - Cosplay Paradise (J) [C][!]
@@ -1015,6 +1023,7 @@ JumpStart Dino Adventure - Field Trip (U) [C]
 Jungle Book, The (U) [!]
 Jungle Strike (U)
 Jungle Strike (U) [a1][!]
+Jungle Wars (J)
 Jurassic Boy 2 (E) [C][!]
 Jurassic Boy 2 (Sachen) (V1.0) [C][!]
 Jurassic Boy 2 (Sachen) (V1.1) [C][!]
@@ -1408,6 +1417,7 @@ Momotarou Dengeki 2 (J) [S]
 Momotarou Densetsu 1-2 (J) [C][!]
 Momotarou Densetsu Gaiden (J) [!]
 Momotetsu Jr. (J) [S]
+Monkey Puncher (E) [C][!]
 Monopoly (E)
 Monopoly (J) [C][!]
 Monopoly (J) [M]
@@ -1612,6 +1622,7 @@ Owarai Yowiko no Game-dou - Oyaji Sagashite Sanchoume (J) [C][!]
 Pac-Attack (U)
 Pachi Pachi Pachi-Slot - New Pulsar Hen (J) [C][!]
 Pachinko CR Mouretsu Genshijin T (J) [C][!]
+Pachinko Gaiden (J) [S]
 Pac-Man (J)
 Pac-Man (U) (Namco)
 Pac-Man (U) (Namco Hometek) [!]
@@ -1867,6 +1878,7 @@ Quarth (J)
 Quarth (U) [!]
 Quest for Camelot (E) (M6) [C][!]
 Quest for Camelot (U) (M3) [C][!]
+Quest RPG - Brian's Journey (U) [C][!]
 Qui Qui (J) [C][!]
 Quiz Sekai wa Show by Shoubai!! (J)
 Race Days (Dirty Racing & 4 Wheel Drive) (E)
@@ -2146,6 +2158,8 @@ Sonic 6 (Unl)
 Sonic 7 (Unl) [C]
 Soreyuke! Speedy Gonzales (J)
 Soreyuke!! Kid (J)
+Soukoban (J)
+Soukoban 2 (J)
 Soul Falchion (Unl) [C]
 South Park (U) (Prototype) [C][!]
 Space Baby (Unl) [C][f1]
@@ -2288,6 +2302,7 @@ Super Momotarou Dentetsu (J)
 Super Momotarou Dentetsu II (J) [!]
 Super Off Road (U) [!]
 Super R.C. Pro-Am (UE) [!]
+Super Real Fishing (J) [C][!]
 Super Robot Pinball (J) [C][!]
 Super Robot Taisen - Link Battler (J) [C][!]
 Super Robot Taisen (J)
@@ -2557,6 +2572,7 @@ Water World (E) [!]
 Wave Race (E) [!]
 WCW Main Event (U) [!]
 WCW Mayhem (U) [C][!]
+Wedding Peach - Jamapii Panic (J) [S][!]
 Wendy - Der Traum von Arizona (G) [C]
 Wendy - Every Witch Way (U) [C][!]
 We're Back! - A Dinosaur's Story (U) [!]
