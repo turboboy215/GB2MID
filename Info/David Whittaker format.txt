@@ -1,95 +1,136 @@
 The Sound Effects Table
 =======================================
 The sound effects table is located immediately after all code. It consists of 16-bit value pointers to each sound effect. It it accessed with the following commands:
-
-    add a
-    ld c, a
-    xor a
-    ld b, a
-    ld [RAMValue], a
-    ld hl, SFXTable
-    add hl, bc
+	add a
+	ld c, a
+	;Clear trigger
+	xor a
+	ld b, a
+	ld [C1TrigFlag], a
+	ld hl, SFXTab
+	add hl, bc
 
 Which equals the following in hex:
 
-87 4F AF 47 EA 01 D7 21 ?? ??
+87 4F AF 47 EA xx xx 21 ?? ??
 
-Alternatively:
-87 4F AF 47 EA 02 DD 21 ?? ??
+Sound Effects
+=======================================
+Sound effects are always 13 bytes in length. They work by manipulating various pitch slides as specified, sometimes making use of a random number generator (RNG) to alter the frequency.
+The following is the structure of a sound effect:
+xx yy zz zz aa aa bb cc dd ee ff gg hh ii
+x = Total length
+y = Number of times to slide pitch (before reset)
+z = Initial frequency
+a = Amount to slide pitch
+b = NRx1 value
+c = RNG flag (0 = no RNG, other = RNG)
+d = Sign value (0 = no pitch change, positive = pitch up, negative = pitch down)
+e = Total duration to slide pitch
+f = NRx2 value
+g = Toggle endless pitch slide loop (0 = no loop, other = loop)
+h = Speed
 
 The Frequency Table
 =======================================
-The frequency table is the standard format used in many drivers. It can be found with the following commands:
-    ld c, a
-    ld b, 0
-    ld hl, FreqTable
-    add hl, bc
+The frequency table can be found with the following commands:
+	ld c, a
+	;Get note frequency from table
+	ld b, 0
+	ld hl, FreqTab
+	add hl, bc
 
 Which equals the following in hex:
 
 06 00 21 D0 ?? ??
 
+The Vibrato Table
+=======================================
+Different "sequences" are executed to provide vibrato for each channel which are loaded using a command (see below). These are loaded from a table, found with the following commands:
+	;Get vibrato value from table using index value
+	ld a, [C1Vibrato]
+	add a
+	ld c, a
+	ld b, 0
+	ld hl, VibTab
+	add hl, bc
+
+Which equals the following in hex:
+
+FA xx xx 87 4F 06 00 21 ?? ?? 09
+
+Vibrato Sequences
+=======================================
+Vibrato sequences are a series of values updated each frame which are numbers to add to the current channel's frequency. A value of $80 means the end of a sequence.
+
 Song Pointers
 =======================================
 Pointers to each song are accessed with the following commands:
 
-    ld [hl+], a
-    dec b
-    jr nz, LoadSong
+.ClearProc
+	ld [hl+], a
+	dec b
+	jr nz, .ClearProc
 
-    ld hl, SongPtrs
-    add hl, bc
-    ld a, [hl+]
+GetPtrs:
+	;Add to the song table to get the song pointer
+	ld hl, SongTab
+	add hl, bc
+	;Get tempo
+	ld a, [hl+]
 
 Which equals the following in hex:
 
 22 05 20 FC 21 ?? ?? 09 2A
 
 The table is structured as follows in bytes:
-1. Tempo
-2-3 - Channel 1 start
-4-5 = Channel 2 start
-6-7 = Channel 3 start
-8-9 = Channel 4 start
+1. Tempo (initial value)
+2-3 - Channel 1 pattern pointer
+4-5 = Channel 2 pattern pointer
+6-7 = Channel 3 pattern pointer
+8-9 = Channel 4 pattern pointer
 
 Song Pattern Format
 =======================================
-Each channel's pattern is stored as a series of pointers to each sequence ending with two 00s to indicate the end of a pattern.
+Each channel has its own pattern. A pattern is stored as a series of pointers to different "phrases" that are executed in order, with each "phrase" consisting of note data and other commands for one channel. A value of 0 indicates the end of a pattern, indicating to loop back to the start position. The start position of a pattern can be altered with a command (see below).
 
-Sequence Format
+Phrase Format
 =======================================
-The sequence format is comprised of the following event values:
+Each phrase is comprised of the following event values:
 
- - 0x-5x = Play note
- - 6x-7x? = Set channel speed/note length (0 = fastest)
+ - 00-5F = Play note
+ - 60-7F = Set note length (These are added to value $A1 (161).)
  - F4 xx = Change tempo
- - F5 xx xx = Set channel loop point (pointer to value in song pattern) and end of sequence
- - F6 xy (F6 x0 y0 on channel 3) = Set envelope fade in/out speed (used to simulate echo effect in R-Type II continue music)
- - F7 xx = Set vibrato
- - F8 = Rest?
- - F9 = Hold note
- - FA xx = Set instrument duty
- - FB xx = Transpose all channels
- - FC xx = Transpose current channel
- - FD xx = Portamento
- - FE = End of channel (no loop)
- - FF = End of sequence
+ - F5 xx xx = Set channel pattern start/loop position and end of phrase
+ - F6 xx (F6 xx yy on channel 3) (X = NRx2 value, Y = Speed) = Set envelope value (used to simulate echo effect in R-Type II continue music)
+ - F7 xx = Set vibrato (this is an index value to a value in a table) (Channel 1-3 only)
+ - F8 = Rest
+ - F9 = Hold note (functions the same as F8 on all channels except 3)
+ - FA xx = Set duty (NRx1) value (Channel 1 and 2 only)
+ - FB xx = Transpose all channels (Channel 1-3 only)
+ - FC xx = Transpose current channel (Channel 1-3 only)
+ - FD xx = Set sweep (NR10) (Channel 1 only)
+ - FE = Stop playing song
+ - FF = End of phrase
 
-Notes appear to be based on MIDI values, but an octave lower. Note lengths can be converted to MIDI with the following equation:
-
-30 + (30 * (value - 96 (0x60))
+If a channel reaches an invalid command, or a command that is at least not available for the particular channel, the CPU will freeze in an infinite loop.
 
 Waveform
 =======================================
-Earlier games, including all those released prior to 1992, do not initialize the Game Boy's wave pattern and rely on the somewhat random "default" values. Since this was changed on the Game Boy Color to have a different consistent pattern, this causes channel 3 to sound higher-pitched and "beepy" on GBC systems rather than the lower-pitched "scratchy" sound on mono systems. This is "fixed" in later games, which load a waveform using the following instructions:
+Earlier games, including all those released prior to 1992, do not initialize the Game Boy's wave pattern and rely on the somewhat random "default" values. Since this was changed on the Game Boy Color to have a differ-ent consistent pattern, this causes channel 3 to sound higher-pitched and "beepy" on GBC systems rather than the lower-pitched "scratchy" sound on mono systems. This is "fixed" in later games, which load a waveform using the following instructions:
 
-    ld hl, Waveform
-    ld de, $FF30
-    ld b, $10
+	;Initialize CH3 waveform
+	ld hl, Waveform
+	ld de, WaveRAM
+	ld b, $10
 
 Of the "later" games, earlier games, including R-Type II, use the following waveform which "emulates" the Game Boy's default values:
 
 AC DD DA 48 36 02 CF 16 2C 04 E5 2C AC DD DA 48
+
+Robin Hood uses the following waveform:
+
+22 22 22 22 DD DD DD DD 44 44 44 44 DD DD DD DD
 
 For the rest of the games, the following waveform is used:
 
