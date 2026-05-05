@@ -9,6 +9,7 @@
 #include "ALLEYWAY.H"
 #include "ALTRON.H"
 #include "ARCHON.H"
+#include "ATELIER.H"
 #include "ATLUS.H"
 #include "AUDIOART.H"
 #include "BEAM.H"
@@ -98,7 +99,7 @@
 
 int foundTable = 0;
 int curInst = 0;
-int curVol = 100;
+int curVol = 120;
 int curBank = 0;
 int multiBanks = 0;
 
@@ -497,6 +498,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case archOnPlayer:
 			archOnProc(banks[curBank]);
+			break;
+		case Atelier_Double:
+			AtelierProc(banks[curBank], parameters);
 			break;
 		case Atlus:
 			AtlusProc(banks[curBank]);

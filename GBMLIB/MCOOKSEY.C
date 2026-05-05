@@ -9,43 +9,31 @@
 
 FILE* rom, * mid;
 long bank;
+long offset;
 long tablePtrLoc;
 long tableOffset;
 long macroPtrLoc;
 long macroOffset;
 long sfxPtrLoc;
 long sfxOffset;
-long lowerPtrs;
-long upperPtrs;
-long lowerMacros;
-long upperMacros;
-int i, j, s;
-int sysMode;
+int i, j;
+int drvVers;
 char outfile[1000000];
 const char MCMagicBytes[10] = { 0x6F, 0x26, 0x00, 0x29, 0x54, 0x5D, 0x29, 0x29, 0x19, 0x11 };
 const char MCMacroFindOld[13] = { 0xE1, 0x11, 0xFE, 0xFF, 0x19, 0x3E, 0x01, 0x22, 0x03, 0x0A, 0xCB, 0x27, 0x11 };
 const char MCMacroFindNew[5] = { 0xCB, 0x27, 0x30, 0x06, 0x11 };
-const char MCMagicBytesNES1[7] = { 0x06, 0x0A, 0x0A, 0x65, 0x06, 0xAA, 0xBD };
-const char MCMagicBytesNES2[7] = { 0x7B, 0x0A, 0x0A, 0x65, 0x7B, 0xAA, 0xBD };
-const char MCMagicBytesNES3[7] = { 0xFC, 0x0A, 0x0A, 0x65, 0xFC, 0xAA, 0xBD };
-const char MCMagicBytesNES4[9] = { 0x06, 0x0A, 0x0A, 0x65, 0x06, 0x65, 0x06, 0xAA, 0xBD };
-const char MCMacroFindNES1[6] = { 0xA0, 0x01, 0xB1, 0xF6, 0xA8, 0xB9 };
-const char MCMacroFindNES2[6] = { 0xA0, 0x01, 0xB1, 0x00, 0xA8, 0xB9 };
-const char MCMacroFindNES3[6] = { 0xA0, 0x01, 0xB1, 0x75, 0xA8, 0xB9 };
 const char MCSFXFind[5] = { 0xCB, 0x27, 0x85, 0x6F, 0x30 };
-const char MCMagicBytesGG[6] = { 0x85, 0x6F, 0x30, 0x01, 0x24, 0x7E };
-const char MCMacroFindGG[6] = { 0x7E, 0x87, 0x83, 0x5F, 0x30, 0x01 };
-int curStepTab[16];
-unsigned long macroList[500];
-long seqPtrs[5];
-long stepPtr;
+long seqPtrs[4];
+long noteLenPtr;
 long nextPtr;
 long endPtr;
-int stepAmt;
 int songNum;
 long bankAmt;
-int highestMacro = 1;
-int fiveChan = 0;
+int foundTable;
+int curVols[8];
+int volTrack;
+int stopCvt;
+
 int multiBanks;
 int curBank;
 
@@ -53,410 +41,126 @@ char folderName[100];
 
 unsigned char* romData;
 unsigned char* midData;
+unsigned char* multiMidData[8];
 unsigned char* ctrlMidData;
-
-char* argv3;
-
-char string1[4];
 
 long midLength;
 
 /*Function prototypes*/
 unsigned short ReadLE16(unsigned char* Data);
+unsigned short ReadBE16(unsigned char* Data);
 void Write8B(unsigned char* buffer, unsigned int value);
 void WriteBE32(unsigned char* buffer, unsigned long value);
 void WriteBE24(unsigned char* buffer, unsigned long value);
 void WriteBE16(unsigned char* buffer, unsigned int value);
-unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
+unsigned int WriteNoteEventAlt(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
+unsigned int WriteNoteEventAltOn(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
+unsigned int WriteNoteEventAltOff(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 
 void MCsong2mid(int songNum, long ptrs[], long nextPtr);
-void MCsong2midNES(int songNum, long ptrs[]);
-
-void MCgetMacroList(unsigned long list[], long offset, long sfxTable);
 
 void MCProc(int bank)
 {
-	sysMode = 1;
-	/*Check for NES ROM header*/
-	fgets(string1, 4, rom);
-	if (!memcmp(string1, "NES", 1))
-	{
-		fseek(rom, (((bank - 1) * bankSize)) + 0x10, SEEK_SET);
-		if (sysMode != 2)
-		{
-			printf("Detected NES header - switching to NES format.\n");
-			sysMode = 2;
-		}
-	}
-	else
-	{
-		fseek(rom, ((bank - 1) * bankSize), SEEK_SET);
-	}
-	if (bank != 1)
-	{
-		bankAmt = bankSize;
-	}
-	else
-	{
-		if (sysMode == 1)
-		{
-			bankAmt = 0;
-		}
-		else
-		{
-			bankAmt = bankSize;
-		}
+	foundTable = 0;
+	drvVers = MC_VER_STD;
+	bankAmt = bankSize;
+	stopCvt = 0;
 
+	if (bank < 0x02)
+	{
+		bankAmt = 0x0000;
+		bank = 0x02;
 	}
-	romData = (unsigned char*)malloc(bankSize);
+
+	fseek(rom, 0, SEEK_SET);
+	romData = (unsigned char*)malloc(bankSize * 2);
 	fread(romData, 1, bankSize, rom);
+	fseek(rom, ((bank - 1) * bankSize), SEEK_SET);
+	fread(romData + bankSize, 1, bankSize, rom);
 
 	/*Try to search the bank for song table loader*/
-	for (i = 0; i < bankSize; i++)
+	for (i = 0; i < (bankSize * 2); i++)
 	{
 		if (!memcmp(&romData[i], MCMagicBytes, 10))
 		{
-			tablePtrLoc = bankAmt + i + 10;
-			printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
-			tableOffset = ReadLE16(&romData[tablePtrLoc - bankAmt]);
-			printf("Song table starts at 0x%04x...\n", tableOffset);
+			tablePtrLoc = i + 10;
+			printf("Found pointer to song table at address 0x%04X!\n", tablePtrLoc);
+			tableOffset = ReadLE16(&romData[tablePtrLoc]);
+			printf("Song table starts at 0x%04X...\n", tableOffset);
+			foundTable = 1;
 			break;
 		}
 	}
 
 	/*Search for sound effects table*/
-	for (i = 0; i < bankSize; i++)
+	for (i = 0; i < (bankSize * 2); i++)
 	{
 		if (!memcmp(&romData[i], MCSFXFind, 5))
 		{
-			sfxPtrLoc = bankAmt + i - 2;
-			printf("Found pointer to sound effects table at address 0x%04x!\n", sfxPtrLoc);
-			sfxOffset = ReadLE16(&romData[sfxPtrLoc - bankAmt]);
-			printf("Sound effects table starts at 0x%04x...\n", sfxOffset);
+			sfxPtrLoc = i - 2;
+			printf("Found pointer to sound effects table at address 0x%04X!\n", sfxPtrLoc);
+			sfxOffset = ReadLE16(&romData[sfxPtrLoc]);
+			printf("Sound effects table starts at 0x%04X...\n", sfxOffset);
 			break;
 		}
 	}
 
 	/*Now try to search the bank for macro table loader*/
-	for (i = 0; i < bankSize; i++)
+	for (i = 0; i < (bankSize * 2); i++)
 	{
 		/*First, try old method (games before 1999)*/
 		if (!memcmp(&romData[i], MCMacroFindOld, 13))
 		{
-			macroPtrLoc = bankAmt + i + 13;
-			printf("Found pointer to macro table at address 0x%04x!\n", macroPtrLoc);
-			macroOffset = ReadLE16(&romData[macroPtrLoc - bankAmt]);
-			printf("Macro table starts at 0x%04x...\n", macroOffset);
-			MCgetMacroList(macroList, macroOffset, sfxOffset);
+			macroPtrLoc = i + 13;
+			printf("Found pointer to macro table at address 0x%04X!\n", macroPtrLoc);
+			macroOffset = ReadLE16(&romData[macroPtrLoc]);
+			printf("Macro table starts at 0x%04X...\n", macroOffset);
 			break;
 		}
 
 		/*Now try new method (games from 1999-)*/
 		else if (!memcmp(&romData[i], MCMacroFindNew, 5))
 		{
-			macroPtrLoc = bankAmt + i + 5;
-			printf("Found pointer to macro table at address 0x%04x!\n", macroPtrLoc);
-			macroOffset = ReadLE16(&romData[macroPtrLoc - bankAmt]);
-			printf("Macro table starts at 0x%04x...\n", macroOffset);
-			MCgetMacroList(macroList, macroOffset, sfxOffset);
+			macroPtrLoc = i + 5;
+			printf("Found pointer to macro table at address 0x%04X!\n", macroPtrLoc);
+			macroOffset = ReadLE16(&romData[macroPtrLoc]);
+			printf("Macro table starts at 0x%04X...\n", macroOffset);
 			break;
 		}
 	}
 
-	/*NES version...*/
-	if (sysMode == 2)
-	{
-		/*Try to search the bank for song table loader - Method 1*/
-		for (i = 0; i < bankSize; i++)
-		{
-			if (!memcmp(&romData[i], MCMagicBytesNES1, 7))
-			{
-				bankAmt = 0x8000;
-				tablePtrLoc = bankAmt + i + 7;
-				tableOffset = tablePtrLoc;
-				printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
-				lowerPtrs = ReadLE16(&romData[tablePtrLoc - bankAmt]);
-				upperPtrs = ReadLE16(&romData[tablePtrLoc + 6 - bankAmt]);
-				printf("Song tables start at 0x%04x and 0x%04x...\n", lowerPtrs, upperPtrs);
-				break;
-			}
-		}
-
-		/*Try to search the bank for song table loader - Method 2*/
-		for (i = 0; i < bankSize; i++)
-		{
-			if (!memcmp(&romData[i], MCMagicBytesNES2, 7))
-			{
-				bankAmt = 0x8000;
-				tablePtrLoc = bankAmt + i + 7;
-				tableOffset = tablePtrLoc;
-				printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
-				lowerPtrs = ReadLE16(&romData[tablePtrLoc - bankAmt]);
-				upperPtrs = ReadLE16(&romData[tablePtrLoc + 6 - bankAmt]);
-				printf("Song tables start at 0x%04x and 0x%04x...\n", lowerPtrs, upperPtrs);
-				break;
-			}
-		}
-
-		/*Try to search the bank for song table loader - Method 3*/
-		for (i = 0; i < bankSize; i++)
-		{
-			if (!memcmp(&romData[i], MCMagicBytesNES3, 7))
-			{
-				bankAmt = 0xC000;
-				tablePtrLoc = bankAmt + i + 7;
-				tableOffset = tablePtrLoc;
-
-				if (ReadLE16(&romData[tablePtrLoc - bankAmt]) < 0xC000)
-				{
-					bankAmt = 0x8000;
-					tablePtrLoc -= 0x4000;
-					tableOffset -= 0x4000;
-				}
-				printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
-				lowerPtrs = ReadLE16(&romData[tablePtrLoc - bankAmt]);
-				upperPtrs = ReadLE16(&romData[tablePtrLoc + 6 - bankAmt]);
-				printf("Song tables start at 0x%04x and 0x%04x...\n", lowerPtrs, upperPtrs);
-				break;
-			}
-		}
-
-		/*Try to search the bank for song table loader - Method 4 - Joe & Mac: Caveman Ninja*/
-		for (i = 0; i < bankSize; i++)
-		{
-			if (!memcmp(&romData[i], MCMagicBytesNES4, 9))
-			{
-				bankAmt = 0x8000;
-				tablePtrLoc = bankAmt + i + 9;
-				tableOffset = tablePtrLoc;
-				printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
-				lowerPtrs = ReadLE16(&romData[tablePtrLoc - bankAmt]);
-				upperPtrs = ReadLE16(&romData[tablePtrLoc + 6 - bankAmt]);
-				printf("Song tables start at 0x%04x and 0x%04x...\n", lowerPtrs, upperPtrs);
-				fiveChan = 1;
-				break;
-			}
-		}
-
-		/*Now try to search the bank for macro table loader*/
-		for (i = 0; i < bankSize; i++)
-		{
-			/*Method 1*/
-			if (!memcmp(&romData[i], MCMacroFindNES1, 6))
-			{
-				macroPtrLoc = bankAmt + i + 6;
-				printf("Found pointer to macro table at address 0x%04x!\n", macroPtrLoc);
-				lowerMacros = ReadLE16(&romData[macroPtrLoc - bankAmt]);
-				upperMacros = ReadLE16(&romData[macroPtrLoc + 6 - bankAmt]);
-				printf("Macro tables start at 0x%04x and 0x%04x...\n", lowerMacros, upperMacros);
-				break;
-
-			}
-
-			/*Method 2*/
-			if (!memcmp(&romData[i], MCMacroFindNES2, 6))
-			{
-				macroPtrLoc = bankAmt + i + 6;
-				printf("Found pointer to macro table at address 0x%04x!\n", macroPtrLoc);
-				lowerMacros = ReadLE16(&romData[macroPtrLoc - bankAmt]);
-				upperMacros = ReadLE16(&romData[macroPtrLoc + 6 - bankAmt]);
-				printf("Macro tables start at 0x%04x and 0x%04x...\n", lowerMacros, upperMacros);
-				break;
-
-			}
-
-			/*Method 1*/
-			if (!memcmp(&romData[i], MCMacroFindNES3, 6))
-			{
-				macroPtrLoc = bankAmt + i + 6;
-				printf("Found pointer to macro table at address 0x%04x!\n", macroPtrLoc);
-				lowerMacros = ReadLE16(&romData[macroPtrLoc - bankAmt]);
-				upperMacros = ReadLE16(&romData[macroPtrLoc + 6 - bankAmt]);
-				printf("Macro tables start at 0x%04x and 0x%04x...\n", lowerMacros, upperMacros);
-				break;
-
-			}
-
-
-		}
-	}
-
-	/*Game Gear version...*/
-	if (sysMode == 3)
-	{
-		/*Try to search the bank for song table loader*/
-		for (i = 0; i < bankSize; i++)
-		{
-			if (!memcmp(&romData[i], MCMagicBytesGG, 6))
-			{
-				if (ReadLE16(&romData[i - 2]) >= 0x8000)
-				{
-					bankAmt = 0x8000;
-				}
-				tablePtrLoc = bankAmt + i - 2;
-				printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
-				tableOffset = ReadLE16(&romData[tablePtrLoc - bankAmt]);
-				printf("Song table starts at 0x%04x...\n", tableOffset);
-				break;
-			}
-		}
-
-		/*Now try to search the bank for macro table loader*/
-		for (i = 0; i < bankSize; i++)
-		{
-			if (!memcmp(&romData[i], MCMacroFindGG, 6))
-			{
-				macroPtrLoc = bankAmt + i - 3;
-				printf("Found pointer to macro table at address 0x%04x!\n", macroPtrLoc);
-				macroOffset = ReadLE16(&romData[macroPtrLoc - bankAmt]);
-				printf("Macro table starts at 0x%04x...\n", macroOffset);
-				break;
-			}
-		}
-
-	}
-
-	if (tableOffset != NULL)
+	if (foundTable == 1)
 	{
 		songNum = 1;
-		if (sysMode == 1)
+
+		i = tableOffset;
+		while (ReadLE16(&romData[i]) >= bankAmt && ReadLE16(&romData[i]) != 9839)
 		{
-			i = tableOffset;
-			while ((nextPtr = ReadLE16(&romData[i + 10 - bankAmt])) >= bankAmt && (nextPtr = ReadLE16(&romData[i + 10 - bankAmt])) != 9839)
-			{
-				seqPtrs[0] = ReadLE16(&romData[i - bankAmt]);
-				printf("Song %i channel 1: 0x%04x\n", songNum, seqPtrs[0]);
-				seqPtrs[1] = ReadLE16(&romData[i + 2 - bankAmt]);
-				printf("Song %i channel 2: 0x%04x\n", songNum, seqPtrs[1]);
-				seqPtrs[2] = ReadLE16(&romData[i + 4 - bankAmt]);
-				printf("Song %i channel 3: 0x%04x\n", songNum, seqPtrs[2]);
-				seqPtrs[3] = ReadLE16(&romData[i + 6 - bankAmt]);
-				printf("Song %i channel 4: 0x%04x\n", songNum, seqPtrs[3]);
-				stepPtr = ReadLE16(&romData[i + 8 - bankAmt]);
-				printf("Song %i step table: 0x%04x\n", songNum, stepPtr);
-				endPtr = nextPtr - bankAmt;
-
-				for (j = 0; j < 16; j++)
-				{
-					curStepTab[j] = (romData[stepPtr + j - bankAmt]) * 5;
-				}
-
-				MCsong2mid(songNum, seqPtrs, endPtr);
-				i += 10;
-				songNum++;
-			}
-
-			seqPtrs[0] = ReadLE16(&romData[i - bankAmt]);
-			printf("Song %i channel 1: 0x%04x\n", songNum, seqPtrs[0]);
-			seqPtrs[1] = ReadLE16(&romData[i + 2 - bankAmt]);
-			printf("Song %i channel 2: 0x%04x\n", songNum, seqPtrs[1]);
-			seqPtrs[2] = ReadLE16(&romData[i + 4 - bankAmt]);
-			printf("Song %i channel 3: 0x%04x\n", songNum, seqPtrs[2]);
-			seqPtrs[3] = ReadLE16(&romData[i + 6 - bankAmt]);
-			printf("Song %i channel 4: 0x%04x\n", songNum, seqPtrs[3]);
-			stepPtr = ReadLE16(&romData[i + 8 - bankAmt]);
-			printf("Song %i step table: 0x%04x\n", songNum, stepPtr);
-			endPtr = bankSize;
-
-			for (j = 0; j < 16; j++)
-			{
-				curStepTab[j] = (romData[stepPtr + j - bankAmt]) * 5;
-			}
+			seqPtrs[0] = ReadLE16(&romData[i]);
+			printf("Song %i channel 1: 0x%04X\n", songNum, seqPtrs[0]);
+			seqPtrs[1] = ReadLE16(&romData[i + 2]);
+			printf("Song %i channel 2: 0x%04X\n", songNum, seqPtrs[1]);
+			seqPtrs[2] = ReadLE16(&romData[i + 4]);
+			printf("Song %i channel 3: 0x%04X\n", songNum, seqPtrs[2]);
+			seqPtrs[3] = ReadLE16(&romData[i + 6]);
+			printf("Song %i channel 4: 0x%04X\n", songNum, seqPtrs[3]);
+			noteLenPtr = ReadLE16(&romData[i + 8]);
+			printf("Song %i note length table: 0x%04X\n", songNum, noteLenPtr);
+			endPtr = nextPtr;
 
 			MCsong2mid(songNum, seqPtrs, endPtr);
+			i += 10;
+			songNum++;
 		}
-		else if (sysMode == 2)
-		{
-			i = lowerPtrs;
-			j = upperPtrs;
-
-			while (j < lowerPtrs)
-			{
-				if (fiveChan != 1)
-				{
-					seqPtrs[0] = romData[i - bankAmt] + (romData[j - bankAmt] * 0x100);
-					printf("Song %i channel 1: 0x%04x\n", songNum, seqPtrs[0]);
-					seqPtrs[1] = romData[i + 1 - bankAmt] + (romData[j + 1 - bankAmt] * 0x100);
-					printf("Song %i channel 2: 0x%04x\n", songNum, seqPtrs[1]);
-					seqPtrs[2] = romData[i + 2 - bankAmt] + (romData[j + 2 - bankAmt] * 0x100);
-					printf("Song %i channel 3: 0x%04x\n", songNum, seqPtrs[2]);
-					seqPtrs[3] = romData[i + 3 - bankAmt] + (romData[j + 3 - bankAmt] * 0x100);
-					printf("Song %i channel 4: 0x%04x\n", songNum, seqPtrs[3]);
-					stepPtr = romData[i + 4 - bankAmt] + (romData[j + 4 - bankAmt] * 0x100);
-					printf("Song %i step table: 0x%04x\n", songNum, stepPtr);
-
-					for (s = 0; s < 16; s++)
-					{
-						curStepTab[s] = (romData[stepPtr + s - bankAmt]) * 5;
-					}
-					MCsong2midNES(songNum, seqPtrs);
-					i += 5;
-					j += 5;
-					songNum++;
-				}
-				else if (fiveChan == 1)
-				{
-					seqPtrs[0] = romData[i + 0x2000 - bankAmt] + (romData[j + 0x2000 - bankAmt] * 0x100);
-					printf("Song %i channel 1: 0x%04x\n", songNum, seqPtrs[0]);
-					seqPtrs[1] = romData[i + 0x2000 + 1 - bankAmt] + (romData[j + 0x2000 + 1 - bankAmt] * 0x100);
-					printf("Song %i channel 2: 0x%04x\n", songNum, seqPtrs[1]);
-					seqPtrs[2] = romData[i + 0x2000 + 2 - bankAmt] + (romData[j + 0x2000 + 2 - bankAmt] * 0x100);
-					printf("Song %i channel 3: 0x%04x\n", songNum, seqPtrs[2]);
-					seqPtrs[3] = romData[i + 0x2000 + 3 - bankAmt] + (romData[j + 0x2000 + 3 - bankAmt] * 0x100);
-					printf("Song %i channel 4: 0x%04x\n", songNum, seqPtrs[3]);
-					seqPtrs[4] = romData[i + 0x2000 + 4 - bankAmt] + (romData[j + 0x2000 + 4 - bankAmt] * 0x100);
-					printf("Song %i channel 5: 0x%04x\n", songNum, seqPtrs[4]);
-					stepPtr = romData[i + 0x2000 + 5 - bankAmt] + (romData[j + 0x2000 + 5 - bankAmt] * 0x100);
-					printf("Song %i step table: 0x%04x\n", songNum, stepPtr);
-
-					for (s = 0; s < 16; s++)
-					{
-						curStepTab[s] = (romData[stepPtr + 0x2000 + s - bankAmt]) * 5;
-					}
-					MCsong2midNES(songNum, seqPtrs);
-					i += 6;
-					j += 6;
-					songNum++;
-				}
-
-			}
-		}
-
-		else if (sysMode == 3)
-		{
-			i = tableOffset;
-			while ((nextPtr = ReadLE16(&romData[i + 10 - bankAmt])) >= bankAmt)
-			{
-				seqPtrs[0] = ReadLE16(&romData[i - bankAmt]);
-				printf("Song %i channel 1: 0x%04x\n", songNum, seqPtrs[0]);
-				seqPtrs[1] = ReadLE16(&romData[i + 2 - bankAmt]);
-				printf("Song %i channel 2: 0x%04x\n", songNum, seqPtrs[1]);
-				seqPtrs[2] = ReadLE16(&romData[i + 4 - bankAmt]);
-				printf("Song %i channel 3: 0x%04x\n", songNum, seqPtrs[2]);
-				seqPtrs[3] = ReadLE16(&romData[i + 6 - bankAmt]);
-				printf("Song %i channel 4: 0x%04x\n", songNum, seqPtrs[3]);
-				stepPtr = ReadLE16(&romData[i + 8 - bankAmt]);
-				printf("Song %i step table: 0x%04x\n", songNum, stepPtr);
-				endPtr = nextPtr - bankAmt;
-
-				for (j = 0; j < 16; j++)
-				{
-					curStepTab[j] = (romData[stepPtr + j - bankAmt]) * 5;
-				}
-
-				MCsong2mid(songNum, seqPtrs, endPtr);
-				i += 10;
-				songNum++;
-			}
-		}
-
-
+		free(romData);
 	}
 	else
 	{
+		free(romData);
+		fclose(rom);
 		printf("ERROR: Magic bytes not found!\n");
-		exit(-1);
+		exit(1);
 	}
 }
 
@@ -466,61 +170,99 @@ void MCsong2mid(int songNum, long ptrs[], long nextPtr)
 	static const char* TRK_NAMES[4] = { "Square 1", "Square 2", "Wave", "Noise" };
 	long romPos = 0;
 	unsigned int midPos = 0;
+	unsigned int midPosM[5];
 	int trackCnt = 4;
 	int curTrack = 0;
+	int curSeq = 0;
 	long midTrackBase = 0;
 	unsigned int curDelay = 0;
+	int curDelays[5];
+	int prevDelays[5];
 	int midChan = 0;
+	int seqEnd = 0;
+	int seqsEnd[5];
+	int tracksEnd[5];
 	int trackEnd = 0;
 	int noteTrans = 0;
 	int ticks = 120;
 	int k = 0;
-
-	long switchPoint[10][2];
+	long startPos = 0;
 
 	unsigned int ctrlMidPos = 0;
 	long ctrlMidTrackBase = 0;
 
-	int valSize = 0;
-
 	long trackSize = 0;
+	long trackSizes[5];
+	long ctrlTrackSize = 0;
 
 	unsigned int curNote = 0;
-	int curVol = 0;
+	unsigned int curNotes[5];
+	unsigned int prevNotes[5];
 	int curNoteLen = 0;
+	int curNoteLens[5];
 	int lastNote = 0;
 
 	int tempByte = 0;
 	long tempPos = 0;
 
-	long stepPtr = 0;
-	float multiplier = 0;
-	long tempo = 0;
+	long tempo = 140;
+	float fadeTempo;
 
 	int curInst = 0;
+	int curInsts[5];
 
-	signed int macTranspose = 0;
-	unsigned short macCount = 0;
-	unsigned int macReturn = 0;
-	unsigned long macroBase = 0;
-	int curMacro = 0;
+	int macRepeat = 0;
+	long macStart = 0;
+	long macEnd = 0;
+
+	int playTimes = 1;
+
+	unsigned long patPos = 0;
+	unsigned long seqPos = 0;
+	unsigned long patPosM[5];
 
 	unsigned char command[4];
-	unsigned char lowNibble;
-	unsigned char highNibble;
-	long ctrlDelay = 0;
-	long masterDelay = 0;
+	unsigned char patCommand[4];
+
+	signed int transpose = 0;
+	signed int transposes[5];
 
 	int firstNote = 1;
+	int firstNotes[5];
 
 	int timeVal = 0;
 
-	int switchNum = 0;
+	int holdNote = 0;
+	int holdNotes[5];
 
-	int j;
+	long ctrlDelay = 0;
+	long masterDelay = 0;
+	long masterDelays[5];
 
+	int patRepeat = 0;
+	long patJump = 0;
 
-	midPos = 0;
+	int inMacro = 0;
+	int inMacroM[5];
+	int macros[5][4];
+
+	int playTrack = 0;
+
+	int seqPosM[5];
+
+	unsigned char lowNibble = 0;
+	unsigned char highNibble = 0;
+
+	int valSize = 0;
+
+	long seqTime = 0;
+
+	trackCnt = 4;
+
+	for (curTrack = 0; curTrack < trackCnt; curTrack++)
+	{
+		midPosM[curTrack] = 0;
+	}
 	ctrlMidPos = 0;
 
 	if (multiBanks != 0)
@@ -534,9 +276,20 @@ void MCsong2mid(int songNum, long ptrs[], long nextPtr)
 
 	ctrlMidData = (unsigned char*)malloc(midLength);
 
+	for (j = 0; j < trackCnt; j++)
+	{
+		multiMidData[j] = (unsigned char*)malloc(midLength);
+	}
+
+	ctrlMidData = (unsigned char*)malloc(midLength);
+
 	for (j = 0; j < midLength; j++)
 	{
-		midData[j] = 0;
+		for (k = 0; k < trackCnt; k++)
+		{
+			multiMidData[k][j] = 0;
+		}
+
 		ctrlMidData[j] = 0;
 	}
 
@@ -555,7 +308,6 @@ void MCsong2mid(int songNum, long ptrs[], long nextPtr)
 	}
 	else
 	{
-
 		/*Write MIDI header with "MThd"*/
 		WriteBE32(&ctrlMidData[ctrlMidPos], 0x4D546864);
 		WriteBE32(&ctrlMidData[ctrlMidPos + 4], 0x00000006);
@@ -565,11 +317,6 @@ void MCsong2mid(int songNum, long ptrs[], long nextPtr)
 		WriteBE16(&ctrlMidData[ctrlMidPos + 2], trackCnt + 1);
 		WriteBE16(&ctrlMidData[ctrlMidPos + 4], ticks);
 		ctrlMidPos += 6;
-
-		/*Get the initial tempo*/
-		stepPtr = ptrs[4];
-		tempo = 140;
-
 
 		/*Write initial MIDI information for "control" track*/
 		WriteBE32(&ctrlMidData[ctrlMidPos], 0x4D54726B);
@@ -606,145 +353,290 @@ void MCsong2mid(int songNum, long ptrs[], long nextPtr)
 		WriteBE24(&ctrlMidData[ctrlMidPos], 0xFF5902);
 		ctrlMidPos += 4;
 
+		/*Now retrieve version information...*/
+
+		switch (drvVers)
+		{
+		case MC_VER_STD:
+			/*Fall-through*/
+		default:
+			MC_STATUS_NOTE_MIN = 0x00;
+			MC_STATUS_NOTE_MAX = 0x5F;
+			MC_STATUS_ALT_NOTE_MIN = 0x80;
+			MC_STATUS_ALT_NOTE_MAX = 0xFF;
+			EventMap[0x60] = MC_EVENT_TIE;
+			EventMap[0x61] = MC_EVENT_STOP;
+			EventMap[0x62] = MC_EVENT_JUMP;
+			EventMap[0x63] = MC_EVENT_NOISE;
+			EventMap[0x64] = MC_EVENT_CALL;
+			EventMap[0x65] = MC_EVENT_RETURN;
+			EventMap[0x66] = MC_EVENT_SET_LOOP_FLAG;
+			EventMap[0x67] = MC_EVENT_GLOBAL_PAN;
+			EventMap[0x68] = MC_EVENT_SET_NOTE_LENS;
+			EventMap[0x69] = MC_EVENT_TEMPO;
+			EventMap[0x6A] = MC_EVENT_PAN1;
+			EventMap[0x6B] = MC_EVENT_PAN2;
+			EventMap[0x6C] = MC_EVENT_PAN3;
+			EventMap[0x6D] = MC_EVENT_PAN4;
+			break;
+
+		}
+
 		for (curTrack = 0; curTrack < trackCnt; curTrack++)
 		{
+			midPosM[curTrack] = 0;
+			transposes[curTrack] = 0;
+			curDelays[curTrack] = 0;
 			ctrlDelay = 0;
-			masterDelay = 0;
-			firstNote = 1;
+			masterDelays[curTrack] = 0;
+			firstNotes[curTrack] = 1;
+			holdNotes[curTrack] = 0;
+			curVols[curTrack] = 120;
 			/*Write MIDI chunk header with "MTrk"*/
-			WriteBE32(&midData[midPos], 0x4D54726B);
-			midPos += 8;
-			midTrackBase = midPos;
+			WriteBE32(&multiMidData[curTrack][midPosM[curTrack]], 0x4D54726B);
+			midPosM[curTrack] += 8;
+			midTrackBase = midPosM[curTrack];
 
-			curDelay = 0;
-			trackEnd = 0;
-
-			curNote = 0;
-			lastNote = 0;
-			curVol = 0;
-			curNoteLen = 0;
-			switchNum = 0;
+			curNotes[curTrack] = 0;
+			prevNotes[curTrack] = 0;
+			curNoteLens[curTrack] = 0;
+			curInsts[curTrack] = 0;
+			transposes[curTrack] = 0;
+			tracksEnd[curTrack] = 0;
+			inMacroM[curTrack] = 0;
+			macros[curTrack][1] = 0;
+			macros[curTrack][3] = 0;
 
 			/*Add track header*/
-			valSize = WriteDeltaTime(midData, midPos, 0);
-			midPos += valSize;
-			WriteBE16(&midData[midPos], 0xFF03);
-			midPos += 2;
-			Write8B(&midData[midPos], strlen(TRK_NAMES[curTrack]));
-			midPos++;
-			sprintf((char*)&midData[midPos], TRK_NAMES[curTrack]);
-			midPos += strlen(TRK_NAMES[curTrack]);
+			valSize = WriteDeltaTime(multiMidData[curTrack], midPosM[curTrack], 0);
+			midPosM[curTrack] += valSize;
+			WriteBE16(&multiMidData[curTrack][midPosM[curTrack]], 0xFF03);
+			midPosM[curTrack] += 2;
+			Write8B(&multiMidData[curTrack][midPosM[curTrack]], strlen(TRK_NAMES[curTrack]));
+			midPosM[curTrack]++;
+			sprintf((char*)&multiMidData[curTrack][midPosM[curTrack]], TRK_NAMES[curTrack]);
+			midPosM[curTrack] += strlen(TRK_NAMES[curTrack]);
 
+			/*Calculate MIDI channel size*/
+			trackSizes[curTrack] = midPosM[curTrack] - midTrackBase;
+			WriteBE16(&multiMidData[curTrack][midTrackBase - 2], trackSizes[curTrack]);
 
-			romPos = ptrs[curTrack] - bankAmt;
+			seqPosM[curTrack] = ptrs[curTrack];
+		}
 
-			command[0] = romData[romPos];
-			command[1] = romData[romPos + 1];
-			command[2] = romData[romPos + 2];
-			command[3] = romData[romPos + 3];
+		seqTime = 0;
 
-			while (romPos < bankSize && trackEnd == 0)
+		while (trackEnd == 0)
+		{
+			if (tracksEnd[0] == 1 && tracksEnd[1] == 1 && tracksEnd[2] == 1 && tracksEnd[3] == 1)
 			{
-				command[0] = romData[romPos];
-				command[1] = romData[romPos + 1];
-				command[2] = romData[romPos + 2];
-				command[3] = romData[romPos + 3];
+				trackEnd = 1;
+			}
 
-				if (curTrack != 0)
+			for (curTrack = 0; curTrack < trackCnt; curTrack++)
+			{
+				while (seqTime >= masterDelays[curTrack] && tracksEnd[curTrack] == 0)
 				{
-					for (j = 0; j < 10; j++)
+					if ((seqPosM[curTrack] < bankAmt) || (seqPosM[curTrack] >= (bankSize * 2)))
 					{
-						if (masterDelay == switchPoint[j][0] && switchPoint[j][1] != 0)
+						if (curTrack < trackCnt)
 						{
-							stepPtr = switchPoint[j][1];
-							for (k = 0; k < 16; k++)
-							{
-								curStepTab[k] = (romData[stepPtr + k - bankAmt]) * 5;
-							}
+							tracksEnd[curTrack] = 1;
+							trackEnd = 1;
 							break;
 						}
 					}
-				}
+					command[0] = romData[seqPosM[curTrack]];
+					command[1] = romData[seqPosM[curTrack] + 1];
+					command[2] = romData[seqPosM[curTrack] + 2];
+					command[3] = romData[seqPosM[curTrack] + 3];
 
+					command[0] = command[0] & 0x7F;
 
-
-				switch (command[0])
-				{
-					/*Rest*/
-				case 0x60:
-					highNibble = (command[1] & 15);
-					curNoteLen = curStepTab[highNibble];
-					curDelay += curNoteLen;
-					ctrlDelay += curNoteLen;
-					masterDelay += curNoteLen;
-					romPos += 2;
-					break;
-					/*Stop channel*/
-				case 0x61:
-					trackEnd = 1;
-					break;
-					/*Go to track loop point*/
-				case 0x62:
-					trackEnd = 1;
-					break;
-					/*Change noise channel type?*/
-				case 0x63:
-					romPos += 2;
-					break;
-					/*Call macro*/
-				case 0x64:
-					curMacro = command[1];
-					macTranspose = (signed char)command[2];
-					macCount = command[3];
-					if (sysMode == 1)
+					if ((command[0] >= MC_STATUS_NOTE_MIN && command[0] <= MC_STATUS_NOTE_MAX))
 					{
-						macroBase = macroList[curMacro];
-					}
-					else
-					{
-						macroBase = ReadLE16(&romData[macroOffset + (curMacro * 2) - bankAmt]) - bankAmt;
-					}
-					macReturn = romPos + 4;
-					romPos = macroBase;
-					break;
-					/*End of macro*/
-				case 0x65:
-					if (macCount > 1)
-					{
-						romPos = macroBase;
-						macCount--;
-					}
-					else
-					{
-						romPos = macReturn;
-					}
-					break;
-					/*Set "has looped" flag*/
-				case 0x66:
-					romPos += 2;
-					break;
-					/*Set panning*/
-				case 0x67:
-					romPos += 2;
-					break;
-					/*Set step table/speed table*/
-				case 0x68:
-					if (sysMode == 1)
-					{
-						if (curTrack == 0)
+						command[0] = romData[seqPosM[curTrack]];
+						if (holdNotes[curTrack] == 1)
 						{
-							stepPtr = ReadLE16(&romData[romPos + 1]);
-							for (k = 0; k < 16; k++)
-							{
-								curStepTab[k] = (romData[stepPtr + k - bankAmt]) * 5;
-							}
-							switchPoint[switchNum][0] = masterDelay;
-							switchPoint[switchNum][1] = stepPtr;
-							switchNum++;
+							tempPos = WriteNoteEventAltOff(multiMidData[curTrack], midPosM[curTrack], curNotes[curTrack], curNoteLens[curTrack], curDelays[curTrack], firstNotes[curTrack], curTrack, curInsts[curTrack]);
+							holdNotes[curTrack] = 0;
+							curDelays[curTrack] = 0;
+							midPosM[curTrack] = tempPos;
 						}
-						romPos += 3;
+
+						lowNibble = (command[1] >> 4);
+						highNibble = (command[1] & 15);
+
+						if (command[0] >= MC_STATUS_ALT_NOTE_MIN)
+						{
+							lowNibble += 16;
+						}
+
+						curNotes[curTrack] = (command[0] & 0x7F) + transposes[curTrack];
+						if (curTrack == 0 || curTrack == 1)
+						{
+							curNotes[curTrack] += 36;
+						}
+						else if (curTrack == 2)
+						{
+							curNotes[curTrack] += 24;
+						}
+						else
+						{
+							curNotes[curTrack] += 12;
+						}
+
+						if (curNotes[curTrack] > 127)
+						{
+							curNotes[curTrack] = 127;
+						}
+						curNoteLens[curTrack] = romData[noteLenPtr + highNibble] * 5;
+						if (lowNibble != curInsts[curTrack])
+						{
+							if (lowNibble == 0x00 && (command[0] == 0x00 || command[0] == 0x24))
+							{
+								;
+							}
+							else
+							{
+								curInsts[curTrack] = lowNibble;
+								firstNotes[curTrack] = 1;
+							}
+						}
+
+						volTrack = curTrack;
+
+						if (lowNibble == 0 && (command[0] == 0x00 || command[0] == 0x24))
+						{
+							curDelays[curTrack] += curNoteLens[curTrack];
+							masterDelays[curTrack] += curNoteLens[curTrack];
+						}
+						else
+						{
+							tempPos = WriteNoteEventAltOn(multiMidData[curTrack], midPosM[curTrack], curNotes[curTrack], curNoteLens[curTrack], curDelays[curTrack], firstNotes[curTrack], curTrack, curInsts[curTrack]);
+							firstNotes[curTrack] = 0;
+							midPosM[curTrack] = tempPos;
+							curDelays[curTrack] = curNoteLens[curTrack];
+							holdNotes[curTrack] = 1;
+							masterDelays[curTrack] += curNoteLens[curTrack];
+						}
+
+						seqPosM[curTrack] += 2;
+
 					}
-					else
+
+					else if (EventMap[command[0]] == MC_EVENT_TIE)
+					{
+						lowNibble = (command[1] >> 4);
+						highNibble = (command[1] & 15);
+
+						curNoteLens[curTrack] = romData[noteLenPtr + highNibble] * 5;
+
+						curDelays[curTrack] += curNoteLens[curTrack];
+						masterDelays[curTrack] += curNoteLens[curTrack];
+						seqPosM[curTrack] += 2;
+					}
+
+					else if (EventMap[command[0]] == MC_EVENT_STOP)
+					{
+						if (holdNotes[curTrack] == 1)
+						{
+							tempPos = WriteNoteEventAltOff(multiMidData[curTrack], midPosM[curTrack], curNotes[curTrack], curNoteLens[curTrack], curDelays[curTrack], firstNotes[curTrack], curTrack, curInsts[curTrack]);
+							holdNotes[curTrack] = 0;
+							curDelays[curTrack] = 0;
+							midPosM[curTrack] = tempPos;
+						}
+						tracksEnd[curTrack] = 1;
+					}
+
+					else if (EventMap[command[0]] == MC_EVENT_JUMP)
+					{
+						if (holdNotes[curTrack] == 1)
+						{
+							tempPos = WriteNoteEventAltOff(multiMidData[curTrack], midPosM[curTrack], curNotes[curTrack], curNoteLens[curTrack], curDelays[curTrack], firstNotes[curTrack], curTrack, curInsts[curTrack]);
+							holdNotes[curTrack] = 0;
+							curDelays[curTrack] = 0;
+							midPosM[curTrack] = tempPos;
+						}
+						tracksEnd[curTrack] = 1;
+					}
+
+					else if (EventMap[command[0]] == MC_EVENT_NOISE)
+					{
+						seqPosM[curTrack] += 2;
+					}
+
+					else if (EventMap[command[0]] == MC_EVENT_CALL)
+					{
+						if (inMacroM[curTrack] == 0)
+						{
+							/*Macro position*/
+							macros[curTrack][0] = ReadLE16(&romData[macroOffset + (command[1] * 2)]);
+							/*Macro transpose*/
+							transposes[curTrack] = (signed char)command[2];
+							/*Macro times*/
+							if (macros[curTrack][3] == 0)
+							{
+								macros[curTrack][1] = command[3] - 1;
+								macros[curTrack][3] = 1;
+							}
+
+							/*Macro return*/
+							macros[curTrack][2] = seqPosM[curTrack] + 4;
+
+							inMacroM[curTrack]++;
+							seqPosM[curTrack] = macros[curTrack][0];
+						}
+						else
+						{
+							/*Don't allow nested macros*/
+							if (holdNotes[curTrack] == 1)
+							{
+								tempPos = WriteNoteEventAltOff(multiMidData[curTrack], midPosM[curTrack], curNotes[curTrack], curNoteLens[curTrack], curDelays[curTrack], firstNotes[curTrack], curTrack, curInsts[curTrack]);
+								holdNotes[curTrack] = 0;
+								curDelays[curTrack] = 0;
+								midPosM[curTrack] = tempPos;
+							}
+							tracksEnd[curTrack] = 1;
+						}
+					}
+
+					else if (EventMap[command[0]] == MC_EVENT_RETURN)
+					{
+						if (macros[curTrack][1] <= 0)
+						{
+							inMacroM[curTrack] = 0;
+							seqPosM[curTrack] = macros[curTrack][2];
+							transposes[curTrack] = 0;
+							macros[curTrack][0] = 0;
+							macros[curTrack][3] = 0;
+						}
+						else
+						{
+							inMacroM[curTrack] = 0;
+							macros[curTrack][1]--;
+							seqPosM[curTrack] = macros[curTrack][2] - 4;
+						}
+
+					}
+
+					else if (EventMap[command[0]] == MC_EVENT_SET_LOOP_FLAG)
+					{
+						seqPosM[curTrack] += 2;
+					}
+
+					else if (EventMap[command[0]] == MC_EVENT_GLOBAL_PAN)
+					{
+						seqPosM[curTrack] += 2;
+					}
+
+					else if (EventMap[command[0]] == MC_EVENT_SET_NOTE_LENS)
+					{
+						noteLenPtr = ReadLE16(&romData[seqPosM[curTrack] + 1]);
+						seqPosM[curTrack] += 3;
+					}
+
+					else if (EventMap[command[0]] == MC_EVENT_TEMPO)
 					{
 						ctrlMidPos++;
 						valSize = WriteDeltaTime(ctrlMidData, ctrlMidPos, ctrlDelay);
@@ -752,109 +644,54 @@ void MCsong2mid(int songNum, long ptrs[], long nextPtr)
 						ctrlMidPos += valSize;
 						WriteBE24(&ctrlMidData[ctrlMidPos], 0xFF5103);
 						ctrlMidPos += 3;
-						tempo = command[1] * 0.5;
+						tempo = command[1] * 0.6;
 						WriteBE24(&ctrlMidData[ctrlMidPos], 60000000 / tempo);
 						ctrlMidPos += 2;
-						romPos += 2;
-					}
-					break;
-					/*Set song tempo*/
-				case 0x69:
-					ctrlMidPos++;
-					valSize = WriteDeltaTime(ctrlMidData, ctrlMidPos, ctrlDelay);
-					ctrlDelay = 0;
-					ctrlMidPos += valSize;
-					WriteBE24(&ctrlMidData[ctrlMidPos], 0xFF5103);
-					ctrlMidPos += 3;
-					tempo = command[1] * 0.6;
-					WriteBE24(&ctrlMidData[ctrlMidPos], 60000000 / tempo);
-					ctrlMidPos += 2;
 
-					romPos += 2;
-					break;
-					/*Set channel 1 panning*/
-				case 0x6A:
-					romPos += 2;
-					break;
-					/*Set channel 2 panning*/
-				case 0x6B:
-					romPos += 2;
-					break;
-					/*Set channel 3 panning*/
-				case 0x6C:
-					romPos += 2;
-					break;
-					/*Set channel 4 panning*/
-				case 0x6D:
-					romPos += 2;
-					break;
-				default:
-					curNote = command[0];
-					if (curNote >= 128)
-					{
-						if (curTrack == 3)
-						{
-							curNote += -128;
-						}
-						else
-						{
-							curNote += -140;
-						}
+						seqPosM[curTrack] += 2;
 					}
-					curNote += macTranspose;
-					curNote += 24;
 
-					if (sysMode == 3 && curTrack != 3)
+					else if (EventMap[command[0]] == MC_EVENT_PAN1)
 					{
-						curNote -= 15;
+						seqPosM[curTrack] += 2;
 					}
-					else if (sysMode == 3 && curTrack == 3)
+
+					else if (EventMap[command[0]] == MC_EVENT_PAN2)
 					{
-						curNote += 24;
+						seqPosM[curTrack] += 2;
 					}
-					if (curTrack == 3)
+
+					else if (EventMap[command[0]] == MC_EVENT_PAN3)
 					{
-						curNote -= 12;
+						seqPosM[curTrack] += 2;
 					}
-					if (curNote >= 128)
+
+					else if (EventMap[command[0]] == MC_EVENT_PAN4)
 					{
-						curNote = 127;
+						seqPosM[curTrack] += 2;
 					}
-					lowNibble = (command[1] >> 4);
-					highNibble = (command[1] & 15);
-					if (curInst != lowNibble)
-					{
-						curInst = lowNibble;
-						firstNote = 1;
-					}
-					curNoteLen = curStepTab[highNibble];
-					if ((lowNibble == 0 && command[0] == 36) || (lowNibble == 0 && command[0] == 0))
-					{
-						curDelay += curNoteLen;
-					}
+
+					/*Unknown command*/
 					else
 					{
-						tempPos = WriteNoteEvent(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
-						firstNote = 0;
-						midPos = tempPos;
-						curDelay = 0;
+						seqPosM[curTrack]++;
 					}
-
-					ctrlDelay += curNoteLen;
-					masterDelay += curNoteLen;
-					romPos += 2;
-					break;
 				}
 			}
+			seqTime += 5;
+			ctrlDelay += 5;
+		}
 
+		for (curTrack = 0; curTrack < trackCnt; curTrack++)
+		{
 			/*End of track*/
-			WriteBE32(&midData[midPos], 0xFF2F00);
-			midPos += 4;
+			WriteBE32(&multiMidData[curTrack][midPosM[curTrack]], 0xFF2F00);
+			midPosM[curTrack] += 4;
+			firstNotes[curTrack] = 0;
 
 			/*Calculate MIDI channel size*/
-			trackSize = midPos - midTrackBase;
-			WriteBE16(&midData[midTrackBase - 2], trackSize);
-
+			trackSizes[curTrack] = midPosM[curTrack] - midTrackBase;
+			WriteBE16(&multiMidData[curTrack][midTrackBase - 2], trackSizes[curTrack]);
 		}
 
 		/*End of control track*/
@@ -863,8 +700,8 @@ void MCsong2mid(int songNum, long ptrs[], long nextPtr)
 		ctrlMidPos += 4;
 
 		/*Calculate MIDI channel size*/
-		trackSize = ctrlMidPos - ctrlMidTrackBase;
-		WriteBE16(&ctrlMidData[ctrlMidTrackBase - 2], trackSize);
+		ctrlTrackSize = ctrlMidPos - ctrlMidTrackBase;
+		WriteBE16(&ctrlMidData[ctrlMidTrackBase - 2], ctrlTrackSize);
 
 		if (multiBanks == 0)
 		{
@@ -874,392 +711,14 @@ void MCsong2mid(int songNum, long ptrs[], long nextPtr)
 		{
 			sprintf(outfile, "Bank %i/song%d.mid", (curBank + 1), songNum);
 		}
-
 		fwrite(ctrlMidData, ctrlMidPos, 1, mid);
-		fwrite(midData, midPos, 1, mid);
-		fclose(mid);
-	}
-
-}
-
-/*Convert the song data to MIDI - NES edition*/
-void MCsong2midNES(int songNum, long ptrs[])
-{
-	static const char* TRK_NAMES[5] = { "Square 1", "Square 2", "Triangle", "Noise", "PCM" };
-	long romPos = 0;
-	unsigned int midPos = 0;
-	int trackCnt = 4;
-	int curTrack = 0;
-	long midTrackBase = 0;
-	unsigned int curDelay = 0;
-	int midChan = 0;
-	int trackEnd = 0;
-	int noteTrans = 0;
-	int ticks = 120;
-	int k = 0;
-
-	long switchPoint[10][2];
-
-	unsigned int ctrlMidPos = 0;
-	long ctrlMidTrackBase = 0;
-
-	int valSize = 0;
-
-	long trackSize = 0;
-
-	unsigned int curNote = 0;
-	int curVol = 0;
-	int curNoteLen = 0;
-	int lastNote = 0;
-
-	int tempByte = 0;
-	long tempPos = 0;
-
-	long stepPtr = 0;
-	float multiplier = 0;
-	long tempo = 0;
-
-	int curInst = 0;
-
-	signed int macTranspose = 0;
-	unsigned short macCount = 0;
-	unsigned int macReturn = 0;
-	unsigned long macroBase = 0;
-	int curMacro = 0;
-	long macroPos = 0;
-
-	unsigned char command[4];
-	unsigned char lowNibble;
-	unsigned char highNibble;
-	long ctrlDelay = 0;
-	long masterDelay = 0;
-
-	int firstNote = 1;
-
-	int timeVal = 0;
-
-	int switchNum = 0;
-
-	int j;
-
-
-	midPos = 0;
-	ctrlMidPos = 0;
-
-	midLength = 0x10000;
-	midData = (unsigned char*)malloc(midLength);
-
-	ctrlMidData = (unsigned char*)malloc(midLength);
-
-	for (j = 0; j < midLength; j++)
-	{
-		midData[j] = 0;
-		ctrlMidData[j] = 0;
-	}
-
-	sprintf(outfile, "song%d.mid", songNum);
-	if ((mid = fopen(outfile, "wb")) == NULL)
-	{
-		printf("ERROR: Unable to write to file song%d.mid!\n", songNum);
-		exit(2);
-	}
-	else
-	{
-
-		/*Write MIDI header with "MThd"*/
-		WriteBE32(&ctrlMidData[ctrlMidPos], 0x4D546864);
-		WriteBE32(&ctrlMidData[ctrlMidPos + 4], 0x00000006);
-		ctrlMidPos += 8;
-
-		WriteBE16(&ctrlMidData[ctrlMidPos], 0x0001);
-		WriteBE16(&ctrlMidData[ctrlMidPos + 2], trackCnt + 1);
-		WriteBE16(&ctrlMidData[ctrlMidPos + 4], ticks);
-		ctrlMidPos += 6;
-
-		/*Get the initial tempo*/
-		stepPtr = ptrs[4];
-		tempo = 120;
-
-		if (fiveChan != 1)
-		{
-			trackCnt = 4;
-		}
-		else if (fiveChan == 1)
-		{
-			trackCnt = 5;
-		}
-
-
-		/*Write initial MIDI information for "control" track*/
-		WriteBE32(&ctrlMidData[ctrlMidPos], 0x4D54726B);
-		ctrlMidPos += 8;
-		ctrlMidTrackBase = ctrlMidPos;
-
-		/*Set channel name (blank)*/
-		WriteDeltaTime(ctrlMidData, ctrlMidPos, 0);
-		ctrlMidPos++;
-		WriteBE16(&ctrlMidData[ctrlMidPos], 0xFF03);
-		Write8B(&ctrlMidData[ctrlMidPos + 2], 0);
-		ctrlMidPos += 2;
-
-		/*Set initial tempo*/
-		WriteDeltaTime(ctrlMidData, ctrlMidPos, 0);
-		ctrlMidPos++;
-		WriteBE32(&ctrlMidData[ctrlMidPos], 0xFF5103);
-		ctrlMidPos += 4;
-
-		WriteBE24(&ctrlMidData[ctrlMidPos], 60000000 / tempo);
-		ctrlMidPos += 3;
-
-		/*Set time signature*/
-		WriteDeltaTime(ctrlMidData, ctrlMidPos, 0);
-		ctrlMidPos++;
-		WriteBE24(&ctrlMidData[ctrlMidPos], 0xFF5804);
-		ctrlMidPos += 3;
-		WriteBE32(&ctrlMidData[ctrlMidPos], 0x04021808);
-		ctrlMidPos += 4;
-
-		/*Set key signature*/
-		WriteDeltaTime(ctrlMidData, ctrlMidPos, 0);
-		ctrlMidPos++;
-		WriteBE24(&ctrlMidData[ctrlMidPos], 0xFF5902);
-		ctrlMidPos += 4;
-
 		for (curTrack = 0; curTrack < trackCnt; curTrack++)
 		{
-			ctrlDelay = 0;
-			masterDelay = 0;
-			firstNote = 1;
-			/*Write MIDI chunk header with "MTrk"*/
-			WriteBE32(&midData[midPos], 0x4D54726B);
-			midPos += 8;
-			midTrackBase = midPos;
-
-			curDelay = 0;
-			trackEnd = 0;
-
-			curNote = 0;
-			lastNote = 0;
-			curVol = 0;
-			curNoteLen = 0;
-			switchNum = 0;
-
-			/*Add track header*/
-			valSize = WriteDeltaTime(midData, midPos, 0);
-			midPos += valSize;
-			WriteBE16(&midData[midPos], 0xFF03);
-			midPos += 2;
-			Write8B(&midData[midPos], strlen(TRK_NAMES[curTrack]));
-			midPos++;
-			sprintf((char*)&midData[midPos], TRK_NAMES[curTrack]);
-			midPos += strlen(TRK_NAMES[curTrack]);
-
-
-			if (fiveChan != 1)
-			{
-				romPos = ptrs[curTrack] - bankAmt;
-			}
-			else if (fiveChan == 1)
-			{
-				romPos = ptrs[curTrack] + 0x2000 - bankAmt;
-			}
-
-
-			command[0] = romData[romPos];
-			command[1] = romData[romPos + 1];
-			command[2] = romData[romPos + 2];
-			command[3] = romData[romPos + 3];
-
-			if (command[0] == 0 && command[1] == 0)
-			{
-				romPos += 2;
-			}
-
-			while (romPos < 0xFFFF && trackEnd == 0)
-			{
-				command[0] = romData[romPos];
-				command[1] = romData[romPos + 1];
-				command[2] = romData[romPos + 2];
-				command[3] = romData[romPos + 3];
-
-				switch (command[0])
-				{
-				case 0x5D:
-					romPos += 2;
-					break;
-					/*Rest*/
-				case 0x5F:
-				case 0x60:
-					highNibble = (command[1] & 15);
-					curNoteLen = curStepTab[highNibble];
-					curDelay += curNoteLen;
-					ctrlDelay += curNoteLen;
-					masterDelay += curNoteLen;
-					romPos += 2;
-					break;
-					/*Stop channel*/
-				case 0x61:
-					trackEnd = 1;
-					break;
-					/*Call macro*/
-				case 0x62:
-					curMacro = command[1];
-					macTranspose = (signed char)command[2];
-					macCount = command[3];
-
-					if (fiveChan != 1)
-					{
-						macroBase = romData[lowerMacros + curMacro - bankAmt] + (romData[upperMacros + curMacro - bankAmt] * 0x100);
-					}
-					else if (fiveChan == 1)
-					{
-						macroBase = romData[lowerMacros + 0x2000 + curMacro - bankAmt] + (romData[upperMacros + 0x2000 + curMacro - bankAmt] * 0x100);
-					}
-
-					macReturn = romPos + 4;
-					romPos = macroBase - bankAmt;
-
-					if (fiveChan == 1)
-					{
-						romPos += 0x2000;
-					}
-					break;
-					/*End of macro*/
-				case 0x63:
-					if (macCount > 1)
-					{
-						romPos = macroBase - bankAmt;
-
-						if (fiveChan == 1)
-						{
-							romPos += 0x2000;
-						}
-						macCount--;
-					}
-					else
-					{
-						romPos = macReturn;
-					}
-					break;
-					/*Go to track loop point*/
-				case 0x64:
-					trackEnd = 1;
-					break;
-				case 0x65:
-					romPos += 2;
-
-				default:
-					curNote = command[0];
-					if (curNote >= 128)
-					{
-						if (curTrack == 3)
-						{
-							curNote += -128;
-						}
-						else
-						{
-							curNote += -140;
-						}
-					}
-					curNote += macTranspose;
-					curNote += 24;
-					if (curNote >= 128)
-					{
-						curNote = 127;
-					}
-					lowNibble = (command[1] >> 4);
-					highNibble = (command[1] & 15);
-					if (curInst != lowNibble)
-					{
-						curInst = lowNibble;
-						firstNote = 1;
-					}
-					curNoteLen = curStepTab[highNibble];
-					if ((lowNibble == 0 && command[0] == 36) || (lowNibble == 0 && command[0] == 0))
-					{
-						curDelay += curNoteLen;
-					}
-					else
-					{
-						tempPos = WriteNoteEvent(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
-						firstNote = 0;
-						midPos = tempPos;
-						curDelay = 0;
-					}
-
-					ctrlDelay += curNoteLen;
-					masterDelay += curNoteLen;
-					romPos += 2;
-					break;
-				}
-			}
-
-			/*End of track*/
-			WriteBE32(&midData[midPos], 0xFF2F00);
-			midPos += 4;
-
-			/*Calculate MIDI channel size*/
-			trackSize = midPos - midTrackBase;
-			WriteBE16(&midData[midTrackBase - 2], trackSize);
-
+			fwrite(multiMidData[curTrack], midPosM[curTrack], 1, mid);
 		}
 
-		/*End of control track*/
-		ctrlMidPos++;
-		WriteBE32(&ctrlMidData[ctrlMidPos], 0xFF2F00);
-		ctrlMidPos += 4;
-
-		/*Calculate MIDI channel size*/
-		trackSize = ctrlMidPos - ctrlMidTrackBase;
-		WriteBE16(&ctrlMidData[ctrlMidTrackBase - 2], trackSize);
-
-		sprintf(outfile, "song%d.mid", songNum);
-		fwrite(ctrlMidData, ctrlMidPos, 1, mid);
-		fwrite(midData, midPos, 1, mid);
-		free(midData);
+		free(multiMidData[0]);
 		free(ctrlMidData);
 		fclose(mid);
-	}
-
-}
-
-/*Get all the macro pointers from the table, and try to find the end of the table*/
-void MCgetMacroList(unsigned long list[], long offset, long sfxTable)
-{
-	int j;
-	unsigned long curValue;
-	unsigned long curValue2;
-	unsigned long tempCurValue;
-	long newOffset = offset;
-	long offset2 = offset - bankAmt;
-	long initialValue = (ReadLE16(&romData[newOffset - bankAmt]));
-
-	for (j = 0; j < 500; j++)
-	{
-		curValue = (ReadLE16(&romData[newOffset - bankAmt])) - bankAmt;
-		curValue2 = (ReadLE16(&romData[newOffset - bankAmt]));
-		if (curValue2 != sfxTable && curValue2 >= bankAmt && curValue2 != 65535)
-		{
-			/*Workaround for Kirikou (and possibly other games with "**PLANET**" padding (i.e. games developed by Planet)*/
-			if (curValue2 == 21573)
-			{
-				tempCurValue = (ReadLE16(&romData[newOffset + 2 - bankAmt]));
-				if (tempCurValue == 10794)
-				{
-					list[j] = NULL;
-					highestMacro = j - 1;
-					break;
-				}
-			}
-			list[j] = curValue;
-			newOffset += 2;
-		}
-		else
-		{
-			highestMacro = j;
-			break;
-		}
-
-
 	}
 }

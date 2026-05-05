@@ -92,6 +92,7 @@
 #define KCE_Japan			0x59
 #define Equilibrium			0x5A
 #define UGB_Player			0x5B
+#define Atelier_Double		0x5C
 
 extern FILE * rom, * mid;
 extern long masterBank;
