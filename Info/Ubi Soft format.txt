@@ -1,0 +1,50 @@
+Song header
+=======================================
+Each song starts with 7 bytes. The only byte known to be used is byte 3, which is used for a pointer (relative) to the number of "phrases" in the song.
+Then, the next 2 bytes are an absolute pointer to the start of the actual song data.
+
+At this pointer, there are two more (relative) pointers, which always appear to be 10, indicating the start of the following data.
+
+The pointer specified in byte 3 of the header specifies the number of "phrases" in the song before it restarts.
+
+Phrase pointers are relative, and are 2 byte (16-bit).
+
+Phrase commands
+=======================================
+Each phrase is comprised of a series of a pattern of 5 bytes structured as follows:
+
+1-2. Time
+3. Event
+4-5. Note data/envelope OR parameters
+(If channel 1-3, the following note data format is used:
+xxxx yyyy zzzz zzzz (X = NRx2, Y = NRx4, Z = NRx3))
+(Otherwise, for channel 4 - noise channel:
+xxyy yyyy yyyy yyyy (X = Volume, Y = Pointer to instrument/envelope data))
+
+The events specified in byte 3 are as follows:
+00 = Channel 1 note on
+02 = Channel 1 note off
+04 = Channel 1 set instrument/envelope data (pointer)
+06 = (Invalid)
+08 = (Invalid)
+0A = Channel 2 note on
+0C = Channel 2 note off
+0E = Channel 2 set instrument/envelope data (pointer)
+10 = (Invalid)
+12 = (Invalid)
+14 = Channel 3 note on
+16 = Channel 3 note off
+18 = Channel 3 set instrument/envelope data (pointer)
+1A = (Invalid)
+1C = (Invalid)
+1E = Channel 4 note on
+20 = Channel 4 note off
+22 = (Invalid)
+24 = (Invalid)
+26 = (Invalid)
+FC = End of phrase
+80-FF (except FC) xx xx = Jump to position
+
+Instrument data
+=======================================
+Instrument data is 4 bytes each for all channels, which appears to be masked to each NRx1-4 register.
