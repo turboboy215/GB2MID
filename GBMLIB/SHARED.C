@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stddef.h>
+#include <math.h>
 #include "SHARED.H"
 #include "ACT.H"
 #include "AICOM.H"
@@ -91,6 +92,7 @@
 #include "TITUS1.H"
 #include "TITUS2.H"
 #include "TOSE.H"
+#include "UBISOFT.H"
 #include "UGB.H"
 #include "VI.H"
 #include "WARIOL2.H"
@@ -471,6 +473,42 @@ unsigned int WriteNoteEventAltOff(unsigned char* buffer, unsigned int pos, unsig
 	return pos;
 }
 
+int gbFreq2Note(unsigned int freq)
+{
+	int note;
+	double denom, freq2, midi_f;
+
+	const double CPU = 4194304.0;
+
+	if (freq >= 2048)
+	{
+		return 127;
+	}
+
+	denom = 4.0 * (2048.0 - (double)freq);
+	freq = CPU / denom;
+
+	if (freq <= 0.00)
+	{
+		return 0;
+	}
+
+	midi_f = 69.0 + 12.0 * log2(freq / 440.0);
+	note = (int)floor(midi_f + 0.5) - 36;
+
+	if (note < 0)
+	{
+		note = 0;
+	}
+
+	if (note > 127)
+	{
+		note = 127;
+	}
+
+	return note;
+}
+
 void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameters[4][100])
 {
 	if (numBanks > 1)
@@ -747,6 +785,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case TOSE:
 			TOSEProc(parameters);
+			break;
+		case Ubi_Soft:
+			UbiSoftProc(parameters);
 			break;
 		case UGB_Player:
 			UGBProc(parameters);

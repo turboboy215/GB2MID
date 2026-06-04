@@ -93,6 +93,7 @@
 #define Equilibrium			0x5A
 #define UGB_Player			0x5B
 #define Atelier_Double		0x5C
+#define Ubi_Soft			0x5D
 
 extern FILE * rom, * mid;
 extern long masterBank;
@@ -135,4 +136,5 @@ extern unsigned int WriteNoteEventOff(unsigned char* buffer, unsigned int pos, u
 extern unsigned int WriteNoteEventAltOn(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 extern unsigned int WriteNoteEventAltOff(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 extern int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
+extern int gbFreq2Note(unsigned int freq);
 extern void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameters[4][100]);

@@ -19,10 +19,13 @@ long sfxOffset;
 int i, j;
 int drvVers;
 char outfile[1000000];
-const char MCMagicBytes[10] = { 0x6F, 0x26, 0x00, 0x29, 0x54, 0x5D, 0x29, 0x29, 0x19, 0x11 };
-const char MCMacroFindOld[13] = { 0xE1, 0x11, 0xFE, 0xFF, 0x19, 0x3E, 0x01, 0x22, 0x03, 0x0A, 0xCB, 0x27, 0x11 };
-const char MCMacroFindNew[5] = { 0xCB, 0x27, 0x30, 0x06, 0x11 };
-const char MCSFXFind[5] = { 0xCB, 0x27, 0x85, 0x6F, 0x30 };
+const char MCMagicBytesGB[10] = { 0x6F, 0x26, 0x00, 0x29, 0x54, 0x5D, 0x29, 0x29, 0x19, 0x11 };
+const char MCMagicBytesGG[5] = { 0x85, 0x6F, 0x30, 0x01, 0x24 };
+const char MCMacroFindOldGB[13] = { 0xE1, 0x11, 0xFE, 0xFF, 0x19, 0x3E, 0x01, 0x22, 0x03, 0x0A, 0xCB, 0x27, 0x11 };
+const char MCMacroFindNewGB[5] = { 0xCB, 0x27, 0x30, 0x06, 0x11 };
+const char MCMacroFindGG[8] = { 0x23, 0x7E, 0x87, 0x83, 0x5F, 0x30, 0x01, 0x14 };
+const char MCSFXFindGB[5] = { 0xCB, 0x27, 0x85, 0x6F, 0x30 };
+const char MCSFXFindGG[6] = { 0x87, 0x85, 0x6F, 0x30, 0x01, 0x24 };
 long seqPtrs[4];
 long noteLenPtr;
 long nextPtr;
@@ -33,6 +36,7 @@ int foundTable;
 int curVols[8];
 int volTrack;
 int stopCvt;
+int sysMode;
 
 int multiBanks;
 int curBank;
@@ -66,6 +70,7 @@ void MCProc(int bank)
 	drvVers = MC_VER_STD;
 	bankAmt = bankSize;
 	stopCvt = 0;
+	sysMode = SYSTEM_GB;
 
 	if (bank < 0x02)
 	{
@@ -82,7 +87,7 @@ void MCProc(int bank)
 	/*Try to search the bank for song table loader*/
 	for (i = 0; i < (bankSize * 2); i++)
 	{
-		if (!memcmp(&romData[i], MCMagicBytes, 10))
+		if (!memcmp(&romData[i], MCMagicBytesGB, 10))
 		{
 			tablePtrLoc = i + 10;
 			printf("Found pointer to song table at address 0x%04X!\n", tablePtrLoc);
@@ -96,7 +101,7 @@ void MCProc(int bank)
 	/*Search for sound effects table*/
 	for (i = 0; i < (bankSize * 2); i++)
 	{
-		if (!memcmp(&romData[i], MCSFXFind, 5))
+		if (!memcmp(&romData[i], MCSFXFindGB, 5))
 		{
 			sfxPtrLoc = i - 2;
 			printf("Found pointer to sound effects table at address 0x%04X!\n", sfxPtrLoc);
@@ -110,7 +115,7 @@ void MCProc(int bank)
 	for (i = 0; i < (bankSize * 2); i++)
 	{
 		/*First, try old method (games before 1999)*/
-		if (!memcmp(&romData[i], MCMacroFindOld, 13))
+		if (!memcmp(&romData[i], MCMacroFindOldGB, 13))
 		{
 			macroPtrLoc = i + 13;
 			printf("Found pointer to macro table at address 0x%04X!\n", macroPtrLoc);
@@ -120,7 +125,7 @@ void MCProc(int bank)
 		}
 
 		/*Now try new method (games from 1999-)*/
-		else if (!memcmp(&romData[i], MCMacroFindNew, 5))
+		else if (!memcmp(&romData[i], MCMacroFindNewGB, 5))
 		{
 			macroPtrLoc = i + 5;
 			printf("Found pointer to macro table at address 0x%04X!\n", macroPtrLoc);
@@ -167,7 +172,8 @@ void MCProc(int bank)
 /*Convert the song data to MIDI*/
 void MCsong2mid(int songNum, long ptrs[], long nextPtr)
 {
-	static const char* TRK_NAMES[4] = { "Square 1", "Square 2", "Wave", "Noise" };
+	static const char* TRK_NAMES_GB[4] = { "Square 1", "Square 2", "Wave", "Noise" };
+	static const char* TRK_NAMES_GG[4] = { "Square 1", "Square 2", "Square 3", "Noise" };
 	long romPos = 0;
 	unsigned int midPos = 0;
 	unsigned int midPosM[5];
@@ -257,7 +263,18 @@ void MCsong2mid(int songNum, long ptrs[], long nextPtr)
 
 	long seqTime = 0;
 
+	int tempoFix = 0;
+
 	trackCnt = 4;
+
+	if (sysMode == SYSTEM_GG && tempoFix != 1)
+	{
+		tempo = 120;
+	}
+	else
+	{
+		tempo = 140;
+	}
 
 	for (curTrack = 0; curTrack < trackCnt; curTrack++)
 	{
@@ -355,31 +372,58 @@ void MCsong2mid(int songNum, long ptrs[], long nextPtr)
 
 		/*Now retrieve version information...*/
 
-		switch (drvVers)
+		if (sysMode == SYSTEM_GG)
 		{
-		case MC_VER_STD:
-			/*Fall-through*/
-		default:
-			MC_STATUS_NOTE_MIN = 0x00;
-			MC_STATUS_NOTE_MAX = 0x5F;
-			MC_STATUS_ALT_NOTE_MIN = 0x80;
-			MC_STATUS_ALT_NOTE_MAX = 0xFF;
-			EventMap[0x60] = MC_EVENT_TIE;
-			EventMap[0x61] = MC_EVENT_STOP;
-			EventMap[0x62] = MC_EVENT_JUMP;
-			EventMap[0x63] = MC_EVENT_NOISE;
-			EventMap[0x64] = MC_EVENT_CALL;
-			EventMap[0x65] = MC_EVENT_RETURN;
-			EventMap[0x66] = MC_EVENT_SET_LOOP_FLAG;
-			EventMap[0x67] = MC_EVENT_GLOBAL_PAN;
-			EventMap[0x68] = MC_EVENT_SET_NOTE_LENS;
-			EventMap[0x69] = MC_EVENT_TEMPO;
-			EventMap[0x6A] = MC_EVENT_PAN1;
-			EventMap[0x6B] = MC_EVENT_PAN2;
-			EventMap[0x6C] = MC_EVENT_PAN3;
-			EventMap[0x6D] = MC_EVENT_PAN4;
-			break;
+			switch (drvVers)
+			{
+			case MC_VER_STD:
+				/*Fall-through*/
+			default:
+				MC_STATUS_NOTE_MIN = 0x00;
+				MC_STATUS_NOTE_MAX = 0x5F;
+				MC_STATUS_ALT_NOTE_MIN = 0x80;
+				MC_STATUS_ALT_NOTE_MAX = 0xFF;
+				EventMap[0x60] = MC_EVENT_TIE;
+				EventMap[0x61] = MC_EVENT_STOP;
+				EventMap[0x62] = MC_EVENT_JUMP;
+				EventMap[0x63] = MC_EVENT_NOISE;
+				EventMap[0x64] = MC_EVENT_CALL;
+				EventMap[0x65] = MC_EVENT_RETURN;
+				EventMap[0x66] = MC_EVENT_SET_LOOP_FLAG;
+				EventMap[0x67] = MC_EVENT_SET_NOTE_LENS;
+				EventMap[0x68] = MC_EVENT_TEMPO;
+				break;
 
+			}
+		}
+		else
+		{
+			switch (drvVers)
+			{
+			case MC_VER_STD:
+				/*Fall-through*/
+			default:
+				MC_STATUS_NOTE_MIN = 0x00;
+				MC_STATUS_NOTE_MAX = 0x5F;
+				MC_STATUS_ALT_NOTE_MIN = 0x80;
+				MC_STATUS_ALT_NOTE_MAX = 0xFF;
+				EventMap[0x60] = MC_EVENT_TIE;
+				EventMap[0x61] = MC_EVENT_STOP;
+				EventMap[0x62] = MC_EVENT_JUMP;
+				EventMap[0x63] = MC_EVENT_NOISE;
+				EventMap[0x64] = MC_EVENT_CALL;
+				EventMap[0x65] = MC_EVENT_RETURN;
+				EventMap[0x66] = MC_EVENT_SET_LOOP_FLAG;
+				EventMap[0x67] = MC_EVENT_GLOBAL_PAN;
+				EventMap[0x68] = MC_EVENT_SET_NOTE_LENS;
+				EventMap[0x69] = MC_EVENT_TEMPO;
+				EventMap[0x6A] = MC_EVENT_PAN1;
+				EventMap[0x6B] = MC_EVENT_PAN2;
+				EventMap[0x6C] = MC_EVENT_PAN3;
+				EventMap[0x6D] = MC_EVENT_PAN4;
+				break;
+
+			}
 		}
 
 		for (curTrack = 0; curTrack < trackCnt; curTrack++)
@@ -412,10 +456,10 @@ void MCsong2mid(int songNum, long ptrs[], long nextPtr)
 			midPosM[curTrack] += valSize;
 			WriteBE16(&multiMidData[curTrack][midPosM[curTrack]], 0xFF03);
 			midPosM[curTrack] += 2;
-			Write8B(&multiMidData[curTrack][midPosM[curTrack]], strlen(TRK_NAMES[curTrack]));
+			Write8B(&multiMidData[curTrack][midPosM[curTrack]], strlen(TRK_NAMES_GB[curTrack]));
 			midPosM[curTrack]++;
-			sprintf((char*)&multiMidData[curTrack][midPosM[curTrack]], TRK_NAMES[curTrack]);
-			midPosM[curTrack] += strlen(TRK_NAMES[curTrack]);
+			sprintf((char*)&multiMidData[curTrack][midPosM[curTrack]], TRK_NAMES_GB[curTrack]);
+			midPosM[curTrack] += strlen(TRK_NAMES_GB[curTrack]);
 
 			/*Calculate MIDI channel size*/
 			trackSizes[curTrack] = midPosM[curTrack] - midTrackBase;

@@ -6,6 +6,9 @@
 
 #define MC_VER_STD	1
 
+#define SYSTEM_GB	1
+#define SYSTEM_GG	2
+
 enum MCEventTypes
 {
 	MC_EVENT_TIE = 0,
