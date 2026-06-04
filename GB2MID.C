@@ -659,6 +659,10 @@ int main(int args, char* argv[])
             {
                 driver = archOnPlayer;
             }
+            else if (!strcmp(formatString, "Atelier_Double"))
+            {
+				driver = Atelier_Double;
+            }
             else if (!strcmp(formatString, "Atlus"))
             {
                 driver = Atlus;
@@ -986,6 +990,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "TOSE"))
             {
                 driver = TOSE;
+            }
+            else if (!strcmp(formatString, "Ubi_Soft"))
+            {
+                driver = Ubi_Soft;
             }
             else if (!strcmp(formatString, "UGB_Player"))
             {

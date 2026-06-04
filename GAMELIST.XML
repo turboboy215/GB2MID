@@ -6875,6 +6875,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Donald Duck - Daisy o Tsukue! (J) [C][!]</name>
+		<gamecode>BUDJ</gamecode>
+		<rev>0</rev>
+		<checksum>675B</checksum>
+        <crc32>333c124c</crc32>
+        <format>Ubi_Soft</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>CFG/Donald Duck - Daisy o Tsukue! (J) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Donald Duck - Goin' Quackers (U) (M5) [C][!]</name>
+		<gamecode>BQAE</gamecode>
+		<rev>0</rev>
+		<checksum>A455</checksum>
+        <crc32>4685909b</crc32>
+        <format>Ubi_Soft</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>CFG/Donald Duck - Goin' Quackers (U) (M5) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Donald Duck - Quack Attack (E) (M5) [C][!]</name>
+		<gamecode>BQAP</gamecode>
+		<rev>0</rev>
+		<checksum>84F5</checksum>
+        <crc32>07a13b5b</crc32>
+        <format>Ubi_Soft</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>CFG/Donald Duck - Quack Attack (E) (M5) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Donald Duck in Maui Mallard (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -8303,6 +8336,39 @@
 		<part></part>
 		<banks>7</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>F-1 Racing Championship (E) (M5) [C][!]</name>
+		<gamecode>AEQP</gamecode>
+		<rev>0</rev>
+		<checksum>3CDD</checksum>
+        <crc32>fc537719</crc32>
+        <format>Ubi_Soft</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>CFG/F-1 Racing Championship (E) (M5) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>F-1 Racing Championship (E) (M5) (Beta) [C][!]</name>
+		<gamecode>AEQP</gamecode>
+		<rev>0</rev>
+		<checksum>9D8D</checksum>
+        <crc32>e115ddb1</crc32>
+        <format>Ubi_Soft</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>CFG/F-1 Racing Championship (E) (M5) (Beta) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>F-1 Racing Championship (U) (Unreleased) [C][!]</name>
+		<gamecode>AEQE</gamecode>
+		<rev>0</rev>
+		<checksum>AECD</checksum>
+        <crc32>9ec98cab</crc32>
+        <format>Ubi_Soft</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>CFG/F-1 Racing Championship (U) (Unreleased) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>F-1 Spirit (J) [!]</name>
@@ -12461,6 +12527,28 @@
 		<part></part>
 		<banks>5</banks>
 		<parameters>CFG/JumpStart Dino Adventure - Field Trip (U) [C].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Jungle Book, The - Mowgli's Wild Adventure (E) (M5) [C][!]</name>
+		<gamecode>BJGP</gamecode>
+		<rev>0</rev>
+		<checksum>2597</checksum>
+        <crc32>b609ecea</crc32>
+        <format>Ubi_Soft</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>CFG/Jungle Book, The - Mowgli's Wild Adventure (E) (M5) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Jungle Book, The - Mowgli's Wild Adventure (U) (M5) [C][!]</name>
+		<gamecode>BJGE</gamecode>
+		<rev>0</rev>
+		<checksum>2448</checksum>
+        <crc32>9b6b755f</crc32>
+        <format>Ubi_Soft</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>CFG/Jungle Book, The - Mowgli's Wild Adventure (U) (M5) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Jungle Book, The (U) [!]</name>
@@ -23010,6 +23098,61 @@
 		<part></part>
 		<banks>10</banks>
 		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Rayman - Mister Dark no Wana (J) [C][!]</name>
+		<gamecode>BURJ</gamecode>
+		<rev>0</rev>
+		<checksum>F7A3</checksum>
+        <crc32>3fde5bac</crc32>
+        <format>Ubi_Soft</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>CFG/Rayman - Mister Dark no Wana (J) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Rayman (E) (M6) [C][!]</name>
+		<gamecode>AYQP</gamecode>
+		<rev>0</rev>
+		<checksum>A9D4</checksum>
+        <crc32>c430a89a</crc32>
+        <format>Ubi_Soft</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>CFG/Rayman (E) (M6) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Rayman (U) (M6) [C][!]</name>
+		<gamecode>AYQE</gamecode>
+		<rev>0</rev>
+		<checksum>A9D4</checksum>
+        <crc32>eda12f0d</crc32>
+        <format>Ubi_Soft</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>CFG/Rayman (U) (M6) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Rayman 2 - The Great Escape (E) (M5) [C][!]</name>
+		<gamecode>BRYP</gamecode>
+		<rev>0</rev>
+		<checksum>04D5</checksum>
+        <crc32>250015d4</crc32>
+        <format>Ubi_Soft</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>CFG/Rayman 2 - The Great Escape (E) (M5) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Rayman 2 - The Great Escape (U) (M5) [C][!]</name>
+		<gamecode>BRYE</gamecode>
+		<rev>0</rev>
+		<checksum>C94E</checksum>
+        <crc32>6f5c315d</crc32>
+        <format>Ubi_Soft</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>CFG/Rayman 2 - The Great Escape (U) (M5) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Razor Freestyle Scooter (U) [C][!]</name>
