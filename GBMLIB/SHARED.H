@@ -94,6 +94,8 @@
 #define UGB_Player			0x5B
 #define Atelier_Double		0x5C
 #define Ubi_Soft			0x5D
+#define Reeb				0x5E
+#define Dragon_Ball_Z		0x5F
 
 extern FILE * rom, * mid;
 extern long masterBank;

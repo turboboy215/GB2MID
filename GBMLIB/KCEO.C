@@ -492,7 +492,7 @@ void KCEOsong2mid(int songNum, long songPtrs[4])
 					{
 						if (curTrack != 3)
 						{
-							curNote = exRomData[seqPos] + 24 + transpose;
+							curNote = exRomData[seqPos] + 36 + transpose;
 
 							if (curTrack == 2)
 							{

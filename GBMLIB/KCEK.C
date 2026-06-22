@@ -61,7 +61,7 @@ void KCEKProc(int bank, char parameters[4][100])
 	fseek(rom, ((bank - 1) * bankSize), SEEK_SET);
 	fread(romData + bankSize, 1, bankSize, rom);
 
-	if (parameters[1][0] != 0)
+	if (parameters[1][0] != 0x00)
 	{
 		tableOffset = strtol(parameters[0], NULL, 16);
 		drvVers = strtol(parameters[1], NULL, 16);
@@ -757,9 +757,9 @@ void KCEKsong2mid(int songNum, long songPtr)
 						if (repeatNote == 1)
 						{
 							curNote = command[0] + transpose + 23;
-							if (curTrack == 2)
+							if (curTrack < 2 && curNote < 116)
 							{
-								curNote -= 12;
+								curNote += 12;
 							}
 							seqPos++;
 
@@ -780,9 +780,9 @@ void KCEKsong2mid(int songNum, long songPtr)
 						else
 						{
 							curNote = command[0] + transpose + 23;
-							if (curTrack == 2)
+							if (curTrack < 2 && curNote < 116)
 							{
-								curNote -= 12;
+								curNote += 12;
 							}
 							curNoteLen = command[1] * 5;
 							tempPos = WriteNoteEvent(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
@@ -798,9 +798,9 @@ void KCEKsong2mid(int songNum, long songPtr)
 						if (repeatNote == 1)
 						{
 							curNote = command[0] + transpose + 23;
-							if (curTrack == 2)
+							if (curTrack < 2 && curNote < 116)
 							{
-								curNote -= 12;
+								curNote += 12;
 							}
 							seqPos++;
 
@@ -821,9 +821,9 @@ void KCEKsong2mid(int songNum, long songPtr)
 						else
 						{
 							curNote = command[0] + transpose + 23;
-							if (curTrack == 2)
+							if (curTrack < 2 && curNote < 116)
 							{
-								curNote -= 12;
+								curNote += 12;
 							}
 							tempPos = WriteNoteEvent(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
 							firstNote = 0;
@@ -855,7 +855,7 @@ void KCEKsong2mid(int songNum, long songPtr)
 
 				else if (EventMap[command[0]] == KCEKOBE_EVENT_TRANSPOSE_DOWN)
 				{
-					transpose = (command[0] - KCEKOBE_STATUS_TRANSPOSE_DOWN_MIN + 1) * -1;
+					transpose = (command[0] - KCEKOBE_STATUS_TRANSPOSE_DOWN_MIN) * -1;
 					seqPos++;
 				}
 

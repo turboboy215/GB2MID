@@ -334,7 +334,7 @@ void KCEJsong2mid(int songNum, long songPtr)
 
 					if (curTrack != 3)
 					{
-						curNote[curTrack] += 24;
+						curNote[curTrack] += 36;
 
 						if (curTrack == 2)
 						{

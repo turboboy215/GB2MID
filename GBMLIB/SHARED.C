@@ -27,6 +27,7 @@
 #include "CULTRBRN.H"
 #include "DATAEAST.H"
 #include "DAVDSHEA.H"
+#include "DBZ.H"
 #include "DE1.H"
 #include "DKONG.H"
 #include "DSEQ.H"
@@ -77,6 +78,7 @@
 #include "PROBE.H"
 #include "RARE.H"
 #include "REALTIME.H"
+#include "REEB.H"
 #include "ROLAN.H"
 #include "SAFFIRE.H"
 #include "SCULPT.H"
@@ -594,6 +596,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case Digital_Eclipse_1:
 			DE1Proc(banks[curBank], parameters);
 			break;
+		case Dragon_Ball_Z:
+			DBZProc(banks[curBank]);
+			break;
 		case DSEQ:
 			DSEQProc(banks[curBank], parameters);
 			break;
@@ -737,6 +742,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case RARE:
 			RAREProc(parameters);
+			break;
+		case Reeb:
+			ReebProc(banks[curBank], parameters);
 			break;
 		case Ryohji_Yoshitomi:
 			M2Proc(banks[curBank]);
