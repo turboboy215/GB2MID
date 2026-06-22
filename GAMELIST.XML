@@ -5335,6 +5335,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Choro Q - Hyper Customable GB (J) [C][!]</name>
+		<gamecode>ACQJ</gamecode>
+		<rev>0</rev>
+		<checksum>E7F0</checksum>
+        <crc32>65610ca4</crc32>
+        <format>Reeb</format>
+		<part></part>
+		<banks>3,4,5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Chou Gals! Kotobuki Ran (J) [C][!]</name>
 		<gamecode>BGLJ</gamecode>
 		<rev>0</rev>
@@ -5344,6 +5355,17 @@
 		<part></part>
 		<banks>E1</banks>
 		<parameters>4010\1</parameters>
+	</rom>
+	<rom>
+		<name>Chou Gals! Kotobuki Ran 2 - Miracle Getting (J) [C]</name>
+		<gamecode>BGUJ</gamecode>
+		<rev>0</rev>
+		<checksum>068E</checksum>
+        <crc32>e77fa0f2</crc32>
+        <format>Reeb</format>
+		<part></part>
+		<banks>7F,80</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Chuan Shuo (Unl) [C][f1]</name>
@@ -5872,6 +5894,28 @@
 		<part></part>
 		<banks>D</banks>
 		<parameters>9</parameters>
+	</rom>
+	<rom>
+		<name>Cyborg Kuro-chan 2 - White Woods no Gyakushuu (J) [C][!]</name>
+		<gamecode>BSBJ</gamecode>
+		<rev>0</rev>
+		<checksum>0514</checksum>
+        <crc32>e86bf12e</crc32>
+        <format>Reeb</format>
+		<part></part>
+		<banks>3F,40</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Daa! Daa! Daa! - Totsuzen Card de Battle de Uranai (J) [C][!]</name>
+		<gamecode>BDOJ</gamecode>
+		<rev>0</rev>
+		<checksum>CC77</checksum>
+        <crc32>f41bb392</crc32>
+        <format>Reeb</format>
+		<part></part>
+		<banks>2D</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Daedalean Opus (U) [!]</name>
@@ -7315,6 +7359,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Dragon Ball Z - Densetsu no Chou Senshitachi (J) [C]</name>
+		<gamecode>BBZJ</gamecode>
+		<rev>0</rev>
+		<checksum>DA72</checksum>
+        <crc32>7d28689a</crc32>
+        <format>Dragon_Ball_Z</format>
+		<part></part>
+		<banks>7F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Dragon Ball Z - Gokuu Hishouden (J) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -7323,6 +7378,72 @@
         <format>Technos_Japan</format>
 		<part></part>
 		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Dragon Ball Z - Guerreros de Leyenda (S) [C][!]</name>
+		<gamecode>BBZS</gamecode>
+		<rev>0</rev>
+		<checksum>25B4</checksum>
+        <crc32>9dad6e23</crc32>
+        <format>Dragon_Ball_Z</format>
+		<part></part>
+		<banks>7F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Dragon Ball Z - I Leggendari Super Guerrieri (I) [S][!]</name>
+		<gamecode>BBZI</gamecode>
+		<rev>0</rev>
+		<checksum>84A4</checksum>
+        <crc32>a888a049</crc32>
+        <format>Dragon_Ball_Z</format>
+		<part></part>
+		<banks>7F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Dragon Ball Z - Legendaere Superkaempfer (G) [C][!]</name>
+		<gamecode>BBZD</gamecode>
+		<rev>0</rev>
+		<checksum>6566</checksum>
+        <crc32>ec7dfdc1</crc32>
+        <format>Dragon_Ball_Z</format>
+		<part></part>
+		<banks>7F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Dragon Ball Z - Legendary Super Warriors (E) [C]</name>
+		<gamecode>BBZP</gamecode>
+		<rev>0</rev>
+		<checksum>6233</checksum>
+        <crc32>7bf836db</crc32>
+        <format>Dragon_Ball_Z</format>
+		<part></part>
+		<banks>7F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Dragon Ball Z - Legendary Super Warriors (U) [C][!]</name>
+		<gamecode>BBZE</gamecode>
+		<rev>0</rev>
+		<checksum>252B</checksum>
+        <crc32>025aa88a</crc32>
+        <format>Dragon_Ball_Z</format>
+		<part></part>
+		<banks>7F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Dragon Ball Z - Les Guerriers Legendaires (F) [C]</name>
+		<gamecode>BBZF</gamecode>
+		<rev>0</rev>
+		<checksum>484B</checksum>
+        <crc32>c07e9438</crc32>
+        <format>Dragon_Ball_Z</format>
+		<part></part>
+		<banks>7F</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -8380,6 +8501,72 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters>A</parameters>
+	</rom>
+	<rom>
+		<name>F-1 World Grand Prix (J) (Unreleased) [C][!]</name>
+		<gamecode>AFIJ</gamecode>
+		<rev>0</rev>
+		<checksum>551E</checksum>
+        <crc32>5e24811e</crc32>
+        <format>Reeb</format>
+		<part></part>
+		<banks>3D,3E</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>F-1 World Grand Prix (J) (Unreleased) [C][a1][!]</name>
+		<gamecode>VFIJ</gamecode>
+		<rev>0</rev>
+		<checksum>BC50</checksum>
+        <crc32>3122807b</crc32>
+        <format>Reeb</format>
+		<part></part>
+		<banks>3D,3E</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>F-1 World Grand Prix (U) (M4) [C][!]</name>
+		<gamecode>AFIE</gamecode>
+		<rev>0</rev>
+		<checksum>96CD</checksum>
+        <crc32>8d9a9182</crc32>
+        <format>Reeb</format>
+		<part></part>
+		<banks>3D,3E</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>F-1 World Grand Prix II (E) (M4) [C][!]</name>
+		<gamecode>BF2P</gamecode>
+		<rev>0</rev>
+		<checksum>5996</checksum>
+        <crc32>eef4a20b</crc32>
+        <format>Reeb</format>
+		<part></part>
+		<banks>37,38</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>F-1 World Grand Prix II (J) (M2) [C][!]</name>
+		<gamecode>BF2J</gamecode>
+		<rev>0</rev>
+		<checksum>5989</checksum>
+        <crc32>28453467</crc32>
+        <format>Reeb</format>
+		<part></part>
+		<banks>37,38</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>F-1 World Grand Prix II (U) (M4) [C][!]</name>
+		<gamecode>BF2E</gamecode>
+		<rev>0</rev>
+		<checksum>5994</checksum>
+        <crc32>482e10c5</crc32>
+        <format>Reeb</format>
+		<part></part>
+		<banks>37,38</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>F-15 Strike Eagle (U) [!]</name>
@@ -11671,6 +11858,17 @@
 		<parameters>4010\1</parameters>
 	</rom>
 	<rom>
+		<name>Hunter X Hunter - Kindan no Hihou (J) [C][!]</name>
+		<gamecode>BHKJ</gamecode>
+		<rev>0</rev>
+		<checksum>01CD</checksum>
+        <crc32>d23c6a75</crc32>
+        <format>Reeb</format>
+		<part></part>
+		<banks>3B,3C</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Hype - The Time Quest (E) (M8) [C][!]</name>
 		<gamecode>BHQP</gamecode>
 		<rev>0</rev>
@@ -12122,6 +12320,17 @@
 		<parameters>CFG/Jack no Daibouken - Daimaou no Gyakushuu (J) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Jagainu-kun (J) [C][!]</name>
+		<gamecode>B39J</gamecode>
+		<rev>0</rev>
+		<checksum>EE01</checksum>
+        <crc32>aeb634c5</crc32>
+        <format>Reeb</format>
+		<part></part>
+		<banks>2C,2D,2E,2F,30</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>James Bond 007 (U) [S][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -12406,6 +12615,17 @@
 		<part></part>
 		<banks>10</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Jinsei Game DX (J) [C][!]</name>
+		<gamecode>BZGJ</gamecode>
+		<rev>0</rev>
+		<checksum>72B6</checksum>
+        <crc32>7e15b3dd</crc32>
+        <format>Reeb</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Jisedai Begoma Battle Beyblade (J) [C][!]</name>
@@ -12912,6 +13132,17 @@
 		<part></part>
 		<banks>1E</banks>
 		<parameters>CFG/Kawa no Nushi Tsuri 4 (J) (V1.1) (Unreleased) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Kawaii Pet Shop Monogatari (J) [C][!]</name>
+		<gamecode>AEIJ</gamecode>
+		<rev>0</rev>
+		<checksum>41CC</checksum>
+        <crc32>44767443</crc32>
+        <format>Reeb</format>
+		<part></part>
+		<banks>3E,3F</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Kawaii Pet Shop Monogatari 2 (J) [C][!]</name>
@@ -20174,6 +20405,17 @@
 		<parameters>CFG/Penguin Land (J).cfg</parameters>
 	</rom>
 	<rom>
+		<name>Perfect Choro Q (J) [C][!]</name>
+		<gamecode>BPQJ</gamecode>
+		<rev>0</rev>
+		<checksum>BDE0</checksum>
+        <crc32>afa1aac3</crc32>
+        <format>Reeb</format>
+		<part></part>
+		<banks>5,6,7,8,7C,7D,7E,7F</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Perfect Dark (U) (M5) [C][!]</name>
 		<gamecode>VPDE</gamecode>
 		<rev>0</rev>
@@ -22746,6 +22988,39 @@
 		<part></part>
 		<banks>1</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Qix Adventure (E) [C][!]</name>
+		<gamecode>AQYP</gamecode>
+		<rev>0</rev>
+		<checksum>7982</checksum>
+        <crc32>d729db40</crc32>
+        <format>Reeb</format>
+		<part></part>
+		<banks>3F,40</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
+		<name>Qix Adventure (J) [C][!]</name>
+		<gamecode>AQSJ</gamecode>
+		<rev>0</rev>
+		<checksum>3B7B</checksum>
+        <crc32>5acea4a9</crc32>
+        <format>Reeb</format>
+		<part></part>
+		<banks>3F,40</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
+		<name>Qix Adventure (U) [C][!]</name>
+		<gamecode>AQYE</gamecode>
+		<rev>0</rev>
+		<checksum>F583</checksum>
+        <crc32>bb3744a9</crc32>
+        <format>Reeb</format>
+		<part></part>
+		<banks>3F,40</banks>
+		<parameters>3</parameters>
 	</rom>
 	<rom>
 		<name>Qui Qui (J) [C][!]</name>
@@ -25575,6 +25850,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Senkai Ibonroku Juntei Taisen - TV Animation Senkaiden Houshin Engi Yori (J) [C][!]</name>
+		<gamecode>BHSJ</gamecode>
+		<rev>0</rev>
+		<checksum>43D3</checksum>
+        <crc32>d729db40</crc32>
+        <format>Reeb</format>
+		<part></part>
+		<banks>E,F,10</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Sensible Soccer - European Champions (E) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -25903,6 +26189,17 @@
 		<part></part>
 		<banks>3,4,7,A,43,44,47,4A</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Shaun Palmer's Pro Snowboarder (U) [C][!]</name>
+		<gamecode>BS3E</gamecode>
+		<rev>0</rev>
+		<checksum>17C8</checksum>
+        <crc32>709cda93</crc32>
+        <format>Reeb</format>
+		<part></part>
+		<banks>7D,7E,7F,80</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Sheng Huo Jiang Mo Lu Wai Chuan (Unl) [C]</name>

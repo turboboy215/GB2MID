@@ -735,6 +735,10 @@ int main(int args, char* argv[])
             {
                 driver = Digital_Eclipse_1;
             }
+            else if (!strcmp(formatString, "Dragon_Ball_Z"))
+            {
+                driver = Dragon_Ball_Z;
+            }
             else if (!strcmp(formatString, "DSEQ"))
             {
                 driver = DSEQ;
@@ -926,6 +930,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "RARE"))
             {
                 driver = RARE;
+            }
+            else if (!strcmp(formatString, "Reeb"))
+            {
+                driver = Reeb;
             }
             else if (!strcmp(formatString, "Ryohji_Yoshitomi"))
             {
