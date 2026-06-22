@@ -1,0 +1,58 @@
+This game uses a currently unidentified and likely unique sound engine by an unknown developer.
+
+Song header
+=======================================
+Each song has a "header" which is structured as follows:
+
+1-2 = Has identifier "SQ" or "GB" - seems to depend if channel 4 is active or not?
+3 = Default tempo (encrypted)
+4 = ? (Unknown timer speed)
+5-8 = Default channel note lengths
+9-12 = Channel volumes
+13-16 = (Unused)
+17-24 = Channel pointers (2 bytes each, relative to start of song)
+25-28 = (Unused)?
+
+Number "encryption" formula
+=======================================
+Certain values are stored "encrypted" in the ROM. To decrypt these values, the following is done:
+XOR with FF
+SWAP high and low nybbles
+Mask off upper nybble (only lower nybble used)
+
+Song commands
+=======================================
+Each channel uses the following commands in a song:
+00-7F - xy (zz) = Play note with length
+(X = If bit 4 of byte 1 is set, then Z is used, Y = Note (see below), Z = Length (optional))
+	xC = Rest
+	xD = Tie
+80-87 = Set octave
+88 = Octave up
+89 = Octave down
+90 xx = Set instrument/envelope data (each 4 bytes)
+A0 xx = Set master volume
+A1 xx = Set volume/envelope
+A3 xx = Set panning
+BA xx = Set tuning
+C0 = Stop all channels
+C2 = Clear RAM variables ($13 bytes)
+C3 xx = Set tempo (encrypted)
+D0 = ?
+D1 = ?
+D2 xx yy zz aa bb = Set instrument parameters? (Set C865, C868, C86B, C86E, C874)
+D3 xx = ? (Set unknown timer)
+F0 xx = Start of repeat point - number X
+F1 xx yy = End of repeat point - number X, Y times
+F2 xx yy = Write Y to register FFxx
+F3 = Song loop point
+F4 = Go to song loop point
+F5 = SFX command?
+F6 = SFX command?
+F7 = SFX command?
+F8 = SFX command?
+FF = ?
+
+Sound effects
+=======================================
+The sound effects data starts with the identifier "SE" followed by a series of pointers. However, this has not yet been investigated otherwise. It appears to use the same commands as music, including commands F5-F8 which do not appear to be used in music.

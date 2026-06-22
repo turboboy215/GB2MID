@@ -1,0 +1,62 @@
+Song list
+=======================================
+The song list is a series of 8-bit values representing the order of songs or sound effects listed. This is multiplied by 25 (earlier games) or 24 (later games) and added to the base of the song table in its respective base.
+
+Song bank list
+=======================================
+The song bank list is a series of 8-bit values representing the bank that each corresponding song is located in. However, it does not appear to include sound effects, which seem to always be in bank 1.
+
+Song table
+=======================================
+The song table is a series of arrays that are 25 (earlier games) or 24 (later games) bytes long. Each array is stored as follows:
+
+1 = If 1, active? (earlier games only, byte not present in later games)
+2 = Channel 1 music - If 5 or not 0, active
+3-4 = Channel 1 music pointer (0 if unused)
+5 = Channel 2 music - If 5 or not 0, active
+6-7 = Channel 2 music pointer (0 if unused)
+8 = Channel 3 music - If 5 or not 0, active
+9-10 = Channel 3 music pointer (0 if unused)
+11 = Channel 4 music - If 5 or not 0, active
+12-13 = Channel 4 music pointer (0 if unused)
+14 = Channel 1 SFX - If 5 or not 0, active
+15-16 = Channel 1 SFX pointer (0 if unused)
+17 = Channel 2 SFX - If 5 or not 0, active
+18-19 = Channel 2 SFX pointer (0 if unused)
+20 = Channel 3 SFX - If 5 or not 0, active
+21-22 = Channel 3 SFX pointer (0 if unused)
+23 = Channel 4 SFX - If 5 or not 0, active
+24-25 = Channel 4 SFX pointer (0 if unused)
+
+Song commands
+=======================================
+Each channel of a song or sound effect uses the following commands:
+
+00-E8 xx xx (Outside macro) = Go to macro X, (times)
+00-E8 (xx) (Inside macro) = Play note ((If X is less than 80, then X = Length); highest bit is masked out
+(If either is E6 (or more?), then it is a rest - use same rule as note above.)
+E9 xx = Set channel speed (more = slower)
+EA xx = ? (Only present in F-1 World Grand Prix 1?)
+EB xx = Set duty
+EC xx = Set length (CH3)
+ED xx = Set envelope direction/sweep
+EE xx xx = Set waveform (pointer)
+EF = Note tie on
+F0 = Note tie off
+F1 xx = Set volume
+F2 xx = ? (Only present in F-1 World Grand Prix 1?)
+F3 xx xx = Set vibrato (pointer)
+F4 xx = Set global volume
+F5 xx yy = Set sweep (X = Amount, Y = Speed)
+F6 xx = Set panning
+F7 xx xx = Jump to position (used for looping)
+F8 xx xx = Go to macro X, F8 (248) times
+FF = (Outside macro) End of song
+     (Inside macro) Return from macro
+
+Vibrato sequences
+=======================================
+Vibrato is handled via sequences that are loaded via a command (see above). Each sequence uses the following commands:
+xx yy yy = Vibrato command (X = Time, Y = Pitch (big-endian))
+F7 xx xx = Jump to position (loop)
+FF = End of vibrato
