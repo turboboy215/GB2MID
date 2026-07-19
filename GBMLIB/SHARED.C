@@ -93,11 +93,14 @@
 #include "TIERTEX.H"
 #include "TITUS1.H"
 #include "TITUS2.H"
+#include "TORUS1.H"
+#include "TORUS2.H"
 #include "TOSE.H"
 #include "UBISOFT.H"
 #include "UGB.H"
 #include "VI.H"
 #include "WARIOL2.H"
+#include "WICKED.H"
 #include "WINKYSFT.H"
 #define bankSize 16384
 
@@ -633,7 +636,7 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			MM1Proc(banks[curBank]);
 			break;
 		case Hirotomo_Nakamura:
-			MM2Proc(banks[curBank]);
+			MM2Proc(banks[curBank], parameters);
 			break;
 		case Hudson_Soft:
 			HSProc(banks[curBank]);
@@ -791,6 +794,12 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case Titus_2:
 			Tit2Proc(banks[curBank], parameters);
 			break;
+		case Torus_1:
+			Torus1Proc(banks[curBank], parameters);
+			break;
+		case Torus_2:
+			Torus2Proc(banks[curBank], parameters);
+			break;
 		case TOSE:
 			TOSEProc(parameters);
 			break;
@@ -802,6 +811,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Visual_Impact:
 			VIProc(banks[curBank], parameters);
+			break;
+		case Wicked_Witch:
+			WickedProc(banks[curBank], parameters);
 			break;
 		case Winkysoft:
 			WinkyProc(banks[curBank]);

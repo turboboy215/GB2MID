@@ -96,6 +96,9 @@
 #define Ubi_Soft			0x5D
 #define Reeb				0x5E
 #define Dragon_Ball_Z		0x5F
+#define Torus_1				0x60
+#define Torus_2				0x61
+#define Wicked_Witch		0x62
 
 extern FILE * rom, * mid;
 extern long masterBank;
