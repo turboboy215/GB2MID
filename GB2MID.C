@@ -995,6 +995,14 @@ int main(int args, char* argv[])
             {
                 driver = Titus_2;
             }
+            else if (!strcmp(formatString, "Torus_1"))
+            {
+                driver = Torus_1;
+            }
+            else if (!strcmp(formatString, "Torus_2"))
+            {
+                driver = Torus_2;
+            }
             else if (!strcmp(formatString, "TOSE"))
             {
                 driver = TOSE;
@@ -1010,6 +1018,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "Visual_Impact"))
             {
                 driver = Visual_Impact;
+            }
+            else if (!strcmp(formatString, "Wicked_Witch"))
+            {
+                driver = Wicked_Witch;
             }
             else if (!strcmp(formatString, "Winkysoft"))
             {

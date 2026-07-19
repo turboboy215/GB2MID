@@ -1342,6 +1342,17 @@
 		<parameters>1</parameters>
 	</rom>
 	<rom>
+		<name>Aliens - Thanatos Encounter (U) [C][!]</name>
+		<gamecode>BAEE</gamecode>
+		<rev>0</rev>
+		<checksum>1A97</checksum>
+        <crc32>bec3c24b</crc32>
+        <format>Wicked_Witch</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Aliens - Thanatos Encounter (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>All-Star Baseball '99 (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -2087,7 +2098,7 @@
         <format>Hirotomo_Nakamura</format>
 		<part></part>
 		<banks>1</banks>
-		<parameters></parameters>
+		<parameters>0</parameters>
 	</rom>
 	<rom>
 		<name>Azarashi Sentai Inazuma - Dokidoki Daisakusen! (J) [C][!]</name>
@@ -4794,6 +4805,17 @@
 		<part></part>
 		<banks>42</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Carmageddon 2000 TDR (E) (M5) (Unreleased) [C][!]</name>
+		<gamecode>BTLP</gamecode>
+		<rev>0</rev>
+		<checksum>CA93</checksum>
+        <crc32>0bd8e676</crc32>
+        <format>Torus_2</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>7FF7\2</parameters>
 	</rom>
 	<rom>
 		<name>Carnivale (U) (Unreleased) [C][!]</name>
@@ -7863,6 +7885,28 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Duke Nukem (E) (M5) [C][!]</name>
+		<gamecode>ADIP</gamecode>
+		<rev>0</rev>
+		<checksum>C2D0</checksum>
+        <crc32>fc3d1bb7</crc32>
+        <format>Torus_1</format>
+		<part></part>
+		<banks>9</banks>
+		<parameters>4B16\8</parameters>
+	</rom>
+	<rom>
+		<name>Duke Nukem (U) (M5) [C][!]</name>
+		<gamecode>ADIE</gamecode>
+		<rev>0</rev>
+		<checksum>417F</checksum>
+        <crc32>846fc830</crc32>
+        <format>Torus_1</format>
+		<part></part>
+		<banks>9</banks>
+		<parameters>49FF\8</parameters>
 	</rom>
 	<rom>
 		<name>Dukes of Hazzard, The - Racing for Home (E) (M3) [C][!]</name>
@@ -13662,6 +13706,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Koenig der Loewen, Der - Simbas grosses Abenteuer (G) [C][!]</name>
+		<gamecode>BLKD</gamecode>
+		<rev>0</rev>
+		<checksum>93F2</checksum>
+        <crc32>ea11e39c</crc32>
+        <format>Torus_1</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>77B7\5</parameters>
+	</rom>
+	<rom>
 		<name>Koguru Guruguru - Guruguru to Nakayoshi (J) [C]</name>
 		<gamecode>BKGJ</gamecode>
 		<rev>0</rev>
@@ -14198,7 +14253,7 @@
         <format>Hirotomo_Nakamura</format>
 		<part></part>
 		<banks>3</banks>
-		<parameters></parameters>
+		<parameters>0</parameters>
 	</rom>
 	<rom>
 		<name>Kwirk (UE) [!]</name>
@@ -14894,6 +14949,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Les Roi Lion - Les Adventures de Simba (F) [C][!]</name>
+		<gamecode>BLKF</gamecode>
+		<rev>0</rev>
+		<checksum>2FF2</checksum>
+        <crc32>6467fba0</crc32>
+        <format>Torus_1</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>77B7\5</parameters>
+	</rom>	
+	<rom>
 		<name>Les Visiteurs (F) [C][!]</name>
 		<gamecode>AVGF</gamecode>
 		<rev>0</rev>
@@ -14937,6 +15003,17 @@
 		<banks>7F,80</banks>
 		<parameters></parameters>
 	</rom>
+	<rom>
+		<name>Lion King, The - Simba's Mighty Adventure (U) [C][!]</name>
+		<gamecode>BLKE</gamecode>
+		<rev>0</rev>
+		<checksum>9F21</checksum>
+        <crc32>d5b4b7bb</crc32>
+        <format>Torus_1</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>77C1\5</parameters>
+	</rom>	
 	<rom>
 		<name>Lion King, The (E)</name>
 		<gamecode></gamecode>
@@ -16137,6 +16214,17 @@
 		<parameters>4087</parameters>
 	</rom>
 	<rom>
+		<name>Mary-Kate & Ashley - Crush Course (U) [C][!]</name>
+		<gamecode>BCVE</gamecode>
+		<rev>0</rev>
+		<checksum>4A67</checksum>
+        <crc32>69db3cd8</crc32>
+        <format>Wicked_Witch</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/Mary-Kate & Ashley - Crush Course (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>Mary-Kate & Ashley - Get a Clue! (U) [C][!]</name>
 		<gamecode>BXFE</gamecode>
 		<rev>0</rev>
@@ -16256,6 +16344,17 @@
 		<part></part>
 		<banks>10</banks>
 		<parameters>4062</parameters>
+	</rom>
+	<rom>
+		<name>Max Steel (U) (Unreleased) [C][!]</name>
+		<gamecode>BXEE</gamecode>
+		<rev>0</rev>
+		<checksum>B7D5</checksum>
+        <crc32>57b1e978</crc32>
+        <format>Torus_2</format>
+		<part></part>
+		<banks>1C</banks>
+		<parameters>7FDC\5</parameters>
 	</rom>
 	<rom>
 		<name>Maya the Bee - Garden Adventures (E) (M4) [C][!]</name>
@@ -18909,6 +19008,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>NBA Hoopz (U) [C][!]</name>
+		<gamecode>BHIE</gamecode>
+		<rev>0</rev>
+		<checksum>CAA4</checksum>
+        <crc32>5011a419</crc32>
+        <format>Torus_2</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>7FAD\9</parameters>
+	</rom>
+	<rom>
 		<name>NBA In The Zone (U) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -19017,6 +19127,28 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters>4110\1</parameters>
+	</rom>
+	<rom>
+		<name>NBA Showtime - NBA on NBC (U) [C][!]</name>
+		<gamecode>AA5E</gamecode>
+		<rev>0</rev>
+		<checksum>6EC1</checksum>
+        <crc32>7ae23888</crc32>
+        <format>Wicked_Witch</format>
+		<part></part>
+		<banks>40</banks>
+		<parameters>CFG/NBA Showtime - NBA on NBC (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>NBA Showtime - NBA on NBC (U) (V1.1) (Unreleased) [C][!]</name>
+		<gamecode>AA5E</gamecode>
+		<rev>1</rev>
+		<checksum>CC45</checksum>
+        <crc32>8bc9be45</crc32>
+        <format>Wicked_Witch</format>
+		<part></part>
+		<banks>40</banks>
+		<parameters>CFG/NBA Showtime - NBA on NBC (U) (V1.1) (Unreleased) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Nectaris GB (J) [S][!]</name>
@@ -23559,7 +23691,7 @@
         <format>Hirotomo_Nakamura</format>
 		<part></part>
 		<banks>1</banks>
-		<parameters></parameters>
+		<parameters>0</parameters>
 	</rom>
 	<rom>
 		<name>Rescue Heroes - Fire Frenzy (U) [C][!]</name>
@@ -24418,6 +24550,28 @@
 		<part></part>
 		<banks>B</banks>
 		<parameters>CFG/Roland Garros French Open (E) (M6) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Roswell Conspiracies - Aliens, Myths & Legends (E) (M3) [C][!]</name>
+		<gamecode>BCPP</gamecode>
+		<rev>0</rev>
+		<checksum>A759</checksum>
+        <crc32>49101556</crc32>
+        <format>Wicked_Witch</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>CFG/Roswell Conspiracies - Aliens, Myths & Legends (E) (M3) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Roswell Conspiracies - Aliens, Myths & Legends (U) (M3) [C][!]</name>
+		<gamecode>BCPE</gamecode>
+		<rev>0</rev>
+		<checksum>9539</checksum>
+        <crc32>1f5ec131</crc32>
+        <format>Wicked_Witch</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>CFG/Roswell Conspiracies - Aliens, Myths & Legends (U) (M3) [C][!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Rox (E) [C][!]</name>
@@ -26125,6 +26279,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Shaun Palmer's Pro Snowboarder (U) [C][!]</name>
+		<gamecode>BS3E</gamecode>
+		<rev>0</rev>
+		<checksum>17C8</checksum>
+        <crc32>709cda93</crc32>
+        <format>Reeb</format>
+		<part></part>
+		<banks>7D,7E,7F,80</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Shawu Story (Unl) [C]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -26189,17 +26354,6 @@
 		<part></part>
 		<banks>3,4,7,A,43,44,47,4A</banks>
 		<parameters></parameters>
-	</rom>
-	<rom>
-		<name>Shaun Palmer's Pro Snowboarder (U) [C][!]</name>
-		<gamecode>BS3E</gamecode>
-		<rev>0</rev>
-		<checksum>17C8</checksum>
-        <crc32>709cda93</crc32>
-        <format>Reeb</format>
-		<part></part>
-		<banks>7D,7E,7F,80</banks>
-		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Sheng Huo Jiang Mo Lu Wai Chuan (Unl) [C]</name>
@@ -26408,7 +26562,7 @@
         <format>Hirotomo_Nakamura</format>
 		<part></part>
 		<banks>1</banks>
-		<parameters></parameters>
+		<parameters>0</parameters>
 	</rom>
 	<rom>
 		<name>Shinri Game, The (J)</name>
@@ -26419,7 +26573,7 @@
         <format>Hirotomo_Nakamura</format>
 		<part></part>
 		<banks>1</banks>
-		<parameters></parameters>
+		<parameters>0</parameters>
 	</rom>
 	<rom>
 		<name>Shou Hyper Fish (J) [S]</name>
@@ -30874,7 +31028,7 @@
         <format>Hirotomo_Nakamura</format>
 		<part></part>
 		<banks>1</banks>
-		<parameters></parameters>
+		<parameters>0</parameters>
 	</rom>
 	<rom>
 		<name>Trump Boy II (J)</name>
@@ -32855,6 +33009,17 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters>CFG/Yingxiong Tianxia (Unl) [C][f2].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Yoda Stories (U) [C][!]</name>
+		<gamecode>AYDE</gamecode>
+		<rev>0</rev>
+		<checksum>9F3C</checksum>
+        <crc32>6314da32</crc32>
+        <format>Torus_1</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>77A8\A</parameters>
 	</rom>
 	<rom>
 		<name>Yogi Bear - Great Balloon Blast (U) [C][!]</name>
