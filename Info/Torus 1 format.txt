@@ -1,0 +1,29 @@
+Song pointer table
+===========================================
+The song table consists of the pointer to each song as well as the bank the song is stored in. It is structured as follows:
+1. Bank number
+2-3. Song address
+
+Song format
+===========================================
+The song is a simple, but rather inefficient single-track format consisting of note values for each song. Each song has a header as follows:
+
+1. ? (always 1?)
+2-3. Total number of "bars" of song (before end/repeat)
+4. Number of frames before start
+
+Each "bar" of the song is structured as follows:
+
+First byte: Bit mask
+	(7654 3210)
+	0 = Channel 1
+	1 = Channel 2
+	2 = Channel 3
+	3 = Channel 4
+	4-7 = NR51 output
+(Repeat for channels present):
+1-2 bytes: note frequency value for the channel (1 byte if channel 4, otherwise 2 bytes - raw NRx3-NRx4 data)
+
+Last byte: Number of frames
+
+(Note: Channel 3 is not actually supported by the sound engine for music, as it is only used to play PCM samples for sound effects.)

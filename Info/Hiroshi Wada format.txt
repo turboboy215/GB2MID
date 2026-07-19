@@ -3,48 +3,133 @@ Song pointer table
 This consists of values for the data locations of both music and sound effects which are in the same format. It consists of 16-bit values, which are not necessarily in order, and some are empty or duplicates.
 In Mega Man: Dr. Wily's Revenge, the pointer table values are accessed "indirectly" using a function in the first ROM bank. These start at 0x24B in all final versions of the ROM and 0x200 in the Japanese prototype ROM. The pointer table itself starts at RAM address $4015. SolarStriker and QIX don't have any pointer tables and instead relies on external code to load the address of each song.  Because of this, finding the correct pointer values can be difficult.
 
-The song format
+Tracks, priorities, and slots
 ===========================================
-The song format is relatively simple. Each song starts with a "header" as follows:
+The sound engine has a total of 8 "tracks" - the first 4 are used for sound effects and the next 4 for music. The order of each channel is equivalent to hardware channels 1-4. Despite there being 8 tracks total, one song or sound effect only uses up to 4 tracks total.
+The engine can play up to 3 of either music or sound effects at once in different "slots" in RAM. Each song or sound effect has a "priority" number; the lower the number, the more each song/sound effect is "prioritized" over one another, meaning that if two slots are used that share the same channel tracks, then only that which has the higher priority will be played.
+
+The song header
+===========================================
+Each song or sound effect starts with a "header" as follows:
 
 1: Speed/tempo (1 = fastest)
-2: Unknown (always 0 for music, seems to be related to music/sound effect types)
-3-4: Channel 1 start pointer (0 = empty)
-5: Channel 1 identifier (0 = sound effect, 4 = music)
-6-7: Channel 2 start pointer (0 = empty)
-8: Channel 2 identifier (0 = sound effect, 5 = music)
-9-10: Channel 3 start pointer (0 = empty)
-11: Channel 3 identifier (0 = sound effect, 6 = music)
-12-13: Channel 4 start pointer (0 = empty)
-14: Channel 4 identifier (0 = sound effect, 7 = music)
+2: Priority (lower value = higher priority)
+3-4: Track 1 start pointer (0 = empty)
+5: Track 1 number (0-7)
+6-7: Track 2 start pointer (0 = empty)
+8: Track 2 number (0-7)
+9-10: Track 3 start pointer (0 = empty)
+11: Track 3 number (0-7)
+12-13: Track 4 start pointer (0 = empty)
+14: Channel 4 number (0-7)
 
-Commands:
+Song commands
+===========================================
+Each song or sound effect uses the following commands for each channel's sequence specified in the header:
 
-xx yy = Note frequency, length
-8x yy = Modulation/sweep effect
-9x yy = Go back to loop point for amount of times and repeat, 90 = infinite
-Ax yy = Go back to loop point for amount of times and repeat, A0 = infinite
-Bx yy = Go back to loop point for amount of times and repeat, B0 = infinite - 90 xx and Ax xx can be used in combination with Bx to "multiply" this amount
-E1 xx = ?
-E6 xx = ?
-E7 xx = Transpose + 1 octave (1 = on, 0 = off)
-EB xx = ?
-EC xx = "Slow down" channel?
-ED xx = Set channel transpose
-EF xx = ?
-F0 xx = Set panning (0 = none, 1 = left only, 2 = right only, 3 = both)
-F1 xx = ?
-F2 xx = Set waveform (channel 3 only)
-F3 xx = ?
-F4 xx = Set instrument duty
-F5 xx = Set instrument sweep/pitch change
-F6 xx = ?
-F7 xx = ?
-F8 xx = Music/SFX identifier? (0 = SFX, 1 = music)
-F9 xx = ?
-FA xx = ?
-FB xx = Set note length
-FC xx = Set envelope length?
-FD xx = Set "echo" effect?
-FE xx = Set velocity/volume?
-FF = End channel
+(Note: The following VCMDs (voice commands) are listed in reverse order due to them being listed as such in the VCMD table and being more logically listed as such.)
+FF = Stop channel
+FE = Set channel envelope/volume
+	Parameters: ----xxxx (- = unused, x = envelope)
+FD = Set secondary channel envelope/volume (for rest, can be used for echo)
+	Parameters: ----xxxx (- = unused, x = envelope)
+FC = Set up track envelope sequence (0 = unused)
+	Parameters: ----xxxx (- = unused, x = envelope sequence number)
+FB = Set up envelope sweep pace
+	Parameters: ----xxxx (- = unused, x = envelope sweep pace)
+FA = Set up envelope sequence speed
+	Parameters: xxxxxxxx (x = envelope sequence speed)
+F9 = Set up channel length timer
+	Parameters: (CH1-3) --xxxxxx (- = unused, x = channel length timer)
+		    (CH4) xxxxxxxx (x = channel length timer)
+F8 = Set note duration
+	Parameters: xxxxxxxx (x = duration)
+F7 = Set vibrato sequence number (0 = unused)*
+	Parameters: ----xxxx (- = unused, x = number)
+F6 = Set vibrato speed*
+	Parameters: xxxxxxxx (x = speed value)
+F5 = Set channel 1 sweep (NR10)
+	Parameters: xxxxxxxx (x = sweep value)
+F4 = Set channel duty
+	Parameters: xx------ (- = unused, x = duty value)
+F3 = (Invalid in Mega Man, possibly used in other games)
+	Parameters: -------- (- = unused)
+F2 = Set waveform for channel 3 using a number of waveform from a table
+	Parameters: ----xxxx (- = unused, x = number for table)
+F1 = Set master volume
+	Parameters: xxxxxxxx (x = value for NR50)
+F0 = Set panning
+	Parameters: xxxxxxxx (x = pan value)
+EF = Set vibrato delay
+	Parameters: ----xxxx (- = unused, x = delay in ticks)
+EE = Toggle slur with value
+	Parameters: xxxxxxxx (x = slur value - 0 = off, other = on)
+ED = Set transpose for track
+	Parameters: xxxxxxxx (x = transpose value, signed)
+EC = Enable automatic length
+	(Note: This command seems useless since the automatic length is never actually set, and is thus always 0.)
+EB = Disable automatic length
+	Parameters: -------- (- = unused)
+EA = Decrement track pointer
+E9 = Go to macro/sub-routine (1 level only)
+	Parameters: xxxxxxxx xxxxxxxx (x = position (little-endian))
+E8 = Return from macro
+E7 = Toggle conditional RNG parameter and then execute RNG routine if on
+	Parameters: xxxxxxxxx (x = value - 0 = off, other = on)
+E6 = Execute RNG sequence
+	Parameters: ----xxxx (- = unused, x = value)
+	(This function affects the transpose and envelope values.)
+C0-E5 = (Invalid)
+	Parameters: -------- (- = unused)
+Bx = Jump to position/repeat (1)
+	(Parameters: xxxx yyyyyyyy (x = Number of times, y = position (relative) / 2)
+	(1 level only)
+Ax = Jump to position/repeat (2)
+	(Parameters: xxxx yyyyyyyy (x = Number of times, y = position (relative) / 2)
+	(Supports multiple levels of repeats, which can be combined with Bx)
+9x = Jump to position/repeat (3)
+	(Parameters: xxxx yyyyyyyy (x = Number of times, y = position (relative) / 2)
+	(Similar to Ax, but doesn't actually jump unless infinite times are specified in Mega Man; however, it does in SolarStriker. Also works independently from Ax and Bx (different RAM areas).)
+00-8F = Play note (X = Length)
+	(Format (Ch1-3): xxxxyyyy, Parameters: zzzzzzzz (x = octave (starting with 1, 0 = rest), y = note, z = length)
+	(Format (Ch4): xxxxxxxx (x = note (0 = rest))
+
+*Since the vibrato routines are not actually called by the sound engine, these functions have no effect.
+
+Some higher VCMDs can only be used on certain channels, since each channel has a separate VCMD table and some VCMDs are listed as 0 (invalid) on some channels but available on others. The following is a comparison of available commands for each channel:
+
+	CH1	CH2	CH3	CH4
+FF	X	X	X	X
+FE	X	X	X	X
+FD	X	X	X	X
+FC	X	X	X	X
+FB	X	X	-	X
+FA	X	X	X	X
+F9	X	X	X	X
+F8	X	X	X	X
+F7	X	X	X	-
+F6	X	X	X	-
+F5	X	-	-	-
+F4	X	X	-	-
+F3	-	-	-	-
+F2	-	-	X	-
+F1	X	X	X	X
+F0	X	X	X	X
+EF	X	X	X	-
+EE	X	X	X	X
+ED	X	X	X	-
+EC	X	X	X	X
+EB	X	X	X	X
+EA	X	X	X	X
+E9	X	X	X	X
+E8	X	X	X	X
+E7	X	X	X	-
+E6	X	X	X	X
+
+Envelope sequences
+===========================================
+Envelope sequences are used to change the volume over a period of time. These are enabled or disabled, or controlled with the VCMDs as described above. Each envelope sequence is 16 bytes long before it stays on the last value in the sequence. These are executed at a speed determined with commands as above.
+
+Vibrato sequences
+===========================================
+This sound engine has code for vibrato, but this is unfortunately not actually used, for unknown reasons. Similar to envelope sequences, vibrato sequences are used to change the pitch over a period of time. These are enabled or disabled, or controlled with the VCMDs as described above. These are executed at a speed determined with commands as above. Vibrato sequences are comprised of a series of bytes which are signed values representing a change in frequency, with 00 representing no change. A value of 80 is used to signal the end of a sequence, and will go back to the start.

@@ -1,0 +1,23 @@
+Song pointer table
+===========================================
+The song table consists of the pointer to each song as well as the bank the song is stored in and its tempo. It is structured as follows:
+1-2. Song address
+3. Song tempo (less = faster)
+4. Song bank
+
+Song track
+===========================================
+This sound engine uses a tracker-like format with different patterns that are called by a single track. The track consists of a series of 2-byte (16-bit) pointers to each pattern ending with a value of FFFF (only the higher byte is checked to be FF).
+
+Song patterns
+===========================================
+Each pattern is comprised of a total of 64 "rows" (played at the tempo specified in the table) with 3 "cells", one for each channel except channel 3, structured as follows:
+Byte 1: Mask value
+	(7654 3210)
+	Bit 7 = If not set, then is empty cell
+	Bit 6 = Set instrument flag (1 extra byte)
+	Bit 0-5 = Note
+(If the cell is not empty as specified in bit 7, then the following byte values are used in the cell:)
+Byte 2: Envelope?
+Byte 3: Envelope length?
+Byte 4: Instrument (if bit set)

@@ -1,0 +1,31 @@
+Song header/track
+===========================================
+This sound engine does not have a song table; instead, the address of each song must be manually loaded.
+This is a tracker-based song format which uses a single "track" specifying different "patterns" that are played using all channels. It is structured as follows:
+Byte 1: Tempo/speed (less = faster)
+Byte 2: Number of patterns
+Byte 3: Loop flag (0 = loop, 1 = no loop)
+(Repeat for every pattern:)
+Byte 1: Bank
+Byte 2-3: Pointer
+
+Note that because this format specifies banks for each pattern, it is technically possible for a song to have patterns split into multiple banks.
+
+Song patterns
+===========================================
+The first byte of each song pattern is the number of "rows" of each pattern. For this reason, it is possible to have a song that uses a variable number of rows for each pattern.
+Each row in a pattern is comprised of four "cells", one for each channel. Cells use a "mask" format based on XM (FastTracker 2) to reduce the size of each cell by having a variable size from 1 to 4 bytes.
+The format of each cell is as follows:
+Byte 1: Mask:
+(7654 3210)
+0 = Note (+ instrument)
+1 = Instrument (but not used?)
+2 = Volume
+3-6 = Not used
+7 = New cell
+(Optional bytes set by flags:)
+Byte 2: Note
+Byte 3: Instrument
+Byte 4: Volume
+
+Note that the driver does not actually check bit 1 of the mask, despite it likely being intended to specify an instrument command being used. However, bit 0 means that both a note and instrument are present.

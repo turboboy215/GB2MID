@@ -1,13 +1,14 @@
-Song List
+Song Table
 =======================================
-To find the pointer to the song list, the following instructions are used:
-add a
-ld e, a
-ld d, 00
-ld hl, [SongList]
-add hl, de
-ldi a, [hl]
-ldi h, [hl]
+To find the pointer to the song table, the following instructions are used:
+	add a
+	ld e, a
+	ld d, 0
+	ld hl, SongTab
+	add hl, de
+	ld a, [hl+]
+	ld h, [hl]
+	ld l, a
 
 
 Which equals the following in hex:
@@ -19,73 +20,71 @@ Alternate for Ayakashi no Shiro:
 Alternate for Rentaiou/The Shinri Game 1/2:
 17 5F 16 00 21 ?? ?? 19 D1 2A 47 2A E5 6F
 
+At least usually, the song table seems to be immediately followed by the sound effects tables (see below).
+
 Song Format:
 =======================================
 Each song starts with four 16-bit pointers to the sequence for each channel. Following next is the sequence data consisting of the following commands:
 
-C0 xx = Set tempo
-C1 xx = Set duty
-C2 xx = Set volume/note size
-C3 xx xx = Jump to loop position
-C4 xx = Set panning?
-C8 = ?
-C9 = Exit from CD jump
-CB = ?
-CD xxxx = Jump to position
-CE = End song
-CF = Disable channel
-Dx = Hold note
-Ex = Rest
-Fx = Set octave (0-7), +1 octave (8), -1 octave (E), disable control (F)
-xy = Play note, length
+00-BF = Play note with length
+	Format: xxxxyyyy (X = note (C-B), Y = length (decoded with function, see below))
+C0 = Set tempo
+	Parameters: xxxxxxxx (X = tempo - raw TMA value)
+	NOTE: In earlier games like Ayakashi no Shiro, the tempo value serves a different purpose - since the sound engine runs in the V-Blank rather than via interrupt, it runs at a constant speed, and this value is instead used for the divider of the note lengths (see below). 
+C1 = Set duty and length (NRx1)
+	Parameters: xxxxxxxx (X = raw NRx1 value)
+C2 = Set volume/envelope (NRx2)
+	Parameters: xxxxxxxx (X = raw NRx2 value)
+C3 = Jump to position
+	Parameters: xxxxxxxx xxxxxxxx (X = position)
+C4 = Set panning (NR51)
+	Parameters: xxxxxxxx (X = raw NR51 value)
+	(NOTE: This command is only available on channel 1.)
+C9 = Return from macro (subroutine)
+CD = Go to a macro (subroutine)
+	Parameters: xxxxxxxx xxxxxxxx (X = position)
+CE = Stop the current channel
+Dx = Delay the current note for set length
+	Parameters: CCCCxxxx (C = command, x = length (decoded with function, see below))
+Ex = Key off the channel for set length
+	Parameters: CCCCxxxx (C = command, x = length (decoded with function, see below))
+Fx = Set the current octave
+	Parameters: CCCCxyyy (C = command, y = "relative mode" flag, x = octave number))
+	(If X (relative mode) is set, then the octave will be controlled relative to the current octave.
+	0-3 is positive, while 4-7 is negative.
+	For example, an octave value of 1 means +1 octave.)
+	(NOTE: This function is not available on channel 4.)
 
-Notes are stored in an unusual format: it uses 4-bit values which specify the note number and then length in a single byte, with commands to switch between octaves. Note values are as follows:
+To decode note lengths, the following system is used:
+	----xyyy (X = "half flag" - multiply value by 1.5, Y = shift count (right))
+In earlier games like Ayakashi no Shiro, the value divided is the tempo value. In other games, this value is 128.
+Using this system, the values of lengths are equal to as follows (in the more common version):
+	$x0 -> 128 ticks
+	$x1 ->  64 ticks
+	$x2 ->  32 ticks
+	$x3 ->  16 ticks
+	$x4 ->   8 ticks
+	$x5 ->   4 ticks
+	$x6 ->   2 ticks
+	$x7 ->   1 ticks
+	$x8 -> 192 ticks
+	$x9 ->  96 ticks
+	$xA ->  48 ticks
+	$xB ->  24 ticks
+	$xC ->  12 ticks
+	$xD ->   6 ticks
+	$xE ->   3 ticks
+	$xF ->   1 ticks
 
-0 = C
-1 = C#
-2 = D
-3 = D#
-4 = E
-5 = F
-6 = F#
-7 = G
-8 = G#
-9 = A
-A = A#
-B = B
+Sound Effects
+=======================================
+In many (most?) games including Mega Man 2, sound effects can use either channel 2 or 4, or both. However, Blaster Master additionally supports channel 3. Sound effects are loaded from separate tables for each channel of a sound effect. In at least Mega Man 2, these use a table of "priorities" that are used to prioritize one sound effect playing over another, similar to the priority flags in the first Mega Man game's sound engine. This appears to be absent from Blaster Master.
 
-Lengths:
-0 = 480
-1 = 240
-2 = 120
-3 = 60
-4 = 30
-5 = 15?
-6 = 7?
-7 = 3?
-8 = 720
-9 = 360
-10 = 180
-11 = 90
-12 = 45?
-13 = 12?
-14 = 6?
-15 = 3?
+Sound effects are an array of 4-byte sequences as follows:
+[Repeat]
+1. NRx1 value (Channel length/duty)
+2. NRx2 value (Volume/envelope)
+3. NRx3 value (Period high/control)
+4. NRx4 value (Period low)
 
-Lengths for Blaster Master:
-0 = 720?
-1 = 360
-2 = 180
-3 = 90
-4 = 45?
-5 = 22
-6 = 12?
-7 = 6?
-8 = 960
-9 = 480
-10 = 240
-11 = 120
-12 = 60
-13 = 30
-14 = 15
-15 = 7?
+In Mega Man 2, these sequences end with value 00. However, in Blaster Master, these sequences instead end with value FF.
