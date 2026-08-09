@@ -20757,6 +20757,39 @@
 		<parameters>CFG/Pachinko Gaiden (J) [S].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Pachio Kun - Game Gallery (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C123</checksum>
+        <crc32>9a3e2dc2</crc32>
+        <format>Graphic_Research_1</format>
+		<part>1/3=Pachio Kun</part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pachio Kun - Game Gallery (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C123</checksum>
+        <crc32>9a3e2dc2</crc32>
+        <format>Graphic_Research_1</format>
+		<part>2/3=Pachio Kun 2</part>
+		<banks>E</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pachio Kun - Game Gallery (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C123</checksum>
+        <crc32>9a3e2dc2</crc32>
+        <format>Graphic_Research_1</format>
+		<part>3/3=Pachio Kun 3</part>
+		<banks>15</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Pachio Kun (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
