@@ -3,6 +3,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LocalDebuggerCommandArguments>"Aladdin (U) (Beta) [S].gb"</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerCommandArgumentsHistory>"Blaster Master - Enemy Below (U) [C][!].gbc"|"Yoda Stories (U) [C][!].gbc"|"Carmageddon 2000 TDR (E) (M5) (Unreleased) [C][!].gbc"|"Aliens - Thanatos Encounter (U) [C][!].gbc"|"Aladdin (U) (Beta) [S].gb"|</LocalDebuggerCommandArgumentsHistory>
+    <LocalDebuggerCommandArgumentsHistory>"Speedball 2 - Brutal Deluxe (UE) [!].gb"|"Earthworm Jim (E) [!].gb"|"Macross 7 - Ginga no Heart o Furuwasero!! (J) [C][!].gbc"|"Lucle (J).gb"|"Aladdin (U) (Beta) [S].gb"|</LocalDebuggerCommandArgumentsHistory>
   </PropertyGroup>
 </Project>

@@ -2211,6 +2211,28 @@
 		<parameters>CFG/Bad Badtz-Maru Robo Battle (J) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Bakenou TV '94 (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>4EFB</checksum>
+        <crc32>d1c3f371</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Bakenou V3 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F039</checksum>
+        <crc32>4e2fffe5</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Bakuchou Retrieve Master (J) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -2472,6 +2494,17 @@
         <format>AudioArts</format>
 		<part></part>
 		<banks>5</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Barcode Taisen Bardigun (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6824</checksum>
+        <crc32>ddfcf4b7</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>2,3</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -2913,6 +2946,28 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters>4000\1</parameters>
+	</rom>
+	<rom>
+		<name>Beatmania GB 2 (J) [C][!]</name>
+		<gamecode>A2GJ</gamecode>
+		<rev>0</rev>
+		<checksum>F0C5</checksum>
+        <crc32>59beb372</crc32>
+        <format>Studio_Cliche</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>4000\933\1</parameters>
+	</rom>
+	<rom>
+		<name>Beatmania GB Gotcha Mix 2 (J) [C][!]</name>
+		<gamecode>B3GJ</gamecode>
+		<rev>0</rev>
+		<checksum>DF57</checksum>
+        <crc32>b92a6d16</crc32>
+        <format>Studio_Cliche</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>4000\6F1\1</parameters>
 	</rom>
 	<rom>
 		<name>Beauty and the Beast - A Board Game Adventure (E) (M5) [C][!]</name>
@@ -4672,6 +4727,17 @@
         <format>Hudson_Soft</format>
 		<part></part>
 		<banks>E</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Captain Tsubasa VS (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2BF3</checksum>
+        <crc32>a795e851</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>A,B</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -7150,6 +7216,17 @@
 		<parameters>CFG/Donkey Kong Land III (U) (V1.1) [S][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Doraemon Memories - Nobita no Omoide Daibouken (J) [C][!]</name>
+		<gamecode>BDMJ</gamecode>
+		<rev>0</rev>
+		<checksum>C0C3</checksum>
+        <crc32>d187cec4</crc32>
+        <format>Studio_Cliche</format>
+		<part></part>
+		<banks>40</banks>
+		<parameters>4A6F\26\2</parameters>
+	</rom>
+	<rom>
 		<name>Double Dragon (J) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -7931,6 +8008,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>DX Bakenou (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1E46</checksum>
+        <crc32>8f3e7f95</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>DX Bakenou Z (J) (V1.0)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>BC0D</checksum>
+        <crc32>3ef2e823</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>DX Bakenou Z (J) (V1.1)</name>
+		<gamecode></gamecode>
+		<rev>1</rev>
+		<checksum>EBBB</checksum>
+        <crc32>fadfd0f6</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Dynablaster (E) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -8479,6 +8589,28 @@
 		<part>2/2=Samples</part>
 		<banks>3</banks>
 		<parameters>S</parameters>
+	</rom>
+	<rom>
+		<name>F-1 Challenge (E) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>59BB</checksum>
+        <crc32>bc505a3b</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>A</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>F-1 Pole Position (UE) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8D35</checksum>
+        <crc32>aabe61bb</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>A</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>F-1 Race (W) (V1.0) [!]</name>
@@ -9449,6 +9581,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>G1 King - 3 Biki no Yosouya (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1225</checksum>
+        <crc32>150bc291</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Gaiamaster Duel - Card Attackers (J) [C][!]</name>
 		<gamecode>BGIJ</gamecode>
 		<rev>0</rev>
@@ -9457,6 +9600,17 @@
         <format>Capcom</format>
 		<part></part>
 		<banks>41,42,43</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Gakkyuu Ou Yamazaki (J) [C][!]</name>
+		<gamecode>AYMJ</gamecode>
+		<rev>0</rev>
+		<checksum>BEA6</checksum>
+        <crc32>ef2cfd99</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>2</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -10084,6 +10238,17 @@
         <format>Atlus</format>
 		<part></part>
 		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Gem Gem (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>FEF0</checksum>
+        <crc32>a64a8710</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>3</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -11286,6 +11451,17 @@
 		<parameters>CFG/Hatris (U).cfg</parameters>
 	</rom>
 	<rom>
+		<name>Hayaosi Kuizu - The King of Quiz (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>98A8</checksum>
+        <crc32>60727bf9</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>He Jin Zhuang Bei II (Unl) [C][f1]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -11294,6 +11470,17 @@
         <format>Nova</format>
 		<part></part>
 		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Head On (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7F5C</checksum>
+        <crc32>78830daf</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>3</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -11636,6 +11823,17 @@
 		<part></part>
 		<banks>1E</banks>
 		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Holy Magic Century (E) (M3) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>87FD</checksum>
+        <crc32>abd8ceae</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Home Alone (J)</name>
@@ -12298,6 +12496,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Itsudemo Pachinko GB - CR Monster House (J) [C][!]</name>
+		<gamecode>BCRJ</gamecode>
+		<rev>0</rev>
+		<checksum>4AB0</checksum>
+        <crc32>150bc291</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>3F,40</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>J.Cup Soccer (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -12328,6 +12537,39 @@
         <format>ACT_Japan</format>
 		<part></part>
 		<banks>2,3,6</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>J.League Fighting Soccer (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6FDA</checksum>
+        <crc32>17608642</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>J.League Live '95 (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>AC35</checksum>
+        <crc32>f0321342</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>J.League Winning Goal (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5987</checksum>
+        <crc32>adb46f9c</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>8</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -13726,6 +13968,17 @@
 		<part></part>
 		<banks>14</banks>
 		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Koi Wa Kakehiki (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>47F4</checksum>
+        <crc32>f3e1e652</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Kokiatsu Boy (J) [S]</name>
@@ -15433,6 +15686,17 @@
 		<parameters>4A5B\1</parameters>
 	</rom>
 	<rom>
+		<name>Lucle (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>4DA4</checksum>
+        <crc32>a3d5c8d7</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>3,4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Lufia - The Legend Returns (E) (M2) [C][!]</name>
 		<gamecode>BFLP</gamecode>
 		<rev>0</rev>
@@ -15519,6 +15783,17 @@
 		<part></part>
 		<banks>F</banks>
 		<parameters>CFG/Mach Go Go Go (J) [S].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Macross 7 - Ginga no Heart o Furuwasero!! (J) [C][!]</name>
+		<gamecode>BM7J</gamecode>
+		<rev>0</rev>
+		<checksum>D5C8</checksum>
+        <crc32>2b7abba4</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>7E,7F,80</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Madden '95 (UE) [S][!]</name>
@@ -16863,6 +17138,17 @@
 		<parameters>1</parameters>
 	</rom>
 	<rom>
+		<name>Me-Mail Bear no Happy Mail Town - Super Me-Mail GB (J) [C][!]</name>
+		<gamecode>BHAJ</gamecode>
+		<rev>0</rev>
+		<checksum>0F5B</checksum>
+        <crc32>315caa18</crc32>
+        <format>Studio_Cliche</format>
+		<part></part>
+		<banks>7,8,9</banks>
+		<parameters>4C84\91\3</parameters>
+	</rom>
+	<rom>
 		<name>Men In Black - The Series (U) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -17083,6 +17369,17 @@
 		<parameters>CFG/Metal Walker (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Metamode (J) [C][!]</name>
+		<gamecode>BTMJ</gamecode>
+		<rev>0</rev>
+		<checksum>E47F</checksum>
+        <crc32>a76eed5b</crc32>
+        <format>Studio_Cliche</format>
+		<part></part>
+		<banks>33</banks>
+		<parameters>714F\68\1</parameters>
+	</rom>
+	<rom>
 		<name>Metroid II - Return of Samus (W) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -17114,6 +17411,17 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Mickey Mouse - Tokyo Disneyland (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7300</checksum>
+        <crc32>77d69349</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>1F,20</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Mickey Mouse (J)</name>
@@ -17831,6 +18139,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Monster Farm Battle Card GB (J) [C][!]</name>
+		<gamecode>A6TJ</gamecode>
+		<rev>0</rev>
+		<checksum>6D6C</checksum>
+        <crc32>69b88f1e</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>3D,3E,3F,40</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Monster Maker 2 (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -17884,6 +18203,28 @@
 		<part></part>
 		<banks>1</banks>
 		<parameters>7\2CBD</parameters>
+	</rom>
+	<rom>
+		<name>Monster Rancher Battle Card GB (U) [C][!]</name>
+		<gamecode>A6TE</gamecode>
+		<rev>0</rev>
+		<checksum>196D</checksum>
+        <crc32>50ddf120</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>3D,3E,3F,40</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Monster Rancher Explorer (U) [C][!]</name>
+		<gamecode>BSOE</gamecode>
+		<rev>0</rev>
+		<checksum>2DB2</checksum>
+        <crc32>6c35e8f0</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>3F,40</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Monster Truck (J)</name>
@@ -18557,6 +18898,17 @@
 		<parameters>CFG/Musashi Road (J).cfg</parameters>
 	</rom>
 	<rom>
+		<name>Muteki Ou Tri-Zenon (J) [C][!]</name>
+		<gamecode>BZNJ</gamecode>
+		<rev>0</rev>
+		<checksum>7A5A</checksum>
+        <crc32>0bab7a61</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>7D,7E,7F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Mysterium (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -18631,6 +18983,28 @@
         <format>Konami</format>
 		<part></part>
 		<banks>F,10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Nakajima Satoru - F-1 Hero '91 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5D9C</checksum>
+        <crc32>e00ebc44</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Nakajima Satoru Kanshuu - F-1 Hero GB '92 - The Graded Driver (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8CC1</checksum>
+        <crc32>b6ef042e</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>A</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -19305,6 +19679,28 @@
 		<parameters>1\46A5</parameters>
 	</rom>
 	<rom>
+		<name>Nettou Samurai Spirits (J) (V1.0) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1E89</checksum>
+        <crc32>4a306276</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>6,7,8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Nettou Samurai Spirits (J) (V1.1) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>70EE</checksum>
+        <crc32>4a306276</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>6,7,8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Nettou Toushinden (J) (V1.0) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -19745,6 +20141,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Nisemon Puzzle da Mon! - Feromon Kyuushutsu Daisakusen! (J) [C]</name>
+		<gamecode>BNPJ</gamecode>
+		<rev>0</rev>
+		<checksum>7E86</checksum>
+        <crc32>2f7d62f3</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>7E,7F,80</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>No Fear - Downhill Mountain Biking (E) [C][!]</name>
 		<gamecode>BKFP</gamecode>
 		<rev>0</rev>
@@ -19753,6 +20160,17 @@
         <format>AudioArts</format>
 		<part></part>
 		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Nobunaga no Yabou - GameBoy Ban 2 (J) [C][!]</name>
+		<gamecode>AGYJ</gamecode>
+		<rev>0</rev>
+		<checksum>DAE2</checksum>
+        <crc32>233862d0</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>20</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -20337,6 +20755,72 @@
 		<part></part>
 		<banks>2</banks>
 		<parameters>CFG/Pachinko Gaiden (J) [S].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Pachio Kun (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E00E</checksum>
+        <crc32>9a3e2dc2</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pachio Kun 2 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>4F3A</checksum>
+        <crc32>3e8d0ae9</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pachio Kun 3 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8687</checksum>
+        <crc32>c6dd7d92</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pachi-Slot Kids (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9CCE</checksum>
+        <crc32>8c21a77d</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pachi-Slot Kids 2 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E190</checksum>
+        <crc32>deace430</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pachi-Slot Kids 3 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>89DA</checksum>
+        <crc32>40fc1186</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Pagemaster, The (E) [S][!]</name>
@@ -21019,6 +21503,17 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters>6</parameters>
+	</rom>
+	<rom>
+		<name>Pocket Jockey (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>06A0</checksum>
+        <crc32>490f8c46</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Pocket King (J) [C][!]</name>
@@ -22286,6 +22781,61 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Power Mission (J) (V1.0)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>49E3</checksum>
+        <crc32>0e2a1414</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Power Mission (J) (V1.1)</name>
+		<gamecode></gamecode>
+		<rev>1</rev>
+		<checksum>72EB</checksum>
+        <crc32>e30ef8ab</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Power Mission (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8144</checksum>
+        <crc32>8c21a77d</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Power Racer (Beta)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>71B1</checksum>
+        <crc32>afc6a949</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Power Racer (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7222</checksum>
+        <crc32>cf8aeee8</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Power Rangers - Lightspeed Rescue (U) [C][!]</name>
 		<gamecode>BRSE</gamecode>
 		<rev>0</rev>
@@ -23196,6 +23746,17 @@
         <format>Konami</format>
 		<part></part>
 		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Quest - Magic Century (U) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1AC7</checksum>
+        <crc32>98285775</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>10</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -24497,6 +25058,17 @@
 		<parameters>17</parameters>
 	</rom>
 	<rom>
+		<name>Rokumon Tengai Mon-Colle-Knight GB (J) [C][!]</name>
+		<gamecode>BKDJ</gamecode>
+		<rev>0</rev>
+		<checksum>6B7C</checksum>
+        <crc32>e48adf8d</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>79,7A</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Ronaldo V.Football (E) (M7) [C][!]</name>
 		<gamecode>AORP</gamecode>
 		<rev>0</rev>
@@ -25704,6 +26276,28 @@
         <format>Hudson_Soft</format>
 		<part></part>
 		<banks>F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Samurai Shodown (U) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>391A</checksum>
+        <crc32>69292ee6</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>6,7,8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Samurai Shodown (U) (Beta) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>17F8</checksum>
+        <crc32>90d51289</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>6,7,8</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -27104,6 +27698,50 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Solomon (J) [C][!]</name>
+		<gamecode>BSOJ</gamecode>
+		<rev>0</rev>
+		<checksum>F243</checksum>
+        <crc32>6aee0958</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>3F,40</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Solomon's Club (E) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>64D8</checksum>
+        <crc32>701ccdb3</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Solomon's Club (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>603A</checksum>
+        <crc32>901bff2e</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Solomon's Club (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1E08</checksum>
+        <crc32>cea9622a</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Solitaire Funpak (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -27146,6 +27784,28 @@
 		<part></part>
 		<banks>2</banks>
 		<parameters>CFG/Sonic 7 (Unl) [C].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Soreike! Anpanman - 5tsu no Tou no Ousama (J) [C][!]</name>
+		<gamecode>BS2J</gamecode>
+		<rev>0</rev>
+		<checksum>7DB4</checksum>
+        <crc32>c9a25b0c</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>3F,40</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Soreike! Anpanman - Fushigi na Nikoniko Album (J) [C][!]</name>
+		<gamecode>AANJ</gamecode>
+		<rev>0</rev>
+		<checksum>64DB</checksum>
+        <crc32>a80eeead</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>2,3</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Soreyuke! Speedy Gonzales (J)</name>
@@ -28336,6 +28996,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Super Bikkuriman - Densetsu no Sekiban (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B604</checksum>
+        <crc32>c1e1a041</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Super Black Bass - Real Fight (J) [C][!]</name>
 		<gamecode>VRFJ</gamecode>
 		<rev>0</rev>
@@ -29489,6 +30160,17 @@
 		<part></part>
 		<banks>2</banks>
 		<parameters>CFG/Tamagotchi 3 (J) [S].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Taruru-To 2 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D0A4</checksum>
+        <crc32>0aad5217</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Tarzan (U) [!]</name>
@@ -31823,6 +32505,17 @@
 		<parameters>S</parameters>
 	</rom>
 	<rom>
+		<name>Wapiko no Waku Waku Stamp Ralley! - Kingyo Chuuihou! (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>086F</checksum>
+        <crc32>e69a6f0a</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Warau Inu no Bouken - Silly Go Lucky! (J) [C][!]</name>
 		<gamecode>BWBJ</gamecode>
 		<rev>0</rev>
@@ -32041,6 +32734,28 @@
 		<part>2/2=Samples</part>
 		<banks>10</banks>
 		<parameters>S</parameters>
+	</rom>
+	<rom>
+		<name>Wetrix GB (E) [C][!]</name>
+		<gamecode>BWXP</gamecode>
+		<rev>0</rev>
+		<checksum>71E2</checksum>
+        <crc32>9cbfaa3d</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Wetrix GB (J) [C][!]</name>
+		<gamecode>AW5J</gamecode>
+		<rev>0</rev>
+		<checksum>439C</checksum>
+        <crc32>6215c5b3</crc32>
+        <format>Graphic_Research_1</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Who Framed Roger Rabbit (E) [!]</name>
@@ -32371,6 +33086,28 @@
 		<part></part>
 		<banks>1D</banks>
 		<parameters>CFG/Work Master 2 DEMO V1.99 (Unl) [C].cfg</parameters>
+	</rom>
+	<rom>
+		<name>World Beach Volley - 1992 GB Cup (E) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>4ED2</checksum>
+        <crc32>4023e085</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>World Beach Volleyball 1991 GB Cup (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>60C3</checksum>
+        <crc32>a2894581</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>World Circuit Series (U)</name>
@@ -33503,6 +34240,28 @@
         <format>Technos_Japan</format>
 		<part></part>
 		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Zerd no Densetsu (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>22A0</checksum>
+        <crc32>492edb36</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Zerd no Densetsu 2 - Xerd!! Gishin no Ryouiki (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0FAE</checksum>
+        <crc32>a197bdb7</crc32>
+        <format>Graphic_Research_2</format>
+		<part></part>
+		<banks>1B,1C,1D,1E,1F,20</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
