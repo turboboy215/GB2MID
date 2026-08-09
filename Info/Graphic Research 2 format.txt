@@ -1,0 +1,70 @@
+Song pointer table
+===========================================
+The song pointer table consists of 2-byte (16-bit) pointers for both music and sound effects. Unlike Graphic Research's first driver, however, the pointers are relative to the start of the pointer table, rather than absolute pointer values. It is loaded using the following code:
+
+sla a
+ld l, a
+ld h, 0
+ld de, SongTab
+add hl, de
+ld a, [hli]
+ld h, [hl]
+ld l, a
+add hl, de
+ret
+
+Which equals the following in hex:
+
+CB 27 6F 26 00 11 ?? ?? 19 2A 66 6F 19 C9
+
+Song headers
+===========================================
+Each song or sound effect has a "header" which is structured as follows:
+(4 channels):
+1. Mask/priority? (00 = unused)
+2-3. Pointer to channel sequence
+
+Note that after the "header" is what appears to be padding of some sort, which isn't actually used. Pointers are relative to the start of the song table (not the song header).
+
+Channel sequences
+===========================================
+Channels are comprised of the following commands:
+00-7F = Play note
+(-xxyaaaa (- Not set, X = Pan value, Y = Use custom delay if set, A = Note - if 07 or 0F, then is a rest)) 
+(Note values:
+0 = C
+1 = D
+2 = E
+3 = F
+4 = G
+5 = A
+6 = B
+7 = Rest
+8 = C#
+9 = D#
+A = F
+B = F#
+C = G#
+D = A#
+E = C (octave higher)
+F = Rest)
+9x = Set octave
+E9 xx = ?
+EA xx = ?
+EB = Repeat end
+EC xx = Repeat start (X = Times)
+ED xx = Set voice
+EE xx = Set sweep
+EF xx = Set tuning
+F0 = Reset audio RAM?
+F1-F7 = (Invalid)
+F8 = Return from macro
+F9 xx xx = Go to macro
+FA xx xx = Jump to position
+FB xx = Set vibrato
+FC xx = Set envelope sequence?
+FD xx = Set default note length
+FE = Hold note
+FF = End of channel
+
+(NOTE: Pointers in this sound engine are relative to immediately following the command.)

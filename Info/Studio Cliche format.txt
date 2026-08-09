@@ -1,0 +1,35 @@
+Song table
+===========================================
+The song pointer table consists of 2-byte (16-bit) pointers for both music and sound effects, as well as the bank that each song/sound effect is stored inside. It is structured as follows:
+
+1. ? (Possibly 0 = SFX, 1 = Music?)
+2. Bank number
+3-4. Pointer
+
+Song headers
+===========================================
+Each song or sound effect has a "header" which is structured as follows:
+(4 channels):
+1. Mask? (Appears to be FF or 01-04, 00 = unused)
+2-3. Pointer
+
+Channel sequences
+===========================================
+Channels are comprised of the following commands:
+00-7E xx (F8) = Play note (X = Length, F8 = Tie?)
+7F xx = Rest
+F0 xx xx = Jump to position
+F1 xx xx = Go to macro
+F2 = Return from macro
+F3 = Repeat start
+F4 xx = Repeat end (X = Times)
+F5 xx = Set vibrato
+F6 xx = Set voice
+F7 xx = Set envelope sequence?
+F8 = (Invalid)
+F9 xx = Add to transpose
+FA xx = Set tuning
+FB xx = Set panning
+FC xx = ?
+FD = Set conditional flag?
+FE/FF = End of channel

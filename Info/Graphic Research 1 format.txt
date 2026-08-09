@@ -1,0 +1,84 @@
+Song pointer table
+===========================================
+The song pointer table consists of 2-byte (16-bit) pointers for both music and sound effects. It is loaded using the following code:
+
+pop af
+add a
+add a, LOW(SongTab)
+ld l, a
+ld a, 0
+adc a, HIGH(SongTab)
+ld h, a
+ldi a, [hl]
+ld h, [hl]
+ld l, a
+
+Which equals the following in hex:
+
+F1 87 C6 ?? 6F 3E 00 CE ?? 67 2A 66 6F
+
+Song headers
+===========================================
+Each song or sound effect has a "header" which is structured as follows:
+(4 channels):
+1-2. Pointer to channel sequence
+3. Mask/priority (00 = unused) (FF = entry 0, 80 = entry 1?)
+
+Channel sequences
+===========================================
+Channels are comprised of the following commands:
+0x/1x = Set note length from list index
+2x = Set waveform
+3x = Set NR51/panning mask
+4x/5x = Rest with custom length
+6x = Set octave
+7x = Set note length table offset (add to start)
+8x = Play note with current length
+9x yy = Play note with custom length (Y = Length)
+Ax = ? (Enables a seemingly unused variable)
+Bx/Cx = Set envelope sequence from table
+Dx = Set duty
+Ex = Set vibrato from table
+F0 xx = Sweep on (X = Value)
+F1 = Sweep off
+F2 xx = Set tuning (X = Value)
+F3 = Rest with current length
+F4 = Set "single shot" flag (envelope and vibrato do not loop)
+F5 xx xx = Set detune value (mid-note)
+F6 xx = Set transpose (X = Value, signed)
+F7-F9 = (Invalid)
+FA xx xx = Jump to position
+FB xx = Repeat start (X = Times)
+FC = Repeat end
+FD = Go to macro
+FE = Return from macro
+FF = End of channel
+
+Note lengths
+===========================================
+Note lengths are stored in individual lists, each with 16 values, and each that can be loaded using command 0x or 1x. The list itself can be changed using value 7x. It is loaded using the following code:
+
+add hl, de
+add [hl]
+ld hl, NoteLenTab
+add l
+ld l, a
+ld a, 0
+adc h
+ld h, a
+ld a, [hl]
+
+Which equals the following in hex:
+19 86 21 ?? ?? 85 6F 3E 00 8C 67 7E
+
+Envelope sequences
+===========================================
+Envelope sequences are indexed from a table, and control the envelope of an instrument per frame. They are structured as follows:
+1. Envelope value (FF = End/loop)
+2. Delay
+
+Vibrato sequences
+===========================================
+Similar to envelope sequences, vibrato sequences are indexed from a table, and are used to change the pitch of a channel per frame. They are structured as follows:
+1. Pitch change value (signed) (FF = End/loop)
+2. Delay
