@@ -19,6 +19,7 @@
 #include "CANNON.H"
 #include "CAPCOM.H"
 #include "CARILLON.H"
+#include "CLICHE.H"
 #include "CLIMAX.H"
 #include "CODEMONK.H"
 #include "COMPILE.H"
@@ -40,6 +41,8 @@
 #include "GAMEFRK.H"
 #include "GEX.H"
 #include "GHX.H"
+#include "GRC1.H"
+#include "GRC2.H"
 #include "HAL.H"
 #include "HUDSON.H"
 #include "IMAGNRNG.H"
@@ -626,6 +629,12 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case GHX:
 			GHXProc(banks[curBank]);
 			break;
+		case Graphic_Research_1:
+			GRC1Proc(banks[curBank]);
+			break;
+		case Graphic_Research_2:
+			GRC2Proc(banks[curBank]);
+			break;
 		case HAL_Laboratory:
 			HALProc(banks[curBank]);
 			break;
@@ -769,6 +778,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Square:
 			SqrProc(banks[curBank]);
+			break;
+		case Studio_Cliche:
+			ClicheProc(banks[curBank], parameters);
 			break;
 		case Sunsoft:
 			SSProc(banks[curBank]);

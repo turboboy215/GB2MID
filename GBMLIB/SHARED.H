@@ -99,6 +99,9 @@
 #define Torus_1				0x60
 #define Torus_2				0x61
 #define Wicked_Witch		0x62
+#define Graphic_Research_1	0x63
+#define Graphic_Research_2	0x64
+#define Studio_Cliche		0x65
 
 extern FILE * rom, * mid;
 extern long masterBank;

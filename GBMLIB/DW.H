@@ -8,7 +8,7 @@
 
 #define DW_VER_STD	1
 
-enum EventTypes
+enum DWEventTypes
 {
 	DW_EVENT_TEMPO = 0,
 	DW_EVENT_LOOP,
