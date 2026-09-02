@@ -1,0 +1,37 @@
+Song Pointer Table
+=======================================
+The song pointer table is an an array that is comprised of a number of the following entries as such:
+1-2. Track 1 offset
+3-4. Track 2 offset
+5-6. Track 3 offset
+7-8. Track 4 offset
+9-10. Sequence table offset
+11. ?
+12. ?
+13. Tempo
+14. Transpose
+15. ?
+16. Loop repeat flag?
+
+It is accessed with the following code:
+	and a, $0F
+	swap a
+	ld c, a
+	ld b, 0
+	ld hl, SongTab
+	add hl, bc
+
+Which equals the following in hex:
+E6 0F CB 37 4F 06 00 21 ?? ?? 09
+
+Channel Tracks
+=======================================
+Each channel is comprised of a series of 1-byte (8-bit) values specifying the number of a sequence from the table specified in the song header. A value of FF signals the end of a track.
+
+Sequences
+=======================================
+Sequences are comprised of the following commands:
+00-7F xx = Play note (X = Length)
+80-FC = Set instrument
+FD xx = Set volume
+FF = End of sequence

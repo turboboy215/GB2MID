@@ -1,0 +1,39 @@
+Song Pointer Table
+=======================================
+The song pointer table is a series of 2-byte (16-bit) pointers to each song, ending with value $0000. In Prophecy and Humans, it is located at the start of the bank at $4000. In Super Kick Off, it is located at $7938.
+
+Song Headers
+=======================================
+The header of a song is comprised of 2-byte (16-bit) pointers to each channel's track; however, there are only 3 channels (channel 4 isn't used directly), and there are 3 "dummy" channels as well. It is constructed as follows:
+1-2. Channel 1 track
+3-4. Channel 2 track
+5-6. Channel 3 track
+7-8. Dummy track 1
+9-10. Dummy track 2
+11-12. Dummy track 3
+
+Channel Tracks
+=======================================
+Channel tracks are a series of 2-byte (16-bit) pointers to sequences that are played by the channel. This sequence ends with a value of $0000, when the sequence will be restarted.
+
+Sequences
+=======================================
+Sequences are comprised of the following commands:
+00-5F = Play note
+60 = End of repeat
+61 xx = Start of repeat (X = number of times) (nested repeats supported)
+62 xx xx = Go to macro (X = position) (nested macros supported)
+63 xx xx = Jump to position
+64 xx = Set transpose
+65 = Toggle vibrato
+66 xx = Set panning
+67 xx = Set channel 3 duration
+68 xx = Set waveform
+69 = Disable arpeggio
+6A = Enable arpeggio
+70-BF = Set note length
+C0-DF = Set instrument (with arpeggio, etc.)
+E0 xx yy yy = Set instrument parameters (X = Velocity, Y = Transpose (frequency))
+E1-EF = ? (set unused variable)
+F0-FE = Set tempo
+FF = End of sequence OR return from macro
