@@ -779,6 +779,10 @@ int main(int args, char* argv[])
             {
                 driver = Graphic_Research_2;
             }
+            else if (!strcmp(formatString, "Gremlin"))
+            {
+                driver = Gremlin;
+            }
             else if (!strcmp(formatString, "HAL_Laboratory"))
             {
                 driver = HAL_Laboratory;
@@ -798,6 +802,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "Hudson_Soft"))
             {
                 driver = Hudson_Soft;
+            }
+            else if (!strcmp(formatString, "Imagitec_Design"))
+            {
+                driver = Imagitec_Design;
             }
             else if (!strcmp(formatString, "Imagineering"))
             {

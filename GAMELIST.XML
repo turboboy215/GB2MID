@@ -12056,6 +12056,28 @@
 		<parameters>4062</parameters>
 	</rom>
 	<rom>
+		<name>Humans, The (E) (M5)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CBF0</checksum>
+        <crc32>999c67d6</crc32>
+        <format>Imagitec_Design</format>
+		<part></part>
+		<banks>D,E,F</banks>
+		<parameters>B</parameters>
+	</rom>
+	<rom>
+		<name>Humans, The (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B890</checksum>
+        <crc32>1df2e81d</crc32>
+        <format>Imagitec_Design</format>
+		<part></part>
+		<banks>D,E,F</banks>
+		<parameters>B</parameters>
+	</rom>
+	<rom>
 		<name>Hunchback of Notre Dame, The - Topsy Turvy Games (U) [S][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -18227,6 +18249,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Monster Traveler (J) (V1.1) [C][!]</name>
+		<gamecode>BFVJ</gamecode>
+		<rev>1</rev>
+		<checksum>A073</checksum>
+        <crc32>f60a376e</crc32>
+        <format>Kouji_Murata</format>
+		<part></part>
+		<banks>C1</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
 		<name>Monster Truck (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -18235,6 +18268,17 @@
         <format>Technos_Japan</format>
 		<part></part>
 		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Monster Truck Wars (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>AC49</checksum>
+        <crc32>186c109b</crc32>
+        <format>Gremlin</format>
+		<part></part>
+		<banks>7</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -18786,6 +18830,17 @@
 		<part>2/2=Samples</part>
 		<banks>2</banks>
 		<parameters>S</parameters>
+	</rom>
+	<rom>
+		<name>Muhammad Ali's Boxing (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1DA1</checksum>
+        <crc32>97bd3e8f</crc32>
+        <format>Gremlin</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Mummy Returns, The (E) (M5) [C]</name>
@@ -19962,6 +20017,39 @@
         <format>Titus_1</format>
 		<part></part>
 		<banks>1</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Nigel Mansell's World Championship '92 (E)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DEB1</checksum>
+        <crc32>e1b202db</crc32>
+        <format>Gremlin</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Nigel Mansell's World Championship '92 (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DD51</checksum>
+        <crc32>0d0958a3</crc32>
+        <format>Gremlin</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Nigel Mansell's World Championship '93 (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>56D5</checksum>
+        <crc32>03e84d7d</crc32>
+        <format>Gremlin</format>
+		<part></part>
+		<banks>3</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -21557,7 +21645,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>F</banks>
-		<parameters>N</parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Pocket Love (J) [S]</name>
@@ -23276,6 +23364,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Pro Soccer (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DE7B</checksum>
+        <crc32>a6f3bee2</crc32>
+        <format>Imagitec_Design</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Probotector (E) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -23318,6 +23417,28 @@
 		<part></part>
 		<banks>1</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Prophecy - The Viking Child (E) (M5) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>EDC7</checksum>
+        <crc32>590f5fb1</crc32>
+        <format>Imagitec_Design</format>
+		<part></part>
+		<banks>A,B,C</banks>
+		<parameters>17</parameters>
+	</rom>
+	<rom>
+		<name>Prophecy - The Viking Child (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E40F</checksum>
+        <crc32>80f62f9a</crc32>
+        <format>Imagitec_Design</format>
+		<part></part>
+		<banks>A,B,C</banks>
+		<parameters>17</parameters>
 	</rom>
 	<rom>
 		<name>Puchi Carat (E) [C][!]</name>
@@ -29337,6 +29458,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Super Kick Off (E) (M5) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9D9E</checksum>
+        <crc32>4b1dfe3d</crc32>
+        <format>Imagitec_Design</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Super Mario 4 (Unl) [p1]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -34406,6 +34538,39 @@
 		<part></part>
 		<banks>1</banks>
 		<parameters>CFG/Zoo Block (Sachen) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Zool (E) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7811</checksum>
+        <crc32>ae13e227</crc32>
+        <format>Gremlin</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Zool (J) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D8D0</checksum>
+        <crc32>3be6dec8</crc32>
+        <format>Gremlin</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Zool (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>FF5B</checksum>
+        <crc32>ef54b46e</crc32>
+        <format>Gremlin</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Zoop (J)</name>

@@ -986,6 +986,8 @@ Hugo - The Evil Mirror (E) (M11) [C]
 Hugo (E) [S]
 Hugo 2 (G) [S][!]
 Hugo 2.5 (G) [C][!]
+Humans, The (E) (M5)
+Humans, The (U) [!]
 Hunchback of Notre Dame, The - Topsy Turvy Games (U) [S][!]
 Hunt for Red October, The (J)
 Hunt for Red October, The (U) [!]
@@ -1496,7 +1498,9 @@ Monster Race 2 (J) [C][!]
 Monster Race Other (J) [S]
 Monster Rancher Battle Card GB (U) [C][!]
 Monster Rancher Explorer (U) [C][!]
+Monster Traveler (J) (V1.1) [C][!]
 Monster Truck (J)
+Monster Truck Wars (U) [!]
 Monsters, Inc. (E) (M3) (Eng-Ita-Fre) [C][!]
 Monsters, Inc. (E) (M3) (Eng-Spa-Dut) [C]
 Monsters, Inc. (E) (V1.1) [C][!]
@@ -1540,6 +1544,7 @@ Ms. Pac-Man Special Color Edition (U) [C][!]
 MTV Sports - Pure Ride (U) [C][!]
 MTV Sports - Skateboarding featuring Andy MacDonald (U) [C][!]
 MTV Sports - T.J. Lavin's Ultimate BMX (U) [C][!]
+Muhammad Ali's Boxing (U)
 Mummy Returns, The (E) (M5) [C]
 Mummy Returns, The (U) [C][!]
 Mummy, The (E) (M3) [C][!]
@@ -1638,6 +1643,9 @@ NHL Hockey '95 (U) [S][!]
 NHL Hockey '96 (U) [S][!]
 Nichibutsu Mahjong - Yoshimoto Gekijou (J)
 Nick Faldo Golf (U) (Unreleased) [!]
+Nigel Mansell's World Championship '92 (E)
+Nigel Mansell's World Championship '92 (U) [!]
+Nigel Mansell's World Championship '93 (U)
 Ninja Boy (U) [!]
 Ninja Boy 2 (U)
 Ninja Gaiden Shadow (U)
@@ -1928,10 +1936,13 @@ Pro Darts (U) [C][!]
 Pro Foot (F) (M7) [C][!]
 Pro Mahjong Tsuwamono GB (J) [C][!]
 Pro Mahjong Tsuwamono GB2 (J) [C][!]
+Pro Soccer (J)
 Probotector (E) [!]
 Probotector 2 (Beta) [S]
 Probotector 2 (E) [S]
 Project S-11 (U) [C][!]
+Prophecy - The Viking Child (E) (M5) [!]
+Prophecy - The Viking Child (U) [!]
 Puchi Carat (E) [C][!]
 Puchi Carat (J) [C][!]
 Puchi Carat (U) (Unreleased) [C][!]
@@ -2395,6 +2406,7 @@ Super Hunchback (J) [!]
 Super Hunchback (U)
 Super James Pond (E) [!]
 Super James Pond (U) (Unreleased) [!]
+Super Kick Off (E) (M5) [!]
 Super Mario 4 (Unl) [p1]
 Super Mario Bros. Deluxe (J) [C][!]
 Super Mario Bros. Deluxe (J) (V1.1) (Unreleased) [C][!]
@@ -2837,6 +2849,9 @@ Zoboomafoo - Playtime In Zobooland (U) [C][!]
 Zoids Densetsu (J)
 Zok Zok Heroes (J) [C][!]
 Zoo Block (Sachen) [!]
+Zool (E) [!]
+Zool (J) (Unreleased) [!]
+Zool (U) [!]
 Zoop (J)
 Zoop (U) [!]
 
@@ -2844,5 +2859,6 @@ Partially supported:
 Mani 4-in-1 (DMG-603 CHN) (Ch) [!]
 Mani 4-in-1 (DMG-604-CHN) (Ch) [!]
 Moon Patrol & Spy Hunter (U) [C][!]
+Pachio Kun - Game Gallery (J)
 Pocket Smash Out & Race Time (Unl) [C][!]
 Space Invasion & Karate Joe (Unl) [C][!]

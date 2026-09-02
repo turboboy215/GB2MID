@@ -100,3 +100,5 @@
 #define Graphic_Research_1	0x63
 #define Graphic_Research_2	0x64
 #define Studio_Cliche		0x65
+#define Imagitec_Design		0x66
+#define Gremlin				0x67
