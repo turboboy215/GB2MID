@@ -41,10 +41,12 @@
 #include "GAMEFRK.H"
 #include "GEX.H"
 #include "GHX.H"
+#include "GREMLIN.H"
 #include "GRC1.H"
 #include "GRC2.H"
 #include "HAL.H"
 #include "HUDSON.H"
+#include "IMAGITEC.H"
 #include "IMAGNRNG.H"
 #include "JEROTEL.H"
 #include "JSAITO.H"
@@ -626,6 +628,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case Game_Freak:
 			GFProc(banks[curBank]);
 			break;
+		case Gremlin:
+			GremlinProc(banks[curBank]);
+			break;
 		case GHX:
 			GHXProc(banks[curBank]);
 			break;
@@ -649,6 +654,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Hudson_Soft:
 			HSProc(banks[curBank]);
+			break;
+		case Imagitec_Design:
+			ImagitecProc(banks[curBank], parameters);
 			break;
 		case Imagineering:
 			ImgnProc(banks[curBank]);
