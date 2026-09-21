@@ -1,0 +1,44 @@
+Song table
+=======================================
+The song table consists of a series of 16-bit values containing pointers to each song. It can be found using the following code:
+ld hl, SongTab
+add l
+ld l, a
+jr nc, ????
+inc h
+ldi a, [hl]
+
+Which equals the following in hex:
+21 ?? ?? 85 6F 30 01 24 2A
+
+Song header
+=======================================
+Each song or sound effect has a simple "header" which consists of 4 16-bit pointers for each channel's sequence, 1 for each channel.
+
+Song commands
+=======================================
+Each channel's sequence is comprised of the following commands:
+00-11 = Play note
+12 = Rest
+13 xx = Set octave
+14 = Octave up
+15 = Octave down
+16 xx xx = Go to macro
+17 = Return from macro
+18 xx = Start of repeat (X = Amount of times)
+19 = End of repeat
+1A = Sound effect end
+1B = End of channel 2-4
+1C = End of channel 1
+1D xx = Set duty
+1E xx = Set sweep?
+1F xx = Set envelope
+20 xx = Set tempo
+21 xx = (No effect)
+22 (xx) = (No effect) (X is only used in Rampart, uses FF value)
+23 xx = Set note length?
+24 xx = Set transpose (signed)
+25 xx xx = Jump to position
+26 xx = Set panning
+27 xx = (No effect)
+28-FF = Set note length

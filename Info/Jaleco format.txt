@@ -1,0 +1,93 @@
+Song table
+=======================================
+The song table consists of a series of 16-bit values containing pointers to each song and sound effect. It can be found using the following code:
+ld b, a
+ld c, a
+ld d, a
+ld e, a
+call ????
+ld de, ????
+ld hl, SongTab
+ld a, [$FF99]
+add a
+ld c, a
+ld b, 0
+add hl, bc
+push hl
+
+Which equals the following in hex:
+47 4F 57 5F CD xx xx 11 xx xx 21 ?? ?? F0 99 87 4F 06 00 09 E5
+
+Song header
+=======================================
+Each song or sound effect has a simple "header" which consists of 4 16-bit pointers for each channel's sequence, 1 for each channel.
+
+Song commands
+=======================================
+Sequence commands vary depending on the version used. Here is a list of commands used in different versions:
+
+Hero Shuugou!! Pinball Party/In Your Face/Lazlos' Leap
+==========================
+00 = Turn off sweep
+01 xx = Set note duration (gate) - fraction
+02 xx = Set note duration (gate) - absolute
+03 xx = Set transpose
+04 xx = Set panning
+05 xx = Set channel speed
+06 xx xx = Jump to position (X = pointer)
+07 xx yy zz aa = Set envelope parameters (X = start volume, Y = signed step, Z = rate, A = target volume)
+08 xx yy zz = Set envelope direct value
+09 xx yy zz = Set sweep - only effective on CH1
+0A xx yy zz = Set tremolo (X = initial delay, Y = depth, Z = rate)
+0B xx -- (CH1-2) = Set duty (X = value - rotated twice to NR11, - = unused)
+0B xx xx (CH3) = Set waveform (X = pointer)
+0C xx = Set volume (constant)
+0D xx yy = Repeat start (X = Index, Y = Amount of times)
+0E xx yy yy = Repeat end (X = Index, Y = Restart pointer)
+0F = End of channel
+10 xx xx = Go to macro (X = Pointer)
+11 = Return from macro
+12 xx = Set tuning
+13 = Turn off sweep
+00-FE xx, except B8 = Play note (X = Length)
+B8 xx = Rest (X = Length)
+FF = Next byte is a command - see above, otherwise note
+
+Avenging Spirit (Phantasm)/Fortified Zone (Ikari no Yousai) 1/2/Banishing Racer
+==========================
+00 xx = Set panning
+01 xx yy zz = Set envelope parameters (X = start volume, Y = direction, Z = period)
+02 xx = Set envelope direct value
+03 xx xx = Set envelope sequence (X = Pointer)
+04 xx xx = Set vibrato sequence (X = Pointer)
+05 xx = Set note duration (gate) - fraction
+06 xx = Set note duration (gate) - absolute
+07 xx = Set transpose
+08 xx = Set channel speed
+09 xx xx = Jump to position (X = Pointer)
+0A xx yy zz = Set sweep (only effective on channel 1)
+0B xx -- (CH1-2) = Set duty (X = value - rotated twice to NR11, - = unused)
+0B xx xx (CH3) = Set waveform (X = pointer)
+0C xx yy = Repeat start (X = Index, Y = Amount of times)
+0D xx yy yy = Repeat end (X = Index, Y = Restart pointer)
+0E = End of channel
+0F xx xx = Go to macro (X = Pointer)
+10 = Return from macro
+11 xx = Set tuning
+12 = Turn off sweep
+00-FE xx, except B8 = Play note (X = Length)
+B8 xx = Rest (X = Length)
+FF = Next byte is a command - see above, otherwise note
+
+Soldam
+==========================
+Same as above, but with the repeat commands working as follows:
+0C xx = Repeat start (Y = Amount of times - Uses an automatic stack rather than a fixed index, repeat position is after this command)
+0D = Repeat end (go back to start)
+
+To calculate note value:
+ - Add transpose value
+ - Add original note value again
+ - Load this value into E
+ - RL D (includes carry value)
+ - Add the resulting DE value to frequency table
