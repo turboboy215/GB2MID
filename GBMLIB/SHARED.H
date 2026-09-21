@@ -104,6 +104,12 @@
 #define Studio_Cliche		0x65
 #define Imagitec_Design		0x66
 #define Gremlin				0x67
+#define Jaleco				0x68
+#define C_lab				0x69
+#define PCM					0x6A
+#define PCM_Eastridge		0x6B
+#define PCM_MK4				0x6C
+#define PCM_Klax			0x6D
 
 extern FILE * rom, * mid;
 extern long masterBank;
@@ -147,4 +153,5 @@ extern unsigned int WriteNoteEventAltOn(unsigned char* buffer, unsigned int pos,
 extern unsigned int WriteNoteEventAltOff(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 extern int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 extern int gbFreq2Note(unsigned int freq);
+extern unsigned char gb_read_byte(int bank, int cpu);
 extern void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameters[4][100]);

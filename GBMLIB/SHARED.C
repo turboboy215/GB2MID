@@ -19,6 +19,7 @@
 #include "CANNON.H"
 #include "CAPCOM.H"
 #include "CARILLON.H"
+#include "CLAB.H"
 #include "CLICHE.H"
 #include "CLIMAX.H"
 #include "CODEMONK.H"
@@ -34,6 +35,7 @@
 #include "DSEQ.H"
 #include "DW.H"
 #include "EASTRDGE.H"
+#include "EASTRPCM.H"
 #include "EDMAGNIN.H"
 #include "EHY.H"
 #include "EQUIL.H"
@@ -48,6 +50,7 @@
 #include "HUDSON.H"
 #include "IMAGITEC.H"
 #include "IMAGNRNG.H"
+#include "JALECO.H"
 #include "JEROTEL.H"
 #include "JSAITO.H"
 #include "KARMA.H"
@@ -55,6 +58,7 @@
 #include "KCEO.H"
 #include "KCEJ.H"
 #include "KEMCO.H"
+#include "KLAXPCM.H"
 #include "KONAMI.H"
 #include "KSADA.H"
 #include "LUFIA.H"
@@ -66,6 +70,7 @@
 #include "MEGAMAN3.H"
 #include "METROID2.H"
 #include "MIDI.H"
+#include "MK4PCM.H"
 #include "MMSS.H"
 #include "MPLAY.H"
 #include "MUSICBOX.H"
@@ -80,6 +85,7 @@
 #include "OCEAN.H"
 #include "PARAGON5.H"
 #include "PBOX.H"
+#include "PCM.H"
 #include "PROBE.H"
 #include "RARE.H"
 #include "REALTIME.H"
@@ -519,6 +525,22 @@ int gbFreq2Note(unsigned int freq)
 	return note;
 }
 
+unsigned char gb_read_byte(int bank, int cpu)
+{
+	unsigned char getChar;
+	if (bank != 0)
+	{
+		fseek(rom, ((0x4000 * (bank - 1)) + cpu), SEEK_SET);
+	}
+	else
+	{
+		fseek(rom, cpu, SEEK_SET);
+	}
+
+	getChar = fgetc(rom);
+	return getChar;
+}
+
 void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameters[4][100])
 {
 	if (numBanks > 1)
@@ -570,6 +592,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Carillon_Player:
 			CarillonProc(banks[curBank]);
+			break;
+		case C_lab:
+			ClabProc(banks[curBank], parameters);
 			break;
 		case Climax:
 			IMEDProc(parameters);
@@ -660,6 +685,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Imagineering:
 			ImgnProc(banks[curBank]);
+			break;
+		case Jaleco:
+			JalecoProc(banks[curBank], parameters);
 			break;
 		case Junichi_Saito:
 			JSaitoProc(banks[curBank]);
@@ -756,6 +784,18 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Paragon_5:
 			P5Proc(banks[curBank]);
+			break;
+		case PCM:
+			PCMProc(banks[curBank], parameters);
+			break;
+		case PCM_Eastridge:
+			EastrPCMProc(banks[curBank], parameters);
+			break;
+		case PCM_Klax:
+			KlaxPCMProc(banks[curBank], parameters);
+			break;
+		case PCM_MK4:
+			MK4PCMProc(banks[curBank], parameters);
 			break;
 		case Probe_Software:
 			ProbProc(banks[curBank]);
