@@ -691,6 +691,10 @@ int main(int args, char* argv[])
             {
                 driver = Carillon_Player;
             }
+            else if (!strcmp(formatString, "C_lab"))
+            {
+                driver = C_lab;
+            }
             else if (!strcmp(formatString, "Climax"))
             {
                 driver = Climax;
@@ -810,6 +814,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "Imagineering"))
             {
                 driver = Imagineering;
+            }
+            else if (!strcmp(formatString, "Jaleco"))
+            {
+                driver = Jaleco;
             }
             else if (!strcmp(formatString, "Jeroen_Tel"))
             {
@@ -938,6 +946,22 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "Paragon_5"))
             {
                 driver = Paragon_5;
+            }
+            else if (!strcmp(formatString, "PCM"))
+            {
+                driver = PCM;
+            }
+            else if (!strcmp(formatString, "PCM_Eastridge"))
+            {
+                driver = PCM_Eastridge;
+            }
+            else if (!strcmp(formatString, "PCM_Klax"))
+            {
+                driver = PCM_Klax;
+            }
+            else if (!strcmp(formatString, "PCM_MK4"))
+            {
+                driver = PCM_MK4;
             }
             else if (!strcmp(formatString, "Probe_Software"))
             {

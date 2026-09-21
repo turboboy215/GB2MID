@@ -121,6 +121,7 @@ Austin Powers - Welcome to My Underground Lair! (E) (M5) [C][!]
 Austin Powers - Welcome to My Underground Lair! (U) [C][!]
 Austin Powers - Why Make Millions... (E) (M5) (Unreleased) [C][!]
 Austin Powers - Yeah, Baby, Yeah! (E) (M5) (Unreleased) [C][!]
+Avenging Spirit (UE) [!]
 Ayakashi no Shiro (J) [!]
 Azarashi Sentai Inazuma - Dokidoki Daisakusen! (J) [C][!]
 Azure Dreams (E) (M3) [C][!]
@@ -143,6 +144,7 @@ Ballistic (U) [C][!]
 Balloon Fight GB (J) [C][!]
 Balloon Kid (W) [!]
 Bamse (Sw)
+Banishing Racer (J)
 Barbie - Aventura Submarina (S) [C][!]
 Barbie - Avventure nell'Oceano (I) [C][!]
 Barbie - Chasse au Tresor Sous-marine (F) [C][!]
@@ -413,6 +415,10 @@ Chou Gals! Kotobuki Ran (J) [C][!]
 Chou Gals! Kotobuki Ran 2 - Miracle Getting (J) [C]
 Chuan Shuo (Unl) [C][f1]
 Chuck Rock (U) [!]
+Chuugaku Eijukugo 350 (J)
+Chuugaku Eijukugo 350 (J) [a1] (Unreleased) [!]
+Chuugaku Eitango 1700 (J)
+Chuugaku Eitango 1700 (J) [a1] (Unreleased) [!]
 Cliffhanger (UE) [!]
 Colin McRae Rally (E) [C][!]
 College Slam (U) [!]
@@ -535,6 +541,9 @@ Dirty Racin' (E) (Unreleased) [!]
 Dirty Racing (J) [!]
 Disney's Mulan (U) [S]
 Disney's Mulan (U) [S][a1][!]
+Disney's Tarzan (G) [C][!]
+Disney's Tarzan (J) [C][!]
+Disney's Tarzan (U) [C][!]
 Diva Starz - Mall Mania (U) [C][!]
 Diva Starz (E) [C][!]
 Diva Starz (F) [C][!]
@@ -657,6 +666,9 @@ Earthworm Jim (U) [!]
 ECW Hardcore Revolution (U) [C][!]
 Edd the Duck (E) (Unreleased) [!]
 E'Fighter HOT (Unl) [C]
+Eijukugo Target 1000 (J)
+Eitango Center 1500 (J)
+Eitango Target 1900 (J)
 Elevator Action (J) [!]
 Elevator Action (U) [!]
 Elevator Action EX (E) (M5) [C][!]
@@ -682,6 +694,7 @@ Eurosport Pro Champ Fishing (E) (Unreleased) [C][!]
 Eurosport XS Racing (E) (Unreleased) [C][!]
 Evel Knievel (E) (M7) [C][!]
 Evel Knievel (U) [C][!]
+Exchanger (J) [S]
 Explosive Brick '94 (Sachen) [!]
 Extra Bases! (U) [!]
 Extreme Ghostbusters (E) (M6) [C][!]
@@ -758,6 +771,7 @@ Foreman for Real (U) [!]
 Formula One 2000 (E) (M5) (Unreleased) [C][!]
 Formula One 2000 (U) [C][!]
 Fort Boyard (E) (M7) [C][!]
+Fortified Zone (U) [!]
 Frank Thomas' Big Hurt Baseball (U) [!]
 Freestyle Scooter (E) [C][!]
 Frogger (E) (M6) [C][!]
@@ -836,6 +850,7 @@ GBC 18-in-1 (Menu) (Unl) [C]
 Gem Gem (J)
 Gem Gem Monster (J) [C][!]
 Genjin Cottu (J) [S]
+Gensoumaden Saiyuuki - Sabaku no Shikami (J) [C][!]
 George Foreman's KO Boxing (U) [!]
 Get Mushi Club - Minna no Konchu Daizukan (J) [C][!]
 Getaway, The (U)
@@ -899,6 +914,7 @@ Grinch, The (U) [C][!]
 Gu Huo Lang II 2003 (Unl) [C][f1]
 Gurander Musashi RV (J) [S]
 Guruguru Garakutas (J) [C][!]
+Guruguru Town Hanamaru-kun (J) [C][!]
 Gyouten Ningen Batseelor - Doctor Guy no Yabou (J) [C][!]
 Ha Li Xiao Zi Di Er Bu - Mi Shi De Mi (Unl) [C][f1]
 Hai Zhan Qi Bing (Unl) [C][f1]
@@ -951,6 +967,7 @@ Hello Kitty's Cube Frenzy (U) [C][!]
 Hercules - The Legendary Journeys (U) (M6) [C][!]
 Hercules (U) [S]
 Hercules Eikou (J)
+Hero Shuugou!! Pinball Party (J) [!]
 Hero Hero Kun (J) [C][!]
 Heroes of Might and Magic (E) (M3) [C][!]
 Heroes of Might and Magic (U) (M3) [C][!]
@@ -1003,6 +1020,9 @@ Hyper Olympic Winter 2000 (J) [C][!]
 Ice Age (Unl) [C]
 Ice Age II (Unl) [C]
 Ice Age II (Unl) [C][a1][f1]
+Ikari no Yousai (J)
+Ikari no Yousai 2 (J) [!]
+In Your Face (U)
 Incredible Crash Dummies, The (U) [!]
 Indiana Jones and the Infernal Machine (U) (M3) [C][!]
 Indiana Jones and the Last Crusade (J)
@@ -1114,6 +1134,7 @@ Keiba Kizoku (J)
 Keibajou he Ikou! Wide (J) [C][!]
 Keitai Denjuu Telefang - Power Version (J) [C][!]
 Keitai Denjuu Telefang - Speed Version (J) [C][!]
+Keitai Keiba 8 Special (J)
 Kelly Club - Clubhouse Fun (U) [C][!]
 Ken Griffey Jr. Presents Major League Baseball (U) [S][!]
 Ken Griffey Jr.'s Slugfest (U) [C][!]
@@ -1155,6 +1176,9 @@ Kisekae Series 2 - Oshare Nikki (J) (V1.0) [C][!]
 Kisekae Series 2 - Oshare Nikki (J) (V1.1) [C][!]
 Kitarou (J) [S]
 Klax (J) [M]
+Klax (U) [C][!]
+Klax (U) [M][!]
+Knockout Kings (UE) [C][!]
 Koenig der Loewen, Der - Simbas grosses Abenteuer (G) [C][!]
 Koguru Guruguru - Guruguru to Nakayoshi (J) [C]
 Koi Wa Kakehiki (J)
@@ -1180,6 +1204,8 @@ Konchuu Hakase 3 (J) [C][!]
 Koro Koro Kirby (J) [C][!]
 Kou Dai Guai Shou - Lan Bao Shi 2003 (Unl) [C][f1]
 Kou Dai Yao Guai - Bai Jin Ban (Unl) [C][f1]
+Koukou Nyuushi Deru Jun - Kanji Mondai no Seifuku (J)
+Koukou Nyuushi Rika - Anki Point 250 (J)
 Koushien Pocket (J) [C][!]
 Kung-Fu Master (U)
 Kwirk (UE) [!]
@@ -1197,6 +1223,7 @@ Last Action Hero (U) [!]
 Laura (E) (M8) [C][!]
 Laura (E) (M8) (V1.1) (Unreleased) [C][!]
 Laura (U) [C][!]
+Lazlos' Leap (U) [!]
 Le Mans 24 Hours (E) (M5) [C][!]
 Le Monde Perdu - Jurassic Park (F) [S][!]
 Legend of Prince Valiant, The (E)
@@ -1646,6 +1673,7 @@ Nick Faldo Golf (U) (Unreleased) [!]
 Nigel Mansell's World Championship '92 (E)
 Nigel Mansell's World Championship '92 (U) [!]
 Nigel Mansell's World Championship '93 (U)
+Nihonshi Target 201 (J)
 Ninja Boy (U) [!]
 Ninja Boy 2 (U)
 Ninja Gaiden Shadow (U)
@@ -1742,6 +1770,7 @@ Perfect Choro Q (J) [C][!]
 Perfect Dark (U) (M5) [C][!]
 PGA European Tour (U) [S][!]
 PGA Tour '96 (U) [S]
+Phantasm (J)
 Phantom Air Mission (E) [!]
 Pia Carrot he Youkoso!! 2.2 (J) [C][!]
 Pian Wai Zhang Huang Jin Tai Yang - Feng Yin De Yuan Gu Lian Jin Shu (Unl) [C][f1]
@@ -2002,6 +2031,8 @@ Raku x Raku - Cut Shuu (J) [C][!]
 Raku x Raku - Mishin (J) [C][!]
 Raku x Raku - Moji (J) [C][!]
 Raku x Raku 3 (J) (Unreleased) [C][!]
+Rampart (J)
+Rampart (U) [M][!]
 Rampage 2 - Universal Tour (U) [C][!]
 Ranma Nibun no Ichi - Kakugeki!! (J)
 Ranma Nibun no Ichi - Part 2 (J)
@@ -2021,6 +2052,7 @@ Real Pro Yakyuu! - Central League Hen (J) [C][!]
 Real Pro Yakyuu! - Pacific League Hen (J) [C][!]
 Red Arremer - Makaimura Gaiden (J)
 Rekishi Masters 512 (J)
+Rekishi Nendai Anki Point 240 (J)
 Ren & Stimpy Show, The - Space Cadet Adventures (U) [!]
 Ren & Stimpy Show, The - Veediots! (U) [!]
 Rentaiou (J)
@@ -2085,6 +2117,7 @@ Rockman World 4 (J)
 Rockman World 5 (J) [S]
 Rockman X - Cyber Mission (J) [C][!]
 Rockman X2 - Soul Eraser (J) [C][!]
+Rock'n Monster!! (J) [S]
 Rocky Mountain Trophy Hunter (U) [C][!]
 Rocman X (Unl) [C][!]
 Rodland (E) [!]
@@ -2150,6 +2183,8 @@ San Francisco Rush 2049 (U) [C][!]
 San Goku Shi - Act C (Unl) [C]
 San Goku Shi - GameBoy Ban 2 (J) [C][!]
 Sanrio Carnival (J)
+Sanrio Uranai Party (J) (V1.0)
+Sanrio Uranai Party (J) (V1.1) [!]
 Sanrio Timenet - Kako Hen (J) [C][!]
 Sanrio Timenet - Mirai Hen (J) [C][!]
 Santa Claus Junior (E) [C][!]
@@ -2270,6 +2305,8 @@ SnowCross (E) (M6) [C][!]
 Soccer (E) (M3) [S][!]
 Soccer (J)
 SolarStriker (W) [!]
+Soldam (J)
+Solitaire (J)
 Solitaire Funpak (U) [!]
 Solomon (J) [C][!]
 Solomon's Club (E) [!]
@@ -2437,6 +2474,7 @@ Super Robot War X (Unl) [C][f1]
 Super Scrabble (U) [!]
 Super SLG (Unl) [C]
 Super Snakey (J) [S]
+Super Street Basketball (J)
 Super Street Basketball 2 (J) [S]
 Supercross Freestyle (E) (M5) [C][!]
 Superman - Battle for Metropolis (Prototype - Jan 12, 2001) [C]
@@ -2483,6 +2521,7 @@ Tamagotchi (UE) [S][!]
 Tamagotchi 2 (J) [S]
 Tamagotchi 3 (J) [S]
 Taruru-To 2 (J)
+Tarzan (F) [C][!]
 Tarzan (U) [!]
 Taxi 2 (E) (M6) (Unreleased) [C][!]
 Taxi 2 (F) [C][!]
@@ -2620,6 +2659,7 @@ Trouballs (U) [C][!]
 True Lies (U) [!]
 Trump Boy (J) [!]
 Trump Boy II (J)
+Tsume Shougi - Hyakuban Shoubu (J)
 Tsume Shougi - Mondai Teikyou Shougi Sekai (J)
 Tsuri Sensei (J) [S]
 Tsuri Sensei 2 (J) [C][!]
@@ -2634,6 +2674,7 @@ Turok 2 - Seeds of Evil (J) [C][!]
 Turok 2 - Seeds of Evil (U) (M4) [C][!]
 Turok 3 - Shadow of Oblivion (UE) (M4) [C][!]
 Turrican (UE) [!]
+TV Champion (J) [S]
 Tweenies - Doodles' Bones (E) (M4) [C][!]
 Tweenies - Doodles' Bones (Sw) (M5) [C][!]
 Tweety Sekaiisshuu (J) [C][!]
@@ -2789,9 +2830,11 @@ Xtreme Wheels (U) [C][!]
 XVII Olympic Winter Games, The - Lillehammer 1994 (U)
 XVII Olympic Winter Games, The - Lillehammer 1994 (U) (V1.1) (Unreleased) [!]
 Yaiba (J) [!]
+Yaka Sekaishi (J)
 Yakouchuu (J) [C][!]
 Yakyuuman (J) (V1.0) [!]
 Yakyuuman (J) (V1.1)
+Yamakawa Nihon (J)
 Yannick Noah Tennis (F)
 Yingxiong Tianxia (Unl) [C][f2]
 Yoda Stories (U) [C][!]
@@ -2799,6 +2842,7 @@ Yogi Bear - Great Balloon Blast (U) [C][!]
 Yogi Bear in Yogi Bear's Goldrush (E) [!]
 Yogi Bear in Yogi Bear's Goldrush (U) [!]
 Yojijukugo 288 (J)
+Yoku Tsukawareru Eiken 2 Kyuu Level no Kaiwa Hyougen 333 (J)
 Yong Zhe Dou E Long VIII (Unl) [C][f1]
 Yoshi (U) [!]
 Yoshi no Cookie (J)

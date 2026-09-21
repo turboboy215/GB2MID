@@ -2090,6 +2090,17 @@
 		<parameters>2</parameters>
 	</rom>
 	<rom>
+		<name>Avenging Spirit (UE) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>955A</checksum>
+        <crc32>cf2ba5f7</crc32>
+        <format>Jaleco</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Ayakashi no Shiro (J) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -2330,6 +2341,17 @@
 		<part></part>
 		<banks>6</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Banishing Racer (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6EF5</checksum>
+        <crc32>3d13ec6a</crc32>
+        <format>Jaleco</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Barbie - Aventura Submarina (S) [C][!]</name>
@@ -5478,6 +5500,50 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Chuugaku Eijukugo 350 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0EE7</checksum>
+        <crc32>e4271f4b</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Chuugaku Eijukugo 350 (J) [a1] (Unreleased) [!]</name>
+		<gamecode>BU2J</gamecode>
+		<rev>0</rev>
+		<checksum>8B50</checksum>
+        <crc32>5855b281</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Chuugaku Eitango 1700 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3134</checksum>
+        <crc32>d3168eca</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Chuugaku Eitango 1700 (J) [a1] (Unreleased) [!]</name>
+		<gamecode>BU3J</gamecode>
+		<rev>0</rev>
+		<checksum>B8BA</checksum>
+        <crc32>bc14fce6</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Cliffhanger (UE) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -6875,6 +6941,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Disney's Tarzan (G) [C][!]</name>
+		<gamecode>ATHD</gamecode>
+		<rev>0</rev>
+		<checksum>71E4</checksum>
+        <crc32>39d04581</crc32>
+        <format>PCM_Klax</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>2966\30\T</parameters>
+	</rom>
+	<rom>
+		<name>Disney's Tarzan (J) [C][!]</name>
+		<gamecode>BTHJ</gamecode>
+		<rev>0</rev>
+		<checksum>8515</checksum>
+        <crc32>f2005973</crc32>
+        <format>PCM_Klax</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>2965\30\T</parameters>
+	</rom>
+	<rom>
+		<name>Disney's Tarzan (U) [C][!]</name>
+		<gamecode>ATHE</gamecode>
+		<rev>0</rev>
+		<checksum>B4C3</checksum>
+        <crc32>4224f930</crc32>
+        <format>PCM_Klax</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>2953\30\T</parameters>
+	</rom>
+	<rom>
 		<name>Diva Starz - Mall Mania (U) [C][!]</name>
 		<gamecode>BD8E</gamecode>
 		<rev>0</rev>
@@ -8228,6 +8327,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Eijukugo Target 1000 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B7BE</checksum>
+        <crc32>ca20c594</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Eitango Center 1500 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>C9FF</checksum>
+        <crc32>9c0d14c3</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Eitango Target 1900 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>41BD</checksum>
+        <crc32>f8406560</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Elevator Action (J) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -8501,6 +8633,17 @@
 		<part></part>
 		<banks>16</banks>
 		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Exchanger (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0725</checksum>
+        <crc32>800226a9</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Explosive Brick '94 (Sachen) [!]</name>
@@ -9361,6 +9504,17 @@
 		<parameters>CFG/Fort Boyard (E) (M7) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Fortified Zone (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0184</checksum>
+        <crc32>e3b59b7e</crc32>
+        <format>Jaleco</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Frank Thomas' Big Hurt Baseball (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -9620,9 +9774,20 @@
 		<checksum>F3CB</checksum>
         <crc32>e3c4abc6</crc32>
         <format>Nick_Eastridge</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>D</banks>
 		<parameters>CFG/Galaga - Destination Earth (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Galaga - Destination Earth (U) [C][!]</name>
+		<gamecode>BGGE</gamecode>
+		<rev>0</rev>
+		<checksum>F3CB</checksum>
+        <crc32>e3c4abc6</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>D</banks>
+		<parameters>CFG/Galaga - Destination Earth (U) [C][!] - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Galaga & Galaxian (E) [S][!]</name>
@@ -10115,9 +10280,20 @@
 		<checksum>CC41</checksum>
         <crc32>1907dac5</crc32>
         <format>Nick_Eastridge</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>2</banks>
 		<parameters>CFG/Gauntlet II (U) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Gauntlet II (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CC41</checksum>
+        <crc32>1907dac5</crc32>
+        <format>PCM_Eastridge</format>
+		<part>2/2=Samples</part>
+		<banks>3</banks>
+		<parameters>4000\1</parameters>
 	</rom>
 	<rom>
 		<name>GB Basketball (J)</name>
@@ -10272,6 +10448,17 @@
 		<part></part>
 		<banks>B</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Gensoumaden Saiyuuki - Sabaku no Shikami (J) [C][!]</name>
+		<gamecode>BGSJ</gamecode>
+		<rev>0</rev>
+		<checksum>29DA</checksum>
+        <crc32>918a40e7</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>George Foreman's KO Boxing (U) [!]</name>
@@ -11022,6 +11209,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Guruguru Town Hanamaru-kun (J) [C][!]</name>
+		<gamecode>BHJJ</gamecode>
+		<rev>0</rev>
+		<checksum>FFC2</checksum>
+        <crc32>03fbfc9e</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Gyouten Ningen Batseelor - Doctor Guy no Yabou (J) [C][!]</name>
 		<gamecode>BB6J</gamecode>
 		<rev>0</rev>
@@ -11649,6 +11847,17 @@
 		<parameters>CFG/Hero Hero Kun (J) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Hero Shuugou!! Pinball Party (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D542</checksum>
+        <crc32>740552ed</crc32>
+        <format>Jaleco</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Heroes of Might and Magic (E) (M3) [C][!]</name>
 		<gamecode>AUHP</gamecode>
 		<rev>0</rev>
@@ -12241,6 +12450,39 @@
 		<part></part>
 		<banks>D0,F0</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Ikari no Yousai (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9524</checksum>
+        <crc32>1c2ba2a1</crc32>
+        <format>Jaleco</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Ikari no Yousai 2 (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7205</checksum>
+        <crc32>6d4fd9aa</crc32>
+        <format>Jaleco</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>In Your Face (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6E54</checksum>
+        <crc32>80ac487e</crc32>
+        <format>Jaleco</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Incredible Crash Dummies, The (U) [!]</name>
@@ -12964,7 +13206,29 @@
 		<checksum>CC02</checksum>
         <crc32>9bd7f196</crc32>
         <format>Mark_Cooksey</format>
-		<part></part>
+		<part>1/2=Music</part>
+		<banks>6</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Joe & Mac - Caveman Ninja (E) (M7) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CC02</checksum>
+        <crc32>9bd7f196</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>1</banks>
+		<parameters>CFG/Joe & Mac - Caveman Ninja (E) (M7) [!] - Samples.cfg</parameters>
+	</rom>
+	<rom>
+		<name>Joe & Mac (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>62B1</checksum>
+        <crc32>5da86ed4</crc32>
+        <format>Mark_Cooksey</format>
+		<part>1/2=Music</part>
 		<banks>6</banks>
 		<parameters></parameters>
 	</rom>
@@ -12974,10 +13238,10 @@
 		<rev>0</rev>
 		<checksum>62B1</checksum>
         <crc32>5da86ed4</crc32>
-        <format>Mark_Cooksey</format>
-		<part></part>
-		<banks>6</banks>
-		<parameters></parameters>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>1</banks>
+		<parameters>CFG/Joe & Mac (U) [!] - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>John Madden Football (U) (Unreleased) [S][!]</name>
@@ -13475,6 +13739,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Keiba Keitai 8 Special (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>EBBD</checksum>
+        <crc32>326273b7</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Keiba Kizoku (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -13968,6 +14243,39 @@
 		<part></part>
 		<banks>2</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Klax (U) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>172E</checksum>
+        <crc32>7181cbd0</crc32>
+        <format>PCM_Klax</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>357E\2A</parameters>
+	</rom>
+	<rom>
+		<name>Klax (U) [M][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>E7CC</checksum>
+        <crc32>72660774</crc32>
+        <format>PCM_Eastridge</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>4000\1</parameters>
+	</rom>
+	<rom>
+		<name>Knockout Kings (UE) [C][!]</name>
+		<gamecode>AXKE</gamecode>
+		<rev>0</rev>
+		<checksum>8205</checksum>
+        <crc32>a0d64934</crc32>
+        <format>PCM_Klax</format>
+		<part></part>
+		<banks>9</banks>
+		<parameters>5B69\32</parameters>
 	</rom>
 	<rom>
 		<name>Koenig der Loewen, Der - Simbas grosses Abenteuer (G) [C][!]</name>
@@ -14509,6 +14817,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Koukou Nyuushi Deru Jun - Kanji Mondai no Seifuku (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9BD9</checksum>
+        <crc32>84e30e6c</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Koukou Nyuushi Rika - Anki Point 250 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>AD79</checksum>
+        <crc32>70468755</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1\3383</parameters>
+	</rom>
+	<rom>
 		<name>Koushien Pocket (J) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -14705,6 +15035,17 @@
 		<part></part>
 		<banks>2,3C</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Lazlos' Leap (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>176A</checksum>
+        <crc32>31fb404b</crc32>
+        <format>Jaleco</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Le Monde Perdu - Jurassic Park (F) [S][!]</name>
@@ -18442,9 +18783,20 @@
 		<checksum>06C8</checksum>
         <crc32>87588725</crc32>
         <format>Digital_Eclipse_1</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>9</banks>
 		<parameters>CFG/Mortal Kombat 4 (E) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Mortal Kombat 4 (E) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>06C8</checksum>
+        <crc32>87588725</crc32>
+        <format>PCM_MK4</format>
+		<part>2/2=Samples</part>
+		<banks>B</banks>
+		<parameters>4097</parameters>
 	</rom>
 	<rom>
 		<name>Mortal Kombat 4 (U) [C][!]</name>
@@ -18453,9 +18805,20 @@
 		<checksum>0632</checksum>
         <crc32>4eb71448</crc32>
         <format>Digital_Eclipse_1</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>9</banks>
 		<parameters>CFG/Mortal Kombat 4 (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Mortal Kombat 4 (U) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0632</checksum>
+        <crc32>4eb71448</crc32>
+        <format>PCM_MK4</format>
+		<part>2/2=Samples</part>
+		<banks>B</banks>
+		<parameters>4097</parameters>
 	</rom>
 	<rom>
 		<name>Mortal Kombat I & II (J)</name>
@@ -20053,6 +20416,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Nihonshi Target 201 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A4F9</checksum>
+        <crc32>cf133379</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Ninja Boy (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -21186,6 +21560,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Phantasm (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2C81</checksum>
+        <crc32>e742561e</crc32>
+        <format>Jaleco</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Phantom Air Mission (E) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -21346,9 +21731,20 @@
 		<checksum>B528</checksum>
         <crc32>0680bfc3</crc32>
         <format>Nick_Eastridge</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>7</banks>
 		<parameters>CFG/Pit Fighter (U) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Pit Fighter (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B528</checksum>
+        <crc32>0680bfc3</crc32>
+        <format>PCM_Eastridge</format>
+		<part>2/2=Samples</part>
+		<banks>7</banks>
+		<parameters>4000\2</parameters>
 	</rom>
 	<rom>
 		<name>Pitfall - Beyond the Jungle (U) [C][!]</name>
@@ -22688,9 +23084,20 @@
 		<checksum>1CD2</checksum>
         <crc32>476bd39d</crc32>
         <format>Nick_Eastridge</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>2</banks>
 		<parameters>CFG/Pong - The Next Level (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Pong - The Next Level (U) [C][!]</name>
+		<gamecode>AOVE</gamecode>
+		<rev>0</rev>
+		<checksum>1CD2</checksum>
+        <crc32>476bd39d</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>2</banks>
+		<parameters>CFG/Pong - The Next Level (U) [C][!] - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Ponta to Hinako no Chindouchuu - Yuutou Hen (J)</name>
@@ -24167,6 +24574,28 @@
 		<parameters>CFG/Rampage 2 - Universal Tour (U) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Rampart (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>BCE0</checksum>
+        <crc32>96a4c720</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>0</parameters>
+	</rom>
+	<rom>
+		<name>Rampart (U) [M][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9380</checksum>
+        <crc32>6d347812</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>0</parameters>
+	</rom>
+	<rom>
 		<name>Ranma Nibun no Ichi - Kakugeki!! (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -24376,6 +24805,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Rekishi Nendai Anki Point 240 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A62C</checksum>
+        <crc32>6d347812</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Ren & Stimpy Show, The - Space Cadet Adventures (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -24393,9 +24833,20 @@
 		<checksum>74CC</checksum>
         <crc32>504cbd1d</crc32>
         <format>Nick_Eastridge</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>8</banks>
 		<parameters>CFG/Ren & Stimpy Show, The - Veediots! (U) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Ren & Stimpy Show, The - Veediots! (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>74CC</checksum>
+        <crc32>504cbd1d</crc32>
+        <format>PCM_Eastridge</format>
+		<part>2/2=Samples</part>
+		<banks>8</banks>
+		<parameters>785F\3</parameters>
 	</rom>
 	<rom>
 		<name>Rentaiou (J)</name>
@@ -25122,6 +25573,17 @@
 		<part></part>
 		<banks>3,4</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Rock'n Monster!! (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9F4F</checksum>
+        <crc32>630299c1</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Rocky Mountain Trophy Hunter (U) [C][!]</name>
@@ -26532,6 +26994,28 @@
 		<parameters>CFG/Sanrio Timenet - Mirai Hen (J) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Sanrio Uranai Party (J) (V1.0)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>5D58</checksum>
+        <crc32>0d4c02a7</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Sanrio Uranai Party (J) (V1.1)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0060</checksum>
+        <crc32>d0687d9f</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Santa Claus Junior (E) [C][!]</name>
 		<gamecode>B3JP</gamecode>
 		<rev>0</rev>
@@ -27517,7 +28001,29 @@
 		<checksum>579E</checksum>
         <crc32>0fd66b1a</crc32>
         <format>Imagineering</format>
-		<part></part>
+		<part>1/2=Music</part>
+		<banks>7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Simpsons, The - Escape from Camp Deadly (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>579E</checksum>
+        <crc32>0fd66b1a</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>8</banks>
+		<parameters>CFG/Simpsons, The - Escape from Camp Deadly (J) [!] - Samples.cfg</parameters>
+	</rom>
+	<rom>
+		<name>Simpsons, The - Escape from Camp Deadly (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>579E</checksum>
+        <crc32>5546a382</crc32>
+        <format>Imagineering</format>
+		<part>1/2=Music</part>
 		<banks>7</banks>
 		<parameters></parameters>
 	</rom>
@@ -27527,10 +28033,10 @@
 		<rev>0</rev>
 		<checksum>579E</checksum>
         <crc32>5546a382</crc32>
-        <format>Imagineering</format>
-		<part></part>
-		<banks>7</banks>
-		<parameters></parameters>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>8</banks>
+		<parameters>CFG/Simpsons, The - Escape from Camp Deadly (U) [!] - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Simpsons, The - Krusty's Fun House (J) [!]</name>
@@ -27539,7 +28045,29 @@
 		<checksum>7C95</checksum>
         <crc32>01fbc9f6</crc32>
         <format>David_Whittaker</format>
-		<part></part>
+		<part>1/2=Music</part>
+		<banks>6</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Simpsons, The - Krusty's Fun House (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7C95</checksum>
+        <crc32>01fbc9f6</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>5</banks>
+		<parameters>CFG/Simpsons, The - Krusty's Fun House (J) [!] - Samples.cfg</parameters>
+	</rom>
+	<rom>
+		<name>Simpsons, The - Krusty's Fun House (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7C95</checksum>
+        <crc32>1cedb141</crc32>
+        <format>David_Whittaker</format>
+		<part>1/2=Music</part>
 		<banks>6</banks>
 		<parameters></parameters>
 	</rom>
@@ -27549,10 +28077,10 @@
 		<rev>0</rev>
 		<checksum>7C95</checksum>
         <crc32>1cedb141</crc32>
-        <format>David_Whittaker</format>
-		<part></part>
-		<banks>6</banks>
-		<parameters></parameters>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>5</banks>
+		<parameters>CFG/Simpsons, The - Krusty's Fun House (U) [!] - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Simpsons, The - Night of the Living Treehouse of Horror (U) [C][!]</name>
@@ -27852,6 +28380,39 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Soldam (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>EF4B</checksum>
+        <crc32>7c5aec86</crc32>
+        <format>Jaleco</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
+		<name>Solitaire (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3711</checksum>
+        <crc32>1119484a</crc32>
+        <format>Jaleco</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Solitaire Funpak (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>060B</checksum>
+        <crc32>35a5234a</crc32>
+        <format>Beam_Software</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Solomon (J) [C][!]</name>
 		<gamecode>BSOJ</gamecode>
 		<rev>0</rev>
@@ -27893,17 +28454,6 @@
         <format>Graphic_Research_1</format>
 		<part></part>
 		<banks>3</banks>
-		<parameters></parameters>
-	</rom>
-	<rom>
-		<name>Solitaire Funpak (U) [!]</name>
-		<gamecode></gamecode>
-		<rev>0</rev>
-		<checksum>060B</checksum>
-        <crc32>35a5234a</crc32>
-        <format>Beam_Software</format>
-		<part></part>
-		<banks>8</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -29799,6 +30349,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Super Street Basketball (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CC17</checksum>
+        <crc32>a269559f</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Super Street Basketball 2 (J) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -30336,6 +30897,17 @@
 		<part></part>
 		<banks>8</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tarzan (F) [C][!]</name>
+		<gamecode>ATHF</gamecode>
+		<rev>0</rev>
+		<checksum>7825</checksum>
+        <crc32>c503afbb</crc32>
+        <format>PCM_Klax</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>2966\30\T</parameters>
 	</rom>
 	<rom>
 		<name>Tarzan (U) [!]</name>
@@ -31889,6 +32461,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Tsume Shougi - Hyakuban Shoubu (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>89BA</checksum>
+        <crc32>43e2a5c0</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Tsume Shougi - Mondai Teikyou Shougi Sekai (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -32041,6 +32624,17 @@
 		<part></part>
 		<banks>6</banks>
 		<parameters>CFG/Turrican (UE) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>TV Champion (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>AA3F</checksum>
+        <crc32>18f64779</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Tweenies - Doodles' Bones (E) (M4) [C][!]</name>
@@ -33858,6 +34452,17 @@
 		<parameters>1\4006</parameters>
 	</rom>
 	<rom>
+		<name>Yaka Sekaishi (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1456</checksum>
+        <crc32>d185b939</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Yakouchuu (J) [C][!]</name>
 		<gamecode>AYTJ</gamecode>
 		<rev>0</rev>
@@ -33889,6 +34494,17 @@
 		<part></part>
 		<banks>2</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Yamakawa Nihon (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B97B</checksum>
+        <crc32>a09c1790</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Yannick Noah Tennis (F)</name>
@@ -33966,6 +34582,17 @@
 		<part></part>
 		<banks>1</banks>
 		<parameters>5</parameters>
+	</rom>
+	<rom>
+		<name>Yoku Tsukawareru Eiken 2 Kyuu Level no Kaiwa Hyougen 333 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>224D</checksum>
+        <crc32>46af90da</crc32>
+        <format>C_lab</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Yong Zhe Dou E Long VIII (Unl) [C][f1]</name>

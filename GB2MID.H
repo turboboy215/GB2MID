@@ -102,3 +102,9 @@
 #define Studio_Cliche		0x65
 #define Imagitec_Design		0x66
 #define Gremlin				0x67
+#define Jaleco				0x68
+#define C_lab				0x69
+#define PCM					0x6A
+#define PCM_Eastridge		0x6B
+#define PCM_MK4				0x6C
+#define PCM_Klax			0x6D
