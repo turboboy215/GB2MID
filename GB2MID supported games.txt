@@ -1,5 +1,7 @@
 2nd Space (Sachen 4-in-1 Vol. 6) (Unl) [!]
 3 Choume no Tama - Tama and Friends - 3 Choume Obake Panic!! (J)
+3D Pocket Pool (E) (M6) [C][!]
+3D Pool Stars (U) (M3) (Unreleased) [C][!]
 3-D Ultra Pinball - Thrillride (U) [C][!]
 4-in-1 Funpak (J)
 4-in-1 Funpak (UE) [!]
@@ -179,6 +181,7 @@ Battle Arena Toshinden (U) [S][!]
 Battle Crusher (J) [S]
 Battle Dodge Ball (J)
 Battle Fishers (J) [C][!]
+Battle of Olympus, The (UE) (M5)
 Battle Space (J) [!]
 Battle Unit Zeoth (J)
 Battle Unit Zeoth (U) [!]
@@ -222,6 +225,7 @@ Bibi und Tina - Fohlen Felix in Gefahr (G) [C][!]
 Bikkuri Nekketsu Shinkiroku! - Dokodemo Kin Medal (J)
 Bikkuriman 2000 - Charging Card GB (J) [C][!]
 Bill & Ted's Excellent Gameboy Adventure (UE) [!]
+Bill Elliott's NASCAR Fast Tracks (U)
 Billiard Club (J) (Unreleased) [C][!]
 Billy Bob's Huntin' 'n' Fishin' (U) [C][!]
 Biohazard Gaiden (J) [C][!]
@@ -1455,6 +1459,9 @@ Metal Walker (U) [C][!]
 Metamode (J) [C][!]
 Metroid II - Return of Samus (W) [!]
 Mia Hamm Soccer Shootout (U) [C][!]
+Mick & Mack as the Global Gladiators (Prototype - Jan 18, 1994)
+Mick & Mack as the Global Gladiators (Prototype - Oct 4, 1993)
+Mick & Mack as the Global Gladiators (Prototype - Sep 27, 1993)
 Mickey Mouse - Tokyo Disneyland (J) [S]
 Mickey Mouse - Magic Wand (U) [S][!]
 Mickey Mouse (J)
@@ -1708,6 +1715,7 @@ Oira Jajamaru! Sekai Daibouken (J) [!]
 Ojarumaru - Mitsunegai Jinja no Ennichi de Ojaru! (J) [C][!]
 O'Leary Manager 2000 (E) (M7) [C][!]
 Olympic Summer Games (U) [S]
+On the Tiles - Franky, Joe & Dirk (E) [!]
 Oni (J)
 Oni 2 - Innin Densetsu (J) [!]
 Oni 3 - Kuro no Hakaishin (J) [!]
@@ -2286,6 +2294,7 @@ Skate or Die - Tour de Thrash (U)
 Sky Ace (Sachen 4-in-1 Vol. 7) (Unl) [!]
 Sky Dragon (Unl) [C]
 Small Soldiers (U) [S][!]
+Smurfs 2, The (E) (M4)
 Smurfs 3, The (E) (M4) [!]
 Smurfs Nightmare, The (E) (M4) [C][!]
 Smurfs Nightmare, The (U) [C][!]
@@ -2628,6 +2637,7 @@ Toonsylvania (E) (M6) [C][!]
 Toonsylvania (U) [C][!]
 Tootuff (E) (M6) [C][!]
 Top Gun - Fire Storm (U) (M6) [C][!]
+Top Gun - Guts & Glory (U) [!]
 Top Rank Tennis (U) [!]
 Top Ranking Tennis (E) [!]
 Total Carnage (UE) [!]
@@ -2739,6 +2749,7 @@ Watashi no Kitchen (J) (V1.0) [C]
 Watashi no Kitchen (J) (V1.1) [C]
 Water World (E) [!]
 Wave Race (E) [!]
+Wayne's World (U)
 WCW Main Event (U) [!]
 WCW Mayhem (U) [C][!]
 Wedding Peach - Jamapii Panic (J) [S][!]
@@ -2793,6 +2804,7 @@ World Soccer GB (J) [S]
 World Soccer GB 2000 (J) [C][!]
 World Soccer GB2 (J) [C][!]
 Worm Visitor (Sachen 4-in-1 Vol. 5) (Unl) [!]
+Worms (U) [!]
 Worms Armageddon (E) (M6) [C][!]
 Worms Armageddon (U) (M3) [C][!]
 WWF Attitude (U) [C][!]
