@@ -1,83 +1,220 @@
 Song Pointer List
 =======================================
-Like Mega Man 1, music and sound effects are stored in the same way, and are accessed via the same pointer table. This pointer table can be found with the following instructions:
+Like Hiroshi Wada, music and sound effects are stored in the same way, and are accessed via the same pointer table. In Bionic Commando and Mega Man 3, the pointer table can be found with the following instructions:
 
-    add a
-    add low[SongTable]
-    ld l, a
-    ld a, high[SongTable]
-    adc $00
-    ld h, a
-    ld a, [hl+]
-    ld h, [hl]
-    ld l, a
+	;Get pointer from song table
+	add a
+	add LOW(SongTab)
+	ld l, a
+	ld a, HIGH(SongTab)
+	adc 0
+	ld h, a
+	ld a, [hl+]
+	ld h, [hl]
+	ld l, a
 
 Which equals the following in hex:
 87 C6 ?? 6F 3E ?? CE 00 67 2A 66 6F
 
 Another variant for Mega Man 4/5:
+
+	;Get pointer from song table
+	add a
+	add LOW(SongTab)
+	ld l, a
+	ld a, HIGH(SongTab)
+	adc 0
+	ld h, a
+	pop af
+	ld a, [hl+]
+	ld h, [hl]
+	ld l, a
+
+In hex:
 87 C6 ?? 6F 3E ?? CE 00 67 F1 2A 66 6F
 
 Song Format
 =======================================
-Each "song" starts with two bytes, the first being a binary "mask" defining which channels are used, and the second being of uncertain use. Following that is 16-bit pointers to each channel's sequence (if each is present).
+Each "song" starts with two bytes, the first being a binary "mask" defining which channels are used, and the second being a priority, like Hiroshi Wada. Following that is 16-bit pointers to each channel's sequence (if each is present).
 
-1 (1): Channel mask (1234 1234 = SFX channels, then music channels)
-2 (1): Music/SFX flag? (0 = SFX, 1 = Music)
+1 (1): Channel mask (4321 4321 = SFX channels, then music channels)
+2 (1): Priority (lower value = higher priority)
 3 (2): Channel 1 pointer
 4 (2): Channel 2 pointer
 5 (2): Channel 3 pointer
 6 (2): Channel 4 pointer
 
+NOTE: One song in the data (usually $0A) is empty, and calling this number is used to trigger a fade-out of the current music.
+
 Commands
 =======================================
-Each channel's sequence is comprised of the following commands:
+In the majority of games, each channel's sequence is comprised of the following commands:
+00-CF = Play note or rest with length
+	Format: xxxxyyyy (X = note or rest (if X = C, then rest, otherwise note), Y = length (1-15, if Y = 0, then 16)
+D0-DF = Set channel parameters
+ - On channel 3 for both music and sound effects: CCCCxxxx yyyyyyyy zaaaaaaa (bbbbbbbb)
+	(C = always $D, x = speed, y = waveform, z = if set, then b is used, a = envelope sequence, b = secondary decay value)
+ - On channel 4 for music: CCCCxxxx
+	(C = always $D, x = speed)
+ - On channel 4 for sound effects: CCCCxxxx yyyyyyyy zzzzzzzz abbbbbbb (cccccccc dddddddd)
+	(C = always $D, x = speed, y = duty/volume, z = decay, a = if set, then c and d are used, b = envelope, c = decay parameters 2, d = decay parameters 3)
+ - Otherwise: CCCCxxxx yyyyyyyy zzzzzzzz aaaaaaaa bccccccc (dddddddd eeeeeeee)
+	(C = always $D, x = speed, y = duty/volume, z = decay, a = vibrato, b = if set, then d and e are used, c = envelope, d = decay parameters 2, e = decay parameters 3)
+	(NOTE: Notes on channel 4 trigger SFX to play on any channel. Percussion are stored as sound effects which are played on channel 4 as well as 3.)
+E0-E7 = Set the current octave (0-7)
+E8 = Set duty/volume
+	Parameters: xxxxxxxx (x = value)
+E9 = Set decay
+	Parameters: xxxxxxxx (x = value)
+EA = Set sweep
+	Parameters: xxxxxxxx (x = value)
+EB = Set vibrato
+	Parameters: xxxxxxxx (x = value)
+EC = Set transpose (per-channel)
+	Parameters: xxxxxxxx (x = value, signed)
+ED = Set waveform
+	Parameters: xxxxxxxx (x = value)
+EE = Set duty/volume and decay 2/3
+	Parameters: xyyyyyyy (zzzzzzzz aaaaaaaa)  (x = if set, z and a are used, z = decay 2, a = decay 3)
+EF = Set tuning
+	Parameters: xxxxxxxx (x = relative pitch, signed)
+F0 = Set envelope value
+	Parameters: xxxxxxxx (x = value)
+F1 = Set secondary decay
+	Parameters: xxxxxxxx (x = value)
+F2 = Set tertiary decay
+	Parameters: xxxxxxxx (x = value)
+F3 = Set final channel volume step
+	Parameters: xxxxxxxx (x = value)
+F4/F5 = Do nothing but skip a byte
+	Parameters: -------- (- = unused)
+F6 = Set channel speed
+	Parameters: xxxxxxxx (x = value)
+F7 = Go to macro (subroutine) (1)
+	Parameters: xxxxxxxx xxxxxxxx (X = position, absolute)
+	(NOTE: 1 level only)
+F8 = Go to macro (subroutine) (2)
+	Parameters: xxxxxxxx xxxxxxxx (X = position, absolute)
+	(NOTE: 1 level only)
+F9 = Return from macro (subroutine) (1)
+FA = Return from macro (subroutine) (2)
+FB = Start repeat (1) after command
+	(NOTE: 1 level only)
+FC = Start repeat (2) after command
+	(NOTE: 1 level only)
+FD = End of repeat (1) - jump to start
+	Parameters: xxxxxxxx (x = times to repeat, 0 = infinite)
+FE = End of repeat (2) - jump to start
+	Parameters: xxxxxxxx (x = times to repeat, 0 = infinite)
+FF = End of track
 
-xy = Play note, length
-Cx = Rest
-Da bb cc dd ee (ff gg) = Set channel/instrument parameters (channel 1 and 2) - ee is signed; if positive, does not include the last two bytes
-Da bb cc dd = Set channel/instrument parameters (channel 3)
-Da = Set channel speed (channel 4) (In Bionic Commando, Da bb cc dd ee with additional parameters)
-Ex = Set octave
-E8 xx = Change noise?
-E9 xx = Change instrument parameter?
-EA xx = Modulate sweep frequency?
-EB xx = Change vibrato?
-EC xx = Set channel transpose
-ED xx = ?
-EE xx (yy zz) = Turn on sweep?
-EF xx = Set pitch tuning
-F0 xx = Set noise envelope?
-F1 xx = Set noise frequency?
-F2 xx = Change envelope
-F3 xx = Set echo?
-F4 xx = Noise sweep?
-F5 xx = ?
-F6 xx = Change channel speed
-F7 = Jump to position (1)
-F8 = Jump to position (2)
-F9 = Return from jump (1)
-FA = Return from jump (2)
-FB = Start of loop?
-FC = Song loop point?
-FD xx = Loop section amount of times (0 = infinite)
-FE xx = Loop entire song amount of times? (0 = infinite)
-FF = End track
-
-Notes are stored in essentially the same format as Mega Man 2, using values 0-B from the first four bits to represent a note, alternating between octaves, and the last four bits for the length.
-
-Differences in Pocket King format
+Envelope sequences
 =======================================
-The GBC game Pocket King uses a slightly modified version of the format with the following differences:
+Envelope sequences are used to change the channel's envelope values each frame. Each sequence is a sequence of single bytes representing the envelope/volume per frame (used with the sound engine's "software envelope" system), and is terminated with a value of FF, which the sequence then restarts. Each sequence is accessed via a pointer table of 16-bit values which are indexed via commands.
 
-Unlike earlier games which store a copy of the driver in each individual bank, this game also stores a flag in each song's header indicating the bank in ROM the sequence data is stored in:
+Vibrato sequences
+=======================================
+Similar to envelope sequences, vibrato sequences are arrays of single bytes representing the relative pitch change per frame, each terminated with value FF, which the sequence then restarts. Each sequence is accessed via a pointer table of 16-bit values which are indexed via commands.
 
-1 (1): Channel mask (1234 1234 = SFX channels, then music channels)
-2 (1): Music/SFX flag? (0 = SFX, 1 = Music)
-3 (1): Bank number
-4 (2): Channel 1 pointer
-5 (2): Channel 2 pointer
-6 (2): Channel 3 pointer
-7 (2): Channel 4 pointer
+Waveform table
+=======================================
+The waveform table consists of a series of 16-byte waveforms which are used by channel 3. These are accessed using a pointer table of 16-bit values which are accessed via commands. Music and sound effects have their own separate waveforms which are switched out whenever the other type is used.
 
-Whereas earlier games, for both note and rest commands, use a length value of 16 if the higher bits are set to 0, Pocket King instead uses this as a flag to get the note's length from the following byte, making these notes a 2-byte command.
+Game-specific code
+=======================================
+Earlier games have game-specific routines in the code that set the current stage and/or boss music. Bionic Commando has several routines, the last three which are the same and do nothing.
+
+Differences in games
+=======================================
+There are several differences between various games using versions of the sound engine:
+
+ - Bionic Commando was the first game to use this sound engine, and is thus uses the earliest version. Compared to other games, the Dx command on music channel 4 does not have a special handler. Starting from MM3, however, this was changed to just control the speed, since music channel 4 is only used to play sound effects on SFX channels for percussion.
+ - Also in Bionic Commando, channel 3 works slightly differently - byte 4 is always present, but only loaded if value Z is signed (see above).
+ - Bionic Commando, Mega Man 3, and Itsudemo Nyanto Wonderful store all their sound data in a single bank and don't use bankswitching. Mega Man 4 and 5 use 2 interchangeable banks which both share sound effects and have different sets of music, which are switched externally. In the GBC games Pocket King and Monster Traveler, the bankswitching is built into the driver (see below).
+ - In Mega Man 5, command F4 is used as follows:
+		F4 = Add a signed value to one of the current channel's RAM parameters
+			Parameters:xxxxxxxx yyyyyyyy (x = RAM offset, y = value to add, signed)
+			(NOTE: If the offset is $11 (envelope value), the envelope sequence is reloaded)
+ - Bionic Commando and Mega Man games have a jump table at the start of the sound bank which is used to easily access functions to initialize the sound engine and play music or sound effects as well as stop audio. This is not present in Itsudemo Nyanto Wonderful.
+ - The GBC game Pocket King uses a revised version of the format with some differences:
+	 - Unlike earlier games which store a copy of the driver in each individual bank and use an external bankswitching scheme, this game has bankswitching built into the driver with an additional parameter used for the song headers as follows:
+	1 (1): Channel mask (4321 4321 = SFX channels, then music channels)
+	2 (1): Priority
+	3 (1): Bank number
+	4 (2): Channel 1 pointer
+	5 (2): Channel 2 pointer
+	6 (2): Channel 3 pointer
+	7 (2): Channel 4 pointer
+	 - VCMDs for channel sequences are mostly the same as previous games, but there are some differences:
+		Whereas earlier games, for both note and rest commands, use a length value of 16 if the higher bits are set to 0, Pocket King instead uses this as a flag to get the note's length from the following byte, making these notes a 2-byte command.
+ - The sound engine has new "rest" flags that control whether or not a note is "cut off" at a rest. Command F4 in this game, a "NOP" operation in most other games, uses these flags.
+ - The command F4 is used as follows:
+		F4 = Set the data flag - bit 3 makes a rest cut the note off
+		     Parameters: xxxxxxxx (x = value)
+	
+ - Monster Traveler, the last game known to use a version of this driver, is similar to Pocket King, but much code is reweritten, and completely changes the sequence format, using the following commands:
+	00 = Rest
+		Parameters: xyyyyyyy (zzzzzzzz) abbbbbbb (cccccccc) (x = if set, then use z, y = low byte of note length, z = high byte of note length, a = if set, then use c, b = low byte of note duration, c = high byte of note duration)
+	01-7F = Play note
+		Parameters: xyyyyyyy (zzzzzzzz) abbbbbbb (cccccccc) (x = if set, then use z, y = low byte of note length, z = high byte of note length, a = if set, then use c, b = low byte of note duration, c = high byte of note duration)
+	80 = ? (Sets unused variable)
+		Parameters: xxxxxxxx (x = value)
+	81 = Set transpose (per-channel)
+		Parameters: xxxxxxxx (x = value, signed)
+	82 = Set duty/vol (channel 1/2)/Set waveform number (channel 3)
+		Parameters: xxxxxxxx (x = value)
+	83 = Set tuning
+		Parameters: xxxxxxxx (x = value)
+	84 = Set panning
+		Parameters: ------xx (- = unused, x = pan value (00 = none, 10 = L, 10 = R, 11 = L/R))
+	85 = Set duty/noise mode (SFX channel 4)
+		Parameters: xxxxxxxx (x = value)
+	86 = Skip 1 byte
+		Parameters: xxxxxxxx
+	87 = Set note length multiplier
+		Parameters: ----xxxx (- = unused, x = value)
+	88 = Frequency sweep on
+		Parameters: -xxxxxxx (- = unused, x = value)
+	89 = Frequency sweep off
+	8A = Skip 1 byte (same as 86)
+		Parameters: xxxxxxxx
+	8B = Skip 1 byte (same as 86)
+		Parameters: xxxxxxxx
+	8C = Set pointer to vibrato sequence loop
+		Parameters: xxxxxxxx xxxxxxxx (x = pointer)
+	8D = Skip 1 byte (same as 86)
+		Parameters: xxxxxxxx
+	8E = Set pointer to envelope sequence loop
+		Parameters: xxxxxxxx xxxxxxxx (x = pointer)
+	8F = Skip 1 byte (same as 86)
+		Parameters: xxxxxxxx
+	90 = Skip 1 byte (same as 86)
+		Parameters: xxxxxxxx
+	91 = Skip 1 byte (same as 86)
+		Parameters: xxxxxxxx
+	92 = Go to macro (subroutine) (1)
+		Parameters: xxxxxxxx xxxxxxxx (x = pointer)
+		(NOTE: 1 level only)
+	93 = Return from macro (subroutine) (1)
+	94 = Skip 1 byte (same as 86)
+		Parameters: xxxxxxxx
+	95 = Start repeat (1) after command
+		(NOTE: 1 level only)
+	96 = End of repeat (1) - jump to start
+		Parameters: xxxxxxxx (x = times to repeat, 0 = infinite)
+	97 = Skip 1 byte (same as 86)
+		Parameters: xxxxxxxx
+	98 = Skip 1 byte (same as 86)
+		Parameters: xxxxxxxx
+	99 = (no effect) (same as 86)
+	9A = End of track
+	9B = Go to macro (subroutine) (1)
+		Parameters: xxxxxxxx xxxxxxxx (x = pointer)
+		(NOTE: 1 level only)
+	9C = Return from macro (subroutine) (1)
+	9D = Start repeat (1) after command
+		(NOTE: 1 level only)
+	9E = End of repeat (1) - jump to start
+		Parameters: xxxxxxxx (x = times to repeat, 0 = infinite)
+	9F = End of track (same as 9A)
+	FF = End of track
