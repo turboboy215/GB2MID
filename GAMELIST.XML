@@ -22,6 +22,50 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>3D Pocket Pool (E) (M6) [C][!]</name>
+		<gamecode>BVPP</gamecode>
+		<rev>0</rev>
+		<checksum>4A72</checksum>
+        <crc32>8cdab77f</crc32>
+        <format>Pool_3D</format>
+		<part>1/2=Music</part>
+		<banks>3C</banks>
+		<parameters>3D46\M</parameters>
+	</rom>
+	<rom>
+		<name>3D Pocket Pool (E) (M6) [C][!]</name>
+		<gamecode>BVPP</gamecode>
+		<rev>0</rev>
+		<checksum>4A72</checksum>
+        <crc32>8cdab77f</crc32>
+        <format>Pool_3D</format>
+		<part>2/2=Samples</part>
+		<banks>A</banks>
+		<parameters>4000\S</parameters>
+	</rom>
+	<rom>
+		<name>3D Pool Stars (U) (M3) (Unreleased) [C][!]</name>
+		<gamecode>BVPE</gamecode>
+		<rev>0</rev>
+		<checksum>7C1C</checksum>
+        <crc32>245de3e2</crc32>
+        <format>Pool_3D</format>
+		<part>1/2=Music</part>
+		<banks>3C</banks>
+		<parameters>3D55\M</parameters>
+	</rom>
+	<rom>
+		<name>3D Pool Stars (U) (M3) (Unreleased) [C][!]</name>
+		<gamecode>BVPE</gamecode>
+		<rev>0</rev>
+		<checksum>7C1C</checksum>
+        <crc32>245de3e2</crc32>
+        <format>Pool_3D</format>
+		<part>2/2=Samples</part>
+		<banks>A</banks>
+		<parameters>4000\S</parameters>
+	</rom>
+	<rom>
 		<name>3-D Ultra Pinball - Thrillride (U) [C][!]</name>
 		<gamecode>VUPE</gamecode>
 		<rev>0</rev>
@@ -2728,6 +2772,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Battle of Olympus, The (UE) (M5)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8BF2</checksum>
+        <crc32>ca450e93</crc32>
+        <format>Distinctive_Software</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
 		<name>Battle Space (J) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -3212,6 +3267,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Bill Elliott's NASCAR Fast Tracks (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8212</checksum>
+        <crc32>71cf43ce</crc32>
+        <format>Distinctive_Software</format>
+		<part></part>
+		<banks>6</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Billiard Club (J) (Unreleased) [C][!]</name>
 		<gamecode>BBCJ</gamecode>
 		<rev>0</rev>
@@ -3264,7 +3330,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>8</banks>
-		<parameters></parameters>
+		<parameters>0</parameters>
 	</rom>
 	<rom>
 		<name>Bionic Commando (J)</name>
@@ -3275,7 +3341,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>8</banks>
-		<parameters></parameters>
+		<parameters>0</parameters>
 	</rom>
 	<rom>
 		<name>Bionic Commando (U) [!]</name>
@@ -3286,7 +3352,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>8</banks>
-		<parameters></parameters>
+		<parameters>0</parameters>
 	</rom>
 	<rom>
 		<name>Bishoujo Senshi Sailor Moon (J)</name>
@@ -4320,7 +4386,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>5</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Bug's Life, A (U) [C][!]</name>
@@ -4331,7 +4397,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>5</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Bugs Bunny - Crazy Castle 3 (J) [C][!]</name>
@@ -5860,7 +5926,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>2,3,4</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Crazy Richman 2 (J) [C][a1]</name>
@@ -5871,7 +5937,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>2,3,4</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Croc (UE) [C][!]</name>
@@ -6729,7 +6795,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>B,4B</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Digimon 4 (Unl) [C]</name>
@@ -6927,7 +6993,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>5</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Disney's Mulan (U) [a1][S][!]</name>
@@ -6938,7 +7004,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>5</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Disney's Tarzan (G) [C][!]</name>
@@ -8500,7 +8566,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>F,10,11</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>EMO Cheng DX (Unl) [C]</name>
@@ -8522,7 +8588,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>F,10,11</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Emperor's New Groove, The (E) (M5) [C][!]</name>
@@ -9072,7 +9138,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>55,56,57</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Feng Zhi Gou II (Unl) [C][f1]</name>
@@ -9149,7 +9215,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>8</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>FIFA International Soccer (U) (M4) [S]</name>
@@ -9182,7 +9248,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>A</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>FIFA Soccer '98 - Road to the World Cup (U) (V1.0) [S]</name>
@@ -9193,7 +9259,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>A</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>FIFA Soccer '98 - Road to the World Cup (U) (V1.1) [S][!]</name>
@@ -9204,7 +9270,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>A</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Fighting Simulator 2in1 - Flying Warriors (U) [!]</name>
@@ -9831,7 +9897,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>C,D</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Game & Watch Gallery (E) [S][!]</name>
@@ -11822,7 +11888,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>5</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Hercules Eikou (J)</name>
@@ -12295,7 +12361,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>4</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Hunt for Red October, The (J)</name>
@@ -12757,7 +12823,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>E</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Itsudemo Pachinko GB - CR Monster House (J) [C][!]</name>
@@ -15936,7 +16002,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>F,10,11</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Lord of the Rings, The - The Fellowship of the Ring (Unl) [C]][f1]</name>
@@ -16189,7 +16255,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>18</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Madden NFL 2000 (U) [C][!]</name>
@@ -16200,7 +16266,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>18</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Madden NFL 2001 (U) [C][!]</name>
@@ -17322,7 +17388,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>3</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Megaman III (U) [!]</name>
@@ -17333,7 +17399,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>3</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Megaman IV (E)</name>
@@ -17344,7 +17410,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>3,18</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Megaman IV (U) [!]</name>
@@ -17355,18 +17421,18 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>3,18</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Megaman V (E) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
 		<checksum>5A17</checksum>
-        <crc32>d12ac4fec</crc32>
+        <crc32>d12ac4fe</crc32>
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>3,18</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Megaman V (U) [S][!]</name>
@@ -17377,7 +17443,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>3,18</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Megaman Xtreme (U) [C][!]</name>
@@ -17520,7 +17586,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>3</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Men In Black 2 - The Series (E) (M3) [C][!]</name>
@@ -17763,6 +17829,39 @@
 		<part></part>
 		<banks>E,33</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mick & Mack as the Global Gladiators (Prototype - Jan 18, 1994)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A100</checksum>
+        <crc32>cf486f7b</crc32>
+        <format>AVM</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters>CFG/Mick & Mack as the Global Gladiators (Prototype - Jan 18, 1994).cfg</parameters>
+	</rom>
+	<rom>
+		<name>Mick & Mack as the Global Gladiators (Prototype - Oct 4, 1993)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>A600</checksum>
+        <crc32>2646f927</crc32>
+        <format>AVM</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters>CFG/Mick & Mack as the Global Gladiators (Prototype - Oct 4, 1993).cfg</parameters>
+	</rom>
+	<rom>
+		<name>Mick & Mack as the Global Gladiators (Prototype - Sep 27, 1993)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8400</checksum>
+        <crc32>016ae810</crc32>
+        <format>AVM</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters>CFG/Mick & Mack as the Global Gladiators (Prototype - Sep 27, 1993).cfg</parameters>
 	</rom>
 	<rom>
 		<name>Mickey Mouse - Magic Wand (U) [S][!]</name>
@@ -18598,7 +18697,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>C1</banks>
-		<parameters>3</parameters>
+		<parameters>4</parameters>
 	</rom>
 	<rom>
 		<name>Monster Truck (J)</name>
@@ -19907,7 +20006,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>3</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>NBA Pro '99 (E) [C][!]</name>
@@ -20314,7 +20413,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>3</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>NHL Blades of Steel (U) [C][!]</name>
@@ -20809,7 +20908,18 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>3</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>On the Tiles - Franky, Joe & Dirk (E) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2ECD</checksum>
+        <crc32>caf5b372</crc32>
+        <format>AVM</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>CFG/On the Tiles - Franky, Joe & Dirk (E) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Oni (J)</name>
@@ -21821,7 +21931,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>4</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Pocket Bomberman (J) [S]</name>
@@ -22041,7 +22151,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>F</banks>
-		<parameters>2</parameters>
+		<parameters>3</parameters>
 	</rom>
 	<rom>
 		<name>Pocket Love (J) [S]</name>
@@ -22954,7 +23064,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>B</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Pokemon Pinball (E) (M5) [C][!]</name>
@@ -25451,7 +25561,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>E,F</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Rockman DX3 (Unl) [C][a1]</name>
@@ -25462,7 +25572,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>E,F</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Rockman DX6 (Unl) [C][f2]</name>
@@ -25473,7 +25583,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>E,F</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Rockman EXE5 (Unl) [C][f1]</name>
@@ -25528,7 +25638,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>3</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Rockman World 4 (J)</name>
@@ -25539,7 +25649,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>3,18</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Rockman World 5 (J) [S]</name>
@@ -25550,7 +25660,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>3,18</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Rockman X - Cyber Mission (J) [C][!]</name>
@@ -27530,7 +27640,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>3,4,7,A,43,44,47,4A</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Shawu Story (Unl) [C][a1]</name>
@@ -27541,7 +27651,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>3,4,66,67</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Shawu Story (Unl) [C][a2]</name>
@@ -27552,7 +27662,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>3,4,66,67</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Shawu Story (Unl) [C][a3]</name>
@@ -27563,7 +27673,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>3,4,7,A,43,44,47,4A</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Shawu Story (Unl) [C][a4]</name>
@@ -27574,7 +27684,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>3,4,66,67</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Shawu Story (Unl) [C][a5]</name>
@@ -27585,7 +27695,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>3,4,7,A,43,44,47,4A</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Sheng Huo Jiang Mo Lu Wai Chuan (Unl) [C]</name>
@@ -27607,7 +27717,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>3C,3D,3E</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Shi Kong Xing Shou (Unl) [C][f1]</name>
@@ -27618,7 +27728,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>3,4,1E</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Shi Mian Maifu - Fengyun Pian (Unl) [C][f1]</name>
@@ -27860,7 +27970,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>B</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Shu Ma Bao Long 9 - Bao Long Pian 2002 (Unl) [C][f1]</name>
@@ -27893,7 +28003,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>3,4,66,67</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Shuma Baolong - Shuijing Ban (Unl) [C][f1]</name>
@@ -27904,7 +28014,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>B</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Shutokou Racing, The (J) [C][!]</name>
@@ -28166,6 +28276,17 @@
 		<checksum>CB46</checksum>
         <crc32>dbf106d1</crc32>
         <format>Tiertex</format>
+		<part></part>
+		<banks>5</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Smurfs 2, The (E) (M4)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>34F6</checksum>
+        <crc32>cb2c7198</crc32>
+        <format>Smurfs_2</format>
 		<part></part>
 		<banks>5</banks>
 		<parameters></parameters>
@@ -28563,8 +28684,8 @@
         <crc32>7afae089</crc32>
         <format>Kouji_Murata</format>
 		<part></part>
-		<banks>C,D</banks>
-		<parameters></parameters>
+		<banks>C,D,E</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>South Park (U) (Prototype) [C][!]</name>
@@ -32098,6 +32219,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Top Gun - Guts & Glory (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CFB6</checksum>
+        <crc32>0506c12b</crc32>
+        <format>Distinctive_Software</format>
+		<part></part>
+		<banks>7</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Top Rank Tennis (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -32227,7 +32359,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>20</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Toy Story (U) (V1.0) [S][!]</name>
@@ -32238,7 +32370,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>20</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Toy Story (U) (V1.1) [S][!]</name>
@@ -32249,7 +32381,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>20</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Toy Story 2 (U) [C][!]</name>
@@ -32260,7 +32392,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>3</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Toy Story Racer (E) (M3) [C][!]</name>
@@ -32414,7 +32546,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>33</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Trouballs (U) [C][!]</name>
@@ -33418,6 +33550,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Wayne's World (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>ECFA</checksum>
+        <crc32>829ea425</crc32>
+        <format>Distinctive_Software</format>
+		<part>1/2=Music</part>
+		<banks>B</banks>
+		<parameters>4</parameters>
+	</rom>
+	<rom>
+		<name>Wayne's World (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>ECFA</checksum>
+        <crc32>829ea425</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>4</banks>
+		<parameters>CFG/Wayne's World (U) - Samples.cfg</parameters>
+	</rom>
+	<rom>
 		<name>WCW Main Event (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -33921,7 +34075,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>4</banks>
-		<parameters>o</parameters>
+		<parameters>0</parameters>
 	</rom>
 	<rom>
 		<name>World Cup USA '94 (UE) (M8) [!]</name>
@@ -33932,7 +34086,7 @@
         <format>Tiertex</format>
 		<part></part>
 		<banks>4</banks>
-		<parameters>o</parameters>
+		<parameters>0</parameters>
 	</rom>
 	<rom>
 		<name>World Destruction League - Thunder Tanks (U) (M3) [C][!]</name>
@@ -34021,6 +34175,17 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters>CFG/Worm Visitor (Sachen 4-in-1 Vol. 5) (Unl) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Worms (U) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>73E2</checksum>
+        <crc32>2ebc40c2</crc32>
+        <format>AVM</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>CFG/Worms (U) [!].cfg</parameters>
 	</rom>
 	<rom>
 		<name>Worms Armageddon (E) (M6) [C][!]</name>
@@ -34262,7 +34427,7 @@
         <format>Kouji_Murata</format>
 		<part></part>
 		<banks>3,4</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Xin Guangming Yu Hei'an 2 - Zhushen De Yichan (Unl) [C][f1]</name>
