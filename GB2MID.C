@@ -671,6 +671,10 @@ int main(int args, char* argv[])
             {
                 driver = AudioArts;
             }
+            else if (!strcmp(formatString, "AVM"))
+            {
+                driver = AVM;
+            }
             else if (!strcmp(formatString, "Beam_Software"))
             {
                 driver = Beam_Software;
@@ -738,6 +742,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "Digital_Eclipse_1"))
             {
                 driver = Digital_Eclipse_1;
+            }
+            else if (!strcmp(formatString, "Distinctive_Software"))
+            {
+                driver = Distinctive_Software;
             }
             else if (!strcmp(formatString, "Dragon_Ball_Z"))
             {
@@ -963,6 +971,10 @@ int main(int args, char* argv[])
             {
                 driver = PCM_MK4;
             }
+            else if (!strcmp(formatString, "Pool_3D"))
+            {
+                driver = Pool_3D;
+            }
             else if (!strcmp(formatString, "Probe_Software"))
             {
                 driver = Probe_Software;
@@ -991,6 +1003,10 @@ int main(int args, char* argv[])
             {
                 driver = Sheep;
             }
+			else if (!strcmp(formatString, "Smurfs_2"))
+			{
+				driver = Smurfs_2;
+			}
             else if (!strcmp(formatString, "Software_Creations1"))
             {
                 driver = Software_Creations1;
@@ -1106,7 +1122,6 @@ int main(int args, char* argv[])
                     z++;
                 }
             }
-
 
             gb2MID(rom, banks, numBanks, driver, parameters);
             printf("The operation was successfully completed!\n");
