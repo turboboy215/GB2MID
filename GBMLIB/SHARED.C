@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stddef.h>
 #include <math.h>
+#include "3DPOOL.H"
 #include "SHARED.H"
 #include "ACT.H"
 #include "AICOM.H"
@@ -13,6 +14,7 @@
 #include "ATELIER.H"
 #include "ATLUS.H"
 #include "AUDIOART.H"
+#include "AVM.H"
 #include "BEAM.H"
 #include "BIONIC.H"
 #include "BITS.H"
@@ -31,6 +33,7 @@
 #include "DAVDSHEA.H"
 #include "DBZ.H"
 #include "DE1.H"
+#include "DISTINCT.H"
 #include "DKONG.H"
 #include "DSEQ.H"
 #include "DW.H"
@@ -94,6 +97,7 @@
 #include "SAFFIRE.H"
 #include "SCULPT.H"
 #include "SHEEP.H"
+#include "SMURFS2.H"
 #include "SQUARE.H"
 #include "SUNSOFT.H"
 #include "SWC1.H"
@@ -541,6 +545,16 @@ unsigned char gb_read_byte(int bank, int cpu)
 	return getChar;
 }
 
+/* Simulate RRCA(Rotate Right Circular Accumulator)*/
+/* Input: a(0 - 255).Return : (newA & 0xFF) | (carry << 8)*/
+int rrca(int a)
+{
+	a &= 0xFF;
+	int carry = a & 1;
+	int newA = (a >> 1) | (carry << 7);
+	return ((newA & 0xFF) | (carry << 8)) & 0xFF;
+}
+
 void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameters[4][100])
 {
 	if (numBanks > 1)
@@ -577,6 +591,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case AudioArts:
 			AAProc(banks[curBank]);
+			break;
+		case AVM:
+			AVMProc(banks[curBank], parameters);
 			break;
 		case Beam_Software:
 			BeamProc(banks[curBank]);
@@ -628,6 +645,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Digital_Eclipse_1:
 			DE1Proc(banks[curBank], parameters);
+			break;
+		case Distinctive_Software:
+			DistProc(banks[curBank], parameters);
 			break;
 		case Dragon_Ball_Z:
 			DBZProc(banks[curBank]);
@@ -797,6 +817,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case PCM_MK4:
 			MK4PCMProc(banks[curBank], parameters);
 			break;
+		case Pool_3D:
+			Pool3DProc(banks[curBank], parameters);
+			break;
 		case Probe_Software:
 			ProbProc(banks[curBank]);
 			break;
@@ -817,6 +840,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Sheep:
 			SheepProc(banks[curBank]);
+			break;
+		case Smurfs_2:
+			Smurfs2Proc(banks[curBank]);
 			break;
 		case Software_Creations1:
 			SWC1Proc(banks[curBank], parameters);

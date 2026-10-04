@@ -60,7 +60,7 @@ void MM3song2mid(int songNum, long songPtr);
 
 void MM3Proc(int bank, char parameters[4][100])
 {
-	drvVers = MM3_VER_STD;
+	drvVers = MM3_VER_MM3;
 	foundTable = 0;
 
 	if (bank < 0x02)
@@ -316,7 +316,7 @@ void MM3song2mid(int songNum, long songPtr)
 			EventMap[0xF1] = MM3_EVENT_DECAY2;
 			EventMap[0xF2] = MM3_EVENT_DECAY3;
 			EventMap[0xF3] = MM3_EVENT_FINAL_VOL;
-			EventMap[0xF4] = MM3_EVENT_UNKNOWN1;
+			EventMap[0xF4] = MM3_EVENT_DATA_FLAG;
 			EventMap[0xF5] = MM3_EVENT_NOP1;
 			EventMap[0xF6] = MM3_EVENT_SPEED;
 			EventMap[0xF7] = MM3_EVENT_CALL1;
@@ -332,32 +332,32 @@ void MM3song2mid(int songNum, long songPtr)
 		case MM3_VER_MT:
 			MM3_STATUS_NOTE_MIN = 0x00;
 			MM3_STATUS_NOTE_MAX = 0x7F;
-			EventMap[0x80] = MM3_EVENT_ENV;
+			EventMap[0x80] = MM3_EVENT_UNKNOWN1;
 			EventMap[0x81] = MM3_EVENT_TRANSPOSE;
-			EventMap[0x82] = MM3_EVENT_WAVEFORM;
-			EventMap[0x83] = MM3_EVENT_VIBRATO;
+			EventMap[0x82] = MM3_EVENT_DUTY_VOL;
+			EventMap[0x83] = MM3_EVENT_TUNING;
 			EventMap[0x84] = MM3_EVENT_PAN;
-			EventMap[0x85] = MM3_EVENT_DUTY;
-			EventMap[0x86] = MM3_EVENT_NOP;
-			EventMap[0x87] = MM3_EVENT_ENV_VEL;
-			EventMap[0x88] = MM3_EVENT_PITCH_MASK_ON;
-			EventMap[0x89] = MM3_EVENT_PITCH_MASK_OFF;
-			EventMap[0x8A] = MM3_EVENT_NOP;
-			EventMap[0x8B] = MM3_EVENT_NOP;
-			EventMap[0x8C] = MM3_EVENT_DECAY_SEQ;
-			EventMap[0x8D] = MM3_EVENT_NOP;
-			EventMap[0x8E] = MM3_EVENT_DECAY_SEQ_LOOP;
-			EventMap[0x8F] = MM3_EVENT_NOP;
-			EventMap[0x90] = MM3_EVENT_NOP;
-			EventMap[0x91] = MM3_EVENT_NOP;
+			EventMap[0x85] = MM3_EVENT_DUTY_NOISE;
+			EventMap[0x86] = MM3_EVENT_NOP1;
+			EventMap[0x87] = MM3_EVENT_NOTE_DUR_MULT;
+			EventMap[0x88] = MM3_EVENT_SWEEP_ON;
+			EventMap[0x89] = MM3_EVENT_SWEEP_OFF;
+			EventMap[0x8A] = MM3_EVENT_NOP1;
+			EventMap[0x8B] = MM3_EVENT_NOP1;
+			EventMap[0x8C] = MM3_EVENT_VIBRATO_SEQ;
+			EventMap[0x8D] = MM3_EVENT_NOP1;
+			EventMap[0x8E] = MM3_EVENT_ENV_SEQ;
+			EventMap[0x8F] = MM3_EVENT_NOP1;
+			EventMap[0x90] = MM3_EVENT_NOP1;
+			EventMap[0x91] = MM3_EVENT_NOP1;
 			EventMap[0x92] = MM3_EVENT_CALL1;
 			EventMap[0x93] = MM3_EVENT_RETURN1;
-			EventMap[0x94] = MM3_EVENT_NOP;
+			EventMap[0x94] = MM3_EVENT_NOP1;
 			EventMap[0x95] = MM3_EVENT_REPEAT1_START;
 			EventMap[0x96] = MM3_EVENT_REPEAT1_END;
-			EventMap[0x97] = MM3_EVENT_NOP;
-			EventMap[0x98] = MM3_EVENT_NOP;
-			EventMap[0x99] = MM3_EVENT_NOP;
+			EventMap[0x97] = MM3_EVENT_NOP1;
+			EventMap[0x98] = MM3_EVENT_NOP1;
+			EventMap[0x99] = MM3_EVENT_NOP1;
 			EventMap[0x9A] = MM3_EVENT_STOP;
 			EventMap[0x9B] = MM3_EVENT_CALL2;
 			EventMap[0x9C] = MM3_EVENT_RETURN2;
@@ -366,9 +366,47 @@ void MM3song2mid(int songNum, long songPtr)
 			EventMap[0x9F] = MM3_EVENT_STOP;
 			EventMap[0xFF] = MM3_EVENT_STOP;
 			break;
+		case MM3_VER_MM5:
+			MM3_STATUS_NOTE_MIN = 0x00;
+			MM3_STATUS_NOTE_MAX = 0xCF;
+			MM3_STATUS_PARAM_MIN = 0xD0;
+			MM3_STATUS_PARAM_MAX = 0xDF;
+			EventMap[0xE0] = MM3_EVENT_OCTAVE;
+			EventMap[0xE1] = MM3_EVENT_OCTAVE;
+			EventMap[0xE2] = MM3_EVENT_OCTAVE;
+			EventMap[0xE3] = MM3_EVENT_OCTAVE;
+			EventMap[0xE4] = MM3_EVENT_OCTAVE;
+			EventMap[0xE5] = MM3_EVENT_OCTAVE;
+			EventMap[0xE6] = MM3_EVENT_OCTAVE;
+			EventMap[0xE7] = MM3_EVENT_OCTAVE;
+			EventMap[0xE8] = MM3_EVENT_DUTY_VOL;
+			EventMap[0xE9] = MM3_EVENT_DECAY;
+			EventMap[0xEA] = MM3_EVENT_SWEEP;
+			EventMap[0xEB] = MM3_EVENT_VIBRATO;
+			EventMap[0xEC] = MM3_EVENT_TRANSPOSE;
+			EventMap[0xED] = MM3_EVENT_WAVEFORM;
+			EventMap[0xEE] = MM3_EVENT_DUTY_VOL_DECAY23;
+			EventMap[0xEF] = MM3_EVENT_TUNING;
+			EventMap[0xF0] = MM3_EVENT_ENV;
+			EventMap[0xF1] = MM3_EVENT_DECAY2;
+			EventMap[0xF2] = MM3_EVENT_DECAY3;
+			EventMap[0xF3] = MM3_EVENT_FINAL_VOL;
+			EventMap[0xF4] = MM3_EVENT_ADD_SIGNED_VAL;
+			EventMap[0xF5] = MM3_EVENT_NOP1;
+			EventMap[0xF6] = MM3_EVENT_SPEED;
+			EventMap[0xF7] = MM3_EVENT_CALL1;
+			EventMap[0xF8] = MM3_EVENT_CALL2;
+			EventMap[0xF9] = MM3_EVENT_RETURN1;
+			EventMap[0xFA] = MM3_EVENT_RETURN2;
+			EventMap[0xFB] = MM3_EVENT_REPEAT1_START;
+			EventMap[0xFC] = MM3_EVENT_REPEAT2_START;
+			EventMap[0xFD] = MM3_EVENT_REPEAT1_END;
+			EventMap[0xFE] = MM3_EVENT_REPEAT2_END;
+			EventMap[0xFF] = MM3_EVENT_STOP;
+			break;
 		case MM3_VER_BC:
 			/*Fall-through*/
-		case MM3_VER_STD:
+		case MM3_VER_MM3:
 		default:
 			MM3_STATUS_NOTE_MIN = 0x00;
 			MM3_STATUS_NOTE_MAX = 0xCF;
@@ -394,7 +432,7 @@ void MM3song2mid(int songNum, long songPtr)
 			EventMap[0xF1] = MM3_EVENT_DECAY2;
 			EventMap[0xF2] = MM3_EVENT_DECAY3;
 			EventMap[0xF3] = MM3_EVENT_FINAL_VOL;
-			EventMap[0xF4] = MM3_EVENT_UNKNOWN2;
+			EventMap[0xF4] = MM3_EVENT_NOP1;
 			EventMap[0xF5] = MM3_EVENT_NOP1;
 			EventMap[0xF6] = MM3_EVENT_SPEED;
 			EventMap[0xF7] = MM3_EVENT_CALL1;
@@ -407,8 +445,8 @@ void MM3song2mid(int songNum, long songPtr)
 			EventMap[0xFE] = MM3_EVENT_REPEAT2_END;
 			EventMap[0xFF] = MM3_EVENT_STOP;
 			break;
-
 		}
+
 
 		if (drvVers != MM3_VER_PK && drvVers != MM3_VER_MT)
 		{
@@ -959,37 +997,47 @@ void MM3song2mid(int songNum, long songPtr)
 					seqEnd = 1;
 				}
 
+				else if (EventMap[command[0]] == MM3_EVENT_ADD_SIGNED_VAL)
+				{
+					seqPos += 3;
+				}
+
+				else if (EventMap[command[0]] == MM3_EVENT_DATA_FLAG)
+				{
+					seqPos += 2;
+				}
+
 				else if (EventMap[command[0]] == MM3_EVENT_PAN)
 				{
 					seqPos += 2;
 				}
 
-				else if (EventMap[command[0]] == MM3_EVENT_DUTY)
+				else if (EventMap[command[0]] == MM3_EVENT_DUTY_NOISE)
 				{
 					seqPos += 2;
 				}
 
-				else if (EventMap[command[0]] == MM3_EVENT_ENV_VEL)
+				else if (EventMap[command[0]] == MM3_EVENT_NOTE_DUR_MULT)
 				{
 					seqPos += 2;
 				}
 
-				else if (EventMap[command[0]] == MM3_EVENT_PITCH_MASK_ON)
+				else if (EventMap[command[0]] == MM3_EVENT_SWEEP_ON)
 				{
 					seqPos++;
 				}
 
-				else if (EventMap[command[0]] == MM3_EVENT_PITCH_MASK_OFF)
+				else if (EventMap[command[0]] == MM3_EVENT_SWEEP_OFF)
 				{
 					seqPos++;
 				}
 
-				else if (EventMap[command[0]] == MM3_EVENT_DECAY_SEQ)
+				else if (EventMap[command[0]] == MM3_EVENT_VIBRATO_SEQ)
 				{
 					seqPos += 3;
 				}
 
-				else if (EventMap[command[0]] == MM3_EVENT_DECAY_SEQ_LOOP)
+				else if (EventMap[command[0]] == MM3_EVENT_ENV_SEQ)
 				{
 					seqPos += 3;
 				}
@@ -1002,7 +1050,6 @@ void MM3song2mid(int songNum, long songPtr)
 
 
 			}
-
 			/*End of track*/
 			WriteBE32(&midData[midPos], 0xFF2F00);
 			midPos += 4;

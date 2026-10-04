@@ -44,8 +44,8 @@ void Write8B(unsigned char* buffer, unsigned int value);
 void WriteBE32(unsigned char* buffer, unsigned long value);
 void WriteBE24(unsigned char* buffer, unsigned long value);
 void WriteBE16(unsigned char* buffer, unsigned int value);
-unsigned int WriteNoteEvent(unsigned static char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
-int WriteDeltaTime(unsigned static char* buffer, unsigned int pos, unsigned int value);
+unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
+int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 void Equilsong2mid(int songNum, long ptr);
 
 void EquilProc(char parameters[4][100])
