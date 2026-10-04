@@ -1,0 +1,21 @@
+Song table
+=======================================
+The song table is comprised of 2-byte (16-bit) pointers, one for each song. In this game, there are 7 songs, one of which is divided into several phrases.
+
+Song track
+=======================================
+Each song has a track which starts with the number of patterns present in each song, and is then followed by a series of 1-byte (8-bit) entries representing the number of each pattern which is the length specified as the first byte.
+
+Song pattern table
+=======================================
+Immediately following each song has a series of 16-bit pointers (for the number specified as the first byte in the song track) for the start of each song pattern.
+
+Song patterns
+=======================================
+Song patterns are structured as follows, with a command typically represented by the bits at the end:
+Byte 1 = Tempo (0 or FF = keep the current tempo)
+vv rrrrr 0 = Note on ch3: rate index r (1–19), volume LUT v (1 = full, 2 = ½, 3 = ¼). Ends the row.
+nnnnnn 11 = Wait: ends the row and occupies (n + 1) rows.
+c tttt 1 0 1 = Noise hit: type t (0–15) → NR42 from the table at 00:3EF6; NR41 = $01, NR43 = $00, NR44 = $80. If c = 1, more events follow on the same row; if c = 0, the row ends.
+iiiii 0 0 1 (i ≥ 1) = Set instrument i − 1 (same row).
+$01 = End of pattern → next order.

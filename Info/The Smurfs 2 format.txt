@@ -1,0 +1,57 @@
+Song table
+=======================================
+The song table is a series of 16-byte arrays structured as follows:
+1-2. Channel 1 track pointer
+3-4. Channel 1 track loop pointer
+5-6. Channel 2 track pointer
+7-8. Channel 2 track loop pointer
+9-10. Channel 3 track pointer
+11-12. Channel 3 track loop pointer
+13-14. Channel 4 track pointer
+15-16. Channel 4 track loop pointer
+
+Note that if a track loop pointer is $4398, it does not loop.
+
+Song channel tracks
+=======================================
+Each channel of a song's track is structured using the following commands:
+
+00 = End of channel
+1xxxxxxx yy = Rest ((x << 8 \| yy) << 1) & $FFFF
+0ttttttt pp = Play pattern (T = Pitch - (t + $52) >> 1), P = Pattern (((t + $52) & 1) << 8 \| pp))
+
+Song patterns
+=======================================
+Each channel's sequence consists of various events. The first part of a pattern is a variable-length delay, which is described below. Then, it is followed by a series of commands as follows:
+00 = End of pattern
+01 xx = Set instrument (X = Value)
+02 xx = (No effect)
+03 xx = ? (use RAM value $0A)
+04 xx = ? (use RAM value $0B)
+05 xx = (No effect)
+06 xx = (No effect)
+07 xx (channel 1-3) = Transpose (X = Value, signed)
+sssssvvv  (08-FF) (channel 1-3) = Play note - step, v, w (tone: pitch += s − 16, volume v)
+xiiiivvv (07-FF) (channel 1-4) = Drum - i, v, w (noise: NoiseInstruments[i], volume v. $07 is drum 0 here, not an escape.)
+
+Each note or command is followed by a variable-length duration in the same format as the start delay. Variable length durations work as follows:
+0nnnnnnn = 2 * n frames
+1nnnnnnn hhhhhhhh = hh x 256 x 2n frames
+
+Sound effects
+=======================================
+Sound effects use a similar format to music, but is 1 channel only (either 1 or 4):
+1-2. Channel track pointer
+3-4. Channel track loop pointer
+
+Instruments
+=======================================
+Instruments for channels 1-3 are 2 bytes each, while instruments for channel 4 are 3 bytes. They are structured as follows:
+(CH1-3)
+1. NRx1 value
+2. NRx2 low bits
+
+(CH4)
+1. NR41 value
+2. NR22 low bits
+3. NR43 value

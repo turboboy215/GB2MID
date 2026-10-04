@@ -1,0 +1,75 @@
+This sound engine is similar for all 4 games, but has differences in each game. Bill Elliot's NASCAR Fast Tracks, released in 1991, was the first game to use this sound engine, and has significant differences in its music data format that was changed in all successive games. The original data format is likely based on Kris Hatelid's Commodore 64 driver.
+
+Version 1 (Bill Elliot's NASCAR Fast Tracks)
+===========================================================
+
+Song header
+=======================================
+Each song is individually called by the game code. Each song has a header, although only the first 4 bytes are actually used. It is structured as follows:
+
+1-2. Channel track pointers
+3-4. Instrument pointers
+5-6. (Unused)
+
+Song channel track
+=======================================
+A track for each channel is an array of 2-byte (16-bit) pointers and a transpose value to each pattern that is played in succession. It is structured as follows:
+1-2. Pattern pointer
+3. Transpose
+A stop or restart is not specified in a track; it is instead present in a pattern itself.
+
+Patterns
+=======================================
+Patterns are comprised of the following commands:
+00-75 xyyyyyyy = Play note (75 = rest, x = if set, tie next note, y = length)
+D9 = Next pattern (all channels)
+DA = Stop all tracks
+DB = Restart song
+DC xx = Set instrument
+E0 xx = Set decay stage on/off
+
+Instruments
+=======================================
+Instrument lists are specified in the header for each song - they can differ depending on the song (although I am not sure any are different or the same in a single game). They are loaded using the command DC. They are specified as follows:
+   +0 NRx1 duty   +2 NR10 sweep   +3 transpose   +4 detune sign   +5/+6 detune
+   +7 note delay  +8 attack step  +9 attack peak  +A decay step   +B sustain
+   +C release step  +D vibrato on  +E vib delay  +F vib period  +10 vib step
+Channel 4 uses a separate table that has drum instruments.
+
+Version 2 (common)
+===========================================================
+The other three games - Top Gun: Guts & Glory, The Battle of Olympus, and Wayne's World, all released in 1993 with the latter two games developed by Radical (founded by ex-Distinctive Software staff), use a reworked version of the driver that uses a single sequence for each channel with MIDI-like commands with minor differences between the games. The Battle of Olympus does not use channel 3.
+
+Song header
+=======================================
+Headers for each song are structured as follows:
+1. Number of channels (0-9)
+2-3. Channel sequence pointer (repeat for each channel)
+
+Sequences
+=======================================
+Each channel's sequence consists of delta events, which are structured as follows:
+
+[delta][event][parameters]
+Events:
+00-D8 = Play note
+D9 = Stop all tracks(some games)/Restart song (other games)
+DA = Stop all tracks
+DB = Restart song
+DC xx = Set instrument (in Battle of Olympus, xx xx = pointer)
+DD xx = Set tempo
+DE xx = (No effect)
+DF xx xx = (No effect)
+E2 xx = (No effect)
+E3 = Loop track (some games only)
+EA = Stop track (some games only)
+
+Variable length durations work as follows:
+< $80 : one byte.
+$80-$FF : 2 bytes, value = rrca(b & $7F) + b2  -> correct only for b = $81 (i.e. values 128-255), which is all the converter ever emits.
+
+Instruments
+=======================================
+Instruments are loaded with the command DC. In Top Gun, they are loaded in a 14-byte format using the same format as NASCAR Fast Tracks (also with the same style of drum instruments). However, in the two games developed by Radical, they are loaded using a 16-bit pointer, and use a different format of only 6 bytes as follows:
++0 channel 0-3  +1 NRx1 duty  +2 priority
+                +3 NR10 sweep   +4 transpose   +5 NRx2 volume nibble

@@ -1,0 +1,70 @@
+This sound engine's music appears to have been converted from MOD (ProTracker); however, it is only 3 channels, with some instruments using channel 4.
+
+Song header
+=======================================
+Each song (or module) has a header as follows:
+(FF xx = Enable "extended format" (13-byte instruments), xx = Transpose (signed))
+1. Order list length
+2. Restart position
+3-4. Offset of first pattern (unused)
+5-6. Module size (unused)
+7-135. (128 bytes) Order list (pattern numbers)
+136-???. (2 bytes each) Offsets for each pattern
+???. (2 bytes) End of module
+???. (2 bytes) 0
+
+(Offsets are expressed relative to the start of the pattern list.)
+
+Pattern header
+=======================================
+Each song's patterns have the following header (addresses are relative):
+1-2. Channel 1 pointer
+3-4. Channel 2 pointer
+5-6. Channel 3 pointer
+
+Pattern commands
+=======================================
+Commands are based on ProTracker format. However, not all commands are functional, and there is one command that is absent from the original MOD format. They are as follows:
+00 xy = Arpeggio (X = Note + value 1, Y = Note + value 2)
+01 xx = Portamento up (X = Amount every frame)
+02 xx = Portmento down (X = Amount every frame)
+03 xx = (No effect)
+04 xx = (No effect)
+05 xx = (No effect)
+06 xx = (No effect)
+07 xx yy = (No effect)
+08 = End of song (not present in MOD format)
+09 xx = (No effect)
+0A xx = (No effect)
+0B xx = Jump to position (X = Value)
+0C xx = Set volume (X = Value)
+0D xx = Break to row 0 of next pattern (X = Value, unused)
+0E xx = (No effect)
+0F xx = Set speed
+
+Instruments
+=======================================
+Instruments are structured as follows:
+1. Transpose (signed)
+2. Number of ticks for noise (Ch4)
+3. Noise (Ch4) index from table
+4. Vibrato amount (depth << 4 / speed) (0 = no vibrato)
+5. Vibrato delay
+(These bytes only exist with the FF prefix (see above):)
+6. Fine volume (added by effect 0C)
+7. (Unused)
+8-9. Pitch table (0 = unused)
+10-11. Noise table (0 = unused)
+12-13. Volume envelope (0 = unused)
+
+The format of additional tables:
+- Pitch / noise table: signed semitone steps, one per tick, cumulative. $80 = stop, $81 xx = continue at entry X. For example, +4 +3 −7, loop is a major-chord arpeggio instrument, and −4, loop is a falling drum pitch.
+- Volume envelope: (ticks−1, volume) pairs, $FF = hold.
+- Vibrato: after the delay, the period offset toggles between 0 and +depth every speed+1 ticks. That is a square wave, and it only bends upwards.
+
+Sound effects
+=======================================
+Sound effects are structured of an array of 3 byte frames, and are structured as follows:
+1. Bits 4-7 = channel 2 volume, bits 0-3 = period high, inverted
+2. Period low, inverted
+3. Bit 7 = Noise on (index 3 & $1F, volume = channel 2 volume), bit 6 = tone on, bit 5 = last frame (end of SFX)
