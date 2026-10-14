@@ -1,4 +1,4 @@
-Unlike most sound engines, the music data is not necessarily integrated in one or more sound banks rather, each song is stored in a proprietary MOD-like format with the header "IMEDGBoy". Versions of the format also exist for other systems including SNES, MegaDrive, and Game Gear. Some games, including Warriors of Might and Magic, store all or almost all of the "modules" compressed with ProPack/RNC.
+Each song is stored in a standalone MOD-like format with the header "IMEDGBoy", which can be loaded from anywhere. Versions of the format also exist for other systems including SNES, MegaDrive, and Game Gear. Some games, including Warriors of Might and Magic, store all or almost all of the "modules" compressed with ProPack/RNC, and the music is decompressed into and loaded from RAM.
 
 Here is the official documentation of the header from leaked source code:
 ----------------------------------------------------------
@@ -16,17 +16,17 @@ Here is the official documentation of the header from leaked source code:
 
 ----------------------------------------------------------
 
-Pattern List Offset
+Pattern list offset
 =======================================
 The pattern list is an array showing the order of the patterns as they will be played in order, with a value of 00 representing the first pattern, 01 representing the second, etc. A value of FF is used to represent the end of the pattern, followed by the total number of unique patterns and then 00. For example:
 
 00 01 02 03 FF 04 00
 
-Pattern Directory
+Pattern directory
 =======================================
 This is a series of 16-bit pointer values (little-endian) determining the location of each pattern listed, relative to the start of the pattern directory. For example, the bytes 00 0A mean that the first pattern is located 10 (0A) bytes following the start of the pattern directory.
 
-Pattern Data
+Pattern data
 =======================================
 At the start of each row of a module pattern is a 16-bit binary "mask" that specifies which channels will be used on the row and if effects are being used or not. This means that unlike a ProTracker module, the number of bytes used for each row varies, with unused parts not taking up bytes. The mask is as follows:
 
@@ -120,18 +120,84 @@ From the source code:
 ----------------------------------------------------------
 
 
-Game Gear/Master System format
+Sound effects table
 =======================================
-The Game Gear/Master System format, found in The Smurfs Travel the World and Chicago Syndicate, is almost the same as the Game Boy (Color) format, but has some differences. For one, the header starts with the identifier "IMEDGear", and the header is smaller.
+Sound effects are not stored in the module format; rather, they are stored separately and are referenced in a table. The table is structured as follows, from the source code:
 
 ----------------------------------------------------------
-	Game Gear module format :-
 
-	Offs	Size
+	SFX Block format :-
 
-	0	8 bytes		"IMEDGear"
-	8	Word		Pattern list offset
-	10	Word		Pattern dir offset
-	12	Word		Patch data
-	14	Word		Number of instruments?
+	Offs
+
+	0	Initial PC (from here)
+	2	Channel mask
+	3	<kludge fill>
+----------------------------------------------------------
+
+
+Sound effects
+=======================================
+Sound effects use the following commands, from the source code:
+
+----------------------------------------------------------
+	$0xyy		Key channel on/off (on=yy nz/off=yy z)
+	$1xyyyy		Set frequency of channel x to yyyy
+	$2xyyyy		Add yyyy to frequency of channel x
+	$3x<????>	Set channel x parameters
+			<????>=implementation defined
+	$4xyy		Set volume for channel x to yy
+	$5x		Wait for x frames
+	$6yxx		Loop using counter y - xx times
+	$7y		End loop (counter y) [jumps to previous $6 instr]
+	$8xyy		Add yy to channel x volume
+	$90xx		Branch relative (add xx (sext) to PC)
+	$a0yyyy		Add yyyy to base frequency
+	$f0		End sound fx macro
+			Gameboy implementation notes
+			-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+	* Frequencies are 11 bit except noise frequencies which are taken
+	  from md_noisetab in the music driver and range from 0-111.
+
+	* 3 loop counters are supported
+
+	* Command 8 is not supported due to envelopes (see below)
+
+	* Command 2 (add to frequency) has an extra byte to indicate
+	  sign of add
+
+	* Volume parameters are :-
+
+	  For square wave tone (1/2) and noise (4) channels :
+
+		Bits 7-4 :	Volume 0..F
+		Bit 3	 :	Envelope : 0=Attenuate 1=Amplify
+		Bits 0-3 :	Envelope step length (0=stop)
+
+	  For defined wave channel :
+
+	        Bits 5-6 :	Output level : 00=none 01=1/4 10=1/2 11=MAX
+
+	* Channel parameters are :-
+
+		$01<xx>		Set stereo placement (Bit 0 = Right
+						      Bit 4 = Left)
+		$02<xx>		Waveform duty/Sound length
+
+				Channels 1/2 :
+
+					Bits 6-7 : 00=12.5%  01=25%
+						   10=50%    11=75%
+					Bits 0-5 : Sound length
+
+				Waveform/Noise channels : 8 bit sound length
+
+	* Extended command set
+
+		$b0xx		Load waveform xx from table
+		or
+		$bzxx		Load waveform xx+loop counter z
+				(where z=1,2 or 3,  loop counters go
+				 from MAX..0)
 ----------------------------------------------------------
