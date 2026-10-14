@@ -1,0 +1,262 @@
+The frequency table
+=======================================
+The frequency table can be found with the following commands:
+
+    ld a, [hl]
+    add a, c
+    ld e, a
+    ld d, $00
+    ld hl, FreqTable
+    add hl, de
+    add hl, de
+    ld a, [hli]
+    ld e, a
+    ld d, [hl]
+    ld a, b
+    cp a, $02
+
+Which equals the following in hex:
+
+7E 81 5F 16 00 21 ?? ?? 19 19 2A 5F 56 78 FE 02
+
+Sound effects table
+=======================================
+Immediately following the frequency table is the sound effects table. It is accessed with the following commands:
+
+    ld d, $00
+    ld hl, SfxTable
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+
+Which equals the following in hex:
+
+16 00 21 ?? ?? 19 19 19
+
+In earlier games, the table is structured as follows:
+1-2. Sequence pointer
+3. Channel number
+
+In later games, the table is structured as follows:
+1. Priority (00 = lowest, FF = highest)
+2-3. Sequence pointer
+4. Channel number
+
+Sound effects sequence format
+=======================================
+The format of sequences for a sound effect is similar to that of music (see below):
+xx yy zz = Length, note, instrument
+xx FD = Key on (x = Length)
+xx FE = Key off (x = Length)
+xx FF = Hold note (x = Length)
+00 -- 00 = End of sequence (- = Unused)
+00 xx xx = Jump (X = Position)
+
+Song table
+=======================================
+Next is the song table, which gives IDs to each sequence in a song. it is accessed with the following commands:
+
+    ld hl, SongTable
+    ld d, $00
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+
+Which equals the following in hex:
+
+21 ?? ?? 16 00 19 19 19 19 19 19 19 19 19 19 19 19
+
+To determine whether the game is using the old or new format, check the byte immediately following. If it is an additional 19 (add hl, de), then old; if it is 2A (ld a, [hl+], which follows the additional add hl, de in the old version), then new.
+
+The game Carmageddon uses what appears to be an early and more rudimentary version of the pointer table, suggesting that it was the first game developed to use the driver. To look for the driver, use the following shorter version of the commands:
+
+    ld d, $00
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    add hl, de
+    ld a, [hl+]
+
+
+Which equals the following in hex:
+
+21 ?? ?? 16 00 19 19 19 19 19 19 2A
+
+Bytes (old format):
+1-2. Channel 1 track pointer
+3-4. Channel 2 track pointer
+5-6. Channel 3 track pointer
+7-8. Channel 4 track pointer
+9: Tempo (frames per tick)
+10-11. Waveform (morph) pointer
+12-13. Waveform (normal) pointer
+
+Bytes (new format):
+1: Tempo (frames per tick)
+2. Channel mask (lower 4 bits only, 1-4)
+3-4. Channel 1 track pointer
+5-6. Channel 2 track pointer
+7-8. Channel 3 track pointer
+9-10. Channel 4 track pointer
+11-12. Waveform (morph) pointer
+13-14. Waveform (normal) pointer
+
+The "morph" waveform is an alternate waveform that the driver rapidly swithes to frame-by-frame to "animate" the waveform byte by byte.
+For most games, the first song is empty. For Carmageddon, the pointer table merely consists of three pointers to channels 1, 2, and 4 (the music doesn't use channel 3), and there is no speed control, as all three songs have the same tempo (seems to be value 7).
+
+Bytes (Carmageddon):
+1-2. Channel 1 track pointer
+3-4. Channel 2 track pointer
+5-6. Channel 4 track pointer
+
+Sequence table
+=======================================
+This is a table storing pointers to each sequence in 16-bit values.
+
+It can be found with the following set of instructions:
+
+    ld a, [de]
+    ld [hli], a
+    inc de
+    ld a, [de]
+    inc de
+    ld [hl], e
+    inc l
+    ld [hl], d
+    ld e, a
+    ld d, $00
+    ld hl, PatternTable
+
+Which equals the following in hex:
+1A 22 13 1A 13 73 2C 72 5F 16 00 21 ?? ??
+
+Carmageddon uses the following slightly different set of commands:
+
+    ld a, [de]
+    ld [hl], a
+    inc de
+    ld a, [de]
+    inc de
+    inc hl
+    ld [hl], e
+    inc hl
+    ld [hl], d
+    ld e, a
+    ld d, $00
+    ld hl, PatternTable
+
+Which equals the following in hex:
+1A 77 13 1A 13 23 73 23 72 5F 16 00 21 ?? ??
+
+Some games using a slightly different version of the driver (see below), instead refer to the following instructions to find the offset:
+
+ld [hl], d
+ld e, c
+ld d, a
+ld hl, PatternTable
+
+Which equals the following in hex:
+72 59 57 21 ?? ??
+
+
+Song track format
+=======================================
+For most games, it is stored in a simple 16-bit format:
+
+Bytes:
+1. Transpose
+2. Sequence number ID
+
+However, some games using a slightly different version of the driver, including Extreme Ghostbusters, Total Soccer 2000/Barca Total 2000, and Wendy: Der Traum von Arizona, instead store their values as 16-bit:
+
+Bytes:
+1-2. Transpose
+3-4. Sequence number ID
+
+Music sequence format
+=======================================
+xx yy zz = Length, note, instrument
+xx FD = Key on (repeat previous note/instrument) (x = Length)
+xx FE = Key off (x = Length)
+xx FF = Hold note (x = Length)
+FF yy yy = Jump (yy = Pointer)
+00 = End of sequence
+
+Instrument tables
+=======================================
+The instrument table is used for channel 1-3; channel 4 uses a separate table. Both are loaded using the following instructions:
+    ld e, a
+    ld d, $00
+    ld hl, InstrumentTable / NoiseInstrumentTable
+    add hl, de
+    add hl, de
+
+Which equals the following in hex:
+5F 16 00 21 ?? ?? 19 19
+
+This is a table storing pointers to each instrument in 16-bit values.
+
+Instrument format
+=======================================
+Instruments are stored differently depending on the channel. Because channel 1-2 and 3 use the same table, channel 1/2 and 3 can technically load each other type of instrument, but it will not work properly.
+
+For channel 1/2:
+1. NRx1 value
+2. Envelope on value
+3. Envelope off value
+4-5. Arpeggio sequence pointer
+6-7. Frequency sequence pointer
+8-9. Combination sequence pointer
+
+For channel 3:
+1. Volume on value
+2. Volume off value
+3-4. Arpeggio sequence pointer
+5-6. Frequency sequence pointer
+7-8. Combination sequence pointer
+
+For channel 4:
+1. NR41 value
+2. Envelope on value
+3. Envelope off value
+4-5. NR43 table pointer
+6-7. NR44 table pointer
+
+Arpeggio sequences are used for an arpeggio effect, frequency sequences are used for vibrato, and combination sequences are used for the period source. Specifically, each sequence is structured as follows:
+TB len, value      ; arp (signed semitones), combine (0/1/2), ch3 volume (NR32), noise (NR43 / NR44)
+TW len, delta      ; frequency: signed 16-bit, added to freqval every frame
+TLOOP addr         ; 00 + absolute address: continue there
+
+Combine picks the period source:
+- 0: freqval only (absolute sweeps; the engine sounds set freqval from the game);
+- 1: the note;
+- 2: note + freqval.
+
+Sample table
+=======================================
+At least 3 games - 102 Dalmatians, Colin McRae Rally, and Tony Hawk's Pro Skater 3 - use PCM samples as instruments in music (the last game only uses it for in-game sounds that are stored as music). The samples can be stored in any bank, and a table is used to load the samples, that is structured as follows for each sample entry:
+1. Priority
+2-3. Pointer
+4-5. Length (in 16-byte blocks)
+6. Bank
+
+All samples are stored as 4-bit PCM (unsigned, big-endian) and are played back at 8192hz.
+
+End string
+=======================================
+Many, but not all games using this sound engine have the ASCII string "-- THE END --" at the end of the sound data.
