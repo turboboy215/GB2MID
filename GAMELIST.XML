@@ -209,6 +209,28 @@
 		<parameters>CFG/8-in-1 (Sachen) [C] - Magic Maze.CFG/M</parameters>
 	</rom>
 	<rom>
+		<name>10-Pin Bowling (E) [C][!]</name>
+		<gamecode>AXPP</gamecode>
+		<rev>0</rev>
+		<checksum>02C8</checksum>
+        <crc32>5449cac0</crc32>
+        <format>PCM</format>
+		<part></part>
+		<banks>9</banks>
+		<parameters>CFG/10-Pin Bowling (E) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>10-Pin Bowling (U) [C][!]</name>
+		<gamecode>VP9E</gamecode>
+		<rev>0</rev>
+		<checksum>71E2</checksum>
+        <crc32>720c7023</crc32>
+        <format>PCM</format>
+		<part></part>
+		<banks>9</banks>
+		<parameters>CFG/10-Pin Bowling (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
 		<name>10-Pin Bowling (U) (Unreleased) [M][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -842,7 +864,29 @@
 		<checksum>6876</checksum>
         <crc32>f2128908</crc32>
         <format>AudioArts</format>
-		<part></part>
+		<part>1/2=Music</part>
+		<banks>3F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>102 Dalmatas - Cacharros Al Rescate (S) [C][!]</name>
+		<gamecode>B99S</gamecode>
+		<rev>0</rev>
+		<checksum>6876</checksum>
+        <crc32>f2128908</crc32>
+        <format>AudioArts</format>
+		<part>2/2=Samples</part>
+		<banks>3F</banks>
+		<parameters>6C54\15</parameters>
+	</rom>
+	<rom>
+		<name>102 Dalmatians - Puppies to the Rescue (U) [C][!]</name>
+		<gamecode>B99E</gamecode>
+		<rev>0</rev>
+		<checksum>45E2</checksum>
+        <crc32>56b83539</crc32>
+        <format>AudioArts</format>
+		<part>1/2=Music</part>
 		<banks>3F</banks>
 		<parameters></parameters>
 	</rom>
@@ -852,8 +896,19 @@
 		<rev>0</rev>
 		<checksum>45E2</checksum>
         <crc32>56b83539</crc32>
+        <format>PCM_AudioArts</format>
+		<part>2/2=Samples</part>
+		<banks>3F</banks>
+		<parameters>6C54\15</parameters>
+	</rom>
+	<rom>
+		<name>102 Dalmatiens a la Rescousse (F) [C][!]</name>
+		<gamecode>B99F</gamecode>
+		<rev>0</rev>
+		<checksum>7A48</checksum>
+        <crc32>e84191a8</crc32>
         <format>AudioArts</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>3F</banks>
 		<parameters></parameters>
 	</rom>
@@ -863,8 +918,19 @@
 		<rev>0</rev>
 		<checksum>7A48</checksum>
         <crc32>e84191a8</crc32>
+        <format>PCM_AudioArts</format>
+		<part>2/2=Samples</part>
+		<banks>3F</banks>
+		<parameters>6C54\15</parameters>
+	</rom>
+	<rom>
+		<name>102 Dalmatiner (G) [C][!]</name>
+		<gamecode>B99D</gamecode>
+		<rev>0</rev>
+		<checksum>4D39</checksum>
+        <crc32>725a3483</crc32>
         <format>AudioArts</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>3F</banks>
 		<parameters></parameters>
 	</rom>
@@ -874,10 +940,10 @@
 		<rev>0</rev>
 		<checksum>4D39</checksum>
         <crc32>725a3483</crc32>
-        <format>AudioArts</format>
-		<part></part>
+        <format>PCM_AudioArts</format>
+		<part>2/2=Samples</part>
 		<banks>3F</banks>
-		<parameters></parameters>
+		<parameters>6C54\15</parameters>
 	</rom>
 	<rom>
 		<name>1942 (U) [C][!]</name>
@@ -1601,9 +1667,20 @@
 		<checksum>920D</checksum>
         <crc32>392559ee</crc32>
         <format>GHX</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>A</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>AMF Bowling (U) [C][!]</name>
+		<gamecode>AFPE</gamecode>
+		<rev>0</rev>
+		<checksum>920D</checksum>
+        <crc32>392559ee</crc32>
+        <format>PCM_Vigilante_8</format>
+		<part>2/2=Samples</part>
+		<banks>1</banks>
+		<parameters>1BEB\2D</parameters>
 	</rom>
 	<rom>
 		<name>Animal Breeder (J) [S]</name>
@@ -1843,9 +1920,20 @@
 		<checksum>497A</checksum>
         <crc32>b0d1de8c</crc32>
         <format>Mark_Cooksey</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>8</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Army Men - Air Combat (U) (M3) [C][!]</name>
+		<gamecode>BATE</gamecode>
+		<rev>0</rev>
+		<checksum>497A</checksum>
+        <crc32>b0d1de8c</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>7</banks>
+		<parameters>CFG/Army Men - Air Combat (U) (M3) [C][!] - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Army Men - Sarge's Heroes 2 (U) (M3) [C][!]</name>
@@ -2965,9 +3053,20 @@
 		<checksum>210B</checksum>
         <crc32>82d1a721</crc32>
         <format>GHX</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>2</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Beach'n Ball (E) (M5) [C][!]</name>
+		<gamecode>BVBP</gamecode>
+		<rev>0</rev>
+		<checksum>210B</checksum>
+        <crc32>82d1a721</crc32>
+        <format>PCM_GHX</format>
+		<part>2/2=Samples</part>
+		<banks>2</banks>
+		<parameters>63EE\1C\3C</parameters>
 	</rom>
 	<rom>
 		<name>Bear in the Big Blue House (E) (M7) [C][!]</name>
@@ -3504,7 +3603,29 @@
 		<checksum>ED67</checksum>
         <crc32>748d1345</crc32>
         <format>GHX</format>
-		<part></part>
+		<part>1/2=Music</part>
+		<banks>B</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Blue's Clues - Blue's Alphabet Book (U) [C][!]</name>
+		<gamecode>BALE</gamecode>
+		<rev>0</rev>
+		<checksum>ED67</checksum>
+        <crc32>748d1345</crc32>
+        <format>PCM_GHX</format>
+		<part>2/2=Samples</part>
+		<banks>B</banks>
+		<parameters>6124\33\A</parameters>
+	</rom>
+	<rom>
+		<name>Blue's Clues - Blue's Alphabet Book (U) (V1.1) (Unreleased) [C][!]</name>
+		<gamecode>BALE</gamecode>
+		<rev>1</rev>
+		<checksum>E8CF</checksum>
+        <crc32>f89f58b7</crc32>
+        <format>GHX</format>
+		<part>1/2=Music</part>
 		<banks>B</banks>
 		<parameters></parameters>
 	</rom>
@@ -3514,10 +3635,10 @@
 		<rev>1</rev>
 		<checksum>E8CF</checksum>
         <crc32>f89f58b7</crc32>
-        <format>GHX</format>
-		<part></part>
+        <format>PCM_GHX</format>
+		<part>2/2=Samples</part>
 		<banks>B</banks>
-		<parameters></parameters>
+		<parameters>612C\33\A</parameters>
 	</rom>
 	<rom>
 		<name>Bo Jackson Hit and Run (U) [!]</name>
@@ -4978,9 +5099,20 @@
 		<checksum>103B</checksum>
         <crc32>e9503c71</crc32>
         <format>GHX</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>16</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Carnivale (U) (Unreleased) [C][!]</name>
+		<gamecode>BCAE</gamecode>
+		<rev>0</rev>
+		<checksum>103B</checksum>
+        <crc32>e9503c71</crc32>
+        <format>PCM_Vicarious3</format>
+		<part>2/2=Samples</part>
+		<banks>1</banks>
+		<parameters>0F02\19</parameters>
 	</rom>
 	<rom>
 		<name>Casino Funpak (U) [!]</name>
@@ -5627,9 +5759,20 @@
 		<checksum>3E4C</checksum>
 		<crc32>e93af9c8</crc32>
         <format>AudioArts</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>7E</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Colin McRae Rally (E) [C][!]</name>
+		<gamecode>BCOP</gamecode>
+		<rev>0</rev>
+		<checksum>3E4C</checksum>
+		<crc32>e93af9c8</crc32>
+        <format>PCM_AudioArts</format>
+		<part>2/2=Samples</part>
+		<banks>7E</banks>
+		<parameters>56F4\1F</parameters>
 	</rom>
 	<rom>
 		<name>College Slam (U) [!]</name>
@@ -6540,9 +6683,20 @@
 		<checksum>ADD4</checksum>
         <crc32>40a715fb</crc32>
         <format>Imagineering</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>3</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Deer Hunter (U) [C][!]</name>
+		<gamecode>AXHE</gamecode>
+		<rev>0</rev>
+		<checksum>ADD4</checksum>
+        <crc32>40a715fb</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>D</banks>
+		<parameters>CFG/Deer Hunter (U) [C][!] - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Defender-Joust (U) [S][!]</name>
@@ -13184,7 +13338,29 @@
 		<checksum>D750</checksum>
         <crc32>27632f4f</crc32>
         <format>GHX</format>
-		<part></part>
+		<part>1/2=Music</part>
+		<banks>11</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Jimmy White's Cueball (E) [C][!]</name>
+		<gamecode>BJWP</gamecode>
+		<rev>0</rev>
+		<checksum>D750</checksum>
+        <crc32>27632f4f</crc32>
+        <format>PCM_GHX</format>
+		<part>2/2=Samples</part>
+		<banks>11</banks>
+		<parameters>67BD\2E\10</parameters>
+	</rom>
+	<rom>
+		<name>Jimmy White's Cueball (U) (Unreleased) [C][!]</name>
+		<gamecode>BJWE</gamecode>
+		<rev>0</rev>
+		<checksum>3A56</checksum>
+        <crc32>62c49da9</crc32>
+        <format>GHX</format>
+		<part>1/2=Music</part>
 		<banks>11</banks>
 		<parameters></parameters>
 	</rom>
@@ -13194,10 +13370,10 @@
 		<rev>0</rev>
 		<checksum>3A56</checksum>
         <crc32>62c49da9</crc32>
-        <format>GHX</format>
-		<part></part>
+        <format>PCM_GHX</format>
+		<part>2/2=Samples</part>
 		<banks>11</banks>
-		<parameters></parameters>
+		<parameters>67DA\2E\10</parameters>
 	</rom>
 	<rom>
 		<name>Jing Ling Wang III (Unl) [C][f1]</name>
@@ -18392,6 +18568,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Moguranya (J) [S] </name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7E1B</checksum>
+        <crc32>82fca204</crc32>
+        <format>Taro_Bando</format>
+		<part></part>
+		<banks>8,C,1B</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mole Mania (U) [S][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>EF39</checksum>
+        <crc32>2c36c74c</crc32>
+        <format>Taro_Bando</format>
+		<part></part>
+		<banks>8,C,1B</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Momoirozousan (J) (Unreleased) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -19993,9 +20191,20 @@
 		<checksum>1639</checksum>
         <crc32>3aa75f1c</crc32>
         <format>GHX</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>3C</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>NBA Jam 2001 (U) [C][!]</name>
+		<gamecode>BJAE</gamecode>
+		<rev>0</rev>
+		<checksum>1639</checksum>
+        <crc32>3aa75f1c</crc32>
+        <format>PCM_GHX</format>
+		<part>2/2=Samples</part>
+		<banks>3C</banks>
+		<parameters>5E8F\29\3B</parameters>
 	</rom>
 	<rom>
 		<name>NBA Live 96 (U) [S][!]</name>
@@ -23034,6 +23243,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Pokemon de Panepon (J) [C][!]</name>
+		<gamecode>BPNJ</gamecode>
+		<rev>0</rev>
+		<checksum>BEEE</checksum>
+        <crc32>6bf7e4a6</crc32>
+        <format>Puzzle_Challenge</format>
+		<part>1/2=Music</part>
+		<banks>21</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pokemon de Panepon (J) [C][!]</name>
+		<gamecode>BPNJ</gamecode>
+		<rev>0</rev>
+		<checksum>BEEE</checksum>
+        <crc32>6bf7e4a6</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>61</banks>
+		<parameters>CFG/Pokemon de Panepon (J) [C][!] - Samples.cfg</parameters>
+	</rom>
+	<rom>
 		<name>Pokemon Green (U) [p1][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -23087,6 +23318,50 @@
 		<part></part>
 		<banks>10,11,12,13,14</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pokemon Puzzle Challenge (E) (M5) [C][!]</name>
+		<gamecode>BPNP</gamecode>
+		<rev>0</rev>
+		<checksum>370D</checksum>
+        <crc32>8206b1ce</crc32>
+        <format>Puzzle_Challenge</format>
+		<part>1/2=Music</part>
+		<banks>21</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pokemon Puzzle Challenge (E) (M5) [C][!]</name>
+		<gamecode>BPNP</gamecode>
+		<rev>0</rev>
+		<checksum>370D</checksum>
+        <crc32>8206b1ce</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>23</banks>
+		<parameters>CFG/Pokemon Puzzle Challenge (E) (M5) [C][!] - Samples.cfg</parameters>
+	</rom>
+	<rom>
+		<name>Pokemon Puzzle Challenge (U) [C][!]</name>
+		<gamecode>BPNE</gamecode>
+		<rev>0</rev>
+		<checksum>62A2</checksum>
+        <crc32>d06bba96</crc32>
+        <format>Puzzle_Challenge</format>
+		<part>1/2=Music</part>
+		<banks>21</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pokemon Puzzle Challenge (U) [C][!]</name>
+		<gamecode>BPNE</gamecode>
+		<rev>0</rev>
+		<checksum>62A2</checksum>
+        <crc32>d06bba96</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>61</banks>
+		<parameters>CFG/Pokemon Puzzle Challenge (U) [C][!] - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Pokemon Red Advanced (U) [S][p1][!]</name>
@@ -23183,9 +23458,20 @@
 		<checksum>E37D</checksum>
         <crc32>dd8b189e</crc32>
         <format>GHX</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>15</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Polaris SnoCross (U) [C][!]</name>
+		<gamecode>VPSE</gamecode>
+		<rev>0</rev>
+		<checksum>E37D</checksum>
+        <crc32>dd8b189e</crc32>
+        <format>PCM_Vicarious3</format>
+		<part>2/2=Samples</part>
+		<banks>1</banks>
+		<parameters>105C\14</parameters>
 	</rom>
 	<rom>
 		<name>Pong - The Next Level (U) [C][!]</name>
@@ -23502,9 +23788,20 @@
 		<checksum>37E3</checksum>
         <crc32>ae57d1c3</crc32>
         <format>GHX</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>2</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Power Spike - Pro Beach Volleyball (U) [C][!]</name>
+		<gamecode>BVBE</gamecode>
+		<rev>0</rev>
+		<checksum>37E3</checksum>
+        <crc32>ae57d1c3</crc32>
+        <format>PCM_GHX</format>
+		<part>2/2=Samples</part>
+		<banks>2</banks>
+		<parameters>63EE\1C\3C</parameters>
 	</rom>
 	<rom>
 		<name>Powerpuff Girls, The - Bad Mojo Jojo (E) [C][!]</name>
@@ -23777,9 +24074,20 @@
 		<checksum>A1E1</checksum>
         <crc32>91def753</crc32>
         <format>GHX</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>73</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Prince Naseem Boxing (E) (M3) [C][!]</name>
+		<gamecode>BNCP</gamecode>
+		<rev>0</rev>
+		<checksum>A1E1</checksum>
+        <crc32>91def753</crc32>
+        <format>PCM_GHX</format>
+		<part>2/2=Samples</part>
+		<banks>73</banks>
+		<parameters>5C72\1D\72</parameters>
 	</rom>
 	<rom>
 		<name>Prince of Persia (E) (M5) [C][!]</name>
@@ -23843,9 +24151,20 @@
 		<checksum>A675</checksum>
         <crc32>834a72c0</crc32>
         <format>GHX</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>A</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pro Darts (U) [C][!]</name>
+		<gamecode>AVDE</gamecode>
+		<rev>0</rev>
+		<checksum>A675</checksum>
+        <crc32>834a72c0</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>30</banks>
+		<parameters>CFG/Pro Darts (U) [C][!] - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Pro Foot (F) (M7) [C][!]</name>
@@ -24976,9 +25295,20 @@
 		<checksum>3A8E</checksum>
         <crc32>77a4dc63</crc32>
         <format>GHX</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>33</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Rescue Heroes - Fire Frenzy (U) [C][!]</name>
+		<gamecode>BRQE</gamecode>
+		<rev>0</rev>
+		<checksum>3A8E</checksum>
+        <crc32>77a4dc63</crc32>
+        <format>PCM_GHX</format>
+		<part>2/2=Samples</part>
+		<banks>33</banks>
+		<parameters>63A7\3A\32</parameters>
 	</rom>
 	<rom>
 		<name>Reservoir Rat (E) (M5) [C][!]</name>
@@ -25009,18 +25339,29 @@
 		<checksum>0000</checksum>
         <crc32>53f7bba1</crc32>
         <format>Mark_Cooksey</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>7</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
-		<name>Resident Evil (E) (Prototype 1) [C][a1][!]</name>
+		<name>Resident Evil (E) (Prototype 1) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
 		<checksum>0000</checksum>
-        <crc32>0f5a075f</crc32>
+        <crc32>53f7bba1</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>100</banks>
+		<parameters>CFG/Resident Evil (E) (Prototype 1) [C][!] - Samples.cfg</parameters>
+	</rom>
+	<rom>
+		<name>Resident Evil (E) (Prototype 2) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>0000</checksum>
+        <crc32>e6e722c8</crc32>
         <format>Mark_Cooksey</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>7</banks>
 		<parameters></parameters>
 	</rom>
@@ -25030,21 +25371,10 @@
 		<rev>0</rev>
 		<checksum>0000</checksum>
         <crc32>e6e722c8</crc32>
-        <format>Mark_Cooksey</format>
-		<part></part>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
 		<banks>7</banks>
-		<parameters></parameters>
-	</rom>
-	<rom>
-		<name>Resident Evil (E) (Prototype 2) [C][a1][!]</name>
-		<gamecode></gamecode>
-		<rev>0</rev>
-		<checksum>0000</checksum>
-        <crc32>6de8c8ad</crc32>
-        <format>Mark_Cooksey</format>
-		<part></part>
-		<banks>7</banks>
-		<parameters></parameters>
+		<parameters>CFG/Resident Evil (E) (Prototype 2) [C][!] - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Resident Evil Gaiden (E) (M5) [C][!]</name>
@@ -27231,9 +27561,20 @@
 		<checksum>8B31</checksum>
         <crc32>fb1783f3</crc32>
         <format>GHX</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>15</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Sea-Doo Hydrocross (U) (Unreleased) [C][!]</name>
+		<gamecode>BHYE</gamecode>
+		<rev>0</rev>
+		<checksum>8B31</checksum>
+        <crc32>fb1783f3</crc32>
+        <format>PCM_Vicarious3</format>
+		<part>2/2=Samples</part>
+		<banks>11</banks>
+		<parameters>4000\20</parameters>
 	</rom>
 	<rom>
 		<name>SeaQuest DSV (U) [S][!]</name>
@@ -28463,9 +28804,20 @@
 		<checksum>71CF</checksum>
         <crc32>4ba47dbc</crc32>
         <format>GHX</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>15</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>SnowCross (E) (M6) [C][!]</name>
+		<gamecode>B3OP</gamecode>
+		<rev>0</rev>
+		<checksum>71CF</checksum>
+        <crc32>4ba47dbc</crc32>
+        <format>PCM_Vicarious3</format>
+		<part>2/2=Samples</part>
+		<banks>1</banks>
+		<parameters>11AB\14</parameters>
 	</rom>
 	<rom>
 		<name>Soccer (E) (M3) [S][!]</name>
@@ -28991,7 +29343,29 @@
 		<checksum>80B3</checksum>
         <crc32>f6334dc5</crc32>
         <format>GHX</format>
-		<part></part>
+		<part>1/2=Music</part>
+		<banks>39,3A</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Spider-Man (F) [C][!]</name>
+		<gamecode>BSEF</gamecode>
+		<rev>0</rev>
+		<checksum>80B3</checksum>
+        <crc32>f6334dc5</crc32>
+        <format>PCM_GHX</format>
+		<part>2/2=Samples</part>
+		<banks>3A</banks>
+		<parameters>7077\34\39</parameters>
+	</rom>
+	<rom>
+		<name>Spider-Man (J) [C][!]</name>
+		<gamecode>BSEJ</gamecode>
+		<rev>0</rev>
+		<checksum>3694</checksum>
+        <crc32>5a83dfc4</crc32>
+        <format>GHX</format>
+		<part>1/2=Music</part>
 		<banks>39,3A</banks>
 		<parameters></parameters>
 	</rom>
@@ -29001,8 +29375,19 @@
 		<rev>0</rev>
 		<checksum>3694</checksum>
         <crc32>5a83dfc4</crc32>
+        <format>PCM_GHX</format>
+		<part>2/2=Samples</part>
+		<banks>3A</banks>
+		<parameters>7077\34\39</parameters>
+	</rom>
+	<rom>
+		<name>Spider-Man (U) [C][!]</name>
+		<gamecode>BSEE</gamecode>
+		<rev>0</rev>
+		<checksum>7958</checksum>
+        <crc32>34e2b3ba</crc32>
         <format>GHX</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>39,3A</banks>
 		<parameters></parameters>
 	</rom>
@@ -29012,10 +29397,10 @@
 		<rev>0</rev>
 		<checksum>7958</checksum>
         <crc32>34e2b3ba</crc32>
-        <format>GHX</format>
-		<part></part>
-		<banks>39,3A</banks>
-		<parameters></parameters>
+        <format>PCM_GHX</format>
+		<part>2/2=Samples</part>
+		<banks>3A</banks>
+		<parameters>7077\34\39</parameters>
 	</rom>
 	<rom>
 		<name>Spider-Man 2 - The Sinister Six (U) [C][!]</name>
@@ -29024,9 +29409,20 @@
 		<checksum>74D6</checksum>
         <crc32>a7faaccf</crc32>
         <format>GHX</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>A</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Spider-Man 2 - The Sinister Six (U) [C][!]</name>
+		<gamecode>B2SE</gamecode>
+		<rev>0</rev>
+		<checksum>74D6</checksum>
+        <crc32>a7faaccf</crc32>
+        <format>PCM_GHX</format>
+		<part>2/2=Samples</part>
+		<banks>A</banks>
+		<parameters>7464\1E\A</parameters>
 	</rom>
 	<rom>
 		<name>Spider-Man 3 - Movie Version (Unl) [C][f1]</name>
@@ -29544,6 +29940,28 @@
 		<part></part>
 		<banks>3E</banks>
 		<parameters>M</parameters>
+	</rom>
+	<rom>
+		<name>Star Wars Episode I - Racer (UE) [C][!]</name>
+		<gamecode>VYHE</gamecode>
+		<rev>0</rev>
+		<checksum>9E20</checksum>
+        <crc32>0ebc5758</crc32>
+        <format>Sataru_Kurita</format>
+		<part>1/2=Music</part>
+		<banks>4</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Star Wars Episode I - Racer (UE) [C][!]</name>
+		<gamecode>VYHE</gamecode>
+		<rev>0</rev>
+		<checksum>9E20</checksum>
+        <crc32>0ebc5758</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>6</banks>
+		<parameters>CFG/Star Wars Episode I - Racer (UE) [C][!] - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Stargate (J) (Unreleased) [!]</name>
@@ -32049,7 +32467,29 @@
 		<checksum>26B2</checksum>
         <crc32>2988fc78</crc32>
         <format>GHX</format>
-		<part></part>
+		<part>1/2=Music</part>
+		<banks>7F</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tomb Raider (UE) (M5) [C][!]</name>
+		<gamecode>AT9E</gamecode>
+		<rev>0</rev>
+		<checksum>26B2</checksum>
+        <crc32>2988fc78</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>F9</banks>
+		<parameters>CFG/Tomb Raider (UE) (M5) [C][!] - Samples.cfg</parameters>
+	</rom>
+	<rom>
+		<name>Tomb Raider (UE) (M5) (Beta) [C][!]</name>
+		<gamecode>AT9E</gamecode>
+		<rev>0</rev>
+		<checksum>49B2</checksum>
+        <crc32>58590868</crc32>
+        <format>GHX</format>
+		<part>1/2=Music</part>
 		<banks>7F</banks>
 		<parameters></parameters>
 	</rom>
@@ -32059,8 +32499,19 @@
 		<rev>0</rev>
 		<checksum>49B2</checksum>
         <crc32>58590868</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>F9</banks>
+		<parameters>CFG/Tomb Raider (UE) (M5) (Beta) [C][!] - Samples.cfg</parameters>
+	</rom>
+	<rom>
+		<name>Tomb Raider (Unl) [C][!]</name>
+		<gamecode>AT9E</gamecode>
+		<rev>0</rev>
+		<checksum>991F</checksum>
+        <crc32>269f0852</crc32>
         <format>GHX</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>7F</banks>
 		<parameters></parameters>
 	</rom>
@@ -32070,10 +32521,10 @@
 		<rev>0</rev>
 		<checksum>991F</checksum>
         <crc32>269f0852</crc32>
-        <format>GHX</format>
-		<part></part>
-		<banks>7F</banks>
-		<parameters></parameters>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>F9</banks>
+		<parameters>CFG/Tomb Raider (Unl) [C][!] - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Tomb Raider - Curse of the Sword (U) [C][!]</name>
@@ -32082,7 +32533,29 @@
 		<checksum>0A2C</checksum>
         <crc32>02c1035a</crc32>
         <format>GHX</format>
-		<part></part>
+		<part>1/2=Music</part>
+		<banks>E</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tomb Raider - Curse of the Sword (U) [C][!]</name>
+		<gamecode>B9TE</gamecode>
+		<rev>0</rev>
+		<checksum>0A2C</checksum>
+        <crc32>02c1035a</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>FC</banks>
+		<parameters>CFG/Tomb Raider - Curse of the Sword (U) [C][!] - Samples.cfg</parameters>
+	</rom>
+	<rom>
+		<name>Tomb Raider 2 (Unl) [C][!]</name>
+		<gamecode>B9TE</gamecode>
+		<rev>0</rev>
+		<checksum>0A2C</checksum>
+        <crc32>717a5d19</crc32>
+        <format>GHX</format>
+		<part>1/2=Music</part>
 		<banks>E</banks>
 		<parameters></parameters>
 	</rom>
@@ -32092,10 +32565,10 @@
 		<rev>0</rev>
 		<checksum>0A2C</checksum>
         <crc32>717a5d19</crc32>
-        <format>GHX</format>
-		<part></part>
-		<banks>E</banks>
-		<parameters></parameters>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>FC</banks>
+		<parameters>CFG/Tomb Raider 2 (Unl) [C][!] - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Tonic Trouble (E) (M6) [C][!]</name>
@@ -32159,9 +32632,20 @@
 		<checksum>235B</checksum>
         <crc32>fd5290a1</crc32>
         <format>AudioArts</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>3E,40</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tony Hawk's Pro Skater 3 (U) [C][!]</name>
+		<gamecode>B3TE</gamecode>
+		<rev>0</rev>
+		<checksum>235B</checksum>
+        <crc32>fd5290a1</crc32>
+        <format>PCM_AudioArts</format>
+		<part>2/2=Samples</part>
+		<banks>3E</banks>
+		<parameters>54BE\8</parameters>
 	</rom>
 	<rom>
 		<name>Toobin' (U) [C][!]</name>
@@ -32544,9 +33028,20 @@
 		<checksum>3100</checksum>
         <crc32>74e04c07</crc32>
         <format>Tiertex</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>33</banks>
 		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Triple Play 2001 (U) [C][!]</name>
+		<gamecode>BTPE</gamecode>
+		<rev>0</rev>
+		<checksum>3100</checksum>
+        <crc32>74e04c07</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>2F</banks>
+		<parameters>CFG/Triple Play 2001 (U) [C][!] - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Trouballs (U) [C][!]</name>
@@ -33220,6 +33715,17 @@
 		<parameters>CFG/Vex Block (Sachen) [!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Vigilante 8 (U) [C][!]</name>
+		<gamecode>VV8E</gamecode>
+		<rev>0</rev>
+		<checksum>B115</checksum>
+        <crc32>d1a188dc</crc32>
+        <format>PCM_Vigilante_8</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>1F4E\24</parameters>
+	</rom>
+	<rom>
 		<name>VIP (E) (M5) [C][!]</name>
 		<gamecode>BVIP</gamecode>
 		<rev>0</rev>
@@ -33259,9 +33765,20 @@
 		<checksum>875A</checksum>
         <crc32>cff671f1</crc32>
         <format>GHX</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>24</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>VR Sports Powerboat Racing (U) [C][!]</name>
+		<gamecode>BPBE</gamecode>
+		<rev>0</rev>
+		<checksum>875A</checksum>
+        <crc32>cff671f1</crc32>
+        <format>PCM_GHX</format>
+		<part>2/2=Samples</part>
+		<banks>24</banks>
+		<parameters>6B3D\2D\23</parameters>
 	</rom>
 	<rom>
 		<name>V-Rally - Championship Edition (E) (M4) [C][!]</name>
@@ -33864,7 +34381,29 @@
 		<checksum>7A83</checksum>
         <crc32>2612f8c4</crc32>
         <format>Mark_Cooksey</format>
-		<part></part>
+		<part>1/2=Music</part>
+		<banks>5,7</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Woody Woodpecker (E) (M5) [C][!]</name>
+		<gamecode>BWPP</gamecode>
+		<rev>0</rev>
+		<checksum>7A83</checksum>
+        <crc32>2612f8c4</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>25</banks>
+		<parameters>CFG/Woody Woodpecker (E) (M5) [C][!] - Samples.cfg</parameters>
+	</rom>
+	<rom>
+		<name>Woody Woodpecker (U) [C][!]</name>
+		<gamecode>BWPE</gamecode>
+		<rev>0</rev>
+		<checksum>1ABF</checksum>
+        <crc32>bd2d1f8b</crc32>
+        <format>Mark_Cooksey</format>
+		<part>1/2=Music</part>
 		<banks>5,7</banks>
 		<parameters></parameters>
 	</rom>
@@ -33874,10 +34413,10 @@
 		<rev>0</rev>
 		<checksum>1ABF</checksum>
         <crc32>bd2d1f8b</crc32>
-        <format>Mark_Cooksey</format>
-		<part></part>
-		<banks>5,7</banks>
-		<parameters></parameters>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>25</banks>
+		<parameters>CFG/Woody Woodpecker (U) [C][!] - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Woody Woodpecker Racing (E) [C][!]</name>
@@ -35077,6 +35616,17 @@
 		<part></part>
 		<banks>E,F</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Zebco Fishing! (U) [C][!]</name>
+		<gamecode>VZFE</gamecode>
+		<rev>0</rev>
+		<checksum>2AE1</checksum>
+        <crc32>3cc6b1f9</crc32>
+        <format>PCM_Zebco</format>
+		<part></part>
+		<banks>1</banks>
+		<parameters>2548</parameters>
 	</rom>
 	<rom>
 		<name>Zelda no Densetsu - Yume o Miru Shima (J) (V1.0)</name>

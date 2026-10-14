@@ -112,3 +112,11 @@
 #define Pool_3D					0x6F
 #define AVM						0x70
 #define Smurfs_2				0x71
+#define Taro_Bando				0x72
+#define Sataru_Kurita			0x73
+#define Puzzle_Challenge		0x74
+#define PCM_GHX					0x75
+#define PCM_AudioArts			0x76
+#define PCM_Vigilante_8			0x77
+#define PCM_Zebco				0x78
+#define PCM_Vicarious3			0x79

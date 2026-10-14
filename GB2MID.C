@@ -959,9 +959,17 @@ int main(int args, char* argv[])
             {
                 driver = PCM;
             }
+            else if (!strcmp(formatString, "PCM_AudioArts"))
+            {
+                driver = PCM_AudioArts;
+            }
             else if (!strcmp(formatString, "PCM_Eastridge"))
             {
                 driver = PCM_Eastridge;
+            }
+            else if (!strcmp(formatString, "PCM_GHX"))
+            {
+                driver = PCM_GHX;
             }
             else if (!strcmp(formatString, "PCM_Klax"))
             {
@@ -971,6 +979,18 @@ int main(int args, char* argv[])
             {
                 driver = PCM_MK4;
             }
+            else if (!strcmp(formatString, "PCM_Vicarious3"))
+            {
+                driver = PCM_Vicarious3;
+            }
+            else if (!strcmp(formatString, "PCM_Vigilante_8"))
+            {
+                driver = PCM_Vigilante_8;
+            }
+            else if (!strcmp(formatString, "PCM_Zebco"))
+            {
+                driver = PCM_Zebco;
+            }
             else if (!strcmp(formatString, "Pool_3D"))
             {
                 driver = Pool_3D;
@@ -978,6 +998,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "Probe_Software"))
             {
                 driver = Probe_Software;
+            }
+            else if (!strcmp(formatString, "Puzzle_Challenge"))
+            {
+                driver = Puzzle_Challenge;
             }
             else if (!strcmp(formatString, "RARE"))
             {
@@ -994,6 +1018,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "Saffire"))
             {
                 driver = Saffire;
+            }
+            else if (!strcmp(formatString, "Sataru_Kurita"))
+            {
+                driver = Sataru_Kurita;
             }
             else if (!strcmp(formatString, "Sculptured_Software"))
             {
@@ -1034,6 +1062,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "Taito"))
             {
                 driver = Taito;
+            }
+            else if (!strcmp(formatString, "Taro_Bando"))
+            {
+                driver = Taro_Bando;
             }
             else if (!strcmp(formatString, "Tarantula_Studios"))
             {
