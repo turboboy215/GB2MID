@@ -5,6 +5,7 @@
 #include <math.h>
 #include "3DPOOL.H"
 #include "SHARED.H"
+#include "AAPCM.H"
 #include "ACT.H"
 #include "AICOM.H"
 #include "AJG.H"
@@ -46,6 +47,7 @@
 #include "GAMEFRK.H"
 #include "GEX.H"
 #include "GHX.H"
+#include "GHXPCM.H"
 #include "GREMLIN.H"
 #include "GRC1.H"
 #include "GRC2.H"
@@ -75,6 +77,7 @@
 #include "MIDI.H"
 #include "MK4PCM.H"
 #include "MMSS.H"
+#include "MOLE.H"
 #include "MPLAY.H"
 #include "MUSICBOX.H"
 #include "MUSYX.H"
@@ -89,6 +92,7 @@
 #include "PARAGON5.H"
 #include "PBOX.H"
 #include "PCM.H"
+#include "POKEPUZ.H"
 #include "PROBE.H"
 #include "RARE.H"
 #include "REALTIME.H"
@@ -102,6 +106,7 @@
 #include "SUNSOFT.H"
 #include "SWC1.H"
 #include "SWC2.H"
+#include "SWRACER.H"
 #include "TAITO.H"
 #include "TARANTLA.H"
 #include "TECHNOS.H"
@@ -114,9 +119,12 @@
 #include "UBISOFT.H"
 #include "UGB.H"
 #include "VI.H"
+#include "VIGIL8.H"
+#include "VV3PCM.H"
 #include "WARIOL2.H"
 #include "WICKED.H"
 #include "WINKYSFT.H"
+#include "ZEBCO.H"
 #define bankSize 16384
 
 int foundTable = 0;
@@ -341,6 +349,88 @@ unsigned int WriteNoteEvent45(unsigned char* buffer, unsigned int pos, unsigned 
 	return pos;
 
 }
+
+unsigned int WriteNoteEventOnPB(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst, int progBank)
+{
+	int deltaValue;
+	int midiBank;
+	int midiProg;
+	int bankChanged;
+	unsigned char bankStatus;
+	midiBank = inst / 128;
+	midiProg = inst % 128;
+	bankChanged = (midiBank != progBank);
+	deltaValue = WriteDeltaTime(buffer, pos, delay);
+	pos += deltaValue;
+
+	if (firstNote == 1 || bankChanged == 1)
+	{
+		if (bankChanged == 1)
+		{
+			if (curChan != 3)
+			{
+				bankStatus = 0xB0 | curChan;
+			}
+			else
+			{
+				bankStatus = 0xB9;
+			}
+
+			/*Bank Select MSB (CC0)*/
+			Write8B(&buffer[pos], bankStatus);
+			Write8B(&buffer[pos + 1], 0x00);
+			Write8B(&buffer[pos + 2], midiBank);
+			pos += 3;
+			/*Delta 0*/
+			Write8B(&buffer[pos], 0);
+			pos++;
+
+			/*Bank Select LSB (CC32)*/
+			Write8B(&buffer[pos], bankStatus);
+			Write8B(&buffer[pos + 1], 0x20);
+			Write8B(&buffer[pos + 2], 0x00);
+			pos += 3;
+			/*Delta 0*/
+			Write8B(&buffer[pos], 0);
+			pos++;
+
+			progBank = midiBank;
+		}
+		if (curChan != 3)
+		{
+			Write8B(&buffer[pos], 0xC0 | curChan);
+		}
+		else
+		{
+			Write8B(&buffer[pos], 0xC9);
+		}
+
+
+		Write8B(&buffer[pos + 1], midiProg);
+		Write8B(&buffer[pos + 2], 0);
+
+		if (curChan != 3)
+		{
+			Write8B(&buffer[pos + 3], 0x90 | curChan);
+		}
+		else
+		{
+			Write8B(&buffer[pos + 3], 0x99);
+		}
+
+
+		pos += 4;
+	}
+
+	Write8B(&buffer[pos], note);
+	pos++;
+	Write8B(&buffer[pos], curVol);
+	pos++;
+
+	return pos;
+
+}
+
 
 int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value)
 {
@@ -808,8 +898,14 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case PCM:
 			PCMProc(banks[curBank], parameters);
 			break;
+		case PCM_AudioArts:
+			AAPCMProc(banks[curBank], parameters);
+			break;
 		case PCM_Eastridge:
 			EastrPCMProc(banks[curBank], parameters);
+			break;
+		case PCM_GHX:
+			GHXPCMProc(banks[curBank], parameters);
 			break;
 		case PCM_Klax:
 			KlaxPCMProc(banks[curBank], parameters);
@@ -817,11 +913,23 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case PCM_MK4:
 			MK4PCMProc(banks[curBank], parameters);
 			break;
+		case PCM_Vicarious3:
+			VV3PCMProc(banks[curBank], parameters);
+			break;
+		case PCM_Vigilante_8:
+			Vigil8Proc(banks[curBank], parameters);
+			break;
+		case PCM_Zebco:
+			ZebcoProc(banks[curBank], parameters);
+			break;
 		case Pool_3D:
 			Pool3DProc(banks[curBank], parameters);
 			break;
 		case Probe_Software:
 			ProbProc(banks[curBank]);
+			break;
+		case Puzzle_Challenge:
+			PokePuzProc(banks[curBank]);
 			break;
 		case RARE:
 			RAREProc(parameters);
@@ -834,6 +942,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Saffire:
 			SaffireProc(banks[curBank], parameters);
+			break;
+		case Sataru_Kurita:
+			SWRacerProc(banks[curBank]);
 			break;
 		case Sculptured_Software:
 			SculptProc(banks[curBank], parameters);
@@ -867,6 +978,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Tarantula_Studios:
 			TarantulaProc(banks[curBank], parameters);
+			break;
+		case Taro_Bando:
+			MoleProc(banks[curBank]);
 			break;
 		case Technos_Japan:
 			TJProc(banks[curBank]);

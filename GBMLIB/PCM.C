@@ -217,6 +217,8 @@ void PCMsam2wav(int sampNum, long ptr, int bank, int len, int freq, int fmt)
 
 		totalLen = 0;
 
+		fseek(wav, 44, SEEK_SET);
+
 		if (fmt == PCM_FMT_4BIT_BE)
 		{
 			while (totalLen < len)
@@ -303,6 +305,38 @@ void PCMsam2wav(int sampNum, long ptr, int bank, int len, int freq, int fmt)
 			}
 		}
 
+		else if (fmt == PCM_FMT_2BIT)
+		{
+			while (totalLen < len)
+			{
+				c = gb_read_byte(b, cpu);
+				/* First sample: level bits 5-4, repeated 1 + bits 7-6 times */
+				/* Levels are raw ch3 output with all-$F wave: 0->0, 1->15, 2->7, 3->3, scaled x17 to 8-bit */
+				c1 = (c >> 4) & 0x03;
+				if (c1 == 0) s = 0 * 17;
+				else if (c1 == 1) s = 15 * 17;
+				else if (c1 == 2) s = 7 * 17;
+				else s = 3 * 17;
+				for (k = 0; k < (1 + ((c >> 6) & 0x03)); k++)
+				{
+					fputc(s, wav);
+					fileSize++;
+				}
+				/* Second sample: level bits 1-0, repeated 1 + bits 3-2 times */
+				c1 = c & 0x03;
+				if (c1 == 0) s = 0 * 17;
+				else if (c1 == 1) s = 15 * 17;
+				else if (c1 == 2) s = 7 * 17;
+				else s = 3 * 17;
+				for (k = 0; k < (1 + ((c >> 2) & 0x03)); k++)
+				{
+					fputc(s, wav);
+					fileSize++;
+				}
+				cpu++;
+				totalLen++;
+			}
+		}
 
 		/*Fill in the header data*/
 		fseek(wav, 0, SEEK_SET);
@@ -319,7 +353,7 @@ void PCMsam2wav(int sampNum, long ptr, int bank, int len, int freq, int fmt)
 		wavHeader.byteRate = freq * 1 * 8 / 8;
 		wavHeader.bytesPerSamp = 1 * 8 / 8;
 		wavHeader.bits = 8;
-		wavHeader.dataSize = fileSize;
+		wavHeader.dataSize = fileSize - 36;
 
 		fwrite(&wavHeader, sizeof(wavHeader), 1, wav);
 

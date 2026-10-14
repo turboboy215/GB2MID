@@ -3,7 +3,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stddef.h>
+#include <direct.h>
 #include "SHARED.H"
+#include "CLIMAX.H"
 #include "RNC.H"
 
 #define bankSize 16384
@@ -41,6 +43,8 @@ long imedStart;
 long imedEnd;
 int compressed;
 int compSize;
+int drvVers;
+int songBank;
 
 char* tempPnt;
 
@@ -68,7 +72,7 @@ const unsigned char sineWave[64] = { 0x00, 0x00, 0x00, 0x03, 0x06, 0x0A, 0x0E, 0
 /*Strings to check in CFG (ROM mode)*/
 char string1[100];
 char string2[100];
-char checkStrings[6][100] = { "numSongs=", "bank=", "base=", "start=", "end=", "comp=" };
+char ClimaxcheckStrings[6][100] = { "numSongs=", "bank=", "base=", "start=", "end=", "comp=" };
 
 /*Function prototypes*/
 unsigned short ReadLE16(unsigned char* Data);
@@ -80,10 +84,12 @@ void WriteLE16(unsigned char* buffer, unsigned int value);
 void WriteLE24(unsigned char* buffer, unsigned long value);
 void WriteLE32(unsigned char* buffer, unsigned long value);
 void imed2mod(long list, long dir);
-void IMEDcopyData(unsigned char* source, unsigned char* dest, long base, long dataStart, long dataEnd);
+void IMEDcopyData(unsigned char* source, unsigned char* dest, long dataStart, long dataEnd);
+
 
 void IMEDProc(char parameters[4][100])
 {
+	drvVers = IMED_VER_STD;
 	if ((cfg = fopen(parameters[0], "r")) == NULL)
 	{
 		printf("ERROR: Unable to open configuration file %s!\n", parameters[0]);
@@ -98,7 +104,7 @@ void IMEDProc(char parameters[4][100])
 		/*Get the total number of songs*/
 		fgets(string1, 10, cfg);
 
-		if (memcmp(string1, checkStrings[0], 1))
+		if (memcmp(string1, ClimaxcheckStrings[0], 1))
 		{
 			printf("ERROR: Invalid CFG data!\n");
 			exit(1);
@@ -127,53 +133,37 @@ void IMEDProc(char parameters[4][100])
 
 				/*Get the bank of each song*/
 				fgets(string1, 6, cfg);
-				if (memcmp(string1, checkStrings[1], 1))
+				if (memcmp(string1, ClimaxcheckStrings[1], 1))
 				{
 					exitError = 1;
 				}
 				fgets(string1, 5, cfg);
 				{
-					bank = strtol(string1, NULL, 16);
+					songBank = strtol(string1, NULL, 16);
 				}
 
-				printf("Song %i, Bank: %01X\n", songNum, bank);
+				printf("Song %i, Bank: %01X\n", songNum, songBank);
 
 				/*Copy the ROM's bank data into RAM*/
-				if (bank != 1)
-				{
-					bankAmt = bankSize;
-					fseek(rom, ((bank - 1) * bankSize), SEEK_SET);
-					romData = (unsigned char*)malloc(bankSize);
-					fread(romData, 1, bankSize, rom);
-				}
 
-				else
+				if (songBank < 0x02)
 				{
-					bankAmt = 0;
-					fseek(rom, ((bank - 1) * bankSize * 2), SEEK_SET);
-					romData = (unsigned char*)malloc(bankSize * 2);
-					fread(romData, 1, bankSize * 2, rom);
+					songBank = 0x02;
 				}
+				bankAmt = bankSize;
 
-				/*Skip new line*/
-				fgets(string1, 2, cfg);
-
-				/*Now look for the "base"*/
-				fgets(string1, 6, cfg);
-				if (memcmp(string1, checkStrings[2], 1))
-				{
-					exitError = 1;
-				}
-				fgets(string1, 5, cfg);
-				base = strtol(string1, NULL, 16);
-				printf("Song %i, Base: 0x%04X\n", songNum, base);
+				fseek(rom, 0, SEEK_SET);
+				romData = (unsigned char*)malloc(bankSize * 2);
+				fread(romData, 1, bankSize, rom);
+				fseek(rom, ((songBank - 1) * bankSize), SEEK_SET);
+				fread(romData + bankSize, 1, bankSize, rom);
 
 				/*Skip new line*/
 				fgets(string1, 2, cfg);
 
 				/*Get the "start" of the module*/
 				fgets(string1, 7, cfg);
-				if (memcmp(string1, checkStrings[3], 1))
+				if (memcmp(string1, ClimaxcheckStrings[3], 1))
 				{
 					exitError = 1;
 				}
@@ -186,7 +176,7 @@ void IMEDProc(char parameters[4][100])
 
 				/*Get the "end" of the module*/
 				fgets(string1, 5, cfg);
-				if (memcmp(string1, checkStrings[4], 1))
+				if (memcmp(string1, ClimaxcheckStrings[4], 1))
 				{
 					exitError = 1;
 				}
@@ -199,7 +189,7 @@ void IMEDProc(char parameters[4][100])
 
 				/*Check if the module is compressed*/
 				fgets(string1, 6, cfg);
-				if (memcmp(string1, checkStrings[5], 1))
+				if (memcmp(string1, ClimaxcheckStrings[5], 1))
 				{
 					exitError = 1;
 				}
@@ -208,13 +198,13 @@ void IMEDProc(char parameters[4][100])
 				if (compressed == 0)
 				{
 					printf("Song %i is uncompressed\n", songNum);
-					IMEDcopyData(romData, imedData, base, imedStart, imedEnd);
+					IMEDcopyData(romData, imedData, imedStart, imedEnd);
 				}
 				else if (compressed == 1)
 				{
 					printf("Song %i is compressed (RNC)\n", songNum);
 					rncData = (unsigned char*)malloc(0x1E00000);
-					IMEDcopyData(romData, rncData, base, imedStart, imedEnd);
+					IMEDcopyData(romData, rncData, imedStart, imedEnd);
 					imedData = (unsigned char*)malloc(0x1E00000);
 					compSize = imedEnd - imedStart + 1;
 					procRNC(rncData, imedData, compSize);
@@ -302,15 +292,14 @@ void imed2mod(long list, long dir)
 	}
 
 	sprintf(outfile, "song%i.mod", songNum);
-
 	if ((mod = fopen(outfile, "wb")) == NULL)
 	{
 		printf("ERROR: Unable to write to file song%i.mod!\n", songNum);
+
 		exit(2);
 	}
 	else
 	{
-
 		/*Write MOD header*/
 		modPos = 0;
 		sprintf((char*)&modData[modPos], "GB2MID conversion  ");
@@ -608,7 +597,7 @@ void imed2mod(long list, long dir)
 }
 
 /*Copy the module data from ROM*/
-void IMEDcopyData(unsigned char* source, unsigned char* dest, long base, long dataStart, long dataEnd)
+void IMEDcopyData(unsigned char* source, unsigned char* dest, long dataStart, long dataEnd)
 {
 	int k = dataStart;
 	int l = 0;
@@ -620,7 +609,7 @@ void IMEDcopyData(unsigned char* source, unsigned char* dest, long base, long da
 
 		while (k <= dataEnd)
 		{
-			imedData[l] = romData[k - base];
+			imedData[l] = romData[k];
 			k++;
 			l++;
 		}
@@ -633,10 +622,9 @@ void IMEDcopyData(unsigned char* source, unsigned char* dest, long base, long da
 
 		while (k <= dataEnd)
 		{
-			rncData[l] = romData[k - base];
+			rncData[l] = romData[k];
 			k++;
 			l++;
 		}
 	}
-	free(romData);
 }

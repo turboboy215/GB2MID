@@ -111,9 +111,12 @@ void MK4sam2wav(int sampNum, long ptr, int bank, int freq)
 		cpu = ptr;
 		b = bank;
 
+		fseek(wav, 44, SEEK_SET);
+
 		temp1 = gb_read_byte(b, cpu);
 		cpu++;
 		temp2 = gb_read_byte(b, cpu);
+		cpu++;
 		sampLen = (temp1 + (temp2 * 0x100)) * 0x10;
 		sampPos = 0;
 
@@ -148,7 +151,7 @@ void MK4sam2wav(int sampNum, long ptr, int bank, int freq)
 		wavHeader.byteRate = freq * 1 * 8 / 8;
 		wavHeader.bytesPerSamp = 1 * 8 / 8;
 		wavHeader.bits = 8;
-		wavHeader.dataSize = fileSize;
+		wavHeader.dataSize = fileSize - 36;
 
 		fwrite(&wavHeader, sizeof(wavHeader), 1, wav);
 

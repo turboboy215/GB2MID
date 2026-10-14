@@ -114,6 +114,14 @@
 #define Pool_3D					0x6F
 #define AVM						0x70
 #define Smurfs_2				0x71
+#define Taro_Bando				0x72
+#define Sataru_Kurita			0x73
+#define Puzzle_Challenge		0x74
+#define PCM_GHX					0x75
+#define PCM_AudioArts			0x76
+#define PCM_Vigilante_8			0x77
+#define PCM_Zebco				0x78
+#define PCM_Vicarious3			0x79
 
 extern FILE * rom, * mid;
 extern long masterBank;
@@ -155,6 +163,7 @@ extern unsigned int WriteNoteEventOn(unsigned char* buffer, unsigned int pos, un
 extern unsigned int WriteNoteEventOff(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 extern unsigned int WriteNoteEventAltOn(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 extern unsigned int WriteNoteEventAltOff(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
+extern unsigned int WriteNoteEventOnPB(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst, int progBank);
 extern int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 extern int gbFreq2Note(unsigned int freq);
 extern unsigned char gb_read_byte(int bank, int cpu);

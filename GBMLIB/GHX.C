@@ -1,6 +1,8 @@
 /*GHX (Shin'en)*/
+#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <stddef.h>
 #include <direct.h>
 #include "SHARED.H"
 #include "GHX.H"
@@ -22,11 +24,15 @@ long songTable = 0;
 long insTable = 0;
 long patTable = 0;
 long songInfo[4];
-unsigned long seqList[500];
 char songNames[50][21];
 int multiBanks;
 int totalSeqs;
 int curBank;
+int foundTable;
+int curVol;
+int curInst;
+int drvVers;
+int curSong;
 
 char folderName[100];
 
@@ -52,83 +58,87 @@ void WriteLE16(unsigned char* buffer, unsigned int value);
 void WriteLE24(unsigned char* buffer, unsigned long value);
 void WriteLE32(unsigned char* buffer, unsigned long value);
 void GHXsong2xm(int songNum, long info[4]);
-void GHXgetMacroList(unsigned long list[], long offset);
 void GHXgetSongTitles(char names[50][21]);
 
 /*Function prototypes*/
 void GHXProc(int bank)
 {
-	if (bank != 1)
+	drvVers = GHX_VER_STD;
+	curVol = 120;
+	curInst = 0;
+	foundTable = 0;
+
+	if (bank < 0x02)
 	{
-		bankAmt = bankSize;
-	}
-	else
-	{
-		bankAmt = 0;
+		bank = 0x02;
 	}
 
-	fseek(rom, ((bank - 1) * bankSize), SEEK_SET);
-	romData = (unsigned char*)malloc(bankSize);
+	bankAmt = bankSize;
+
+	fseek(rom, 0, SEEK_SET);
+	romData = (unsigned char*)malloc(bankSize * 2);
 	fread(romData, 1, bankSize, rom);
+	fseek(rom, ((bank - 1) * bankSize), SEEK_SET);
+	fread(romData + bankSize, 1, bankSize, rom);
 
-	for (i = 0; i < bankSize; i++)
+	for (i = 0; i < (bankSize * 2); i++)
 	{
 		if (!memcmp(&romData[i], magicBytes, 8))
 		{
-			for (j = i; j < bankSize; j++)
+			for (j = i; j < (bankSize * 2); j++)
 			{
 				if (!memcmp(&romData[j], headerBytes, 3))
 				{
-					headerOffset = j + bankAmt;
+					headerOffset = j;
 					printf("GHX header found at address 0x%04X!\n", headerOffset);
+					foundTable = 1;
 					break;
 				}
 			}
-			if (headerOffset != NULL)
+			if (foundTable == 1)
 			{
-				numSongs = romData[headerOffset - bankAmt + 3];
+				numSongs = romData[headerOffset + 3];
 				if (numSongs == 0)
 				{
 					numSongs = 1;
 				}
 				printf("Number of songs: %i\n", numSongs);
-				patRows = romData[headerOffset - bankAmt + 4];
+				patRows = romData[headerOffset + 4];
 				printf("Rows per pattern: %i\n", patRows);
-				patTable = ReadLE16(&romData[headerOffset - bankAmt + 6]);
+				patTable = ReadLE16(&romData[headerOffset + 6]);
 				printf("Sequence data table: 0x%04X\n", patTable);
-				insTable = ReadLE16(&romData[headerOffset - bankAmt + 8]);
+				insTable = ReadLE16(&romData[headerOffset + 8]);
 				printf("Instrument table: 0x%04X\n", insTable);
-				songTable = ReadLE16(&romData[headerOffset - bankAmt + 10]);
-				printf("Song table: 0x%04X\n", songTable);
-				GHXgetMacroList(seqList, patTable);
+				songTable = ReadLE16(&romData[headerOffset + 10]);
+				printf("Song order table: 0x%04X\n", songTable);
 				GHXgetSongTitles(songNames);
 
 				i = songTable;
-				for (songNum = 1; songNum <= numSongs; songNum++)
+				for (curSong = 1; curSong <= numSongs; curSong++)
 				{
-					printf("\nSong %i:\n", songNum);
+					printf("\nSong %i:\n", curSong);
 					if (songNames[0][0] != '\0')
 					{
-						printf("Title: %s\n", songNames[songNum - 1]);
+						printf("Title: %s\n", songNames[curSong - 1]);
 					}
-					songInfo[0] = romData[i - bankAmt] + 1;
+					songInfo[0] = romData[i] + 1;
 					printf("Number of patterns: %i\n", songInfo[0]);
-					songInfo[1] = ReadLE16(&romData[i - bankAmt + 1]);
+					songInfo[1] = ReadLE16(&romData[i + 1]);
 					printf("Song data address: 0x%04X\n", songInfo[1]);
-					songInfo[2] = romData[i - bankAmt + 3] + 1;
+					songInfo[2] = romData[i + 3] + 1;
 					printf("Loop pattern relative to final pattern: %i\n", songInfo[2]);
-					songInfo[3] = ReadLE16(&romData[i - bankAmt + 4]);
+					songInfo[3] = ReadLE16(&romData[i + 4]);
 					printf("Pattern loop address: 0x%04X\n", songInfo[3]);
 					if (songInfo[0] < 128)
 					{
-						GHXsong2xm(songNum, songInfo);
+						GHXsong2xm(curSong, songInfo);
 					}
 					else
 					{
-						if (songNum == 3 && songInfo[1] == 0x5187 && bank == 0x0A)
+						if (curSong == 3 && songInfo[1] == 0x5187 && bank == 0x0A)
 						{
 							songInfo[0] = 1;
-							GHXsong2xm(songNum, songInfo);
+							GHXsong2xm(curSong, songInfo);
 						}
 						else
 						{
@@ -148,6 +158,10 @@ void GHXProc(int bank)
 
 		}
 	}
+
+
+	free(romData);
+
 }
 
 /*Convert the song data to XM*/
@@ -177,6 +191,8 @@ void GHXsong2xm(int songNum, long info[4])
 	unsigned char highNibble = 0;
 	long patSize = 0;
 	int curNote;
+	int curVols[4];
+	int chanMask = 0x80;
 
 	int l = 0;
 
@@ -202,7 +218,6 @@ void GHXsong2xm(int songNum, long info[4])
 	{
 		sprintf(outfile, "Bank %i/song%d.xm", (curBank + 1), songNum);
 	}
-
 	if ((xm = fopen(outfile, "wb")) == NULL)
 	{
 		printf("ERROR: Unable to write to file song%d.xm!\n", songNum);
@@ -216,7 +231,7 @@ void GHXsong2xm(int songNum, long info[4])
 		xmPos += 17;
 		if (songNames[0][0] != '\0')
 		{
-			sprintf((char*)&xmData[xmPos], songNames[songNum - 1]);
+			sprintf((char*)&xmData[xmPos], songNames[curSong - 1]);
 		}
 		else
 		{
@@ -274,11 +289,23 @@ void GHXsong2xm(int songNum, long info[4])
 		}
 		xmPos += (256 - l);
 
-		romPos = info[1] - bankAmt;
+		romPos = info[1];
 		/*Check to see if pattern data follows usual or Tomb Raider format*/
 		if (ReadLE16(&romData[romPos]) > headerOffset && ReadLE16(&romData[romPos]) < (headerOffset * 2) && songNum == 1)
 		{
-			trFix = 1;
+			drvVers = GHX_VER_TR;
+		}
+
+		switch (drvVers)
+		{
+		case GHX_VER_STD:
+			/*Fall-through*/
+		case GHX_VER_TR:
+		default:
+			GHX_STATUS_NONE = 0x00;
+			GHX_STATUS_PROG_CHANGE_VOL = 0x40;
+			GHX_STATUS_EFFECT = 0x80;
+			break;
 		}
 
 		for (curPat = 0; curPat < info[0]; curPat++)
@@ -306,7 +333,7 @@ void GHXsong2xm(int songNum, long info[4])
 			patSize = 0;
 
 			/*The typical pattern format*/
-			if (trFix == 0)
+			if (drvVers == GHX_VER_STD)
 			{
 				for (index = 0; index < 7; index++)
 				{
@@ -314,15 +341,14 @@ void GHXsong2xm(int songNum, long info[4])
 				}
 
 				/*Get channel information*/
-				c1Pos = seqList[pattern[0]];
+				c1Pos = ReadLE16(&romData[patTable + (pattern[0] * 2)]);
 				transpose[0] = pattern[1];
-				c2Pos = seqList[pattern[2]];
+				c2Pos = ReadLE16(&romData[patTable + (pattern[2] * 2)]);
 				transpose[1] = pattern[3];
-				c3Pos = seqList[pattern[4]];
+				c3Pos = ReadLE16(&romData[patTable + (pattern[4] * 2)]);
 				transpose[2] = pattern[5];
-				c4Pos = seqList[pattern[6]];
+				c4Pos = ReadLE16(&romData[patTable + (pattern[6] * 2)]);
 				romPos += 7;
-
 			}
 
 			/*Alternate pattern format used for Tomb Raider*/
@@ -360,13 +386,13 @@ void GHXsong2xm(int songNum, long info[4])
 					}
 				}
 				/*Get channel information*/
-				c1Pos = pattern[0] - bankAmt;
+				c1Pos = pattern[0];
 				transpose[0] = pattern[1];
-				c2Pos = pattern[2] - bankAmt;
+				c2Pos = pattern[2];
 				transpose[1] = pattern[3];
-				c3Pos = pattern[4] - bankAmt;
+				c3Pos = pattern[4];
 				transpose[2] = pattern[5];
-				c4Pos = pattern[6] - bankAmt;
+				c4Pos = pattern[6];
 				romPos += 11;
 			}
 
@@ -377,332 +403,215 @@ void GHXsong2xm(int songNum, long info[4])
 				{
 					if (curChan == 0)
 					{
-						command[0] = romData[c1Pos];
-						command[1] = romData[c1Pos + 1];
-						command[2] = romData[c1Pos + 2];
+						tempPos = c1Pos;
 					}
 					else if (curChan == 1)
 					{
-						command[0] = romData[c2Pos];
-						command[1] = romData[c2Pos + 1];
-						command[2] = romData[c2Pos + 2];
+						tempPos = c2Pos;
 					}
 					else if (curChan == 2)
 					{
-						command[0] = romData[c3Pos];
-						command[1] = romData[c3Pos + 1];
-						command[2] = romData[c3Pos + 2];
+						tempPos = c3Pos;
 					}
 					else if (curChan == 3)
 					{
-						command[0] = romData[c4Pos];
-						command[1] = romData[c4Pos + 1];
-						command[2] = romData[c4Pos + 2];
+						tempPos = c4Pos;
 					}
 
-					/*Empty row*/
-					if (command[0] == 0)
+					/*Row: [note | $40 = instrument byte follows | $80 = effect byte follows] [instrument] [effect]*/
+					command[0] = romData[tempPos];
+					command[1] = 0;
+					command[2] = 0;
+					tempPos++;
+					if ((command[0] & GHX_STATUS_PROG_CHANGE_VOL) != 0x00)
 					{
-						Write8B(&xmData[xmPos], 0x80);
-						if (curChan == 0)
-						{
-							c1Pos++;
-						}
-						else if (curChan == 1)
-						{
-							c2Pos++;
-						}
-						else if (curChan == 2)
-						{
-							c3Pos++;
-						}
-						else if (curChan == 3)
-						{
-							c4Pos++;
-						}
-						xmPos++;
-						patSize++;
+						command[1] = romData[tempPos];
+						tempPos++;
+					}
+					if ((command[0] & GHX_STATUS_EFFECT) != 0x00)
+					{
+						command[2] = romData[tempPos];
+						tempPos++;
 					}
 
-					/*Pitch slide*/
-					else if (command[0] > 0 && command[0] < 0x40)
+					if (curChan == 0)
 					{
-						Write8B(&xmData[xmPos], 0x98);
-						Write8B(&xmData[xmPos + 1], 0x01);
-						Write8B(&xmData[xmPos + 2], command[0] / 4.5);
-						if (curChan == 0)
-						{
-							c1Pos++;
-						}
-						else if (curChan == 1)
-						{
-							c2Pos++;
-						}
-						else if (curChan == 2)
-						{
-							c3Pos++;
-						}
-						else if (curChan == 3)
-						{
-							c4Pos++;
-						}
-						xmPos += 3;
-						patSize += 3;
+						c1Pos = tempPos;
+					}
+					else if (curChan == 1)
+					{
+						c2Pos = tempPos;
+					}
+					else if (curChan == 2)
+					{
+						c3Pos = tempPos;
+					}
+					else if (curChan == 3)
+					{
+						c4Pos = tempPos;
 					}
 
-					/*Change volume*/
-					else if (command[0] == 0x40)
+					/*Work out the channel mask*/
+					chanMask = 0x80;
+					curNote = 0;
+					curInst = 0;
+					curVol = -1;
+					lowNibble = 0;
+					highNibble = 0;
+
+					/*Note (bits 0-5): 1 = C-2, which is XM note 25*/
+					if ((command[0] & 0x3F) != 0x00)
 					{
-						lowNibble = (command[1] >> 4);
-						highNibble = (command[1] & 15);
-						Write8B(&xmData[xmPos], 0x98);
-						Write8B(&xmData[xmPos + 1], 0x0C);
-						if (curChan != 2)
+						curNote = (command[0] & 0x3F) + 36;
+						if (curChan != 3)
 						{
-							if (lowNibble == 12)
+							curNote += (signed char)transpose[curChan];
+						}
+						if (curNote < 1)
+						{
+							curNote = 1;
+						}
+						else if (curNote > 96)
+						{
+							curNote = 96;
+						}
+						chanMask |= 0x01;
+					}
+
+					/*Instrument byte: bits 0-5 = instrument + 1 (0 = volume change only), bits 6-7 = volume*/
+					if ((command[0] & GHX_STATUS_PROG_CHANGE_VOL) != 0x00)
+					{
+						curInst = command[1] & 0x3F;
+						if (curInst != 0)
+						{
+							chanMask |= 0x02;
+						}
+
+						if (curChan == 2)
+						{
+							/*Wave channel: 1 = 25%, 2 = 50%, 3 = 100%, 0 = instrument level (or mute without instrument)*/
+							switch (command[1] >> 6)
 							{
-								lowNibble = 0;
-							}
-							else if (lowNibble == 8)
-							{
-								lowNibble = 32;
-							}
-							else if (lowNibble == 4)
-							{
-								lowNibble = 48;
-							}
-							else if (lowNibble == 0)
-							{
-								lowNibble = 64;
+							case 1:
+								curVol = 16;
+								break;
+							case 2:
+								curVol = 32;
+								break;
+							case 3:
+								curVol = 64;
+								break;
+							default:
+								if (curInst == 0)
+								{
+									curVol = 0;
+								}
+								break;
 							}
 						}
 						else
 						{
-							if (lowNibble == 8)
+							/*Envelope volume shifted right by 0/1/2/4: full, 1/2, 1/4, off*/
+							switch (command[1] >> 6)
 							{
-								lowNibble = 50;
-							}
-							if (lowNibble == 4)
-							{
-								lowNibble = 64;
-							}
-							else if (lowNibble == 3)
-							{
-								lowNibble = 48;
-							}
-							else if (lowNibble == 2)
-							{
-								lowNibble = 32;
-							}
-							else if (lowNibble == 1)
-							{
-								lowNibble = 16;
-							}
-							else if (lowNibble == 0)
-							{
-								lowNibble = 0;
+							case 0:
+								curVol = 64;
+								break;
+							case 1:
+								curVol = 32;
+								break;
+							case 2:
+								curVol = 16;
+								break;
+							case 3:
+								curVol = 0;
+								break;
 							}
 						}
-						Write8B(&xmData[xmPos + 2], lowNibble);
-						if (curChan == 0)
+
+						if (curVol >= 0)
 						{
-							c1Pos += 2;
+							curVols[curChan] = curVol;
+							chanMask |= 0x04;
 						}
-						else if (curChan == 1)
-						{
-							c2Pos += 2;
-						}
-						else if (curChan == 2)
-						{
-							c3Pos += 2;
-						}
-						else if (curChan == 3)
-						{
-							c4Pos += 2;
-						}
-						xmPos += 3;
-						patSize += 3;
 					}
 
-					/*Standard note + instrument*/
-					else if (command[0] > 0x40 && command[0] < 0x80)
+					/*Effect byte: low nibble = command, high nibble = parameter; only $F (speed) is used by the driver*/
+					if ((command[0] & GHX_STATUS_EFFECT) != 0x00)
 					{
-						curNote = command[0] - 28;
-						if (curChan == 0 || curChan == 1 || curChan == 2)
+						lowNibble = command[2] & 0x0F;
+						highNibble = command[2] >> 4;
+						if (lowNibble == 0x0F && highNibble != 0x00)
 						{
-							curNote += transpose[curChan];
+							chanMask |= 0x08 | 0x10;
 						}
-						Write8B(&xmData[xmPos], 0x83);
-						Write8B(&xmData[xmPos + 1], curNote);
-						Write8B(&xmData[xmPos + 2], command[1]);
-						if (curChan == 0)
-						{
-							c1Pos += 2;
-						}
-						else if (curChan == 1)
-						{
-							c2Pos += 2;
-						}
-						else if (curChan == 2)
-						{
-							c3Pos += 2;
-						}
-						else if (curChan == 3)
-						{
-							c4Pos += 2;
-						}
-						xmPos += 3;
-						patSize += 3;
 					}
 
-					/*Tempo (ticks) change*/
-					else if (command[0] == 0x80)
+					/*Write the packed data*/
+					Write8B(&xmData[xmPos], chanMask);
+					xmPos++;
+					patSize++;
+
+					if ((chanMask & 0x01) != 0x00)
 					{
-						lowNibble = (command[1] >> 4);
-						highNibble = (command[1] & 15);
-						Write8B(&xmData[xmPos], 0x98);
-						Write8B(&xmData[xmPos + 1], 0x0F);
-						Write8B(&xmData[xmPos + 2], lowNibble);
-						if (curChan == 0)
-						{
-							c1Pos += 2;
-						}
-						else if (curChan == 1)
-						{
-							c2Pos += 2;
-						}
-						else if (curChan == 2)
-						{
-							c3Pos += 2;
-						}
-						else if (curChan == 3)
-						{
-							c4Pos += 2;
-						}
-						xmPos += 3;
-						patSize += 3;
+						Write8B(&xmData[xmPos], curNote);
+						xmPos++;
+						patSize++;
 					}
-
-					/*High drum note?*/
-					else if (command[0] > 0x80 && command[0] < 0xC0)
+					if ((chanMask & 0x02) != 0x00)
 					{
-						curNote = command[0] - 0x40;
-						if (curChan != 3)
-						{
-							curNote += transpose[curChan];
-						}
-						Write8B(&xmData[xmPos], 0x83);
-						Write8B(&xmData[xmPos + 1], curNote);
-						Write8B(&xmData[xmPos + 2], command[1]);
-						if (curChan == 0)
-						{
-							c1Pos += 2;
-						}
-						else if (curChan == 1)
-						{
-							c2Pos += 2;
-						}
-						else if (curChan == 2)
-						{
-							c3Pos += 2;
-						}
-						else if (curChan == 3)
-						{
-							c4Pos += 2;
-						}
-						xmPos += 3;
-						patSize += 3;
+						Write8B(&xmData[xmPos], curInst);
+						xmPos++;
+						patSize++;
 					}
-
-					/*Note/instrument + tempo (ticks) change*/
-					else if (command[0] >= 0xC0)
+					if ((chanMask & 0x04) != 0x00)
 					{
-						curNote = command[0] - 156;
-						lowNibble = (command[2] >> 4);
-						highNibble = (command[2] & 15);
-						if (curChan != 3)
-						{
-							curNote += transpose[curChan];
-						}
-						Write8B(&xmData[xmPos], 0x9B);
-						Write8B(&xmData[xmPos + 1], curNote);
-						Write8B(&xmData[xmPos + 2], command[1]);
-						Write8B(&xmData[xmPos + 3], 0x0F);
-						Write8B(&xmData[xmPos + 4], lowNibble);
-
-						if (curChan == 0)
-						{
-							c1Pos += 3;
-						}
-						else if (curChan == 1)
-						{
-							c2Pos += 3;
-						}
-						else if (curChan == 2)
-						{
-							c3Pos += 3;
-						}
-						else if (curChan == 3)
-						{
-							c4Pos += 3;
-						}
-						xmPos += 5;
-						patSize += 5;
-
+						Write8B(&xmData[xmPos], 0x10 + curVol);
+						xmPos++;
+						patSize++;
 					}
-
+					if ((chanMask & 0x08) != 0x00)
+					{
+						/*XM effect F = set speed*/
+						Write8B(&xmData[xmPos], 0x0F);
+						xmPos++;
+						patSize++;
+					}
+					if ((chanMask & 0x10) != 0x00)
+					{
+						Write8B(&xmData[xmPos], highNibble);
+						xmPos++;
+						patSize++;
+					}
 				}
-				WriteLE16(&xmData[packPos], patSize);
 			}
+			WriteLE16(&xmData[packPos], patSize);
 
 		}
 
+		fwrite(xmData, xmPos, 1, xm);
 
-	}
-	fwrite(xmData, xmPos, 1, xm);
-
-	/*Add data to end of XM file*/
-	if ((data = fopen("XMDATA.DAT", "rb")) == NULL)
-	{
-		printf("ERROR: Unable to open file XMDATA.DAT!\n");
-		exit(1);
-	}
-	else
-	{
-		endData = ((unsigned char*)malloc(11744));
-		fread(endData, 1, 11744, data);
-		fwrite(endData, 11744, 1, xm);
-		xmPos += 11744;
-	}
-	fclose(xm);
-}
-
-
-/*Get the pointers to each sequence*/
-void GHXgetMacroList(unsigned long list[], long offset)
-{
-	int cnt = 0;
-	unsigned long curValue;
-	unsigned long curValue2;
-	long newOffset = offset;
-	long offset2 = offset - bankAmt;
-
-	for (cnt = 0; cnt < 500; cnt++)
-	{
-		curValue = (ReadLE16(&romData[newOffset - bankAmt])) - bankAmt;
-		curValue2 = (ReadLE16(&romData[newOffset - bankAmt]));
-		if (curValue2 >= bankAmt && curValue2 < (bankAmt * 2))
+		/*Add data to end of XM file*/
+		if ((data = fopen("XMDATA.DAT", "rb")) == NULL)
 		{
-			list[cnt] = curValue;
-			newOffset += 2;
+			printf("ERROR: Unable to open file XMDATA.DAT!\n");
+			exit(1);
 		}
 		else
 		{
-			totalSeqs = cnt;
-			break;
+			endData = ((unsigned char*)malloc(11744));
+			fread(endData, 1, 11744, data);
+			fwrite(endData, 11744, 1, xm);
+			xmPos += 11744;
 		}
+
+		free(xmData);
+		free(endData);
+		fclose(xm);
+
 	}
 }
+
 
 /*Get the titles for each song (if present)*/
 void GHXgetSongTitles(char names[50][21])
@@ -710,12 +619,12 @@ void GHXgetSongTitles(char names[50][21])
 	long curPos = 0;
 	long ptrOffset = 0;
 	int k, l = 0;
-	for (curPos = 0; curPos < bankSize; curPos++)
+	for (curPos = 0; curPos < (bankSize * 2); curPos++)
 	{
 		if (!memcmp(&romData[curPos], songTitle, 4))
 		{
-			ptrOffset = curPos + bankAmt;
-			printf("Song table list:  0x%04X!\n", headerOffset);
+			ptrOffset = curPos;
+			printf("Song table list: 0x%04X!\n", headerOffset);
 			break;
 		}
 	}

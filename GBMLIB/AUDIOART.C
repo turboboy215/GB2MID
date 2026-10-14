@@ -18,13 +18,23 @@ int i, j;
 char outfile[1000000];
 int format = 0;
 int songNum;
-long seqPtrs[4];
-long curSpeed;
+long songPtrs[4];
+long songTempo;
 long nextPtr;
 long endPtr;
 long bankAmt;
 int multiBanks;
-int formatFix = 0;
+int curVol;
+int curInst;
+int drvVers;
+int foundTable;
+int trackFmt;
+int chanMask;
+long morphWave;
+long wave;
+int maskArray[4];
+int songBase;
+int progBank;
 
 char folderName[100];
 
@@ -57,12 +67,19 @@ void WriteBE32(unsigned char* buffer, unsigned long value);
 void WriteBE24(unsigned char* buffer, unsigned long value);
 void WriteBE16(unsigned char* buffer, unsigned int value);
 unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
+unsigned int WriteNoteEventOnPB(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst, int progBank);
+unsigned int WriteNoteEventAltOff(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
-void AAsong2mid(int songNum, long ptrs[4], long nextPtr, long endPtr, int speed);
-void AAgetSeqList(unsigned long list[], long offset);
+void AAsong2mid(int songNum, long ptrs[4], int speed);
 
 void AAProc(int bank)
 {
+	drvVers = AA_VER_OLD;
+	curVol = 120;
+	curInst = 0;
+	foundTable = 0;
+	trackFmt = AA_TRACK_VER8;
+
 	if (bank != 1)
 	{
 		bankAmt = bankSize;
@@ -76,98 +93,108 @@ void AAProc(int bank)
 	romData = (unsigned char*)malloc(bankSize);
 	fread(romData, 1, bankSize, rom);
 
+	if (bank < 0x02)
+	{
+		bank = 0x02;
+	}
+
+	bankAmt = bankSize;
+	fseek(rom, 0, SEEK_SET);
+	romData = (unsigned char*)malloc(bankSize * 2);
+	fread(romData, 1, bankSize, rom);
+	fseek(rom, ((bank - 1) * bankSize), SEEK_SET);
+	fread(romData + bankSize, 1, bankSize, rom);
+
 	/*Try to search the bank for song pattern table loader*/
-	for (i = 0; i < bankSize; i++)
+	for (i = bankSize; i < (bankSize * 2); i++)
 	{
 		if (!memcmp(&romData[i], Table1Find, 15))
 		{
-			tablePtrLoc = bankAmt + i - 2;
-			printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
-			tableOffset = ReadLE16(&romData[tablePtrLoc - bankAmt]);
+			tablePtrLoc = i - 2;
+			printf("Found pointer to song table at address 0x%04X!\n", tablePtrLoc);
+			tableOffset = ReadLE16(&romData[tablePtrLoc]);
 			if (romData[i + 15] == 0x2A)
 			{
-				format = 1;
+				drvVers = AA_VER_OLD;
 				printf("Detected old table format.\n");
 			}
 			else if (romData[i + 15] == 0x19)
 			{
-				format = 2;
+				drvVers = AA_VER_NEW;
 				printf("Detected new table format.\n");
 			}
-			printf("Song table starts at 0x%04x...\n", tableOffset);
+			printf("Song table starts at 0x%04X...\n", tableOffset);
 			break;
 		}
 	}
 
 	/*Alternate method for Carmageddon*/
-	for (i = 0; i < bankSize; i++)
+	for (i = bankSize; i < (bankSize * 2); i++)
 	{
-		if (!memcmp(&romData[i], Table1FindCarma, 9) && format != 1 && format != 2)
+		if (!memcmp(&romData[i], Table1FindCarma, 9) && bank == 0x42)
 		{
-			tablePtrLoc = bankAmt + i - 2;
-			printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
-			tableOffset = ReadLE16(&romData[tablePtrLoc - bankAmt]);
-			format = 0;
+			tablePtrLoc = i - 2;
+			printf("Found pointer to song table at address 0x%04X!\n", tablePtrLoc);
+			tableOffset = ReadLE16(&romData[tablePtrLoc]);
+			drvVers = AA_VER_CARMA;
 			printf("Detected old (Carmageddon) table format.\n");
-			printf("Song table starts at 0x%04x...\n", tableOffset);
+			printf("Song table starts at 0x%04X...\n", tableOffset);
 			break;
 		}
 	}
 
 	/*Now try to search the bank for sequence table loader*/
-	for (i = 0; i < bankSize; i++)
+	for (i = bankSize; i < (bankSize * 2); i++)
 	{
 		if (!memcmp(&romData[i], Table2Find, 12))
 		{
-			seqPtrLoc = bankAmt + i + 12;
-			printf("Found pointer to sequence table at address 0x%04x!\n", seqPtrLoc);
-			seqOffset = ReadLE16(&romData[seqPtrLoc - bankAmt]);
-			printf("Sequence table starts at 0x%04x...\n", seqOffset);
-			AAgetSeqList(seqList, seqOffset);
+			seqPtrLoc = i + 12;
+			printf("Found pointer to sequence table at address 0x%04X!\n", seqPtrLoc);
+			seqOffset = ReadLE16(&romData[seqPtrLoc]);
+			printf("Sequence table starts at 0x%04X...\n", seqOffset);
 			break;
 		}
 	}
 
 	/*Alternate method for Carmageddon*/
-	for (i = 0; i < bankSize; i++)
+	for (i = bankSize; i < (bankSize * 2); i++)
 	{
-		if (!memcmp(&romData[i], Table2FindCarma, 13) && format != 1 && format != 2)
+		if (!memcmp(&romData[i], Table2FindCarma, 13) && drvVers != AA_VER_OLD && drvVers != AA_VER_NEW)
 		{
-			seqPtrLoc = bankAmt + i + 13;
-			printf("Found pointer to sequence table at address 0x%04x!\n", seqPtrLoc);
-			seqOffset = ReadLE16(&romData[seqPtrLoc - bankAmt]);
-			printf("Sequence table starts at 0x%04x...\n", seqOffset);
-			AAgetSeqList(seqList, seqOffset);
+			seqPtrLoc = i + 13;
+			printf("Found pointer to sequence table at address 0x%04X!\n", seqPtrLoc);
+			seqOffset = ReadLE16(&romData[seqPtrLoc]);
+			printf("Sequence table starts at 0x%04X...\n", seqOffset);
 			break;
 		}
 	}
 
 	/*Alternate method for Total Soccer 2000/Barca/Wendy*/
-	for (i = 0; i < bankSize; i++)
+	for (i = bankSize; i < (bankSize * 2); i++)
 	{
 		if (!memcmp(&romData[i], Table2FindAlt, 4))
 		{
-			seqPtrLoc = bankAmt + i + 4;
-			printf("Found pointer to sequence table at address 0x%04x!\n", seqPtrLoc);
-			seqOffset = ReadLE16(&romData[seqPtrLoc - bankAmt]);
-			printf("Sequence table starts at 0x%04x...\n", seqOffset);
-			AAgetSeqList(seqList, seqOffset);
-			formatFix = 1;
+			seqPtrLoc = i + 4;
+			printf("Found pointer to sequence table at address 0x%04X!\n", seqPtrLoc);
+			seqOffset = ReadLE16(&romData[seqPtrLoc]);
+			printf("Sequence table starts at 0x%04X...\n", seqOffset);
+			trackFmt = AA_TRACK_VER16;
 			break;
 		}
 	}
 
 	/*Workaround for Casper (US)*/
-	for (i = 0; i < bankSize; i++)
+	for (i = bankSize; i < (bankSize * 2); i++)
 	{
-		if (!memcmp(&romData[i], Table1FindCU, 10) && format != 1 && format != 2)
+		if (!memcmp(&romData[i], Table1FindCU, 10) && bank == 0x20)
 		{
-			tablePtrLoc = 0x4952;
-			printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
-			tableOffset = 0x4952;
-			format = 1;
+			tablePtrLoc = 0x4949;
+			printf("Found pointer to song table at address 0x%04X!\n", tablePtrLoc);
+			tableOffset = 0x4949;
+			drvVers = AA_VER_CASPU;
+			trackFmt = AA_TRACK_VER16;
 			printf("Detected old table format.\n");
-			printf("Song table starts at 0x%04x...\n", tableOffset);
+			printf("Song table starts at 0x%04X...\n", tableOffset);
 			break;
 		}
 	}
@@ -177,86 +204,177 @@ void AAProc(int bank)
 		songNum = 1;
 		i = tableOffset;
 
-		if (multiBanks != 0)
+		if (drvVers == AA_VER_OLD)
 		{
-			snprintf(folderName, sizeof(folderName), "Bank %i", (curBank + 1));
-			_mkdir(folderName);
-		}
-
-		if (format == 1)
-		{
-			i -= 4;
-
-			while ((i + 4) != seqOffset)
+			if (bank != 0x20)
 			{
-				curSpeed = romData[i + 12 - bankAmt];
-				printf("Song %i tempo: %i\n", songNum, curSpeed);
-				seqPtrs[0] = ReadLE16(&romData[i + 4 - bankAmt]);
-				printf("Song %i channel 1: 0x%04x\n", songNum, seqPtrs[0]);
-				seqPtrs[1] = ReadLE16(&romData[i + 6 - bankAmt]);
-				printf("Song %i channel 2: 0x%04x\n", songNum, seqPtrs[1]);
-				seqPtrs[2] = ReadLE16(&romData[i + 8 - bankAmt]);
-				printf("Song %i channel 3: 0x%04x\n", songNum, seqPtrs[2]);
-				seqPtrs[3] = ReadLE16(&romData[i + 10 - bankAmt]);
-				printf("Song %i channel 4: 0x%04x\n", songNum, seqPtrs[3]);
-				nextPtr = ReadLE16(&romData[i + 17 - bankAmt]);
-				if (nextPtr < bankAmt)
+				while (i < seqOffset)
 				{
-					AAsong2mid(songNum, seqPtrs, nextPtr, endPtr, curSpeed);
-					break;
+					songPtrs[0] = ReadLE16(&romData[i]);
+					printf("Song %i channel 1: 0x%04X\n", songNum, songPtrs[0]);
+					songPtrs[1] = ReadLE16(&romData[i + 2]);
+					printf("Song %i channel 2: 0x%04X\n", songNum, songPtrs[1]);
+					songPtrs[2] = ReadLE16(&romData[i + 4]);
+					printf("Song %i channel 3: 0x%04X\n", songNum, songPtrs[2]);
+					songPtrs[3] = ReadLE16(&romData[i + 6]);
+					printf("Song %i channel 4: 0x%04X\n", songNum, songPtrs[3]);
+					songTempo = romData[i + 8];
+					printf("Song %i tempo: %02X\n", songNum, songTempo);
+					morphWave = ReadLE16(&romData[i + 9]);
+					printf("Song %i waveform (morph): 0x%04X\n", songNum, morphWave);
+					wave = ReadLE16(&romData[i + 11]);
+					printf("Song %i waveform (normal): 0x%04X\n", songNum, wave);
+					AAsong2mid(songNum, songPtrs, songTempo);
+
+					i += 13;
+					songNum++;
 				}
-				endPtr = seqOffset;
-				AAsong2mid(songNum, seqPtrs, nextPtr, endPtr, curSpeed);
-				i += 13;
-				songNum++;
 			}
-		}
-		else if (format == 2)
-		{
-			/*Skip first "empty" song*/
-			i += 14;
-
-			while (i != seqOffset)
+			/*Workaround for Casper*/
+			else
 			{
+				while (songNum <= 4)
+				{
+					songPtrs[0] = ReadLE16(&romData[i]);
+					printf("Song %i channel 1: 0x%04X\n", songNum, songPtrs[0]);
+					songPtrs[1] = ReadLE16(&romData[i + 2]);
+					printf("Song %i channel 2: 0x%04X\n", songNum, songPtrs[1]);
+					songPtrs[2] = ReadLE16(&romData[i + 4]);
+					printf("Song %i channel 3: 0x%04X\n", songNum, songPtrs[2]);
+					songPtrs[3] = ReadLE16(&romData[i + 6]);
+					printf("Song %i channel 4: 0x%04X\n", songNum, songPtrs[3]);
+					songTempo = romData[i + 8];
+					printf("Song %i tempo: %02X\n", songNum, songTempo);
+					morphWave = ReadLE16(&romData[i + 9]);
+					printf("Song %i waveform (morph): 0x%04X\n", songNum, morphWave);
+					wave = ReadLE16(&romData[i + 11]);
+					printf("Song %i waveform (normal): 0x%04X\n", songNum, wave);
+					AAsong2mid(songNum, songPtrs, songTempo);
 
-				curSpeed = romData[i - bankAmt];
-				printf("Song %i tempo: %i\n", songNum, curSpeed);
-				seqPtrs[0] = ReadLE16(&romData[i + 2 - bankAmt]);
-				printf("Song %i channel 1: 0x%04x\n", songNum, seqPtrs[0]);
-				seqPtrs[1] = ReadLE16(&romData[i + 4 - bankAmt]);
-				printf("Song %i channel 2: 0x%04x\n", songNum, seqPtrs[1]);
-				seqPtrs[2] = ReadLE16(&romData[i + 6 - bankAmt]);
-				printf("Song %i channel 3: 0x%04x\n", songNum, seqPtrs[2]);
-				seqPtrs[3] = ReadLE16(&romData[i + 8 - bankAmt]);
-				printf("Song %i channel 4: 0x%04x\n", songNum, seqPtrs[3]);
-				nextPtr = ReadLE16(&romData[i + 16 - bankAmt]);
-				endPtr = seqOffset;
-				AAsong2mid(songNum, seqPtrs, nextPtr, endPtr, curSpeed);
+					i += 13;
+					songNum++;
+				}
+			}
+
+		}
+
+		else if (drvVers == AA_VER_NEW)
+		{
+			while (i < seqOffset)
+			{
+				songBase = i;
+				songTempo = romData[i];
+				printf("Song %i tempo: %02X\n", songNum, songTempo);
+				chanMask = romData[i + 1];
+
+				printf("Song %i channel mask: %02X\n", songNum, chanMask);
+				i += 2;
+
+
+				if ((chanMask & 0x01) != 0x00)
+				{
+					songPtrs[0] = ReadLE16(&romData[i]);
+					printf("Song %i channel 1: 0x%04X\n", songNum, songPtrs[0]);
+					i += 2;
+				}
+				else
+				{
+					songPtrs[0] = 0x0000;
+					printf("Song %i channel 1: 0x%04X\n", songNum, songPtrs[0]);
+				}
+
+				if ((chanMask & 0x02) != 0x00)
+				{
+					songPtrs[1] = ReadLE16(&romData[i]);
+					printf("Song %i channel 2: 0x%04X\n", songNum, songPtrs[1]);
+					i += 2;
+				}
+				else
+				{
+					songPtrs[1] = 0x0000;
+					printf("Song %i channel 2: 0x%04X\n", songNum, songPtrs[1]);
+				}
+
+				if ((chanMask & 0x04) != 0x00)
+				{
+					songPtrs[2] = ReadLE16(&romData[i]);
+					printf("Song %i channel 3: 0x%04X\n", songNum, songPtrs[2]);
+					i += 2;
+				}
+				else
+				{
+					songPtrs[2] = 0x0000;
+					printf("Song %i channel 3: 0x%04X\n", songNum, songPtrs[2]);
+				}
+
+				if ((chanMask & 0x08) != 0x00)
+				{
+					songPtrs[3] = ReadLE16(&romData[i]);
+					printf("Song %i channel 4: 0x%04X\n", songNum, songPtrs[3]);
+					i += 2;
+				}
+				else
+				{
+					songPtrs[3] = 0x0000;
+					printf("Song %i channel 4: 0x%04X\n", songNum, songPtrs[3]);
+				}
+
+				i = songBase;
+
+				morphWave = ReadLE16(&romData[i + 10]);
+				printf("Song %i waveform (morph): 0x%04X\n", songNum, morphWave);
+				wave = ReadLE16(&romData[i + 12]);
+				printf("Song %i waveform (normal): 0x%04X\n", songNum, wave);
+				AAsong2mid(songNum, songPtrs, songTempo);
+
 				i += 14;
 				songNum++;
 			}
 		}
 
-		/*Carmageddon format - doesn't use channel 3 for music*/
-		else if (format == 0)
+		else if (drvVers == AA_VER_CARMA)
 		{
-			while (romData[i - bankAmt] != 0)
+			while (songNum <= 3)
 			{
-				curSpeed = 7;
-				seqPtrs[0] = ReadLE16(&romData[i - bankAmt]);
-				printf("Song %i channel 1: 0x%04x\n", songNum, seqPtrs[0]);
-				seqPtrs[1] = ReadLE16(&romData[i + 2 - bankAmt]);
-				printf("Song %i channel 2: 0x%04x\n", songNum, seqPtrs[1]);
-				seqPtrs[2] = 0;
-				seqPtrs[3] = ReadLE16(&romData[i + 4 - bankAmt]);
-				printf("Song %i channel 4: 0x%04x\n", songNum, seqPtrs[3]);
-				nextPtr = ReadLE16(&romData[i + 6 - bankAmt]);
-				AAsong2mid(songNum, seqPtrs, nextPtr, endPtr, curSpeed);
+				songPtrs[0] = ReadLE16(&romData[i]);
+				printf("Song %i channel 1: 0x%04X\n", songNum, songPtrs[0]);
+				songPtrs[1] = ReadLE16(&romData[i + 2]);
+				printf("Song %i channel 2: 0x%04X\n", songNum, songPtrs[1]);
+				songPtrs[3] = ReadLE16(&romData[i + 4]);
+				printf("Song %i channel 4: 0x%04X\n", songNum, songPtrs[3]);
+				songTempo = 7;
+				AAsong2mid(songNum, songPtrs, songTempo);
+
 				i += 6;
 				songNum++;
 			}
-			endPtr = i;
 		}
+
+		else if (drvVers == AA_VER_CASPU)
+		{
+			while (songNum <= 4)
+			{
+				songPtrs[0] = ReadLE16(&romData[i]);
+				printf("Song %i channel 1: 0x%04X\n", songNum, songPtrs[0]);
+				songPtrs[1] = ReadLE16(&romData[i + 2]);
+				printf("Song %i channel 2: 0x%04X\n", songNum, songPtrs[1]);
+				songPtrs[2] = ReadLE16(&romData[i + 4]);
+				printf("Song %i channel 3: 0x%04X\n", songNum, songPtrs[2]);
+				songPtrs[3] = ReadLE16(&romData[i + 6]);
+				printf("Song %i channel 4: 0x%04X\n", songNum, songPtrs[3]);
+				songTempo = romData[i + 8];
+				printf("Song %i tempo: %02X\n", songNum, songTempo);
+				wave = ReadLE16(&romData[i + 9]);
+				printf("Song %i waveform: 0x%04X\n", songNum, wave);
+				AAsong2mid(songNum, songPtrs, songTempo);
+
+				i += 11;
+				songNum++;
+			}
+		}
+
+		free(romData);
+
 	}
 	else
 	{
@@ -265,7 +383,7 @@ void AAProc(int bank)
 	}
 }
 
-void AAsong2mid(int songNum, long ptrs[4], long nextPtr, long endPtr, int speed)
+void AAsong2mid(int songNum, long ptrs[4], int speed)
 {
 	static const char* TRK_NAMES[4] = { "Square 1", "Square 2", "Wave", "Noise" };
 	long romPos = 0;
@@ -314,8 +432,17 @@ void AAsong2mid(int songNum, long ptrs[4], long nextPtr, long endPtr, int speed)
 
 	int holdNote = 0;
 
+	unsigned int ctrlDelay = 0;
+	unsigned int masterDelay = 0;
+
 	midPos = 0;
 	ctrlMidPos = 0;
+
+	if (multiBanks != 0)
+	{
+		snprintf(folderName, sizeof(folderName), "Bank %i", (curBank + 1));
+		_mkdir(folderName);
+	}
 
 	midLength = 0x10000;
 	midData = (unsigned char*)malloc(midLength);
@@ -354,46 +481,7 @@ void AAsong2mid(int songNum, long ptrs[4], long nextPtr, long endPtr, int speed)
 		WriteBE16(&ctrlMidData[ctrlMidPos + 4], ticks);
 		ctrlMidPos += 6;
 
-		/*Get the tempo*/
-		switch (speed)
-		{
-		case 1:
-			tempo = 960;
-			break;
-		case 2:
-			tempo = 500;
-			break;
-		case 3:
-			tempo = 300;
-			break;
-		case 4:
-			tempo = 200;
-			break;
-		case 5:
-			tempo = 170;
-			break;
-		case 6:
-			tempo = 150;
-			break;
-		case 7:
-			tempo = 130;
-			break;
-		case 8:
-			tempo = 110;
-			break;
-		case 9:
-			tempo = 100;
-			break;
-		case 10:
-			tempo = 90;
-			break;
-		case 11:
-			tempo = 80;
-			break;
-		default:
-			tempo = 130;
-			break;
-		}
+		tempo = 150;
 
 		/*Write initial MIDI information for "control" track*/
 		WriteBE32(&ctrlMidData[ctrlMidPos], 0x4D54726B);
@@ -430,6 +518,24 @@ void AAsong2mid(int songNum, long ptrs[4], long nextPtr, long endPtr, int speed)
 		WriteBE24(&ctrlMidData[ctrlMidPos], 0xFF5902);
 		ctrlMidPos += 4;
 
+		switch (drvVers)
+		{
+		case AA_VER_CARMA:
+			/*Fall-through*/
+		case AA_VER_OLD:
+		case AA_VER_NEW:
+		case AA_VER_CASPU:
+		default:
+			AA_STATUS_END = 0x00;
+			AA_STATUS_NOTE_MIN = 0x00;
+			AA_STATUS_NOTE_MAX = 0xFC;
+			AA_STATUS_JUMP = 0xFF;
+			EventMap[0xFF] = AA_EVENT_HOLD;
+			EventMap[0xFE] = AA_EVENT_KEY_OFF;
+			EventMap[0xFD] = AA_EVENT_KEY_ON;
+			break;
+		}
+
 		for (curTrack = 0; curTrack < trackCnt; curTrack++)
 		{
 			firstNote = 1;
@@ -444,7 +550,11 @@ void AAsong2mid(int songNum, long ptrs[4], long nextPtr, long endPtr, int speed)
 			curNote = 0;
 			lastNote = 0;
 			curNoteLen = 0;
-
+			ctrlDelay = 0;
+			masterDelay = 0;
+			holdNote = 0;
+			curVol = 120;
+			progBank = 0;
 
 			/*Add track header*/
 			valSize = WriteDeltaTime(midData, midPos, 0);
@@ -459,105 +569,155 @@ void AAsong2mid(int songNum, long ptrs[4], long nextPtr, long endPtr, int speed)
 			/*Calculate MIDI channel size*/
 			trackSize = midPos - midTrackBase;
 			WriteBE16(&midData[midTrackBase - 2], trackSize);
-			patPos = ptrs[curTrack] - bankAmt;
+			patPos = ptrs[curTrack];
 			if (ptrs[curTrack] == 0)
 			{
 				trackEnd = 1;
 			}
 
-			while (trackEnd == 0)
+			while (trackEnd == 0 && midPos < 48000 && ctrlDelay < 110000 && seqPos < 0x8000)
 			{
 				seqEnd = 0;
 				/*Get current sequence and transpose*/
-				if (formatFix != 1)
+				if (trackFmt == AA_TRACK_VER8)
 				{
 					transpose = (signed char)romData[patPos];
 					curSeq = romData[patPos + 1];
 				}
 				else
 				{
-					transpose = (signed char)romData[patPos];
-					curSeq = romData[patPos + 2];
-					if (curSeq == 0xFF)
-					{
-						seqEnd = 1;
-					}
+					transpose = (signed char)ReadLE16(&romData[patPos]);
+					curSeq = ReadLE16(&romData[patPos + 2]);
+				}
+
+				if (curSeq == 0xFF)
+				{
+					trackEnd = 1;
 				}
 
 
 				/*Go to the current sequence*/
-				seqPos = seqList[curSeq];
+				seqPos = ReadLE16(&romData[seqOffset + (curSeq * 2)]);
 				while (seqEnd == 0)
 				{
 					command[0] = romData[seqPos];
 					command[1] = romData[seqPos + 1];
 					command[2] = romData[seqPos + 2];
 
-					/*End of sequence*/
-					if (command[0] == 0x00)
-					{
-						seqEnd = 1;
-					}
-					/*Repeat note*/
-					else if (command[1] == 0xFD && command[0] != 0xFF)
-					{
-						curNoteLen = command[0] * 30;
-						tempPos = WriteNoteEvent(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
-						firstNote = 0;
-						midPos = tempPos;
-						seqPos += 2;
-					}
-					/*Rest*/
-					else if (command[1] == 0xFE)
-					{
-						curDelay += (command[0] * 30);
-						seqPos += 2;
-					}
-					/*Hold note*/
-					else if (command[1] == 0xFF)
-					{
-						curDelay += (command[0] * 30);
-						seqPos += 2;
-					}
-					/*Loop back to point*/
-					else if (command[0] == 0xFF)
+					if (command[0] == AA_STATUS_JUMP)
 					{
 						seqEnd = 1;
 						trackEnd = 1;
 					}
-					/*Standard note value*/
-					else
+					else if (command[0] == AA_STATUS_END)
 					{
-						curNoteLen = command[0] * 30;
+						seqEnd = 1;
+
+						if (trackFmt == AA_TRACK_VER8)
+						{
+							patPos += 2;
+						}
+						else
+						{
+							patPos += 4;
+						}
+					}
+
+					else if (command[1] >= AA_STATUS_NOTE_MIN && command[1] <= AA_STATUS_NOTE_MAX)
+					{
+						if (holdNote == 1)
+						{
+							tempPos = WriteNoteEventAltOff(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
+							holdNote = 0;
+							midPos = tempPos;
+							curDelay = 0;
+						}
 						curNote = command[1] + transpose + 24;
 
-						if (curNote > 127)
+						if (curTrack < 2)
 						{
-							curNote = 127;
+							curNote += 12;
 						}
+
+						if (curNote == 37)
+						{
+							curNote = 37;
+						}
+
+						curNoteLen = command[0] * speed * 5;
+
 						if (curInst != command[2])
 						{
 							curInst = command[2];
 							firstNote = 1;
 						}
-
-						if (curInst >= 128)
-						{
-							curInst = 127;
-						}
-
-						tempPos = WriteNoteEvent(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
+						tempPos = WriteNoteEventOnPB(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst, progBank);
 						firstNote = 0;
 						midPos = tempPos;
-						curDelay = 0;
+						curDelay = curNoteLen;
+						ctrlDelay += curNoteLen;
+						masterDelay += curNoteLen;
+						holdNote = 1;
 						seqPos += 3;
 					}
+
+					else if (EventMap[command[1]] == AA_EVENT_HOLD)
+					{
+						curDelay += (command[0] * speed * 5);
+						ctrlDelay += (command[0] * speed * 5);
+						seqPos += 2;
+					}
+
+					else if (EventMap[command[1]] == AA_EVENT_KEY_OFF)
+					{
+						if (holdNote == 1)
+						{
+							tempPos = WriteNoteEventAltOff(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
+							holdNote = 0;
+							midPos = tempPos;
+							curDelay = 0;
+						}
+						curDelay += (command[0] * speed * 5);
+						ctrlDelay += (command[0] * speed * 5);
+						seqPos += 2;
+					}
+
+					else if (EventMap[command[1]] == AA_EVENT_KEY_ON)
+					{
+						if (holdNote == 1)
+						{
+							tempPos = WriteNoteEventAltOff(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
+							holdNote = 0;
+							midPos = tempPos;
+							curDelay = 0;
+						}
+						curNoteLen = command[0] * speed * 5;
+						tempPos = WriteNoteEventOnPB(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst, progBank);
+						firstNote = 0;
+						midPos = tempPos;
+						curDelay = curNoteLen;
+						ctrlDelay += curNoteLen;
+						masterDelay += curNoteLen;
+						holdNote = 1;
+						seqPos += 2;
+					}
+
+					/*Unknown command*/
+					else
+					{
+						seqPos++;
+					}
+
 				}
-				patPos += 2;
-				if (formatFix == 1)
-				{
-					patPos += 2;
-				}
+
+			}
+
+			if (holdNote == 1)
+			{
+				tempPos = WriteNoteEventAltOff(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
+				holdNote = 0;
+				midPos = tempPos;
+				curDelay = 0;
 			}
 
 			/*End of track*/
@@ -567,7 +727,6 @@ void AAsong2mid(int songNum, long ptrs[4], long nextPtr, long endPtr, int speed)
 			/*Calculate MIDI channel size*/
 			trackSize = midPos - midTrackBase;
 			WriteBE16(&midData[midTrackBase - 2], trackSize);
-
 		}
 
 		/*End of control track*/
@@ -590,31 +749,9 @@ void AAsong2mid(int songNum, long ptrs[4], long nextPtr, long endPtr, int speed)
 		}
 		fwrite(ctrlMidData, ctrlMidPos, 1, mid);
 		fwrite(midData, midPos, 1, mid);
+		free(midData);
+		free(ctrlMidData);
 		fclose(mid);
-	}
-}
 
-void AAgetSeqList(unsigned long list[], long offset)
-{
-	int cnt = 0;
-	unsigned long curValue;
-	unsigned long curValue2;
-	long newOffset = offset;
-	long offset2 = offset - bankAmt;
-
-	for (cnt = 0; cnt < 500; cnt++)
-	{
-		curValue = (ReadLE16(&romData[newOffset - bankAmt])) - bankAmt;
-		curValue2 = (ReadLE16(&romData[newOffset - bankAmt]));
-		if (curValue2 >= bankAmt && curValue2 < (bankAmt * 2))
-		{
-			list[cnt] = curValue;
-			newOffset += 2;
-		}
-		else
-		{
-			totalSeqs = cnt;
-			break;
-		}
 	}
 }
