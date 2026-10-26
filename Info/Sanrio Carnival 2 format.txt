@@ -1,0 +1,80 @@
+Song table
+=======================================
+Each song in the song table is comprised of a series of 4 16-bit pointers to each channel of a song - 8 bytes total, with an unused entry being 00xx.
+
+Song commands
+=======================================
+Each channel of a song uses the following commands:
+00-7F (xx (yz aa)) = Play note (X = Note (00 = Rest), Other bytes used when repeat counter has run out: Y = Length (index to note table), Z = Repeat counter (same length))
+80 xx xx = Set waveform (X = Pointer)
+81 xx = Set master volume (X = Value)
+82 xx = Set panning (X = Value)
+83 xx = Set NR10 (X = Value)
+84 xx = Set NR11 (X = Value)
+85 xx = Set NR21 (X = Value)
+86 xx = Set NR31 (X = Value)
+87 xx = Set NR41 (X = Value)
+88 xx = Set channel 1 envelope sequence (X = low byte of 6Dxx pointer)
+89 xx = Set channel 2 envelope sequence (X = low byte of 6Dxx pointer)
+8A xx = Set channel 3 envelope sequence (X = low byte of 6Dxx pointer)
+8B xx = Set channel 4 envelope sequence (X = low byte of 6Dxx pointer)
+8C xx = Set channel 1 vibrato sequence (X = low byte of 6Dxx pointer)
+8D xx = Set channel 2 vibrato sequence (X = low byte of 6Dxx pointer)
+8E xx = Set channel 3 vibrato sequence (X = low byte of 6Dxx pointer)
+8F xx xx = Set note length table (X = Pointer)
+90-92 = (Invalid)
+93 xx xx = Jump to position (X = Pointer)
+94 xx xx = Go to macro on channel 1 (multiple levels?)
+95 xx xx = Go to macro on channel 2 (multiple levels?)
+96 xx xx = Go to macro on channel 3 (multiple levels?)
+97 xx xx = Go to macro on channel 4 (multiple levels?)
+98 = Return from macro on channel 1
+99 = Return from macro on channel 2
+9A = Return from macro on channel 3
+9B = Return from macro on channel 4
+9C = End of channel 1
+9D = End of channel 2
+9E = End of channel 3
+9F = End of channel 4
+
+Macros
+=======================================
+Macros are used for changing the envelope or vibrato of a channel. Each macro is structured with 2-byte rows which represent the number of frames used and then the parameter. Each macro runs into each other, as they have no proper terminator value.
+
+Sound effects
+=======================================
+Sound effects are byte-code streams with the following commands:
+00-3F = Set register writes (bits 0-2 = NRx0-2, bit 3 = NRx3-4)
+40-5F = Hold/resume the music
+60-6F = End = silence the channels in the mask
+70-7F = The channels this effect takes
+80-FF = Wait number of frames ($80 = 128) 
+
+
+
+($6E43)
+8F 98 6D
+80 6E 6D
+81 77
+82 DE
+83 78
+84 3F 88 00 8C 2C 1D 41 1B 19 30 1D B2 1B 19 18 31 00 84 7F 88 08 1D BF 1C 1D 14 13 14 1D 1C 1D 14 13 14 19 18 19 16 15 BF 16 19 18 19 16 18 19 13 12 13 16 15 16 1B 1A 1B BF 1F 1E 1F 18 17 18 1B 1A 1B 18 17 18 1E 1D 1B 1D BF 1C 1D 14 13 14 1D 1C 1D 18 19 1B 1D 1C 1D 22 21 BF 22 1F 1E 1F 1F 21 22 20 1F 20 1E 00 1D 1F 1D 1F B9 1D 00 1B 1D 1C 1D 1D 1C 1D 1D 31 00 88 0E 1E B5 00 1D 1E 00 1E 1D 31 88 00 20 1E B8 00 1E 1D 00 1E 20 00 1E 1D 30 88 0E 1E B5 00 1D 1E 00 1E 1D 31 88 00 20 1F B5 00 1F 20 00 22 24 31 00 93 61 6E 8D 2C 93 1F 6F
+
+($6F02)
+85 3F
+89 00
+8D 2C
+20 BB
+22
+20
+2C
+00
+2C
+20
+22 20 2C 00 2C 22 B5 24 25 25 27 29 27 31 2C 85 BF 89 08 20 30 00 C0 22 B6 20 00 1D 1B 00 19 22 31 22 22 40 1B 30 00 C0 1D B6 1F 00 25 24 00 22 20 30 20 B2 00 22 20 40 20 30 00 C0 22 B6 21 00 21 22 00 24 25 34 25 25 27 29 27 B2 00 25 27 30 25 B2 00 24 25 33 25 25 00 85 7F 89 0E 16 B5 00 15 16 00 18 19 31 85 BF 89 00 29 27 B8 00 27 25 00 27 29 00 27 25 30 85 7F 89 0E 16 B5 00 15 16
+
+
+
+
+
+
