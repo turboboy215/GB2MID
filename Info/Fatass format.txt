@@ -1,0 +1,66 @@
+Song table
+=======================================
+The song table is comprised of 16-bit pointers to each song, followed by a list of the banks that each song is stored in. In Animorphs, there are 20 total songs.
+
+Song header
+=======================================
+Each song has a header which is structured as follows (note that pointers are relative):
+1-2. Sequence offset from song start
+3-4. Pattern table offset
+5-6. Song length in bytes
+7-8. Number of patterns
+9-?. Song title (terminated by 00 or FF)
+
+Song sequence
+=======================================
+Each song's sequence is structured with the following commands:
+00-FA = Play pattern
+FB xx = Set panning
+FC xx yy = Shuffle (X = Phase, Y = Depth <<4 | rate)
+FD xx = Set transpose (signed)
+FE xx = Set speed
+FF = Restart song
+
+Pattern table
+=======================================
+Each pattern is a series of 4 16-bit pointers, 1 played by each channel.
+
+Song events
+=======================================
+Each channel of a song in a pattern uses the following events:
+00 = Note off
+01-48 (CH1-3) = Play note
+01-7F (CH4) = Play noise type note
+49-7F = Empty row
+80-BF = Wait - end this row and skip amount more
+C0-D2 = (No effect)
+D3 xx xx = Go to macro (X = Pointer)
+D4 xx yy = Cycle duty (X = Steps, Y = Rate)
+D5 xx yy = Cycle pan (X = Steps, Y = Rate)
+D6 xx = Set waveform distortion (X = Value)
+D7 xx yy = Waveform mix (X = Preset waveform, Y = step)
+D8 = Stop sample (No effect)
+D9 = Reset vibrato
+DA xx = Set waveform preset (X = Waveform)
+DB xx = Set tuning (X = Amount)
+DC xx = Play sample (No effect)
+DD xx yy zz = Arpeggio (X = Step 1, Y = Step 2, Z = Rate)
+DE xx = Glissando (Round the final pitch to nearest semitone)
+DF xx = Portamento source (Set current pitch to "note" without triggering)
+E0 xx = Portamento rate (X = Amount)
+E1 xx yy = Vibrato (X = Depth, Y = Rate)
+E2 = Restart envelope
+E3 xx = Retrigger delay (X = Time)
+E4 xx = Trigger delay (X = Time)
+E5 xx = Use duration (X = Time, 0 = infinite)
+E6 xx = Sweep (X = Amount)
+E7 xx = Set envelope volume (X = Amount)
+E8 xx = Set envelope rate (X = Amount)
+E9 xx = Set duration (X = Time)
+EA xx = Set duty (X = Value)
+EB-FA = (No effect)
+FB xx = Set panning (X = Value)
+FC xx yy = Global shuffle (X = Phase, Y = Dr)
+FD xx = Transpose track (X = Amount, signed)
+FE xx = Set global speed (X = Speed)
+FF = End of pattern

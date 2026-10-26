@@ -1,0 +1,73 @@
+Song table
+=======================================
+The song table is located at offset $6000 in the first sound bank. It is structured with entries as follows - 11 in total:
+
+1. Bank (relative to first song bank)
+2-3. Song orders pointer
+4. Song speed
+5-6. Song orders loop pointer
+7-8. (Unused)
+
+Order lists
+=======================================
+Each song has an order list which lists the patterns that are played by each track at a time. Each entry of this list is structured like as follows:
+1. Channel 1 pattern bank (relative to first sound bank)
+2-3. Channel 1 pattern pointer
+4. Channel 2 pattern bank (relative to first sound bank)
+5-6. Channel 2 pattern pointer
+7. Channel 3 pattern bank (relative to first sound bank)
+8-9. Channel 3 pattern pointer
+10. Channel 4 pattern bank (relative to first sound bank)
+11-12. Channel 4 pattern pointer
+13. Number of rows
+14-16. (Unused)
+
+Each of these order lists is terminated by a value of FF plus 15 bytes of value 00.
+
+Song channel patterns
+=======================================
+Each row in a pattern is variable length which is determined by a mask byte at the start of the row. A mask byte of below 80 represents a full row with 5 bytes, the first being this byte itself (see below). If the value is 80 or more (bit 7 set), then only certain values are used, represented by each bit: 0 = note, 1 = instrument, 2 = volume, 3 = effect, 4 = parameter. 80 represents an empty row, since none of the values are set. The 5 bytes of a row are as follows in order (if the bit is not present for a value, then it is skipped):
+1. Note
+2. Instrument (actually register value)
+3. Volume
+4. Effect
+5. Parameter for effect
+
+Effects
+=======================================
+Effects are based on ProTracker (MOD), suggesting that the music was converted from this format. They are as follows (parameter byte is used only if present in mask):
+00 xy = Arpeggio (X = Start, Y = Count)
+01 xx = Pitch slide up (X = Amount)
+02 xx = Pitch slide down (X = Amount)
+03 xx = Tone portamento (X = Speed)
+04 xy = Vibrato (X = Speed, Y = Depth (0 = Keep old value))
+05 xy = Portamento + volume slide (XY = Value)
+06 xy = Vibrato + volume slide
+07 xy = Tremolo (X = Speed, Y = Depth)
+08 -- = (No effect) (- = (Unused))
+09 -- = (No effect) (- = (Unused))
+0A xy = Volume slide (X = If not 0, then up, otherwise, Y = down)
+0B xx = Jump to position (start + xx * 16)
+0C xx = Set volume (X = Value)
+0D xx = Pattern break (X = First row of next pattern)
+0E 1x = Fine slide up (X = Value)
+0E 2X = Fine slide down (X = Value)
+0E Ax = Fine volume slide up (X = Value)
+0E Bx = Fine volume slide down (X = Value)
+0E -- (other) = (No effect) (- = (Unused))
+0F xx = Set speed (X = Speed)
+
+Sound effects table
+=======================================
+Sound effects are located in a table with entries structured as follows:
+1. Bank
+2-3. Sound effect pointer
+4. (Unused)
+
+Sound effects
+=======================================
+Sound effects are structured as follows:
+1. Number of frames
+2. Bits 7-4 = Number of parameters, bits 3-0 = Channel number
+(Parameters). NRxx parameters
+(Parameters)+1. 00 (End value)

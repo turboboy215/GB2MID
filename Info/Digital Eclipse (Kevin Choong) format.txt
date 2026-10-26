@@ -1,0 +1,42 @@
+Song table
+=======================================
+The song table consists of pointers to each channel of a song. 720° only uses channel 1 and 2 for music, with channel 3 reserved for sound effects using PCM samples. The other games additionally use channel 4 for music.
+
+In 720°, the table is structured with entries as follows:
+1-2. Channel 1 pointer
+3-4. Channel 2 pointer
+5. Bank
+6-8. (Unused)
+
+In all other games, the table is structured with entries as follows:
+1-2. Channel 1 pointer
+3-4. Channel 2 pointer
+5-6. Channel 4 pointer
+7. Bank
+8-16. (Unused)
+
+Song data
+=======================================
+The song data is a very simple format used for each channel. For channel 1 and 2, it is structured as follows:
+
+1-2. Note frequency (FF FF = rest)
+3. Note length
+
+For channel 4, it is structured as follows:
+1. NR43 value (FF = rest)
+2. Note length
+
+Both of these sequences are terminated with value BB, which restarts the song.
+
+Sample table
+=======================================
+Samples are used to play sound effects and voice clips on channel 3. They are stored in a table as follows:
+
+1. Priority
+2. (Unused)
+3-4. Sample start
+5-6. Sample end
+7. Bank
+8. (Unused)
+
+In 720° and Paperboy (GBC), these samples play at about a rate of 3121hz (seemingly prepared at 4000hz). In Marble Madness (GBC) and NFL Blitz games, these play at 8192hz.
