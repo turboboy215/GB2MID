@@ -57,7 +57,7 @@ void Write8B(unsigned char* buffer, unsigned int value);
 void WriteBE32(unsigned char* buffer, unsigned long value);
 void WriteBE24(unsigned char* buffer, unsigned long value);
 void WriteBE16(unsigned char* buffer, unsigned int value);
-unsigned int WriteNoteEventAlt(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
+unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 unsigned int WriteNoteEventAltOn(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 unsigned int WriteNoteEventAltOff(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
@@ -289,7 +289,6 @@ void MCsong2mid(int songNum, long ptrs[], long nextPtr)
 	}
 
 	midLength = 0x10000;
-	midData = (unsigned char*)malloc(midLength);
 
 	ctrlMidData = (unsigned char*)malloc(midLength);
 
@@ -759,9 +758,8 @@ void MCsong2mid(int songNum, long ptrs[], long nextPtr)
 		for (curTrack = 0; curTrack < trackCnt; curTrack++)
 		{
 			fwrite(multiMidData[curTrack], midPosM[curTrack], 1, mid);
+			free(multiMidData[curTrack]);
 		}
-
-		free(multiMidData[0]);
 		free(ctrlMidData);
 		fclose(mid);
 	}
