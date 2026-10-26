@@ -18,7 +18,7 @@
 #define Kouji_Murata			0x11
 #define Capcom					0x12
 #define	HAL_Laboratory			0x13
-#define Ryohji_Yoshitomi		0x14
+#define Sanrio_Carnival_2		0x14
 #define Kozue_Ishikawa			0x15
 #define Imagineering			0x16
 #define Ocean					0x17
@@ -120,3 +120,6 @@
 #define PCM_Vigilante_8			0x77
 #define PCM_Zebco				0x78
 #define PCM_Vicarious3			0x79
+#define Digital_Eclipse_2		0x7A
+#define Toki_Tori				0x7B
+#define Fatass					0x7C

@@ -946,6 +946,28 @@
 		<parameters>6C54\15</parameters>
 	</rom>
 	<rom>
+		<name>720 Degrees (U) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>02B2</checksum>
+        <crc32>e633841f</crc32>
+        <format>Digital_Eclipse_2</format>
+		<part>1/2=Music</part>
+		<banks>1</banks>
+		<parameters>3591\m\6</parameters>
+	</rom>
+	<rom>
+		<name>720 Degrees (U) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>02B2</checksum>
+        <crc32>e633841f</crc32>
+        <format>Digital_Eclipse_2</format>
+		<part>2/2=Samples</part>
+		<banks>1</banks>
+		<parameters>35C1\s\18</parameters>
+	</rom>
+	<rom>
 		<name>1942 (U) [C][!]</name>
 		<gamecode>AQ4E</gamecode>
 		<rev>0</rev>
@@ -1749,6 +1771,28 @@
 		<parameters>3</parameters>
 	</rom>
 	<rom>
+		<name>Animorphs (E) (M5) [C][!]</name>
+		<gamecode>BAMP</gamecode>
+		<rev>0</rev>
+		<checksum>E488</checksum>
+        <crc32>7fd46da1</crc32>
+        <format>Fatass</format>
+		<part></part>
+		<banks>A</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Animorphs (U) [C][!]</name>
+		<gamecode>BAME</gamecode>
+		<rev>0</rev>
+		<checksum>2690</checksum>
+        <crc32>b4f293cc</crc32>
+        <format>Fatass</format>
+		<part></part>
+		<banks>A</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Another Bible (J) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -2450,7 +2494,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>4</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Balloon Kid (W) [!]</name>
@@ -2461,7 +2505,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>4</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Bamse (Sw)</name>
@@ -3848,6 +3892,17 @@
 		<part></part>
 		<banks>19</banks>
 		<parameters>CFG/Bokujou Monogatari GB2 (J) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Bokujou Monogatari GB2 (Unl) [C]</name>
+		<gamecode>A37J</gamecode>
+		<rev>0</rev>
+		<checksum>B06B</checksum>
+        <crc32>d9a7fcd3</crc32>
+        <format>Hirokazu_Tanaka</format>
+		<part></part>
+		<banks>66</banks>
+		<parameters>8</parameters>
 	</rom>
 	<rom>
 		<name>Bokujou Monogatari GB3 - Boy Meets Girl (J) (V1.0) [C][!]</name>
@@ -5519,7 +5574,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>3F,40</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Chibi Maruko-chan - Go Chounai Minna de Game dayo! (J) [C]</name>
@@ -7708,7 +7763,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>2</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Dr. Mario (W) (V1.1)</name>
@@ -7719,7 +7774,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>2</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Dracula - Crazy Vampire (E) (M5) [C][!]</name>
@@ -8984,7 +9039,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>7</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>F-1 Race (W) (V1.1) [!]</name>
@@ -8995,7 +9050,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>7</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>F-1 Racing Championship (E) (M5) [C][!]</name>
@@ -10161,7 +10216,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>20</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Gameboy Camera Gold - Zelda Edition (U) [S]</name>
@@ -10172,7 +10227,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>20</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Gameboy Color Promotional Demo (J) [C]</name>
@@ -10194,7 +10249,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>5</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Gameboy Gallery 2 (A) [S][!]</name>
@@ -10260,7 +10315,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>4</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Gameboy Wars 2 (J) [C][!]</name>
@@ -10269,7 +10324,29 @@
 		<checksum>8BAC</checksum>
         <crc32>e3b0319e</crc32>
         <format>Hudson_Soft</format>
-		<part></part>
+		<part>1/2=Main</part>
+		<banks>1D,1E</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Gameboy Wars 2 (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8BAC</checksum>
+        <crc32>e3b0319e</crc32>
+        <format>Hirokazu_Tanaka</format>
+		<part>2/2=Additional</part>
+		<banks>4</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Gameboy Wars 2 (J) [C][a1][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>8BAC</checksum>
+        <crc32>c69dc37b</crc32>
+        <format>Hudson_Soft</format>
+		<part>1/2=Main</part>
 		<banks>1D,1E</banks>
 		<parameters></parameters>
 	</rom>
@@ -10279,10 +10356,10 @@
 		<rev>0</rev>
 		<checksum>8BAC</checksum>
         <crc32>c69dc37b</crc32>
-        <format>Hudson_Soft</format>
-		<part></part>
-		<banks>1D,1E</banks>
-		<parameters></parameters>
+        <format>Hirokazu_Tanaka</format>
+		<part>2/2=Additional</part>
+		<banks>4</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Gameboy Wars 3 (J) [C][!]</name>
@@ -10304,7 +10381,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>4</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Gameboy Wars Turbo (J) (Famitsu Magazine SE) [S]</name>
@@ -10315,7 +10392,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>4</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Gamera - Daikai Jukuchuu Kessen (J) [S]</name>
@@ -10447,7 +10524,7 @@
         <format>Capcom</format>
 		<part></part>
 		<banks>4</banks>
-		<parameters></parameters>
+		<parameters>o</parameters>
 	</rom>
 	<rom>
 		<name>Gargoyle's Quest - Ghosts'n Goblins (UE) [a1]</name>
@@ -10458,7 +10535,7 @@
         <format>Capcom</format>
 		<part></part>
 		<banks>4</banks>
-		<parameters></parameters>
+		<parameters>o</parameters>
 	</rom>
 	<rom>
 		<name>Gargoyle's Quest II - The Demon Darkness (E) (Unreleased) [!]</name>
@@ -11085,7 +11162,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>6</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Golf Classic (E) [S]</name>
@@ -12131,6 +12208,17 @@
 		<part>2/2=Samples</part>
 		<banks>11</banks>
 		<parameters>S</parameters>
+	</rom>
+	<rom>
+		<name>Heroic Sword (Unl) [C]</name>
+		<gamecode>A37J</gamecode>
+		<rev>0</rev>
+		<checksum>608D</checksum>
+        <crc32>655bff9d</crc32>
+        <format>Hirokazu_Tanaka</format>
+		<part></part>
+		<banks>C1</banks>
+		<parameters>8</parameters>
 	</rom>
 	<rom>
 		<name>Hexcite - The Shapes of Victory (E) (M3) (Unreleased) [C][!]</name>
@@ -13791,7 +13879,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>2</banks>
-		<parameters>1</parameters>
+		<parameters>3</parameters>
 	</rom>
 	<rom>
 		<name>Kandume Monsters (J) [S]</name>
@@ -14088,7 +14176,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>4</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Kick Boxing, The (J)</name>
@@ -14421,15 +14509,26 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
-		<name>Kirby's Tilt 'n' Tumble (U) [C][!]</name>
+		<name>Kirby's Tilt 'N' Tumble (U) [C][!]</name>
 		<gamecode>KTNE</gamecode>
 		<rev>0</rev>
 		<checksum>5186</checksum>
         <crc32>e541acf1</crc32>
         <format>Hirokazu_Tanaka</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>F,10</banks>
-		<parameters>1</parameters>
+		<parameters>6</parameters>
+	</rom>
+	<rom>
+		<name>Kirby's Tilt 'N' Tumble (U) [C][!]</name>
+		<gamecode>KTNE</gamecode>
+		<rev>0</rev>
+		<checksum>5186</checksum>
+        <crc32>e541acf1</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>1A</banks>
+		<parameters>CFG/Kirby's Tilt 'N' Tumble (U) [C][!] - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Kirikou (E) (M6) [C][!]</name>
@@ -15032,9 +15131,20 @@
 		<checksum>2B31</checksum>
         <crc32>c0face3d</crc32>
         <format>Hirokazu_Tanaka</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>F,10</banks>
-		<parameters>1</parameters>
+		<parameters>6</parameters>
+	</rom>
+	<rom>
+		<name>Koro Koro Kirby (J) [C][!]</name>
+		<gamecode>KKKJ</gamecode>
+		<rev>0</rev>
+		<checksum>2B31</checksum>
+        <crc32>c0face3d</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>1A</banks>
+		<parameters>CFG/Koro Koro Kirby (J) [C][!] - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Kou Dai Guai Shou - Lan Bao Shi 2003 (Unl) [C][f1]</name>
@@ -15301,6 +15411,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Legend (Ch) [C]</name>
+		<gamecode>A37J</gamecode>
+		<rev>0</rev>
+		<checksum>C6FF</checksum>
+        <crc32>8907ad00</crc32>
+        <format>Hirokazu_Tanaka</format>
+		<part></part>
+		<banks>71</banks>
+		<parameters>8</parameters>
+	</rom>
+	<rom>
+		<name>Legend of Heroes (Unl) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>CE0D</checksum>
+        <crc32>0dd2b42b</crc32>
+        <format>Hirokazu_Tanaka</format>
+		<part></part>
+		<banks>3F</banks>
+		<parameters>8</parameters>
+	</rom>
+	<rom>
 		<name>Legend of Prince Valiant, The (E)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -15430,7 +15562,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>1C,1F</banks>
-		<parameters>1</parameters>
+		<parameters>4</parameters>
 	</rom>
 	<rom>
 		<name>Legend of Zelda, The - Link's Awakening (U) (V1.1) [!]</name>
@@ -15441,7 +15573,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>1C,1F</banks>
-		<parameters>1</parameters>
+		<parameters>4</parameters>
 	</rom>
 	<rom>
 		<name>Legend of Zelda, The - Link's Awakening (U) (V1.2) [!]</name>
@@ -15452,7 +15584,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>1C,1F</banks>
-		<parameters>1</parameters>
+		<parameters>4</parameters>
 	</rom>
 	<rom>
 		<name>Legend of Zelda, The - Link's Awakening DX (F) (V1.0) [C][!]</name>
@@ -15463,7 +15595,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>1C,1F</banks>
-		<parameters>1</parameters>
+		<parameters>4</parameters>
 	</rom>
 	<rom>
 		<name>Legend of Zelda, The - Link's Awakening DX (F) (V1.1) [C][!]</name>
@@ -15474,7 +15606,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>1C,1F</banks>
-		<parameters>1</parameters>
+		<parameters>4</parameters>
 	</rom>
 	<rom>
 		<name>Legend of Zelda, The - Link's Awakening DX (G) (V1.0) [C][!]</name>
@@ -15485,7 +15617,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>1C,1F</banks>
-		<parameters>1</parameters>
+		<parameters>4</parameters>
 	</rom>
 	<rom>
 		<name>Legend of Zelda, The - Link's Awakening DX (G) (V1.1) [C][!]</name>
@@ -15496,7 +15628,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>1C,1F</banks>
-		<parameters>1</parameters>
+		<parameters>4</parameters>
 	</rom>
 	<rom>
 		<name>Legend of Zelda, The - Link's Awakening DX (U) (V1.0) [C][!]</name>
@@ -15507,7 +15639,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>1C,1F</banks>
-		<parameters>1</parameters>
+		<parameters>4</parameters>
 	</rom>
 	<rom>
 		<name>Legend of Zelda, The - Link's Awakening DX (U) (V1.1) [C][!]</name>
@@ -15518,7 +15650,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>1C,1F</banks>
-		<parameters>1</parameters>
+		<parameters>4</parameters>
 	</rom>
 	<rom>
 		<name>Legend of Zelda, The - Link's Awakening DX (U) (V1.2) [C][!]</name>
@@ -15529,7 +15661,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>1C,1F</banks>
-		<parameters>1</parameters>
+		<parameters>4</parameters>
 	</rom>
 	<rom>
 		<name>Legend of Zelda, The - Oracle of Ages (E) (M5) [C][!]</name>
@@ -16332,7 +16464,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>7</banks>
-		<parameters></parameters>
+		<parameters>3</parameters>
 	</rom>
 	<rom>
 		<name>M&M's Minis Madness (E) [C]</name>
@@ -16618,7 +16750,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>4</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Mahou Kishi Rayearth (J) [S]</name>
@@ -16916,6 +17048,28 @@
 		<part></part>
 		<banks>6</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Marble Madness (U) [C][!]</name>
+		<gamecode>ANNE</gamecode>
+		<rev>0</rev>
+		<checksum>8DF1</checksum>
+        <crc32>4ec78785</crc32>
+        <format>Digital_Eclipse_2</format>
+		<part>1/2=Music</part>
+		<banks>1</banks>
+		<parameters>35CF\m\6</parameters>
+	</rom>
+	<rom>
+		<name>Marble Madness (U) [C][!]</name>
+		<gamecode>ANNE</gamecode>
+		<rev>0</rev>
+		<checksum>8DF1</checksum>
+        <crc32>4ec78785</crc32>
+        <format>Digital_Eclipse_2</format>
+		<part>2/2=Samples</part>
+		<banks>1</banks>
+		<parameters>362F\s\13</parameters>
 	</rom>
 	<rom>
 		<name>Mario & Yoshi (E) [!]</name>
@@ -17886,6 +18040,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Metal Slug 2 (Unl) [C][f1]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1183</checksum>
+        <crc32>0d17e940</crc32>
+        <format>Hirokazu_Tanaka</format>
+		<part></part>
+		<banks>29</banks>
+		<parameters>8</parameters>
+	</rom>
+	<rom>
 		<name>Metal Slug 3 (Unl) [C][f1]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -17990,10 +18155,10 @@
 		<rev>0</rev>
 		<checksum>581F</checksum>
         <crc32>dee05370</crc32>
-        <format>Ryohji_Yoshitomi</format>
+        <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>5</banks>
-		<parameters></parameters>
+		<parameters>7</parameters>
 	</rom>
 	<rom>
 		<name>Mia Hamm Soccer Shootout (U) [C][!]</name>
@@ -20548,6 +20713,50 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>NFL Blitz 2000 (U) [C][!]</name>
+		<gamecode>AX2E</gamecode>
+		<rev>0</rev>
+		<checksum>1F2B</checksum>
+        <crc32>090c7dac</crc32>
+        <format>Digital_Eclipse_2</format>
+		<part>1/2=Music</part>
+		<banks>40</banks>
+		<parameters>4000\m\5</parameters>
+	</rom>
+	<rom>
+		<name>NFL Blitz 2000 (U) [C][!]</name>
+		<gamecode>AX2E</gamecode>
+		<rev>0</rev>
+		<checksum>1F2B</checksum>
+        <crc32>090c7dac</crc32>
+        <format>Digital_Eclipse_2</format>
+		<part>2/2=Samples</part>
+		<banks>40</banks>
+		<parameters>4050\s\1E</parameters>
+	</rom>
+	<rom>
+		<name>NFL Blitz 2001 (U) [C][!]</name>
+		<gamecode>BLIE</gamecode>
+		<rev>0</rev>
+		<checksum>8169</checksum>
+        <crc32>61c653ae</crc32>
+        <format>Digital_Eclipse_2</format>
+		<part>1/2=Music</part>
+		<banks>40</banks>
+		<parameters>4000\m\5</parameters>
+	</rom>
+	<rom>
+		<name>NFL Blitz 2001 (U) [C][!]</name>
+		<gamecode>BLIE</gamecode>
+		<rev>0</rev>
+		<checksum>8169</checksum>
+        <crc32>61c653ae</crc32>
+        <format>Digital_Eclipse_2</format>
+		<part>2/2=Samples</part>
+		<banks>40</banks>
+		<parameters>4050\s\42</parameters>
+	</rom>
+	<rom>
 		<name>NFL Football (U) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -21725,6 +21934,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Paperboy (U) [C][!]</name>
+		<gamecode>AYPE</gamecode>
+		<rev>0</rev>
+		<checksum>7EC9</checksum>
+        <crc32>c0a98305</crc32>
+        <format>Digital_Eclipse_2</format>
+		<part>1/2=Music</part>
+		<banks>1</banks>
+		<parameters>33D4\m\11</parameters>
+	</rom>
+	<rom>
+		<name>Paperboy (U) [C][!]</name>
+		<gamecode>AYPE</gamecode>
+		<rev>0</rev>
+		<checksum>7EC9</checksum>
+        <crc32>c0a98305</crc32>
+        <format>Digital_Eclipse_2</format>
+		<part>2/2=Samples</part>
+		<banks>1</banks>
+		<parameters>34E4\s\E</parameters>
+	</rom>
+	<rom>
 		<name>Paperboy (U) [M][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -22184,7 +22415,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>10</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Pocket Camera (J) (V1.1) [S]</name>
@@ -22195,7 +22426,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>20</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Pocket Color Billiard (J) [C][!]</name>
@@ -24890,7 +25121,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>5</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Radar Mission (UE) [!]</name>
@@ -24901,7 +25132,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>5</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Radikal Bikers (E) (M4) (Prototype) [C]</name>
@@ -25220,7 +25451,7 @@
         <format>Capcom</format>
 		<part></part>
 		<banks>4</banks>
-		<parameters></parameters>
+		<parameters>o</parameters>
 	</rom>
 	<rom>
 		<name>Rekishi Masters 512 (J)</name>
@@ -27412,6 +27643,17 @@
 		<parameters>3</parameters>
 	</rom>
 	<rom>
+		<name>Sanrio Carnival 2 (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>46FD</checksum>
+        <crc32>758c7b2a</crc32>
+        <format>Sanrio_Carnival_2</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
 		<name>Sanrio Timenet - Kako Hen (J) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -28345,6 +28587,17 @@
 		<part></part>
 		<banks>3,4,66,67</banks>
 		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Shuihu Zhuan - Jingdian Ban (Unl) [C][f2]</name>
+		<gamecode>A37J</gamecode>
+		<rev>0</rev>
+		<checksum>9E59</checksum>
+        <crc32>33bf192c</crc32>
+        <format>Hirokazu_Tanaka</format>
+		<part></part>
+		<banks>D</banks>
+		<parameters>8</parameters>
 	</rom>
 	<rom>
 		<name>Shuma Baolong - Shuijing Ban (Unl) [C][f1]</name>
@@ -30577,7 +30830,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>1E</banks>
-		<parameters>1</parameters>
+		<parameters>5</parameters>
 	</rom>
 	<rom>
 		<name>Super Mario Bros. Deluxe (J) (V1.1) (Unreleased) [C][!]</name>
@@ -30588,7 +30841,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>1E</banks>
-		<parameters>1</parameters>
+		<parameters>5</parameters>
 	</rom>
 	<rom>
 		<name>Super Mario Bros. Deluxe (U) (V1.0) [C][!]</name>
@@ -30599,7 +30852,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>1E</banks>
-		<parameters>1</parameters>
+		<parameters>5</parameters>
 	</rom>
 	<rom>
 		<name>Super Mario Bros. Deluxe (U) (V1.1) [C][!]</name>
@@ -30610,7 +30863,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>1E</banks>
-		<parameters>1</parameters>
+		<parameters>5</parameters>
 	</rom>
 	<rom>
 		<name>Super Mario Bros. Deluxe (U) (V1.2) [C]</name>
@@ -30621,7 +30874,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>1E</banks>
-		<parameters>1</parameters>
+		<parameters>5</parameters>
 	</rom>
 	<rom>
 		<name>Super Mario Land (W) (V1.0) [!]</name>
@@ -30632,7 +30885,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>4</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Super Mario Land (W) (V1.1) [!]</name>
@@ -30643,7 +30896,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>4</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Super Mario Land 2 - 6 Golden Coins (UE) (V1.0) [!]</name>
@@ -30654,7 +30907,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>5</banks>
-		<parameters>1</parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Super Mario Land 2 - 6 Golden Coins (UE) (V1.1) [!]</name>
@@ -30665,7 +30918,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>5</banks>
-		<parameters>1</parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Super Mario Land 2 - 6 Golden Coins (UE) (V1.2) [!]</name>
@@ -30676,7 +30929,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>5</banks>
-		<parameters>1</parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Super Mario Land 2 - 6tsu no Kinka (J) (V1.0)</name>
@@ -30687,7 +30940,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>5</banks>
-		<parameters>1</parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Super Mario Land 2 - 6tsu no Kinka (J) (V1.2)</name>
@@ -30698,7 +30951,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>5</banks>
-		<parameters>1</parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Super Mario Land 4 (J) [!]</name>
@@ -31875,7 +32128,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>2</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Tetris (W) (V1.1) [!]</name>
@@ -31886,7 +32139,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>2</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Tetris 2 (U) [!]</name>
@@ -31940,8 +32193,8 @@
         <crc32>b76c769b</crc32>
         <format>Hirokazu_Tanaka</format>
 		<part></part>
-		<banks>8</banks>
-		<parameters></parameters>
+		<banks>8,9</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Tetris Attack (U) (V1.1) [S]</name>
@@ -31951,8 +32204,8 @@
         <crc32>5ee45a4d</crc32>
         <format>Hirokazu_Tanaka</format>
 		<part></part>
-		<banks>8</banks>
-		<parameters></parameters>
+		<banks>8,9</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Tetris Blast (U) [S][!]</name>
@@ -32294,6 +32547,17 @@
 		<part></part>
 		<banks>3D</banks>
 		<parameters>CFG/TOCA Touring Car Championship (U) [C][!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Toki Tori (U) (M5) [C][!]</name>
+		<gamecode>B2TE</gamecode>
+		<rev>0</rev>
+		<checksum>5E7C</checksum>
+        <crc32>0a0f9289</crc32>
+        <format>Toki_Tori</format>
+		<part></part>
+		<banks>2E</banks>
+		<parameters></parameters>
 	</rom>
 	<rom>
 		<name>Tokimeki Memorial Pocket - Culture Hen - Komorebi no Melody (J) [C][!]</name>
@@ -33951,10 +34215,10 @@
 		<rev>0</rev>
 		<checksum>F4A5</checksum>
         <crc32>40be3889</crc32>
-        <format>Ryohji_Yoshitomi</format>
+        <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>5</banks>
-		<parameters></parameters>
+		<parameters>7</parameters>
 	</rom>
 	<rom>
 		<name>Wario Land 3 (JU) (M2) [C][!]</name>
@@ -34878,7 +35142,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>7</banks>
-		<parameters></parameters>
+		<parameters>3</parameters>
 	</rom>
 	<rom>
 		<name>X (Tech Demo) (U) [!]</name>
@@ -34889,7 +35153,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>7</banks>
-		<parameters></parameters>
+		<parameters>3</parameters>
 	</rom>
 	<rom>
 		<name>Xena - Warrior Princess (U) (M6) [C][!]</name>
@@ -35186,7 +35450,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>2</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Yakyuuman (J) (V1.1)</name>
@@ -35197,7 +35461,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>2</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Yamakawa Nihon (J)</name>
@@ -35220,6 +35484,17 @@
 		<part></part>
 		<banks>2</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Yingxiong Jian 2 (Unl) [C][f2]</name>
+		<gamecode>A37J</gamecode>
+		<rev>0</rev>
+		<checksum>7049</checksum>
+        <crc32>33670bc2</crc32>
+        <format>Hirokazu_Tanaka</format>
+		<part></part>
+		<banks>66</banks>
+		<parameters>8</parameters>
 	</rom>
 	<rom>
 		<name>Yingxiong Tianxia (Unl) [C][f2]</name>
@@ -35350,8 +35625,8 @@
         <crc32>3beb7239</crc32>
         <format>Hirokazu_Tanaka</format>
 		<part></part>
-		<banks>8</banks>
-		<parameters></parameters>
+		<banks>8,9</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Yoshi no Tamago (J)</name>
@@ -35629,39 +35904,6 @@
 		<parameters>2548</parameters>
 	</rom>
 	<rom>
-		<name>Zelda no Densetsu - Yume o Miru Shima (J) (V1.0)</name>
-		<gamecode></gamecode>
-		<rev>0</rev>
-		<checksum>03FC</checksum>
-        <crc32>39a6684e</crc32>
-        <format>Hirokazu_Tanaka</format>
-		<part></part>
-		<banks>1C,1F</banks>
-		<parameters>1</parameters>
-	</rom>
-	<rom>
-		<name>Zelda no Densetsu - Yume o Miru Shima (J) (V1.1)</name>
-		<gamecode></gamecode>
-		<rev>1</rev>
-		<checksum>C563</checksum>
-        <crc32>ea20b82a</crc32>
-        <format>Hirokazu_Tanaka</format>
-		<part></part>
-		<banks>1C,1F</banks>
-		<parameters>1</parameters>
-	</rom>
-	<rom>
-		<name>Zelda no Densetsu - Yume o Miru Shima DX (J) (V1.0) [C][!]</name>
-		<gamecode></gamecode>
-		<rev>0</rev>
-		<checksum>9872</checksum>
-        <crc32>d974abea</crc32>
-        <format>Hirokazu_Tanaka</format>
-		<part></part>
-		<banks>1C,1F</banks>
-		<parameters>1</parameters>
-	</rom>
-	<rom>
 		<name>Zelda no Densetsu - Fushigi no Kimoni - Daichi no Shou (J) [C][!]</name>
 		<gamecode>AZ7J</gamecode>
 		<rev>0</rev>
@@ -35684,6 +35926,39 @@
 		<parameters>1</parameters>
 	</rom>
 	<rom>
+		<name>Zelda no Densetsu - Yume o Miru Shima (J) (V1.0)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>03FC</checksum>
+        <crc32>39a6684e</crc32>
+        <format>Hirokazu_Tanaka</format>
+		<part></part>
+		<banks>1C,1F</banks>
+		<parameters>4</parameters>
+	</rom>
+	<rom>
+		<name>Zelda no Densetsu - Yume o Miru Shima (J) (V1.1)</name>
+		<gamecode></gamecode>
+		<rev>1</rev>
+		<checksum>C563</checksum>
+        <crc32>ea20b82a</crc32>
+        <format>Hirokazu_Tanaka</format>
+		<part></part>
+		<banks>1C,1F</banks>
+		<parameters>4</parameters>
+	</rom>
+	<rom>
+		<name>Zelda no Densetsu - Yume o Miru Shima DX (J) (V1.0) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>9872</checksum>
+        <crc32>d974abea</crc32>
+        <format>Hirokazu_Tanaka</format>
+		<part></part>
+		<banks>1C,1F</banks>
+		<parameters>4</parameters>
+	</rom>
+	<rom>
 		<name>Zelda no Densetsu - Yume o Miru Shima DX (J) (V1.1) [C][!]</name>
 		<gamecode></gamecode>
 		<rev>1</rev>
@@ -35692,7 +35967,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>1C,1F</banks>
-		<parameters>1</parameters>
+		<parameters>4</parameters>
 	</rom>
 	<rom>
 		<name>Zelda no Densetsu - Yume o Miru Shima DX (J) (V1.2) [C][!]</name>
@@ -35703,7 +35978,7 @@
         <format>Hirokazu_Tanaka</format>
 		<part></part>
 		<banks>1C,1F</banks>
-		<parameters>1</parameters>
+		<parameters>4</parameters>
 	</rom>
 	<rom>
 		<name>Zen - Intergalactic Ninja (E)</name>

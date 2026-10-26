@@ -743,6 +743,10 @@ int main(int args, char* argv[])
             {
                 driver = Digital_Eclipse_1;
             }
+            else if (!strcmp(formatString, "Digital_Eclipse_2"))
+            {
+                driver = Digital_Eclipse_2;
+            }
             else if (!strcmp(formatString, "Distinctive_Software"))
             {
                 driver = Distinctive_Software;
@@ -770,6 +774,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "Factor_5"))
             {
                 driver = Factor_5;
+            }
+            else if (!strcmp(formatString, "Fatass"))
+            {
+                driver = Fatass;
             }
             else if (!strcmp(formatString, "FIRQ"))
             {
@@ -1011,14 +1019,14 @@ int main(int args, char* argv[])
             {
                 driver = Reeb;
             }
-            else if (!strcmp(formatString, "Ryohji_Yoshitomi"))
-            {
-                driver = Ryohji_Yoshitomi;
-            }
             else if (!strcmp(formatString, "Saffire"))
             {
                 driver = Saffire;
             }
+            else if (!strcmp(formatString, "Sanrio_Carnival_2"))
+            {
+                driver = Sanrio_Carnival_2;
+                }
             else if (!strcmp(formatString, "Sataru_Kurita"))
             {
                 driver = Sataru_Kurita;
@@ -1086,6 +1094,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "Titus_2"))
             {
                 driver = Titus_2;
+            }
+            else if (!strcmp(formatString, "Toki_Tori"))
+            {
+                driver = Toki_Tori;
             }
             else if (!strcmp(formatString, "Torus_1"))
             {

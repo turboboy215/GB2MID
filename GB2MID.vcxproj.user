@@ -3,6 +3,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LocalDebuggerCommandArguments>"Aladdin (U) (Beta) [S].gb"</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerCommandArgumentsHistory>"Vigilante 8 (U) [C][!].gbc"|"Zebco Fishing! (U) [C][!].gbc"|"SnowCross (E) (M6) [C][!].gbc"|"Kaept'n Blaubaer - Die verrueckte Schatzsuche (G) [C][!].gbc"|"Aladdin (U) (Beta) [S].gb"|</LocalDebuggerCommandArgumentsHistory>
+    <LocalDebuggerCommandArgumentsHistory>"Paperboy (U) [C][!].gbc"|"Toki Tori (U) (M5) [C][!].gbc"|"Animorphs (E) (M5) [C][!].gbc"|"Chee-Chai Alien (J) [C][!].gbc"|"Aladdin (U) (Beta) [S].gb"|</LocalDebuggerCommandArgumentsHistory>
   </PropertyGroup>
 </Project>
