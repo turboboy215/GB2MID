@@ -1,51 +1,152 @@
-Music Pointers List
+Song pointer table
 =======================================
-A list of pointers to values in the music table is located close to the start of the sound data immediately following sound effects pointers. It is accessed with the following instructions:
-    ld b, a
-    ld hl, SongList
-    ld a, b
-    and $1f
+The song pointer list is a list of 16-bit pointers to each song. Sound effects are stored in a separate table - see below.
 
-Which equals the following in hex:
-47 21 ?? ?? 78 E6 1F CD (Super Mario Land)
-
-Alternatively:
-47 21 ?? ?? E6 1F CD (Other games)
-
-47 21 C4 47 CD
-
-
-47 21 F8 44 E6 3F CD
-47 21 D1 57 E6 7F CD
-
-Music Pointer Table
+Song header
 =======================================
-The music pointer table is comprised of values to each channel's pattern in a song:
+Each song has its own "header" which specifies the transpose, note length tables, and each channel's pointer. Usually, it is structured as follows:
 
-1. Transpose amount for current song
+1. Transpose amount for current song (*2)
 2-3. Pointer to note lengths table
-4-5. Channel 1 pattern pointer
-6-7. Channel 2 pattern pointer
-8-9. Channel 3 pattern pointer
-10-11. Channel 4 pattern pointer
+4-5. Channel 1 track pointer
+6-7. Channel 2 track pointer
+8-9. Channel 3 track pointer
+10-11. Channel 4 track pointer
 
-Channel Pattern Data
+In Super Mario Land 2, it has two pointers to different note lengths used. The first is the normal one used, while the second is used for a "fast mode" that this game's engine has where the song uses the second table which normally consists of shorter lengths used, and additionally, the music is transposed higher by +4 (+2). This "fast mode" is presumably used for when the time is low. Thus, it is stored as follows:
+
+1. Transpose amount for current song (*2)
+2-3. Pointer to note lengths table (normal mode)
+4-5. Pointer to note lengths table (fast mode)
+6-7. Channel 1 track pointer
+8-9. Channel 2 track pointer
+10-11. Channel 3 track pointer
+12-13. Channel 4 track pointer
+
+For Hitek-developed unlicensed games (see below), the following header structure is instead used, with each track only being a single sequence:
+1. Number of channels (0-3)
+(For number of channels present:)
+1. Channel number (0-3)
+2-3. Channel sequence pointer
+
+
+Channel track data
 =======================================
-Each channel's pattern data is comprised of pointers to each sequence, which end with one of the following:
- - 0000 = End song?
- - FFFF xxxx = Loop song, loop point?
+Each channel uses a "track" which plays a number of sequences before the song stops or the channel restarts. The following commands are used:
+ - 0000 = End song (all channels in most games, only current channel in Metroid 2 and Wario Land)
+ - 01-FE (xx xx) = Play sequence (X = Pointer)
+ - FFFF xx xx = Jump to position (X = Pointer) (FF00 in Metroid 2 and Wario Land)
+
+In Kirby: Tilt 'n' Tumble, FFFF is replaced with xx FF yy yy, where X is a command and Y is a parameter. If X is 94, 95, or 96, then it uses its respective command function in the sequence as below using the parameter; otherwise, it performs as a jump command and the parameter is a pointer as in other games.
 
 Sequences
 =======================================
-Sequences are structured with the following commands:
-00 = End of sequence?
-01-0F = Rest (This rest is calculated by multiplying this number by the current note length - used for all notes on channel 4 (except 01 = rest))
-10-90 = Play note (odd numbers only)
-91-99 = Tom tom effect?
+Commands used by channel sequences differ from game to game, but are usually the same or similar, sometimes with more commands being present as in Dr. Mario which has some additional commands (9E and 9F) that are absent from earlier games like Super Mario Land.
+
+In games like Dr. Mario, the following commands are used:
+00 = End of sequence
+01 = Rest
+02-90 (CH1-3) (even) = Play note
+06/0B/10/15/1A (CH4) = Play note
 9B xx = Repeat point start, number of times
 9C = End of repeat point
-9D xx yy zz = Set volume, sweep, duty - Channel 1/2
- Channel 3 = Pointer to waveform, volume?
-9E xx xx = Change step table
-9F xx = Transpose (all channels)
+9D xx yy zz = Set instrument parameters (see below)
+9E xx xx = Change note length table
+9F xx = Transpose (all channels) (*2)
 Ax = Set note length
+
+In Super Mario Land 2, the following commands have been added:
+95 = Bend on
+96 = Bend off
+97 = Drop on
+98 = Drop off
+99 = Channel 3 fade on
+9A = Channel 3 fade off
+
+The Legend of Zelda: Link's Awakening (DX) is similar to SML2, but the following has changed: 
+94 = Channel 3 fade in on
+95 = Channel 3 SFX resume
+96 = Channel 3 SFX pause
+
+Super Mario Bros. Deluxe is based on LA, but features the following differences or added commands:
+97 = Drop on (same command, but period is different)
+99 xx = Set rest envelope (envelope used during rest (xx & %01110111))
+9A xx = Set global volume
+9D xx yy = Set instrument parameters (same command, but see below for difference)
+(Removed commands: 94, 95, 96, 99, 9A, 9E, 9F (code still exists but is inaccessible))
+
+Kirby: Tilt 'n' Tumble is based on Super Mario Bros. Deluxe's variant, but has some differences with commands:
+92 xx xx = Set drum kit for channel 4 notes
+93 xx = Add to envelope (signed)
+94 xx = Set envelope
+95 xx = Add to transpose (signed)
+96 xx = Set transpose (signed)
+9E xx xx = Change note length table (present from earlier games)
+Note also in this game, all transpose values, including the song header, are NOT multiplied by 2 like in other games.
+
+Metroid 2 and Wario Land 1 (SML3) are both use a variant of the sound engine (programmed by Ryohji Yoshitomi), but feature significant differences in the command set:
+00 = End of sequence
+01 = Rest
+03 = Echo (v1)
+05 = Echo (v2)
+xx (00-9F, except 01/03/05?) = Play note
+Ax = Change note length
+F1 xx yy zz = Set instrument parameters (see below)
+F2 xxxx = Change song speed table
+F3 xx = Transpose (all channels) (*2)
+F4 xx = Repeat section # of times
+F5 = End of repeat
+
+Hitek, a developer of unlicensed games, used a modified version of the engine from Link's Awakening, using an entirely different command set:
+00-BF (xy) = Play note (X = Note, Y = Length)
+Cx = Rest
+Dx yy zz aa = Set instrument parameters (X = Speed, Y = Envelope, Z = Release, A = Duty)
+E0-E5 = Set octave
+E6 xx = Set channel speed
+E7 = Channel 3 fade out on
+E8 = Channel 3 fade off
+E9 = Channel 3 fade in on
+EA xx = Transpose (all channels) (signed)
+EB = Drop on
+EC = Drop off
+ED = Channel 3 SFX pause
+EE = Channel 3 SFX resume
+EF xx yy = Poke (write value X to RAM address $C8yy)
+F0 (or other F0+) = End of song (all channels?)
+FB = Start of repeat position
+FD xx xx = Jump to position (X = Pointer)
+FE xx = End of repeat - go back to start (X = Times)
+
+Instruments
+=======================================
+Usually, parameters of instruments with their respective commands use the parameters as follows for channel 1/2:
+9D xx yy zz:
+ X = Envelope
+ Y = Flag = If not 0, then skips loading NRx2
+ Z = Duty (the low nibble also selects a pitch effect: 0 = none, 1 = wobble table, 2 = fall table, 3-15 = the period -2 (a fixed detune))
+
+For channel 3:
+9D xx xx yy:
+  X = Waveform pointer
+  Y = Level
+
+In Super Mario Bros. Deluxe, the command is as follows:
+9D xx 00 yy:
+  X = Envelope
+  Y = Duty
+OR, if byte 2 is not 0:
+9D xx xx yy:
+  X = Envelope from table pointer
+  Y = Duty
+
+Panning
+=======================================
+At least in some games, there is a table which holds a series of 4-byte entries, 1 for each song, as follows:
+1. Mode
+2. Period
+3. NR51 A
+4. NR51 B
+
+Sound effects
+=======================================
+Sound effects are routines hard-coded into the driver, and the format differs depending on the game. Usually, each sound effect is called with start parameters (a = frames per step, hl = register image - NRx0/NRx1-NRx4) and a series of images are loaded directly to the registers each frame. Tetris Attack uses an entirely different sound effect engine.
