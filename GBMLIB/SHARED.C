@@ -11,6 +11,7 @@
 #include "AJG.H"
 #include "ALLEYWAY.H"
 #include "ALTRON.H"
+#include "ANIMORPH.H"
 #include "ARCHON.H"
 #include "ATELIER.H"
 #include "ATLUS.H"
@@ -34,6 +35,7 @@
 #include "DAVDSHEA.H"
 #include "DBZ.H"
 #include "DE1.H"
+#include "DE2.H"
 #include "DISTINCT.H"
 #include "DKONG.H"
 #include "DSEQ.H"
@@ -73,7 +75,6 @@
 #include "MEGAMAN1.H"
 #include "MEGAMAN2.H"
 #include "MEGAMAN3.H"
-#include "METROID2.H"
 #include "MIDI.H"
 #include "MK4PCM.H"
 #include "MMSS.H"
@@ -99,6 +100,7 @@
 #include "REEB.H"
 #include "ROLAN.H"
 #include "SAFFIRE.H"
+#include "SANRIO2.H"
 #include "SCULPT.H"
 #include "SHEEP.H"
 #include "SMURFS2.H"
@@ -113,6 +115,7 @@
 #include "TIERTEX.H"
 #include "TITUS1.H"
 #include "TITUS2.H"
+#include "TOKITORI.H"
 #include "TORUS1.H"
 #include "TORUS2.H"
 #include "TOSE.H"
@@ -695,7 +698,7 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			CannonProc(banks[curBank]);
 			break;
 		case Capcom:
-			CapProc(banks[curBank]);
+			CapProc(banks[curBank], parameters);
 			break;
 		case Carillon_Player:
 			CarillonProc(banks[curBank]);
@@ -736,6 +739,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case Digital_Eclipse_1:
 			DE1Proc(banks[curBank], parameters);
 			break;
+		case Digital_Eclipse_2:
+			DE2Proc(banks[curBank], parameters);
+			break;
 		case Distinctive_Software:
 			DistProc(banks[curBank], parameters);
 			break;
@@ -756,6 +762,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Factor_5:
 			F5Proc(banks[curBank]);
+			break;
+		case Fatass:
+			AnimorphProc(banks[curBank]);
 			break;
 		case FIRQ:
 			GexProc(banks[curBank]);
@@ -937,11 +946,11 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case Reeb:
 			ReebProc(banks[curBank], parameters);
 			break;
-		case Ryohji_Yoshitomi:
-			M2Proc(banks[curBank]);
-			break;
 		case Saffire:
 			SaffireProc(banks[curBank], parameters);
+			break;
+		case Sanrio_Carnival_2:
+			Sanrio2Proc(banks[curBank]);
 			break;
 		case Sataru_Kurita:
 			SWRacerProc(banks[curBank]);
@@ -993,6 +1002,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Titus_2:
 			Tit2Proc(banks[curBank], parameters);
+			break;
+		case Toki_Tori:
+			TokiToriProc(banks[curBank]);
 			break;
 		case Torus_1:
 			Torus1Proc(banks[curBank], parameters);

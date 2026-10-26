@@ -1,6 +1,9 @@
-/*Nintendo (Hirokazu Tanaka)*/
+/*Nintendo (common driver - Hirokazu Tanaka)*/
+
+#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <stddef.h>
 #include <direct.h>
 #include "SHARED.H"
 #include "NINTENDO.H"
@@ -9,44 +12,33 @@
 
 FILE* rom, * mid;
 long bank;
+long offset;
 long tablePtrLoc;
 long tableOffset;
-long songLoc;
-int i, j, k, z;
-int stepSize;
+int i, j;
 char outfile[1000000];
 int songNum;
+long curPtr;
 long songPtrs[4];
-long speedPtr;
-long speedPtr2;
+long songPtr;
 long bankAmt;
-long nextPtr;
-int highestSeq;
 int curVol;
-int endList = 0;
-int curStepTab[16];
-unsigned static char* romData;
-unsigned static char* midData;
-unsigned static char* ctrlMidData;
-unsigned long seqList[30];
-unsigned long patList[30];
-unsigned long songList[90];
-
-long midLength;
-long switchPoint1[400][2];
-long switchPoint2[400][2];
-int switchNum1 = 0;
-int switchNum2 = 0;
-
-int totalLen = 0;
-
-int songTrans = 0;
-int startTrans = 0;
-int setFix;
+int drvVers;
+int foundTable;
+int songTempo;
+int curInst;
+int progBank;
 
 int multiBanks;
 int curBank;
-char folderName[30];
+
+char folderName[100];
+
+int totalLen;
+
+int songTrans;
+int startTrans;
+int endList;
 
 /*Most common variant*/
 const unsigned char NintMagicBytes[3] = { 0xE6, 0x1F, 0xCD };
@@ -60,342 +52,302 @@ const unsigned char NintMagicBytes3[5] = { 0xC3, 0x78, 0x77, 0x47, 0x21 };
 /*Game Boy Camera*/
 const unsigned char NintMagicBytes4[3] = { 0xE6, 0x7F, 0xCD };
 
-/*Re-maps for MIDI note values*/
-const int NintnoteVals[154] =
-{
-	0, 0,  																				/*0x00-0x01 (too low)*/
-	12, 0, 13, 0, 14, 0, 15, 0, 16, 0, 17, 0, 18, 0, 19, 0, 20, 0, 21, 0, 22, 0, 23, 0, /*0x02-0x19 - Octave 0*/
-	24, 0, 25, 0, 26, 0, 27, 0, 28, 0, 29, 0, 30, 0, 31, 0, 32, 0, 33, 0, 34, 0, 35, 0,	/*0x1A-0x31 - Octave 1*/
-	36, 0, 37, 0, 38, 0, 39, 0, 40, 0, 41, 0, 42, 0, 43, 0, 44, 0, 45, 0, 46, 0, 47, 0, /*0x32-0x49 - Octave 2*/
-	48, 0, 49, 0, 50, 0, 51, 0, 52, 0, 53, 0, 54, 0, 55, 0, 56, 0, 57, 0, 58, 0, 59, 0, /*0x4A-0x61 - Octave 3*/
-	60, 0, 61, 0, 62, 0, 63, 0, 64, 0, 65, 0, 66, 0, 67, 0, 68, 0, 69, 0, 70, 0, 71, 0, /*0x62-0x79 - Octave 4*/
-	72, 0, 73, 0, 74, 0, 75, 0, 76, 0, 77, 0, 78, 0, 79, 0, 80, 0, 81, 0, 82, 0, 83, 0, /*0x7A-0x91 - Octave 5*/
-};
+/*Metroid 2*/
+const char NintMagicBytesM2[6] = { 0xE0, 0x25, 0xFA, 0xDC, 0xCE, 0x21 };
+
+/*Wario Land*/
+const char NintMagicBytesWL[6] = { 0xE0, 0x25, 0xFA, 0x1C, 0xA6, 0x21 };
+
+/*Terrifying 9/11*/
+const char NintMagicBytesHitek[2] = { 0x47, 0x21 };
+
+unsigned char* romData;
+unsigned char* multiMidData[8];
+unsigned char* midData;
+
+unsigned char* ctrlMidData;
+
+long midLength;
 
 /*Function prototypes*/
 unsigned short ReadLE16(unsigned char* Data);
+unsigned short ReadBE16(unsigned char* Data);
 void Write8B(unsigned char* buffer, unsigned int value);
 void WriteBE32(unsigned char* buffer, unsigned long value);
 void WriteBE24(unsigned char* buffer, unsigned long value);
 void WriteBE16(unsigned char* buffer, unsigned int value);
 unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
-void Nintsong2mid(int songNum, long ptrList[4], long speedPtr, int songTrans);
-void NintgetLength(long ptrList[4]);
-void NintProc(int bank, char parameters[4][100]);
+void Nintsong2mid(int songNum, long ptr);
 
 void NintProc(int bank, char parameters[4][100])
 {
-	if (bank != 1)
+	drvVers = NINT_VER_STD;
+	curInst = 0;
+	curVol = 120;
+	foundTable = 0;
+	endList = 0;
+
+	if (parameters[0][0] != 0)
 	{
-		bankAmt = bankSize;
-		fseek(rom, ((bank - 1) * bankSize), SEEK_SET);
-		romData = (unsigned char*)malloc(bankSize);
-		fread(romData, 1, bankSize, rom);
+		drvVers = strtol(parameters[0], NULL, 16);
+
+		if (drvVers < NINT_VER_STD || drvVers > NINT_VER_HITEK)
+		{
+			printf("ERROR: Invalid version number!\n");
+			exit(-1);
+		}
 	}
 
-	else
+	if (bank < 0x02)
 	{
-		bankAmt = 0;
-		fseek(rom, ((bank - 1) * bankSize * 2), SEEK_SET);
-		romData = (unsigned char*)malloc(bankSize * 2);
-		fread(romData, 1, bankSize * 2, rom);
+		bank = 0x02;
 	}
 
-	if (parameters[0][0] == '1')
-	{
-		setFix = 1;
-	}
-	else
-	{
-		setFix = 0;
-	}
+	bankAmt = bankSize;
+
+	fseek(rom, 0, SEEK_SET);
+	romData = (unsigned char*)malloc(bankSize * 2);
+	fread(romData, 1, bankSize, rom);
+	fseek(rom, ((bank - 1) * bankSize), SEEK_SET);
+	fread(romData + bankSize, 1, bankSize, rom);
 
 	/*Try to search the bank for base table*/
-	for (i = 0; i < bankSize; i++)
+	for (i = bankSize; (i < bankSize * 2); i++)
 	{
 		if ((!memcmp(&romData[i], NintMagicBytes, 3) && ReadLE16(&romData[i + 3]) < 0x8000))
 		{
 			/*Super Mario Land*/
 			if (romData[i - 1] == 0x78)
 			{
-				tablePtrLoc = bankAmt + i - 3;
+				tablePtrLoc = i - 3;
 			}
 			/*Tetris/Dr. Mario/etc.*/
 			else
 			{
-				tablePtrLoc = bankAmt + i - 2;
+				tablePtrLoc = i - 2;
 			}
 
-			printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
-			tableOffset = ReadLE16(&romData[tablePtrLoc - bankAmt]);
-			printf("Song table starts at 0x%04x...\n", tableOffset);
+			printf("Found pointer to song table at address 0x%04X!\n", tablePtrLoc);
+			tableOffset = ReadLE16(&romData[tablePtrLoc]);
+			printf("Song table starts at 0x%04X...\n", tableOffset);
+			foundTable = 1;
 			break;
 		}
 	}
 
 	/*If not found, try again for another version*/
-	for (i = 0; i < bankSize; i++)
+	for (i = bankSize; i < (bankSize * 2); i++)
 	{
 		if ((!memcmp(&romData[i], NintMagicBytes2, 3) && ReadLE16(&romData[i + 3]) < 0x8000))
 		{
 			/*Super Mario Land*/
 			if (romData[i - 1] == 0x78)
 			{
-				tablePtrLoc = bankAmt + i - 3;
+				tablePtrLoc = i - 3;
 			}
 			/*Tetris/Dr. Mario/etc.*/
 			else
 			{
-				tablePtrLoc = bankAmt + i - 2;
+				tablePtrLoc = i - 2;
 			}
 
-			printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
-			tableOffset = ReadLE16(&romData[tablePtrLoc - bankAmt]);
-			printf("Song table starts at 0x%04x...\n", tableOffset);
+			printf("Found pointer to song table at address 0x%04X!\n", tablePtrLoc);
+			tableOffset = ReadLE16(&romData[tablePtrLoc]);
+			printf("Song table starts at 0x%04X...\n", tableOffset);
+			foundTable = 1;
 			break;
 		}
 	}
 
 	/*Another version*/
-	for (i = 0; i < bankSize; i++)
+	for (i = bankSize; i < (bankSize * 2); i++)
 	{
 		if ((!memcmp(&romData[i], NintMagicBytes3, 5) && ReadLE16(&romData[i + 5]) < 0x8000))
 		{
 			/*Super Mario Land*/
 			if (romData[i - 1] == 0x78)
 			{
-				tablePtrLoc = bankAmt + i - 3;
+				tablePtrLoc = i - 3;
 			}
 			/*Tetris/Dr. Mario/etc.*/
 			else
 			{
-				tablePtrLoc = bankAmt + i + 5;
+				tablePtrLoc = i + 5;
 			}
 
-			printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
-			tableOffset = ReadLE16(&romData[tablePtrLoc - bankAmt]);
-			printf("Song table starts at 0x%04x...\n", tableOffset);
+			printf("Found pointer to song table at address 0x%04X!\n", tablePtrLoc);
+			tableOffset = ReadLE16(&romData[tablePtrLoc]);
+			printf("Song table starts at 0x%04X...\n", tableOffset);
+			foundTable = 1;
 			break;
 		}
 	}
 
 	/*Yet another version*/
-	for (i = 0; i < bankSize; i++)
+	for (i = bankSize; i < (bankSize * 2); i++)
 	{
 		if ((!memcmp(&romData[i], NintMagicBytes4, 3) && ReadLE16(&romData[i + 3]) < 0x8000))
 		{
 			/*Super Mario Land*/
 			if (romData[i - 1] == 0x78)
 			{
-				tablePtrLoc = bankAmt + i - 3;
+				tablePtrLoc = i - 3;
 			}
 			/*Tetris/Dr. Mario/etc.*/
 			else
 			{
-				tablePtrLoc = bankAmt + i - 2;
+				tablePtrLoc = i - 2;
 			}
 
-			printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
-			tableOffset = ReadLE16(&romData[tablePtrLoc - bankAmt]);
-			printf("Song table starts at 0x%04x...\n", tableOffset);
+			printf("Found pointer to song table at address 0x%04X!\n", tablePtrLoc);
+			tableOffset = ReadLE16(&romData[tablePtrLoc]);
+			printf("Song table starts at 0x%04X...\n", tableOffset);
+			foundTable = 1;
+
 			break;
 		}
 	}
-	if (tableOffset != 0)
+
+	if (drvVers == NINT_VER_MET2)
 	{
-		for (i = 0; i < 30; i++)
+		for (i = bankSize; i < (bankSize * 2); i++)
 		{
-			seqList[i] = 0;
+			if (!memcmp(&romData[i], NintMagicBytesM2, 6))
+			{
+				tablePtrLoc = i + 6;
+				printf("Found pointer to song table at address 0x%04X!\n", tablePtrLoc);
+				tableOffset = ReadLE16(&romData[tablePtrLoc]);
+				printf("Song table starts at 0x%04X...\n", tableOffset);
+				foundTable = 1;
+
+				break;
+			}
 		}
-		for (i = 0; i < 30; i++)
+
+		for (i = bankSize; i < (bankSize * 2); i++)
 		{
-			patList[i] = 0;
+			if (!memcmp(&romData[i], NintMagicBytesWL, 6))
+			{
+				tablePtrLoc = i + 6;
+				printf("Found pointer to song table at address 0x%04X!\n", tablePtrLoc);
+				tableOffset = ReadLE16(&romData[tablePtrLoc]);
+				printf("Song table starts at 0x%04X...\n", tableOffset);
+				foundTable = 1;
+
+				break;
+			}
 		}
-		for (i = 0; i < 90; i++)
+	}
+
+	if (drvVers == NINT_VER_HITEK)
+	{
+		for (i = bankSize; i < (bankSize * 2); i++)
 		{
-			songList[i] = 0;
+			if (!memcmp(&romData[i], NintMagicBytesHitek, 2) && romData[i - 2] == 0xCA && romData[i + 4] == 0xCD)
+			{
+				tablePtrLoc = i + 2;
+				printf("Found pointer to song table at address 0x%04X!\n", tablePtrLoc);
+				tableOffset = ReadLE16(&romData[tablePtrLoc]);
+				printf("Song table starts at 0x%04X...\n", tableOffset);
+				foundTable = 1;
+				break;
+			}
 		}
-		k = 0;
-		songNum = 1;
+	}
+
+	if (foundTable == 1)
+	{
 		i = tableOffset;
-		highestSeq = 0;
-		z = 0;
-		endList = 0;
-
-		while (ReadLE16(&romData[i - bankAmt]) < (bankSize * 2) && endList == 0)
+		songNum = 1;
+		while (ReadLE16(&romData[i]) >= bankAmt && ReadLE16(&romData[i]) < 0x8000)
 		{
-			songLoc = ReadLE16(&romData[i - bankAmt]);
-
-			if (ReadLE16(&romData[songLoc + 1 - bankAmt]) < (bankSize * 2) && ReadLE16(&romData[songLoc + 1 - bankAmt]) > bankAmt && songLoc > bankAmt)
-			{
-
-				if (songNum == 1)
-				{
-					stepSize = ReadLE16(&romData[songLoc + 1 - bankAmt]);
-					startTrans = romData[songLoc - bankAmt];
-				}
-
-				/*"Fix" for Super Mario Land 2*/
-				if (stepSize == 0x5C61)
-				{
-					printf("Song %i: %04X\n", songNum, songLoc);
-					songTrans = (signed char)romData[songLoc - bankAmt] / 2;
-					printf("Song %i transpose: %i\n", songNum, songTrans);
-					speedPtr = ReadLE16(&romData[songLoc + 1 - bankAmt]);
-					printf("Song %i step table 1: %04X\n", songNum, speedPtr);
-					speedPtr2 = ReadLE16(&romData[songLoc + 3 - bankAmt]);
-					printf("Song %i step table 2: %04X\n", songNum, speedPtr2);
-					songPtrs[0] = ReadLE16(&romData[songLoc + 5 - bankAmt]);
-					printf("Song %i channel 1: %04X\n", songNum, songPtrs[0]);
-					songPtrs[1] = ReadLE16(&romData[songLoc + 7 - bankAmt]);
-					printf("Song %i channel 2: %04X\n", songNum, songPtrs[1]);
-					songPtrs[2] = ReadLE16(&romData[songLoc + 9 - bankAmt]);
-					printf("Song %i channel 3: %04X\n", songNum, songPtrs[2]);
-					songPtrs[3] = ReadLE16(&romData[songLoc + 11 - bankAmt]);
-					printf("Song %i channel 4: %04X\n", songNum, songPtrs[3]);
-
-					patList[k] = songPtrs[0];
-					patList[k + 1] = songPtrs[1];
-					patList[k + 2] = songPtrs[2];
-					patList[k + 3] = songPtrs[3];
-
-					songList[z] = songLoc;
-
-					i += 2;
-					k += 4;
-					z++;
-				}
-
-				else
-				{
-					printf("Song %i: %04X\n", songNum, songLoc);
-					songTrans = (signed char)romData[songLoc - bankAmt] / 2;
-					printf("Song %i transpose: %i\n", songNum, songTrans);
-					speedPtr = ReadLE16(&romData[songLoc + 1 - bankAmt]);
-					printf("Song %i step table: %04X\n", songNum, speedPtr);
-					songPtrs[0] = ReadLE16(&romData[songLoc + 3 - bankAmt]);
-					printf("Song %i channel 1: %04X\n", songNum, songPtrs[0]);
-					songPtrs[1] = ReadLE16(&romData[songLoc + 5 - bankAmt]);
-					printf("Song %i channel 2: %04X\n", songNum, songPtrs[1]);
-					songPtrs[2] = ReadLE16(&romData[songLoc + 7 - bankAmt]);
-					printf("Song %i channel 3: %04X\n", songNum, songPtrs[2]);
-					songPtrs[3] = ReadLE16(&romData[songLoc + 9 - bankAmt]);
-					printf("Song %i channel 4: %04X\n", songNum, songPtrs[3]);
-
-					patList[k] = songPtrs[0];
-					patList[k + 1] = songPtrs[1];
-					patList[k + 2] = songPtrs[2];
-					patList[k + 3] = songPtrs[3];
-
-					songList[z] = songLoc;
-
-					i += 2;
-					k += 4;
-					z++;
-				}
-
-				Nintsong2mid(songNum, songPtrs, speedPtr, songTrans);
-				songNum++;
-			}
-			else
-			{
-				endList = 1;
-			}
-
+			songPtr = ReadLE16(&romData[i]);
+			printf("Song %i: 0x%04X\n", songNum, songPtr);
+			Nintsong2mid(songNum, songPtr);
+			i += 2;
+			songNum++;
 		}
 
 		free(romData);
 	}
-}
-
-void Nintsong2mid(int songNum, long ptrList[4], long speedPtr, int songTrans)
-{
-	static const char* TRK_NAMES[4] = { "Square 1", "Square 2", "Wave", "Noise" };
-	int patPos = 0;
-	int seqPos = 0;
-	unsigned int midPos = 0;
-	unsigned int ctrlMidPos = 0;
-	long midTrackBase = 0;
-	long ctrlMidTrackBase = 0;
-	int trackCnt = 4;
-	int ticks = 120;
-	long curSeq = 0;
-	long command[4];
-	unsigned char lowNibble = 0;
-	unsigned char highNibble = 0;
-	int curTrack = 0;
-	int endSeq = 0;
-	int endChan = 0;
-	int transpose = 0;
-	int globalTranspose = 0;
-	int curNote = 0;
-	int curNoteLen = 0;
-	int curDelay = 0;
-	int ctrlDelay = 0;
-	int masterDelay = 0;
-	long jumpPos = 0;
-	int firstNote = 1;
-	int timeVal = 0;
-	int holdNote = 0;
-	int lastNote = 0;
-
-	int tempByte = 0;
-	long tempPos = 0;
-
-	long tempo = 150;
-
-	int curInst = 0;
-
-	int valSize = 0;
-
-	long trackSize = 0;
-	int repeat = 0;
-	long repeatPt = 0;
-	int lowestChan = 0;
-	int lowestPat = 0;
-	int length = 0;
-	int songLen = 0;
-	int curTrack2 = 0;
-	int restLen = 0;
-
-	int c1Pos = 0;
-	int c2Pos = 0;
-	int c3Pos = 0;
-	int c4Pos = 0;
-	int c1Len = 0;
-	int c2Len = 0;
-	int c3Len = 0;
-	int c4Len = 0;
-	int endCnt = 0;
-	int endCnt1 = 0;
-	int endCnt2 = 0;
-	int endCnt3 = 0;
-	int endCnt4 = 0;
-
-	int startSeq = 0;
-
-	long stepPtr = 0;
-
-	midPos = 0;
-	ctrlMidPos = 0;
-
-	switchNum1 = 0;
-	switchNum2 = 0;
-	totalLen = 0;
-
-	highestSeq = 0;
-
-	for (switchNum1 = 0; switchNum1 < 400; switchNum1++)
+	else
 	{
-		switchPoint1[switchNum1][0] = -1;
-		switchPoint1[switchNum1][1] = 0;
+		free(romData);
+		fclose(rom);
+		printf("ERROR: Magic bytes not found!\n");
+		exit(1);
 	}
 
-	for (switchNum2 = 0; switchNum2 < 400; switchNum2++)
+
+}
+
+/*Convert the song data to MIDI*/
+void Nintsong2mid(int songNum, long ptr)
+{
+	static const char* TRK_NAMES[4] = { "Square 1", "Square 2", "Wave", "Noise" };
+	unsigned char command[4];
+	int curTrack = 0;
+	int curNote = 0;
+	int tempNote = 0;
+	unsigned int curNotes[4];
+	int curNoteLen = 0;
+	int curNoteLens[4];
+	int curNoteLenTab;
+	int curDelay = 0;
+	int curDelays[4];
+	int ctrlDelay = 0;
+	int masterDelay = 0;
+	int masterDelays[4];
+	int octave = 4;
+	int octaves[4];
+	int seqEnd = 0;
+	int tracksEnd[4] = { 0, 0, 0, 0 };
+	int songEnd = 0;
+	unsigned int seqPos = 0;
+	unsigned int seqPosM[4];
+	unsigned int patPos;
+	unsigned int patPosM[4];
+	unsigned int noteLensPtr;
+	unsigned int romPos = 0;
+	unsigned int midPos = 0;
+	unsigned int midPosM[4];
+	long ctrlMidPos = 0;
+	long midTrackBase = 0;
+	long ctrlMidTrackBase = 0;
+	long tempPos = 0;
+	int valSize = 0;
+	long trackSize = 0;
+	long trackSizes[4];
+	long ctrlTrackSize = 0;
+	int initTempo = 0;
+	int tempo = 150;
+	long jumpPos = 0;
+	long jumpPosEnd = 0;
+	int curVol = 0;
+	int curVols[4];
+	int curSpeeds[4];
+	int holdNote = 0;
+	int holdNotes[4];
+	int transpose = 0;
+	int transposes[4];
+	int trackCnt = 4;
+	int ticks = 120;
+	int k = 0;
+	int firstNote = 0;
+	int firstNotes[4];
+	long seqTime = 0;
+	int curInsts[4];
+	int repeats[4][2];
+	unsigned char lowNibble = 0;
+	unsigned char highNibble = 0;
+	long framePtr;
+	int numChan;
+	int envVals[4];
+
+	for (curTrack = 0; curTrack < trackCnt; curTrack++)
 	{
-		switchPoint2[switchNum2][0] = -1;
-		switchPoint2[switchNum2][1] = 0;
+		midPosM[curTrack] = 0;
 	}
 
 	if (multiBanks != 0)
@@ -405,13 +357,31 @@ void Nintsong2mid(int songNum, long ptrList[4], long speedPtr, int songTrans)
 	}
 
 	midLength = 0x10000;
-	midData = (unsigned char*)malloc(midLength);
 
 	ctrlMidData = (unsigned char*)malloc(midLength);
 
+	for (j = 0; j < trackCnt; j++)
+	{
+		multiMidData[j] = (unsigned char*)malloc(midLength);
+	}
+
 	for (j = 0; j < midLength; j++)
 	{
-		midData[j] = 0;
+		for (k = 0; k < trackCnt; k++)
+		{
+			multiMidData[k][j] = 0;
+		}
+
+		ctrlMidData[j] = 0;
+	}
+
+	for (j = 0; j < midLength; j++)
+	{
+		for (k = 0; k < trackCnt; k++)
+		{
+			multiMidData[k][j] = 0;
+		}
+
 		ctrlMidData[j] = 0;
 	}
 
@@ -425,7 +395,7 @@ void Nintsong2mid(int songNum, long ptrList[4], long speedPtr, int songTrans)
 	}
 	if ((mid = fopen(outfile, "wb")) == NULL)
 	{
-		printf("ERROR: Unable to write to file song%d.mid!\n", songNum);
+		printf("ERROR: Unable to write to file song%i.mid!\n", songNum);
 		exit(2);
 	}
 	else
@@ -475,390 +445,908 @@ void Nintsong2mid(int songNum, long ptrList[4], long speedPtr, int songTrans)
 		WriteBE24(&ctrlMidData[ctrlMidPos], 0xFF5902);
 		ctrlMidPos += 4;
 
-		c1Pos = songPtrs[0];
-		c2Pos = songPtrs[1];
-		c3Pos = songPtrs[2];
-		c4Pos = songPtrs[3];
-
-		endCnt2 = 0;
-
-		while (endCnt == 0)
+		switch (drvVers)
 		{
-			if (ReadLE16(&romData[c1Pos - bankAmt]) == 0x0000 ||
-				ReadLE16(&romData[c2Pos - bankAmt]) == 0x0000 ||
-				ReadLE16(&romData[c3Pos - bankAmt]) == 0x0000 ||
-				ReadLE16(&romData[c4Pos - bankAmt]) == 0x0000)
+		case NINT_VER_SML2:
+			NINT_STATUS_END = 0x00;
+			NINT_STATUS_REST = 0x01;
+			NINT_STATUS_NOTE_MIN = 0x02;
+			NINT_STATUS_NOTE_MAX = 0x90;
+			EventMap[0x95] = NINT_EVENT_BEND_ON;
+			EventMap[0x96] = NINT_EVENT_BEND_OFF;
+			EventMap[0x97] = NINT_EVENT_DROP_ON;
+			EventMap[0x98] = NINT_EVENT_DROP_OFF;
+			EventMap[0x99] = NINT_EVENT_CH3_FADE_ON;
+			EventMap[0x9A] = NINT_EVENT_CH3_FADE_OFF;
+			EventMap[0x9B] = NINT_EVENT_REPEAT_START;
+			EventMap[0x9C] = NINT_EVENT_REPEAT_END;
+			EventMap[0x9D] = NINT_EVENT_INS_PARAMS;
+			EventMap[0x9E] = NINT_EVENT_NOTE_LEN_TABLE;
+			EventMap[0x9F] = NINT_EVENT_TRANSPOSE;
+			for (j = 0xA0; j <= 0xAF; j++)
 			{
-				songLen = length;
-				NintgetLength(songPtrs);
-				endCnt = 1;
-
+				EventMap[j] = NINT_EVENT_NOTE_LEN;
 			}
-
-			if (ReadLE16(&romData[c1Pos - bankAmt]) == 0xFFFF ||
-				ReadLE16(&romData[c2Pos - bankAmt]) == 0xFFFF ||
-				ReadLE16(&romData[c3Pos - bankAmt]) == 0xFFFF ||
-				ReadLE16(&romData[c4Pos - bankAmt]) == 0xFFFF)
+			break;
+		case NINT_VER_LA:
+			NINT_STATUS_END = 0x00;
+			NINT_STATUS_REST = 0x01;
+			NINT_STATUS_NOTE_MIN = 0x02;
+			NINT_STATUS_NOTE_MAX = 0x90;
+			EventMap[0x94] = NINT_EVENT_CH3_FADE_IN_ON;
+			EventMap[0x95] = NINT_EVENT_CH3_SFX_RESUME;
+			EventMap[0x96] = NINT_EVENT_CH3_SFX_PAUSE;
+			EventMap[0x97] = NINT_EVENT_DROP_ON;
+			EventMap[0x98] = NINT_EVENT_DROP_OFF;
+			EventMap[0x99] = NINT_EVENT_CH3_FADE_ON;
+			EventMap[0x9A] = NINT_EVENT_CH3_FADE_OFF;
+			EventMap[0x9B] = NINT_EVENT_REPEAT_START;
+			EventMap[0x9C] = NINT_EVENT_REPEAT_END;
+			EventMap[0x9D] = NINT_EVENT_INS_PARAMS;
+			EventMap[0x9E] = NINT_EVENT_NOTE_LEN_TABLE;
+			EventMap[0x9F] = NINT_EVENT_TRANSPOSE;
+			for (j = 0xA0; j <= 0xAF; j++)
 			{
-				endCnt = 1;
+				EventMap[j] = NINT_EVENT_NOTE_LEN;
 			}
-
-			else
+			break;
+		case NINT_VER_SMBDX:
+			NINT_STATUS_END = 0x00;
+			NINT_STATUS_REST = 0x01;
+			NINT_STATUS_NOTE_MIN = 0x02;
+			NINT_STATUS_NOTE_MAX = 0x90;
+			EventMap[0x97] = NINT_EVENT_DROP_ON;
+			EventMap[0x98] = NINT_EVENT_DROP_OFF;
+			EventMap[0x99] = NINT_EVENT_REST_ENV;
+			EventMap[0x9A] = NINT_EVENT_GLOBAL_VOL;
+			EventMap[0x9B] = NINT_EVENT_REPEAT_START;
+			EventMap[0x9C] = NINT_EVENT_REPEAT_END;
+			EventMap[0x9D] = NINT_EVENT_INS_PARAMS;
+			for (j = 0xA0; j <= 0xAF; j++)
 			{
-				c1Pos += 2;
-				c2Pos += 2;
-				c3Pos += 2;
-				c4Pos += 2;
-				length++;
+				EventMap[j] = NINT_EVENT_NOTE_LEN;
 			}
-		}
+			break;
+		case NINT_VER_KIRBY:
+			NINT_STATUS_END = 0x00;
+			NINT_STATUS_REST = 0x01;
+			NINT_STATUS_NOTE_MIN = 0x02;
+			NINT_STATUS_NOTE_MAX = 0x90;
+			NINT_PAT_STATUS_ENV = 0x94;
+			NINT_PAT_STATUS_ADD_TRANSPOSE = 0x95;
+			NINT_PAT_STATUS_TRANSPOSE = 0x96;
+			EventMap[0x92] = NINT_EVENT_DRUM_KIT;
+			EventMap[0x93] = NINT_EVENT_ADD_ENV;
+			EventMap[0x94] = NINT_EVENT_ENV;
+			EventMap[0x95] - NINT_EVENT_ADD_TRANSPOSE;
+			EventMap[0x96] = NINT_EVENT_TRANSPOSE;
+			EventMap[0x97] = NINT_EVENT_DROP_ON;
+			EventMap[0x98] = NINT_EVENT_DROP_OFF;
+			EventMap[0x99] = NINT_EVENT_REST_ENV;
+			EventMap[0x9A] = NINT_EVENT_GLOBAL_VOL;
+			EventMap[0x9B] = NINT_EVENT_REPEAT_START;
+			EventMap[0x9C] = NINT_EVENT_REPEAT_END;
+			EventMap[0x9D] = NINT_EVENT_INS_PARAMS;
+			EventMap[0x9E] = NINT_EVENT_NOTE_LEN_TABLE;
+			for (j = 0xA0; j <= 0xAF; j++)
+			{
+				EventMap[j] = NINT_EVENT_NOTE_LEN;
+			}
+			break;
+		case NINT_VER_MET2:
+			NINT_STATUS_END = 0x00;
+			NINT_STATUS_REST = 0x01;
+			NINT_STATUS_NOTE_MIN = 0x02;
+			NINT_STATUS_NOTE_MAX = 0x9F;
+			NINT_STATUS_ECHO1 = 0x03;
+			NINT_STATUS_ECHO2 = 0x05;
+			EventMap[0xF1] = NINT_EVENT_INS_PARAMS;
+			EventMap[0xF2] = NINT_EVENT_NOTE_LEN_TABLE;
+			EventMap[0xF3] = NINT_EVENT_TRANSPOSE;
+			EventMap[0xF4] = NINT_EVENT_REPEAT_START;
+			EventMap[0xF5] = NINT_EVENT_REPEAT_END;
+			for (j = 0xA0; j <= 0xAF; j++)
+			{
+				EventMap[j] = NINT_EVENT_NOTE_LEN;
+			}
+			break;
+		case NINT_VER_HITEK:
+			NINT_STATUS_NOTE_MIN = 0x00;
+			NINT_STATUS_NOTE_MAX = 0xBF;
+			for (j = 0xC0; j <= 0xCF; j++)
+			{
+				EventMap[j] = NINT_EVENT_HITEK_REST;
+			}
+			for (j = 0xD0; j <= 0xDF; j++)
+			{
+				EventMap[j] = NINT_EVENT_INS_PARAMS;
+			}
+			for (j = 0xE0; j <= 0xE5; j++)
+			{
+				EventMap[j] = NINT_EVENT_HITEK_OCTAVE;
+			}
+			EventMap[0xE6] = NINT_EVENT_HITEK_SPEED;
+			EventMap[0xE7] = NINT_EVENT_HITEK_CH3_FADE_OUT_ON;
+			EventMap[0xE8] = NINT_EVENT_HITEK_CH3_FADE_OFF;
+			EventMap[0xE9] = NINT_EVENT_CH3_FADE_IN_ON;
+			EventMap[0xEA] = NINT_EVENT_TRANSPOSE;
+			EventMap[0xEB] = NINT_EVENT_DROP_ON;
+			EventMap[0xEC] = NINT_EVENT_DROP_OFF;
+			EventMap[0xED] = NINT_EVENT_CH3_SFX_PAUSE;
+			EventMap[0xEE] = NINT_EVENT_CH3_SFX_RESUME;
+			EventMap[0xEF] = NINT_EVENT_HITEK_POKE;
+			for (j = 0xF0; j <= 0xFF; j++)
+			{
+				EventMap[j] = NINT_EVENT_HITEK_END;
+			}
+			EventMap[0xFB] = NINT_EVENT_REPEAT_START;
+			EventMap[0xFD] = NINT_EVENT_HITEK_JUMP;
+			EventMap[0xFE] = NINT_EVENT_REPEAT_END;
 
-		for (curSeq = 0; curSeq < 30; curSeq++)
-		{
-			seqList[curSeq] = -1;
-		}
-
-		for (curSeq = 0; curSeq < 30; curSeq++)
-		{
-			patList[curSeq] = -1;
-		}
-
-		for (switchNum1 = 0; switchNum1 < 400; switchNum1++)
-		{
-			switchPoint1[switchNum1][0] = -1;
-			switchPoint1[switchNum1][1] = 0;
-		}
-
-		for (switchNum2 = 0; switchNum2 < 400; switchNum2++)
-		{
-			switchPoint2[switchNum2][0] = -1;
-			switchPoint2[switchNum2][1] = 0;
+			for (j = 0xA0; j <= 0xAF; j++)
+			{
+				EventMap[j] = NINT_EVENT_NOTE_LEN;
+			}
+			break;
+		case NINT_VER_STD:
+			/*Fall-through*/
+		default:
+			NINT_STATUS_END = 0x00;
+			NINT_STATUS_REST = 0x01;
+			NINT_STATUS_NOTE_MIN = 0x02;
+			NINT_STATUS_NOTE_MAX = 0x90;
+			EventMap[0x9B] = NINT_EVENT_REPEAT_START;
+			EventMap[0x9C] = NINT_EVENT_REPEAT_END;
+			EventMap[0x9D] = NINT_EVENT_INS_PARAMS;
+			EventMap[0x9E] = NINT_EVENT_NOTE_LEN_TABLE;
+			EventMap[0x9F] = NINT_EVENT_TRANSPOSE;
+			for (j = 0xA0; j <= 0xAF; j++)
+			{
+				EventMap[j] = NINT_EVENT_NOTE_LEN;
+			}
+			break;
 		}
 
 		for (curTrack = 0; curTrack < 4; curTrack++)
 		{
-			transpose = 0;
-			globalTranspose = 0;
-			firstNote = 1;
+			songPtrs[curTrack] = 0x0000;
+			repeats[curTrack][0] = -1;
+			repeats[curTrack][1] = 0x0000;
+		}
+
+
+		/*Get channel pointers*/
+		romPos = songPtr;
+		if (drvVers == NINT_VER_SML2)
+		{
+			songTrans = (signed char)romData[romPos] / 2;
+			noteLensPtr = ReadLE16(&romData[romPos] + 1);
+			songPtrs[0] = ReadLE16(&romData[romPos] + 5);
+			songPtrs[1] = ReadLE16(&romData[romPos] + 7);
+			songPtrs[2] = ReadLE16(&romData[romPos] + 9);
+			songPtrs[3] = ReadLE16(&romData[romPos] + 11);
+		}
+		else if (drvVers == NINT_VER_HITEK)
+		{
+			numChan = romData[romPos];
+			romPos++;
+			for (j = 0; j <= numChan; j++)
+			{
+				curTrack = romData[romPos];
+				romPos++;
+
+				if (curTrack > 3)
+				{
+					curTrack = 0;
+				}
+
+				songPtrs[curTrack] = ReadLE16(&romData[romPos]);
+				romPos += 2;
+			}
+		}
+		else
+		{
+			if (drvVers != NINT_VER_KIRBY)
+			{
+				songTrans = (signed char)romData[romPos] / 2;
+			}
+			else
+			{
+				songTrans = (signed char)romData[romPos];
+			}
+			noteLensPtr = ReadLE16(&romData[romPos] + 1);
+			songPtrs[0] = ReadLE16(&romData[romPos] + 3);
+			songPtrs[1] = ReadLE16(&romData[romPos] + 5);
+			songPtrs[2] = ReadLE16(&romData[romPos] + 7);
+			songPtrs[3] = ReadLE16(&romData[romPos] + 9);
+		}
+
+		for (curTrack = 0; curTrack < trackCnt; curTrack++)
+		{
+			midPosM[curTrack] = 0;
+			curDelays[curTrack] = 0;
+			masterDelays[curTrack] = 0;
+			firstNotes[curTrack] = 1;
+			holdNotes[curTrack] = 0;
+			curVols[curTrack] = 120;
 			/*Write MIDI chunk header with "MTrk"*/
-			WriteBE32(&midData[midPos], 0x4D54726B);
-			midPos += 8;
-			midTrackBase = midPos;
+			WriteBE32(&multiMidData[curTrack][midPosM[curTrack]], 0x4D54726B);
+			midPosM[curTrack] += 8;
+			midTrackBase = midPosM[curTrack];
 
-			curDelay = 0;
-			ctrlDelay = 0;
-			endChan = 0;
+			curNotes[curTrack] = 0;
+			curNoteLens[curTrack] = 0;
+			curInsts[curTrack] = 0;
+			tracksEnd[curTrack] = 0;
+			transposes[curTrack] = 0;
+			transpose = 0;
+			curSpeeds[curTrack] = 0;
+			envVals[curTrack] = 0xFF;
 
-			curNote = 0;
-			lastNote = 0;
-			curNoteLen = 0;
+			if (drvVers != NINT_VER_MET2 && drvVers != NINT_VER_KIRBY && drvVers != NINT_VER_HITEK)
+			{
+				if (songPtrs[curTrack] != 0x0000)
+				{
+					patPosM[curTrack] = songPtrs[curTrack];
 
-			masterDelay = 0;
+					if (ReadLE16(&romData[patPosM[curTrack]]) == 0x0000)
+					{
+						for (j = 0; j < 4; j++)
+						{
+							songEnd = 1;
+							tracksEnd[j] = 1;
+						}
+					}
+					else if (ReadLE16(&romData[patPosM[curTrack]]) == 0xFFFF)
+					{
+						tracksEnd[curTrack] = 1;
+					}
+					else
+					{
+						seqPosM[curTrack] = ReadLE16(&romData[patPosM[curTrack]]);
+					}
+				}
+				else
+				{
+					seqPosM[curTrack] = songPtrs[curTrack];
+					tracksEnd[curTrack] = 1;
+				}
 
-			switchNum1 = 0;
-			switchNum2 = 0;
+			}
+			else if (drvVers == NINT_VER_KIRBY)
+			{
+				if (songPtrs[curTrack] != 0x0000)
+				{
+					patPosM[curTrack] = songPtrs[curTrack];
+					seqEnd = 0;
+					while (seqEnd == 0)
+					{
+						if (romData[patPosM[curTrack] + 1] == 0x00)
+						{
+							for (j = 0; j < 4; j++)
+							{
+								songEnd = 1;
+								tracksEnd[j] = 1;
+							}
+							seqEnd = 1;
+						}
+						else if (romData[patPosM[curTrack] + 1] == 0xFF)
+						{
+							if (romData[patPosM[curTrack]] == NINT_PAT_STATUS_ENV)
+							{
+								envVals[curTrack] = romData[patPosM[curTrack]];
+								patPosM[curTrack] += 4;
+							}
+							else if (romData[patPosM[curTrack]] == NINT_PAT_STATUS_ADD_TRANSPOSE)
+							{
+								transposes[curTrack] += ((signed char)romData[patPosM[curTrack] + 2]);
+								patPosM[curTrack] += 4;
+							}
+							else if (romData[patPosM[curTrack]] == NINT_PAT_STATUS_TRANSPOSE)
+							{
+								transposes[curTrack] = (((signed char)romData[patPosM[curTrack] + 2]) / 2);
+								patPosM[curTrack] += 4;
+							}
+							else
+							{
+								tracksEnd[curTrack] = 1;
+								seqEnd = 1;
+							}
+						}
+						else
+						{
+							seqPosM[curTrack] = ReadLE16(&romData[patPosM[curTrack]]);
+							seqEnd = 1;
+						}
+					}
+				}
+				else
+				{
+					seqPosM[curTrack] = songPtrs[curTrack];
+					tracksEnd[curTrack] = 1;
+				}
+			}
+			else if (drvVers == NINT_VER_MET2)
+			{
+				if (songPtrs[curTrack] != 0x0000)
+				{
+					patPosM[curTrack] = songPtrs[curTrack];
 
-			repeat = 0;
+					if (ReadLE16(&romData[patPosM[curTrack]]) == 0x0000)
+					{
+						if (drvVers != NINT_VER_MET2)
+						{
+							for (j = 0; j < 4; j++)
+							{
+								songEnd = 1;
+								tracksEnd[j] = 1;
+							}
+						}
+						else
+						{
+							tracksEnd[curTrack] = 1;
+						}
+
+					}
+					else if (ReadLE16(&romData[patPosM[curTrack]]) == 0x00F0)
+					{
+						tracksEnd[curTrack] = 1;
+					}
+					else
+					{
+						seqPosM[curTrack] = ReadLE16(&romData[patPosM[curTrack]]);
+					}
+				}
+				else
+				{
+					seqPosM[curTrack] = songPtrs[curTrack];
+					tracksEnd[curTrack] = 1;
+				}
+			}
+			else
+			{
+				seqPosM[curTrack] = songPtrs[curTrack];
+
+				if (songPtrs[curTrack] == 0x0000)
+				{
+					tracksEnd[curTrack] = 1;
+				}
+
+			}
 
 			/*Add track header*/
-			valSize = WriteDeltaTime(midData, midPos, 0);
-			midPos += valSize;
-			WriteBE16(&midData[midPos], 0xFF03);
-			midPos += 2;
-			Write8B(&midData[midPos], strlen(TRK_NAMES[curTrack]));
-			midPos++;
-			sprintf((char*)&midData[midPos], TRK_NAMES[curTrack]);
-			midPos += strlen(TRK_NAMES[curTrack]);
+			valSize = WriteDeltaTime(multiMidData[curTrack], midPosM[curTrack], 0);
+			midPosM[curTrack] += valSize;
+			WriteBE16(&multiMidData[curTrack][midPosM[curTrack]], 0xFF03);
+			midPosM[curTrack] += 2;
+			Write8B(&multiMidData[curTrack][midPosM[curTrack]], strlen(TRK_NAMES[curTrack]));
+			midPosM[curTrack]++;
+			sprintf((char*)&multiMidData[curTrack][midPosM[curTrack]], TRK_NAMES[curTrack]);
+			midPosM[curTrack] += strlen(TRK_NAMES[curTrack]);
 
 			/*Calculate MIDI channel size*/
-			trackSize = midPos - midTrackBase;
-			WriteBE16(&midData[midTrackBase - 2], trackSize);
+			trackSizes[curTrack] = midPosM[curTrack] - midTrackBase;
+			WriteBE16(&multiMidData[curTrack][midTrackBase - 2], trackSizes[curTrack]);
+		}
 
-			/*Get the step table*/
-			for (j = 0; j < 16; j++)
+		ctrlDelay = 0;
+		seqTime = 0;
+
+		while (songEnd == 0)
+		{
+			if (tracksEnd[0] == 1 && tracksEnd[1] == 1 && tracksEnd[2] == 1 && tracksEnd[3] == 1)
 			{
-				curStepTab[j] = romData[speedPtr - bankAmt + j] * 5;
+				songEnd = 1;
 			}
 
-
-
-			endChan = 0;
-			endSeq = 0;
-			length = 0;
-			patPos = songPtrs[curTrack] - bankAmt;
-
-			if (songPtrs[curTrack] == 0)
+			for (curTrack = 0; curTrack < 4; curTrack++)
 			{
-				endChan = 1;
-			}
-
-			while (endChan == 0 && seqPos < 0x8000)
-			{
-				curSeq = ReadLE16(&romData[patPos]);
-				if (curSeq != 0x0000 && curSeq != 0xFFFF)
+				if (tracksEnd[curTrack] != 1)
 				{
-					endSeq = 0;
-					startSeq = 1;
-					if (length >= songLen)
+					while (seqTime >= masterDelays[curTrack] && tracksEnd[curTrack] != 1)
 					{
-						if (songLen != 0)
+						if (seqPosM[curTrack] >= 0x8000)
 						{
-							endChan = 1;
+							tracksEnd[curTrack] = 1;
 						}
-					}
-					seqPos = curSeq - bankAmt;
-					for (j = 0; j < 30; j++)
-					{
-						if (seqList[j] == curSeq)
+						else
 						{
-							break;
-						}
-					}
-					if (j == 30)
-					{
-						seqList[highestSeq] = curSeq;
-						highestSeq++;
-					}
-					while (endSeq == 0 && seqPos < bankAmt)
-					{
-						command[0] = romData[seqPos];
-						command[1] = romData[seqPos + 1];
-						command[2] = romData[seqPos + 2];
+							command[0] = romData[seqPosM[curTrack]];
+							command[1] = romData[seqPosM[curTrack] + 1];
+							command[2] = romData[seqPosM[curTrack] + 2];
+							command[3] = romData[seqPosM[curTrack] + 3];
 
-						/*Transpose check code*/
-						if (curTrack != 0 && curTrack != 3)
-						{
-							for (switchNum1 = 0; switchNum1 < 400; switchNum1++)
+							lowNibble = (command[0] >> 4);
+							highNibble = (command[0] & 15);
+
+							if (command[0] == NINT_STATUS_END && drvVers != NINT_VER_HITEK)
 							{
-								if (switchPoint1[switchNum1][0] == masterDelay)
+								patPosM[curTrack] += 2;
+
+								if (drvVers != NINT_VER_KIRBY)
 								{
-									transpose = switchPoint1[switchNum1][1];
-								}
-							}
-						}
-
-						/*Step table check code*/
-						if (curTrack != 0 && curTrack != 3)
-						{
-							for (switchNum2 = 0; switchNum2 < 400; switchNum2++)
-							{
-								if (switchPoint2[switchNum2][0] == masterDelay)
-								{
-									curStepTab[k] = (romData[stepPtr + k - bankAmt]) * 5;
-								}
-							}
-						}
-
-
-						/*Workarounds for "invalid" ends of some songs*/
-						for (k = 0; k < 30; k++)
-						{
-							if (seqPos == patList[k])
-							{
-								endSeq = 1;
-							}
-						}
-
-						for (z = 0; z < 90; z++)
-						{
-							if (seqPos == songList[z])
-							{
-								endSeq = 1;
-							}
-						}
-
-						for (k = 0; k < 30; k++)
-						{
-							if ((seqPos == seqList[k] - bankAmt) && startSeq == 0)
-							{
-								endSeq = 1;
-							}
-						}
-
-						if (seqPos < 0x0200)
-						{
-							endSeq = 1;
-						}
-
-						if (masterDelay >= totalLen)
-						{
-							if (totalLen != 0)
-							{
-								endSeq = 1;
-								endChan = 1;
-							}
-						}
-
-						/*End of sequence*/
-						if (command[0] == 0x00)
-						{
-							endSeq = 1;
-						}
-
-						/*Rest (channels 1-3) or noise type (channel 4), also note value for even numbers*/
-						else if (command[0] > 0x00 && command[0] < 0x10)
-						{
-							if (command[0] % 2 && curTrack != 3)
-							{
-								restLen = curNoteLen * command[0];
-								curDelay += curNoteLen * command[0];
-								ctrlDelay += curNoteLen * command[0];
-								masterDelay += curNoteLen * command[0];
-								seqPos++;
-							}
-							else
-							{
-								if (curTrack != 3)
-								{
-									curNote = NintnoteVals[command[0]] + 20;
-									curNote += songTrans;
+									if (ReadLE16(&romData[patPosM[curTrack]]) == 0x0000)
+									{
+										if (drvVers != NINT_VER_MET2)
+										{
+											for (j = 0; j < 4; j++)
+											{
+												tracksEnd[j] = 1;
+											}
+											songEnd = 1;
+										}
+										else
+										{
+											tracksEnd[curTrack] = 1;
+										}
+									}
+									else if (ReadLE16(&romData[patPosM[curTrack]]) == 0xFFFF && drvVers != NINT_VER_MET2)
+									{
+										tracksEnd[curTrack] = 1;
+									}
+									else if (ReadLE16(&romData[patPosM[curTrack]]) == 0x00F0 && drvVers == NINT_VER_MET2)
+									{
+										tracksEnd[curTrack] = 1;
+									}
+									else
+									{
+										seqPosM[curTrack] = ReadLE16(&romData[patPosM[curTrack]]);
+									}
 								}
 								else
 								{
-									curNote = command[0] + 30;
+									seqEnd = 0;
+									while (seqEnd == 0)
+									{
+										if (romData[patPosM[curTrack] + 1] == 0x00)
+										{
+											for (j = 0; j < 4; j++)
+											{
+												songEnd = 1;
+												tracksEnd[j] = 1;
+											}
+											seqEnd = 1;
+										}
+										else if (romData[patPosM[curTrack] + 1] == 0xFF)
+										{
+											if (romData[patPosM[curTrack]] == NINT_PAT_STATUS_ENV)
+											{
+												envVals[curTrack] = romData[patPosM[curTrack]];
+												patPosM[curTrack] += 4;
+											}
+											else if (romData[patPosM[curTrack]] == NINT_PAT_STATUS_ADD_TRANSPOSE)
+											{
+												transposes[curTrack] += ((signed char)romData[patPosM[curTrack] + 2]);
+												patPosM[curTrack] += 4;
+											}
+											else if (romData[patPosM[curTrack]] == NINT_PAT_STATUS_TRANSPOSE)
+											{
+												transposes[curTrack] = (((signed char)romData[patPosM[curTrack] + 2]));
+												patPosM[curTrack] += 4;
+											}
+											else
+											{
+												tracksEnd[curTrack] = 1;
+												seqEnd = 1;
+											}
+										}
+										else
+										{
+											seqPosM[curTrack] = ReadLE16(&romData[patPosM[curTrack]]);
+											seqEnd = 1;
+										}
+									}
 								}
 
-								if (curNote == 31 && curTrack == 3)
+							}
+
+							else if (command[0] == NINT_STATUS_REST)
+							{
+								curDelays[curTrack] += curNoteLens[curTrack];
+								masterDelays[curTrack] += curNoteLens[curTrack];
+								seqPosM[curTrack]++;
+							}
+
+							else if (command[0] >= NINT_STATUS_NOTE_MIN && command[0] <= NINT_STATUS_NOTE_MAX)
+							{
+								if (drvVers != NINT_VER_HITEK)
 								{
-									restLen = curNoteLen * command[0];
-									curDelay += curNoteLen * command[0];
-									ctrlDelay += curNoteLen * command[0];
-									masterDelay += curNoteLen * command[0];
-									seqPos++;
+									curNotes[curTrack] = (command[0] / 2);
+
+									if (curTrack != 3)
+									{
+										curNotes[curTrack] += (songTrans + transpose + transposes[curTrack]);
+									}
+									if (curNotes[curTrack] > 0)
+									{
+										curNotes[curTrack]--;
+									}
 								}
 								else
 								{
-									ctrlDelay += curNoteLen;
-									masterDelay += curNoteLen;
-									tempPos = WriteNoteEvent(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
-									firstNote = 0;
-									midPos = tempPos;
-									curDelay = 0;
-									seqPos++;
+									curNotes[curTrack] = lowNibble + ((5 - octaves[curTrack]) * 12) + transpose;
+
+									if (curNotes[curTrack] > 128)
+									{
+										curNotes[curTrack] = 0;
+									}
+									if (curNotes[curTrack] > 0)
+									{
+										curNotes[curTrack]--;
+									}
+									curNoteLens[curTrack] = ((curSpeeds[curTrack] + 1) * (highNibble + 1)) * 5;
+								}
+								curNotes[curTrack] += 24;
+
+								if (curTrack != 2)
+								{
+									curNotes[curTrack] += 12;
+								}
+
+								if (curTrack < 2)
+								{
+									/*If bit 3 (increase/decrease flag) is not set, use the value to determine the volume. If it is set, use max volume*/
+									if ((envVals[curTrack] & 0x08) == 0x00)
+									{
+										curVols[curTrack] = (envVals[curTrack] & 0xF0) / 2;
+									}
+									else
+									{
+										if (((envVals[curTrack] & 0xF0) / 2) == curVols[curTrack])
+										{
+											curVols[curTrack] = (envVals[curTrack] & 0xF0) / 2;
+										}
+										else
+										{
+											curVols[curTrack] = 120;
+										}
+
+									}
+
+									if (curVols[curTrack] == 0)
+									{
+										curVols[curTrack] = 1;
+									}
+
+								}
+								else if (curTrack == 2)
+								{
+									switch ((envVals[curTrack] & 0x7F))
+									{
+									case 0x20:
+										curVols[curTrack] = 120;
+										break;
+									case 0x40:
+										curVols[curTrack] = 60;
+										break;
+									case 0x60:
+										curVols[curTrack] = 30;
+										break;
+									case 0x00:
+										curVols[curTrack] = 1;
+										break;
+									default:
+										curVols[curTrack] = 120;
+										break;
+									}
+								}
+								curVol = curVols[curTrack];
+
+								tempPos = WriteNoteEvent(multiMidData[curTrack], midPosM[curTrack], curNotes[curTrack], curNoteLens[curTrack], curDelays[curTrack], firstNotes[curTrack], curTrack, curInsts[curTrack]);
+								firstNotes[curTrack] = 0;
+								holdNotes[curTrack] = 1;
+								midPosM[curTrack] = tempPos;
+								curDelays[curTrack] = 0;
+								masterDelays[curTrack] += curNoteLens[curTrack];
+								seqPosM[curTrack]++;
+							}
+
+							else if (command[0] == NINT_STATUS_ECHO1 && drvVers == NINT_VER_MET2)
+							{
+								curVol = curVols[curTrack] / 2;
+								if (curVol == 0)
+								{
+									curVol = 1;
+								}
+								tempPos = WriteNoteEvent(multiMidData[curTrack], midPosM[curTrack], curNotes[curTrack], curNoteLens[curTrack], curDelays[curTrack], firstNotes[curTrack], curTrack, curInsts[curTrack]);
+								firstNotes[curTrack] = 0;
+								holdNotes[curTrack] = 1;
+								midPosM[curTrack] = tempPos;
+								curDelays[curTrack] = 0;
+								masterDelays[curTrack] += curNoteLens[curTrack];
+								curVols[curTrack] = 120;
+								seqPosM[curTrack]++;
+							}
+
+							else if (command[0] == NINT_STATUS_ECHO2 && drvVers == NINT_VER_MET2)
+							{
+								curVol = curVols[curTrack] / 2;
+								if (curVol == 0)
+								{
+									curVol = 1;
+								}
+								curVol = curVols[curTrack];
+								tempPos = WriteNoteEvent(multiMidData[curTrack], midPosM[curTrack], curNotes[curTrack], curNoteLens[curTrack], curDelays[curTrack], firstNotes[curTrack], curTrack, curInsts[curTrack]);
+								firstNotes[curTrack] = 0;
+								holdNotes[curTrack] = 1;
+								midPosM[curTrack] = tempPos;
+								curDelays[curTrack] = 0;
+								masterDelays[curTrack] += curNoteLens[curTrack];
+								curVols[curTrack] = 120;
+								seqPosM[curTrack]++;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_NOTE_LEN)
+							{
+								if (drvVers != NINT_VER_HITEK)
+								{
+									curNoteLens[curTrack] = romData[noteLensPtr + (command[0] & 0x0F)] * 5;
+								}
+								else
+								{
+									curNoteLens[curTrack] = (command[0] * curSpeeds[curTrack]) * 5;
+								}
+
+								seqPosM[curTrack]++;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_REPEAT_START)
+							{
+								if (drvVers != NINT_VER_HITEK)
+								{
+									repeats[curTrack][0] = command[1];
+									repeats[curTrack][1] = seqPosM[curTrack] + 2;
+									seqPosM[curTrack] += 2;
+								}
+								else
+								{
+									repeats[curTrack][0] = 0;
+									repeats[curTrack][1] = seqPosM[curTrack] + 1;
+									seqPosM[curTrack]++;
 								}
 
 							}
-						}
 
-						/*Repeat point start*/
-						else if (command[0] == 0x9B)
-						{
-							repeat = command[1];
-							repeatPt = seqPos + 2;
-							seqPos += 2;
-						}
-
-						/*End of repeat point*/
-						else if (command[0] == 0x9C)
-						{
-							if (repeat > 1)
+							else if (EventMap[command[0]] == NINT_EVENT_REPEAT_END)
 							{
-								seqPos = repeatPt;
-								repeat--;
+								if (drvVers != NINT_VER_HITEK)
+								{
+									if (repeats[curTrack][0] > 1)
+									{
+										seqPosM[curTrack] = repeats[curTrack][1];
+										repeats[curTrack][0]--;
+									}
+									else
+									{
+										repeats[curTrack][0] = -1;
+										seqPosM[curTrack]++;
+									}
+								}
+								else
+								{
+									if (repeats[curTrack][0] < command[1])
+									{
+										repeats[curTrack][0]++;
+										seqPosM[curTrack] = repeats[curTrack][1];
+									}
+								}
+
 							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_INS_PARAMS)
+							{
+								if (drvVers != NINT_VER_SMBDX && drvVers != NINT_VER_HITEK)
+								{
+									envVals[curTrack] = command[1];
+								}
+								else if (drvVers == NINT_VER_SMBDX)
+								{
+									if (command[1] == 0x00)
+									{
+										envVals[curTrack] = command[1];
+									}
+									else
+									{
+										envVals[curTrack] = romData[ReadLE16(&romData[seqPosM[curTrack + 1]])];
+									}
+								}
+								else
+								{
+									curSpeeds[curTrack] = highNibble;
+									envVals[curTrack] = command[1];
+								}
+								seqPosM[curTrack] += 4;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_NOTE_LEN_TABLE)
+							{
+								noteLensPtr = ReadLE16(&romData[seqPosM[curTrack] + 1]);
+								seqPosM[curTrack] += 3;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_TRANSPOSE)
+							{
+								if (drvVers != NINT_VER_HITEK && drvVers != NINT_VER_KIRBY)
+								{
+									transpose = ((signed char)command[1]) / 2;
+								}
+								else if (drvVers == NINT_VER_KIRBY)
+								{
+									transposes[curTrack] = ((signed char)command[1]);
+								}
+								else
+								{
+									transpose = (signed char)command[1];
+								}
+								seqPosM[curTrack] += 2;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_BEND_ON)
+							{
+								seqPosM[curTrack]++;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_BEND_OFF)
+							{
+								seqPosM[curTrack]++;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_DROP_ON)
+							{
+								seqPosM[curTrack]++;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_DROP_OFF)
+							{
+								seqPosM[curTrack]++;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_CH3_FADE_ON)
+							{
+								seqPosM[curTrack]++;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_CH3_FADE_OFF)
+							{
+								seqPosM[curTrack]++;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_CH3_FADE_IN_ON)
+							{
+								seqPosM[curTrack]++;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_CH3_SFX_RESUME)
+							{
+								seqPosM[curTrack]++;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_CH3_SFX_PAUSE)
+							{
+								seqPosM[curTrack]++;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_REST_ENV)
+							{
+								seqPosM[curTrack] += 2;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_GLOBAL_VOL)
+							{
+								seqPosM[curTrack] += 2;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_DRUM_KIT)
+							{
+								seqPosM[curTrack] += 3;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_ADD_ENV)
+							{
+								envVals[curTrack] += (signed char)command[1];
+								envVals[curTrack] &= 0x00FF;
+								seqPosM[curTrack] += 2;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_ENV)
+							{
+								envVals[curTrack] = command[1];
+								seqPosM[curTrack] += 2;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_ADD_TRANSPOSE)
+							{
+								transposes[curTrack] += ((signed char)command[1]);
+								seqPosM[curTrack] += 2;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_HITEK_REST && drvVers == NINT_VER_HITEK)
+							{
+								curNoteLens[curTrack] = ((curSpeeds[curTrack] + 1) * (highNibble + 1)) * 5;
+								curDelays[curTrack] += curNoteLens[curTrack];
+								masterDelays[curTrack] += curNoteLens[curTrack];
+								seqPosM[curTrack]++;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_HITEK_OCTAVE && drvVers == NINT_VER_HITEK)
+							{
+								octaves[curTrack] = highNibble;
+								seqPosM[curTrack]++;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_HITEK_SPEED && drvVers == NINT_VER_HITEK)
+							{
+								curSpeeds[curTrack] = command[1];
+								seqPosM[curTrack] += 2;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_HITEK_CH3_FADE_OUT_ON && drvVers == NINT_VER_HITEK)
+							{
+								seqPosM[curTrack]++;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_HITEK_CH3_FADE_OFF && drvVers == NINT_VER_HITEK)
+							{
+								seqPosM[curTrack]++;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_HITEK_POKE && drvVers == NINT_VER_HITEK)
+							{
+								seqPosM[curTrack] += 3;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_HITEK_END && drvVers == NINT_VER_HITEK)
+							{
+								for (j = 0; j < 4; j++)
+								{
+									tracksEnd[j] = 1;
+								}
+								songEnd = 1;
+							}
+
+							else if (EventMap[command[0]] == NINT_EVENT_HITEK_JUMP && drvVers == NINT_VER_HITEK)
+							{
+								if ((ReadLE16(&romData[seqPosM[curTrack] + 1])) > seqPosM[curTrack])
+								{
+									seqPosM[curTrack] = ReadLE16(&romData[seqPosM[curTrack] + 1]);
+								}
+								else
+								{
+									tracksEnd[curTrack] = 1;
+								}
+
+							}
+
+							/*Unknown command*/
 							else
 							{
-								seqPos++;
+								seqPosM[curTrack]++;
 							}
 						}
-
-						/*Set parameters*/
-						else if (command[0] == 0x9D)
-						{
-							seqPos += 4;
-						}
-
-						/*Change step table*/
-						else if (command[0] == 0x9E)
-						{
-							stepPtr = ReadLE16(&romData[seqPos + 1]);
-							for (k = 0; k < 16; k++)
-							{
-								curStepTab[k] = (romData[stepPtr + k - bankAmt]) * 5;
-							}
-							switchPoint2[switchNum2][0] = masterDelay;
-							switchPoint2[switchNum2][1] = stepPtr;
-							switchNum2++;
-							seqPos += 3;
-						}
-
-						/*Transpose (all channels)*/
-						else if (command[0] == 0x9F)
-						{
-							transpose = (signed char)command[1] / 2;
-							if (curTrack == 0)
-							{
-								switchPoint1[switchNum1][0] = masterDelay;
-								switchPoint1[switchNum1][1] = transpose;
-								switchNum1++;
-							}
-							seqPos += 2;
-						}
-
-						/*Set note length*/
-						else if (command[0] >= 0xA0)
-						{
-							curNoteLen = curStepTab[command[0] - 0xA0];
-							seqPos++;
-						}
-
-						/*Play note*/
-						else if (command[0] >= 0x10 && command[0] <= 0x90)
-						{
-
-							if (curTrack != 3)
-							{
-								curNote = NintnoteVals[(command[0] - 0x10)] + 20;
-								curNote += transpose;
-								curNote += songTrans;
-							}
-							else
-							{
-								curNote = command[0] + 10;
-							}
-							ctrlDelay += curNoteLen;
-							masterDelay += curNoteLen;
-							tempPos = WriteNoteEvent(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
-							firstNote = 0;
-							midPos = tempPos;
-							curDelay = 0;
-							seqPos++;
-						}
-						else if (command[0] > 0x90 && command[0] <= 0x9A)
-						{
-							if (setFix == 1)
-							{
-								seqPos++;
-							}
-							else
-							{
-								seqPos += 2;
-							}
-						}
-
 
 					}
-					patPos += 2;
-					length++;
-				}
-				else if (curSeq == 0x0000)
-				{
-					songLen = length;
-					endChan = 1;
-				}
-				else if (curSeq == 0xFFFF)
-				{
-					endChan = 1;
 				}
 
 			}
+
+			seqTime += 5;
+			ctrlDelay += 5;
+
+
+
+		}
+
+		for (curTrack = 0; curTrack < trackCnt; curTrack++)
+		{
+
 			/*End of track*/
-			WriteBE32(&midData[midPos], 0xFF2F00);
-			midPos += 4;
+			WriteBE32(&multiMidData[curTrack][midPosM[curTrack]], 0xFF2F00);
+			midPosM[curTrack] += 4;
+			firstNotes[curTrack] = 0;
 
 			/*Calculate MIDI channel size*/
-			trackSize = midPos - midTrackBase;
-			WriteBE16(&midData[midTrackBase - 2], trackSize);
+			trackSizes[curTrack] = midPosM[curTrack] - midTrackBase;
+			WriteBE16(&multiMidData[curTrack][midTrackBase - 2], trackSizes[curTrack]);
 		}
 
 		/*End of control track*/
@@ -867,8 +1355,8 @@ void Nintsong2mid(int songNum, long ptrList[4], long speedPtr, int songTrans)
 		ctrlMidPos += 4;
 
 		/*Calculate MIDI channel size*/
-		trackSize = ctrlMidPos - ctrlMidTrackBase;
-		WriteBE16(&ctrlMidData[ctrlMidTrackBase - 2], trackSize);
+		ctrlTrackSize = ctrlMidPos - ctrlMidTrackBase;
+		WriteBE16(&ctrlMidData[ctrlMidTrackBase - 2], ctrlTrackSize);
 
 		if (multiBanks == 0)
 		{
@@ -879,197 +1367,15 @@ void Nintsong2mid(int songNum, long ptrList[4], long speedPtr, int songTrans)
 			sprintf(outfile, "Bank %i/song%d.mid", (curBank + 1), songNum);
 		}
 		fwrite(ctrlMidData, ctrlMidPos, 1, mid);
-		fwrite(midData, midPos, 1, mid);
-		fclose(mid);
-		free(midData);
+		for (curTrack = 0; curTrack < trackCnt; curTrack++)
+		{
+			fwrite(multiMidData[curTrack], midPosM[curTrack], 1, mid);
+			free(multiMidData[curTrack]);
+		}
+
 		free(ctrlMidData);
-	}
-}
+		fclose(mid);
 
-void NintgetLength(long ptrList[4])
-{
-	int curChan = 0;
-	long lowestPat = 0;
-	int repeat = 0;
-	int delay = 0;
-	int patPos = 0;
-	int seqPos = 0;
-	int curSeq = 0;
-	long command[4];
-	int endSeq = 0;
-	int endChan = 0;
-	int startSeq = 0;
-	int curNoteLen = 0;
-	int repeatPt = 0;
-	totalLen = 0;
-
-	/*Find the lowest pointer*/
-	for (curChan == 0; curChan < 4; curChan++)
-	{
-		if (songPtrs[curChan] < songPtrs[curChan - 1])
-		{
-			if (songPtrs[curChan] != 0 && curChan != 0)
-			{
-				lowestPat = songPtrs[curChan];
-				break;
-			}
-		}
-
-	}
-
-	if (curChan == 4)
-	{
-		lowestPat = songPtrs[0];
-	}
-
-	/*Get the step table*/
-	for (j = 0; j < 16; j++)
-	{
-		curStepTab[j] = romData[speedPtr - bankAmt + j] * 5;
-	}
-
-	patPos = lowestPat - bankAmt;
-
-	endChan = 0;
-	endSeq = 0;
-	if (lowestPat == 0)
-	{
-		endChan = 1;
-	}
-
-	while (endChan == 0)
-	{
-		curSeq = ReadLE16(&romData[patPos]);
-		if (curSeq != 0x0000 && curSeq != 0xFFFF)
-		{
-			endSeq = 0;
-			startSeq = 1;
-			seqPos = curSeq - bankAmt;
-			for (j = 0; j < 30; j++)
-			{
-				if (seqList[j] == curSeq)
-				{
-					break;
-				}
-			}
-			if (j == 30)
-			{
-				seqList[highestSeq] = curSeq;
-				highestSeq++;
-			}
-			while (endSeq == 0)
-			{
-				command[0] = romData[seqPos];
-				command[1] = romData[seqPos + 1];
-				command[2] = romData[seqPos + 2];
-				/*Step table check code*/
-				if (curChan != 0 && curChan != 3)
-				{
-					for (switchNum2 = 0; switchNum2 < 400; switchNum2++)
-					{
-						if (switchPoint2[switchNum2][0] == delay)
-						{
-							curStepTab[k] = (romData[speedPtr + k - bankAmt]) * 5;
-						}
-					}
-				}
-
-				/*End of sequence*/
-				if (command[0] == 0x00)
-				{
-					endSeq = 1;
-				}
-
-				/*Rest (channels 1-3) or noise type (channel 4)*/
-				else if (command[0] > 0x00 && command[0] < 0x10)
-				{
-					if (curChan != 3)
-					{
-						delay += curNoteLen * command[0];
-						seqPos++;
-					}
-					else
-					{
-						delay += curNoteLen;
-						seqPos++;
-					}
-
-				}
-
-				/*Repeat point start*/
-				else if (command[0] == 0x9B)
-				{
-					repeat = command[1];
-					repeatPt = seqPos + 2;
-					seqPos += 2;
-				}
-
-				/*End of repeat point*/
-				else if (command[0] == 0x9C)
-				{
-					if (repeat > 1)
-					{
-						seqPos = repeatPt;
-						repeat--;
-					}
-					else
-					{
-						seqPos++;
-					}
-				}
-
-				/*Set parameters*/
-				else if (command[0] == 0x9D)
-				{
-					seqPos += 4;
-				}
-
-				/*Change step table*/
-				else if (command[0] == 0x9E)
-				{
-					speedPtr = ReadLE16(&romData[seqPos + 1]);
-					for (k = 0; k < 16; k++)
-					{
-						curStepTab[k] = (romData[speedPtr + k - bankAmt]) * 5;
-					}
-					switchPoint2[switchNum2][0] = delay;
-					switchPoint2[switchNum2][1] = speedPtr;
-					switchNum2++;
-					seqPos += 3;
-				}
-
-				/*Transpose (all channels)*/
-				else if (command[0] == 0x9F)
-				{
-					seqPos += 3;
-				}
-
-				/*Set note length*/
-				else if (command[0] >= 0xA0)
-				{
-					curNoteLen = curStepTab[command[0] - 0xA0];
-					seqPos++;
-				}
-
-				/*Play note*/
-				else if (command[0] >= 0x10 && command[0] <= 0x9A)
-				{
-					delay += curNoteLen;
-					seqPos++;
-				}
-			}
-			patPos += 2;
-		}
-
-		else if (curSeq == 0x0000)
-		{
-			totalLen = delay;
-			endChan = 1;
-		}
-		else if (curSeq == 0xFFFF)
-		{
-			endChan = 1;
-		}
 	}
 
 }

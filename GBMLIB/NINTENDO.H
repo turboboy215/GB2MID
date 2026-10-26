@@ -1,8 +1,66 @@
-/*Nintendo (Hirokazu Tanaka)*/
+/*Nintendo (common driver - Hirokazu Tanaka)*/
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <stddef.h>
 
+#define NINT_VER_STD			1
+#define NINT_VER_SML2			2
+#define NINT_VER_KT				3
+#define NINT_VER_LA				4
+#define NINT_VER_SMBDX			5
+#define NINT_VER_KIRBY			6
+#define NINT_VER_MET2			7
+#define NINT_VER_HITEK			8
+
+enum NintEventTypes
+{
+	NINT_EVENT_UNKNOWN0 = 0,
+	NINT_EVENT_NOP,
+	NINT_EVENT_REPEAT_START,
+	NINT_EVENT_REPEAT_END,
+	NINT_EVENT_INS_PARAMS,
+	NINT_EVENT_NOTE_LEN_TABLE,
+	NINT_EVENT_TRANSPOSE,
+	NINT_EVENT_NOTE_LEN,
+	NINT_EVENT_BEND_ON,
+	NINT_EVENT_BEND_OFF,
+	NINT_EVENT_DROP_ON,
+	NINT_EVENT_DROP_OFF,
+	NINT_EVENT_CH3_FADE_ON,
+	NINT_EVENT_CH3_FADE_OFF,
+	NINT_EVENT_CH3_FADE_IN_ON,
+	NINT_EVENT_CH3_SFX_RESUME,
+	NINT_EVENT_CH3_SFX_PAUSE,
+	NINT_EVENT_REST_ENV,
+	NINT_EVENT_GLOBAL_VOL,
+	NINT_EVENT_DRUM_KIT,
+	NINT_EVENT_ADD_ENV,
+	NINT_EVENT_ENV,
+	NINT_EVENT_ADD_TRANSPOSE,
+	NINT_EVENT_HITEK_REST,
+	NINT_EVENT_HITEK_SPEED,
+	NINT_EVENT_HITEK_CH3_FADE_OUT_ON,
+	NINT_EVENT_HITEK_CH3_FADE_OFF,
+	NINT_EVENT_HITEK_OCTAVE,
+	NINT_EVENT_HITEK_POKE,
+	NINT_EVENT_HITEK_END,
+	NINT_EVENT_HITEK_JUMP,
+};
+
+unsigned int NINT_STATUS_END;
+unsigned int NINT_STATUS_REST;
+unsigned int NINT_STATUS_NOTE_MIN;
+unsigned int NINT_STATUS_NOTE_MAX;
+unsigned int NINT_STATUS_NOTE_LEN_MIN;
+unsigned int NINT_STATUS_NOTE_LEN_MAX;
+unsigned int NINT_STATUS_ECHO1;
+unsigned int NINT_STATUS_ECHO2;
+unsigned int NINT_PAT_STATUS_ENV;
+unsigned int NINT_PAT_STATUS_ADD_TRANSPOSE;
+unsigned int NINT_PAT_STATUS_TRANSPOSE;
+
+unsigned int EventMap[256];
+
 /*Function prototypes*/
-extern void NintProc(int bank, char parameters[4][100]);
+void NintProc(int bank, char parameters[4][100]);
