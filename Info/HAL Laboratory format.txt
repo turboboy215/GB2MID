@@ -1,15 +1,8 @@
 Song pointer table
 =======================================
-One method, as seen in Kirby games, to access the song's pointer table is with the following commands:
+The song pointer table is comprised of 16-bit pointers to each song as well as sound effects.
 
-ld hl, [SongTable]
-add hl, de
-add hl, de
-ldi a, [hl]
-
-The song pointer table is comprised of 16-bit pointers to each song as well as sound effects. Later games like Kirby's Dream Land 2 store their song pointers at the very start of the bank (address $4000).
-
-Song headers
+Song header
 =======================================
 The header for each song is structured as follows:
 
@@ -36,140 +29,71 @@ For Ghostbusters II and Trax, which use a different version of the driver, the h
 2 bytes (for each active channel) = 16-bit pointer to start of sequence
 (Repeat until the following byte:)
 FF = End of channel header
-	
 
 Sequence format
 =======================================
 Sequences are comprised of the following commands:
-xy = Play note/length
-xx xx (Cx/Dx) = Play note with custom length
-Dx xx = Rest
-E1 xx = ?
-E2 xx yy = ?
-E3 xx = Frequency change                                      
-F0 xx = Set note volume?
-F1 xx = Set "echo" effect?
-F2 xx = Channel note table
-F3 xx = Hold note by amount
-F4 xx = Set note size
-F5 xx = Set frequency?
-F6 xx = Set instrument?
-F7 xx = ?
-F8 xx xx = Go to loop point
-F9 = ?
-FA xx xx = Play macro at position
+00-DF = Play note/length:
+  xxxyyyyy = Play note (X = length from table (each 6 bytes), Y = note (-15 to 15 from base note value, signed delta)
+  11xxxxxx yyyyyyyy = Play note with explicit length (X = note (-15 to 15 from base note value, signed delta), Y = length)
+  xxx10000 = Rest (X = Length in frames)
+E1 xx = Sync sound (X = Time)
+E2 xx xx = Set period directly (X = Period value)
+E3 xx = Set tuning (X = Value, signed)
+E4-EF = (Invalid)
+F0 xx = Set note volume (absolute) (X = Value - clamped to 15)
+F1 xx = Set note value (add) (X = Value - clamped to 15)
+F2 xx = Set channel note length table (X = List number)
+F3 xx = Hold note by amount (X = Length in frames)
+F4 xx = Set note duration/gate (X = Length, 0 = endless)
+F5 xx = Set base note (X = Note number)
+F6 xyyyyyyy = Set instrument (X = Run the attack envelope once now instead of at every note, Y = Instrument number)
+F7 xx = Set tuning table entry (X = Table entry number)
+F8 xx xx = Jump to position (X = Pointer)
+F9 = (Invalid)
+FA xx xx = Go to macro (X = Pointer) (nested macros supported)
 FB = Return from macro
-FC xx = Repeat section # of times (2 layers of repeats can be done at once)
+FC xx = Start of repeat section (X = Number of times) (nested repeats supported)
 FD = End of repeat
-FE xx = Set channel volume?
-FF = End song without loop
+FE ------xx = Set panning (X = Left, 1 = Right)
+FF = End of channel
 
 Ghostbusters II and Trax use different commands:
-xy = Play note (00-7F?)
+00-7B = Play note:
+	xxxxyyyy (X = Octave, Y = Note)
 7C = Rest
-8x-Dx = Change note length (Uses only one big note table as opposed to multiple switched 6-byte ones)
-E1 xx = ?
-E2 xx yy = ?
-E3 xx = Frequency change?                                  
-F0 xx = Set note size
-F1 xx = Set duty
-F2 xx = Set channel volume
-F4 xx = Repeat section # of times
-F5 = End of repeat
-F6 xx xx = Play macro at position
+80-BF = Change note length (Uses only one big note table as opposed to multiple switched 6-byte ones)
+C0-EF = (Invalid)       
+F0 xx = Set envelope (X = Entry from table)
+F1 xx = Set duty (X = Duty (OR $3F))    
+F2 xx = Attenuate (X = Value subtracted from every envelope volume)
+F3 xx = Set transpose (X = Value, signed)
+F4 xx = Start of repeat section (X = Times)
+F5 = End of repeat section
+F6 xx xx = Play macro at position (X = Pointer) (one level only)
 F7 = Return from macro
-F8 xx = Pitch slide
-F9 = ?
-FB xx xx = Go to loop point
+F8 xx = Set sweep (X = Value ((XOR 8) & $7F))
+F9 = Sweep off
+FA = (Invalid)
+FB xx xx = Go to macro (X = Pointer)
+FC = (No effect)
+FD xx = Play sound effect
+FE = (Invalid)
 FF = End song without loop
 
-Note commands
+Instruments
 =======================================
-00 = Base note - Length 1
-01-0F = Higher note - Length 1
-10 = Rest - Length 1
-11-1F = Lower note - Length 1
-
-20 = Base note - Length 2
-21-2F = Higher note - Length 2
-30 = Rest - Length 2
-31-3F = Lower note - Length 2
-
-40 = Base note - Length 3
-41-4F = Higher note - Length 3
-50 = Rest - Length 3
-51-5F = Lower note - Length 3
-
-60 = Base note - Length 4
-61-6F = Higher note - Length 4
-70 = Rest - Length 4
-71-7F = Lower note - Length 4
-
-80 = Base note - Length 5
-81-8F = Higher note - Length 5
-90 = Rest - Length 5
-91-9F = Lower note - Length 5
-
-A0 = Base note - Length 6
-A1-AF = Higher note - Length 6
-B0 = Rest - Length 6
-B1-BF = Lower note - Length 6
-
-C0 xx = Base note - Custom length
-C1-CF xx - Higher note - Custom length
-D0 xx = Rest - Custom length
-D1-DF xx - Lower note - Custom length
-
-Frequency values:
-00 = A
-01 = A#
-02 = B
-03 = C
-04 = C#
-05 = D
-06 = D#
-07 = E
-08 = F
-09 = F#
-0A = G
-0B = G#
-0C = A
-0D = A#
-0E = B
-0F = C-0
-10 = C#-0
-11 = D-0
-12 = D#-0
-13 = E-0
-14 = F-0
-15 = F#-0
-16 = G-0
-17 = G#-0
-18 = A-0
-19 = A#-0
-1A = B-0
-1B = C-1
-1C = C#-1
-1D = D-1
-1E = D#-1
-1F = E-1
-20 = F-1
-21 = F#-1
-22 = G-1
-23 = G#-1
-24 = A-1
-25 = A#-1
-26 = B-1
-27 = C-2
-28 = C#-2
-29 = D-2
-2A = D#-2
-2B = E-2
-2C = F-2
-2D = F#-2
-2E = G-2
-2F = G#-2
-30 = A-2
-31 = A#-2
-32 = B-2
-33 = C-3
+Instruments are accessed from two pointers: an attack envelope started at every note, and a release envelope started when the release countdown expires.
+The envelopes are structured usinb the following commands:
+000wwwww = wait (w)
+001Wssss = period += s (signed); W = then wait 1 frame
+010Wvvvv = v = envelope volume (low nibble of track volume); W = then wait 1 frame
+011Wssss = s = Add to envelope volume; W = then wait 1 frame
+100Wxxxx = duty (CH1/2/4, NRx1 bits 6–7) or wave number
+F0 xx = register 0 of the channel (NR10 sweep, NR30)
+F8 xx xx = Jump to position (X = Pointer)
+FA xx xx = Go to macro (X = Pointer)
+FB = Return from macro
+FC xx = Start of repeat section (X = Times) (nested repeats supported)
+FD = End of repeat
+FF = End of track envelope
