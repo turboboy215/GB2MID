@@ -23,23 +23,26 @@ int insBank;
 int foundTable;
 long patSize;
 int rowNum;
-int multiBanks;
-int curBank;
-
-char folderName[100];
+int drvVers;
 
 unsigned char* romData;
+unsigned char* exRomData;
 unsigned char* xmData;
 unsigned char* endData;
 unsigned char* songBankData;
 unsigned char* patBankData;
 long xmLength;
 
+int multiBanks;
+
+char folderName[100];
+
 const char TableFind[4] = { 0xCE, 0x00, 0x67, 0x2A };
 const char TableFindS11[9] = { 0xE0, 0x79, 0x6F, 0x26, 0x00, 0x29, 0x29, 0x29, 0x11 };
 
 /*Function prototypes*/
 unsigned short ReadLE16(unsigned char* Data);
+unsigned short ReadBE16(unsigned char* Data);
 void Write8B(unsigned char* buffer, unsigned int value);
 void WriteBE32(unsigned char* buffer, unsigned long value);
 void WriteBE24(unsigned char* buffer, unsigned long value);
@@ -50,77 +53,37 @@ void WriteLE32(unsigned char* buffer, unsigned long value);
 void P5song2xm(int songNum, long ptr);
 int P5row2xm(int pos, long rowData[20]);
 int P5checkRows(int songNum, long ptr);
-void P5song2xmMB(int songNum, long ptr, int bank);
-void P5Proc(int bank);
+void P5song2xmMB(int songNum, long ptr);
 
 void P5Proc(int bank)
 {
+	foundTable = 0;
+	drvVers = P5_VER_COMPACT;
+
+	if (bank < 0x02)
+	{
+		drvVers = P5_VER_MB;
+		bank = 0x02;
+	}
+
 	bankAmt = bankSize;
-
-	fseek(rom, ((bank - 1) * bankSize), SEEK_SET);
-	romData = (unsigned char*)malloc(bankSize);
+	fseek(rom, 0, SEEK_SET);
+	romData = (unsigned char*)malloc(bankSize * 2);
 	fread(romData, 1, bankSize, rom);
+	fseek(rom, ((bank - 1) * bankSize), SEEK_SET);
+	fread(romData + bankSize, 1, bankSize, rom);
 
-	if (bank > 1)
+	if (drvVers != P5_VER_MB)
 	{
 		/*Try to search the bank for song pattern table loader*/
-		for (i = 0; i < bankSize; i++)
+		for (i = bankSize; (i < bankSize * 2); i++)
 		{
 			if (!memcmp(&romData[i], TableFind, 4))
 			{
-				tablePtrLoc = bankAmt + i - 4;
-				printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
-				tableOffset = romData[tablePtrLoc - bankAmt] + (romData[tablePtrLoc + 3 - bankAmt] * 0x100);
-				printf("Song table starts at 0x%04x...\n", tableOffset);
-				foundTable = 1;
-				break;
-			}
-		}
-
-		if (foundTable == 1)
-		{
-			i = tableOffset - bankAmt;
-			songNum = 1;
-
-			while ((ReadLE16(&romData[i]) > bankAmt) && (ReadLE16(&romData[i + 2]) > bankAmt))
-			{
-				insPtr = ReadLE16(&romData[i]);
-				songPtr = ReadLE16(&romData[i + 2]);
-				printf("Song %i instruments: 0x%04X\n", songNum, insPtr);
-				printf("Song %i: 0x%04X\n", songNum, songPtr);
-				rowNum = P5checkRows(songNum, songPtr);
-
-				/*Fix for "Mean Mr. Mustard" homebrew*/
-				if (bank == 3 && insPtr == 0x57A8 && songPtr == 0x5164 && songNum == 1)
-				{
-					rowNum = 96;
-				}
-				P5song2xm(songNum, songPtr);
-				free(xmData);
-				i += 4;
-				songNum++;
-			}
-			free(romData);
-		}
-
-		else
-		{
-			printf("ERROR: Magic bytes not found!\n");
-			exit(-1);
-		}
-	}
-
-	else if (bank == 1)
-	{
-		/*Try to search the bank for song pattern table loader*/
-		for (i = 0; i < bankSize; i++)
-		{
-			if (!memcmp(&romData[i], TableFindS11, 9))
-			{
-				tablePtrLoc = i + 9;
-				printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
-				tableOffset = ReadLE16(&romData[tablePtrLoc]);
-				printf("Song table starts at 0x%04x...\n", tableOffset);
+				tablePtrLoc = i - 4;
+				printf("Found pointer to song table at address 0x%04X!\n", tablePtrLoc);
+				tableOffset = romData[tablePtrLoc] + (romData[tablePtrLoc + 3] * 0x100);
+				printf("Song table starts at 0x%04X...\n", tableOffset);
 				foundTable = 1;
 				break;
 			}
@@ -131,7 +94,58 @@ void P5Proc(int bank)
 			i = tableOffset;
 			songNum = 1;
 
-			while ((ReadLE16(&romData[i + 2]) >= bankAmt) && (ReadLE16(&romData[i + 6]) >= bankAmt))
+			while ((ReadLE16(&romData[i]) > bankAmt) && (ReadLE16(&romData[i + 2]) > bankAmt))
+			{
+				insPtr = ReadLE16(&romData[i]);
+				songPtr = ReadLE16(&romData[i + 2]);
+				songBank = bank;
+				printf("Song %i instruments: 0x%04X\n", songNum, insPtr);
+				printf("Song %i: 0x%04X\n", songNum, songPtr);
+				rowNum = P5checkRows(songNum, songPtr);
+
+				/*Fix for "Mean Mr. Mustard" homebrew*/
+				if (bank == 3 && insPtr == 0x57A8 && songPtr == 0x5164 && songNum == 1)
+				{
+					rowNum = 96;
+				}
+				P5song2xm(songNum, songPtr);
+				i += 4;
+				songNum++;
+			}
+		}
+
+		else
+		{
+			free(romData);
+			fclose(rom);
+			printf("ERROR: Magic bytes not found!\n");
+			exit(-1);
+		}
+
+	}
+
+	else
+	{
+		/*Try to search the bank for song pattern table loader*/
+		for (i = 0; i < bankSize; i++)
+		{
+			if (!memcmp(&romData[i], TableFindS11, 9))
+			{
+				tablePtrLoc = i + 9;
+				printf("Found pointer to song table at address 0x%04X!\n", tablePtrLoc);
+				tableOffset = ReadLE16(&romData[tablePtrLoc]);
+				printf("Song table starts at 0x%04X...\n", tableOffset);
+				foundTable = 1;
+				break;
+			}
+		}
+
+		if (foundTable == 1)
+		{
+			i = tableOffset;
+			songNum = 1;
+
+			while ((ReadLE16(&romData[i + 2]) >= 0) && (ReadLE16(&romData[i + 6]) >= bankAmt))
 			{
 				insBank = romData[i];
 				insPtr = ReadLE16(&romData[i + 2]);
@@ -141,35 +155,46 @@ void P5Proc(int bank)
 				printf("Song %i instruments: 0x%04X\n", songNum, insPtr);
 				printf("Song %i bank: %01X\n", songNum, songBank);
 				printf("Song %i: 0x%04X\n", songNum, songPtr);
-				P5song2xmMB(songNum, songPtr, songBank);
-				free(xmData);
+				fseek(rom, 0, SEEK_SET);
+				exRomData = (unsigned char*)malloc(bankSize * 2);
+				fread(exRomData, 1, bankSize, rom);
+				fseek(rom, ((songBank)*bankSize), SEEK_SET);
+				fread(exRomData + bankSize, 1, bankSize, rom);
+				P5song2xmMB(songNum, songPtr);
+				free(exRomData);
 				printf("\n");
 				i += 8;
 				songNum++;
 			}
-			free(romData);
 		}
 
 		else
 		{
+			free(romData);
+			fclose(rom);
 			printf("ERROR: Magic bytes not found!\n");
 			exit(-1);
 		}
+
 	}
+
+	free(romData);
+
 }
 
+/*Convert the song data to XM*/
 void P5song2xm(int songNum, long ptr)
 {
 	int songPos = 0;
 	int patPos = 0;
 	long curPat = 0;
-	long curBank1 = 0;
 	int patNum = 1;
 	int patEnd = 0;
 	long command[3];
 	long row[20];
 	int curNote = 0;
 	int curChan = 0;
+	int curBank2 = 0;
 	int curSpeed = 0;
 	int curIns = 0;
 	int tempVal = 0;
@@ -198,14 +223,14 @@ void P5song2xm(int songNum, long ptr)
 	l = 0;
 	patSize = 0;
 
-	xmLength = 0x10000;
-	xmData = ((unsigned char*)malloc(xmLength));
-
 	if (multiBanks != 0)
 	{
 		snprintf(folderName, sizeof(folderName), "Bank %i", (curBank + 1));
 		_mkdir(folderName);
 	}
+
+	xmLength = 0x10000;
+	xmData = ((unsigned char*)malloc(xmLength));
 
 	for (l = 0; l < xmLength; l++)
 	{
@@ -234,9 +259,9 @@ void P5song2xm(int songNum, long ptr)
 	else
 	{
 		/*Determine number of patterns*/
-		songPos = ptr - bankAmt;
+		songPos = ptr;
 		numPats = 0;
-		while (ReadLE16(&romData[songPos]) > bankAmt)
+		while (ReadLE16(&romData[songPos]) >= bankSize)
 		{
 			numPats++;
 			songPos += 4;
@@ -305,14 +330,42 @@ void P5song2xm(int songNum, long ptr)
 
 
 		/*Copy the pattern data*/
-		songPos = ptr - bankAmt;
+		songPos = ptr;
+
+		switch (drvVers)
+		{
+		case P5_VER_COMPACT:
+			/*Fall-through*/
+		case P5_VER_MB:
+		default:
+			EventMap[0x00] = P5_EVENT_ENDOFFRAME;
+			EventMap[0x01] = P5_EVENT_PLAYINSTNOTE;
+			EventMap[0x02] = P5_EVENT_PLAYINST;
+			EventMap[0x03] = P5_EVENT_SETVOLUME;
+			EventMap[0x04] = P5_EVENT_VIBRATO_ON;
+			EventMap[0x05] = P5_EVENT_EFFECT_OFF;
+			EventMap[0x06] = P5_EVENT_SYNCFLAG;
+			EventMap[0x07] = P5_EVENT_ENDOFPATTERN;
+			EventMap[0x08] = P5_EVENT_GOTOORDER;
+			EventMap[0x09] = P5_EVENT_ENDOFSONG;
+			EventMap[0x0A] = P5_EVENT_SETSPEED;
+			EventMap[0x0B] = P5_EVENT_ENDOFFRAME1X;
+			EventMap[0x0C] = P5_EVENT_ENDOFFRAME2X;
+			EventMap[0x0D] = P5_EVENT_ENDOFFRAME3X;
+			EventMap[0x0E] = P5_EVENT_ENDOFFRAME4X;
+			EventMap[0x0F] = P5_EVENT_PITCHUP_ON;
+			EventMap[0x10] = P5_EVENT_PITCHDOWN_ON;
+			EventMap[0x11] = P5_EVENT_TRIPLENOTE_ON;
+			EventMap[0x12] = P5_EVENT_EXTRA;
+			break;
+		}
 
 		for (curPatNum = 0; curPatNum < numPats; curPatNum++)
 		{
 			curPat = ReadLE16(&romData[songPos]);
-			curBank1 = ReadLE16(&romData[songPos + 2]);
+			curBank2 = ReadLE16(&romData[songPos + 2]);
 
-			patPos = curPat - bankAmt;
+			patPos = curPat;
 			patEnd = 0;
 			rowsLeft = 64;
 			patSize = 0;
@@ -350,10 +403,10 @@ void P5song2xm(int songNum, long ptr)
 				command[2] = romData[patPos + 2];
 
 				/*Break pattern OR following rows are empty*/
-				if (command[0] == 0x00)
+				if (EventMap[command[0]] == P5_EVENT_ENDOFFRAME)
 				{
 
-					if (command[2] == 0x07)
+					if (EventMap[command[2]] == P5_EVENT_ENDOFPATTERN)
 					{
 						xmPos = P5row2xm(xmPos, row);
 						breakRows = ((command[1] + 1) / curSpeed) - 1;
@@ -406,9 +459,12 @@ void P5song2xm(int songNum, long ptr)
 				}
 
 				/*Play note, instrument*/
-				else if (command[0] == 0x01)
+				else if (EventMap[command[0]] == P5_EVENT_PLAYINSTNOTE)
 				{
 					curNote = command[1] + 0x19;
+					if (curChan != 2)
+					{
+					}
 
 					if (((command[2] - 4) % 4 == 0))
 					{
@@ -451,7 +507,7 @@ void P5song2xm(int songNum, long ptr)
 
 
 				/*Play instrument OR note end*/
-				else if (command[0] == 0x02)
+				else if (EventMap[command[0]] == P5_EVENT_PLAYINST)
 				{
 					if (command[1] < 0x04)
 					{
@@ -513,7 +569,7 @@ void P5song2xm(int songNum, long ptr)
 				}
 
 				/*Set starting volume of envelope*/
-				else if (command[0] == 0x03)
+				else if (EventMap[command[0]] == P5_EVENT_SETVOLUME)
 				{
 					lowNibble = (command[1] >> 4);
 					highNibble = (command[1] & 15);
@@ -539,7 +595,7 @@ void P5song2xm(int songNum, long ptr)
 				}
 
 				/*Vibrato*/
-				else if (command[0] == 0x04)
+				else if (EventMap[command[0]] == P5_EVENT_VIBRATO_ON)
 				{
 					lowNibble = (command[1] >> 4);
 					highNibble = (command[1] & 15);
@@ -570,38 +626,38 @@ void P5song2xm(int songNum, long ptr)
 				}
 
 				/*Effects off*/
-				else if (command[0] == 0x05)
+				else if (EventMap[command[0]] == P5_EVENT_EFFECT_OFF)
 				{
 					curChan = command[1] + 1;
 					patPos += 2;
 				}
 
 				/*Flag command (for game-specific data)*/
-				else if (command[0] == 0x06)
+				else if (EventMap[command[0]] == P5_EVENT_SYNCFLAG)
 				{
 					patPos += 2;
 				}
 
 				/*End of pattern*/
-				else if (command[0] == 0x07)
+				else if (EventMap[command[0]] == P5_EVENT_ENDOFPATTERN)
 				{
 					patEnd = 1;
 				}
 
 				/*End loop data*/
-				else if (command[0] == 0x08)
+				else if (EventMap[command[0]] == P5_EVENT_GOTOORDER)
 				{
 					patPos += 3;
 				}
 
 				/*Go to order*/
-				else if (command[0] == 0x09)
+				else if (EventMap[command[0]] == P5_EVENT_ENDOFSONG)
 				{
 					patEnd = 1;
 				}
 
 				/*Pattern speed*/
-				else if (command[0] == 0x0A)
+				else if (EventMap[command[0]] == P5_EVENT_SETSPEED)
 				{
 					curSpeed = command[1];
 					row[18] = 0x0F;
@@ -610,14 +666,14 @@ void P5song2xm(int songNum, long ptr)
 				}
 
 				/*End of row*/
-				else if (command[0] == 0x0B)
+				else if (EventMap[command[0]] == P5_EVENT_ENDOFFRAME1X)
 				{
 					xmPos = P5row2xm(xmPos, row);
 					patPos++;
 				}
 
 				/*Next row is empty*/
-				else if (command[0] == 0x0C)
+				else if (EventMap[command[0]] == P5_EVENT_ENDOFFRAME2X)
 				{
 					xmPos = P5row2xm(xmPos, row);
 
@@ -631,7 +687,7 @@ void P5song2xm(int songNum, long ptr)
 				}
 
 				/*Next 2 rows are empty*/
-				else if (command[0] == 0x0D)
+				else if (EventMap[command[0]] == P5_EVENT_ENDOFFRAME3X)
 				{
 					xmPos = P5row2xm(xmPos, row);
 
@@ -645,7 +701,7 @@ void P5song2xm(int songNum, long ptr)
 				}
 
 				/*Next 3 rows are empty*/
-				else if (command[0] == 0x0E)
+				else if (EventMap[command[0]] == P5_EVENT_ENDOFFRAME4X)
 				{
 					xmPos = P5row2xm(xmPos, row);
 
@@ -658,8 +714,8 @@ void P5song2xm(int songNum, long ptr)
 					patPos++;
 				}
 
-				/*Pitch slide down*/
-				else if (command[0] == 0x0F)
+				/*Pitch slide up*/
+				else if (EventMap[command[0]] == P5_EVENT_PITCHUP_ON)
 				{
 					lowNibble = (command[1] >> 4);
 					highNibble = (command[1] & 15);
@@ -687,8 +743,8 @@ void P5song2xm(int songNum, long ptr)
 					patPos += 2;
 				}
 
-				/*Pitch slide up*/
-				else if (command[0] == 0x10)
+				/*Pitch slide down*/
+				else if (EventMap[command[0]] == P5_EVENT_PITCHDOWN_ON)
 				{
 					lowNibble = (command[1] >> 4);
 					highNibble = (command[1] & 15);
@@ -718,7 +774,7 @@ void P5song2xm(int songNum, long ptr)
 
 
 				/*Arpeggio with halftones X and Y*/
-				else if (command[0] == 0x11)
+				else if (EventMap[command[0]] == P5_EVENT_TRIPLENOTE_ON)
 				{
 					curChan = command[2] + 1;
 					if (curChan == 1)
@@ -745,7 +801,7 @@ void P5song2xm(int songNum, long ptr)
 				}
 
 				/*Set pulse width OR set volume (channel 3)*/
-				else if (command[0] == 0x12)
+				else if (EventMap[command[0]] == P5_EVENT_EXTRA)
 				{
 					lowNibble = (command[1] >> 4);
 					highNibble = (command[1] & 15);
@@ -945,7 +1001,9 @@ int P5row2xm(int pos, long rowData[20])
 	}
 
 	return pos;
+
 }
+
 
 
 /*Check to see if the pattern size is over 64*/
@@ -953,7 +1011,7 @@ int P5checkRows(int songNum, long ptr)
 {
 	int songPos = 0;
 	int curPat = 0;
-	int curBank1 = 0;
+	int curBank2 = 0;
 	long command[3];
 	int rowNum = 0;
 	int patEnd = 0;
@@ -961,10 +1019,10 @@ int P5checkRows(int songNum, long ptr)
 	int breakRows = 0;
 	int curSpeed = 0;
 
-	songPos = ptr - bankAmt;
+	songPos = ptr;
 	curPat = ReadLE16(&romData[songPos]);
-	curBank1 = ReadLE16(&romData[songPos + 2]);
-	patPos = curPat - bankAmt;
+	curBank2 = ReadLE16(&romData[songPos + 2]);
+	patPos = curPat;
 
 	while (patEnd == 0)
 	{
@@ -1141,13 +1199,13 @@ int P5checkRows(int songNum, long ptr)
 	}
 }
 
-void P5song2xmMB(int songNum, long ptr, int bank)
+/*Convert the song data to XM (multi-bank)*/
+void P5song2xmMB(int songNum, long ptr)
 {
 	int songPos = 0;
 	int patPos = 0;
 	long curPat = 0;
-	long patBank = 0;
-	long curBank1 = 0;
+	long curBank2 = 0;
 	int patNum = 1;
 	int patEnd = 0;
 	long command[3];
@@ -1182,6 +1240,12 @@ void P5song2xmMB(int songNum, long ptr, int bank)
 	l = 0;
 	patSize = 0;
 
+	if (multiBanks != 0)
+	{
+		snprintf(folderName, sizeof(folderName), "Bank %i", (curBank + 1));
+		_mkdir(folderName);
+	}
+
 	xmLength = 0x10000;
 	xmData = ((unsigned char*)malloc(xmLength));
 
@@ -1196,7 +1260,14 @@ void P5song2xmMB(int songNum, long ptr, int bank)
 	}
 
 
-	sprintf(outfile, "song%d.xm", songNum);
+	if (multiBanks == 0)
+	{
+		sprintf(outfile, "song%d.xm", songNum);
+	}
+	else
+	{
+		sprintf(outfile, "Bank %i/song%d.xm", (curBank + 1), songNum);
+	}
 	if ((xm = fopen(outfile, "wb")) == NULL)
 	{
 		printf("ERROR: Unable to write to file song%d.xm!\n", songNum);
@@ -1204,16 +1275,10 @@ void P5song2xmMB(int songNum, long ptr, int bank)
 	}
 	else
 	{
-		patBank = songBank;
-		/*Get the current bank*/
-		fseek(rom, ((patBank)*bankSize), SEEK_SET);
-		songBankData = (unsigned char*)malloc(bankSize);
-		fread(songBankData, 1, bankSize, rom);
-
 		/*Determine number of patterns*/
-		songPos = ptr - bankAmt;
+		songPos = ptr;
 		numPats = 0;
-		while (ReadLE16(&songBankData[songPos]) >= bankAmt)
+		while (ReadLE16(&exRomData[songPos]) >= bankSize)
 		{
 			numPats++;
 			songPos += 4;
@@ -1282,20 +1347,50 @@ void P5song2xmMB(int songNum, long ptr, int bank)
 
 
 		/*Copy the pattern data*/
-		songPos = ptr - bankAmt;
+		songPos = ptr;
+
+		switch (drvVers)
+		{
+		case P5_VER_COMPACT:
+			/*Fall-through*/
+		case P5_VER_MB:
+		default:
+			EventMap[0x00] = P5_EVENT_ENDOFFRAME;
+			EventMap[0x01] = P5_EVENT_PLAYINSTNOTE;
+			EventMap[0x02] = P5_EVENT_PLAYINST;
+			EventMap[0x03] = P5_EVENT_SETVOLUME;
+			EventMap[0x04] = P5_EVENT_VIBRATO_ON;
+			EventMap[0x05] = P5_EVENT_EFFECT_OFF;
+			EventMap[0x06] = P5_EVENT_SYNCFLAG;
+			EventMap[0x07] = P5_EVENT_ENDOFPATTERN;
+			EventMap[0x08] = P5_EVENT_GOTOORDER;
+			EventMap[0x09] = P5_EVENT_ENDOFSONG;
+			EventMap[0x0A] = P5_EVENT_SETSPEED;
+			EventMap[0x0B] = P5_EVENT_ENDOFFRAME1X;
+			EventMap[0x0C] = P5_EVENT_ENDOFFRAME2X;
+			EventMap[0x0D] = P5_EVENT_ENDOFFRAME3X;
+			EventMap[0x0E] = P5_EVENT_ENDOFFRAME4X;
+			EventMap[0x0F] = P5_EVENT_PITCHUP_ON;
+			EventMap[0x10] = P5_EVENT_PITCHDOWN_ON;
+			EventMap[0x11] = P5_EVENT_TRIPLENOTE_ON;
+			EventMap[0x12] = P5_EVENT_EXTRA;
+			break;
+		}
 
 		for (curPatNum = 0; curPatNum < numPats; curPatNum++)
 		{
-			curPat = ReadLE16(&songBankData[songPos]);
-			curBank1 = ReadLE16(&songBankData[songPos + 2]);
+			curPat = ReadLE16(&exRomData[songPos]);
+			curBank2 = ReadLE16(&exRomData[songPos + 2]);
 
-			/*Copy pattern data over to memory from set bank*/
-			fseek(rom, ((curBank1)*bankSize), SEEK_SET);
-			patBankData = (unsigned char*)malloc(bankSize);
+			fseek(rom, 0, SEEK_SET);
+			patBankData = (unsigned char*)malloc(bankSize * 2);
 			fread(patBankData, 1, bankSize, rom);
+			fseek(rom, ((curBank2)*bankSize), SEEK_SET);
+			fread(patBankData + bankSize, 1, bankSize, rom);
 
-			patPos = curPat - bankAmt;
+			patPos = curPat;
 			patEnd = 0;
+			rowsLeft = 64;
 			patSize = 0;
 			rows = rowNum;
 
@@ -1331,10 +1426,10 @@ void P5song2xmMB(int songNum, long ptr, int bank)
 				command[2] = patBankData[patPos + 2];
 
 				/*Break pattern OR following rows are empty*/
-				if (command[0] == 0x00)
+				if (EventMap[command[0]] == P5_EVENT_ENDOFFRAME)
 				{
 
-					if (command[2] == 0x07)
+					if (EventMap[command[2]] == P5_EVENT_ENDOFPATTERN)
 					{
 						xmPos = P5row2xm(xmPos, row);
 						breakRows = ((command[1] + 1) / curSpeed) - 1;
@@ -1387,7 +1482,7 @@ void P5song2xmMB(int songNum, long ptr, int bank)
 				}
 
 				/*Play note, instrument*/
-				else if (command[0] == 0x01)
+				else if (EventMap[command[0]] == P5_EVENT_PLAYINSTNOTE)
 				{
 					curNote = command[1] + 0x19;
 
@@ -1432,7 +1527,7 @@ void P5song2xmMB(int songNum, long ptr, int bank)
 
 
 				/*Play instrument OR note end*/
-				else if (command[0] == 0x02)
+				else if (EventMap[command[0]] == P5_EVENT_PLAYINST)
 				{
 					if (command[1] < 0x04)
 					{
@@ -1494,7 +1589,7 @@ void P5song2xmMB(int songNum, long ptr, int bank)
 				}
 
 				/*Set starting volume of envelope*/
-				else if (command[0] == 0x03)
+				else if (EventMap[command[0]] == P5_EVENT_SETVOLUME)
 				{
 					lowNibble = (command[1] >> 4);
 					highNibble = (command[1] & 15);
@@ -1520,7 +1615,7 @@ void P5song2xmMB(int songNum, long ptr, int bank)
 				}
 
 				/*Vibrato*/
-				else if (command[0] == 0x04)
+				else if (EventMap[command[0]] == P5_EVENT_VIBRATO_ON)
 				{
 					lowNibble = (command[1] >> 4);
 					highNibble = (command[1] & 15);
@@ -1551,38 +1646,38 @@ void P5song2xmMB(int songNum, long ptr, int bank)
 				}
 
 				/*Effects off*/
-				else if (command[0] == 0x05)
+				else if (EventMap[command[0]] == P5_EVENT_EFFECT_OFF)
 				{
 					curChan = command[1] + 1;
 					patPos += 2;
 				}
 
 				/*Flag command (for game-specific data)*/
-				else if (command[0] == 0x06)
+				else if (EventMap[command[0]] == P5_EVENT_SYNCFLAG)
 				{
 					patPos += 2;
 				}
 
 				/*End of pattern*/
-				else if (command[0] == 0x07)
+				else if (EventMap[command[0]] == P5_EVENT_ENDOFPATTERN)
 				{
 					patEnd = 1;
 				}
 
 				/*End loop data*/
-				else if (command[0] == 0x08)
+				else if (EventMap[command[0]] == P5_EVENT_GOTOORDER)
 				{
 					patPos += 3;
 				}
 
 				/*Go to order*/
-				else if (command[0] == 0x09)
+				else if (EventMap[command[0]] == P5_EVENT_ENDOFSONG)
 				{
 					patEnd = 1;
 				}
 
 				/*Pattern speed*/
-				else if (command[0] == 0x0A)
+				else if (EventMap[command[0]] == P5_EVENT_SETSPEED)
 				{
 					curSpeed = command[1];
 					row[18] = 0x0F;
@@ -1591,14 +1686,14 @@ void P5song2xmMB(int songNum, long ptr, int bank)
 				}
 
 				/*End of row*/
-				else if (command[0] == 0x0B)
+				else if (EventMap[command[0]] == P5_EVENT_ENDOFFRAME1X)
 				{
 					xmPos = P5row2xm(xmPos, row);
 					patPos++;
 				}
 
 				/*Next row is empty*/
-				else if (command[0] == 0x0C)
+				else if (EventMap[command[0]] == P5_EVENT_ENDOFFRAME2X)
 				{
 					xmPos = P5row2xm(xmPos, row);
 
@@ -1612,7 +1707,7 @@ void P5song2xmMB(int songNum, long ptr, int bank)
 				}
 
 				/*Next 2 rows are empty*/
-				else if (command[0] == 0x0D)
+				else if (EventMap[command[0]] == P5_EVENT_ENDOFFRAME3X)
 				{
 					xmPos = P5row2xm(xmPos, row);
 
@@ -1626,7 +1721,7 @@ void P5song2xmMB(int songNum, long ptr, int bank)
 				}
 
 				/*Next 3 rows are empty*/
-				else if (command[0] == 0x0E)
+				else if (EventMap[command[0]] == P5_EVENT_ENDOFFRAME4X)
 				{
 					xmPos = P5row2xm(xmPos, row);
 
@@ -1639,8 +1734,8 @@ void P5song2xmMB(int songNum, long ptr, int bank)
 					patPos++;
 				}
 
-				/*Pitch slide down*/
-				else if (command[0] == 0x0F)
+				/*Pitch slide up*/
+				else if (EventMap[command[0]] == P5_EVENT_PITCHUP_ON)
 				{
 					lowNibble = (command[1] >> 4);
 					highNibble = (command[1] & 15);
@@ -1668,8 +1763,8 @@ void P5song2xmMB(int songNum, long ptr, int bank)
 					patPos += 2;
 				}
 
-				/*Pitch slide up*/
-				else if (command[0] == 0x10)
+				/*Pitch slide down*/
+				else if (EventMap[command[0]] == P5_EVENT_PITCHDOWN_ON)
 				{
 					lowNibble = (command[1] >> 4);
 					highNibble = (command[1] & 15);
@@ -1699,7 +1794,7 @@ void P5song2xmMB(int songNum, long ptr, int bank)
 
 
 				/*Arpeggio with halftones X and Y*/
-				else if (command[0] == 0x11)
+				else if (EventMap[command[0]] == P5_EVENT_TRIPLENOTE_ON)
 				{
 					curChan = command[2] + 1;
 					if (curChan == 1)
@@ -1726,7 +1821,7 @@ void P5song2xmMB(int songNum, long ptr, int bank)
 				}
 
 				/*Set pulse width OR set volume (channel 3)*/
-				else if (command[0] == 0x12)
+				else if (EventMap[command[0]] == P5_EVENT_EXTRA)
 				{
 					lowNibble = (command[1] >> 4);
 					highNibble = (command[1] & 15);
@@ -1784,6 +1879,7 @@ void P5song2xmMB(int songNum, long ptr, int bank)
 
 			songPos += 4;
 			WriteLE16(&xmData[packPos], patSize);
+			free(patBankData);
 		}
 
 		fwrite(xmData, xmPos, 1, xm);

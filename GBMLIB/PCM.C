@@ -8,6 +8,7 @@
 #include "RNC.H"
 
 #define bankSize 16384
+#define G2_TREE 0x26C4	/*Daiku no Gensan 2 PCM Huffman tree (ROM0)*/
 
 struct header wavHeader;
 
@@ -184,6 +185,41 @@ void PCMProc(int bank, char parameters[4][100])
 	}
 }
 
+/*HHCMP bitstream reader (ROM0 $261A).  MSB first: the register is rotated
+  left and the new low bit is the next stream bit.*/
+static int hhBitBuf;
+static int hhBitsLeft;
+static int hhBank;
+static int hhCpu;
+
+static int hhReadBit(void)
+{
+	int b;
+
+	hhBitsLeft--;
+	if (hhBitsLeft == 0)
+	{
+		hhBitBuf = gb_read_byte(hhBank, hhCpu);
+		hhCpu++;
+		hhBitsLeft = 8;
+	}
+	hhBitBuf = ((hhBitBuf << 1) | (hhBitBuf >> 7)) & 0xFF;
+	b = hhBitBuf & 1;
+	return b;
+}
+
+static int hhReadBits(int n)
+{
+	int v = 0;
+
+	while (n-- > 0)
+	{
+		v = (v << 1) | hhReadBit();
+	}
+	return v;
+}
+
+
 void PCMsam2wav(int sampNum, long ptr, int bank, int len, int freq, int fmt)
 {
 	char name[64];
@@ -337,6 +373,291 @@ void PCMsam2wav(int sampNum, long ptr, int bank, int len, int freq, int fmt)
 				totalLen++;
 			}
 		}
+
+		else if (fmt == PCM_FMT_3BIT_BE)
+		{
+			while (totalLen < len)
+			{
+				c = gb_read_byte(b, cpu);
+				/*Convert the 3-bit PCM to 8-bit (high half first)*/
+				/*Scale 0-7 to 0-255: 0->0, 7->255, centre 3/4 -> 109/146*/
+				s = (c >> 4) & 0x07;
+				s = (s << 5) | (s << 2) | (s >> 1);
+				fputc(s, wav);
+				fileSize++;
+				s = c & 0x07;
+				s = (s << 5) | (s << 2) | (s >> 1);
+				fputc(s, wav);
+				fileSize++;
+				cpu++;
+				totalLen++;
+			}
+		}
+
+		else if (fmt == PCM_FMT_3BIT_LE)
+		{
+			while (totalLen < len)
+			{
+				c = gb_read_byte(b, cpu);
+				/*Convert the 3-bit PCM to 8-bit (low half first)*/
+				s = c & 0x07;
+				s = (s << 5) | (s << 2) | (s >> 1);
+				fputc(s, wav);
+				fileSize++;
+				s = (c >> 4) & 0x07;
+				s = (s << 5) | (s << 2) | (s >> 1);
+				fputc(s, wav);
+				fileSize++;
+				cpu++;
+				totalLen++;
+			}
+		}
+
+		else if (fmt == PCM_FMT_P5)
+		{
+			while (totalLen < len)
+			{
+				if (cpu == 0x5037)
+				{
+					cpu = 0x5037;
+				}
+				c = gb_read_byte(b, cpu);
+
+				if (c == 0x00)
+				{
+					cpu += 2;
+					totalLen += 2;
+				}
+				else if (c == 0x01)
+				{
+					cpu += 2;
+					totalLen += 2;
+				}
+				else if (c == 0x02)
+				{
+					cpu++;
+					totalLen++;
+				}
+				else if (c == 0x03)
+				{
+					cpu += 2;
+					totalLen += 2;
+				}
+				else if (c == 0x04)
+				{
+					cpu += 3;
+					totalLen += 3;
+				}
+				else if (c == 0x05)
+				{
+					cpu += 2;
+					totalLen += 2;
+				}
+				else if (c == 0x06)
+				{
+					cpu += 4;
+					totalLen += 4;
+				}
+				else if (c == 0x07)
+				{
+					cpu++;
+					totalLen++;
+				}
+				else if (c == 0x08)
+				{
+					cpu++;
+					totalLen++;
+				}
+				else if (c == 0x09)
+				{
+					cpu++;
+					totalLen++;
+				}
+				else if (c == 0x0A)
+				{
+					cpu += 2;
+					totalLen += 2;
+					for (i = 0; i < 16; i++)
+					{
+						c = gb_read_byte(b, cpu);
+						/*Convert the 4-bit PCM to 8-bit*/
+						lowNibble = c >> 4;
+						highNibble = c & 0x0F;
+						s = (lowNibble | (lowNibble * 0x10));
+						fputc(s, wav);
+						fileSize++;
+						s = (highNibble | (highNibble * 0x10));
+						fputc(s, wav);
+						fileSize++;
+						cpu++;
+						totalLen++;
+					}
+				}
+				else if (c == 0x0B)
+				{
+					cpu += 2;
+					totalLen += 2;
+				}
+				else
+				{
+					cpu++;
+					totalLen++;
+				}
+
+			}
+			}
+
+		else if (fmt == PCM_FMT_HHCMP)
+		{
+			/*3-bit RLE bitstream, MSB first.  hPCMCount starts at 0, so:
+				1                  -> repeat the last level
+				0 vvv (v != L)     -> v
+				0 LLL vvv (v != L) -> v, L = v
+				0 LLL LLL nnnn vvv -> v, then 11 + n raw 3-bit values
+			  len is the sample count; the bitstream follows the opcode's
+			  3-byte (opcode + negative count) header.*/
+			int last = 0;
+			int raw = 0;
+			int v;
+
+			hhBank = b;
+			hhCpu = cpu;
+			hhBitBuf = 0;
+			hhBitsLeft = 1;
+
+			for (totalLen = 0; totalLen < len; totalLen++)
+			{
+				if (raw)
+				{
+					raw--;
+					v = hhReadBits(3);
+				}
+				else if (hhReadBit())
+				{
+					v = last;
+				}
+				else
+				{
+					v = hhReadBits(3);
+					if (v == last)
+					{
+						v = hhReadBits(3);
+						if (v == last)
+						{
+							raw = 11 + hhReadBits(4);
+							v = hhReadBits(3);
+						}
+						else
+						{
+							last = v;
+						}
+					}
+				}
+
+				/*Scale the 3-bit level to 8-bit, as the other 3-bit formats*/
+				s = (v << 5) | (v << 2) | (v >> 1);
+				fputc(s, wav);
+				fileSize++;
+			}
+			}
+
+		else if (fmt == PCM_FMT_G2HUFF)
+		{
+			/*Daiku no Gensan: Robot Teikoku no Yabou: Huffman + RLE (ROM0 $0478),
+			  script opcode $0C (dest, stream) decodes into RAM, opcode $20 plays it.
+			  Same MSB-first bit reader as HHCMP.  Tree of 2-byte nodes at ROM0
+			  G2_TREE; the last value starts at 0:
+				1 v   leaf: output v (an NR50 byte = level * $11; $FF ends the sample)
+				0 0   end of the stream
+				0 x   output the last value 2 + nnn times (next 3 bits)
+				a b   branch: bit 0 -> a, bit 1 -> b; next node = node + 2 * (child - 1)
+			  start = the stream (opcode address + 3), len = sample count without the $FF.*/
+			int last = 0;
+			int rep = 0;
+			int node;
+			int n0;
+			int n1;
+			int v = 0;
+			int done = 0;
+
+			hhBank = b;
+			hhCpu = cpu;
+			hhBitBuf = 0;
+			hhBitsLeft = 1;
+
+			totalLen = 0;
+			while (totalLen < len && !done)
+			{
+				if (rep)
+				{
+					rep--;
+					v = last;
+				}
+				else
+				{
+					node = G2_TREE;
+					while (1)
+					{
+						n0 = gb_read_byte(0, node);
+						n1 = gb_read_byte(0, node + 1);
+						if (n0 == 0)
+						{
+							if (n1 == 0)
+							{
+								done = 1;
+							}
+							else
+							{
+								rep = hhReadBits(3) + 1;
+								v = last;
+							}
+							break;
+						}
+						else if (n0 == 1)
+						{
+							v = n1;
+							last = n1;
+							break;
+						}
+						else
+						{
+							node += 2 * ((hhReadBit() ? n1 : n0) - 1);
+						}
+					}
+				}
+
+				if (done || v == 0xFF)
+				{
+					break;
+				}
+
+				v &= 0x07;
+				s = (v << 5) | (v << 2) | (v >> 1);
+				fputc(s, wav);
+				fileSize++;
+				totalLen++;
+			}
+			}
+
+		else if (fmt == PCM_FMT_NR50)
+		{
+			/*One NR50 byte per sample (level * $11, 0-7), ended by $FF (Samurai Kid)*/
+			while (totalLen < len)
+			{
+				c = gb_read_byte(b, cpu);
+				if (c == 0xFF)
+				{
+					break;
+				}
+				s = c & 0x07;
+				s = (s << 5) | (s << 2) | (s >> 1);
+				fputc(s, wav);
+				fileSize++;
+				cpu++;
+				totalLen++;
+			}
+			}
+
 
 		/*Fill in the header data*/
 		fseek(wav, 0, SEEK_SET);

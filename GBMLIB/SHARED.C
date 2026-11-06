@@ -19,6 +19,8 @@
 #include "AVM.H"
 #include "BEAM.H"
 #include "BIONIC.H"
+#include "BIOX1.H"
+#include "BIOX2.H"
 #include "BITS.H"
 #include "CANNON.H"
 #include "CAPCOM.H"
@@ -57,6 +59,7 @@
 #include "HUDSON.H"
 #include "IMAGITEC.H"
 #include "IMAGNRNG.H"
+#include "IREM.H"
 #include "JALECO.H"
 #include "JEROTEL.H"
 #include "JSAITO.H"
@@ -691,6 +694,12 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case Beam_Software:
 			BeamProc(banks[curBank]);
 			break;
+		case Biox_1:
+			Biox1Proc(banks[curBank], parameters);
+			break;
+		case Biox_2:
+			Biox2Proc(banks[curBank], parameters);
+			break;
 		case BITS:
 			BITSProc(banks[curBank], parameters);
 			break;
@@ -785,7 +794,7 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			GRC2Proc(banks[curBank]);
 			break;
 		case HAL_Laboratory:
-			HALProc(banks[curBank]);
+			HALProc(banks[curBank], parameters);
 			break;
 		case Hirokazu_Tanaka:
 			NintProc(banks[curBank], parameters);
@@ -804,6 +813,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Imagineering:
 			ImgnProc(banks[curBank]);
+			break;
+		case Irem:
+			IremProc(banks[curBank], parameters);
 			break;
 		case Jaleco:
 			JalecoProc(banks[curBank], parameters);
