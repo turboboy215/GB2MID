@@ -1,4 +1,6 @@
-Song List Table
+There are two versions of the driver, one being the "compact" version where the code and some song and the SFX data is stored in every bank, and the other being the the "multi-bank" version where there is only one copy of the driver and the sound data is spread across multiple banks. Almost all games use the "compact" version; the only game known to use the "multi-bank" version is Project S-11.
+
+Song list table
 =======================================
 The song list table can be found with the following instructions:
 
@@ -16,50 +18,68 @@ The song list table can be found with the following instructions:
 Which equals the following in hex:
 F1 87 87 C6 ?? 6F 3E ?? CE 00 67 2A
 
-The song list table is comprised of 16-bit pointers to each song in most games. However, in multi-banked games (Project S-11 is the only known one), the following format is used instead:
-1-2. Bank number (only first byte is used?)
-3-4. Pointer to pattern
+In the "compact" version, the table is structured with entries as follows:
+1-2. Song instruments table pointer
+3-4. Song pointer
 
-Song Format
+In the "multi-bank" version, entries are as follows:
+1-2. Song instruments table bank
+3-4. Song instruments table pointer
+5-6. Song bank
+7-8. Song pointer
+
+Song order list
 =======================================
-The format of each song is structured as follows:
-
-1-2. Pointer to pattern
-3-4. Bank number (only first byte is used?)
+Each song is comprised of an order list with entries as follows:
+1-2. Pattern pointer
+3-4. Pattern bank (only used in multi-bank version)
+An order list does not have a terminator; a song ends of loops with a pattern command.
 
 Patterns
 =======================================
 Patterns are structured with the following commands:
 
-00 xx = Break pattern after X rows
-   To calculate X: ((X - 1) / current speed) - 1
-00 xx = Following rows are empty (X = # of rows * pattern speed)
-00 0x = Change pattern speed per row
-01 xx yy = Play note, instrument
-02 xx = Play instrument
-02 0x = Note end on channel (before note played) - 0-3
-03 xy = Set starting volume of envelope (before note played) (x = volume, y = channel)
-04 xy = Vibrato (before note played) (x = volume, y = channel)
+(Key: II = (instrument << 2) | channel)
+
+00 xx = End of frame (wait frames) (X = Ticks (frames))
+01 xx ii = Play note, instrument (X = Note, I = Instrument)
+02 ii = Play instrument (I = Instrument)
+03 vvvv00cc = Set volume (V = Volume, C = Channel) 
+04 dddd00cc = Vibrato on (D = Depth, C = Channel)
 05 xx = Effects off (0 for CH1, 1 for CH2, 2 for CH3, 3 for CH4)
-06 xx = Flag command (for game-specific data)
-07 = End of pattern?
-08 xx yy = Loop data
+06 xx = Music sync flag (X = Value)
+07 = End of pattern
+08 xx xx = Go to order (Byte offset, signed, relative to next order)
 09 = End song
-0A xx = Pattern speed
+0A xx = Set pattern speed (X = Speed)
 0B = End of row
-0C = Skip row (next row is empty)
-0D = Skip 2 rows
-0E = Skip 3 rows
-0F xy = Pitch slide down (before note played) - X = amount, Y = channel
-10 xy = Pitch slide up (before note played) - X = amount, Y = channel
-11 xy zz = Arpeggio with halftones X and Y (Z = channel number)
-12 xy = Set pulse width (channel 1 and 2), set volume (only for channel 3) - X = amount, Y - 0-3
+0C = End of row (2)
+0D = End of row (3)
+0E = End of row (4)
+0F xxxxyycc = Pitch slide down (X = Frames/length, Y = Amount, C = Channel)
+10 xxxxyycc = Pitch slide up (X = Frames/length, Y = Amount, C = Channel)
+11 xy cc = Arpeggio (X = Halftone 1, Y = Halftone 2, C = channel number)
+12 xxxxxxcc = Extra - write value straight to duty/length/volume (X = Value, C = Channel)
 
-NOTES:
-(Begin with 00 = C-0)
-
-INSTRUMENTS:
-Channel 1 = Multiply by 4, then add 4
-Channel 2 = Multiply by 4, then add 5
-Channel 3 = Multiply by 4, then add 6
-Channel 4 = Multiply by 4, then add 3
+Instruments and SFX
+=======================================
+Instruments and sound effects both use the same byte-code as a stream:
+00 xx = End of frame (X = Ticks (frames))
+01 xx = Start (X = NRxx value)
+02 = End of instrument/SFX
+03 xx = Set envelope (X = Value)
+04 xx xx = Set frequency
+05 xx = Set envelope volume (X = Value)
+06 xx yy yy = Set envelope volume and frequency (X = Envelope volume, Y = Frequency)
+07 = Pan (L/R)
+08 = Pan (R)
+09 = Pan (L)
+0A xx = (Channel-specific):
+	CH1-2 = NR11/21
+	CH3 = Waveform
+	CH4 = NR43
+0B xx = (Channel-specific):
+	CH1/2 = NR10
+	CH3 = NR31
+	CH4 = NR41
+It is possible to play back PCM using the command 0A updating the wave pattern every frame. However, the quality is very poor, at 1920hz, but it allows playback synced at 60hz without an external IRQ. Very few games use PCM; the only known games to use this feature are Project S-11, Tom and Jerry: Mouse Hunt (used for only one song and one sound effect), and the homebrew Drymouth. LEGO Stunt Rally and Who Wants to Be a Millionnaire?: 2nd Edition also both use at least one PCM sample, but these are played using an external system which is also much higher quality for both games.
