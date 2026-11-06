@@ -679,6 +679,14 @@ int main(int args, char* argv[])
             {
                 driver = Beam_Software;
             }
+            else if (!strcmp(formatString, "Biox_1"))
+            {
+                driver = Biox_1;
+            }
+            else if (!strcmp(formatString, "Biox_2"))
+            {
+                driver = Biox_2;
+            }
             else if (!strcmp(formatString, "BITS"))
             {
                 driver = BITS;
@@ -830,6 +838,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "Imagineering"))
             {
                 driver = Imagineering;
+            }
+            else if (!strcmp(formatString, "Irem"))
+            {
+                driver = Irem;
             }
             else if (!strcmp(formatString, "Jaleco"))
             {

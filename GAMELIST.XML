@@ -1086,7 +1086,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>10</banks>
-		<parameters></parameters>
+		<parameters>4</parameters>
 	</rom>
 	<rom>
 		<name>Adventures of Pinocchio, The (J)</name>
@@ -2130,7 +2130,7 @@
         <crc32>28f7d5e3</crc32>
         <format>Paragon_5</format>
 		<part></part>
-		<banks>58,59,5A,5B,5C,5D,5E,5F,60,61</banks>
+		<banks>58,59,5A,5B,5C,5D,5E,5F</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -2141,7 +2141,7 @@
         <crc32>4e052510</crc32>
         <format>Paragon_5</format>
 		<part></part>
-		<banks>58,59,5A,5B,5C,5D,5E,5F,60,61</banks>
+		<banks>58,59,5A,5B,5C,5D,5E,5F</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -2152,7 +2152,7 @@
         <crc32>d594d24b</crc32>
         <format>Paragon_5</format>
 		<part></part>
-		<banks>58,59,5A,5B,5C,5D,5E,5F,60,61</banks>
+		<banks>58,59,5A,5B,5C,5D,5E,5F</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -2902,6 +2902,17 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Battle of Kingdom (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>F301</checksum>
+        <crc32>35914deb</crc32>
+        <format>Irem</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Battle of Olympus, The (UE) (M5)</name>
@@ -4774,6 +4785,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Burger Burger Pocket (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>982F</checksum>
+        <crc32>1abcedbe</crc32>
+        <format>Biox_2</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Burger Paradise (J) [C][!]</name>
+		<gamecode>AEYJ</gamecode>
+		<rev>0</rev>
+		<checksum>9CCF</checksum>
+        <crc32>9092b0eb</crc32>
+        <format>Biox_2</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Burger Time Deluxe (JU) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -6488,6 +6521,61 @@
 		<part></part>
 		<banks>19,25</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Daiku no Gensan - Ghost Building Company (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>99ED</checksum>
+        <crc32>9e0d2b45</crc32>
+        <format>Irem</format>
+		<part>1/2=Music</part>
+		<banks>2</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
+		<name>Daiku no Gensan - Ghost Building Company (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>99ED</checksum>
+        <crc32>9e0d2b45</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>F</banks>
+		<parameters>CFG/Daiku no Gensan - Ghost Building Company (J) - Samples.cfg</parameters>
+	</rom>
+	<rom>
+		<name>Daiku no Gensan - Kachikachi no Tonkachi ga Kachi (J) [C][!]</name>
+		<gamecode>BGNJ</gamecode>
+		<rev>0</rev>
+		<checksum>8DDF</checksum>
+        <crc32>e2071293</crc32>
+        <format>Biox_2</format>
+		<part></part>
+		<banks>3D,3E,3F</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Daiku no Gensan - Robot Teikoku no Yabou (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2F90</checksum>
+        <crc32>70819e03</crc32>
+        <format>Irem</format>
+		<part>1/2=Music</part>
+		<banks>2</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
+		<name>Daiku no Gensan - Robot Teikoku no Yabou (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>2F90</checksum>
+        <crc32>70819e03</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>9</banks>
+		<parameters>CFG/Daiku no Gensan - Robot Teikoku no Yabou (J) - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Dan Laser (Sachen) [!]</name>
@@ -8840,7 +8928,7 @@
         <crc32>600f61f9</crc32>
         <format>Paragon_5</format>
 		<part></part>
-		<banks>60,61,62,63,64</banks>
+		<banks>60,61,62,63</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -8963,6 +9051,17 @@
 		<part></part>
 		<banks>20</banks>
 		<parameters>1\448B</parameters>
+	</rom>
+	<rom>
+		<name>F-1 Boy (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DAF7</checksum>
+        <crc32>fac1f53b</crc32>
+        <format>Irem</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>F1 Championship Season 2000 (B) (M5) [C][!]</name>
@@ -10832,7 +10931,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>8</banks>
-		<parameters></parameters>
+		<parameters>6</parameters>
 	</rom>
 	<rom>
 		<name>Ghostbusters II (UE) [!]</name>
@@ -10843,7 +10942,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>8</banks>
-		<parameters></parameters>
+		<parameters>6</parameters>
 	</rom>
 	<rom>
 		<name>Ghosts 'N Goblins (U) [C][!]</name>
@@ -11341,6 +11440,17 @@
 		<parameters>2</parameters>
 	</rom>
 	<rom>
+		<name>Grand Prix (UE) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>AEBD</checksum>
+        <crc32>8c5dee4d</crc32>
+        <format>Irem</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Grand Theft Auto (E) (M5) [C][!]</name>
 		<gamecode>AOAP</gamecode>
 		<rev>0</rev>
@@ -11572,6 +11682,50 @@
 		<parameters>CFG/Halloween Racer (E) (M6) [C][!].cfg</parameters>
 	</rom>
 	<rom>
+		<name>Hammerin' Harry - Ghost Building Company (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3EE1</checksum>
+        <crc32>9f09afe8</crc32>
+        <format>Irem</format>
+		<part>1/2=Music</part>
+		<banks>2</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
+		<name>Hammerin' Harry - Ghost Building Company (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3EE1</checksum>
+        <crc32>9f09afe8</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>F</banks>
+		<parameters>CFG/Hammerin' Harry - Ghost Building Company (U) - Samples.cfg</parameters>
+	</rom>
+	<rom>
+		<name>Hammerin' Harry - Ghost Building Company (U) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3F1F</checksum>
+        <crc32>6c4d0377</crc32>
+        <format>Irem</format>
+		<part>1/2=Music</part>
+		<banks>2</banks>
+		<parameters>3</parameters>
+	</rom>
+	<rom>
+		<name>Hammerin' Harry - Ghost Building Company (U) (Unreleased) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3F1F</checksum>
+        <crc32>6c4d0377</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>F</banks>
+		<parameters>CFG/Hammerin' Harry - Ghost Building Company (U) (Unreleased) [!] - Samples.cfg</parameters>
+	</rom>
+	<rom>
 		<name>Hamster Club - Awasete Chuu (J) [C][!]</name>
 		<gamecode>BJHJ</gamecode>
 		<rev>0</rev>
@@ -11689,7 +11843,7 @@
         <crc32>f519f4c3</crc32>
         <format>Paragon_5</format>
 		<part></part>
-		<banks>12,17,1C,23,25,2D,2E,2F,30</banks>
+		<banks>12,17,1C,23,26,2D,2E,2F,30</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -14168,6 +14322,17 @@
 		<parameters>1\4723</parameters>
 	</rom>
 	<rom>
+		<name>Kichi Da Quiz Da Gensan Da! (J) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>B79D</checksum>
+        <crc32>74a52399</crc32>
+        <format>Irem</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Kick Attack (J) (Unreleased) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -14210,6 +14375,17 @@
 		<part></part>
 		<banks>6</banks>
 		<parameters>CFG/Kid Icarus - Of Myths and Monsters (UE) [!].cfg</parameters>
+	</rom>
+	<rom>
+		<name>Kid Niki (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>1F23</checksum>
+        <crc32>004443e6</crc32>
+        <format>Irem</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Kikansha Thomas - Sodor-tou no Nakamatachi (J) [C][!]</name>
@@ -14385,7 +14561,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>5,6</banks>
-		<parameters></parameters>
+		<parameters>3</parameters>
 	</rom>
 	<rom>
 		<name>Kirby 2 - Hoshinoka 2 (J) [S]</name>
@@ -14396,7 +14572,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>1F,20</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Kirby Family (J) (Unreleased) [C][!]</name>
@@ -14429,7 +14605,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>7</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Kirby's Block Ball (U) [S][!]</name>
@@ -14451,7 +14627,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>6</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Kirby's Dream Land 2 (U) [S][!]</name>
@@ -14462,7 +14638,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>1F,20</banks>
-		<parameters></parameters>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Kirby's Hoshinoka-Bi (J) (V1.0)</name>
@@ -14473,7 +14649,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>6</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Kirby's Hoshinoka-Bi (J) (V1.1)</name>
@@ -14484,7 +14660,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>6</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Kirby's Pinball Land (U) [!]</name>
@@ -14495,7 +14671,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>7</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Kirby's Star Stacker (U) [S][!]</name>
@@ -14506,7 +14682,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>5,6</banks>
-		<parameters></parameters>
+		<parameters>3</parameters>
 	</rom>
 	<rom>
 		<name>Kirby's Tilt 'N' Tumble (U) [C][!]</name>
@@ -14575,6 +14751,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Kiteretu Zyuraki (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>399C</checksum>
+        <crc32>d53548b0</crc32>
+        <format>Biox_1</format>
+		<part></part>
+		<banks>8</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
 		<name>Klax (J) [M]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -14606,6 +14793,28 @@
 		<part></part>
 		<banks>4</banks>
 		<parameters>4000\1</parameters>
+	</rom>
+	<rom>
+		<name>Knight Quest (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7FBA</checksum>
+        <crc32>c6f24d2f</crc32>
+        <format>Irem</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Knight Quest (U)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7C53</checksum>
+        <crc32>df50f477</crc32>
+        <format>Irem</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Knockout Kings (UE) [C][!]</name>
@@ -15213,6 +15422,17 @@
 		<parameters>0</parameters>
 	</rom>
 	<rom>
+		<name>Kuusou Kagaku Sekai Gulliver Boy - Kuusou Kagaku Puzzle Purittopon!! (J) [S]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>7BC7</checksum>
+        <crc32>fb291e78</crc32>
+        <format>Biox_2</format>
+		<part></part>
+		<banks>3</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Kwirk (UE) [!]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -15780,7 +16000,29 @@
 		<checksum>4FD8</checksum>
         <crc32>05cc01fb</crc32>
         <format>Paragon_5</format>
-		<part></part>
+		<part>1/2=Music</part>
+		<banks>22,37,38</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>LEGO Stunt Rally (E) (M10) [C][!]</name>
+		<gamecode>BLYP</gamecode>
+		<rev>0</rev>
+		<checksum>4FD8</checksum>
+        <crc32>05cc01fb</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>9</banks>
+		<parameters>CFG/LEGO Stunt Rally (E) (M10) [C][!] - Samples.cfg</parameters>
+	</rom>
+	<rom>
+		<name>LEGO Stunt Rally (U) [C][!]</name>
+		<gamecode>BLYE</gamecode>
+		<rev>0</rev>
+		<checksum>9366</checksum>
+        <crc32>da084760</crc32>
+        <format>Paragon_5</format>
+		<part>1/2=Music</part>
 		<banks>22,37,38</banks>
 		<parameters></parameters>
 	</rom>
@@ -15790,10 +16032,10 @@
 		<rev>0</rev>
 		<checksum>9366</checksum>
         <crc32>da084760</crc32>
-        <format>Paragon_5</format>
-		<part></part>
-		<banks>22,37,38</banks>
-		<parameters></parameters>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>9</banks>
+		<parameters>CFG/LEGO Stunt Rally (U) [C][!] - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Lemmings & Oh No! More Lemmings (E) (Unreleased) [C][!]</name>
@@ -16189,7 +16431,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>1</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Looney Tunes (E) [C]</name>
@@ -16979,9 +17221,42 @@
 		<checksum>DA67</checksum>
         <crc32>cb48b6d0</crc32>
         <format>David_Whittaker</format>
-		<part>1/1=R-Type II</part>
+		<part>1/4=R-Type II</part>
 		<banks>7</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mani 4-in-1 (DMG-604 CHN) (Ch) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DA67</checksum>
+        <crc32>cb48b6d0</crc32>
+        <format>BITS</format>
+		<part>2/4=Ninja Spirit</part>
+		<banks>C</banks>
+		<parameters>CFG/Mani 4-in-1 (DMG-604 CHN) (Ch) [!] - Ninja Spirit.cfg</parameters>
+	</rom>
+	<rom>
+		<name>Mani 4-in-1 (DMG-604 CHN) (Ch) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DA67</checksum>
+        <crc32>cb48b6d0</crc32>
+        <format>Irem</format>
+		<part>3/4=Kid Niki</part>
+		<banks>12</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Mani 4-in-1 (DMG-604 CHN) (Ch) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>DA67</checksum>
+        <crc32>cb48b6d0</crc32>
+        <format>Irem</format>
+		<part>4/4=Shisenshou: Match-Mania</part>
+		<banks>16</banks>
+		<parameters>0</parameters>
 	</rom>
 	<rom>
 		<name>Mani 4-in-1 (DMG-605 CHN) (Ch) [!]</name>
@@ -17961,6 +18236,17 @@
 		<part></part>
 		<banks>10</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Mercenary Force (UE) [!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>6CB3</checksum>
+        <crc32>9bb5ba03</crc32>
+        <format>Irem</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Merlin (E) (M6) [C][!]</name>
@@ -21186,6 +21472,17 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Noobow (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>D935</checksum>
+        <crc32>8bbcc8bb</crc32>
+        <format>Biox_1</format>
+		<part></part>
+		<banks>10</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>NSYNC - Get to the Show (U) [C][!]</name>
 		<gamecode>BNSE</gamecode>
 		<rev>0</rev>
@@ -21458,7 +21755,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>1</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Othello (UE) [!]</name>
@@ -21469,7 +21766,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>1</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Othello World (J) [S][!]</name>
@@ -21480,7 +21777,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>1</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Other Life - Azure Dreams GB Azure Dreams (J) [C][!]</name>
@@ -22162,7 +22459,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>2</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Pinball - Revenge of the Gator (U) [!]</name>
@@ -22173,7 +22470,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>2</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Pinball Deluxe (U)</name>
@@ -22405,6 +22702,28 @@
 		<part></part>
 		<banks>E,F,10,11,12</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Pocket Bowling (J) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3C81</checksum>
+        <crc32>26589b79</crc32>
+        <format>Biox_1</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Pocket Bowling (U) [C][!]</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3A02</checksum>
+        <crc32>3ed30908</crc32>
+        <format>Biox_1</format>
+		<part></part>
+		<banks>20</banks>
+		<parameters>2</parameters>
 	</rom>
 	<rom>
 		<name>Pocket Camera - Hello Kitty (J) (Unreleased) [S][!]</name>
@@ -24481,9 +24800,20 @@
 		<checksum>7957</checksum>
         <crc32>20cee2e8</crc32>
         <format>Paragon_5</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>1</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Project S-11 (U) [C][!]</name>
+		<gamecode>BPJE</gamecode>
+		<rev>0</rev>
+		<checksum>7957</checksum>
+        <crc32>20cee2e8</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>11</banks>
+		<parameters>CFG/Project S-11 (U) [C][!] - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Prophecy - The Viking Child (E) (M5) [!]</name>
@@ -25890,7 +26220,7 @@
         <crc32>6c6423e2</crc32>
         <format>Paragon_5</format>
 		<part></part>
-		<banks>8,9,A,B,E,F,1E,37</banks>
+		<banks>8,9,A,C,E,F,1E,37</banks>
 		<parameters></parameters>
 	</rom>
 	<rom>
@@ -27566,6 +27896,28 @@
 		<parameters></parameters>
 	</rom>
 	<rom>
+		<name>Samurai Kid (J) [C][!]</name>
+		<gamecode>BS5J</gamecode>
+		<rev>0</rev>
+		<checksum>48D8</checksum>
+        <crc32>44a9ddfb</crc32>
+        <format>Biox_2</format>
+		<part>1/2=Music</part>
+		<banks>3A,3B,3C</banks>
+		<parameters>2</parameters>
+	</rom>
+	<rom>
+		<name>Samurai Kid (J) [C][!]</name>
+		<gamecode>BS5J</gamecode>
+		<rev>0</rev>
+		<checksum>48D8</checksum>
+        <crc32>44a9ddfb</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>3D</banks>
+		<parameters>CFG/Samurai Kid (J) [C][!] - Samples.cfg</parameters>
+	</rom>
+	<rom>
 		<name>Samurai Shodown (U) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -28091,7 +28443,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>1</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Shanghai (J) (Activision) [!]</name>
@@ -28102,7 +28454,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>1</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Shanghai (U) [!]</name>
@@ -28113,7 +28465,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>1</banks>
-		<parameters></parameters>
+		<parameters>1</parameters>
 	</rom>
 	<rom>
 		<name>Shanghai Pocket (J) [C][!]</name>
@@ -28501,6 +28853,17 @@
 		<parameters>0</parameters>
 	</rom>
 	<rom>
+		<name>Shisenshou - Match-Mania (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>81CF</checksum>
+        <crc32>0cdd8b04</crc32>
+        <format>Irem</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>0</parameters>
+	</rom>
+	<rom>
 		<name>Shou Hyper Fish (J) [S]</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -28620,6 +28983,17 @@
 		<part></part>
 		<banks>3</banks>
 		<parameters>1</parameters>
+	</rom>
+	<rom>
+		<name>Shuyaku Sentai Irem Fighter (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>3FDB</checksum>
+        <crc32>ecd61f03</crc32>
+        <format>Irem</format>
+		<part></part>
+		<banks>2</banks>
+		<parameters>3</parameters>
 	</rom>
 	<rom>
 		<name>Side Pocket (U) [!]</name>
@@ -32010,6 +32384,17 @@
 		<parameters>1\67C6</parameters>
 	</rom>
 	<rom>
+		<name>Tenjin Kaisen - Mercenary Force (J)</name>
+		<gamecode></gamecode>
+		<rev>0</rev>
+		<checksum>FF9B</checksum>
+        <crc32>b71396a6</crc32>
+        <format>Irem</format>
+		<part></part>
+		<banks>4</banks>
+		<parameters>1</parameters>
+	</rom>
+	<rom>
 		<name>Tenjin Kaisen 2 (J)</name>
 		<gamecode></gamecode>
 		<rev>0</rev>
@@ -32632,7 +33017,29 @@
 		<checksum>5958</checksum>
         <crc32>3e17d04a</crc32>
         <format>Paragon_5</format>
-		<part></part>
+		<part>1/2=Music</part>
+		<banks>2E,2F,30,31,32,33,34,35,36,37,38,39,3A,3B,3C,3D,3E</banks>
+		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Tom and Jerry - Mouse Hunt (E) (M5) [C][!]</name>
+		<gamecode>BTJP</gamecode>
+		<rev>0</rev>
+		<checksum>5958</checksum>
+        <crc32>3e17d04a</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>2F</banks>
+		<parameters>CFG/Tom and Jerry - Mouse Hunt (E) (M5) [C][!] - Samples.cfg</parameters>
+	</rom>
+	<rom>
+		<name>Tom and Jerry - Mouse Hunt (U) [C][!]</name>
+		<gamecode>BTJE</gamecode>
+		<rev>0</rev>
+		<checksum>BC98</checksum>
+        <crc32>5fc6bec0</crc32>
+        <format>Paragon_5</format>
+		<part>1/2=Music</part>
 		<banks>2E,2F,30,31,32,33,34,35,36,37,38,39,3A,3B,3C,3D,3E</banks>
 		<parameters></parameters>
 	</rom>
@@ -32642,10 +33049,10 @@
 		<rev>0</rev>
 		<checksum>BC98</checksum>
         <crc32>5fc6bec0</crc32>
-        <format>Paragon_5</format>
-		<part></part>
-		<banks>2E,2F,30,31,32,33,34,35,36,37,38,39,3A,3B,3C,3D,3E</banks>
-		<parameters></parameters>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>2F</banks>
+		<parameters>CFG/Tom and Jerry - Mouse Hunt (U) [C][!] - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Tom and Jerry (J)</name>
@@ -33041,7 +33448,7 @@
         <format>Atlus</format>
 		<part></part>
 		<banks>4</banks>
-		<parameters></parameters>
+		<parameters>6</parameters>
 	</rom>
 	<rom>
 		<name>Tottoko Hamutarou - Tomodachi Daisuken Dechu (J) (V1.0) [C][!]</name>
@@ -33228,7 +33635,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>7</banks>
-		<parameters></parameters>
+		<parameters>6</parameters>
 	</rom>
 	<rom>
 		<name>Trick Boarder (E) [C][!]</name>
@@ -33932,7 +34339,7 @@
         <format>HAL_Laboratory</format>
 		<part></part>
 		<banks>10</banks>
-		<parameters></parameters>
+		<parameters>5</parameters>
 	</rom>
 	<rom>
 		<name>Velious - Roland no Majuu (J) [!]</name>
@@ -34491,9 +34898,20 @@
 		<checksum>793B</checksum>
         <crc32>6830b7af</crc32>
         <format>Paragon_5</format>
-		<part></part>
+		<part>1/2=Music</part>
 		<banks>3C,3D,3E,3F,40</banks>
 		<parameters></parameters>
+	</rom>
+	<rom>
+		<name>Who Wants to Be a Millionaire - 2nd Edition (U) [C][!]</name>
+		<gamecode>BMOE</gamecode>
+		<rev>0</rev>
+		<checksum>793B</checksum>
+        <crc32>6830b7af</crc32>
+        <format>PCM</format>
+		<part>2/2=Samples</part>
+		<banks>3B</banks>
+		<parameters>CFG/Who Wants to Be a Millionaire - 2nd Edition (U) [C][!] - Samples.cfg</parameters>
 	</rom>
 	<rom>
 		<name>Wild Snake (U) [S]</name>

@@ -184,6 +184,7 @@ Battle Arena Toshinden (U) [S][!]
 Battle Crusher (J) [S]
 Battle Dodge Ball (J)
 Battle Fishers (J) [C][!]
+Battle of Kingdom (J)
 Battle of Olympus, The (UE) (M5)
 Battle Space (J) [!]
 Battle Unit Zeoth (J)
@@ -338,6 +339,8 @@ Bundesliga Stars 2001 (G) [C][!]
 Burai Fighter Color (J) [C][!]
 Burai Fighter Deluxe (J) [!]
 Burai Fighter Deluxe (UE) [!]
+Burger Burger Pocket (J) [C][!]
+Burger Paradise (J) [C][!]
 Burger Time Deluxe (JU) [!]
 Burning Paper (J)
 Bust-A-Move 2 - Arcade Edition (U)
@@ -487,6 +490,9 @@ Daikatana (E) (M3) (Eng-Fre-Ita) [C][!]
 Daikatana (E) (M3) (Fre-Ger-Spa) [C][!]
 Daikatana (J) [C][!]
 Daikatana (U) (Unreleased) [C][!]
+Daiku no Gensan - Ghost Building Company (J)
+Daiku no Gensan - Kachikachi no Tonkachi ga Kachi (J) [C][!]
+Daiku no Gensan - Robot Teikoku no Yabou (J)
 Dan Laser (Sachen) [!]
 Dance Dance Revolution GB - Disney Mix (J) [C][!]
 Dance Dance Revolution GB (J) [C][!]
@@ -708,6 +714,7 @@ Extra Bases! (U) [!]
 Extreme Ghostbusters (E) (M6) [C][!]
 Extreme Sports with The Berenstain Bears (U) (M5) [C][!]
 F.A. Premier League Stars 2001, The (U) [C][!]
+F-1 Boy (J) [!]
 F-1 Challenge (E) (Unreleased) [!]
 F1 Championship Season 2000 (B) (M5) [C][!]
 F1 Championship Season 2000 (E) (M5) [C][!]
@@ -907,6 +914,7 @@ Gradius - The Interstellar Assault (U)
 Gran Duel - Shinki Dungeon no Hihou (J) [C][!]
 Gran Duel - Shinki Dungeon no Hihou Trial Version (J) [C][!]
 Grand Casino (J) (Unreleased) [C][!]
+Grand Prix (UE) [!]
 Grand Theft Auto (E) (M5) [C][!]
 Grand Theft Auto (U) [C][!]
 Grand Theft Auto 2 (E) (M5) [C][!]
@@ -928,6 +936,8 @@ Ha Li Xiao Zi Di Er Bu - Mi Shi De Mi (Unl) [C][f1]
 Hai Zhan Qi Bing (Unl) [C][f1]
 Hajimari no Mori (J) (Unreleased) [C][!]
 Halloween Racer (E) (M6) [C][!]
+Hammerin' Harry - Ghost Building Company (U)
+Hammerin' Harry - Ghost Building Company (U) (Unreleased) [!]
 Hamster Club - Awasete Chuu (J) [C][!]
 Hamster Club - Oshiema Chuu (J) [C][!]
 Hamster Club (J) [C][!]
@@ -1148,10 +1158,12 @@ Kelly Club - Clubhouse Fun (U) [C][!]
 Ken Griffey Jr. Presents Major League Baseball (U) [S][!]
 Ken Griffey Jr.'s Slugfest (U) [C][!]
 Kettou Beast Wars - Beast Senshi Saikyou Ketteisen (J) [C][!]
+Kichi Da Quiz Da Gensan Da! (J) [!]
 Kick Attack (J) (Unreleased) [!]
 Kick Boxing, The (J)
 Kid Dracula (U) [!]
 Kid Icarus - Of Myths and Monsters (UE) [!]
+Kid Niki (J)
 Kikansha Thomas - Sodor-tou no Nakamatachi (J) [C][!]
 Killer Instinct (U) [S][!]
 Killer Instinct (U) [S][a1]
@@ -1184,9 +1196,12 @@ Kirikou (E) (M6) [C][!]
 Kisekae Series 2 - Oshare Nikki (J) (V1.0) [C][!]
 Kisekae Series 2 - Oshare Nikki (J) (V1.1) [C][!]
 Kitarou (J) [S]
+Kiteretu Zyuraki (J)
 Klax (J) [M]
 Klax (U) [C][!]
 Klax (U) [M][!]
+Knight Quest (J)
+Knight Quest (U)
 Knockout Kings (UE) [C][!]
 Koenig der Loewen, Der - Simbas grosses Abenteuer (G) [C][!]
 Koguru Guruguru - Guruguru to Nakayoshi (J) [C]
@@ -1217,6 +1232,7 @@ Koukou Nyuushi Deru Jun - Kanji Mondai no Seifuku (J)
 Koukou Nyuushi Rika - Anki Point 250 (J)
 Koushien Pocket (J) [C][!]
 Kung-Fu Master (U)
+Kuusou Kagaku Sekai Gulliver Boy - Kuusou Kagaku Puzzle Purittopon!! (J) [S]
 Kwirk (UE) [!]
 Kyorochan Land (J)
 Kyoudai Jingi (J)
@@ -1366,6 +1382,7 @@ Makaimura Gaiden (J)
 Malibu Beach Volleyball (U) [!]
 Mani 4-in-1 (DMG-601 CHN) (Ch) [!]
 Mani 4-in-1 (DMG-602 CHN) (Ch) [!]
+Mani 4-in-1 (DMG-604 CHN) (Ch) [!]
 Mani 4-in-1 (DMG-605 CHN) (Ch) [!]
 Marble Madness (U) [!]
 Marble Madness (U) [C][!]
@@ -1449,6 +1466,7 @@ Men In Black 2 - The Series (E) (M3) [C][!]
 Men In Black 2 - The Series (U) (M3) [C][!]
 Meng Huan Zhi Xing (Phantasy Star) (Unl)
 Meng Huan Zhi Xing (Phantasy Star) (Unl) [a1]
+Mercenary Force (UE) [!]
 Merlin (E) (M6) [C][!]
 Meta Fight EX (J) [C][!]
 Metal Gear - Ghost Babel (J) [C][!]
@@ -1715,6 +1733,7 @@ No Fear - Downhill Mountain Biking (E) [C][!]
 Nobunaga no Yabou - GameBoy Ban 2 (J) [C][!]
 Noddy and the Birthday Party (E) (M4) [C][!]
 Nontan to Issho - Kurukuru Puzzle (J)
+Noobow (J)
 NSYNC - Get to the Show (U) [C][!]
 Nushi Tsuri Adventure - Kite no Bouken (J) [C][!]
 Obelix (E) (M2) (Eng-Spa) [S][!]
@@ -1818,6 +1837,8 @@ Pocahontas (U) [S]
 Pocket Bomberman (J) [S]
 Pocket Bomberman (U) [C][!]
 Pocket Bomberman (U) [S]
+Pocket Bowling (J) [C][!]
+Pocket Bowling (U) [C][!]
 Pocket Camera - Hello Kitty (J) (Unreleased) [S][!]
 Pocket Camera (J) (V1.1) [S]
 Pocket Color Block (J) [C][!]
@@ -2202,6 +2223,7 @@ Saishuu Gensou (Unl) [C]
 Sakura Taisen GB - Geki Hana Kumi Nyuutai! (J) [C][!]
 Sakura Tasien GB2 - Thunder Volt Sakusen (J) [C][!]
 Same Game (J) [S]
+Samurai Kid (J) [C][!]
 Samurai Shodown (U) [S]
 Samurai Shodown (U) (Beta) [S][!]
 San Francisco Rush 2049 (U) [C][!]
@@ -2283,6 +2305,7 @@ Shin San Guo Shi 2 (Unl) [C]
 Shinri Game 2, The - Daihan Hen (J)
 Shinri Game, The (J)
 Shippo de Bun! (J) [!]
+Shisenshou - Match-Mania (J)
 Shou Hyper Fish (J) [S]
 Shrek - Fairy Tale Freakdown (U) (M6) [C][!]
 Shu Ma Bao Long - Shui Jing Ban II (Unl) [C][f1]
@@ -2293,6 +2316,7 @@ Shuihu Shenshou (Unl) [C][f2]
 Shuihu Zhuan - Jingdian Ban (Unl) [C][f2]
 Shuma Baolong - Shuijing Ban (Unl) [C][f1]
 Shutokou Racing, The (J) [C][!]
+Shuyaku Sentai Irem Fighter (J)
 Side Pocket (U) [!]
 Sika Kokugo (J)
 Sika Kujosika (J) [!]
@@ -2577,6 +2601,7 @@ Teenage Mutant Ninja Turtles III - Radical Rescue (U) (V1.1) (Unreleased) [!]
 Tekichuu Rush (J)
 Tekkyu Fight! - The Great Battle Gaiden (J)
 Tenchi o Kurau (J)
+Tenjin Kaisen - Mercenary Force (J)
 Tenjin Kaisen 2 (J)
 Tennis (W) [!]
 Tensai Bakabon (J)
@@ -2935,7 +2960,6 @@ Zoop (U) [!]
 
 Partially supported:
 Mani 4-in-1 (DMG-603 CHN) (Ch) [!]
-Mani 4-in-1 (DMG-604-CHN) (Ch) [!]
 Moon Patrol & Spy Hunter (U) [C][!]
 Pachio Kun - Game Gallery (J)
 Pocket Smash Out & Race Time (Unl) [C][!]

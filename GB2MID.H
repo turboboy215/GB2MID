@@ -123,3 +123,6 @@
 #define Digital_Eclipse_2		0x7A
 #define Toki_Tori				0x7B
 #define Fatass					0x7C
+#define Irem					0x7D
+#define Biox_1					0x7E
+#define Biox_2					0x7F
