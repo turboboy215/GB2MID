@@ -27,14 +27,15 @@ Which equals the following in hex:
 In the earlier version of the driver, the song list is structured as follows:
 1-2 = pointer
 3 = bank
-4 = stereo/pan mask? (all music uses value of 64?)
-5 = ?
+4 = priority
+5 = slot number
 6 = number of channels
 
 In the later version of the driver:
 1-2 = pointer
 3-4 = bank
-5-6 = stereo/pan mask? (all music uses value of 64?)
+5 = priority
+6 = slot number
 7-8 = number of channels
 
 In both cases, the first 6 (earlier) or 8 (later) bytes should be skipped.
@@ -45,7 +46,7 @@ Song headers
 Song headers are structured as follows:
 (NOTE: The mapping of channels corresponds to the instruments.)
 1 = Number of channels
-2 = Number of "patterns" (-1)?
+2 = Header type (0 or 2)
 (Modify the following values below for the number of channels/patterns:)
 3-4 = Channel 2 start pointer
 5-6 = Channel 1 start pointer
@@ -59,20 +60,56 @@ Song headers are structured as follows:
 21-22 = Channel 1 end pointer
 23-24 = Channel 3 end pointer
 25-26 = Channel 4 end pointer
+(If type 2)
+27-28. Channel 1 loop point
+29-30. Channel 2 loop point
+31-32. Channel 3 loop point
+33-34. Channel 4 loop point
+35-36. Channel 1 end point
+37-38. Channel 2 end point
+39-40. Channel 3 end point
+41-42. Channel 4 end point
 
 Song commands
 ===================
 Commands:
-xx (00-23) = Set envelope
-xx (24-7F) = Change note (These are the same as MIDI values)
-xx (80-B0) = Play note OR rest at specified length (if not initialized, plays a rest) - the note length values are loaded from a table
+00-1F = Set velocity (stored as v * 8 + 7)
+20-23 = Add ticks to gate
+24-7F = Note on (MIDI number, e.g. C2 = $24 (36))
+80 = (No effect) (wait 0)
+81-B0 = Wait - the note length values are loaded from a table
 B1 = Stop track
-B2 xxxx = Go to loop point (infinite loop)
-B3 xxxx = Call macro
+B2 xxxx = Jump to position (X = Pointer)
+B3 xxxx = Call macro (X = Pointer)
 B4 = End of pattern/macro
-BC xx = Set tempo
-BD xx = Transpose
-BE xx = Set instrument (this also
-BF xx (yy?) = Set channel/instrument parameters?
-Cx yy = Noise effect
-D0-FF? = Change note size
+B5 xx yyyy = Repeat - Jump to position (X = Number of times, Y = Pointer)
+BC xx = Set tempo (X = Value)
+BD xx = Transpose (X = Value, signed)
+BE xx = Set instrument (X = Value; n = 40 switches the track to the drum kit)
+BF xx = Set track volume (X = Value)
+C0 xx = Set panning ( < 32 = left, 32-95 = centre, >= 96 right)
+C1 xx = Pitch bend (xx = 64 = centre)
+C2 xx = Set pitch bend range (in semitones, default - 2)
+C3 xx = Set LFO speed
+C4 xx = Set LFO delay
+C5 xx = Set LFO depth
+C6 xx = Set LFO type (0 = pitch, 1 = volume, 2 = pan (only 0 is available in WL3))
+C9 xx = Set tuning (X = value, 64 = centre)
+CA xx = (Unknown) 
+CD xx yy (zz aa) = Sub-command (X = sub-command, Y/Z/A = parameter):
+	01 = type, 0A = length, 0B = sweep (instrument bytes 1-3), 02 = attack, 03 = sustain, 04 = release nibble, 06 = echo level, 07 = echo rate, other sub-commands end the track)
+CE = Hold note
+CF = Note off
+D0-FF = Set gate (from length table)
+
+Note: commands BE-FF set the running status; B1-BD and waits do not set this.
+
+Instruments
+===================
+Instruments are 6 bytes each, structured as follows:
+1. Type
+2. Length
+3. Sweep
+4. Attack/decay
+5. Sustain/release
+6. Drum key ($3C for normal instruments)
