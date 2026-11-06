@@ -1,0 +1,61 @@
+This is the later driver. It is unrelated to the earlier driver used in earlier games.
+
+Song table
+=======================================
+The song table is comprised of 16-bit pointers to each song.
+
+Song header
+=======================================
+The header for each song starts with a binary mask indicating the channels used by the current song in the lowest 4 bits (bit 0 = channel 1, etc.) It is then followed by the pointer for each channel of a song.
+
+Commands
+=======================================
+There are at least 2 variants of the engine that use different commands. In version 1 (e.g. Burger Burger Pocket), the commands are as follows:
+00-31 = Set note length
+32-8F = Play note
+90-95 = Play drum
+ED xx yy zz = Set noise (X = Length, Y = NR42, Z = NR43)
+EE -- = Hold note (- = (Unused))
+EF = Rest
+F0 = End of channel
+F1 xx xx = Jump to position (X = Pointer)
+F2 xx xx = Go to macro (1 level only)
+F3 = Return from macro
+F4 xx = Start of repeat (1 level only) (X = Number of times)
+F5 = End of repeat
+F6 xx = Set tempo (X = Value)
+F7 xx = Set envelope (X = Value)
+F8 xx xx = Set pitch envelope (X = Pointer)
+F9 = (No effect)
+FA xx = Set duty (X = Value)
+FB xx = Set panning (X = Value - NR50)
+FC xx = Set transpose (X = Value, signed)
+FD-FF = (Invalid)
+
+In version 2 (e.g. Daiku no Gensan), the commands are as follows, with several new commands added:
+00-7F = Set note length
+80-D3 = Play note
+D4-E3 = Play drum
+E4 xx yy zz = Set noise (X = Length, Y = NR42, Z = NR43)
+E5 = Hold note
+E6 = Rest
+E7 = End of channel
+E8 xx xx = Jump to position (X = Pointer)
+E9 xx xx = Go to macro (1 level only)
+EA = Return from macro
+EB xx = Start of repeat (X = Number of times)
+EC = End of repeat
+ED xx = Set tempo (X = Value)
+EE xx = Set envelope (X = Value)
+EF xx xx = Set pitch envelope (X = Pointer)
+F0 = (No effect)
+F1 xx = Set duty (X = Value)
+F2 xx = Set panning (X = Value - NR50)
+F3 xx = Set transpose (X = Value, signed)
+F4 x0 = Set NRx2 high (volume) (X = Value)
+F5 0x = Set NRx2 low (X = Value)
+F6 xx xx = Set octave envelope
+F7 xx xx = Set waveform
+F8 = Restore previous waveform
+F9 xx = Set envelope (same as EE)
+FA xx = Set channel 3 length

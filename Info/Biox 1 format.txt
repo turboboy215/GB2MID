@@ -1,0 +1,42 @@
+This is the earlier driver, used in 3 games - Kiteretu Zyraki, Noobow, and Pocket Bowling. It seems to be entirely different from the second driver used in games like Burger Burger Pocket.
+
+Song table
+=======================================
+In Noobow, the table is comprised of 16 pointers to each song. In Kiteretu Zyraki and Pocket Bowling, the song table consists of entries to each channel of a song. The pointers for each channel in both versions are structured as follows:
+
+1-2. Channel 1 pointer
+3-4. Channel 2 pointer
+5-6. Channel 3 pointer
+7-8. Channel 4 pointer
+
+Commands
+=======================================
+Each channel of a song uses the following commands:
+00-9F - xy (Az) = Play note - (X = Octave, Y = Note (D-F = Rest), Z = If higher nibble is A, then Z in this byte is used for length, otherwise, byte is skipped)
+A0-AF = Play note again with new length (note is extended if last byte was F3)
+B0-DF = End of channel (no handler)
+E0 = End of channel (same as FF)
+E1 xx = Set sweep (X = Value)
+E2 xx = Set envelope sequence (X = Envelope sequence number, 0 = none)
+E3 xx = Set duty (channel 1 only) (X = Value)
+E4 xx = Set vibrato sequence (X = Vibrato sequence number)
+E5 xx = Set envelope (NRx2) value (X = Value)
+E6 xx = Set tempo (X = TMA value, 0 = keep)
+E7 -- -- = (No effect) (- = (Unused))
+E8 -- -- = (No effect) (- = (Unused))
+E9 = End of channel (same as FF)
+EA = End of channel (same as FF)
+EB xx = Set panning (X = Value)
+EC = End of channel (same as FF)
+ED = End of channel (same as FF)
+EE xx xx = Go to macro (nested, 4 levels supported) (X = Pointer)
+EF = Return from macro (ends track at depth 0)
+F0 xx yy zz zz = Repeat position (X = Number of times, Y = Nest, Z = Pointer)
+F1 xx xx = Jump to position (X = Pointer)
+F2 xx = Set master volume (X = Value)
+F3 = Hold note
+F4 xx = Play note without A0 check (X = Note)
+F5 = Slur next note
+F6-FD = End of channel (same as FF)
+FE xx = Set row length for next note only (X = Length)
+FF = End of channel

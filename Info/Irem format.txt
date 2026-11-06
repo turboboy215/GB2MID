@@ -1,0 +1,39 @@
+Song table
+=======================================
+The song table consists of entries to each channel of a song or sound effect. It is structured as follows for each entry of the table:
+
+1-2. Channel 1 pointer
+3-4. Channel 2 pointer
+5-6. Channel 3 pointer
+7-8. Channel 4 pointer
+
+Commands
+=======================================
+Each channel of a song uses the following commands:
+00-7F = Play note
+80 xx = Set duty (X = Value)
+81 xx = Set sweep (X = Value)
+82 xx = Set track transpose (X = Value, signed) (In the Lenar version, subtracts from rather than adds to)
+83 xx = Set envelope (X = Value)
+84 xx = Set master volume (X = Value) (not present in earlier games)
+85 xx xx = Go to macro (X = Pointer) (only 1 level in earlier games, nested in later games = 8 total levels)
+86 = Return from macro (end track if at depth 0) (not present in earlier games)
+87 = End of channel
+88 xx = Set NRx4 (X = Value)
+89 = Hold note for current length
+8A xx = Set music panning (X = Value)
+8B xx xx = Jump to position (X = Pointer)
+8C xx = Set waveform (X = Waveform number)
+8D xx = Set envelope sequence (X = Envelope sequence number) (not present in earlier games)
+8E xx = Set vibrato (X = Vibrato sequence number) (is master volume in earlier games)
+8F xx = Set SFX panning (X = Value)
+90 xx = Set panning mask (X = Mask value) (not present in earlier games - see below)
+91-FF = Set note length (90-FF in earlier games; 90 xx is not present)
+
+Vibrato sequences
+=======================================
+Vibrato sequences are controlled by command 8E, and are accessed via a pointer table. Each vibrato sequence has 24 signed deltas as follows: 0 ramp +2…+48, 9 ramp −2…−48, 6 and 8 falls to −128 / −92 then held, 1/3/5/7 vibratos ±2/±3/±6/±12, 2/4 the same ±3/±6 after 12 flat steps. This is only present in Kid Niki and later.
+
+Envelope sequences
+=======================================
+Envelope sequences, similar to vibrato sequences, control the envelope of the channel, and are controlled by command 8D (not available in Kid Niki), and accessed via a pointer table. Each envelope sequence has 8 absolute envelope values. These are only present in Hammerin' Harry and later games.
