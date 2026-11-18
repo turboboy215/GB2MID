@@ -1,0 +1,30 @@
+This is the earlier driver from Pyramids of Ra. It is unrelated from the later driver in Workboy and Double Dragon 3.
+
+Song table
+=======================================
+The song table is structured with 12-byte entries for each song as follows:
+1-2. Channel 4 pointer
+3-4. Channel 2 pointer
+5-6. Channel 1 pointer
+7-8. Channel 3 pointer
+9. Tempo (Ticks per frame)
+10. Number of bars
+11. Channel 1 transpose
+12. Channel 2 transpose
+
+In Pyramids of Ra, there are 5 songs total.
+
+Song commands
+=======================================
+Each channel of a song is comprised of bars - each comprised of $2FC ticks, the total number specified in the header, structured as follows:
+12 bits = Bar
+12 bits = Number of ticks
+1 byte = Command
+1 byte = Parameter
+
+Commands are as follows:
+9x = Play note (parameter = note)
+Cx = Set instrument (X = instrument, parameter = unused)
+01 = Stop music
+74 = Halt track (parameter = unused)
+00 = Track end

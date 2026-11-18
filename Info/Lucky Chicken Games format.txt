@@ -1,0 +1,17 @@
+Song table
+=======================================
+The song table is structured with entries as follows:
+1-2. Pointer
+3-4. Bank
+
+Song data
+=======================================
+Song data is in a single-track format with commands as follows:
+
+x1 yy zz = Note on (X = Channel, Y = Note, Z = Delay)
+x2 yy = Note off (X = Channel, Y = Delay)
+x3 yy zz = Set instrument (X = Channel, Y = Instrument, Z = Delay)
+x4 yy zz = Set panning (X = Channel, Y = Bits, Z = Delay)
+FE xx (00-EF) yy = Play sound effect (X = Effect ID, Y = Delay)
+FE xx (F0-FF) yy = Go to loop (X = Loop flag (less is play sound effect), Y = Delay)
+8F-FF -- (not FE) = Stop song (- = (Unused))

@@ -1,0 +1,17 @@
+This is the later driver from Workboy and Double Dragon 3: The Arcade Game. It is not related to the earlier driver from Pyramids of Ra.
+
+Song table
+=======================================
+In Workboy, the sound engine only uses the first 2 channels. In Double Dragon 3, channel 4 is also used. The song table is comprised of a series of 2-4 16-bit pointers per entry, as follows:
+
+1-2. Channel 1 pointer
+3-4. Channel 2 pointer
+5-6. Channel 4 pointer (Double Dragon 3 only)
+
+Song commands
+=======================================
+Songs use the following commands:
+00-EF xx = Play note (00 = Rest) (X = Length in frames in Workboy/Length index from table in Double Dragon 3)
+F0-FD = (No effect - all songs in Workboy start with F0)
+FE = Restart song
+FF = Stop music (all channels)

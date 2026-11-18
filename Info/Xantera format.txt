@@ -1,0 +1,15 @@
+Song commands
+=======================================
+Similar to Saffire, songs are stored in a very simple yet also very inefficient array of patterns of 6 bytes each, using time values like Ed Magnin, although only for 1 channel at a time. Patterns are structured as follows (note that 16-bit values are big-endian):
+
+First 2 bytes of frame: Total time
+Then command:
+10 xx yy zz = Play note on channel 1 (X = Envelope, Y = Frequency hi, Z = Frequency lo)
+11 xx yy zz = Play note on channel 2 (X = Envelope, Y = Frequency hi, Z = Frequency lo)
+12 xx yy = Play note on channel 3 (X = Volume|\ Frequency hi, Y = Frequency lo)
+13 xx yy = Play note on channel 4 (X = Volume << 4, Y = Instrument (from table))
+2- = Set NR30 to 0 (- = (Unused))
+3x = Set NR32 (X = Value << 4)
+4x = Set channel 3 waveform (X = Waveform number (from table))
+5x (----xxyy) = Set frequency without trigger (X = 3 (lo) or 4 (hi), Y = Frequency value)
+Other value = End of song/restart
