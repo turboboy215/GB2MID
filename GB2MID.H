@@ -126,3 +126,7 @@
 #define Irem					0x7D
 #define Biox_1					0x7E
 #define Biox_2					0x7F
+#define Xantera					0x80
+#define Lucky_Chicken			0x81
+#define Source_1				0x82
+#define Source_2				0x83

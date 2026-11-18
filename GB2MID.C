@@ -891,6 +891,10 @@ int main(int args, char* argv[])
             {
                 driver = Kyouhei_Sada;
             }
+            else if (!strcmp(formatString, "Lucky_Chicken"))
+            {
+                driver = Lucky_Chicken;
+            }
             else if (!strcmp(formatString, "Lufia"))
             {
                 driver = Lufia;
@@ -1063,6 +1067,14 @@ int main(int args, char* argv[])
             {
                 driver = Software_Creations2;
             }
+            else if (!strcmp(formatString, "Source_1"))
+            {
+                driver = Source_1;
+            }
+            else if (!strcmp(formatString, "Source_2"))
+            {
+                driver = Source_2;
+            }
             else if (!strcmp(formatString, "Square"))
             {
                 driver = Square;
@@ -1142,6 +1154,10 @@ int main(int args, char* argv[])
             else if (!strcmp(formatString, "Winkysoft"))
             {
                 driver = Winkysoft;
+            }
+            else if (!strcmp(formatString, "Xantera"))
+            {
+                driver = Xantera;
             }
             else
             {
