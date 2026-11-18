@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -139,20 +139,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="3DPOOL.H" />
+    <ClInclude Include="AAPCM.H" />
     <ClInclude Include="ACT.H" />
     <ClInclude Include="AICOM.H" />
     <ClInclude Include="AJG.H" />
+    <ClInclude Include="ALIDEC.H" />
     <ClInclude Include="ALLEYWAY.H" />
     <ClInclude Include="ALTRON.H" />
+    <ClInclude Include="ANIMORPH.H" />
+    <ClInclude Include="ARCHON.H" />
+    <ClInclude Include="ATELIER.H" />
     <ClInclude Include="ATLUS.H" />
     <ClInclude Include="AUDIOART.H" />
+    <ClInclude Include="AVM.H" />
     <ClInclude Include="BEAM.H" />
     <ClInclude Include="BGDEC.H" />
     <ClInclude Include="BIONIC.H" />
+    <ClInclude Include="BIOX1.H" />
+    <ClInclude Include="BIOX2.H" />
     <ClInclude Include="BITS.H" />
     <ClInclude Include="CANNON.H" />
     <ClInclude Include="CAPCOM.H" />
     <ClInclude Include="CARILLON.H" />
+    <ClInclude Include="CHICKEN.H" />
+    <ClInclude Include="CLAB.H" />
+    <ClInclude Include="CLICHE.H" />
     <ClInclude Include="CLIMAX.H" />
     <ClInclude Include="CODEMONK.H" />
     <ClInclude Include="COMPILE.H" />
@@ -161,26 +173,43 @@
     <ClInclude Include="CULTRBRN.H" />
     <ClInclude Include="DATAEAST.H" />
     <ClInclude Include="DAVDSHEA.H" />
+    <ClInclude Include="DBZ.H" />
     <ClInclude Include="DE1.H" />
+    <ClInclude Include="DE2.H" />
+    <ClInclude Include="DISTINCT.H" />
     <ClInclude Include="DKONG.H" />
     <ClInclude Include="DSEQ.H" />
     <ClInclude Include="DUCKT.H" />
     <ClInclude Include="DW.H" />
     <ClInclude Include="EASTRDGE.H" />
+    <ClInclude Include="EASTRPCM.H" />
     <ClInclude Include="EDMAGNIN.H" />
     <ClInclude Include="EHY.H" />
+    <ClInclude Include="EQUIL.H" />
     <ClInclude Include="FACTOR5.H" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="GAMEFRK.H" />
     <ClInclude Include="GEX.H" />
     <ClInclude Include="GHX.H" />
+    <ClInclude Include="GHXPCM.H" />
+    <ClInclude Include="GRC1.H" />
+    <ClInclude Include="GRC2.H" />
+    <ClInclude Include="GREMLIN.H" />
     <ClInclude Include="HAL.H" />
     <ClInclude Include="HUDSON.H" />
+    <ClInclude Include="IMAGITEC.H" />
     <ClInclude Include="IMAGNRNG.H" />
+    <ClInclude Include="IREM.H" />
+    <ClInclude Include="JALECO.H" />
     <ClInclude Include="JEROTEL.H" />
     <ClInclude Include="JSAITO.H" />
+    <ClInclude Include="JWDEC.H" />
     <ClInclude Include="KARMA.H" />
+    <ClInclude Include="KCEJ.H" />
+    <ClInclude Include="KCEK.H" />
+    <ClInclude Include="KCEO.H" />
     <ClInclude Include="KEMCO.H" />
+    <ClInclude Include="KLAXPCM.H" />
     <ClInclude Include="KONAMI.H" />
     <ClInclude Include="KSADA.H" />
     <ClInclude Include="LUFIA.H" />
@@ -192,8 +221,11 @@
     <ClInclude Include="MEGAMAN3.H" />
     <ClInclude Include="METROID2.H" />
     <ClInclude Include="MIDI.H" />
+    <ClInclude Include="MK4PCM.H" />
     <ClInclude Include="MMSS.H" />
+    <ClInclude Include="MOLE.H" />
     <ClInclude Include="MPLAY.H" />
+    <ClInclude Include="MUSICBOX.H" />
     <ClInclude Include="MUSYX.H" />
     <ClInclude Include="MWALKER.H" />
     <ClInclude Include="NAMCO.H" />
@@ -207,21 +239,29 @@
     <ClInclude Include="PBDEC.H" />
     <ClInclude Include="PBOX.H" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="PCM.H" />
+    <ClInclude Include="POKEPUZ.H" />
     <ClInclude Include="PROBE.H" />
     <ClInclude Include="PUCRUNCH.H" />
     <ClInclude Include="RARE.H" />
     <ClInclude Include="REALTIME.H" />
+    <ClInclude Include="REEB.H" />
     <ClInclude Include="RNC.H" />
     <ClInclude Include="ROLAN.H" />
     <ClInclude Include="SAFFIRE.H" />
+    <ClInclude Include="SANRIO2.H" />
     <ClInclude Include="SCULPT.H" />
     <ClInclude Include="SHARED.H" />
     <ClInclude Include="SHEEP.H" />
+    <ClInclude Include="SMURFS2.H" />
+    <ClInclude Include="SOURCE1.H" />
+    <ClInclude Include="SOURCE2.H" />
     <ClInclude Include="SQUARE.H" />
     <ClInclude Include="SQZDEC.H" />
     <ClInclude Include="SUNSOFT.H" />
     <ClInclude Include="SWC1.H" />
     <ClInclude Include="SWC2.H" />
+    <ClInclude Include="SWRACER.H" />
     <ClInclude Include="T2KDEC.H" />
     <ClInclude Include="TAITO.H" />
     <ClInclude Include="TARANTLA.H" />
@@ -230,27 +270,49 @@
     <ClInclude Include="TITUS1.H" />
     <ClInclude Include="TITUS2.H" />
     <ClInclude Include="TITUSDEC.H" />
+    <ClInclude Include="TOKITORI.H" />
+    <ClInclude Include="TORUS1.H" />
+    <ClInclude Include="TORUS2.H" />
     <ClInclude Include="TOSE.H" />
+    <ClInclude Include="UBISOFT.H" />
+    <ClInclude Include="UGB.H" />
     <ClInclude Include="VI.H" />
+    <ClInclude Include="VIGIL8.H" />
+    <ClInclude Include="VV3PCM.H" />
     <ClInclude Include="WARIOL2.H" />
     <ClInclude Include="WAV.H" />
+    <ClInclude Include="WICKED.H" />
     <ClInclude Include="WINKYSFT.H" />
+    <ClInclude Include="XANTERA.H" />
+    <ClInclude Include="ZEBCO.H" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="3DPOOL.C" />
+    <ClCompile Include="AAPCM.C" />
     <ClCompile Include="ACT.C" />
     <ClCompile Include="AICOM.C" />
     <ClCompile Include="AJG.C" />
+    <ClCompile Include="ALIDEC.C" />
     <ClCompile Include="ALLEYWAY.C" />
     <ClCompile Include="ALTRON.C" />
+    <ClCompile Include="ANIMORPH.C" />
+    <ClCompile Include="ARCHON.C" />
+    <ClCompile Include="ATELIER.C" />
     <ClCompile Include="ATLUS.C" />
     <ClCompile Include="AUDIOART.C" />
+    <ClCompile Include="AVM.C" />
     <ClCompile Include="BEAM.C" />
     <ClCompile Include="BGDEC.C" />
     <ClCompile Include="BIONIC.C" />
+    <ClCompile Include="BIOX1.C" />
+    <ClCompile Include="BIOX2.C" />
     <ClCompile Include="BITS.C" />
     <ClCompile Include="CANNON.C" />
     <ClCompile Include="CAPCOM.C" />
     <ClCompile Include="CARILLON.C" />
+    <ClCompile Include="CHICKEN.C" />
+    <ClCompile Include="CLAB.C" />
+    <ClCompile Include="CLICHE.C" />
     <ClCompile Include="CLIMAX.C" />
     <ClCompile Include="CODEMONK.C" />
     <ClCompile Include="COMPILE.C" />
@@ -259,25 +321,42 @@
     <ClCompile Include="CULTRBRN.C" />
     <ClCompile Include="DATAEAST.C" />
     <ClCompile Include="DAVDSHEA.C" />
+    <ClCompile Include="DBZ.C" />
     <ClCompile Include="DE1.C" />
+    <ClCompile Include="DE2.C" />
+    <ClCompile Include="DISTINCT.C" />
     <ClCompile Include="DKONG.C" />
     <ClCompile Include="DSEQ.C" />
     <ClCompile Include="DUCKT.C" />
     <ClCompile Include="DW.C" />
     <ClCompile Include="EASTRDGE.C" />
+    <ClCompile Include="EASTRPCM.C" />
     <ClCompile Include="EDMAGNIN.C" />
     <ClCompile Include="EHY.C" />
+    <ClCompile Include="EQUIL.C" />
     <ClCompile Include="FACTOR5.C" />
     <ClCompile Include="GAMEFRK.C" />
     <ClCompile Include="GEX.C" />
     <ClCompile Include="GHX.C" />
+    <ClCompile Include="GHXPCM.C" />
+    <ClCompile Include="GRC1.C" />
+    <ClCompile Include="GRC2.C" />
+    <ClCompile Include="GREMLIN.C" />
     <ClCompile Include="HAL.C" />
     <ClCompile Include="HUDSON.C" />
+    <ClCompile Include="IMAGITEC.C" />
     <ClCompile Include="IMAGNRNG.C" />
+    <ClCompile Include="IREM.C" />
+    <ClCompile Include="JALECO.C" />
     <ClCompile Include="JEROTEL.C" />
     <ClCompile Include="JSAITO.C" />
+    <ClCompile Include="JWDEC.C" />
     <ClCompile Include="KARMA.C" />
+    <ClCompile Include="KCEJ.C" />
+    <ClCompile Include="KCEK.C" />
+    <ClCompile Include="KCEO.C" />
     <ClCompile Include="KEMCO.C" />
+    <ClCompile Include="KLAXPCM.C" />
     <ClCompile Include="KONAMI.C" />
     <ClCompile Include="KSADA.C" />
     <ClCompile Include="LUFIA.C" />
@@ -288,8 +367,11 @@
     <ClCompile Include="MEGAMAN2.C" />
     <ClCompile Include="MEGAMAN3.C" />
     <ClCompile Include="METROID2.C" />
+    <ClCompile Include="MK4PCM.C" />
     <ClCompile Include="MMSS.C" />
+    <ClCompile Include="MOLE.C" />
     <ClCompile Include="MPLAY.C" />
+    <ClCompile Include="MUSICBOX.C" />
     <ClCompile Include="MUSYX.C" />
     <ClCompile Include="MWALKER.C" />
     <ClCompile Include="NAMCO.C" />
@@ -302,13 +384,17 @@
     <ClCompile Include="PARAGON5.C" />
     <ClCompile Include="PBDEC.C" />
     <ClCompile Include="PBOX.C" />
+    <ClCompile Include="PCM.C" />
+    <ClCompile Include="POKEPUZ.C" />
     <ClCompile Include="PROBE.C" />
     <ClCompile Include="PUCRUNCH.C" />
     <ClCompile Include="RARE.C" />
     <ClCompile Include="REALTIME.C" />
+    <ClCompile Include="REEB.C" />
     <ClCompile Include="RNC.C" />
     <ClCompile Include="ROLAN.C" />
     <ClCompile Include="SAFFIRE.C" />
+    <ClCompile Include="SANRIO2.C" />
     <ClCompile Include="SCULPT.C" />
     <ClCompile Include="SHARED.C" />
     <ClCompile Include="MIDI.C" />
@@ -319,11 +405,15 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="SHEEP.C" />
+    <ClCompile Include="SMURFS2.C" />
+    <ClCompile Include="SOURCE1.C" />
+    <ClCompile Include="SOURCE2.C" />
     <ClCompile Include="SQUARE.C" />
     <ClCompile Include="SQZDEC.C" />
     <ClCompile Include="SUNSOFT.C" />
     <ClCompile Include="SWC1.C" />
     <ClCompile Include="SWC2.C" />
+    <ClCompile Include="SWRACER.C" />
     <ClCompile Include="T2KDEC.C" />
     <ClCompile Include="TAITO.C" />
     <ClCompile Include="TARANTLA.C" />
@@ -332,10 +422,20 @@
     <ClCompile Include="TITUS1.C" />
     <ClCompile Include="TITUS2.C" />
     <ClCompile Include="TITUSDEC.C" />
+    <ClCompile Include="TOKITORI.C" />
+    <ClCompile Include="TORUS1.C" />
+    <ClCompile Include="TORUS2.C" />
     <ClCompile Include="TOSE.C" />
+    <ClCompile Include="UBISOFT.C" />
+    <ClCompile Include="UGB.C" />
     <ClCompile Include="VI.C" />
+    <ClCompile Include="VIGIL8.C" />
+    <ClCompile Include="VV3PCM.C" />
     <ClCompile Include="WARIOL2.C" />
+    <ClCompile Include="WICKED.C" />
     <ClCompile Include="WINKYSFT.C" />
+    <ClCompile Include="XANTERA.C" />
+    <ClCompile Include="ZEBCO.C" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

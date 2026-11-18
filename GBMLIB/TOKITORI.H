@@ -8,8 +8,8 @@
 
 #define TT_CHANNELS		4
 #define TT_MAX_ROWS		64
-#define MOD_ROW_SIZE	(TT_CHANNELS * 4)
-#define MOD_PAT_SIZE	(MOD_ROW_SIZE * 64)
+#define TOKI_MOD_ROW_SIZE	(TT_CHANNELS * 4)
+#define TOKI_MOD_PAT_SIZE	(TOKI_MOD_ROW_SIZE * 64)
 #define MOD_MAX_PATS	64
 
 /*Sample slots: each channel type gets its own samples, so each can have its own length

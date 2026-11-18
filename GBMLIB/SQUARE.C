@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <direct.h>
+#include <stddef.h>
 #include "SHARED.H"
 #include "SQUARE.H"
 
@@ -23,6 +24,8 @@ int foundTable;
 long firstPtr;
 int drvVers;
 int curInst;
+int progBank;
+int curVol;
 
 unsigned char* romData;
 unsigned char* midData;
@@ -34,84 +37,92 @@ const char SqrMagicBytesA[13] = { 0x19, 0x11, 0x02, 0xCE, 0xCD, 0x53, 0x40, 0x11
 const char SqrMagicBytesB[7] = { 0x5F, 0x16, 0x00, 0x19, 0x2A, 0xEA, 0x04 };
 const char SqrMagicBytesC[7] = { 0x5F, 0x16, 0x00, 0x19, 0x2A, 0xEA, 0x09 };
 
-const unsigned char SqrNoteLen1[15] = { 0x60, 0x48, 0x30, 0x24, 0x20, 0x18, 0x12, 0x10, 0x0C, 0x09, 0x08, 0x06, 0x04, 0x03, 0x02 };
-const unsigned char SqrNoteLen2[13] = { 0x60, 0x48, 0x30, 0x20, 0x24, 0x18, 0x10, 0x12, 0x0C, 0x08, 0x06, 0x04, 0x03 };
-const unsigned char SqrNoteLen3[16] = { 0x90, 0x60, 0x48, 0x30, 0x24, 0x20, 0x18, 0x12, 0x10, 0x0C, 0x09, 0x08, 0x06, 0x04, 0x03, 0x02 };
+const unsigned char NoteLen1[15] = { 0x60, 0x48, 0x30, 0x24, 0x20, 0x18, 0x12, 0x10, 0x0C, 0x09, 0x08, 0x06, 0x04, 0x03, 0x02 };
+const unsigned char NoteLen2[13] = { 0x60, 0x48, 0x30, 0x20, 0x24, 0x18, 0x10, 0x12, 0x0C, 0x08, 0x06, 0x04, 0x03 };
+const unsigned char NoteLen3[16] = { 0x90, 0x60, 0x48, 0x30, 0x24, 0x20, 0x18, 0x12, 0x10, 0x0C, 0x09, 0x08, 0x06, 0x04, 0x03, 0x02 };
 
 /*Function prototypes*/
 unsigned short ReadLE16(unsigned char* Data);
+unsigned short ReadBE16(unsigned char* Data);
 void Write8B(unsigned char* buffer, unsigned int value);
 void WriteBE32(unsigned char* buffer, unsigned long value);
 void WriteBE24(unsigned char* buffer, unsigned long value);
 void WriteBE16(unsigned char* buffer, unsigned int value);
 unsigned int WriteNoteEvent(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
+unsigned int WriteNoteEventAltOn(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
+unsigned int WriteNoteEventAltOff(unsigned char* buffer, unsigned int pos, unsigned int note, int length, int delay, int firstNote, int curChan, int inst);
 int WriteDeltaTime(unsigned char* buffer, unsigned int pos, unsigned int value);
 void Sqrsong2mid(int songNum, long ptrs[4]);
 
 void SqrProc(int bank)
 {
-	if (bank != 1)
+	curInst = 0;
+	foundTable = 0;
+	firstPtr = 0;
+	drvVers = SQUARE_VER_FFL1;
+
+	if (bank < 0x02)
 	{
-		bankAmt = bankSize;
+		bank = 0x02;
 	}
-	else
-	{
-		bankAmt = 0;
-	}
-	fseek(rom, ((bank - 1) * bankSize), SEEK_SET);
-	romData = (unsigned char*)malloc(bankSize);
+
+	bankAmt = bankSize;
+	fseek(rom, 0, SEEK_SET);
+	romData = (unsigned char*)malloc(bankSize * 2);
 	fread(romData, 1, bankSize, rom);
+	fseek(rom, ((bank - 1) * bankSize), SEEK_SET);
+	fread(romData + bankSize, 1, bankSize, rom);
 
 	/*Try to search the bank for song table loader - Method 1: Final Fantasy Legend 1*/
-	for (i = 0; i < bankSize; i++)
+	for (i = bankSize; i < (bankSize * 2); i++)
 	{
 		if ((!memcmp(&romData[i], SqrMagicBytesA, 13)) && foundTable != 1)
 		{
-			tablePtrLoc = bankAmt + i - 2;
-			printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
-			tableOffset = ReadLE16(&romData[tablePtrLoc - bankAmt]);
-			printf("Song table starts at 0x%04x...\n", tableOffset);
-			drvVers = 1;
+			tablePtrLoc = i - 2;
+			printf("Found pointer to song table at address 0x%04X!\n", tablePtrLoc);
+			tableOffset = ReadLE16(&romData[tablePtrLoc]);
+			printf("Song table starts at 0x%04X...\n", tableOffset);
+			drvVers = SQUARE_VER_FFL1;
 			foundTable = 1;
 		}
 	}
 
-	/*Try to search the bank for song table loader - Method 2: Final Fantasy Legend 2/3/Adventure*/
-	for (i = 0; i < bankSize; i++)
+	/*Try to search the bank for song table loader - Method 2: Final Fantasy Legend 2/Adventure*/
+	for (i = bankSize; i < (bankSize * 2); i++)
 	{
 		if ((!memcmp(&romData[i], SqrMagicBytesB, 7)) && foundTable != 1)
 		{
-			tablePtrLoc = bankAmt + i - 2;
-			printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
-			tableOffset = ReadLE16(&romData[tablePtrLoc - bankAmt]);
-			printf("Song table starts at 0x%04x...\n", tableOffset);
-			drvVers = 2;
+			tablePtrLoc = i - 2;
+			printf("Found pointer to song table at address 0x%04X!\n", tablePtrLoc);
+			tableOffset = ReadLE16(&romData[tablePtrLoc]);
+			printf("Song table starts at 0x%04X...\n", tableOffset);
+			drvVers = SQUARE_VER_FFL2;
 			foundTable = 1;
 		}
 	}
 
 	/*Try to search the bank for song table loader - Method 3: Final Fantasy Legend 3*/
-	for (i = 0; i < bankSize; i++)
+	for (i = bankSize; i < (bankSize * 2); i++)
 	{
 		if ((!memcmp(&romData[i], SqrMagicBytesC, 7)) && foundTable != 1)
 		{
-			tablePtrLoc = bankAmt + i - 2;
-			printf("Found pointer to song table at address 0x%04x!\n", tablePtrLoc);
-			tableOffset = ReadLE16(&romData[tablePtrLoc - bankAmt]);
-			printf("Song table starts at 0x%04x...\n", tableOffset);
-			drvVers = 3;
+			tablePtrLoc = i - 2;
+			printf("Found pointer to song table at address 0x%04X!\n", tablePtrLoc);
+			tableOffset = ReadLE16(&romData[tablePtrLoc]);
+			printf("Song table starts at 0x%04X...\n", tableOffset);
+			drvVers = SQUARE_VER_FFL3;
 			foundTable = 1;
 		}
 	}
 
 	if (foundTable == 1)
 	{
-		i = tableOffset - bankAmt;
+		i = tableOffset;
 		songNum = 1;
 
-		if (drvVers == 1)
+		if (drvVers == SQUARE_VER_FFL1)
 		{
-			while ((ReadLE16(&romData[i]) > bankAmt) && (ReadLE16(&romData[i]) < (bankSize * 2)))
+			while ((ReadLE16(&romData[i]) > bankSize) && (ReadLE16(&romData[i]) < (bankSize * 2)))
 			{
 				for (j = 0; j < 3; j++)
 				{
@@ -124,9 +135,9 @@ void SqrProc(int bank)
 			}
 		}
 
-		else if (drvVers == 2)
+		else if (drvVers == SQUARE_VER_FFL2)
 		{
-			while ((ReadLE16(&romData[i]) > bankAmt) && (ReadLE16(&romData[i]) < (bankSize * 2)))
+			while ((ReadLE16(&romData[i]) > bankSize) && (ReadLE16(&romData[i]) < (bankSize * 2)))
 			{
 				for (j = 0; j < 3; j++)
 				{
@@ -151,9 +162,9 @@ void SqrProc(int bank)
 			}
 		}
 
-		else if (drvVers == 3)
+		else if (drvVers == SQUARE_VER_FFL3)
 		{
-			while ((ReadLE16(&romData[i]) > bankAmt) && (ReadLE16(&romData[i]) < (bankSize * 2)))
+			while ((ReadLE16(&romData[i]) > bankSize) && (ReadLE16(&romData[i]) < (bankSize * 2)))
 			{
 				for (j = 0; j < 4; j++)
 				{
@@ -180,13 +191,10 @@ void SqrProc(int bank)
 				songNum++;
 			}
 		}
-		free(romData);
 	}
-	else
-	{
-		printf("ERROR: Magic bytes not found!\n");
-		exit(-1);
-	}
+
+	free(romData);
+
 }
 
 /*Convert the song data to MIDI*/
@@ -222,6 +230,8 @@ void Sqrsong2mid(int songNum, long ptrs[4])
 	int tempByte = 0;
 	int curDelay = 0;
 	int ctrlDelay = 0;
+	int masterDelay = 0;
+	int holdNote = 0;
 	long tempPos = 0;
 
 	midPos = 0;
@@ -246,12 +256,11 @@ void Sqrsong2mid(int songNum, long ptrs[4])
 	}
 	else
 	{
-
-		if (drvVers != 3)
+		if (drvVers != SQUARE_VER_FFL3)
 		{
 			trackCnt = 3;
 		}
-		else if (drvVers == 3)
+		else
 		{
 			trackCnt = 4;
 		}
@@ -300,6 +309,134 @@ void Sqrsong2mid(int songNum, long ptrs[4])
 		WriteBE24(&ctrlMidData[ctrlMidPos], 0xFF5902);
 		ctrlMidPos += 4;
 
+		switch (drvVers)
+		{
+		case SQUARE_VER_FFL1:
+			/*Fall-through*/
+		default:
+			SQUARE_STATUS_NOTE_MIN = 0x00;
+			SQUARE_STATUS_NOTE_MAX = 0xBF;
+			SQUARE_STATUS_REST_MIN = 0xC0;
+			SQUARE_STATUS_REST_MAX = 0xCF;
+			SQUARE_STATUS_TIE_MIN = 0xD0;
+			SQUARE_STATUS_TIE_MAX = 0xDF;
+			SQUARE_STATUS_OCTAVE_MIN = 0xF0;
+			SQUARE_STATUS_OCTAVE_MAX = 0xF4;
+			EventMap[0xE0] = SQUARE_EVENT_TEMPO;
+			for (j = 0xE1; j <= 0xEF; j++)
+			{
+				EventMap[j] = SQUARE_EVENT_VOL;
+			}
+			for (j = 0xF0; j <= 0xF4; j++)
+			{
+				EventMap[j] = SQUARE_EVENT_OCTAVE;
+			}
+			EventMap[0xF5] = SQUARE_EVENT_NRX1;
+			EventMap[0xF6] = SQUARE_EVENT_NOP;
+			EventMap[0xF7] = SQUARE_EVENT_ENV;
+			EventMap[0xF8] = SQUARE_EVENT_WAVEFORM;
+			EventMap[0xF9] = SQUARE_EVENT_REPEAT1X;
+			EventMap[0xFA] = SQUARE_EVENT_REPEAT2X;
+			EventMap[0xFB] = SQUARE_EVENT_REPEAT3X;
+			EventMap[0xFC] = SQUARE_EVENT_REPEAT_END;
+			EventMap[0xFD] = SQUARE_EVENT_COND_JUMP;
+			EventMap[0xFE] = SQUARE_EVENT_JUMP;
+			EventMap[0xFF] = SQUARE_EVENT_STOP;
+			break;
+		case SQUARE_VER_FFL2:
+			SQUARE_STATUS_NOTE_MIN = 0x00;
+			SQUARE_STATUS_NOTE_MAX = 0xCF;
+			SQUARE_STATUS_TIE = 0x0E;
+			SQUARE_STATUS_REST = 0x0F;
+			SQUARE_STATUS_OCTAVE_MIN = 0xD0;
+			SQUARE_STATUS_OCTAVE_MAX = 0xD7;
+			SQUARE_STATUS_OCTAVE_UP_MIN = 0xD8;
+			SQUARE_STATUS_OCTAVE_UP_MAX = 0xDB;
+			SQUARE_STATUS_OCTAVE_DOWN_MIN = 0xDC;
+			SQUARE_STATUS_OCTAVE_DOWN_MAX = 0xDF;
+			for (j = 0xD0; j <= 0xD7; j++)
+			{
+				EventMap[j] = SQUARE_EVENT_OCTAVE;
+			}
+			for (j = 0xD8; j <= 0xDB; j++)
+			{
+				EventMap[j] = SQUARE_EVENT_OCTAVE_UP;
+			}
+			for (j = 0xDC; j <= 0xDF; j++)
+			{
+				EventMap[j] = SQUARE_EVENT_OCTAVE_DOWN;
+			}
+			EventMap[0xE0] = SQUARE_EVENT_VOL;
+			EventMap[0xE1] = SQUARE_EVENT_JUMP;
+			EventMap[0xE2] = SQUARE_EVENT_REPEAT1_END;
+			EventMap[0xE3] = SQUARE_EVENT_REPEAT1_START;
+			EventMap[0xE4] = SQUARE_EVENT_VIBRATO;
+			EventMap[0xE5] = SQUARE_EVENT_DUTY;
+			EventMap[0xE6] = SQUARE_EVENT_PAN;
+			EventMap[0xE7] = SQUARE_EVENT_TEMPO;
+			EventMap[0xE8] = SQUARE_EVENT_WAVEFORM;
+			EventMap[0xE9] = SQUARE_EVENT_REPEAT2_END;
+			EventMap[0xEA] = SQUARE_EVENT_REPEAT2_START;
+			EventMap[0xEB] = SQUARE_EVENT_COND_JUMP;
+			EventMap[0xEC] = SQUARE_EVENT_DOUBLE_TIME;
+			EventMap[0xF0] = SQUARE_EVENT_VOL;
+			EventMap[0xF1] = SQUARE_EVENT_JUMP;
+			EventMap[0xF2] = SQUARE_EVENT_REPEAT1_END;
+			EventMap[0xF3] = SQUARE_EVENT_REPEAT1_START;
+			EventMap[0xF4] = SQUARE_EVENT_VIBRATO;
+			EventMap[0xF5] = SQUARE_EVENT_DUTY;
+			EventMap[0xF6] = SQUARE_EVENT_PAN;
+			EventMap[0xF7] = SQUARE_EVENT_TEMPO;
+			EventMap[0xF8] = SQUARE_EVENT_WAVEFORM;
+			EventMap[0xF9] = SQUARE_EVENT_REPEAT2_END;
+			EventMap[0xFA] = SQUARE_EVENT_REPEAT2_START;
+			EventMap[0xFB] = SQUARE_EVENT_COND_JUMP;
+			EventMap[0xFC] = SQUARE_EVENT_DOUBLE_TIME;
+			EventMap[0xFF] = SQUARE_EVENT_STOP;
+			break;
+		case SQUARE_VER_FFL3:
+			SQUARE_STATUS_NOTE_MIN = 0x00;
+			SQUARE_STATUS_NOTE_MAX = 0xBF;
+			SQUARE_STATUS_TIE_MIN = 0xC0;
+			SQUARE_STATUS_TIE_MAX = 0xCF;
+			SQUARE_STATUS_REST_MIN = 0xD0;
+			SQUARE_STATUS_REST_MAX = 0xDF;
+			SQUARE_STATUS_OCTAVE_MIN = 0xE0;
+			SQUARE_STATUS_OCTAVE_MAX = 0xE7;
+			SQUARE_STATUS_OCTAVE_UP_MIN = 0xE8;
+			SQUARE_STATUS_OCTAVE_UP_MAX = 0xEB;
+			SQUARE_STATUS_OCTAVE_DOWN_MIN = 0xEC;
+			SQUARE_STATUS_OCTAVE_DOWN_MAX = 0xEF;
+			for (j = 0xE0; j <= 0xE7; j++)
+			{
+				EventMap[j] = SQUARE_EVENT_OCTAVE;
+			}
+			for (j = 0xE8; j <= 0xEB; j++)
+			{
+				EventMap[j] = SQUARE_EVENT_OCTAVE_UP;
+			}
+			for (j = 0xEC; j <= 0xEF; j++)
+			{
+				EventMap[j] = SQUARE_EVENT_OCTAVE_DOWN;
+			}
+			EventMap[0xF0] = SQUARE_EVENT_VOL;
+			EventMap[0xF1] = SQUARE_EVENT_JUMP;
+			EventMap[0xF2] = SQUARE_EVENT_REPEAT1_END;
+			EventMap[0xF3] = SQUARE_EVENT_REPEAT1_START;
+			EventMap[0xF4] = SQUARE_EVENT_VIBRATO;
+			EventMap[0xF5] = SQUARE_EVENT_DUTY;
+			EventMap[0xF6] = SQUARE_EVENT_PAN;
+			EventMap[0xF7] = SQUARE_EVENT_TEMPO;
+			EventMap[0xF8] = SQUARE_EVENT_WAVEFORM;
+			EventMap[0xF9] = SQUARE_EVENT_REPEAT2_END;
+			EventMap[0xFA] = SQUARE_EVENT_REPEAT2_START;
+			EventMap[0xFB] = SQUARE_EVENT_COND_JUMP;
+			EventMap[0xFC] = SQUARE_EVENT_NOP1;
+			EventMap[0xFD] = SQUARE_EVENT_NOP;
+			EventMap[0xFE] = SQUARE_EVENT_INS_PARAMS;
+			EventMap[0xFF] = SQUARE_EVENT_STOP;
+			break;
+		}
 		for (curTrack = 0; curTrack < trackCnt; curTrack++)
 		{
 			firstNote = 1;
@@ -311,6 +448,7 @@ void Sqrsong2mid(int songNum, long ptrs[4])
 
 			curDelay = 0;
 			ctrlDelay = 0;
+			masterDelay = 0;
 			seqEnd = 0;
 
 			curNote = 0;
@@ -319,6 +457,8 @@ void Sqrsong2mid(int songNum, long ptrs[4])
 			repeat2 = -1;
 			jumpPos = 0;
 			jumpPosRet = 0;
+			holdNote = 0;
+			curVol = 120;
 
 			/*Add track header*/
 			valSize = WriteDeltaTime(midData, midPos, 0);
@@ -334,10 +474,10 @@ void Sqrsong2mid(int songNum, long ptrs[4])
 			trackSize = midPos - midTrackBase;
 			WriteBE16(&midData[midTrackBase - 2], trackSize);
 
-			if (ptrs[curTrack] >= bankAmt && ptrs[curTrack] <= (bankSize * 2))
+			if (ptrs[curTrack] >= bankSize && ptrs[curTrack] <= (bankSize * 2))
 			{
 				seqEnd = 0;
-				seqPos = ptrs[curTrack] - bankAmt;
+				seqPos = ptrs[curTrack];
 
 				while (seqEnd == 0 && midPos < 48000 && seqPos < 0x8000 && ctrlDelay < 110000)
 				{
@@ -350,220 +490,183 @@ void Sqrsong2mid(int songNum, long ptrs[4])
 					command[6] = romData[seqPos + 6];
 					command[7] = romData[seqPos + 7];
 
-					if (drvVers == 1)
+					if (curTrack == 2)
 					{
-						if (command[0] < 0xE0)
-						{
-							lowNibble = (command[0] >> 4);
-							highNibble = (command[0] & 15);
-
-							curNoteLen = SqrNoteLen1[highNibble] * 5;
-
-							/*Rest*/
-							if (lowNibble == 0x0C)
-							{
-								curDelay += curNoteLen;
-								ctrlDelay += curNoteLen;
-							}
-
-							/*Hold note/wait?*/
-							else if (lowNibble == 0x0D)
-							{
-								curDelay += curNoteLen;
-								ctrlDelay += curNoteLen;
-							}
-
-							/*Play note*/
-							else
-							{
-								curNote = lowNibble + (12 * octave) + 24;
-								tempPos = WriteNoteEvent(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
-								firstNote = 0;
-								midPos = tempPos;
-								curDelay = 0;
-								ctrlDelay += curNoteLen;
-							}
-
-							seqPos++;
-						}
-
-						/*Set tempo*/
-						else if (command[0] == 0xE0)
-						{
-							songTempo = command[1] * 2.5;
-
-							if (tempo != songTempo)
-							{
-								ctrlMidPos++;
-								valSize = WriteDeltaTime(ctrlMidData, ctrlMidPos, ctrlDelay);
-								ctrlDelay = 0;
-								ctrlMidPos += valSize;
-								WriteBE24(&ctrlMidData[ctrlMidPos], 0xFF5103);
-								ctrlMidPos += 3;
-								tempo = (command[1] * 2.5);
-								WriteBE24(&ctrlMidData[ctrlMidPos], 60000000 / tempo);
-								ctrlMidPos += 2;
-							}
-							seqPos += 2;
-						}
-
-						/*Set volume/duty*/
-						else if (command[0] >= 0xE1 && command[0] <= 0xEF)
-						{
-							seqPos++;
-						}
-
-						/*Set octave*/
-						else if (command[0] >= 0xF0 && command[0] <= 0xF4)
-						{
-							highNibble = (command[0] & 15);
-							octave = highNibble;
-							seqPos++;
-						}
-
-						/*Unknown command F5*/
-						else if (command[0] == 0xF5)
-						{
-							seqPos++;
-						}
-
-						/*Command F6 (Invalid)*/
-						else if (command[0] == 0xF6)
-						{
-							seqPos++;
-						}
-
-						/*Set note envelope*/
-						else if (command[0] == 0xF7)
-						{
-							seqPos += 2;
-						}
-
-						/*Set waveform*/
-						else if (command[0] == 0xF8)
-						{
-							seqPos += 2;
-						}
-
-						/*Repeat section*/
-						else if (command[0] >= 0xF9 && command[0] <= 0xFB)
-						{
-							repeat1 = command[0] - 0xF8;
-							seqPos++;
-						}
-
-						/*End of repeat section*/
-						else if (command[0] == 0xFC)
-						{
-							jumpPos = ReadLE16(&romData[seqPos + 1]) - bankAmt;
-							if (repeat1 > 0)
-							{
-								seqPos = jumpPos;
-								repeat1--;
-							}
-							else
-							{
-								seqPos += 3;
-							}
-						}
-
-						/*Jump to position if still repeating*/
-						else if (command[0] == 0xFD)
-						{
-							jumpPos = ReadLE16(&romData[seqPos + 1]) - bankAmt;
-							if (repeat1 <= 0)
-							{
-								seqPos = jumpPos;
-							}
-							else
-							{
-								seqPos += 3;
-							}
-						}
-
-						/*Jump to position*/
-						else if (command[0] == 0xFE)
-						{
-							jumpPos = ReadLE16(&romData[seqPos + 1]) - bankAmt;
-
-							if (jumpPos > seqPos)
-							{
-								seqPos = jumpPos;
-							}
-							else
-							{
-								seqEnd = 1;
-							}
-						}
-
-						/*End of channel*/
-						else if (command[0] == 0xFF)
-						{
-							seqEnd = 1;
-						}
+						curTrack = 2;
 					}
 
-					else if (drvVers == 2)
+					lowNibble = (command[0] >> 4);
+					highNibble = (command[0] & 15);
+
+					if (command[0] >= SQUARE_STATUS_NOTE_MIN && command[0] <= SQUARE_STATUS_NOTE_MAX)
 					{
-						if (command[0] < 0xD0)
+						if (drvVers != SQUARE_VER_FFL2)
 						{
-							lowNibble = (command[0] >> 4);
-							highNibble = (command[0] & 15);
-
-							curNoteLen = SqrNoteLen2[lowNibble] * 5;
-
-							/*Rest*/
-							if (highNibble == 0x0E)
+							if (holdNote == 1)
 							{
-								curDelay += curNoteLen;
-								ctrlDelay += curNoteLen;
+								tempPos = WriteNoteEventAltOff(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
+								curDelay = 0;
+								holdNote = 0;
+								midPos = tempPos;
 							}
-
-							/*Hold note/wait?*/
-							else if (highNibble == 0x0F)
+							curNote = lowNibble + (octave * 12) + 24;
+							if (curTrack < 2)
 							{
-								curDelay += curNoteLen;
-								ctrlDelay += curNoteLen;
+								curNote += 12;
 							}
-
-							/*Play note*/
+							if (drvVers == SQUARE_VER_FFL1)
+							{
+								curNoteLen = NoteLen1[highNibble] * 5;
+							}
 							else
 							{
-								curNote = highNibble + (12 * octave) + 12;
-								tempPos = WriteNoteEvent(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
-								firstNote = 0;
-								midPos = tempPos;
-								curDelay = 0;
-								ctrlDelay += curNoteLen;
+								curNoteLen = NoteLen3[highNibble] * 5;
 							}
-
-							seqPos++;
+							midPos = WriteNoteEventAltOn(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
+							curDelay = curNoteLen;
+							ctrlDelay += curNoteLen;
+							masterDelay += curNoteLen;
+							firstNote = 0;
+							holdNote = 1;
 						}
-
-						/*Set octave*/
-						else if (command[0] >= 0xD0 && command[0] <= 0xD7)
+						else
 						{
-							highNibble = (command[0] & 15);
-							octave = highNibble;
-							seqPos++;
+							curNoteLen = NoteLen2[lowNibble] * 5;
+							/*Tie*/
+							if (highNibble == SQUARE_STATUS_TIE)
+							{
+								curDelay += curNoteLen;
+								ctrlDelay += curNoteLen;
+								masterDelay += curNoteLen;
+							}
+							else if (highNibble == SQUARE_STATUS_REST)
+							{
+								if (holdNote == 1)
+								{
+									tempPos = WriteNoteEventAltOff(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
+									curDelay = 0;
+									holdNote = 0;
+									midPos = tempPos;
+								}
+								curDelay += curNoteLen;
+								ctrlDelay += curNoteLen;
+								masterDelay += curNoteLen;
+							}
+							else
+							{
+								if (holdNote == 1)
+								{
+									tempPos = WriteNoteEventAltOff(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
+									curDelay = 0;
+									holdNote = 0;
+									midPos = tempPos;
+								}
+								curNote = highNibble + (octave * 12) + 24;
+								if (curTrack < 2)
+								{
+									curNote += 12;
+								}
+								midPos = WriteNoteEventAltOn(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
+								curDelay = curNoteLen;
+								ctrlDelay += curNoteLen;
+								masterDelay += curNoteLen;
+								firstNote = 0;
+								holdNote = 1;
+							}
 						}
+						seqPos++;
+					}
 
-						/*Octave up*/
-						else if (command[0] >= 0xD8 && command[0] <= 0xDB)
+					else if (command[0] >= SQUARE_STATUS_TIE_MIN && command[0] <= SQUARE_STATUS_TIE_MAX && drvVers != SQUARE_VER_FFL2)
+					{
+						if (drvVers == SQUARE_VER_FFL1)
 						{
-							octave += (command[0] - 0xD7);
-							seqPos++;
+							curNoteLen = NoteLen1[highNibble] * 5;
 						}
-
-						/*Octave down*/
-						else if (command[0] >= 0xDC && command[0] <= 0xDF)
+						else
 						{
-							octave -= (command[0] - 0xDB);
-							seqPos++;
+							curNoteLen = NoteLen3[highNibble] * 5;
+						}
+						curDelay += curNoteLen;
+						ctrlDelay += curNoteLen;
+						masterDelay += curNoteLen;
+						seqPos++;
+					}
+
+					else if (command[0] >= SQUARE_STATUS_REST_MIN && command[0] <= SQUARE_STATUS_REST_MAX && drvVers != SQUARE_VER_FFL2)
+					{
+						if (holdNote == 1)
+						{
+							tempPos = WriteNoteEventAltOff(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
+							curDelay = 0;
+							holdNote = 0;
+							midPos = tempPos;
+						}
+						if (drvVers == SQUARE_VER_FFL1)
+						{
+							curNoteLen = NoteLen1[highNibble] * 5;
+						}
+						else
+						{
+							curNoteLen = NoteLen3[highNibble] * 5;
+						}
+						curDelay += curNoteLen;
+						ctrlDelay += curNoteLen;
+						masterDelay += curNoteLen;
+						seqPos++;
+					}
+
+					else if (EventMap[command[0]] == SQUARE_EVENT_UNKNOWN0 || EventMap[command[0]] == SQUARE_EVENT_NOP)
+					{
+						seqPos++;
+					}
+
+					else if (EventMap[command[0]] == SQUARE_EVENT_UNKNOWN1 || EventMap[command[0]] == SQUARE_EVENT_NOP1)
+					{
+						seqPos += 2;
+					}
+
+					else if (EventMap[command[0]] == SQUARE_EVENT_TEMPO)
+					{
+						if (drvVers == SQUARE_VER_FFL1)
+						{
+							songTempo = command[1] * 2.5;
+						}
+						else
+						{
+							songTempo = command[1] * 1.25;
 						}
 
-						/*Set volume*/
-						else if (command[0] == 0xE0)
+						if (tempo != songTempo)
+						{
+							ctrlMidPos++;
+							valSize = WriteDeltaTime(ctrlMidData, ctrlMidPos, ctrlDelay);
+							ctrlDelay = 0;
+							ctrlMidPos += valSize;
+							WriteBE24(&ctrlMidData[ctrlMidPos], 0xFF5103);
+							ctrlMidPos += 3;
+							if (drvVers == SQUARE_VER_FFL1)
+							{
+								tempo = (command[1] * 2.5);
+							}
+							else
+							{
+								tempo = (command[1] * 1.25);
+							}
+							WriteBE24(&ctrlMidData[ctrlMidPos], 60000000 / tempo);
+							ctrlMidPos += 2;
+						}
+						seqPos += 2;
+
+					}
+
+					else if (EventMap[command[0]] == SQUARE_EVENT_VOL)
+					{
+						if (drvVers == SQUARE_VER_FFL1)
+						{
+							seqPos++;
+						}
+						else
 						{
 							if (curTrack != 2)
 							{
@@ -575,276 +678,201 @@ void Sqrsong2mid(int songNum, long ptrs[4])
 							}
 						}
 
-						/*Jump to position*/
-						else if (command[0] == 0xE1)
-						{
-							jumpPos = ReadLE16(&romData[seqPos + 1]) - bankAmt;
+					}
 
-							if (jumpPos > seqPos)
-							{
-								seqPos = jumpPos;
-							}
-							else
-							{
-								seqEnd = 1;
-							}
-						}
+					else if (EventMap[command[0]] == SQUARE_EVENT_OCTAVE)
+					{
+						octave = command[0] - SQUARE_STATUS_OCTAVE_MIN;
+						seqPos++;
+					}
 
-						/*Jump to position if still repeating (v1)*/
-						else if (command[0] == 0xE2)
-						{
-							jumpPos = ReadLE16(&romData[seqPos + 1]) - bankAmt;
-							if (repeat1 > 1)
-							{
-								seqPos = jumpPos;
-								repeat1--;
-							}
-							else if (repeat1 == -1)
-							{
-								seqEnd = 1;
-							}
-							else
-							{
-								seqPos += 3;
-							}
-						}
+					else if (EventMap[command[0]] == SQUARE_EVENT_NRX1)
+					{
+						seqPos += 2;
+					}
 
-						/*Repeat section (v1)*/
-						else if (command[0] == 0xE3)
-						{
-							repeat1 = command[1];
-							seqPos += 2;
-						}
+					else if (EventMap[command[0]] == SQUARE_EVENT_ENV)
+					{
+						seqPos += 2;
+					}
 
-						/*Set vibrato*/
-						else if (command[0] == 0xE4)
-						{
-							seqPos += 3;
-						}
-
-						/*Set duty*/
-						else if (command[0] == 0xE5)
+					else if (EventMap[command[0]] == SQUARE_EVENT_WAVEFORM)
+					{
+						if (drvVers == SQUARE_VER_FFL1)
 						{
 							seqPos += 2;
 						}
-
-						/*Set panning*/
-						else if (command[0] == 0xE6)
-						{
-							seqPos += 2;
-						}
-
-						/*Set tempo*/
-						else if (command[0] == 0xE7)
-						{
-							songTempo = command[1] * 1.25;
-
-							if (tempo != songTempo)
-							{
-								ctrlMidPos++;
-								valSize = WriteDeltaTime(ctrlMidData, ctrlMidPos, ctrlDelay);
-								ctrlDelay = 0;
-								ctrlMidPos += valSize;
-								WriteBE24(&ctrlMidData[ctrlMidPos], 0xFF5103);
-								ctrlMidPos += 3;
-								tempo = (command[1] * 1.25);
-
-								if (tempo == 0)
-								{
-									tempo = 150;
-								}
-								WriteBE24(&ctrlMidData[ctrlMidPos], 60000000 / tempo);
-								ctrlMidPos += 2;
-							}
-							seqPos += 2;
-						}
-
-						/*Set waveform*/
-						else if (command[0] == 0xE8)
-						{
-							seqPos += 3;
-						}
-
-						/*Jump to position if still repeating (v2)*/
-						else if (command[0] == 0xE9)
-						{
-							jumpPos = ReadLE16(&romData[seqPos + 1]) - bankAmt;
-							if (repeat2 > 1)
-							{
-								seqPos = jumpPos;
-								repeat2--;
-							}
-							else
-							{
-								seqPos += 3;
-							}
-						}
-
-						/*Repeat section (v2)*/
-						else if (command[0] == 0xEA)
-						{
-							repeat2 = command[1];
-							seqPos += 2;
-						}
-
-						/*If repeat (v1) is X, then jump to position Y*/
-						else if (command[0] == 0xEB)
-						{
-							jumpPos = ReadLE16(&romData[seqPos + 2]) - bankAmt;
-							if (repeat1 == command[1])
-							{
-								seqPos = jumpPos;
-							}
-							else
-							{
-								seqPos += 4;
-							}
-						}
-
-						/*Set "double time" mode (broken)*/
-						else if (command[0] == 0xEC)
-						{
-							seqPos++;
-						}
-
-						/*End of channel*/
-						else if (command[0] == 0xFF)
-						{
-							seqEnd = 1;
-						}
-
-						/*Unknown command*/
 						else
 						{
-							seqPos++;
-						}
-					}
-
-					else if (drvVers == 3)
-					{
-						if (command[0] < 0xE0)
-						{
-							lowNibble = (command[0] >> 4);
-							highNibble = (command[0] & 15);
-
-							curNoteLen = SqrNoteLen3[highNibble] * 5;
-
-							/*Rest*/
-							if (lowNibble == 0x0C)
-							{
-								curDelay += curNoteLen;
-								ctrlDelay += curNoteLen;
-							}
-
-							/*Hold note/wait?*/
-							else if (lowNibble == 0x0D)
-							{
-								curDelay += curNoteLen;
-								ctrlDelay += curNoteLen;
-							}
-
-							/*Play note*/
-							else
-							{
-								curNote = lowNibble + (12 * octave) + 24;
-								tempPos = WriteNoteEvent(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
-								firstNote = 0;
-								midPos = tempPos;
-								curDelay = 0;
-								ctrlDelay += curNoteLen;
-							}
-
-							seqPos++;
-						}
-
-						else if (command[0] >= 0xE0 && command[0] <= 0xE7)
-						{
-							highNibble = (command[0] & 15);
-							octave = highNibble;
-							seqPos++;
-						}
-
-						/*Octave up*/
-						else if (command[0] >= 0xE8 && command[0] <= 0xEB)
-						{
-							octave += (command[0] - 0xE7);
-							seqPos++;
-						}
-
-						/*Octave down*/
-						else if (command[0] >= 0xEC && command[0] <= 0xEF)
-						{
-							octave -= (command[0] - 0xEB);
-							seqPos++;
-						}
-
-						/*Set instrument pointer*/
-						else if (command[0] == 0xF0)
-						{
 							seqPos += 3;
 						}
 
-						/*Jump to position*/
-						else if (command[0] == 0xF1)
-						{
-							jumpPos = ReadLE16(&romData[seqPos + 1]) - bankAmt;
+					}
 
-							if (jumpPos > seqPos)
-							{
-								seqPos = jumpPos;
-							}
-							else
-							{
-								seqEnd = 1;
-							}
+					else if (EventMap[command[0]] == SQUARE_EVENT_REPEAT1X)
+					{
+						repeat1 = 1;
+						seqPos++;
+					}
+
+					else if (EventMap[command[0]] == SQUARE_EVENT_REPEAT2X)
+					{
+						repeat1 = 2;
+						seqPos++;
+					}
+
+					else if (EventMap[command[0]] == SQUARE_EVENT_REPEAT3X)
+					{
+						repeat1 = 3;
+						seqPos++;
+					}
+
+					else if (EventMap[command[0]] == SQUARE_EVENT_REPEAT_END)
+					{
+						jumpPos = ReadLE16(&romData[seqPos + 1]);
+						if (repeat1 > 0)
+						{
+							seqPos = jumpPos;
+							repeat1--;
 						}
-
-						/*Jump to position if still repeating (v1)*/
-						else if (command[0] == 0xF2)
+						else
 						{
-							jumpPos = ReadLE16(&romData[seqPos + 1]) - bankAmt;
-							if (repeat1 > 1)
+							seqPos += 3;
+						}
+					}
+
+					else if (EventMap[command[0]] == SQUARE_EVENT_COND_JUMP)
+					{
+						if (drvVers == SQUARE_VER_FFL1)
+						{
+							jumpPos = ReadLE16(&romData[seqPos + 1]);
+							if (repeat1 <= 0)
 							{
 								seqPos = jumpPos;
-								repeat1--;
-							}
-							else if (repeat1 == -1)
-							{
-								seqEnd = 1;
 							}
 							else
 							{
 								seqPos += 3;
 							}
 						}
-
-						/*Repeat section (v1)*/
-						else if (command[0] == 0xF3)
+						else
 						{
-							repeat1 = command[1];
-							seqPos += 2;
+							jumpPos = ReadLE16(&romData[seqPos + 2]);
+							if (repeat1 == command[1])
+							{
+								seqPos = jumpPos;
+							}
+							else
+							{
+								seqPos += 4;
+							}
 						}
+					}
 
-						/*Set vibrato*/
-						else if (command[0] == 0xF4)
+					else if (EventMap[command[0]] == SQUARE_EVENT_JUMP)
+					{
+						if ((ReadLE16(&romData[seqPos + 1])) > seqPos)
+						{
+							seqPos = ReadLE16(&romData[seqPos + 1]);
+						}
+						else
+						{
+							seqEnd = 1;
+						}
+					}
+
+					else if (EventMap[command[0]] == SQUARE_EVENT_STOP)
+					{
+						seqEnd = 1;
+					}
+
+					else if (EventMap[command[0]] == SQUARE_EVENT_OCTAVE_UP)
+					{
+						octave += ((command[0] - SQUARE_STATUS_OCTAVE_UP_MIN) + 1);
+						seqPos++;
+					}
+
+					else if (EventMap[command[0]] == SQUARE_EVENT_OCTAVE_DOWN)
+					{
+						octave -= ((command[0] - SQUARE_STATUS_OCTAVE_DOWN_MIN) + 1);
+						seqPos++;
+					}
+
+					else if (EventMap[command[0]] == SQUARE_EVENT_REPEAT1_END)
+					{
+						jumpPos = ReadLE16(&romData[seqPos + 1]);
+						if (repeat1 > 1)
+						{
+							seqPos = jumpPos;
+							repeat1--;
+						}
+						else if (repeat1 == -1)
+						{
+							seqEnd = 1;
+						}
+						else
 						{
 							seqPos += 3;
 						}
+					}
 
-						/*Set duty*/
-						else if (command[0] == 0xF5)
+					else if (EventMap[command[0]] == SQUARE_EVENT_REPEAT1_START)
+					{
+						repeat1 = command[1];
+						seqPos += 2;
+					}
+
+					else if (EventMap[command[0]] == SQUARE_EVENT_VIBRATO)
+					{
+						seqPos += 3;
+					}
+
+					else if (EventMap[command[0]] == SQUARE_EVENT_DUTY)
+					{
+						seqPos += 2;
+					}
+
+					else if (EventMap[command[0]] == SQUARE_EVENT_PAN)
+					{
+						seqPos += 2;
+					}
+
+					else if (EventMap[command[0]] == SQUARE_EVENT_REPEAT2_END)
+					{
+						jumpPos = ReadLE16(&romData[seqPos + 1]);
+						if (repeat2 > 1)
 						{
-							seqPos += 2;
+							seqPos = jumpPos;
+							repeat2--;
 						}
-
-						/*Set volume?*/
-						else if (command[0] == 0xF6)
+						else if (repeat2 == -1)
 						{
-							seqPos += 2;
+							seqEnd = 1;
 						}
+						else
+						{
+							seqPos += 3;
+						}
+					}
 
-						/*Set tempo*/
-						else if (command[0] == 0xF7)
+					else if (EventMap[command[0]] == SQUARE_EVENT_REPEAT2_START)
+					{
+						repeat2 = command[1];
+						seqPos += 2;
+					}
+
+					else if (EventMap[command[0]] == SQUARE_EVENT_DOUBLE_TIME)
+					{
+						seqPos++;
+					}
+
+					else if (EventMap[command[0]] == SQUARE_EVENT_INS_PARAMS)
+					{
+						if (curTrack != 1)
+						{
+							seqPos += 7;
+						}
+						else
 						{
 							songTempo = command[1] * 1.25;
 
@@ -857,115 +885,28 @@ void Sqrsong2mid(int songNum, long ptrs[4])
 								WriteBE24(&ctrlMidData[ctrlMidPos], 0xFF5103);
 								ctrlMidPos += 3;
 								tempo = (command[1] * 1.25);
-
-								if (tempo == 0)
-								{
-									tempo = 150;
-								}
 								WriteBE24(&ctrlMidData[ctrlMidPos], 60000000 / tempo);
 								ctrlMidPos += 2;
 							}
-							seqPos += 2;
+							seqPos += 8;
 						}
+					}
 
-						/*End of channel (F8)*/
-						else if (command[0] == 0xF8)
-						{
-							seqEnd = 1;
-						}
-
-						/*Jump to position if still repeating (v2)*/
-						else if (command[0] == 0xF9)
-						{
-							jumpPos = ReadLE16(&romData[seqPos + 1]) - bankAmt;
-							if (repeat2 > 1)
-							{
-								seqPos = jumpPos;
-								repeat2--;
-							}
-							else
-							{
-								seqPos += 3;
-							}
-						}
-
-						/*Repeat section (v2)*/
-						else if (command[0] == 0xFA)
-						{
-							repeat2 = command[1];
-							seqPos += 2;
-						}
-
-						/*If repeat (v1) is X, then jump to position Y*/
-						else if (command[0] == 0xFB)
-						{
-							jumpPos = ReadLE16(&romData[seqPos + 2]) - bankAmt;
-							if (repeat1 == command[1])
-							{
-								seqPos = jumpPos;
-							}
-							else
-							{
-								seqPos += 4;
-							}
-						}
-
-						/*Set "double time" mode (broken)*/
-						else if (command[0] == 0xFC)
-						{
-							seqPos++;
-						}
-
-						/*End of channel (FD)*/
-						else if (command[0] == 0xFD)
-						{
-							seqEnd = 1;
-						}
-
-						/*Set parameters*/
-						else if (command[0] == 0xFE)
-						{
-							if (curTrack != 1)
-							{
-								seqPos += 7;
-							}
-							else
-							{
-								songTempo = command[1] * 1.25;
-
-								if (tempo != songTempo)
-								{
-									ctrlMidPos++;
-									valSize = WriteDeltaTime(ctrlMidData, ctrlMidPos, ctrlDelay);
-									ctrlDelay = 0;
-									ctrlMidPos += valSize;
-									WriteBE24(&ctrlMidData[ctrlMidPos], 0xFF5103);
-									ctrlMidPos += 3;
-									tempo = (command[1] * 1.25);
-
-									if (tempo == 0)
-									{
-										tempo = 150;
-									}
-									WriteBE24(&ctrlMidData[ctrlMidPos], 60000000 / tempo);
-									ctrlMidPos += 2;
-								}
-								seqPos += 8;
-							}
-						}
-
-						/*End of channel*/
-						else if (command[0] == 0xFF)
-						{
-							seqEnd = 1;
-						}
-
+					/*Unknown command*/
+					else
+					{
+						seqPos++;
 					}
 				}
+
 			}
-			else
+
+			if (holdNote == 1)
 			{
-				seqEnd = 1;
+				tempPos = WriteNoteEventAltOff(midData, midPos, curNote, curNoteLen, curDelay, firstNote, curTrack, curInst);
+				curDelay = 0;
+				holdNote = 0;
+				midPos = tempPos;
 			}
 
 			/*End of track*/
@@ -990,6 +931,7 @@ void Sqrsong2mid(int songNum, long ptrs[4])
 		sprintf(outfile, "song%d.mid", songNum);
 		fwrite(ctrlMidData, ctrlMidPos, 1, mid);
 		fwrite(midData, midPos, 1, mid);
+
 		free(midData);
 		free(ctrlMidData);
 		fclose(mid);

@@ -303,6 +303,156 @@
     <ClInclude Include="ALTRON.H">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MUSICBOX.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ARCHON.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KCEK.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KCEO.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KCEJ.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UGB.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EQUIL.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ATELIER.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="JWDEC.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UBISOFT.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="REEB.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DBZ.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TORUS1.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TORUS2.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WICKED.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GRC1.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GRC2.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLICHE.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IMAGITEC.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GREMLIN.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ALIDEC.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="JALECO.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLAB.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PCM.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EASTRPCM.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MK4PCM.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KLAXPCM.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DISTINCT.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3DPOOL.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AVM.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SMURFS2.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MOLE.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SWRACER.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="POKEPUZ.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GHXPCM.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AAPCM.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VIGIL8.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ZEBCO.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VV3PCM.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SANRIO2.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DE2.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TOKITORI.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ANIMORPH.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IREM.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BIOX1.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BIOX2.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="XANTERA.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHICKEN.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SOURCE1.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SOURCE2.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SHARED.C">
@@ -585,6 +735,156 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ALTRON.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MUSICBOX.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ARCHON.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KCEK.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KCEO.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KCEJ.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UGB.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EQUIL.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ATELIER.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JWDEC.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UBISOFT.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="REEB.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DBZ.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TORUS1.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TORUS2.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WICKED.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GRC1.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GRC2.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLICHE.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IMAGITEC.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GREMLIN.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ALIDEC.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JALECO.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLAB.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PCM.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EASTRPCM.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MK4PCM.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KLAXPCM.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DISTINCT.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AVM.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="3DPOOL.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SMURFS2.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MOLE.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SWRACER.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="POKEPUZ.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GHXPCM.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AAPCM.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VIGIL8.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ZEBCO.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VV3PCM.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SANRIO2.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DE2.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TOKITORI.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ANIMORPH.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IREM.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BIOX1.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BIOX2.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XANTERA.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHICKEN.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE1.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE2.C">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

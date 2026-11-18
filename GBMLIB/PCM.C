@@ -293,7 +293,7 @@ void PCMsam2wav(int sampNum, long ptr, int bank, int len, int freq, int fmt)
 			}
 		}
 
-		else if (fmt == PCM_FMT_1BIT)
+		else if (fmt == PCM_FMT_1BIT_BE)
 		{
 			while (totalLen < len)
 			{
@@ -301,6 +301,31 @@ void PCMsam2wav(int sampNum, long ptr, int bank, int len, int freq, int fmt)
 
 				/*Convert the 1-bit PCM to 8-bit*/
 				for (bit = 7; bit >= 0; bit--)
+				{
+					if (c >> bit & 1 != 0x00)
+					{
+						fputc(0xFF, wav);
+					}
+					else
+					{
+						fputc(0x00, wav);
+					}
+					fileSize++;
+				}
+
+				cpu++;
+				totalLen++;
+			}
+		}
+
+		else if (fmt == PCM_FMT_1BIT_LE)
+		{
+			while (totalLen < len)
+			{
+				c = gb_read_byte(b, cpu);
+
+				/*Convert the 1-bit PCM to 8-bit*/
+				for (bit = 0; bit <= 7; bit++)
 				{
 					if (c >> bit & 1 != 0x00)
 					{
@@ -656,7 +681,53 @@ void PCMsam2wav(int sampNum, long ptr, int bank, int len, int freq, int fmt)
 				cpu++;
 				totalLen++;
 			}
+		}
+
+		else if (fmt == PCM_FMT_KONRLE)
+		{
+			/*Konami NR50 RLE (World Soccer GB2 / ISS '99 J, ROM0 $2F33 PlayPcm).
+			  4-bit nibbles, high first, one per byte half:
+				0-7  set NR50 = n | n << 4 for one period (1 sample)
+				8    end of the sample
+				9-F  repeat the last level (n & 7) more periods, no period of its own
+			  15888 Hz (264 cycles per period).  len = byte limit, the sample ends at nibble 8.*/
+			int last = 0;
+			int nib;
+			int done = 0;
+			int r;
+
+			while (totalLen < len && !done)
+			{
+				c = gb_read_byte(b, cpu);
+				for (k = 0; k < 2; k++)
+				{
+					nib = (k == 0) ? (c >> 4) : (c & 0x0F);
+					if (nib == 0x08)
+					{
+						done = 1;
+						break;
+					}
+					else if (nib < 0x08)
+					{
+						last = nib;
+						r = 1;
+					}
+					else
+					{
+						r = nib & 0x07;
+					}
+					s = (last << 5) | (last << 2) | (last >> 1);
+					while (r-- > 0)
+					{
+						fputc(s, wav);
+						fileSize++;
+					}
+				}
+				cpu++;
+				totalLen++;
 			}
+		}
+
 
 
 		/*Fill in the header data*/

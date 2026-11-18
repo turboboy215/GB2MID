@@ -6,7 +6,7 @@
 
 #define PCM_FMT_4BIT_BE		0
 #define PCM_FMT_4BIT_LE		1
-#define PCM_FMT_1BIT		2
+#define PCM_FMT_1BIT_BE		2
 #define PCM_FMT_RNC_3		3
 #define PCM_FMT_2BIT		4
 #define PCM_FMT_3BIT_BE		5
@@ -15,6 +15,8 @@
 #define PCM_FMT_HHCMP		8
 #define PCM_FMT_G2HUFF		9
 #define PCM_FMT_NR50		10
+#define PCM_FMT_1BIT_LE		11
+#define PCM_FMT_KONRLE		12
 
 /*Function prototype*/
 void PCMProc(int bank, char parameters[4][100]);

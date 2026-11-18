@@ -525,7 +525,7 @@ void TokiTorisong2mod(int songNum, long songPtr)
 	}
 	for (curPat = 0; curPat < numOrders; curPat++)
 	{
-		patPos = modPos + (curPat * MOD_PAT_SIZE);
+		patPos = modPos + (curPat * TOKI_MOD_PAT_SIZE);
 		for (curChan = 0; curChan < TT_CHANNELS; curChan++)
 		{
 			chanPos[curChan] = orders[curPat].chanPos[curChan];
@@ -794,7 +794,7 @@ void TokiTorisong2mod(int songNum, long songPtr)
 			/*Write the row. MOD cell: iiiiPPPP PPPPPPPP iiiieeee pppppppp*/
 			for (curChan = 0; curChan < TT_CHANNELS; curChan++)
 			{
-				cell = patPos + (curRow * MOD_ROW_SIZE) + (curChan * 4);
+				cell = patPos + (curRow * TOKI_MOD_ROW_SIZE) + (curChan * 4);
 				period = (cellNote[curChan] >= 0) ? TokiTorimodPeriods[cellNote[curChan]] : 0;
 				mfx = (cellFx[curChan] >= 0) ? cellFx[curChan] : 0;
 				mpar = (cellFx[curChan] >= 0) ? cellParam[curChan] : 0;
@@ -812,10 +812,10 @@ void TokiTorisong2mod(int songNum, long songPtr)
 	{
 		curPat = numOrders - 1;
 		curRow = (orders[curPat].rows < 64 ? orders[curPat].rows : 64) - 1;
-		patPos = modPos + (curPat * MOD_PAT_SIZE);
+		patPos = modPos + (curPat * TOKI_MOD_PAT_SIZE);
 		for (curChan = 0; curChan < TT_CHANNELS; curChan++)
 		{
-			cell = patPos + (curRow * MOD_ROW_SIZE) + (curChan * 4);
+			cell = patPos + (curRow * TOKI_MOD_ROW_SIZE) + (curChan * 4);
 			if ((modData[cell + 2] & 0x0F) == 0 && modData[cell + 3] == 0)
 			{
 				modData[cell + 2] |= 0x0B;
@@ -824,7 +824,7 @@ void TokiTorisong2mod(int songNum, long songPtr)
 			}
 		}
 	}
-	modPos += numOrders * MOD_PAT_SIZE;
+	modPos += numOrders * TOKI_MOD_PAT_SIZE;
 
 	/*
 	if (folded)

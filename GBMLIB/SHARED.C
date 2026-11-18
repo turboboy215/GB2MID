@@ -25,6 +25,7 @@
 #include "CANNON.H"
 #include "CAPCOM.H"
 #include "CARILLON.H"
+#include "CHICKEN.H"
 #include "CLAB.H"
 #include "CLICHE.H"
 #include "CLIMAX.H"
@@ -107,6 +108,8 @@
 #include "SCULPT.H"
 #include "SHEEP.H"
 #include "SMURFS2.H"
+#include "SOURCE1.H"
+#include "SOURCE2.H"
 #include "SQUARE.H"
 #include "SUNSOFT.H"
 #include "SWC1.H"
@@ -130,6 +133,7 @@
 #include "WARIOL2.H"
 #include "WICKED.H"
 #include "WINKYSFT.H"
+#include "XANTERA.H"
 #include "ZEBCO.H"
 #define bankSize 16384
 
@@ -853,6 +857,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case Kyouhei_Sada:
 			SadaProc(banks[curBank], parameters);
 			break;
+		case Lucky_Chicken:
+			ChickenProc(banks[curBank], parameters);
+			break;
 		case Lufia:
 			LufiaProc(banks[curBank]);
 			break;
@@ -982,6 +989,12 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 		case Software_Creations2:
 			SWC2Proc(banks[curBank]);
 			break;
+		case Source_1:
+			Source1Proc(banks[curBank]);
+			break;
+		case Source_2:
+			Source2Proc(banks[curBank]);
+			break;
 		case Square:
 			SqrProc(banks[curBank]);
 			break;
@@ -1041,6 +1054,9 @@ void gb2MID(FILE* rom, long banks[50], int numBanks, long format, char parameter
 			break;
 		case Winkysoft:
 			WinkyProc(banks[curBank]);
+			break;
+		case Xantera:
+			XanteraProc(banks[curBank], parameters);
 			break;
 		default:
 			MIDProc();
