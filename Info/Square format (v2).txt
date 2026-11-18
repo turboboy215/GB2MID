@@ -1,0 +1,211 @@
+This driver was heavily altered between games, with only FFL2 and FFA sharing the same commands. However, FFL3 is similar to FFL2 and FFA, but shifted, with swapped note/length values like FFL1, the broken "double time" from FFA removed, and with some extra commands. The sound effects also seem to work the same in the latter two versions.
+
+Version 1 (The Final Fantasy Legend)
+=============================================================
+
+Song table
+=======================================
+The song pointer table consists of three 16-bit pointer values for each channel (channel 4 is not used for music). 
+
+The table can be found by looking for the following code:
+    add a, a
+    add a, e
+    add a, a
+    ld e, a
+    ld d, $00
+    ld hl, SongTable
+    add hl, de
+    ld de, wCh1Ptr
+    call CopyWord
+    ld de, wCh2Ptr
+    call CopyWord
+    ld de, wCh3Ptr
+    call CopyWord
+
+Which equals the following in hex:
+5F 16 00 21 ?? ?? 19 11 02 CE CD 53 40 11 22 CE CD 53 40 11 42 CE CD 53 40
+
+Song tables are structured as follows:
+1-2. Channel 2 pointer
+3-4. Channel 1 pointer
+5-6. Channel 3 pointer
+
+Song commands
+=======================================
+Song data is structured with the following commands:
+xy (00-DF) = Play note, length (X = Note, Y = Length)
+	0 = C
+	1 = C#
+	2 = D
+	3 = D#
+	4 = E
+	5 = F
+	6 = F#
+	7 = G
+	8 = G#
+	9 = A
+	A = A#
+	B = B
+	C = Rest
+	D = Hold note
+E0 xx = Set tempo (X = Value)
+E1-EF = Set volume/duty
+F0-F4 = Set octave
+F5 xx = Set NRx1 copy (X = Value)
+F6 = (Invalid)
+F7 xx yy = Set note envelope (X = Type, Y = Number)
+F8 xx = Set waveform (X = Value)
+F9 = Repeat section 1 time
+FA = Repeat section 2 times
+FB = Repeat section 3 times
+FC xx xx = Go back to repeat section if still repeating (X = Pointer)
+FD xx xx = Jump to section on final repeat (X = Pointer)
+FE xx xx = Jump to position (X = Pointer)
+FF = End of channel
+
+Sound effects
+=======================================
+Sound effects are loaded from a separate table, and use channel 1 or 4 and are structured as follows:
+00 = End of effect
+01-DF (Ch1) = Frame (1 byte = number of frames, then 5 bytes = NR10-NR14)
+      (Ch4) = Frame (1 byte = number of frames, then 4 bytes = NR41 = 0, NR42-NR44)
+Ex = Start of repeat (X = Number of times)
+F- xx xx = End of repeat - jump to position until done (- = (Unused), X = Pointer)
+
+Version 2 (Final Fantasy Legend II/Final Fantasy Adventure)
+=============================================================
+
+Song table
+=======================================
+
+The table can be found by looking for the following code:
+    ld   hl, musicSongChannelPointers
+    ld   e, a
+    ld   d, $00
+    add  hl, de
+    ld   a, [hl+]
+    ld   [wMusicInstructionPointerChannel2], a
+    ld   a, [hl+]
+    ld   [wMusicInstructionPointerChannel2.high], a
+
+Which equals the following in hex:
+21 ?? ?? 5F 16 00 19 2A EA 04 xx 2A EA 05
+
+Song tables are structured as follows:
+1-2. Channel 2 pointer
+3-4. Channel 1 pointer
+5-6. Channel 3 pointer
+
+Song commands
+=======================================
+Song data is structured with the following commands:
+xy (00-CF) = Play note (X = Length, Y = Note)
+	0 = C
+	1 = C#
+	2 = D
+	3 = D#
+	4 = E
+	5 = F
+	6 = F#
+	7 = G
+	8 = G#
+	9 = A
+	A = A#
+	B = B
+	C = C (+1 octave)
+	D = C# (+1 octave)
+	E = Hold note
+	F = Rest
+D0-D7 = Set octave
+D8-DB = Octave up (1-4)
+DC-DF = Octave down (1-4)
+E0 xx (xx) = Set volume (Ch1/2 - X = Pointer, Ch3 X = NR32 value - 1 byte)
+E1 xx xx = Jump to position (X = Pointer)
+E2 xx xx = If still repeating (v1), jump to position (X = Pointer)
+E3 xx = Repeat the following section X times (v1) (X = Number of times)
+E4 xx xx = Set vibrato (X = Value)
+E5 xx = Set duty (X = Value)
+E6 xx = Set panning (X = Value, 0-3)
+E7 xx = Set tempo (X = Value)
+E8 xx xx = Set waveform (X = Pointer)
+E9 xx xx = If still repeating (v2), jump to position (X = Pointer)
+EA xx = Repeat the following section X times (v2) (X = Number of times)
+EB xx yy yy = If repeat 1 is X, then go to position Y
+EC = Set "double time" mode (broken, FFA only)
+FF = End of track
+
+Sound effects
+=======================================
+Sound effects are loaded from a separate table, and use channel 1 or 4 and are structured as follows, similar to FFL1:
+00 = End of effect
+01-EE (Ch1) = Frame (1 byte = number of frames, then 5 bytes = NR10-NR14)
+      (Ch4) = Frame (1 byte = number of frames, then 4 bytes = NR41 = 0, NR42-NR44)
+EF xx xx = End of repeat - jump to position until done (X = Pointer)
+Fx = Start of repeat (X = Number of times)
+
+Version 3 (Final Fantasy Legend III)
+=============================================================
+
+Song table
+=======================================
+
+The table can be found by looking for the following code:
+    ld   hl, musicSongChannelPointers
+    ld   e, a
+    ld   d, $00
+    add  hl, de
+    ld   a, [hl+]
+    ld   [wMusicInstructionPointerChannel2], a
+    ld   a, [hl+]
+    ld   [wMusicInstructionPointerChannel2.high], a
+
+Which equals the following in hex:
+21 ?? ?? 5F 16 00 19 2A EA 09 CB 2A EA 0A
+
+Unlike versions 1 and 2, FFL3 uses channel 4 for music, and there are a total of 4 channel pointers. Song tables are structured as follows:
+1-2. Channel 2 pointer
+3-4. Channel 1 pointer
+5-6. Channel 3 pointer
+7-8. Channel 4 pointer
+
+Song commands
+=======================================
+Song data is structured with the following commands:
+xy (00-DF) = Play note (X = Note, Y = Length)
+	0 = C
+	1 = C#
+	2 = D
+	3 = D#
+	4 = E
+	5 = F
+	6 = F#
+	7 = G
+	8 = G#
+	9 = A
+	A = A#
+	B = B
+	C = Hold note
+	D = Rest
+E0-E7 = Set octave
+E8-EB = Octave up (+1-4)
+EC-EF = Octave down (-1-4)
+F0 xx xx = Set envelope (X = Pointer) 
+F1 xx xx = Jump to position (X = Pointer)
+F2 xx xx = End of F3 repeat and go to pointer (X = Pointer)
+F3 xx = Repeat the following section X times (v1) (X = Number of times)
+F4 xx xx = Set vibrato (X = Pointer)
+F5 xx = Set duty (X = Value)
+F6 xx = Set panning (X = Value, 0-3)
+F7 xx = Set tempo (X = Value)
+F8 xx xx = Set waveform (X = Pointer)
+F9 xx xx = End of FA repeat and go to pointer (X = Pointer)
+FA xx = Repeat the following section X times (v2) (X = Number of times)
+FB xx yy yy = Following an F3 command, when repeat is X, go to pointer Y
+FC -- = (No effect) (- = (Unused))
+FD = (Invalid)
+FE (xx) yy yy zz zz cc dd = Load channel parameters (X = Tempo (Ch2 only), Y = Vibrato, Z = Envelope, C = Duty, D = Panning)
+FF = End of channel
+
+Sound effects
+=======================================
+Same as FFL2/FFA.
