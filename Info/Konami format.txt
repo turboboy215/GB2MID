@@ -1,87 +1,259 @@
+Song table
+=======================================
+The song table is comprised of 16-bit pointers to each song. This includes both music and sound effects.
+
 Song header
 =======================================
-A header for a song is stored as follows:
-1. ?
-2. Channel mask
+The song header consists of a priority byte, a binary channel mask, and pointers to all available channels specified in the mask. In most single-banked games, it is stored as follows:
 
-Format 1 (Castlevania 1):
-1234 5678
-   1-2 = Unused?
-   3 = Channel 4 music
-   4 = Channel 3 music
-   5 = Channel 2 music
-   6 = Channel 1 music
-   7 = Channel 4 SFX
-   8 = Channel 1 SFX
-3-4. Channel 1 pointer
-5-6. Channel 2 pointer
-7-8. Channel 3 pointer
-9-10. Channel 4 pointer
+1. Priority
+2. Channel mask (see below)
+3-4... (etc. x2) Channel pointers (if available)
 
-Format 2 (Nemesis/Castlevania 2):
-1234 5678
-   1 = Unused?
-   2 = Channel 4 music
-   3 = Channel 3 music
-   4 = Channel 2 music
-   5 = Channel 1 music
-   6 = Channel 4 SFX
-   7 = Channel 2 SFX?
-   8 = Channel 1 SFX
+In Parodius, the header is as follows:
 
-Format 3 (Motocross Maniacs):
-1234 5678
+1. Priority
+2. Bank
+3. Channel mask (see below)
+4-5... (etc. x2) Channel pointers (if available)
 
-   1 = Unused?
-   2 = Channel 4 music
-   3 = Channel 2 music
-   4 = Channel 3 music
-   5 = Channel 1 music
-   6 = Channel 4 SFX
-   7 = Channel 1 SFX
-   8 = Unused?
+Channel mask
+=======================================
+The channel mask specified in the header differs depending on the game. In the first Castlevania game, it is as follows:
 
-78 = 0111 1000
+0 = SFX 1
+1 = SFX 4
+2 = Music 1
+3 = Music 2
+4 = Music 3
+5 = Music 4
 
+In Motocross Maniacs, it is as follows:
+
+1 = SFX 1
+2 = SFX 4
+3 = Music 1
+4 = Music 2
+5 = Music 3
+6 = Music 4
+
+In most other games, it is as follows:
+0. SFX 1
+1. SFX 2 (SFX 3 in TMNT 2)
+2. SFX 4
+3. Music 1
+4. Music 2
+5. Music 3
+6. Music 4
 
 Commands
 =======================================
-xy (00-DF) = Play note (X = note, Y = length - 0 = 16)
-    0 = Rest
-    1 = C
-    2 = C#
-    3 = D
-    4 = D#
-    5 = E
-    6 = F
-    7 = F#
-    8 = G
-    9 = G#
-    A = A
-    B = A#
-    C = B
-    D = C (octave higher)
-E0 xx yy zz = Set channel speed, duty (waveform on channel 3), fade out (only first two are used for noise)
-    For games from 1993 onwards, the second byte is split into x and y: octave and speed
+The commands used each game differ depending on the game and the revision of the sound engine. In early games, each channel of songs and sound effects use the following commands:
+00-DF (xy) = Play note (0x = Rest) (X = Note, Y = Length (multiply by speed unit, 0 = 256 ticks))
+E0 xx yy zz (CH1-3/4 Music) = Set channel parameters (X = Speed, Y = Volume/duty, Z = Envelope/gate)
+E0 xx (CH4 SFX) = Set channel parameters (X = Speed)
 E1-E6 = Set octave
-E7 xx = Set channel speed
-E8 xx = Set note decay?
-E9 xx = Set channel pan?
-EA 0x = Transpose channel up
-EA 1x = Transpose channel down
-EA 7x = Transpose channel up (later games)
-EA 8x = Transpose channel down (later games)
-EA xx = Set instrument
-EB xx yy = Set portamento up
-EC xx yy = Set portamento down?
-ED xx = Set envelope?
-EE xx = Set tempo? (higher value is slower)
-EF xx = Set panning?
-F0-FA = Set note volume? (F0 = "normal", FA = quietest)
-F8 xx = ?, used for TMNT 2
-F9 02 xx xx = For Goemon (J) and later games?: The second time this is encountered, jump to the address X
-FB = Start of repeat point - for later format, an additional one with XX after means repeat # of times
-FC = Return from jump - for later format, used as a secondary repeat which functions like FB
-FD xx xx = Go to position - for later format, an additional one means to return from jump
-FE xx = Repeat section starting from FB value, xx = Amount of times, if FF then jump to loop point? For later format, just start/end of loop point?
-FF = Stop track
+E7 xx = Set channel speed (X = Speed)
+E8 xy = Set release (X = Envelope, Y = Gain)
+E9 xx = Set sweep (X = Value)
+EA xx = Sub-command (X = Command/parameter):
+	- 0x = Transpose up (X = Value)
+	- 1x = Transpose down (X = Value)
+	- 2x = Set vibrato (X = Value)
+	- 3x = Set duty (CH1-2) (X = Value)/Set wave (CH3) (X = Waveform number)
+	- 4x = Set automatic panning (before every note) (X = If not 0, then set)
+EB-ED -- = (No effect) (- = (Unused))
+(In Castlevania 2, ED xy = Duty step (X = Time, Y = Start duty, ED 00 = Off))
+EE xx = Set tempo (X = Value)
+EF xx = Set panning (X = Value)
+F0-FA = Set attenuation (subtract value from channel volume)
+FB = Repeat start
+FC = Return from macro
+FD xx xx = Go to macro (1 level only) (X = Pointer)
+FE xx = Repeat end (X = Number of times - if not FF (see below))
+FE FF xx xx = Jump to position (X = Pointer)
+FF = End of channel
+
+(For more information about game-specific commands, see the VG-Sound-Driver-Disasm).
+
+The format was revised in 1991 with some differences, this being from Nemesis 2 as follows:
+00-DF (xy) = Play note (0x = Rest) (X = Note, Y = Length (multiply by speed unit, 0 = 16 x (unit & 15) ticks))
+E0 xx yy zz (CH1-3/4 Music) = Set channel parameters (X = Speed, Y = Volume/duty, Z = Envelope/gate)
+E0 xx (CH4 SFX) = Set channel parameters (X = Speed)
+E1-E6 = Set octave
+E7 xx = Set channel speed (X = Speed)
+E8 xy = Set release (X = Envelope, Y = Gain)
+E9 xx = Set sweep (X = Value)
+EA xx = Sub-command (X = Command/parameter):
+	- 0x = Transpose up (X = Value)
+	- 1x = Transpose down (X = Value)
+	- 2- = No effect (- = (Unused))
+	- 3x = Set duty (CH1-2) (X = Value)/Set wave (CH3) (X = Waveform number)
+	- 4x = Set automatic panning (before every note) (X = If not 0, then set)
+EB xx (yz) = Set vibrato (X = Table number (0 = Off/no YZ), Y = Delay (+1), Y = Depth) (In Nemesis 2, X & 15, later games whole byte)
+EC -- = (No effect) (- = (Unused))
+ED xy = Set duty step (X = Time, Y = Start duty, ED 00 = Off)
+EE xx = Set tempo (X = Value)
+EF xx = Set panning (X = Value)
+F0-FA = Set attenuation (subtract value from channel volume)
+FB (xx) = Repeat (1): On first command, is repeat start, on second command, is repeat end with X = Number of times
+FC (xx) = Repeat (2): On first command, is repeat start, on second command, is repeat end with X = Number of times
+FD (xx xx) = Go to macro/return (On first command, is go to macro (X = Pointer), on second is return) (1 level only)
+FE = Song loop marker (On first command, is start of loop marker, on second is go back to start, infinitely)
+FF = End of channel
+
+TMNT 2 uses a unique variant of the sound engine, split into 2 banks (first = SFX only):
+00-DF (xy) = Play note (0x = Rest) (X = Note, Y = Length (multiply by speed unit, 0 = 16 x (unit & 15) ticks))
+E0 xx yy zz (CH1-3/4 Music) = Set channel parameters (X = Speed, Y = Volume/duty, Z = Envelope/gate)
+E0 xx (CH4 SFX) = Set channel parameters (X = Speed)
+E1-E6 = Set octave
+E7 xx = Set channel speed (X = Speed)
+E8 xy = Set release (X = Envelope, Y = Gain)
+E9 xx = Set sweep (X = Value)
+EA xx = Sub-command (X = Command/parameter):
+	- 0x = Transpose up (X = Value)
+	- 1x = Transpose down (X = Value)
+	- 2- = No effect (- = (Unused))
+	- 3x = Set duty (CH1-2) (X = Value)/Set wave (CH3) (X = Waveform number)
+	- 4x = Set automatic panning (before every note) (X = If not 0, then set)
+	- 5x = Set automatic panning (2) (before every note) (X = If not 0, then set)
+	- 6x = Autopan off+both (X = ?)
+	- 7x = Transpose up (X = Amount)
+	- 8x = Transpose down (X = Amount)
+EB xx (yz) = Set vibrato (X = Table number (0 = Off/no YZ), Y = Delay (+1), Y = Depth)
+EC -- = (No effect) (- = (Unused))
+ED xx = Sweep/duty count (X = Value)
+EE xx = Set tempo (X = Value)
+EF xx = Set tuning (X = Value, signed)
+F0-F7 = Set attenuation (subtract value from channel volume)
+F8 xx = Set volume (1) (X = Value)
+F9 xx = Set volume (2) (X = Value)
+FA xx xx = Jump to position (X = Pointer)
+FB (xx) = Repeat (1): On first command, is repeat start, on second command, is repeat end with X = Number of times
+FC (xx) = Repeat (2): On first command, is repeat start, on second command, is repeat end with X = Number of times
+FD (xx xx) = Go to macro/return (On first command, is go to macro (X = Pointer), on second is return) (1 level only)
+FE = Song loop marker (On first command, is start of loop marker, on second is go back to start, infinitely)
+FF = End of channel
+
+Ganbare Goemon and Track & Field use the following commands:
+00-DF (xy) = Play note (0x = Rest, Dx = Previous note + 1 octave) (X = Note, Y = Length (multiply by speed unit, 0 = 16 x (unit & 15) ticks))
+E0 xx yy zz (CH1-3/4 Music) = Set channel parameters (X = Speed, Y = Volume/duty, Z = Envelope/gate, E0 xx | 80 = Set "raw frames" (used for SFX))
+E0 xx (CH4 SFX) = Set channel parameters (X = Speed)
+E1-E6 = Set octave
+E7 xx = Set channel speed (X = Speed)
+E8 xy = Set release (X = Envelope, Y = Gain)
+E9 xx = Set sweep (X = Value)
+EA xx = Sub-command (X = Command/parameter):
+	- 0x = Transpose up (X = Value)
+	- 1x = Transpose down (X = Value)
+	- 2- = No effect (- = (Unused))
+	- 3x = Set duty (CH1-2) (X = Value)/Set wave (CH3) (X = Waveform number)
+	- 4x = Set automatic panning (before every note) (X = If not 0, then set)
+	- 5x = Set automatic panning (2) (before every note) (X = If not 0, then set)
+	- 6x = Autopan off+both (X = ?)
+	- 7x = Transpose up (X = Amount)
+	- 8x = Transpose down (X = Amount)
+EB xx (yz) = Set vibrato (X = Table number (0 = Off/no YZ), Y = Delay (+1), Y = Depth)
+EC xx = Set volume envelope (X = Value, 0 = off)
+ED xy = Set duty step (X = Time, Y = Start duty, ED 00 = Off)
+EE xx = Set tempo (X = Value)
+EF xx = Set tuning (X = Value, signed)
+F0-F7 = Set attenuation (subtract value from channel volume)
+F8 xx = Set volume (X = Value)
+F9 (xx) yy yy = Conditional jump (X = Repeat number to jump on, Y = Pointer)
+FA xx xx = Jump to position (X = Pointer)
+FB (xx) = Repeat (1): On first command, is repeat start, on second command, is repeat end with X = Number of times
+FC (xx) = Repeat (2): On first command, is repeat start, on second command, is repeat end with X = Number of times
+FD (xx xx) = Go to macro/return (On first command, is go to macro (X = Pointer), on second is return) (1 level only)
+FE = Song loop marker (On first command, is start of loop marker, on second is go back to start, infinitely)
+FF = End of channel
+
+Tiny Toon Adventures 1 and Kid Dracula use the following commands (Zen is almost identical):
+00-DF (xy) = Play note (0x = Rest) (X = Note, Y = Length (multiply by speed unit, 0 = 16 x (unit & 15) ticks))
+E0 xx yy zz (--) (CH1-3/4 Music) = Set channel parameters (X = Speed, Y = Volume/duty, Z = Envelope/gate, - = (Unused) (Zen only))
+E0 xx (CH4 SFX) = Set channel parameters (X = Speed)
+E1-E6 = Set octave
+E7 xx = Set channel speed (X = Speed)
+E8 xy = Set release (X = Envelope, Y = Gain)
+E9 xx = Set sweep (X = Value)
+EA xy = Octave shift (added to note in addition to transpose) (X = Octave (8+ = negative), Y = Key)
+EB xx (yz) = Set vibrato (X = Table number (0 = Off/no YZ), Y = Delay (+1), Y = Depth)
+EC xx = Set envelope table value (X = Value (& 15), 0 = off)
+ED xy = Set tuning (X = Value, signed)
+EE xx = Set tempo (X = Value)
+EF -- = (No effect) (- = (Unused))
+F0-FA = Set attenuation (subtract value from channel volume)
+FB = Repeat start
+FC = Return from macro
+FD xx xx = Go to macro (1 level only) (X = Pointer)
+FE xx = Repeat end (X = Number of times - if not FF (see below))
+FE FF xx xx = Jump to position (X = Pointer)
+FF = End of channel
+
+Tiny Toon Adventures 2 uses a further revised version of Goemon's commands, with another SFX system:
+00-DF (xy) = Play note (0x = Rest, Dx = Previous note + 1 octave) (X = Note, Y = Length (multiply by speed unit, 0 = 16 x (unit & 15) ticks))
+	(In SFX, X and Y represent 2 notes, ended by value E = next unit or F = command)
+E0 xx yy zz (CH1-3/4 Music) = Set channel parameters (X = Speed + octave (& $1F = speed, other bits = octave), Y = Volume/duty, Z = Envelope/gate, E0 xx | 80 = Set "raw frames" (used for SFX))
+E0 xx (CH4 SFX) = Set channel parameters (X = Speed)
+E1-E6 = Set octave
+E7 xx = Set channel speed (X = Speed)
+E8 xy = Set release (X = Envelope, Y = Gain)
+E9 xx = Set sweep (X = Value)
+EA xx = Sub-command (X = Command/parameter):
+	- 0x = Transpose up (X = Value)
+	- 1x = Set pan = L/R
+	- 2x = Set pan = R
+	- 3x = Set pan = L
+	- 4x = Set automatic panning (before every note) (X = If not 0, then set)
+	- 5x = Set automatic panning (2) (before every note) (X = If not 0, then set)
+	- 6- = (No effect) (- = (Unused))
+	- 7x = Transpose up (X = Amount)
+	- 8x = Transpose down (X = Amount)
+	- 9x = Release volume (X = Amount)
+	- A-C- = (No effect) (- = (Unused))
+EB xx (yz) = Set vibrato (X = Table number (0 = Off/no YZ), Y = Delay (+1), Y = Depth)
+EC xy = Set channel 3 waveform alternation (arpeggio) (X/Y = Note values, 00 = Off)
+ED xy = Set duty step (X = Time, Y = Start duty, ED 00 = Off)
+EE xx = Set tempo (X = Value)
+EF xx = Set tuning (X = Value, signed)
+F0-F8 = Set attenuation (subtract value from channel volume)
+F9 (xx) yy yy = Conditional jump (X = Repeat number to jump on, Y = Pointer)
+FA xx xx = Jump to position (X = Pointer)
+FB (xx) = Repeat (1): On first command, is repeat start, on second command, is repeat end with X = Number of times
+FC (xx) = Repeat (2): On first command, is repeat start, on second command, is repeat end with X = Number of times
+FD (xx xx) = Go to macro/return (On first command, is go to macro (X = Pointer), on second is return) (1 level only)
+FE = Song loop marker (On first command, is start of loop marker, on second is go back to start, infinitely)
+FF = End of channel
+
+Batman TAS is based on TTA 2, but has some differences, otherwise same as above:
+00-DF (xy) = Play note (0x = Rest, Dx = Previous note + 1 octave) (X = Note, Y = Length (multiply by speed unit, 0 = 16 x (unit & 15) ticks))
+	(In SFX, X and Y represent 2 notes, ended by value E = next unit or F = command)
+E0 xx yy zz (CH1-3/4 Music) = Set channel parameters (X = Speed (& $7F, no octave), Y = Volume/duty, Z = Envelope/gate, E0 xx | 80 = Set "raw frames" (used for SFX))
+EA xx = Sub-command (X = Command/parameter):
+	- 0x = Transpose up (X = Value)
+	- 1x = Set pan = L/R
+	- 2x = Set pan = R
+	- 3x = Set pan = L
+	- 4x = Set automatic panning (before every note) (X = If not 0, then set)
+	- 5x = Set automatic panning (2) (before every note) (X = If not 0, then set)
+	- 6- = (No effect) (- = (Unused))
+	- 7x = Transpose up (X = Amount)
+	- 8x = Transpose down (X = Amount)
+	- 9x = Release volume (X = Amount)
+	- Ax = Clear bits (X = bit 3 = vibrato, bit 2 = duty step, bit 1 = tuning, bit 0 = attenuation)
+	- Dx = Transpose (X = Amount)
+	- Ex = Set tempo (X = Value + 3)
+	- Fx = Set volume ramp (X = Value)
+EC xx = Set NR50 (X = Value)
+F0-F7 = Set attenuation (subtract value from channel volume) (does not use F8)
+F8 xx = Set volume (swap/attenuation)
+
+Raging Fighter and God Medicine are almost the same as Batman, but with the following differences:
+E8 xy = Set release volume (X = Gate, Y = Envelope)
+EA xx = Sub-command (X = Command/parameter):
+	(Same as Batman but nothing past Ax)
+EC xx = Start fade (X = Rate)
+
+Castlevania Legends is based on Raging Fighter, with the following differences - this is used in games developed by Konami's KCE Nagoya division:
+EC xx = Set volume envelope (X = Value, 0 = off)
+F9 xx = Break (move to end of loop on final repeat) (X = If odd, then counter 1, if even, then counter 2)
